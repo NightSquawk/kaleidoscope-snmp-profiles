@@ -190,6 +190,9 @@ async function main() {
   // SMIPATH: standard-module dirs inside the source tree, system dirs, then --smipath extras.
   const baseDirs = new Set<string>();
   for (const n of BASE_DIR_NAMES) { const d = join(mibDir, n); if (existsSync(d)) baseDirs.add(resolve(d)); }
+  // The repo's own mibs/rfc always counts, so --mibs <elsewhere> (and the CI
+  // fixture) resolve SNMPv2-SMI even on hosts with no system MIB directory.
+  for (const n of BASE_DIR_NAMES) { const d = join(REPO_ROOT, manifest.paths.mibs, n); if (existsSync(d)) baseDirs.add(resolve(d)); }
   for (const d of SYSTEM_BASE_DIRS) if (existsSync(d)) baseDirs.add(d);
   for (const d of (arg('smipath') ?? '').split(':').filter(Boolean)) if (existsSync(d)) baseDirs.add(resolve(d));
   const smipathBase = [...baseDirs];
@@ -336,7 +339,7 @@ async function main() {
   const totalOids = written.reduce((n, w) => n + w.oids, 0);
   const unreg = [...unregistered.entries()].sort((a, b) => b[1].oids - a[1].oids);
   const lines: string[] = [];
-  lines.push('# Compile report', '', `Generated ${date} by \`pnpm compile\` with ${bin.version}${bin.docker ? ' (Docker)' : ''}. Do not edit; rerun the compiler.`, '');
+  lines.push('# Compile report', '', `Generated ${date} by \`pnpm compile\` with ${bin.version}. Do not edit; rerun the compiler.`, '');
   lines.push('## Summary', '');
   lines.push('| | |', '|---|---|');
   lines.push(`| MIB source | \`${show(mibDir)}\` |`);

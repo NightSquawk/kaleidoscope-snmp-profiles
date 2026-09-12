@@ -52,8 +52,10 @@ jobs:
       - name: commit regenerated dictionaries
         run: |
           git add -A dictionaries
-          if git diff --cached --quiet; then
-            echo "dictionaries unchanged"
+          # Commit only when a dictionary changed; the report alone always
+          # differs (wall time), and that is not worth a commit.
+          if git diff --cached --quiet -- 'dictionaries/*/*.json'; then
+            echo "dictionaries unchanged (report-only differences ignored)"
             exit 0
           fi
           git -c user.name='github-actions[bot]' \
