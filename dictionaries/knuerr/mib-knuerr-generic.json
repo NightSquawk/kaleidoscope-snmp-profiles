@@ -1,0 +1,1675 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-knuerr-generic",
+  "name": "Knuerr Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "Knuerr",
+  "vendorOidPrefix": "1.3.6.1.4.1.2769",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 124 readable OIDs under 1.3.6.1.4.1.2769.",
+  "generated": {
+    "source": "mibs/knuerr",
+    "date": "2026-09-12",
+    "oidCount": 124,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "RMS-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.2769.10.1.1.0",
+      "name": "systemVersion",
+      "description": "The systemVersion shows the current installed software version.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "systemVersion",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.1.2.0",
+      "name": "systemSNMPsave",
+      "description": "systemSNMPsave is used to write all changes made via SNMP into the flash disk. If set to 2 the save operation is triggered. After successfull write it is reset to 1 (default value).",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "systemSNMPsave",
+      "transform": null,
+      "enumMap": {
+        "1": "default",
+        "2": "save"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.1.3.0",
+      "name": "systemMsgToSyslog",
+      "description": "If systemMsgToSyslog is set to 2, all messages are additionally logged to all syslog destinations.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "systemMsgToSyslog",
+      "transform": null,
+      "enumMap": {
+        "1": "msglog-off",
+        "2": "msglog-on"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.1.4.0",
+      "name": "systemReset",
+      "description": "Writing 2 into systemReset forces the RMS to reboot. Reading allways gives back 1 (default value).",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "systemReset",
+      "transform": null,
+      "enumMap": {
+        "1": "default",
+        "2": "reset"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.1.5.0",
+      "name": "systemSNMPaccess",
+      "description": "systemSNMPaccess displays the current access right for SNMP access. If 1, variables only can be read, if 2, full SNMP access with SET operaions is allowed. This variable corresponds with the option...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "systemSNMPaccess",
+      "transform": null,
+      "enumMap": {
+        "1": "readonly",
+        "2": "readwrite"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.2.1.1.1",
+      "name": "digitalInIndex",
+      "description": "Index of Digital Input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "digitalInIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.2.1.1.2",
+      "name": "digitalInDescr",
+      "description": "Descriptive name of Digital Input",
+      "type": "string",
+      "walk": true,
+      "metricKey": "digitalInDescr",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.2.1.1.3",
+      "name": "digitalInState",
+      "description": "Current state of Digital Input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "digitalInState",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.2.1.1.4",
+      "name": "digitalInLastChange",
+      "description": "Timestamp of last change",
+      "type": "timeticks",
+      "walk": true,
+      "metricKey": "digitalInLastChange",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.2.1.1.5",
+      "name": "digitalInChanges",
+      "description": "How many times the input changed since system startup",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "digitalInChanges",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.2.2.1.1",
+      "name": "alertInIndex",
+      "description": "Index of Alert Input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "alertInIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.2.2.1.2",
+      "name": "alertInDescr",
+      "description": "Descriptive name of Alert Input",
+      "type": "string",
+      "walk": true,
+      "metricKey": "alertInDescr",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.2.2.1.3",
+      "name": "alertInState",
+      "description": "Current state of Alert Input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "alertInState",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.2.2.1.4",
+      "name": "alertInLastChange",
+      "description": "Timestamp of last change",
+      "type": "timeticks",
+      "walk": true,
+      "metricKey": "alertInLastChange",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.2.2.1.5",
+      "name": "alertInChanges",
+      "description": "How many times the input changed since system startup",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "alertInChanges",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.2.2.1.6",
+      "name": "alertInReset",
+      "description": "Reset an Alert In by writing 2 in here. Most sensors use to store an alarm, which only can be deleted by resetting the sensor respectively the whole signalling line. This is achieved by powering-of...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "alertInReset",
+      "transform": null,
+      "enumMap": {
+        "1": "default",
+        "2": "alertIn-reset"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.2.3.1.1",
+      "name": "upsInIndex",
+      "description": "Index of UPS Input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upsInIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.2.3.1.2",
+      "name": "upsInDescr",
+      "description": "Name of UPS Input",
+      "type": "string",
+      "walk": true,
+      "metricKey": "upsInDescr",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.2.3.1.3",
+      "name": "upsInState",
+      "description": "Current state of UPS Input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upsInState",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.2.3.1.4",
+      "name": "upsInLastChange",
+      "description": "Timestamp of last change",
+      "type": "timeticks",
+      "walk": true,
+      "metricKey": "upsInLastChange",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.2.3.1.5",
+      "name": "upsInChanges",
+      "description": "How many times the input changed since system startup",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "upsInChanges",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.3.1.1.1",
+      "name": "outputIndex",
+      "description": "Index of digital output",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "outputIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.3.1.1.2",
+      "name": "outputDescr",
+      "description": "Descriptive Name of one digital output",
+      "type": "string",
+      "walk": true,
+      "metricKey": "outputDescr",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.3.1.1.3",
+      "name": "outputEffect",
+      "description": "Determines the way the physical digital output is influenced by one or more filter results. For this the result of the logical output block can be passed thru (thru) or inverted (invert). Furthermo...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "outputEffect",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on",
+        "3": "thru",
+        "4": "invert"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.3.1.1.4",
+      "name": "outputLastChange",
+      "description": "Timestamp of last change",
+      "type": "timeticks",
+      "walk": true,
+      "metricKey": "outputLastChange",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.3.1.1.5",
+      "name": "outputChanges",
+      "description": "How many times an output changed since system startup",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "outputChanges",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.3.1.1.6",
+      "name": "outputLogic",
+      "description": "Each output can be controlled by a couple of filters, which are combined in a boolean operation. The logic operation (and/or) can be set up with this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "outputLogic",
+      "transform": null,
+      "enumMap": {
+        "1": "and",
+        "2": "or"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.3.1.1.7",
+      "name": "outputState",
+      "description": "Current state of digital output",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "outputState",
+      "transform": null,
+      "enumMap": {
+        "1": "open",
+        "2": "short"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.3.2.1.1",
+      "name": "outputLogicOutputIndex",
+      "description": "Index of the output",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "outputLogicOutputIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.3.2.1.2",
+      "name": "outputLogicFilterIndex",
+      "description": "Index of the filter",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "outputLogicFilterIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.3.2.1.3",
+      "name": "outputLogicFilter",
+      "description": "Determines, if this filter works on the logical and/or element. Default is off.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "outputLogicFilter",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.4.1.1.1",
+      "name": "tempIndex",
+      "description": "Index of temperature input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "tempIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.4.1.1.2",
+      "name": "tempDescr",
+      "description": "Descriptive name of temperature input",
+      "type": "string",
+      "walk": true,
+      "metricKey": "tempDescr",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.4.1.1.3",
+      "name": "tempValue",
+      "description": "Current temperature in degree celsius. If 655 no sensor is connected.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "tempValue",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.5.1.1.1",
+      "name": "humidIndex",
+      "description": "Index of humidity input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "humidIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.5.1.1.2",
+      "name": "humidDescr",
+      "description": "Descriptive name of the humidity input",
+      "type": "string",
+      "walk": true,
+      "metricKey": "humidDescr",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.5.1.1.3",
+      "name": "humidValue",
+      "description": "Current humidity in percent rel. humidity. If 255 no sensor is connected.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "humidValue",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.6.1.1.1",
+      "name": "mainsIndex",
+      "description": "Index of mains input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mainsIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.6.1.1.2",
+      "name": "mainsDescr",
+      "description": "Descriptive name of the mains input",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mainsDescr",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.6.1.1.3",
+      "name": "mainsValue",
+      "description": "Current voltage of mains input in volt. If 13 or 255 no voltage is detected.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mainsValue",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.1.1.1",
+      "name": "filterIndex",
+      "description": "Index of the filter entry",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.1.1.2",
+      "name": "filterDescr",
+      "description": "Descriptive name of filter",
+      "type": "string",
+      "walk": true,
+      "metricKey": "filterDescr",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.1.1.3",
+      "name": "filterResult",
+      "description": "Current filter result, i.e. result of all 'or'ed inputs - see block diagram",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterResult",
+      "transform": null,
+      "enumMap": {
+        "1": "false",
+        "2": "true"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.1.1.4",
+      "name": "filterEffect",
+      "description": "Determines the way the filter is used for further operation Can be switched off, passed thru or inverted.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterEffect",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "thru",
+        "3": "invert"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.1.1.5",
+      "name": "filterTrap",
+      "description": "Determines the way of trap notification to management station(s) in case of filter events. Traps can be off, sent once (when filter becomes true) or sent repeatedly (as long as filter is true).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterTrap",
+      "transform": null,
+      "enumMap": {
+        "1": "no",
+        "2": "once",
+        "3": "repeat"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.1.1.6",
+      "name": "filterLED",
+      "description": "When set to yes(2) a filter event will be signalled by the warning LED on front of RMS",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterLED",
+      "transform": null,
+      "enumMap": {
+        "1": "no",
+        "2": "yes"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.1.1.7",
+      "name": "filterBuzzer",
+      "description": "When set to yes(2) a filter event will be signalled by the build-in buzzer",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterBuzzer",
+      "transform": null,
+      "enumMap": {
+        "1": "no",
+        "2": "yes"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.1.1.8",
+      "name": "filterMessagePriority",
+      "description": "If set to priority-warning(2) or priority-critical(3), a filter event will be logged in the message log an on all defined log server(s) with the corresponding priority. This priority has only infor...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterMessagePriority",
+      "transform": null,
+      "enumMap": {
+        "1": "no-message",
+        "2": "priority-warning",
+        "3": "priority-critical"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.1.1.9",
+      "name": "filterConfirmation",
+      "description": "If set to enabled(1), it is possible to confirme a true filter. This can be done on front panel of RMS, via telnet or via SNMP (see also variable filterConfirm).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterConfirmation",
+      "transform": null,
+      "enumMap": {
+        "1": "disabled",
+        "2": "enabled"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.1.1.10",
+      "name": "filterReactivationTime",
+      "description": "Time after which a confirmed filter will be reactivated automatically",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterReactivationTime",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.1.1.11",
+      "name": "filterConfirm",
+      "description": "A true filter can be confimed by writing confirmed(2) in here (provided filter confirmation is enabled - see variable filterConfirmation). By doing this the effect of this filter will be suspended ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterConfirm",
+      "transform": null,
+      "enumMap": {
+        "1": "not-confirmed",
+        "2": "confirmed"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.2.1.1",
+      "name": "filterDigitalInIndex",
+      "description": "Index of the filter",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterDigitalInIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.2.1.2",
+      "name": "filterDigitalInPort",
+      "description": "Index of the digital input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterDigitalInPort",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.2.1.3",
+      "name": "filterDigitalInEffect",
+      "description": "Determines the way the digital input effects the filter. Can be switched off(1), inverted(3) or passed thru(2).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterDigitalInEffect",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "thru",
+        "3": "invert"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.3.1.1",
+      "name": "filterAlertInIndex",
+      "description": "Index of the filter",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterAlertInIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.3.1.2",
+      "name": "filterAlertInPort",
+      "description": "Index of the alert input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterAlertInPort",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.3.1.3",
+      "name": "filterAlertInEffect",
+      "description": "Determines the way the alert input effects the filter. Can be switched off(1), inverted(3) or passed thru(2).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterAlertInEffect",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "thru",
+        "3": "invert"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.4.1.1",
+      "name": "filterUPSInIndex",
+      "description": "Index of the filter",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterUPSInIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.4.1.2",
+      "name": "filterUPSInPort",
+      "description": "Index of the UPS input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterUPSInPort",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.4.1.3",
+      "name": "filterUPSInEffect",
+      "description": "Determines the way the UPS input effects the filter. Can be switched off(1), inverted(3) or passed thru(2).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterUPSInEffect",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "thru",
+        "3": "invert"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.5.1.1",
+      "name": "filterTempIndex",
+      "description": "Index of the filter",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterTempIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.5.1.2",
+      "name": "filterTempSensor",
+      "description": "Index of the temp input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterTempSensor",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.5.1.3",
+      "name": "filterTempEffect",
+      "description": "Determines the way the result of temp input comparison effects on the filter. Can be switched off(1), inverted (3) or passed thru(3).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterTempEffect",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "thru",
+        "3": "invert"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.5.1.4",
+      "name": "filterTempAThres",
+      "description": "Threshold of temp input part A",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterTempAThres",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.5.1.5",
+      "name": "filterTempAMode",
+      "description": "Determines the operating mode of comparison operation A. Can be set to greater(2) ' >', less(3) '<' or turned off(1), if not needed",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterTempAMode",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "greater",
+        "3": "less"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.5.1.6",
+      "name": "filterTempBThres",
+      "description": "Threshold of temp input part B",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterTempBThres",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.5.1.7",
+      "name": "filterTempBMode",
+      "description": "Determines the operating mode of comparison operation B. Can be set to greater(2) ' >', less(3) '<' or turned off(1), if not needed",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterTempBMode",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "greater",
+        "3": "less"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.6.1.1",
+      "name": "filterHumidityIndex",
+      "description": "Index of the filter",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterHumidityIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.6.1.2",
+      "name": "filterHumiditySensor",
+      "description": "Index of the humidity input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterHumiditySensor",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.6.1.3",
+      "name": "filterHumidityEffect",
+      "description": "Determines the way the result of humidity input comparison effects the filter. Can be switched off(1), inverted(3) or passed thru(2), if not needed.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterHumidityEffect",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "thru",
+        "3": "invert"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.6.1.4",
+      "name": "filterHumidityAThres",
+      "description": "Threshold of humidity input part A",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterHumidityAThres",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.6.1.5",
+      "name": "filterHumidityAMode",
+      "description": "Determines the operating mode of comparison operation A. Can be set to greater(2) ' >', less(3) '<' or turned off(1), if not needed",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterHumidityAMode",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "greater",
+        "3": "less"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.6.1.6",
+      "name": "filterHumidityBThres",
+      "description": "Threshold of humidity input part B",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterHumidityBThres",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.6.1.7",
+      "name": "filterHumidityBMode",
+      "description": "Determines the operating mode of comparison operation B. Can be set to greater(2) ' >', less(3) '<' or turned off(1), if not needed",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterHumidityBMode",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "greater",
+        "3": "less"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.7.1.1",
+      "name": "filterMainsIndex",
+      "description": "Index of the filter",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterMainsIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.7.1.2",
+      "name": "filterMainsSensor",
+      "description": "Index of the mains sensor",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterMainsSensor",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.7.1.3",
+      "name": "filterMainsEffect",
+      "description": "Determines the way the result of mains input comparison effects on the filter. Can be switched off(1), inverted(3) or passed thru (2).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterMainsEffect",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "thru",
+        "3": "invert"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.7.1.4",
+      "name": "filterMainsAThres",
+      "description": "Threshold of mains input part B",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterMainsAThres",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.7.1.5",
+      "name": "filterMainsAMode",
+      "description": "Determines the operating mode of comparison operation A. Can be set to greater(2) ' >', less(3) '<' or turned off(1), if not needed",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterMainsAMode",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "greater",
+        "3": "less"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.7.1.6",
+      "name": "filterMainsBThres",
+      "description": "Threshold of mains input part B",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterMainsBThres",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.7.1.7",
+      "name": "filterMainsBMode",
+      "description": "Determines the operating mode of comparison operation B. Can be set to greater(2) ' >', less(3) '<' or turned off(1), if not needed",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterMainsBMode",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "greater",
+        "3": "less"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.8.1.1",
+      "name": "filterFeedbackIndex",
+      "description": "Index of the filter",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterFeedbackIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.8.1.2",
+      "name": "filterFeedbackInput",
+      "description": "Index of the feedback input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterFeedbackInput",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.8.1.3",
+      "name": "filterFeedbackInFilter",
+      "description": "Number of the filter which is connected to this feedback input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterFeedbackInFilter",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.8.1.4",
+      "name": "filterFeedbackDelay",
+      "description": "Delay time to wait until signal is forwarded",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterFeedbackDelay",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.8.1.5",
+      "name": "filterFeedbackPassCondition",
+      "description": "Determines the way an incoming signal is forwarded to the filter structure. If set to thru(1), all incoming signals are straight forwarded. If set to conditional(2), an incoming signal only will be...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterFeedbackPassCondition",
+      "transform": null,
+      "enumMap": {
+        "1": "thru",
+        "2": "conditional"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.8.1.6",
+      "name": "filterFeedbackHold",
+      "description": "Determines the time the passed signal will be held up, after the falling edge of the original trigger signal. See timing diagram in manual for further details.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterFeedbackHold",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.7.8.1.7",
+      "name": "filterFeedbackEffect",
+      "description": "Determines the way the result of feedback input effects the filter. Can be switched off(1), inverted(3) or passed thru (2).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "filterFeedbackEffect",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on",
+        "3": "invert"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.8.1.1.1",
+      "name": "messageIndex",
+      "description": "Index of message line",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "messageIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.8.1.1.2",
+      "name": "messageFilter",
+      "description": "Number of filter which caused the message",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "messageFilter",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.8.1.1.3",
+      "name": "messageFilterDescr",
+      "description": "Name of the filter which caused the message",
+      "type": "string",
+      "walk": true,
+      "metricKey": "messageFilterDescr",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.8.1.1.4",
+      "name": "messageTime",
+      "description": "Timestamp of event",
+      "type": "timeticks",
+      "walk": true,
+      "metricKey": "messageTime",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.8.1.1.5",
+      "name": "messagePriority",
+      "description": "Priority of the message. If set to no-priority(1) no message will be logged. The Priority has only informational character and doesn't affect the way it is handled",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "messagePriority",
+      "transform": null,
+      "enumMap": {
+        "1": "no-priority",
+        "2": "warning",
+        "3": "critical"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.8.1.1.6",
+      "name": "messageAcknoledged",
+      "description": "Displays, if event was acknoledged already. Has only informational character for operator",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "messageAcknoledged",
+      "transform": null,
+      "enumMap": {
+        "1": "not-acknowledged",
+        "2": "acknowledged"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.9.1.1.1",
+      "name": "userIndex",
+      "description": "Index of user. Is dynamically filled from 1..n",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "userIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.9.1.1.2",
+      "name": "userName",
+      "description": "name of one user",
+      "type": "string",
+      "walk": true,
+      "metricKey": "userName",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.9.1.1.3",
+      "name": "userRight",
+      "description": "Access right of one user",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "userRight",
+      "transform": null,
+      "enumMap": {
+        "1": "readonly",
+        "2": "readwrite"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.9.1.1.4",
+      "name": "userChipcardKey",
+      "description": "Displays the chipcard key of this user - only available, if optional chipcard reader installed.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "userChipcardKey",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.9.1.1.5",
+      "name": "userChipcardAccess",
+      "description": "Holds the status of the last access try via chipcard reader. In case of failure a rmsChipcardTrap will be sent.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "userChipcardAccess",
+      "transform": null,
+      "enumMap": {
+        "1": "denied",
+        "2": "granted"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.20.1.0",
+      "name": "auxDevice",
+      "description": "AUX device number - currently supported numbers are 1 - <no device> 2 - Chipcard Reader The set of supported devices will grow. Check the support server from time to time",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "auxDevice",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.20.2.0",
+      "name": "auxDeviceName",
+      "description": "Name of the device connected to the AUX port or <no device>.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "auxDeviceName",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.21.1.0",
+      "name": "readerConnected",
+      "description": "Shows if chipcard reader is connected to the RMS",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "readerConnected",
+      "transform": null,
+      "enumMap": {
+        "1": "no",
+        "2": "yes"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.21.2.0",
+      "name": "readerCardInside",
+      "description": "Shows if reader contains a chipcard",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "readerCardInside",
+      "transform": null,
+      "enumMap": {
+        "1": "no",
+        "2": "yes"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.21.3.0",
+      "name": "readerCardKey",
+      "description": "Shows key of chipcard in Chipcard Reader",
+      "type": "string",
+      "walk": false,
+      "metricKey": "readerCardKey",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.21.4.0",
+      "name": "readerLEDcolor",
+      "description": "Shows if reader contains a chipcard",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "readerLEDcolor",
+      "transform": null,
+      "enumMap": {
+        "1": "red",
+        "2": "green",
+        "3": "yellow"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.21.5.0",
+      "name": "openerLogic",
+      "description": "Logic of door opener connected to chipcard reader. If make(1) Digital Out 4 will get short in case of successfull access attempt, and open else. If break(2) Digital Out 4 will get open in case of s...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "openerLogic",
+      "transform": null,
+      "enumMap": {
+        "1": "break",
+        "2": "make"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.21.6.0",
+      "name": "openerOpenTime",
+      "description": "How long the door opener (e.g. Digital Out 4) will get open/short in case of successfull access attempt (in secs).",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "openerOpenTime",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.21.7.0",
+      "name": "openerState",
+      "description": "Current state of the door opener.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "openerState",
+      "transform": null,
+      "enumMap": {
+        "1": "closed",
+        "2": "open"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.22.1.0",
+      "name": "upsConnected",
+      "description": "Shows if ups is connected to AUX on the RMS",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "upsConnected",
+      "transform": null,
+      "enumMap": {
+        "1": "no",
+        "2": "yes"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.22.2.0",
+      "name": "upsManufacturer",
+      "description": "The name of the UPS manufacturer.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "upsManufacturer",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.22.3.0",
+      "name": "upsModel",
+      "description": "The UPS Model designation.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "upsModel",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.22.4.0",
+      "name": "upsFirmwareVersion",
+      "description": "The UPS firmware/software version(s). This variable may or may not have the same value as upsIdentAgentSoftwareVersion in some implementations.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "upsFirmwareVersion",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.22.5.0",
+      "name": "upsSoftwareVersion",
+      "description": "The UPS agent software version. This variable may or may not have the same value as upsIdentUPSSoftwareVersion in some implementations.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "upsSoftwareVersion",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.22.6.0",
+      "name": "upsID",
+      "description": "The UPS Serial Number",
+      "type": "string",
+      "walk": false,
+      "metricKey": "upsID",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.22.8.0",
+      "name": "upsTimeOnBattery",
+      "description": "If the unit is on battery power, the elapsed time since the UPS last switched to battery power, or the time since the network management subsystem was last restarted, whichever is less. Zero shall ...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "upsTimeOnBattery",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.22.9.0",
+      "name": "upsTimeRemaining",
+      "description": "An estimate of the time to battery charge depletion under the present load conditions if the utility power is off and remains off, or if it were to be lost and remain off.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "upsTimeRemaining",
+      "transform": null,
+      "enumMap": null,
+      "units": "minutes",
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.22.10.0",
+      "name": "upsBatteryVoltage",
+      "description": "The magnitude of the present battery voltage.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "upsBatteryVoltage",
+      "transform": null,
+      "enumMap": null,
+      "units": "0.1 Volt DC",
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.22.11.0",
+      "name": "upsBatteryCurrent",
+      "description": "The present battery current.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "upsBatteryCurrent",
+      "transform": null,
+      "enumMap": null,
+      "units": "0.1 Amp DC",
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.22.12.0",
+      "name": "upsBatteryTemp",
+      "description": "The ambient temperature at or near the UPS Battery casing.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "upsBatteryTemp",
+      "transform": null,
+      "enumMap": null,
+      "units": "degrees Centigrade",
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.22.13.0",
+      "name": "upsBatteryStatus",
+      "description": "The indication of the capacity remaining in the UPS system's batteries. A value of batteryNormal indicates that the remaining run-time is greater than upsConfigLowBattTime. A value of batteryLow in...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "upsBatteryStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "unknown",
+        "2": "batteryNormal",
+        "3": "batteryLow",
+        "4": "batteryDepleted"
+      },
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.22.14.0",
+      "name": "upsLineFrequency",
+      "description": "The present input frequency.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "upsLineFrequency",
+      "transform": null,
+      "enumMap": null,
+      "units": "0.1 Hertz",
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.22.15.0",
+      "name": "upsLineVoltage",
+      "description": "The magnitude of the present input voltage.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "upsLineVoltage",
+      "transform": null,
+      "enumMap": null,
+      "units": "RMS Volts",
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.22.16.0",
+      "name": "upsOutputVoltage",
+      "description": "The present output voltage.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "upsOutputVoltage",
+      "transform": null,
+      "enumMap": null,
+      "units": "RMS Volts",
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2769.10.22.17.0",
+      "name": "upsNominalOutputVoltage",
+      "description": "The magnitude of the nominal output voltage. On those systems which support read-write access to this object, if there is an attempt to set this variable to a value that is not supported, the reque...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "upsNominalOutputVoltage",
+      "transform": null,
+      "enumMap": null,
+      "units": "RMS Volts",
+      "status": "mandatory",
+      "module": "RMS-MIB"
+    }
+  ]
+}

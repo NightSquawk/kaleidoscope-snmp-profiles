@@ -1,0 +1,2251 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-netping-generic",
+  "name": "NetPing Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "NetPing",
+  "vendorOidPrefix": "1.3.6.1.4.1.25728",
+  "description": "Auto-compiled with libsmi from 8 MIB module(s). 180 readable OIDs under 1.3.6.1.4.1.25728.",
+  "generated": {
+    "source": "mibs/netping",
+    "date": "2026-09-12",
+    "oidCount": 180,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "DKSF-253-6-X-A-X",
+      "DKSF-50-11-X-X-X",
+      "DKSF-57-1-X-X-1",
+      "DKSF-60-4-X-X-X",
+      "DKSF-70-MIB",
+      "DKSF-707-2-X-X-1",
+      "DKSF-PWR-MIB",
+      "DKSF-PWR-OLD-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.25728.90.1.0",
+      "name": "npTrapEmailTo",
+      "description": "user-specified e-mail for NetPing Trap Forwarding Service",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npTrapEmailTo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.911.1.0",
+      "name": "npSoftReboot",
+      "description": "Write 1 to reboot device after current operations completition",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npSoftReboot",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.911.2.0",
+      "name": "npResetStack",
+      "description": "Write 1 to re-initialize network stack",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npResetStack",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.911.3.0",
+      "name": "npForcedReboot",
+      "description": "Write 1 to immediate forced reboot",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npForcedReboot",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.3800.1.1.0",
+      "name": "npGsmFailed",
+      "description": "Firmware's GSM module status",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npGsmFailed",
+      "transform": null,
+      "enumMap": {
+        "0": "ok",
+        "1": "failed",
+        "2": "fatalError"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.3800.1.2.0",
+      "name": "npGsmRegistration",
+      "description": "Status of modem registration in GSM network (AT+CREG? result)",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npGsmRegistration",
+      "transform": null,
+      "enumMap": {
+        "0": "impossible",
+        "1": "homeNetwork",
+        "2": "searching",
+        "3": "denied",
+        "4": "unknown",
+        "5": "roaming",
+        "255": "infoUpdate"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.3800.1.3.0",
+      "name": "npGsmStrength",
+      "description": "GSM signal strength. 0..31 = 0..100%, 99 = unknown or n/a, 255 = updating info",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npGsmStrength",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.3800.1.9.0",
+      "name": "npGsmSendSmsUtf8",
+      "description": "Send arbitrary SMS. Format: [phone_number,phone_number,...] Message One to four destination phone numbers If [] and numbers omitted, mesagge will be sent to preset numbers from SMS setup Cyrillic c...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npGsmSendSmsUtf8",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.3800.1.10.0",
+      "name": "npGsmSendSmsWin1251",
+      "description": "Send arbitrary SMS. Format: [phone_number,phone_number,...] Message One to four destination phone numbers If [] and numbers omitted, mesagge will be sent to preset numbers from SMS setup Cyrillic c...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npGsmSendSmsWin1251",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.3800.1.11.0",
+      "name": "npGsmUnparsedRxSmsFrom",
+      "description": "Source phone of received unparsed (unknown) Sms",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npGsmUnparsedRxSmsFrom",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-707-2-X-X-1",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.3900.1.1.0",
+      "name": "npBatteryPok",
+      "description": "Power source",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npBatteryPok",
+      "transform": null,
+      "enumMap": {
+        "0": "batteryPower",
+        "1": "externalPower"
+      },
+      "module": "DKSF-PWR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.3900.1.2.0",
+      "name": "npBatteryLevel",
+      "description": "Battery charge, approximate value, in percent. Valid only if npBatteryPok = 0",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npBatteryLevel",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-PWR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.3900.1.3.0",
+      "name": "npBatteryChg",
+      "description": "Battery chargeing status. 0 if charging suspended or battery is full, 1 while LiPo fast charging.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npBatteryChg",
+      "transform": null,
+      "enumMap": {
+        "0": "batteryChargingSuspended",
+        "1": "batteryFastCharging"
+      },
+      "module": "DKSF-PWR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5500.3.1.0",
+      "name": "npRelayTrapN",
+      "description": "The N of output relay",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npRelayTrapN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5500.3.2.0",
+      "name": "npRelayTrapMode",
+      "description": "Relay position, w/o effect of temporary switch (reset): 0 - off 1 - on",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npRelayTrapMode",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5500.3.6.0",
+      "name": "npRelayTrapMemo",
+      "description": "Relay Memo",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npRelayTrapMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5500.3.15.0",
+      "name": "npRelayTrapState",
+      "description": "Actual relay state at the moment, 0 - relay is off 1 - relay is on",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npRelayTrapState",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5500.3.18.0",
+      "name": "npRelayTrapCmdSrc",
+      "description": "Source of command to switch Relay",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npRelayTrapCmdSrc",
+      "transform": null,
+      "enumMap": {
+        "1": "webInterface",
+        "2": "snmp",
+        "3": "sms",
+        "4": "httpApi",
+        "5": "watchdog",
+        "6": "schedule",
+        "7": "logic",
+        "-1": "unknown"
+      },
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5500.3.19.0",
+      "name": "npRelayTrapDateTime",
+      "description": "Textual timestamp of event",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npRelayTrapDateTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5500.5.1.1",
+      "name": "npRelayN",
+      "description": "The N of output relay",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npRelayN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5500.5.1.2",
+      "name": "npRelayMode",
+      "description": "Control of relay: -1 - flip between on(1) and off(0) 0 - switch off 1 - switch on",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npRelayMode",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on",
+        "-1": "flip"
+      },
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5500.5.1.3",
+      "name": "npRelayStartReset",
+      "description": "Write 1 to start reset (switch relay off for some time)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npRelayStartReset",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5500.5.1.6",
+      "name": "npRelayMemo",
+      "description": "Relay memo",
+      "type": "string",
+      "walk": true,
+      "metricKey": "npRelayMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5500.5.1.14",
+      "name": "npRelayFlip",
+      "description": "Write -1 to flip between manual on and manual off states of relay",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npRelayFlip",
+      "transform": null,
+      "enumMap": {
+        "-1": "flip"
+      },
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5500.5.1.15",
+      "name": "npRelayState",
+      "description": "Actual relay state at the moment, regardless of source of control. 0 - relay is off 1 - relay is on",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npRelayState",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5500.5.1.16",
+      "name": "npRelayPowered",
+      "description": "AC presence on output (relay operation check) 0 - no AC on output socket 1 - AC is present on oputput",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npRelayPowered",
+      "transform": null,
+      "enumMap": {
+        "0": "no",
+        "1": "yes"
+      },
+      "module": "DKSF-PWR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5600.3.1.0",
+      "name": "npExtRelayTrapN",
+      "description": "The N of output relay",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npExtRelayTrapN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5600.3.2.0",
+      "name": "npExtRelayTrapMode",
+      "description": "Relay position, w/o effect of temporary switch (reset): 0 - off 1 - on",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npExtRelayTrapMode",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5600.3.6.0",
+      "name": "npExtRelayTrapMemo",
+      "description": "Relay memo",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npExtRelayTrapMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5600.3.15.0",
+      "name": "npExtRelayTrapState",
+      "description": "Actual relay state at the moment, 0 - relay is off 1 - relay is on",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npExtRelayTrapState",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5600.3.18.0",
+      "name": "npExtRelayTrapCmdSrc",
+      "description": "Source of command to switch Relay",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npExtRelayTrapCmdSrc",
+      "transform": null,
+      "enumMap": {
+        "1": "webInterface",
+        "2": "snmp",
+        "3": "sms",
+        "4": "httpApi",
+        "5": "watchdog",
+        "6": "schedule",
+        "7": "logic",
+        "8": "button",
+        "-1": "unknown"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5600.3.19.0",
+      "name": "npExtRelayTrapDateTime",
+      "description": "Textual timestamp of event",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npExtRelayTrapDateTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5600.5.1.1",
+      "name": "npExtRelayN",
+      "description": "The N of external relay",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npExtRelayN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5600.5.1.2",
+      "name": "npExtRelayMode",
+      "description": "Control of relay: -1 - flip between on(1) and off(0) 0 - switch off 1 - switch on",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npExtRelayMode",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on",
+        "-1": "flip"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5600.5.1.3",
+      "name": "npExtRelayStartReset",
+      "description": "Write 1 to start reset (switch relay off for some time)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npExtRelayStartReset",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5600.5.1.6",
+      "name": "npExtRelayMemo",
+      "description": "Relay memo",
+      "type": "string",
+      "walk": true,
+      "metricKey": "npExtRelayMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5600.5.1.14",
+      "name": "npExtRelayFlip",
+      "description": "Write -1 to flip between manual on and manual off states of relay",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npExtRelayFlip",
+      "transform": null,
+      "enumMap": {
+        "-1": "flip"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5600.5.1.15",
+      "name": "npExtRelayState",
+      "description": "Actual relay state at the moment, regardless of source of control. 0 - relay is off 1 - relay is on",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npExtRelayState",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5800.2.1.0",
+      "name": "npPwrWdogTrapN",
+      "description": "N of Watchdog channel",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npPwrWdogTrapN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5800.2.6.0",
+      "name": "npPwrWdogTrapMemo",
+      "description": "Watchdog/Relay memo",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npPwrWdogTrapMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5800.2.13.0",
+      "name": "npPwrWdogTrapFailBitmap",
+      "description": "Failed adresses, bit 0 - A, bit 1 - B, bit 2 - C",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npPwrWdogTrapFailBitmap",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5800.3.1.1",
+      "name": "npPwrChannelN",
+      "description": "The id of watchdog/power channel",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npPwrChannelN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5800.3.1.2",
+      "name": "npPwrStartReset",
+      "description": "Write 1 to start reset On read: 0 - normal operation 1 - reset is active 2 - reboot pause is active",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npPwrStartReset",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5800.3.1.3",
+      "name": "npPwrManualMode",
+      "description": "Mode of power channel 0 - manual off 1 - manual on 2 - watchdog",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npPwrManualMode",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on",
+        "2": "watchdog"
+      },
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5800.3.1.4",
+      "name": "npPwrResetsCounter",
+      "description": "Counter of watchdog resets Write 0 to clear.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npPwrResetsCounter",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5800.3.1.5",
+      "name": "npPwrRepeatingResetsCounter",
+      "description": "Counter of continous failed watchdog resets",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npPwrRepeatingResetsCounter",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5800.3.1.6",
+      "name": "npPwrMemo",
+      "description": "Watchdog/power channel memo",
+      "type": "string",
+      "walk": true,
+      "metricKey": "npPwrMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5800.3.1.14",
+      "name": "npPwrRelayFlip",
+      "description": "Write -1 to flip between manual on and manual off states of relay",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npPwrRelayFlip",
+      "transform": null,
+      "enumMap": {
+        "-1": "flip"
+      },
+      "module": "DKSF-60-4-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.5800.3.1.15",
+      "name": "npPwrRelayState",
+      "description": "Actual relay state at the moment, regardless of source of control. 0 - relay is off 1 - relay is on",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npPwrRelayState",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "DKSF-60-4-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.7900.1.1.0",
+      "name": "npIrPlayCmd",
+      "description": "Write IR command number to send IR command",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npIrPlayCmd",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.7900.1.2.0",
+      "name": "npIrReset",
+      "description": "Write 1 to reset IR transiever. After reset, send IR command and check npIrStatus.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npIrReset",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.7900.1.3.0",
+      "name": "npIrStatus",
+      "description": "IR transiever status",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npIrStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "ok",
+        "1": "busyCaptureWaitingButton",
+        "2": "busyCaptureWaitingIr",
+        "3": "busyPlayback",
+        "255": "error"
+      },
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8200.1.1.1",
+      "name": "npInputAnalogSensorN",
+      "description": "The id of 1Wire Current Loop Adapter, 1 to 4",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npInputAnalogSensorN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8200.1.1.2",
+      "name": "npInputAnalogStatus",
+      "description": "Status of Current Loop Signal, failure1w = no reply from the adapter on 1wire bus, failureAnalog = signal is beyond it's Working Range, belowSafe, safe, aboveSafe - status of the signal relative to...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npInputAnalogStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "failure1w",
+        "1": "belowSafe",
+        "2": "safe",
+        "3": "aboveSafe",
+        "5": "failureAnalog"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8200.1.1.3",
+      "name": "npInputAnalogCurrent",
+      "description": "Current via RS_P, RS_N contacts of Current Loop Adapter, uA (microamperes)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npInputAnalogCurrent",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8200.1.1.4",
+      "name": "npInputAnalogVoltage",
+      "description": "Voltage on RS_P contact of Current Loop Adapter Vs Ground, mV",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npInputAnalogVoltage",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8200.1.1.5",
+      "name": "npInputAnalogResistance",
+      "description": "Resistance of the Current Loop, Ohm",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "npInputAnalogResistance",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8200.1.1.6",
+      "name": "npInputAnalogMemo",
+      "description": "Current Loop memo, what's connected",
+      "type": "string",
+      "walk": true,
+      "metricKey": "npInputAnalogMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8200.1.1.7",
+      "name": "npInputAnalogPower",
+      "description": "Controls power on Current Loop Adapter outputs +24V, +12V",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npInputAnalogPower",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8200.1.1.8",
+      "name": "npInputAnalogReset",
+      "description": "Write duration 1..25s to temporary switch off +12V, +24V outputs to reset sensor on the current loop by cycling it's power",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npInputAnalogReset",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8200.1.1.11",
+      "name": "npInputAnalogWorkRangeHigh",
+      "description": "Top marging of Working Range, uA or mV or Ohm. If monitored value is outide of Working Range, Analog Failure take place. If not specified, value is -32768",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npInputAnalogWorkRangeHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8200.1.1.12",
+      "name": "npInputAnalogSafeRangeHigh",
+      "description": "Top marging of Safe Range, uA or mV or Ohm. If not specified, value is -32768",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npInputAnalogSafeRangeHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8200.1.1.13",
+      "name": "npInputAnalogSafeRangeLow",
+      "description": "Bottom marging of Safe Range, uA or mV or Ohm. If not specified, value is -32768",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npInputAnalogSafeRangeLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8200.1.1.14",
+      "name": "npInputAnalogWorkRangeLow",
+      "description": "Bottom marging of Working Range, uA or mV or Ohm. If monitored value is outide of Working Range, Analog Failure take place. If not specified, value is -32768",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npInputAnalogWorkRangeLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8200.2.1.0",
+      "name": "npSmokeTrapSensorN",
+      "description": "The id of 1Wire Smoke sensor, 1 to 4",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npSmokeTrapSensorN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-PWR-OLD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8200.2.2.0",
+      "name": "npSmokeTrapStatus",
+      "description": "New status of Smoke sensor",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npSmokeTrapStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "ok",
+        "1": "alarm",
+        "4": "off",
+        "5": "failed"
+      },
+      "module": "DKSF-PWR-OLD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8200.2.6.0",
+      "name": "npSmokeTrapMemo",
+      "description": "Smoke sensor memo",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npSmokeTrapMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-PWR-OLD-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8300.1.1.1",
+      "name": "npCurLoopN",
+      "description": "Index of current loop, 1 to max supported",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npCurLoopN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8300.1.1.2",
+      "name": "npCurLoopStatus",
+      "description": "Status of the loop 0=Normal, 1=Alert, 2=Cut, 3=Short, 4=Not Powered",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npCurLoopStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "ok",
+        "1": "alert",
+        "2": "cut",
+        "3": "short",
+        "4": "notPowered"
+      },
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8300.1.1.3",
+      "name": "npCurLoopI",
+      "description": "Loop current, mA",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npCurLoopI",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8300.1.1.4",
+      "name": "npCurLoopV",
+      "description": "Voltage drop on the loop, mV",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npCurLoopV",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8300.1.1.5",
+      "name": "npCurLoopR",
+      "description": "Resistance of the loop, Ohm",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npCurLoopR",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8300.1.1.7",
+      "name": "npCurLoopPower",
+      "description": "Control of loop power 0=Off, 1=On, 2=reset by off/on power",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npCurLoopPower",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on",
+        "2": "cyclePower"
+      },
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8300.2.1.0",
+      "name": "npCurLoopTrapN",
+      "description": "Index of current loop, which status has changed",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npCurLoopTrapN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8300.2.2.0",
+      "name": "npCurLoopTrapStatus",
+      "description": "Status of the loop 0=Normal, 1=Alert, 2=Cut, 3=Short, 4=Not Powered",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npCurLoopTrapStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "ok",
+        "1": "alert",
+        "2": "cut",
+        "3": "short",
+        "4": "notPowered"
+      },
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8300.2.3.0",
+      "name": "npCurLoopTrapI",
+      "description": "Loop current, mA",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npCurLoopTrapI",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8300.2.4.0",
+      "name": "npCurLoopTrapV",
+      "description": "Voltage drop on the loop, mV",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npCurLoopTrapV",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8300.2.5.0",
+      "name": "npCurLoopTrapR",
+      "description": "Resistance of the loop, Ohm",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npCurLoopTrapR",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8300.2.7.0",
+      "name": "npCurLoopTrapPower",
+      "description": "Status of loop power 0=Off, 1=On",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npCurLoopTrapPower",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.1.1.1",
+      "name": "npRelHumN",
+      "description": "Index of Humidity+Temperature sensor, 1 to max supported",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npRelHumN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.1.1.2",
+      "name": "npRelHumValue",
+      "description": "Relative humidity value, %",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npRelHumValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.1.1.3",
+      "name": "npRelHumStatus",
+      "description": "Status of Relative Humiduty",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npRelHumStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "sensorFailed",
+        "1": "belowSafeRange",
+        "2": "inSafeRange",
+        "3": "aboveSafeRange"
+      },
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.1.1.4",
+      "name": "npRelHumTempValue",
+      "description": "Sensor temperature, deg.C",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npRelHumTempValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.1.1.5",
+      "name": "npRelHumTempStatus",
+      "description": "Status of Relative Humiduty",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npRelHumTempStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "sensorFailed",
+        "1": "belowSafeRange",
+        "2": "inSafeRange",
+        "3": "aboveSafeRange"
+      },
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.1.1.6",
+      "name": "npRelHumMemo",
+      "description": "Sensor Memo/Location",
+      "type": "string",
+      "walk": true,
+      "metricKey": "npRelHumMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.1.1.7",
+      "name": "npRelHumSafeRangeHigh",
+      "description": "Relative Humidity safe range, top margin, %RH",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npRelHumSafeRangeHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.1.1.8",
+      "name": "npRelHumSafeRangeLow",
+      "description": "Relative Humidity safe range, bottom margin, %RH",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npRelHumSafeRangeLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.1.1.9",
+      "name": "npRelHumTempSafeRangeHigh",
+      "description": "Temperature safe range, top margin, deg.C",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npRelHumTempSafeRangeHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.1.1.10",
+      "name": "npRelHumTempSafeRangeLow",
+      "description": "Temperature safe range, bottom margin, deg.C",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npRelHumTempSafeRangeLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.2.2.0",
+      "name": "npRelHumSensorValueH",
+      "description": "Relative humidity value, %",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npRelHumSensorValueH",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.2.3.0",
+      "name": "npRelHumSensorStatus",
+      "description": "Status of the Rel.Humidity Sensor One 0=Normal, 1=Error or Sensor isn't connected",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npRelHumSensorStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "ok",
+        "1": "error"
+      },
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.2.4.0",
+      "name": "npRelHumSensorValueT",
+      "description": "Sensor temperature, deg.C",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npRelHumSensorValueT",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.2.5.0",
+      "name": "npRelHumSensorStatusH",
+      "description": "Status of Relative Humiduty",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npRelHumSensorStatusH",
+      "transform": null,
+      "enumMap": {
+        "0": "sensorFailed",
+        "1": "belowSafeRange",
+        "2": "inNormRange",
+        "3": "aboveSafeRange"
+      },
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.2.7.0",
+      "name": "npRelHumSafeRangeHigh",
+      "description": "Relative Humidity safe range, top margin, %RH",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npRelHumSafeRangeHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.2.8.0",
+      "name": "npRelHumSafeRangeLow",
+      "description": "Relative Humidity safe range, bottom margin, %RH",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npRelHumSafeRangeLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.2.9.0",
+      "name": "npRelHumSensorValueT100",
+      "description": "Sensor temperature, deg.C * 100 (fixed point two decimal places) Used to get access to the fractional part of T value",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npRelHumSensorValueT100",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-60-4-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.3.1.0",
+      "name": "npRelHumTrapDataN",
+      "description": "Index of Humidity+Temperature sensor, 1 to max supported",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npRelHumTrapDataN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.3.2.0",
+      "name": "npRelHumTrapDataValue",
+      "description": "Sensor humidity, %RH, or temperature, deg.C",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npRelHumTrapDataValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.3.4.0",
+      "name": "npRelHumTrapDataStatus",
+      "description": "Status of humidity or temperature",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npRelHumTrapDataStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "sensorFailed",
+        "1": "belowSafeRange",
+        "2": "inSafeRange",
+        "3": "aboveSafeRange"
+      },
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.3.6.0",
+      "name": "npRelHumTrapDataMemo",
+      "description": "Sensor Memo/Location",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npRelHumTrapDataMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.3.7.0",
+      "name": "npRelHumTrapDataSafeRangeHigh",
+      "description": "Relative Humidity safe range, top margin, %RH or deg.C",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npRelHumTrapDataSafeRangeHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8400.3.8.0",
+      "name": "npRelHumTrapDataSafeRangeLow",
+      "description": "Relative Humidity safe range, bottom margin, %RH or deg.C",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npRelHumTrapDataSafeRangeLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8800.1.1.1",
+      "name": "npThermoSensorN",
+      "description": "The id of temperature sensor, 1 to 8",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npThermoSensorN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8800.1.1.2",
+      "name": "npThermoValue",
+      "description": "Temperature, deg.C",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npThermoValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8800.1.1.3",
+      "name": "npThermoStatus",
+      "description": "Temperature status (0=fault, 1=underheat, 2=normal, 3=overheat)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npThermoStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "failed",
+        "1": "low",
+        "2": "norm",
+        "3": "high"
+      },
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8800.1.1.4",
+      "name": "npThermoLow",
+      "description": "Bottom margin of normal temperature range, deg.C",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npThermoLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8800.1.1.5",
+      "name": "npThermoHigh",
+      "description": "Top margin of normal temperature range, deg.C",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npThermoHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8800.1.1.6",
+      "name": "npThermoMemo",
+      "description": "T channel memo",
+      "type": "string",
+      "walk": true,
+      "metricKey": "npThermoMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8800.1.1.7",
+      "name": "npThermoValuePrecise",
+      "description": "Temperature, deg.C, with fractional part 3 digits after point",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npThermoValuePrecise",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1",
+      "tc": "FixedPoint1000"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8800.2.1.0",
+      "name": "npThermoTrapSensorN",
+      "description": "The id of temperature sensor, 1 to 8",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npThermoTrapSensorN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8800.2.2.0",
+      "name": "npThermoTrapValue",
+      "description": "Temperature, deg.C",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npThermoTrapValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8800.2.3.0",
+      "name": "npThermoTrapStatus",
+      "description": "Temperature status (0=fault, 1=underheat, 2=normal, 3=overheat)",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npThermoTrapStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "failed",
+        "1": "low",
+        "2": "norm",
+        "3": "high"
+      },
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8800.2.4.0",
+      "name": "npThermoTrapLow",
+      "description": "Bottom margin of normal temperature range, deg.C",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npThermoTrapLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8800.2.5.0",
+      "name": "npThermoTrapHigh",
+      "description": "Top margin of normal temperature range, deg.C",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npThermoTrapHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8800.2.6.0",
+      "name": "npThermoTrapMemo",
+      "description": "T channel memo",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npThermoTrapMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-50-11-X-X-X",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8900.1.1.1",
+      "name": "npIoLineN",
+      "description": "Number of IO line, from 1 to max supported",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npIoLineN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8900.1.1.2",
+      "name": "npIoLevelIn",
+      "description": "Input level, 0 or 1",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npIoLevelIn",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8900.1.1.3",
+      "name": "npIoLevelOut",
+      "description": "Output level, 0 or 1. Write -1 to flip output.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npIoLevelOut",
+      "transform": null,
+      "enumMap": {
+        "0": "low",
+        "1": "high",
+        "-1": "flip"
+      },
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8900.1.1.6",
+      "name": "npIoMemo",
+      "description": "IO line memo",
+      "type": "string",
+      "walk": true,
+      "metricKey": "npIoMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8900.1.1.7",
+      "name": "npIoLevelLegend",
+      "description": "Legend for current logic level on the IO line",
+      "type": "string",
+      "walk": true,
+      "metricKey": "npIoLevelLegend",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8900.1.1.9",
+      "name": "npIoPulseCounter",
+      "description": "Pulse Counter (counts positive fronts) Write 0 to reset.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "npIoPulseCounter",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8900.1.1.12",
+      "name": "npIoSinglePulseDuration",
+      "description": "Set duration of single pulse on IO output line, 100ms to 25500ms, min. step is 100ms",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npIoSinglePulseDuration",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8900.1.1.13",
+      "name": "npIoSinglePulseStart",
+      "description": "Write 1 to start single pulse on IO output. Output will be inverted for time, specified by npIoSinglePulseDuration",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npIoSinglePulseStart",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8900.2.1.0",
+      "name": "npIoTrapLineN",
+      "description": "Trap data, Number of IO line",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npIoTrapLineN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8900.2.2.0",
+      "name": "npIoTrapLevelIn",
+      "description": "Trap data, new Input level, 0 or 1",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npIoTrapLevelIn",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8900.2.6.0",
+      "name": "npIoTrapMemo",
+      "description": "Trap data, IO line memo",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npIoTrapMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8900.2.7.0",
+      "name": "npIoTrapLevelLegend",
+      "description": "Legend for current logic level on the IO line",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npIoTrapLevelLegend",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-60-4-X-X-X",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8900.2.21.0",
+      "name": "npIoTrapLevelIn1",
+      "description": "Trap data, current Input level Line 1, value 0 or 1",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npIoTrapLevelIn1",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8900.2.22.0",
+      "name": "npIoTrapLevelIn2",
+      "description": "Trap data, current Input level Line 2, value 0 or 1",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npIoTrapLevelIn2",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8900.2.23.0",
+      "name": "npIoTrapLevelIn3",
+      "description": "Trap data, current Input level Line 3, value 0 or 1",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npIoTrapLevelIn3",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8900.2.24.0",
+      "name": "npIoTrapLevelIn4",
+      "description": "Trap data, current Input level Line 4, value 0 or 1",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npIoTrapLevelIn4",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8910.1.1.1",
+      "name": "npInLineN",
+      "description": "Number of the Input, from 1 to max supported",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npInLineN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8910.1.1.2",
+      "name": "npInLevelIn",
+      "description": "Input level, 0 or 1",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npInLevelIn",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8910.1.1.6",
+      "name": "npInMemo",
+      "description": "Input memo",
+      "type": "string",
+      "walk": true,
+      "metricKey": "npInMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8910.1.1.7",
+      "name": "npInLevelLegend",
+      "description": "Legend for current logic level on the Input",
+      "type": "string",
+      "walk": true,
+      "metricKey": "npInLevelLegend",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8910.1.1.9",
+      "name": "npInPulseCounter",
+      "description": "Pulse Counter on the Input (counts positive fronts) Write 0 to reset.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "npInPulseCounter",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8910.2.1.0",
+      "name": "npInTrapLineN",
+      "description": "Trap data, Number of the Input",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npInTrapLineN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8910.2.2.0",
+      "name": "npInTrapLevelIn",
+      "description": "Trap data, new Input level, 0 or 1",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npInTrapLevelIn",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8910.2.6.0",
+      "name": "npInTrapMemo",
+      "description": "Trap data, Input memo",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npInTrapMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8910.2.7.0",
+      "name": "npInTrapLevelLegend",
+      "description": "Trap data, Legend for current logic level on the Input",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npInTrapLevelLegend",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8920.1.1.1",
+      "name": "npOutLineN",
+      "description": "Number of the Output, from 1 to max supported",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npOutLineN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8920.1.1.3",
+      "name": "npOutLevelOut",
+      "description": "Output level, 0 or 1. Write -1 to flip output.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npOutLevelOut",
+      "transform": null,
+      "enumMap": {
+        "0": "low",
+        "1": "high",
+        "-1": "flip"
+      },
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8920.1.1.6",
+      "name": "npOutMemo",
+      "description": "Output line memo",
+      "type": "string",
+      "walk": true,
+      "metricKey": "npOutMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8920.1.1.7",
+      "name": "npOutLevelLegend",
+      "description": "Legend for current logic level on the Output",
+      "type": "string",
+      "walk": true,
+      "metricKey": "npOutLevelLegend",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8920.1.1.9",
+      "name": "npOutPulseCounter",
+      "description": "Pulse Counter on the Output line (counts positive fronts) Write 0 to reset.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "npOutPulseCounter",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8920.1.1.12",
+      "name": "npOutSinglePulseDuration",
+      "description": "Set duration of single pulse on the Output line, 100ms to 25500ms, min. step is 100ms",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npOutSinglePulseDuration",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8920.1.1.13",
+      "name": "npOutSinglePulseStart",
+      "description": "Write 1 to start single pulse on the Output. Output will be inverted for time, specified by npOutSinglePulseDuration",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npOutSinglePulseStart",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8920.2.1.0",
+      "name": "npOutTrapLineN",
+      "description": "Trap data, Number of the Output",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npOutTrapLineN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8920.2.2.0",
+      "name": "npOutTrapLevel",
+      "description": "Trap data, Output level, 0 or 1",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npOutTrapLevel",
+      "transform": null,
+      "enumMap": {
+        "0": "low",
+        "1": "high"
+      },
+      "module": "DKSF-57-1-X-X-1"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8920.2.6.0",
+      "name": "npOutTrapMemo",
+      "description": "Trap data, Output Memo",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npOutTrapMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.8920.2.7.0",
+      "name": "npOutTrapLevelLegend",
+      "description": "Trap data, Legend for current logic level on the Output",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npOutTrapLevelLegend",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-57-1-X-X-1",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.1.1.1",
+      "name": "npVoltageN",
+      "description": "The ID of Voltage Monitoring sensor, 1 to 3",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npVoltageN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.1.1.2",
+      "name": "npVoltageRMS",
+      "description": "Voltage value, V",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npVoltageRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.1.1.3",
+      "name": "npVoltageStatus",
+      "description": "Status of voltage",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npVoltageStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "sensorFailed",
+        "1": "noVoltage",
+        "2": "bad",
+        "3": "warn",
+        "4": "good"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.1.1.4",
+      "name": "npVoltageFreq",
+      "description": "Frequency value in units of .01 Hz",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npVoltageFreq",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.1.1.5",
+      "name": "npVoltageFreqStatus",
+      "description": "Status of frequency",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npVoltageFreqStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "sensorFailed",
+        "1": "noVoltage",
+        "2": "bad",
+        "3": "warn",
+        "4": "good"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.1.1.6",
+      "name": "npVoltageMemo",
+      "description": "Voltage Monitoring sensor memo",
+      "type": "string",
+      "walk": true,
+      "metricKey": "npVoltageMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.1.1.10",
+      "name": "npVoltageSagCounter",
+      "description": "Counter of voltage sags",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "npVoltageSagCounter",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.1.1.11",
+      "name": "npVoltageSagStatus",
+      "description": "Status of voltage sag",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npVoltageSagStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "sensorFailed",
+        "1": "noVoltage",
+        "2": "high",
+        "3": "medium",
+        "4": "small",
+        "5": "noSags"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.1.1.12",
+      "name": "npVoltageSagSmallThreshold",
+      "description": "The margin between No Sags and Small Sags, % of Nominal Voltage Usually 90%",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npVoltageSagSmallThreshold",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.1.1.13",
+      "name": "npVoltageSagMediumThreshold",
+      "description": "The margin between Small Sags and Medium Sags, % of Nominal Voltage Usually 70%",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npVoltageSagMediumThreshold",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.1.1.14",
+      "name": "npVoltageSagBigThreshold",
+      "description": "The margin between Medium Sags and Big Sags, % of Nominal Voltage Usually 50%",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npVoltageSagBigThreshold",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.1.1.20",
+      "name": "npVoltageStandard",
+      "description": "Nominal voltage, V",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npVoltageStandard",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.1.1.30",
+      "name": "npVoltagePeak",
+      "description": "Peak voltage, V",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npVoltagePeak",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.1.1.31",
+      "name": "npVoltagePeakStatus",
+      "description": "Status of peak voltage",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npVoltagePeakStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "sensorFailed",
+        "1": "noVoltage",
+        "2": "dangerous",
+        "3": "noPeaks"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.2.1.0",
+      "name": "npVoltageTrapN",
+      "description": "The ID of Voltage Monitoring sensor, 1 to 3",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npVoltageTrapN",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.2.2.0",
+      "name": "npVoltageTrapRMS",
+      "description": "Voltage value, V",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npVoltageTrapRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.2.3.0",
+      "name": "npVoltageTrapStatus",
+      "description": "Status of voltage",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npVoltageTrapStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "sensorFailed",
+        "1": "noVoltage",
+        "2": "bad",
+        "3": "warn",
+        "4": "good"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.2.4.0",
+      "name": "npVoltageTrapFreq",
+      "description": "Frequency value in units of .01 Hz",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npVoltageTrapFreq",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.2.5.0",
+      "name": "npVoltageTrapFreqStatus",
+      "description": "Status of frequency",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npVoltageTrapFreqStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "sensorFailed",
+        "1": "noVoltage",
+        "2": "bad",
+        "3": "warn",
+        "4": "good"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.2.6.0",
+      "name": "npVoltageTrapMemo",
+      "description": "Voltage Monitoring sensor memo",
+      "type": "string",
+      "walk": false,
+      "metricKey": "npVoltageTrapMemo",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.2.10.0",
+      "name": "npVoltageTrapSagCounter",
+      "description": "Counter of voltage sags",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "npVoltageTrapSagCounter",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.2.11.0",
+      "name": "npVoltageTrapSagStatus",
+      "description": "Status of voltage sag",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npVoltageTrapSagStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "sensorFailed",
+        "1": "noVoltage",
+        "2": "high",
+        "3": "medium",
+        "4": "small",
+        "5": "noSags"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.2.30.0",
+      "name": "npVoltageTrapPeak",
+      "description": "Peak voltage, V",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npVoltageTrapPeak",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9000.2.31.0",
+      "name": "npVoltageTrapPeakStatus",
+      "description": "Status of peak voltage",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "npVoltageTrapPeakStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "sensorFailed",
+        "1": "noVoltage",
+        "2": "dangerous",
+        "3": "noPeaks"
+      },
+      "module": "DKSF-70-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9700.1.1.1",
+      "name": "npElecIndex",
+      "description": "Number of elec.meter, associated with IO line",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npElecIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9700.1.1.2",
+      "name": "npElecPulsesPerKwh",
+      "description": "Pulses on IO line input per 1 kWh of consumed energy",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "npElecPulsesPerKwh",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9700.1.1.3",
+      "name": "npElecPower",
+      "description": "Power, Watts, based on pulse rate/interval, 5 minute average",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "npElecPower",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9700.1.1.4",
+      "name": "npElecEnergy",
+      "description": "Energy counter, kWh, based on pulse count",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "npElecEnergy",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25728.9700.1.1.5",
+      "name": "npElecEnergy100",
+      "description": "Energy counter, kWh*100, based on pulse count",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "npElecEnergy100",
+      "transform": null,
+      "enumMap": null,
+      "module": "DKSF-253-6-X-A-X"
+    }
+  ]
+}

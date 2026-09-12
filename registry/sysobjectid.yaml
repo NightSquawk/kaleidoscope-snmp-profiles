@@ -1,6 +1,7 @@
 # sysObjectID identity registry.
 #
-# One row per enterprise OID prefix. Longest octet-anchored prefix wins.
+# One row per OID prefix (enterprise roots, plus a few IETF subtrees for
+# dictionary compilation). Longest octet-anchored prefix wins.
 # Used by tools/compile to decide which dictionary a MIB belongs to, and by
 # Kaleidoscope's auto-match to pick vendor, category, and default parent
 # before it scans profile matchPatterns.
@@ -253,3 +254,192 @@ entries:
   - { oidPrefix: 1.3.6.1.4.1.367, vendor: Ricoh, deviceCategory: printer, defaultParent: generic-printer }
   - { oidPrefix: 1.3.6.1.4.1.236, vendor: Samsung, deviceCategory: printer, defaultParent: generic-printer }
   - { oidPrefix: 1.3.6.1.4.1.253, vendor: Xerox, deviceCategory: printer, defaultParent: generic-printer }
+
+  # ── Standards-track subtrees (batch 3, 2026-09-12) ─────────────────────
+  # No device ever reports a sysObjectID under these prefixes, so they never
+  # match identities; they exist so tools/compile emits dictionaries for the
+  # IETF MIBs that printers and UPSs are actually polled through.
+  - { oidPrefix: 1.3.6.1.2.1.43, vendor: IETF, deviceCategory: printer, defaultParent: generic-printer,
+      note: "Printer-MIB (RFC 3805): supplies, markers, covers, alerts. Answered by every network printer." }
+  - { oidPrefix: 1.3.6.1.2.1.33, vendor: IETF, deviceCategory: ups, defaultParent: generic-ups,
+      note: "UPS-MIB (RFC 1628): battery, input, output, bypass, alarms. Answered by most UPS network cards." }
+  - { oidPrefix: 1.3.6.1.2.1.25, vendor: IETF, deviceCategory: server, defaultParent: generic-server,
+      note: "HOST-RESOURCES-MIB (RFC 2790): storage, processors, hrPrinterStatus. Answered by hosts and printers." }
+
+  # ── UPS / DC power (batch 3) ────────────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.705, vendor: MGE, deviceCategory: ups, defaultParent: generic-ups,
+      note: "MGE UPS Systems, now Eaton (MG-SNMP-UPS-MIB)." }
+  - { oidPrefix: 1.3.6.1.4.1.2947, vendor: "Best Power", deviceCategory: ups, defaultParent: generic-ups,
+      note: "Best Power / Powerware legacy, now Eaton." }
+  - { oidPrefix: 1.3.6.1.4.1.1918, vendor: "Eaton DC Power", deviceCategory: ups, defaultParent: generic-ups,
+      note: "Swichtec / Invensys SC200 and SC300 DC power controllers, now Eaton." }
+  - { oidPrefix: 1.3.6.1.4.1.818, vendor: GE, deviceCategory: ups, defaultParent: generic-ups,
+      note: "GE Digital Energy UPS (GEPARALLELUPS-MIB)." }
+  - { oidPrefix: 1.3.6.1.4.1.6050, vendor: Gamatronic, deviceCategory: ups, defaultParent: generic-ups }
+  - { oidPrefix: 1.3.6.1.4.1.7309, vendor: Alpha, deviceCategory: ups, defaultParent: generic-ups,
+      note: "Alpha Technologies / Argus DC power and converters." }
+  - { oidPrefix: 1.3.6.1.4.1.12551, vendor: "CE+T Power", deviceCategory: ups, defaultParent: generic-ups }
+  - { oidPrefix: 1.3.6.1.4.1.63131, vendor: Inova, deviceCategory: ups, defaultParent: generic-ups }
+  - { oidPrefix: 1.3.6.1.4.1.13858, vendor: "Eltek Valere", deviceCategory: ups, defaultParent: generic-ups,
+      note: "BC2000 DC power controller. Distinct vendor label: Eltek 12148 already maps to ups." }
+  - { oidPrefix: 1.3.6.1.4.1.16460, vendor: "Eltek Energy", deviceCategory: ups, defaultParent: generic-ups,
+      note: "STS_SEQUENZ static transfer switch MIB shipped in Eltek's bundle." }
+  - { oidPrefix: 1.3.6.1.4.1.20246, vendor: "Delta Energy Systems", deviceCategory: ups, defaultParent: generic-ups,
+      note: "ORION DC power controller. Distinct vendor label: Delta 2254 already maps to ups." }
+  - { oidPrefix: 1.3.6.1.4.1.6302, vendor: "Emerson Energy Systems", deviceCategory: ups, defaultParent: generic-ups,
+      note: "EES DC power, now Vertiv. Distinct vendor label: Vertiv 476 already maps to ups." }
+  - { oidPrefix: 1.3.6.1.4.1.885, vendor: "Emerson ESNA", deviceCategory: ups, defaultParent: generic-ups,
+      note: "BDFB battery distribution fuse bays, now Vertiv." }
+  - { oidPrefix: 1.3.6.1.4.1.35154, vendor: PowerShield, deviceCategory: ups, defaultParent: generic-ups,
+      note: "Battery monitoring." }
+  - { oidPrefix: 1.3.6.1.4.1.18642, vendor: "CC Power", deviceCategory: ups, defaultParent: generic-ups }
+  - { oidPrefix: 1.3.6.1.4.1.21111, vendor: "Next UPS Systems", deviceCategory: ups, defaultParent: generic-ups }
+  - { oidPrefix: 1.3.6.1.4.1.41385, vendor: "Deep Sea Electronics", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Generator controllers." }
+  - { oidPrefix: 1.3.6.1.4.1.22978, vendor: Kohler, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Generator controllers." }
+  - { oidPrefix: 1.3.6.1.4.1.7777, vendor: ASCO, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Automatic transfer switches." }
+  - { oidPrefix: 1.3.6.1.4.1.28634, vendor: ComAp, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Generator controllers." }
+  - { oidPrefix: 1.3.6.1.4.1.33333, vendor: Morningstar, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Solar charge controllers." }
+  - { oidPrefix: 1.3.6.1.4.1.15116, vendor: DuraComm, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.32050, vendor: PacketFlux, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.45621, vendor: Tycon, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.49136, vendor: Algcom, deviceCategory: generic, defaultParent: generic-network-device }
+
+  # ── PDUs and rack power (batch 3; no pdu category yet, so generic) ─────
+  - { oidPrefix: 1.3.6.1.4.1.20677, vendor: "Eaton ePDU", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Pulizzi-era ePDU. Distinct vendor label: Eaton 534 already maps to ups." }
+  - { oidPrefix: 1.3.6.1.4.1.38446, vendor: Enlogic, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.42610, vendor: Powertek, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.17420, vendor: Digipower, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.38218, vendor: IPT, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.34097, vendor: Racktivity, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.4779, vendor: BayTech, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.44568, vendor: Schleifenbauer, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.31034, vendor: "Schleifenbauer Databus", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Older databus MIB; distinct label because 44568 is the current Schleifenbauer root." }
+  - { oidPrefix: 1.3.6.1.4.1.31770, vendor: Bachmann, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "BlueNet2 PDUs." }
+  - { oidPrefix: 1.3.6.1.4.1.21695, vendor: "Bachmann E3Meter", deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.55108, vendor: "Riedo Networks", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "UPDU, shipped in Bachmann's bundle." }
+  - { oidPrefix: 1.3.6.1.4.1.21728, vendor: Synaccess, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.29640, vendor: "AP Nederland", deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.28507, vendor: Gude, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.47952, vendor: NETIO, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.2468, vendor: Ingrasys, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "iPoMan PDUs." }
+  - { oidPrefix: 1.3.6.1.4.1.35774, vendor: "Universal Electric", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Starline busway meters." }
+  - { oidPrefix: 1.3.6.1.4.1.17373, vendor: ITWatchDogs, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Environmental monitors, now Vertiv/Geist; same root as EATON-GENESIS-II-MIB." }
+
+  # ── Environmental sensors and DCIM (batch 3) ────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.5528, vendor: NetBotz, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "APC NetBotz 3xx/4xx/5xx. Distinct vendor label: APC 318 already maps to ups." }
+  - { oidPrefix: 1.3.6.1.4.1.52674, vendor: "NetBotz v5", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "NetBotz 250/750 firmware 5.x (NetBotz50-MIB)." }
+  - { oidPrefix: 1.3.6.1.4.1.37954, vendor: Kentix, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.22626, vendor: Comet, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.20916, vendor: AVTECH, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Room Alert." }
+  - { oidPrefix: 1.3.6.1.4.1.3699, vendor: NTI, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "ENVIROMUX." }
+  - { oidPrefix: 1.3.6.1.4.1.38783, vendor: Teracom, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.25728, vendor: NetPing, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.17095, vendor: ServersCheck, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Same root used by tinycontrol LAN controllers and Tycon environmental units." }
+  - { oidPrefix: 1.3.6.1.4.1.46501, vendor: Didactum, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.16174, vendor: Sensatronics, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.39052, vendor: Vutlan, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.18248, vendor: Papouch, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.14848, vendor: MessPC, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.42814, vendor: Inveo, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.3444, vendor: egnite, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.27297, vendor: "Temperature@lert", deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.41542, vendor: Monnit, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.19011, vendor: Jacarta, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.2769, vendor: Knuerr, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Knürr RMS rack monitoring, now Vertiv." }
+  - { oidPrefix: 1.3.6.1.4.1.3184, vendor: RLE, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "RLE Technologies Falcon, shipped in Chatsworth's bundle." }
+  - { oidPrefix: 1.3.6.1.4.1.30932, vendor: Chatsworth, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.29414, vendor: "Opengate Data Systems", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Shipped in Geist's bundle." }
+  - { oidPrefix: 1.3.6.1.4.1.1909, vendor: Infratec, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.3052, vendor: Asentria, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "SiteBoss remote site monitoring." }
+  - { oidPrefix: 1.3.6.1.4.1.44086, vendor: ETA, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.37778, vendor: "Northern Design", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Power meters." }
+  - { oidPrefix: 1.3.6.1.4.1.53332, vendor: "LU-VE", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Cooling." }
+  - { oidPrefix: 1.3.6.1.4.1.46651, vendor: Dantherm, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Cooling." }
+  - { oidPrefix: 1.3.6.1.4.1.9839, vendor: Carel, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "HVAC / Rittal LCP controllers." }
+  - { oidPrefix: 1.3.6.1.4.1.4329, vendor: Siemens, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "SIMATIC automation systems." }
+  - { oidPrefix: 1.3.6.1.4.1.13576, vendor: WAGO, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.34278, vendor: Janitza, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Power meters." }
+  - { oidPrefix: 1.3.6.1.4.1.39604, vendor: Accuenergy, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Power meters." }
+  - { oidPrefix: 1.3.6.1.4.1.2682, vendor: "DPS Telecom", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "NetGuardian RTUs." }
+  - { oidPrefix: 1.3.6.1.4.1.4130, vendor: "GE MDS", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Industrial radios." }
+
+  # ── Industrial networking (batch 3) ─────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.15004, vendor: RUGGEDCOM, deviceCategory: switch, defaultParent: generic-switch,
+      note: "Siemens RUGGEDCOM." }
+  - { oidPrefix: 1.3.6.1.4.1.3181, vendor: MICROSENS, deviceCategory: switch, defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.24062, vendor: Korenix, deviceCategory: switch, defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.4346, vendor: "Phoenix Contact", deviceCategory: switch, defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.16177, vendor: Westermo, deviceCategory: switch, defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.2736, vendor: EtherWAN, deviceCategory: switch, defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.10297, vendor: Advantech, deviceCategory: switch, defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.1890, vendor: "Red Lion", deviceCategory: switch, defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.20540, vendor: Sixnet, deviceCategory: switch, defaultParent: generic-switch,
+      note: "Now Red Lion." }
+  - { oidPrefix: 1.3.6.1.4.1.42019, vendor: TFortis, deviceCategory: switch, defaultParent: generic-switch,
+      note: "Fort Telecom PoE switches for cameras." }
+  - { oidPrefix: 1.3.6.1.4.1.28097, vendor: ACKSYS, deviceCategory: access_point, defaultParent: generic-ap }
+  - { oidPrefix: 1.3.6.1.4.1.27662, vendor: Pepwave, deviceCategory: access_point, defaultParent: generic-ap,
+      note: "Peplink's wireless brand." }
+  - { oidPrefix: 1.3.6.1.4.1.52467, vendor: PEPXIM, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Peplink cellular modules." }
+  - { oidPrefix: 1.3.6.1.4.1.40083, vendor: Digi, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Accelerated cellular routers." }
+
+  # ── Cameras, intercoms, access control, clocks (batch 3) ───────────────
+  - { oidPrefix: 1.3.6.1.4.1.1004849, vendor: Dahua, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.50001, vendor: "Hikvision (legacy)", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Older HIKVISION-MIB root; 39165 is the current one." }
+  - { oidPrefix: 1.3.6.1.4.1.51159, vendor: Raysharp, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.6530, vendor: 2N, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "IP intercoms." }
+  - { oidPrefix: 1.3.6.1.4.1.37568, vendor: Commend, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "IP intercoms." }
+  - { oidPrefix: 1.3.6.1.4.1.56627, vendor: Sigur, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Access control." }
+  - { oidPrefix: 1.3.6.1.4.1.13842, vendor: Mobatime, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Moser-Baer network clocks." }
+  - { oidPrefix: 1.3.6.1.4.1.21317, vendor: ATEN, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "KVM and IPMI." }
+  - { oidPrefix: 1.3.6.1.4.1.10418, vendor: Avocent, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "ACS console servers, now Vertiv." }
+  - { oidPrefix: 1.3.6.1.4.1.2925, vendor: Cyclades, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Console servers, now Vertiv." }
+  - { oidPrefix: 1.3.6.1.4.1.13400, vendor: "Vertiv DCS", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Vertiv device MIB. Distinct vendor label: Vertiv 476 already maps to ups." }
+
+  # ── Host agents (batch 3) ───────────────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.2021, vendor: UCD-SNMP, deviceCategory: server, defaultParent: generic-server,
+      note: "Net-SNMP's legacy tree: load, memory, disks, LM-SENSORS." }
+  - { oidPrefix: 1.3.6.1.4.1.12325, vendor: FreeBSD, deviceCategory: server, defaultParent: generic-server,
+      note: "bsnmpd (Begemot)." }
+  - { oidPrefix: 1.3.6.1.4.1.30155, vendor: OpenBSD, deviceCategory: server, defaultParent: generic-server }

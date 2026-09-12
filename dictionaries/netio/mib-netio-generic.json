@@ -1,0 +1,220 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-netio-generic",
+  "name": "NETIO Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "NETIO",
+  "vendorOidPrefix": "1.3.6.1.4.1.47952",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 17 readable OIDs under 1.3.6.1.4.1.47952.",
+  "generated": {
+    "source": "mibs/netio",
+    "date": "2026-09-12",
+    "oidCount": 17,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "NETIO-PRODUCTS-NETIO-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.47952.1.1.1.1",
+      "name": "netioOutputID",
+      "description": "Output number.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "netioOutputID",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETIO-PRODUCTS-NETIO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.47952.1.1.1.2",
+      "name": "netioOutputName",
+      "description": "Description of the output given by user.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "netioOutputName",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETIO-PRODUCTS-NETIO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.47952.1.1.1.3",
+      "name": "netioOutputState",
+      "description": "Current output state.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "netioOutputState",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "NETIO-PRODUCTS-NETIO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.47952.1.1.1.4",
+      "name": "netioOutputStateString",
+      "description": "Current output state (string).",
+      "type": "string",
+      "walk": true,
+      "metricKey": "netioOutputStateString",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETIO-PRODUCTS-NETIO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.47952.1.1.1.5",
+      "name": "netioOutputAction",
+      "description": "Command to control output.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "netioOutputAction",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on",
+        "2": "reset",
+        "3": "shortOn",
+        "4": "switch",
+        "5": "idle"
+      },
+      "module": "NETIO-PRODUCTS-NETIO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.47952.1.1.1.25",
+      "name": "netioOutputLoad",
+      "description": "Current power consumption in Watts. 0 when power meters are not available",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "netioOutputLoad",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETIO-PRODUCTS-NETIO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.47952.1.1.1.26",
+      "name": "netioOutputEnergy",
+      "description": "Cumulated consumption from netioOutputEnergyStart. In Wh. 0 when power meters are not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "netioOutputEnergy",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETIO-PRODUCTS-NETIO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.47952.1.1.1.27",
+      "name": "netioOutputEnergyStart",
+      "description": "Start time from which energy is counted. UTC based. for backward compatibility only, is the same for all outputs. use netioGlobalMeasure.netioEnergyStart instead.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "netioOutputEnergyStart",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETIO-PRODUCTS-NETIO-MIB",
+      "tc": "DateAndTime"
+    },
+    {
+      "oid": "1.3.6.1.4.1.47952.1.1.1.28",
+      "name": "netioOutputCurrent",
+      "description": "Current current in mA. 0 when power meters are not available",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "netioOutputCurrent",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETIO-PRODUCTS-NETIO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.47952.1.1.1.29",
+      "name": "netioOutputPowerFactor",
+      "description": "Current power factor * 1000. 0 when power meters are not available",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "netioOutputPowerFactor",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETIO-PRODUCTS-NETIO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.47952.1.2.1.0",
+      "name": "netioVoltage",
+      "description": "Voltage in the power grid in mV. 0 when power meters are not available",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "netioVoltage",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETIO-PRODUCTS-NETIO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.47952.1.2.2.0",
+      "name": "netioFrequency",
+      "description": "Frequency in the power grid in mHz. 0 when power meters are not available",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "netioFrequency",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETIO-PRODUCTS-NETIO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.47952.1.2.3.0",
+      "name": "netioTotalCurrent",
+      "description": "Total current for all outputs in mA. 0 when power meters are not available",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "netioTotalCurrent",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETIO-PRODUCTS-NETIO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.47952.1.2.4.0",
+      "name": "netioOverallPowerFactor",
+      "description": "Overall power factor across all outputs. 0 when power meters are not available",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "netioOverallPowerFactor",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETIO-PRODUCTS-NETIO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.47952.1.2.5.0",
+      "name": "netioTotalLoad",
+      "description": "Total load for all outputs in W. 0 when power meters are not available",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "netioTotalLoad",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETIO-PRODUCTS-NETIO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.47952.1.2.6.0",
+      "name": "netioTotalEnergy",
+      "description": "Total energy for all outputs in Wh starting from netioEnergyStart. 0 when power meters are not available",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "netioTotalEnergy",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETIO-PRODUCTS-NETIO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.47952.1.2.7.0",
+      "name": "netioEnergyStart",
+      "description": "Start time from which energy is counted. UTC based.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "netioEnergyStart",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETIO-PRODUCTS-NETIO-MIB",
+      "tc": "DateAndTime"
+    }
+  ]
+}

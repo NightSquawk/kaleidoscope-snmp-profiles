@@ -1,0 +1,142 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-hikvision-legacy-generic",
+  "name": "Hikvision (legacy) Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "Hikvision (legacy)",
+  "vendorOidPrefix": "1.3.6.1.4.1.50001",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 11 readable OIDs under 1.3.6.1.4.1.50001.",
+  "generated": {
+    "source": "mibs/hikvision",
+    "date": "2026-09-12",
+    "oidCount": 11,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "HIKVISION-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.50001.1.1.0",
+      "name": "hikIp",
+      "description": "hikvision device valid ip address",
+      "type": "string",
+      "walk": false,
+      "metricKey": "hikIp",
+      "transform": null,
+      "enumMap": null,
+      "module": "HIKVISION-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.50001.1.2.0",
+      "name": "hikPort",
+      "description": "hikvision device valid manager port,default is 8000",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "hikPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "HIKVISION-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.50001.1.3.0",
+      "name": "hikEntityIndex",
+      "description": "hikvision device unique index, for DVR this is serial NO.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "hikEntityIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "HIKVISION-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.50001.1.105.0",
+      "name": "hikObjectID",
+      "description": "display hikvision product object ID, now dvr do not need this will return 0",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "hikObjectID",
+      "transform": null,
+      "enumMap": null,
+      "module": "HIKVISION-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.50001.1.106.0",
+      "name": "hikObjectName",
+      "description": "display hikvision product object Name, now dvr do not need this will return nothing",
+      "type": "string",
+      "walk": false,
+      "metricKey": "hikObjectName",
+      "transform": null,
+      "enumMap": null,
+      "module": "HIKVISION-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.50001.1.110.0",
+      "name": "hikTrapHostIp1",
+      "description": "display hikvision product 1st trap host ip address",
+      "type": "string",
+      "walk": false,
+      "metricKey": "hikTrapHostIp1",
+      "transform": null,
+      "enumMap": null,
+      "module": "HIKVISION-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.50001.1.200.0",
+      "name": "hikCPUNum",
+      "description": "the number of hikvision product's cpu",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "hikCPUNum",
+      "transform": null,
+      "enumMap": null,
+      "module": "HIKVISION-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.50001.1.201.0",
+      "name": "hikCPUFrequency",
+      "description": "the frequency of hikvision product's cpu, format like ��2000MHZ��",
+      "type": "string",
+      "walk": false,
+      "metricKey": "hikCPUFrequency",
+      "transform": null,
+      "enumMap": null,
+      "module": "HIKVISION-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.50001.1.220.0",
+      "name": "hikMemoryCapability",
+      "description": "the size of Memory",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "hikMemoryCapability",
+      "transform": null,
+      "enumMap": null,
+      "module": "HIKVISION-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.50001.1.221.0",
+      "name": "hikMemoryUsage",
+      "description": "the Usage of hikvision product's Memory, value scope is (0-100)",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "hikMemoryUsage",
+      "transform": null,
+      "enumMap": null,
+      "module": "HIKVISION-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.50001.1.240.0",
+      "name": "hikDiskNum",
+      "description": "the number of hikvision device local disks",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "hikDiskNum",
+      "transform": null,
+      "enumMap": null,
+      "module": "HIKVISION-MIB"
+    }
+  ]
+}

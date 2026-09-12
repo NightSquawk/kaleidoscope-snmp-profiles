@@ -1,0 +1,185 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-egnite-generic",
+  "name": "egnite Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "egnite",
+  "vendorOidPrefix": "1.3.6.1.4.1.3444",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 11 readable OIDs under 1.3.6.1.4.1.3444.",
+  "generated": {
+    "source": "mibs/egnite",
+    "date": "2026-09-12",
+    "oidCount": 11,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "EGNITEPHYSENSOR-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.3444.1.14.1.1.0",
+      "name": "querxPhySensorNumber",
+      "description": "The number of sensors present on this system.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "querxPhySensorNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "EGNITEPHYSENSOR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.3444.1.14.1.2.1.1",
+      "name": "querxPhySensorIndex",
+      "description": "A unique value, greater than zero, for each sensor.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "querxPhySensorIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EGNITEPHYSENSOR-MIB",
+      "tc": "QuerxSensorIndex"
+    },
+    {
+      "oid": "1.3.6.1.4.1.3444.1.14.1.2.1.2",
+      "name": "querxPhySensorType",
+      "description": "The type of data returned by the associated querxPhySensorValue object. This object SHOULD be set by the agent during entry creation, and the value SHOULD NOT change during operation.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "querxPhySensorType",
+      "transform": null,
+      "enumMap": {
+        "1": "other",
+        "2": "unknown",
+        "3": "voltsAC",
+        "4": "voltsDC",
+        "5": "amperes",
+        "6": "watts",
+        "7": "hertz",
+        "8": "celsius",
+        "9": "percentRH",
+        "10": "rpm",
+        "11": "cmm",
+        "12": "truthvalue"
+      },
+      "module": "EGNITEPHYSENSOR-MIB",
+      "tc": "QuerxSensorDataType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.3444.1.14.1.2.1.3",
+      "name": "querxPhySensorScale",
+      "description": "The exponent to apply to values returned by the associated querxPhySensorValue object.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "querxPhySensorScale",
+      "transform": null,
+      "enumMap": {
+        "1": "yocto",
+        "2": "zepto",
+        "3": "atto",
+        "4": "femto",
+        "5": "pico",
+        "6": "nano",
+        "7": "micro",
+        "8": "milli",
+        "9": "units",
+        "10": "kilo",
+        "11": "mega",
+        "12": "giga",
+        "13": "tera",
+        "14": "exa",
+        "15": "peta",
+        "16": "zetta",
+        "17": "yotta"
+      },
+      "module": "EGNITEPHYSENSOR-MIB",
+      "tc": "QuerxSensorDataScale"
+    },
+    {
+      "oid": "1.3.6.1.4.1.3444.1.14.1.2.1.4",
+      "name": "querxPhySensorPrecision",
+      "description": "The number of decimal places of precision in fixed-point sensor values returned by the associated querxPhySensorValue object. This object SHOULD be set to '0' when the associated querxPhySensorType...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "querxPhySensorPrecision",
+      "transform": null,
+      "enumMap": null,
+      "module": "EGNITEPHYSENSOR-MIB",
+      "tc": "QuerxSensorPrecision"
+    },
+    {
+      "oid": "1.3.6.1.4.1.3444.1.14.1.2.1.5",
+      "name": "querxPhySensorValue",
+      "description": "The most recent measurement obtained by the agent for this sensor. To correctly interpret the value of this object, the associated querxPhySensorType, querxPhySensorScale, and querxPhySensorPrecisi...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "querxPhySensorValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "EGNITEPHYSENSOR-MIB",
+      "tc": "QuerxSensorValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.3444.1.14.1.2.1.6",
+      "name": "querxPhySensorOperStatus",
+      "description": "The operational status of the sensor.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "querxPhySensorOperStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "ok",
+        "2": "unavailable",
+        "3": "nonoperational"
+      },
+      "module": "EGNITEPHYSENSOR-MIB",
+      "tc": "QuerxSensorStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.3444.1.14.1.2.1.7",
+      "name": "querxPhySensorUnitsDisplay",
+      "description": "A textual description of the data units that should be used in the display of querxPhySensorValue.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "querxPhySensorUnitsDisplay",
+      "transform": null,
+      "enumMap": null,
+      "module": "EGNITEPHYSENSOR-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.3444.1.14.1.2.1.8",
+      "name": "querxPhySensorValueTimeStamp",
+      "description": "The value of sysUpTime at the time the status and/or value of this sensor was last obtained by the agent.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "querxPhySensorValueTimeStamp",
+      "transform": null,
+      "enumMap": null,
+      "module": "EGNITEPHYSENSOR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.3444.1.14.1.2.1.9",
+      "name": "querxPhySensorValueUpdateRate",
+      "description": "An indication of the frequency that the agent updates the associated querxPhySensorValue object, representing in milliseconds. The value zero indicates: - the sensor value is updated on demand (e.g...",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "querxPhySensorValueUpdateRate",
+      "transform": null,
+      "enumMap": null,
+      "units": "milliseconds",
+      "module": "EGNITEPHYSENSOR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.3444.1.14.1.2.1.10",
+      "name": "querxPhySensorName",
+      "description": "The textual name of the physical sensor. If there is no local name, or if this object is otherwise not applicable, then this object contains a zero-length string.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "querxPhySensorName",
+      "transform": null,
+      "enumMap": null,
+      "module": "EGNITEPHYSENSOR-MIB"
+    }
+  ]
+}

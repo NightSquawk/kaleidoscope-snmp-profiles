@@ -1,0 +1,144 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-kohler-generic",
+  "name": "Kohler Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "Kohler",
+  "vendorOidPrefix": "1.3.6.1.4.1.22978",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 9 readable OIDs under 1.3.6.1.4.1.22978.",
+  "generated": {
+    "source": "mibs/kohler",
+    "date": "2026-09-12",
+    "oidCount": 9,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "KohlerGCon-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.22978.1.3.1.1.1.1",
+      "name": "gconType",
+      "description": "Generator controller type.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "gconType",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "KohlerGCon-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.22978.1.3.1.1.1.2",
+      "name": "gconAddr",
+      "description": "Generator controller address.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "gconAddr",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "KohlerGCon-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.22978.1.3.1.1.1.3",
+      "name": "gconStatus",
+      "description": "Generator controller comm status.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "gconStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "unknown",
+        "1": "good",
+        "2": "error"
+      },
+      "status": "mandatory",
+      "module": "KohlerGCon-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.22978.1.3.1.1.1.4",
+      "name": "gconRemoteCmd",
+      "description": "Generator controller remote start/stop.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "gconRemoteCmd",
+      "transform": null,
+      "enumMap": {
+        "0": "none",
+        "1": "start",
+        "2": "stop"
+      },
+      "status": "mandatory",
+      "module": "KohlerGCon-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.22978.1.3.1.2.1.1",
+      "name": "gconAlarmAddr",
+      "description": "Generator controller address.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "gconAlarmAddr",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "KohlerGCon-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.22978.1.3.1.2.1.2",
+      "name": "gconAlarmIdx",
+      "description": "Generator alarm index.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "gconAlarmIdx",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "KohlerGCon-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.22978.1.3.1.2.1.3",
+      "name": "gconAlarmCode",
+      "description": "Generator alarm code.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "gconAlarmCode",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "KohlerGCon-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.22978.1.3.1.2.1.4",
+      "name": "gconAlarmSeverity",
+      "description": "Generator controller alarm severity.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "gconAlarmSeverity",
+      "transform": null,
+      "enumMap": {
+        "1": "nfpaShutdown",
+        "2": "nfpaWarning",
+        "3": "nfpaAlarmStatus",
+        "4": "shutdown",
+        "5": "warning",
+        "6": "alarmStatus"
+      },
+      "status": "mandatory",
+      "module": "KohlerGCon-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.22978.1.3.1.2.1.5",
+      "name": "gconAlarmDescr",
+      "description": "Generator controller alarm description.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "gconAlarmDescr",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "KohlerGCon-MIB"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-2n-generic",
+  "name": "2N Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "2N",
+  "vendorOidPrefix": "1.3.6.1.4.1.6530",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 10 readable OIDs under 1.3.6.1.4.1.6530.",
+  "generated": {
+    "source": "mibs/2n",
+    "date": "2026-09-12",
+    "oidCount": 10,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "TEL2N-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.6530.11.1.0",
+      "name": "hipProductName",
+      "description": "Name of product",
+      "type": "string",
+      "walk": false,
+      "metricKey": "hipProductName",
+      "transform": null,
+      "enumMap": null,
+      "module": "TEL2N-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.6530.11.2.0",
+      "name": "hipHwVersion",
+      "description": "Hardware version",
+      "type": "string",
+      "walk": false,
+      "metricKey": "hipHwVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "TEL2N-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.6530.11.3.0",
+      "name": "hipSerial",
+      "description": "Unique serial number",
+      "type": "string",
+      "walk": false,
+      "metricKey": "hipSerial",
+      "transform": null,
+      "enumMap": null,
+      "module": "TEL2N-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.6530.11.4.0",
+      "name": "hipVersion",
+      "description": "Firmware version number",
+      "type": "string",
+      "walk": false,
+      "metricKey": "hipVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "TEL2N-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.6530.11.5.0",
+      "name": "hipBootVersion",
+      "description": "Bootloader version number",
+      "type": "string",
+      "walk": false,
+      "metricKey": "hipBootVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "TEL2N-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.6530.11.6.1.1",
+      "name": "hipIndex",
+      "description": "Identifier of SIP account",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "hipIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "TEL2N-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.6530.11.6.1.2",
+      "name": "hipPhoneNumber",
+      "description": "Registered phone number",
+      "type": "string",
+      "walk": true,
+      "metricKey": "hipPhoneNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "TEL2N-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.6530.11.6.1.3",
+      "name": "hipState",
+      "description": "Current state of account",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "hipState",
+      "transform": null,
+      "enumMap": {
+        "0": "down",
+        "1": "goingup",
+        "2": "up",
+        "3": "goingdown"
+      },
+      "module": "TEL2N-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.6530.11.6.1.4",
+      "name": "hipRegistrationAt",
+      "description": "Registrar IP address",
+      "type": "string",
+      "walk": true,
+      "metricKey": "hipRegistrationAt",
+      "transform": null,
+      "enumMap": null,
+      "module": "TEL2N-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.6530.11.6.1.5",
+      "name": "hipRegistrationTime",
+      "description": "Registration time",
+      "type": "timeticks",
+      "walk": true,
+      "metricKey": "hipRegistrationTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "TEL2N-MIB"
+    }
+  ]
+}

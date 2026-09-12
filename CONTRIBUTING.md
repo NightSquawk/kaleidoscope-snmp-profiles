@@ -16,7 +16,7 @@
 
 ## Adding to the identity registry
 
-`registry/sysobjectid.yaml` holds one row per enterprise OID prefix. Add a row when you know a prefix's vendor and category. Use `action: downgrade` with a `profileSlug` for devices that identify as one thing but answer as another (an external print server that claims to be a printer, for example).
+`registry/sysobjectid.yaml` holds one row per OID prefix: enterprise roots, plus a few IETF subtrees (Printer-MIB, UPS-MIB, HOST-RESOURCES-MIB) that exist only so the compiler emits dictionaries for them. Add a row when you know a prefix's vendor and category. Use `action: downgrade` with a `profileSlug` for devices that identify as one thing but answer as another (an external print server that claims to be a printer, for example).
 
 ## Adding raw MIBs
 

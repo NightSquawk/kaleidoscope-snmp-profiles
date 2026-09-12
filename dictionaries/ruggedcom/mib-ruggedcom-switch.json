@@ -1,0 +1,4545 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-ruggedcom-switch",
+  "name": "RUGGEDCOM Switch (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "switch",
+  "vendor": "RUGGEDCOM",
+  "vendorOidPrefix": "1.3.6.1.4.1.15004",
+  "description": "Auto-compiled with libsmi from 15 MIB module(s). 343 readable OIDs under 1.3.6.1.4.1.15004.",
+  "generated": {
+    "source": "mibs/siemens",
+    "date": "2026-09-12",
+    "oidCount": 343,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "RUGGEDCOM-AAA-SERVER-MIB",
+      "RUGGEDCOM-DIGITAL-INPUTS-MIB",
+      "RUGGEDCOM-DOT11-MIB",
+      "RUGGEDCOM-GPS-MIB",
+      "RUGGEDCOM-IP-MIB",
+      "RUGGEDCOM-IRIGB-MIB",
+      "RUGGEDCOM-NTP-MIB",
+      "RUGGEDCOM-POE-MIB",
+      "RUGGEDCOM-PTP1588-MIB",
+      "RUGGEDCOM-SERIAL-MIB",
+      "RUGGEDCOM-SFP-DDM-MIB",
+      "RUGGEDCOM-STP-MIB",
+      "RUGGEDCOM-SYS-INFO-MIB",
+      "RUGGEDCOM-TIMECONFIG-MIB",
+      "RUGGEDCOM-TRAPS-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.15004.4.1.1.19.4.0",
+      "name": "transferredFileName",
+      "description": "The name of transferred file.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "transferredFileName",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-TRAPS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.1.1.19.5.0",
+      "name": "transferredBytes",
+      "description": "Numaber of transferred bytes.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "transferredBytes",
+      "transform": null,
+      "enumMap": null,
+      "units": "bytes",
+      "module": "RUGGEDCOM-TRAPS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.1.1.0",
+      "name": "rcDeviceErrBootupError",
+      "description": "The error discovered during bootup process. If there was no error during device bootup, zero length string will be retreived.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDeviceErrBootupError",
+      "transform": null,
+      "enumMap": null,
+      "status": "obsolete",
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.1.2.0",
+      "name": "rcDeviceErrWatchdogReset",
+      "description": "Indicates whether the last device reboot was caused by wachdog.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceErrWatchdogReset",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "status": "obsolete",
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.1.3.0",
+      "name": "rcDeviceErrConfigurationFailure",
+      "description": "Indicates whether errors were detected while applying configuration settings from configuration file. Configuration is updated from the configureation file at bootup time when file is loaded from n...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceErrConfigurationFailure",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "status": "obsolete",
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.1.4.0",
+      "name": "rcDeviceErrCrashLogCreated",
+      "description": "Indicates whether the device error that caused creation of an entry in crashlog.txt file was detected. Whenever the value of this object changes from false(2) to true(1), the device will generate g...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceErrCrashLogCreated",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "status": "obsolete",
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.1.5.0",
+      "name": "rcDeviceErrStackOverflow",
+      "description": "Indicates whether the stack of any of the system tasks is used over the system threshold. Whenever the value of this object changes from false(2) to true(1), the device will generate genericTrap no...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceErrStackOverflow",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "status": "obsolete",
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.1.6.0",
+      "name": "rcDeviceErrHeapError",
+      "description": "Indicates whether the system memory corruption was detected. Whenever the value of this object changes from false(2) to true(1), the device will generate genericTrap notification.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceErrHeapError",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "status": "obsolete",
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.1.7.0",
+      "name": "rcDeviceErrDateAndTimeSetFailed",
+      "description": "Indicates whether the date and time setting in the device falied. Whenever the value of this object changes from false(2) to true(1), the device will generate genericTrap notification.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceErrDateAndTimeSetFailed",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "status": "obsolete",
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.1.8.0",
+      "name": "rcDeviceErrNtpServerUnreachable",
+      "description": "Indicates whether any of NTP servers (if required) can be reached. The value of this object is 'true' if both servers become unreachable. Whenever the value of this object changes, the device will ...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceErrNtpServerUnreachable",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.1.9.0",
+      "name": "rcDeviceErrBootPTftpTrFailed",
+      "description": "Indicates whether the the file was transfered properly after obtaining IP address from the BootP server. Whenever the value of this object changes from false(2) to true(1), the device will generate...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceErrBootPTftpTrFailed",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.1.10.0",
+      "name": "rcDeviceErrRadiusServerUnreachable",
+      "description": "Indicates whether the RADIUS server (if required) can be reached. Whenever the value of this object changes, the device will generate the radiusServiceAvailableChange notification.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceErrRadiusServerUnreachable",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.1.11.0",
+      "name": "rcDeviceErrTacacsServerUnreachable",
+      "description": "Indicates whether the TACACS+ server (if required) can be reached. Whenever the value of this object changes, the device will generate the tacacsServiceAvailableChange notification.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceErrTacacsServerUnreachable",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.2.1.0",
+      "name": "rcDeviceStsCpuUsage",
+      "description": "The percentage in tenths of percent of available CPU cycles used for device operation as measured over the last second when object was retreived.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceStsCpuUsage",
+      "transform": null,
+      "enumMap": null,
+      "units": "tenths of percent",
+      "module": "RUGGEDCOM-SYS-INFO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.2.2.0",
+      "name": "rcDeviceStsAvailableRam",
+      "description": "The total number of bytes of RAM still available in the system control CPU.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceStsAvailableRam",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SYS-INFO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.2.3.0",
+      "name": "rcDeviceStsTemperature",
+      "description": "The temperature measured in the device.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceStsTemperature",
+      "transform": null,
+      "enumMap": null,
+      "units": "Celsius degrees",
+      "module": "RUGGEDCOM-SYS-INFO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.2.4.0",
+      "name": "rcDeviceStsPowerSupply1",
+      "description": "Indicates the status of Power Supply Module 1. Whenever the value of this object changes from functional(2) to notFunctional(3), or from notFunctionl(3) to functional(2), the device will generate p...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceStsPowerSupply1",
+      "transform": null,
+      "enumMap": {
+        "1": "notPresent",
+        "2": "functional",
+        "3": "notFunctional",
+        "4": "notConnected"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "RcHardwareStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.2.5.0",
+      "name": "rcDeviceStsPowerSupply2",
+      "description": "Indicates the status of Power Supply Module 2. Whenever the value of this object changes from functional(2) to notFunctional(3), or from notFunctionl(3) to functional(2), the device will generate p...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceStsPowerSupply2",
+      "transform": null,
+      "enumMap": {
+        "1": "notPresent",
+        "2": "functional",
+        "3": "notFunctional",
+        "4": "notConnected"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "RcHardwareStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.2.6.0",
+      "name": "rcDeviceStsCpuUsagePercent",
+      "description": "The percentage of available CPU cycles used for device operation as measured over the last second when object was retreived.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceStsCpuUsagePercent",
+      "transform": null,
+      "enumMap": null,
+      "units": "percent",
+      "module": "RUGGEDCOM-SYS-INFO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.2.7.0",
+      "name": "rcDeviceStsFailSafeRelay",
+      "description": "Indicates status of fail safe relay in the device. Fail safe relay is deEnergized(2) if there is at least one active alarm recorded in the device.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceStsFailSafeRelay",
+      "transform": null,
+      "enumMap": {
+        "1": "energized",
+        "2": "deEnergized"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.2.8.0",
+      "name": "rcDeviceStsErrorAlarm",
+      "description": "Indicates that at least one alarm of level ERROR, ALERT or CRITICAL is active in the device.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceStsErrorAlarm",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.2.9.0",
+      "name": "rcDeviceStsNoOfActiveAlarms",
+      "description": "Number of active alarms currently recorded in device.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceStsNoOfActiveAlarms",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SYS-INFO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.2.10.0",
+      "name": "rcDeviceStsFanBank1",
+      "description": "Indicates the status of Fan Bank Module 1.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceStsFanBank1",
+      "transform": null,
+      "enumMap": {
+        "1": "notPresent",
+        "2": "failed",
+        "3": "standby",
+        "4": "off",
+        "5": "on"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "RcFanStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.2.11.0",
+      "name": "rcDeviceStsFanBank2",
+      "description": "Indicates the status of Fan Bank Module 2.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceStsFanBank2",
+      "transform": null,
+      "enumMap": {
+        "1": "notPresent",
+        "2": "failed",
+        "3": "standby",
+        "4": "off",
+        "5": "on"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "RcFanStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.2.12.0",
+      "name": "rcDeviceStsPwdsWeak",
+      "description": "Indicates if any of passwords is configured as 'weak'. Change in the value of the bit in this object from '0' to '1' will generate weakPasswordTrap.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDeviceStsPwdsWeak",
+      "transform": null,
+      "enumMap": {
+        "0": "adminPwd",
+        "1": "operPwd",
+        "2": "guestPwd"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.2.13.0",
+      "name": "rcDeviceStsKeysDflt",
+      "description": "Indicates if any of secure services uses default keys and/or certificates. Customer is advised to update keys for secure services if defaults are used. Change in the value of the bit in this object...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDeviceStsKeysDflt",
+      "transform": null,
+      "enumMap": {
+        "0": "sshDfltKeys",
+        "1": "sslDfltKeys"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.3.1.0",
+      "name": "rcDeviceInfoSerialNumber",
+      "description": "The manufacturing serial number of the device.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDeviceInfoSerialNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.3.2.0",
+      "name": "rcDeviceInfoBootSwVersion",
+      "description": "The version and the build date of the boot loader software.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDeviceInfoBootSwVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.3.3.0",
+      "name": "rcDeviceInfoMainSwVersion",
+      "description": "The version and the build date of the main operating system software.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDeviceInfoMainSwVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.3.4.0",
+      "name": "rcDeviceInfoMainBoardType",
+      "description": "The identification code of the device main board.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceInfoMainBoardType",
+      "transform": null,
+      "enumMap": {
+        "1": "rsMCPU2",
+        "2": "rs400revB2",
+        "3": "rmc30",
+        "4": "rs900revB1F",
+        "5": "rs900revB1noF",
+        "6": "rs1600M",
+        "7": "rs400revC1",
+        "8": "rsG2100",
+        "9": "rs900G",
+        "10": "rsG2200",
+        "11": "rs969",
+        "12": "rs900v2F",
+        "13": "rs900v2noF",
+        "15": "rs416",
+        "16": "rsRMC30Ksz80001",
+        "17": "rs930",
+        "18": "rs969v2",
+        "19": "rs910",
+        "20": "rs920",
+        "21": "rs940G",
+        "22": "rsi80x",
+        "23": "rsG2300",
+        "24": "rs416v2",
+        "25": "rsg2288",
+        "26": "rp110",
+        "27": "rs900GP",
+        "28": "rs900M",
+        "29": "rs950G",
+        "30": "rs900v3F",
+        "31": "rs900v3noF",
+        "32": "rsg2100v2",
+        "61": "rsG2488",
+        "62": "rsG2488v2",
+        "63": "rsG2488v3",
+        "64": "rmc8388A",
+        "65": "rmc8388B",
+        "66": "rmc8388C",
+        "67": "rsG920P",
+        "68": "rsl910",
+        "70": "rsg9xxc",
+        "71": "rsg9xxr",
+        "129": "rst2228",
+        "130": "rst916",
+        "255": "rsMCPU",
+        "256": "rx1000",
+        "257": "rx1100",
+        "258": "rx1500",
+        "259": "rx1501",
+        "260": "rx1510",
+        "261": "rx1511",
+        "262": "rx1512",
+        "263": "rx5000",
+        "264": "mx5000",
+        "265": "rx1400"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "RcMainBoard"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.3.5.0",
+      "name": "rcDeviceInfoTotalRam",
+      "description": "The total number of bytes of RAM in the system control CPU.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceInfoTotalRam",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SYS-INFO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.3.6.0",
+      "name": "rcDeviceInfoPendingBootSwVersion",
+      "description": "The version and the build date of the boot loader software that has been loaded to the device and is pending reboot. Whenever the value of this object changes from zero-length string to any string ...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDeviceInfoPendingBootSwVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.3.7.0",
+      "name": "rcDeviceInfoPendingMainSwVersion",
+      "description": "The version and the build date of the main operating system software that has been loaded to the device and is pending reboot. Whenever the value of this object changes from zero-length string to a...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDeviceInfoPendingMainSwVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.3.8.0",
+      "name": "rcDeviceInfoCfgRevision",
+      "description": "The configuration file revision. The revision number will be updated whenever file is saved to the flash memory. This number is recorded in config.csv at the time file is uploaded from the device. ...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceInfoCfgRevision",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SYS-INFO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.3.9.0",
+      "name": "rcDeviceInfoMinBootSwVer",
+      "description": "The minimum version of the boot loader software required by ROS device. If this version is not newer than the version retreived as a value of object rcDeviceInfoBootSwVersion, trap bootVersionMisma...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDeviceInfoMinBootSwVer",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.4.1.0",
+      "name": "rcDeviceCommReset",
+      "description": "Setting the value of this object to 'true(1)' will cause device to reboot. As a result of Read request the agent will return value 'false(2)'.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceCommReset",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.4.2.0",
+      "name": "rcDeviceCommLoadDefaultCfg",
+      "description": "Setting the value of this object to 'true(1)' will force device to load default configuration to all tables. As a result of Read request the agent will return value 'false(2)'.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceCommLoadDefaultCfg",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.4.3.0",
+      "name": "rcDeviceCommClearAlarms",
+      "description": "Setting the value of this object to 'true(1)' will cause device to clear all alarms. As a result of Read request the agent will return value 'false(2)'.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceCommClearAlarms",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.4.4.0",
+      "name": "rcDeviceCommClearSyslog",
+      "description": "Setting the value of this object to 'true(1)' will cause device to clear syslog.txt file. As a result of Read request the agent will return value 'false(2)'.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceCommClearSyslog",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.4.5.0",
+      "name": "rcDeviceCommClearLogs",
+      "description": "Setting the value of this object to 'true(1)' will cause device to clear syslog.txt and crashlog.txt files. As a result of Read request the agent will return value 'false(2)'.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceCommClearLogs",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-SYS-INFO-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.2.4.6.0",
+      "name": "rcDeviceCommIdentify",
+      "description": "Time Period in seconds for which the device should continue flashing the LEDs when possible so that device is visually recognized. Setting this value to any value greater than 0 will start LED flas...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDeviceCommIdentify",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SYS-INFO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.3.1.1.0",
+      "name": "rcIpConfigMgmtIpAddress",
+      "description": "The Management IP Address of the device.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcIpConfigMgmtIpAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-IP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.3.1.2.0",
+      "name": "rcIpConfigMgmtIpSubnet",
+      "description": "The subnet mask associated with the management IP address entry. The value of the mask is an IP address with all the network bits set to 1 and all the hosts bits set to 0.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcIpConfigMgmtIpSubnet",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-IP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.3.1.3.0",
+      "name": "rcIpConfigDefaultGateway",
+      "description": "The default IP Gateway for the device.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcIpConfigDefaultGateway",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-IP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.3.1.4.0",
+      "name": "rcIpConfigDfltMgmtIpAddress",
+      "description": "The Management IP Address of the device.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcIpConfigDfltMgmtIpAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-IP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.3.1.5.0",
+      "name": "rcIpConfigDfltMgmtIpSubnet",
+      "description": "The subnet mask associated with the management IP address entry. The value of the mask is an IP address with all the network bits set to 1 and all the hosts bits set to 0.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcIpConfigDfltMgmtIpSubnet",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-IP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.1.1.0",
+      "name": "rcDot11OpMode",
+      "description": "The Operational mode of wireless interface.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11OpMode",
+      "transform": null,
+      "enumMap": {
+        "1": "ap",
+        "2": "clientBridge",
+        "3": "clientIpBridge"
+      },
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.1.2.0",
+      "name": "rcDot11RFMAC",
+      "description": "The MAC address assigned to the wireless interface side to operate in WLAN. Wired interface side is actually WLAN port of the switch and it is represented as an interface entry of ifTable.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11RFMAC",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB",
+      "tc": "MacAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.1.3.0",
+      "name": "rcDot11IpAddress",
+      "description": "The IP Address assigned to the wireless interface. Note that wireless interface resides on a daughter card and is supported by separate IP stack.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11IpAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.1.4.0",
+      "name": "rcDot11IpSubnet",
+      "description": "The subnet mask associated with rcDot11SysIpAddress. The value of the mask is an IP address with all the network bits set to 1 and all the hosts bits set to 0. Note that wireless interface resides ...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11IpSubnet",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.1.5.0",
+      "name": "rcDot11DefaultGateway",
+      "description": "The default IP Gateway for the wireless interface. Note that wireless interface resides on a daughter card and is supported by separate IP stack.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11DefaultGateway",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.1.6.0",
+      "name": "rcDot11Status",
+      "description": "The current status of the wireless interface.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11Status",
+      "transform": null,
+      "enumMap": {
+        "1": "unknown",
+        "2": "booting",
+        "3": "running",
+        "4": "cmdProcessing",
+        "5": "softwareUpgrade"
+      },
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.1.7.0",
+      "name": "rcDot11UpTime",
+      "description": "The time since the daughter card was last re-initialized.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11UpTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.1.8.0",
+      "name": "rcDot11Version",
+      "description": "The version of the WLAN firmware residing on the wireless daughter card.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11Version",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.1.9.0",
+      "name": "rcDot11TftpServerIpAddress",
+      "description": "The IP address of the TFTP server where the WLAN firmware is located. Note that rcDot11IpAddress and rcDot11TftpServerIpAddress must be on the same IP subnet.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11TftpServerIpAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.1.10.0",
+      "name": "rcDot11SwUpgrade",
+      "description": "Setting the value of this object to 'true(1)' will start firmware upgrade procedure for the wireless daughter card. Note that this upgrade will take approximately 15 mintues to complete.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11SwUpgrade",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-DOT11-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.1.11.0",
+      "name": "rcDot11SwUpgradeStatus",
+      "description": "The Current status of the software upgrade process for the wireless daughter card.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11SwUpgradeStatus",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.1.12.0",
+      "name": "rcDot11WlanReset",
+      "description": "The software controlled WLAN interface reset functionality. Setting the value of this object to 'fullReset(2)' will reset to both, the RF and Ethernet interfaces of WLAN (duration is approx 70 seco...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11WlanReset",
+      "transform": null,
+      "enumMap": {
+        "1": "none",
+        "2": "fullReset",
+        "3": "quickReset"
+      },
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.2.1.0",
+      "name": "rcDot11NetworkPhyMode",
+      "description": "The wireless mode running on the wireless network. Setting the value of this object to 'auto(1)' will allow Access Point to select the wireless mode. Setting the value of this object to 'dot11b(2) ...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11NetworkPhyMode",
+      "transform": null,
+      "enumMap": {
+        "1": "auto",
+        "2": "dot11b",
+        "3": "dot11g"
+      },
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.2.2.0",
+      "name": "rcDot11NetworkDesiredSsid",
+      "description": "The Service Set ID (SSID). This value is a unique name which is used to identify the wireless network for an Access Point(AP).",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11NetworkDesiredSsid",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.2.3.0",
+      "name": "rcDot11NetworkPrimarySsid",
+      "description": "The Service Set ID (SSID). This value is a unique name which is used to identify the Primary Network for a ClientBridge or ClientIpBridge. Note that for wireless clients upto three networks are sup...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11NetworkPrimarySsid",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.2.4.0",
+      "name": "rcDot11NetworkSecondary1Ssid",
+      "description": "The Service Set ID (SSID). This value is a unique name which is used to identify the First secondary network (Secondary 1) for a ClientBridge or ClientIpBridge. Note that for wireless clients upto ...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11NetworkSecondary1Ssid",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.2.5.0",
+      "name": "rcDot11NetworkSecondary2Ssid",
+      "description": "The Service Set ID (SSID). This value is a unique name which is used to identify the Second Secondary network (Secondary 2) for a ClientBridge or ClientIpBridge. Note that for wireless clients upto...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11NetworkSecondary2Ssid",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.2.6.0",
+      "name": "rcDot11NetworkRfChannel",
+      "description": "RF communication channel for the wireless interface. All devices in the same Basic Service Set ID (BSSID) must be communicating on the same channel in order to function correctly. Settings this obj...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11NetworkRfChannel",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.2.7.0",
+      "name": "rcDot11NetworkSsidTxSuppress",
+      "description": "Setting the value of this object to 'true(1)' will suppress sending SSID information by Wireless Access Point(AP). Setting the value of this object to 'false(2)' will allow sending SSID information...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11NetworkSsidTxSuppress",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-DOT11-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.2.8.0",
+      "name": "rcDot11NetworkRfTxEnable",
+      "description": "Setting the value of this object to 'true(1)' enables the RF transmitter of wireless interface. Setting the value of this object to 'false(2)' disables the RF transmitter.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11NetworkRfTxEnable",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-DOT11-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.2.9.0",
+      "name": "rcDot11NetworkRate",
+      "description": "Data link rate (in Mbps) of the wireless interface. 'best(1)' - Choose the best data link rate for the interface. 'mbps1(2)' - 1 Mbps 'mbps2(3)' - 2 Mbps 'mbps11(4)' - 11 Mbps 'mbps12(5)' - 12 Mbps...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11NetworkRate",
+      "transform": null,
+      "enumMap": {
+        "1": "best",
+        "2": "mbps1",
+        "3": "mbps2",
+        "4": "mbps11",
+        "5": "mbps12",
+        "6": "mbps18",
+        "7": "mbps24",
+        "8": "mbps36",
+        "9": "mbps48",
+        "10": "mbps54"
+      },
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.2.10.0",
+      "name": "rcDot11NetworkTxPower",
+      "description": "Maximum RF transmission power of the wireless interface.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11NetworkTxPower",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.2.11.0",
+      "name": "rcDot11NetworkWdsEnable",
+      "description": "The Wireless Distribution System (WDS) support. WDS is simply a mechanism for constructing 802.11 frames using the 4-address format. Setting the value of this object to 'true(1)' enables WDS suppor...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11NetworkWdsEnable",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-DOT11-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.2.12.0",
+      "name": "rcDot11NetworkWmmEnable",
+      "description": "The Wireless Multimedia Support (WMM) is, actually QoS support for the wireless interface. Setting the value of this object to 'true(1)' enables the QoS support. Setting this value of this object t...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11NetworkWmmEnable",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-DOT11-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.2.13.0",
+      "name": "rcDot11NetworkTxShortPreamble",
+      "description": "Setting the value of this object to 'true(1)' allows sending short preamble block in the frames during wireless communication. Setting the value of this object to 'false(2)' lets the device communi...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11NetworkTxShortPreamble",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-DOT11-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.2.14.0",
+      "name": "rcDot11NetworkDistance",
+      "description": "The distance (in meters) between AP and the farthest station. It allows to optimize the wireless communication parameters, especially for running wireless links over long distances. Note that all W...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11NetworkDistance",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.2.15.0",
+      "name": "rcDot11NetworkAssociatedStations",
+      "description": "Number of connected station(s) in the wireless network.",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "rcDot11NetworkAssociatedStations",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.3.1.0",
+      "name": "rcDot11SecurityAuthMode",
+      "description": "Authentication mode to be used by the wireless interface in the network. 'none(1)' - No authentication. 'wep(2)' - WEP as an authentication algorithm 'dot1X(3)' - 802.1X based authentication with R...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11SecurityAuthMode",
+      "transform": null,
+      "enumMap": {
+        "1": "none",
+        "2": "wep",
+        "3": "dot1x",
+        "4": "wpa",
+        "5": "wpaPsk",
+        "6": "wpa2",
+        "7": "wpa2psk",
+        "8": "wpaAuto",
+        "9": "wpaAutoPsk"
+      },
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.3.2.0",
+      "name": "rcDot11SecurityEncrypType",
+      "description": "Encryption algorithm to be used, in conjunction with the rcDot11SecurityAuthMode object. Note that with rcDot11OpMode object value set to 'clientBridge(2)' only 'none(0)', 'wpaPsk(5)' and 'wpa2Psk(...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11SecurityEncrypType",
+      "transform": null,
+      "enumMap": {
+        "1": "auto",
+        "2": "wep",
+        "3": "tkip",
+        "4": "aes"
+      },
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.3.3.0",
+      "name": "rcDot11SecurityPassPhrase",
+      "description": "Security Pass Phrase to be used on the wireless network.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11SecurityPassPhrase",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.3.4.0",
+      "name": "rcDot11SecurityWepKey",
+      "description": "WEP key for the wireless network presented as an octet string containing ASCII presentation of hexadecimal digits. This key is applicaple only when rcDot11SecurityAuthMode object value is set to 'w...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11SecurityWepKey",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.3.5.0",
+      "name": "rcDot11SecurityKeyRenewal",
+      "description": "Time (in hundredths of second) within which group key for the wireless network should be changed.",
+      "type": "timeticks",
+      "walk": false,
+      "metricKey": "rcDot11SecurityKeyRenewal",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.3.6.0",
+      "name": "rcDot11SecurityRadiusIpAddress",
+      "description": "The IP Address of RADIUS server used by wireless interface for 802.1x based authentication.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11SecurityRadiusIpAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.3.7.0",
+      "name": "rcDot11SecurityRadiusPort",
+      "description": "The UDP port at which RADIUS server for the wireless interface is to be contacted.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11SecurityRadiusPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.3.8.0",
+      "name": "rcDot11SecurityRadiusSecret",
+      "description": "The secret shared with the RADIUS server for 802.1x based authentication.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11SecurityRadiusSecret",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.4.1.0",
+      "name": "rcDot11MacFilteringControl",
+      "description": "MAC filtering policy in place for WLAN. 'open(1)' - No MAC filtering is performed, any MAC address is allowed to connect from the network. 'allow(2)' - Only allow MACs specified in rcDot11MacFilter...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11MacFilteringControl",
+      "transform": null,
+      "enumMap": {
+        "1": "open",
+        "2": "allow",
+        "3": "deny"
+      },
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.4.2.1.2",
+      "name": "rcDot11RowStatus",
+      "description": "The status of this conceptual row. The syntax of this object represents restricted RowStatus functionality.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcDot11RowStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "4": "createAndGo",
+        "6": "delete"
+      },
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.5.1.0",
+      "name": "rcDot11DhcpServerEnable",
+      "description": "Setting the value of this object to 'true(1)' enables the DHCP server functionality on wireless daughter card. Setting the value of this object to 'false(2)' disables the DHCP server functionality ...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11DhcpServerEnable",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-DOT11-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.5.2.0",
+      "name": "rcDot11DhcpStartOfPool",
+      "description": "Beginning of IP address pool in the DHCP server.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11DhcpStartOfPool",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.5.3.0",
+      "name": "rcDot11DhcpIpPoolSize",
+      "description": "Size of IP address pool in the DHCP server.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDot11DhcpIpPoolSize",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.5.4.0",
+      "name": "rcDot11DhcpSubnet",
+      "description": "The subnet mask associated with the DHCP server. The value of the mask is an IP address with all the network bits set to 1 and all the hosts bits set to 0.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11DhcpSubnet",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.5.5.0",
+      "name": "rcDot11DhcpGateway",
+      "description": "The default gateway to be used by DHCP server.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11DhcpGateway",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.5.6.0",
+      "name": "rcDot11DhcpDnsIpAddress",
+      "description": "The IP address of DNS server in the DHCP server.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDot11DhcpDnsIpAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.5.7.0",
+      "name": "rcDot11DhcpLeaseTime",
+      "description": "Lease Time (in hundredths of second) to be used by DHCP server for the IpAddress assigned to other devices. Note that valid lease time varies between 6000 - 259200000.",
+      "type": "timeticks",
+      "walk": false,
+      "metricKey": "rcDot11DhcpLeaseTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.6.1.1.2",
+      "name": "rcDot11AssociationChannel",
+      "description": "The association channel in use for this wireless link.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "rcDot11AssociationChannel",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.6.1.1.3",
+      "name": "rcDot11AssociationRate",
+      "description": "The current data rate for this wireless link.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "rcDot11AssociationRate",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.6.1.1.4",
+      "name": "rcDot11AssociationRssi",
+      "description": "The RSSI(Received Signal Strength Indication) of the power present in a received RF signal for this wireless link.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "rcDot11AssociationRssi",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.6.1.1.5",
+      "name": "rcDot11AssociationTxSeq",
+      "description": "The Transmitter sequence number for associated station on this wireless link.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "rcDot11AssociationTxSeq",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.6.1.1.6",
+      "name": "rcDot11AssociationRxSeq",
+      "description": "The Receiver sequence number from the associated station on this wireless link.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "rcDot11AssociationRxSeq",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.4.6.1.1.7",
+      "name": "rcDot11AssociationSecurity",
+      "description": "The Security policy in place for this wireless link.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcDot11AssociationSecurity",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DOT11-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.5.1.1.0",
+      "name": "rcRstpDot1dStpTxHoldCount",
+      "description": "The value used by the Port Transmit state machine to limit the maximum transmission rate. Larger values allow the network to recover from failed links/bridges more quickly. The value of '0' means u...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcRstpDot1dStpTxHoldCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-STP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.5.1.2.0",
+      "name": "rcRstpDot1dStpForwardingPorts",
+      "description": "The subset of ports in dot1dStpPortTable that are in 'forwarding' state (the vlaue of the object dot1dStpPortState is 'forwarding').",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcRstpDot1dStpForwardingPorts",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-STP-MIB",
+      "tc": "PortList"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.5.1.3.0",
+      "name": "rcRstpDot1dStpBlockedPorts",
+      "description": "The subset of ports in dot1dStpPortTable that are in 'blocking' state (the vlaue of the object dot1dStpPortState is 'blocking').",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcRstpDot1dStpBlockedPorts",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-STP-MIB",
+      "tc": "PortList"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.5.1.4.0",
+      "name": "rcRstpDot1dStpBrokenPorts",
+      "description": "The subset of ports in dot1dStpPortTable that are in 'broken' state (the vlaue of the object dot1dStpPortState is 'broken').",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcRstpDot1dStpBrokenPorts",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-STP-MIB",
+      "tc": "PortList"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.5.1.5.0",
+      "name": "rcRstpDot1dRstpAlternatePorts",
+      "description": "The subset of ports with Alternate role.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcRstpDot1dRstpAlternatePorts",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-STP-MIB",
+      "tc": "PortList"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.5.1.6.0",
+      "name": "rcRstpDot1dRstpBackupPorts",
+      "description": "The subset of ports with Backup role.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcRstpDot1dRstpBackupPorts",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-STP-MIB",
+      "tc": "PortList"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.1.1.1.2",
+      "name": "rcSerialPortIfIndex",
+      "description": "The value of ifIndex for the port. This value is same as 'rs232PortIndex' which is the index used for 'rs232PortTable' in RS-232-MIB.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSerialPortIfIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "InterfaceIndex"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.1.1.1.3",
+      "name": "rcSerialProtocol",
+      "description": "A Serial Protocol supported on the Serial Port represented by this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSerialProtocol",
+      "transform": null,
+      "enumMap": {
+        "1": "noProtocol",
+        "2": "rawSock",
+        "3": "modbusServer",
+        "4": "modbusClient",
+        "5": "itcsWIN",
+        "6": "itcsTIN",
+        "7": "microlok",
+        "8": "dnp",
+        "9": "dnpRawSock",
+        "10": "mirrorBits",
+        "11": "preemptRawSock",
+        "12": "telnetComport"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "RcSerProtocol"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.1.1.1.4",
+      "name": "rcSerialPortType",
+      "description": "A Serial Port Type supported on the Serial Port represented by this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSerialPortType",
+      "transform": null,
+      "enumMap": {
+        "0": "none",
+        "1": "rs232",
+        "2": "rs485",
+        "3": "rs422",
+        "4": "tpc",
+        "5": "fiber"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "RcSerPortType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.1.1.1.5",
+      "name": "rcSerialForceHD",
+      "description": "Enables forcing half duplex mode of operation on the Serial Port. While sending data out of the serial port all received data are ignored. This mode of operation is available only on ports that ope...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSerialForceHD",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "3": "notApplicable"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.1.1.1.6",
+      "name": "rcSerialTurnAround",
+      "description": "The amount of delay between the transmission of individual messages out of the serial port. For 'rcSerialProtocol' object value modbusServer(3) this value must be non-zero. It represents delay betw...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSerialTurnAround",
+      "transform": null,
+      "enumMap": null,
+      "units": "milliseconds",
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.1.1.1.7",
+      "name": "rcSerialPostTxDelay",
+      "description": "The number of bits needed to generate required delay with configured baudrate('rs232PortOutSpeed') after the last bit of the packet was sent out before serial UART starts listening to the RX line ....",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSerialPostTxDelay",
+      "transform": null,
+      "enumMap": null,
+      "units": "bits",
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.1.1.1.8",
+      "name": "rcSerialHoldTime",
+      "description": "The maximum amount of time in ms that serial packet can be held in the queue before being sent to the serial line. Time is measured from the moment the packet is received from the IP layer.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSerialHoldTime",
+      "transform": null,
+      "enumMap": null,
+      "units": "milliseconds",
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.1.1.1.9",
+      "name": "rcSerialDscp",
+      "description": "The value of DS byte to be set in the IP header. DS byte setting is supported in the egress direction only.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSerialDscp",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.1.1.1.10",
+      "name": "rcSerialRxtoTxDelay",
+      "description": "The minimum amount of time in ms that the transmission of a new message should delay after the last message is received through the serial port. This parameter is useful, especially for the half du...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSerialRxtoTxDelay",
+      "transform": null,
+      "enumMap": null,
+      "units": "milliseconds",
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.2.1.1.2",
+      "name": "rcMbServerRespTimer",
+      "description": "The allowable time to wait for the RTU to start to respond.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcMbServerRespTimer",
+      "transform": null,
+      "enumMap": null,
+      "units": "milliseconds",
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.2.1.1.3",
+      "name": "rcMbServerAuxTcpPort",
+      "description": "The alternative TCP port number where a 'rcMbServerPort' may listen to incoming TCP conncetions. Note:TCP Modbus Server always listens on TCP port 502. So this parameter allows the RuggedCom serial...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcMbServerAuxTcpPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.2.1.1.4",
+      "name": "rcMbServerSendExcep",
+      "description": "Allows the RuggedCom Serial Devices to enable or disable sending TCP Modbus exception back to the master if response has not been received from the RTU within expected time.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcMbServerSendExcep",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "EnabledStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.2.1.1.5",
+      "name": "rcMbServerLinkStats",
+      "description": "Enables links statistics collection.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcMbServerLinkStats",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "EnabledStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.3.1.0",
+      "name": "rcMbClientIPPort",
+      "description": "A remote port number to which protocol connection manager sends TCP connection requests.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcMbClientIPPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.3.2.0",
+      "name": "rcMbClientFwdExcp",
+      "description": "Enables forwarding exception messages to the Master as exception codes 10 (no path) or 11 (no response). When the Master polls for an unconfigured RTU or the remote Modbus Server receives a poll fo...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcMbClientFwdExcp",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "EnabledStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.3.3.0",
+      "name": "rcMbClientLinkStats",
+      "description": "Enables link statistics collection.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcMbClientLinkStats",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "EnabledStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.3.4.0",
+      "name": "rcMbClientDscp",
+      "description": "The value of DS byte to be set in the IP header. DS byte setting is supported in the egress direction only.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcMbClientDscp",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.4.1.1.2",
+      "name": "rcRawSockPackChar",
+      "description": "The character that can be used to force forwarding of accumulated data to the network. If a packetization character is not configured - object is set to the value of '256', accumulated data will be...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcRawSockPackChar",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.4.1.1.3",
+      "name": "rcRawSockPackTimer",
+      "description": "The delay in ms from the last received character until when data is forwarded.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcRawSockPackTimer",
+      "transform": null,
+      "enumMap": null,
+      "units": "milliseconds",
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.4.1.1.4",
+      "name": "rcRawSockPackSize",
+      "description": "The maximum number of bytes received from serial port to be forwarded.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcRawSockPackSize",
+      "transform": null,
+      "enumMap": null,
+      "units": "bytes",
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.4.1.1.5",
+      "name": "rcRawSockFlowControl",
+      "description": "The type of FlowControl to be used on the port.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcRawSockFlowControl",
+      "transform": null,
+      "enumMap": {
+        "1": "none",
+        "2": "xonXoff"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "RcFlowControl"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.4.1.1.6",
+      "name": "rcRawSockTransport",
+      "description": "A transport protocol used for IP traffic for protocol on this port.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcRawSockTransport",
+      "transform": null,
+      "enumMap": {
+        "1": "udp",
+        "2": "tcp"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "RcTransport"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.4.1.1.7",
+      "name": "rcRawSockCallDir",
+      "description": "Defines following: - whether to accept an incoming connection 'in(0)' or - to place an outgoing connection 'out(1)' or - to place an outgoing connection and wait for incomming 'both(2)' Note: This ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcRawSockCallDir",
+      "transform": null,
+      "enumMap": {
+        "0": "in",
+        "1": "out",
+        "2": "both"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "RcCallDir"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.4.1.1.8",
+      "name": "rcRawSockMaxConn",
+      "description": "The maximum number of allowed incoming TCP connections.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcRawSockMaxConn",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.4.1.1.9",
+      "name": "rcRawSockLocPort",
+      "description": "The local IP port to listen to an incoming TCP connection or UDP datagrams.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcRawSockLocPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.4.1.1.10",
+      "name": "rcRawSockRemPort",
+      "description": "The remote IP port to use when placing an outgoing connection.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcRawSockRemPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.4.1.1.11",
+      "name": "rcRawSockIpAdd",
+      "description": "Defines the IpAddress based on the following: - For outgoing TCP connection (client) 'rcRawSockCallDir' is 'out(2)' this is the remote IP address to communicate with. - For incoming TCP connection ...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcRawSockIpAdd",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.4.1.1.12",
+      "name": "rcRawSockLinkStats",
+      "description": "Enables links statistics collection for RawSocket on this port.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcRawSockLinkStats",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "EnabledStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.5.1.1.2",
+      "name": "rcPreemptRSPackChar",
+      "description": "The character that can be used to force forwarding of accumulated data to the network. If a packetization character is not configured - object is set to the value of '256', accumulated data will be...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPreemptRSPackChar",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.5.1.1.3",
+      "name": "rcPreemptRSPackTimer",
+      "description": "The delay in milliseconds from the last received character until when data is forwarded.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPreemptRSPackTimer",
+      "transform": null,
+      "enumMap": null,
+      "units": "milliseconds",
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.5.1.1.4",
+      "name": "rcPreemptRSPackSize",
+      "description": "The Maximum number of bytes received from serial port to be packed in one IP packet.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPreemptRSPackSize",
+      "transform": null,
+      "enumMap": null,
+      "units": "bytes",
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.5.1.1.5",
+      "name": "rcPreemptRSFlowControl",
+      "description": "The type of FlowControl to be used on the port.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPreemptRSFlowControl",
+      "transform": null,
+      "enumMap": {
+        "1": "none",
+        "2": "xonXoff"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "RcFlowControl"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.5.1.1.6",
+      "name": "rcPreemptRSLocPort",
+      "description": "The local IP port to listen to an incoming TCP connection or UDP datagrams.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPreemptRSLocPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.5.1.1.7",
+      "name": "rcPreemptRSRemPort",
+      "description": "The remote TCP port to use when placing an outgoing connection.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPreemptRSRemPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.5.1.1.8",
+      "name": "rcPreemptRSIpAdd",
+      "description": "Defines the IpAddress based on the following: - For outgoing TCP connection (client) 'rcRawSockCallDir' is 'out(2)' this is the remote IP address to communicate with. - For incoming TCP connection ...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcPreemptRSIpAdd",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.5.1.1.9",
+      "name": "rcPreemptRSLinkStats",
+      "description": "Enables links statistics collection.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPreemptRSLinkStats",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "EnabledStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.5.1.1.10",
+      "name": "rcPreemptRSDynPackChar",
+      "description": "The character that can be used to force forwarding of accumulated data to the network for connection to dynamic master. If a packetization character is not configured, accumulated data will be forw...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPreemptRSDynPackChar",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.5.1.1.11",
+      "name": "rcPreemptRSDynPackTimer",
+      "description": "The delay in milliseconds from the last received character until when data is forwarded to the dynamic master.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPreemptRSDynPackTimer",
+      "transform": null,
+      "enumMap": null,
+      "units": "milliseconds",
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.5.1.1.12",
+      "name": "rcPreemptRSDynTimeout",
+      "description": "The time in seconds that is allowed to dynamic master to be idle before it's connection is closed. The protocol listens to the socket open to dymamic master, and if no data are received within this...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPreemptRSDynTimeout",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.6.1.0",
+      "name": "rcTinAndWinTinMode",
+      "description": "The TIN Protocol running mode",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcTinAndWinTinMode",
+      "transform": null,
+      "enumMap": {
+        "1": "tin1",
+        "2": "tin2"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.6.2.0",
+      "name": "rcTinAndWinTinTrans",
+      "description": "A transport protocol used for IP traffic for TIN protocol.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcTinAndWinTinTrans",
+      "transform": null,
+      "enumMap": {
+        "1": "udp",
+        "2": "tcp"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "RcTransport"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.6.3.0",
+      "name": "rcTinAndWinWinTrans",
+      "description": "A transport protocol used for IP traffic for WIN protocol.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcTinAndWinWinTrans",
+      "transform": null,
+      "enumMap": {
+        "1": "udp",
+        "2": "tcp"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "RcTransport"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.6.4.0",
+      "name": "rcTinAndWinTinIpPort",
+      "description": "A local port number on which TIN protocol listens to connections or UDP datagrams.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcTinAndWinTinIpPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.6.5.0",
+      "name": "rcTinAndWinWinIpPort",
+      "description": "A local port number on which WIN protocol listens to connections or UDP datagrams.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcTinAndWinWinIpPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.6.6.0",
+      "name": "rcTinAndWinMsgAgingTime",
+      "description": "Aging time for TIN mode2 messages. The feature is disabled if the value of this object is '0'. When the feature is enabled, any TIN mode2 message received will be stored in an internal table. So if...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcTinAndWinMsgAgingTime",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.6.7.0",
+      "name": "rcTinAndWinAddrAgingTime",
+      "description": "The time of communication inactivity in milliseconds after which a learned TIN address is removed from the dynamic device address table. Entries in Link Statistics Table with the aged address will ...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcTinAndWinAddrAgingTime",
+      "transform": null,
+      "enumMap": null,
+      "units": "milliseconds",
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.6.8.0",
+      "name": "rcTinAndWinBroadCastAddr",
+      "description": "The device address table in which addresses will be found for broadcast messages.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcTinAndWinBroadCastAddr",
+      "transform": null,
+      "enumMap": {
+        "1": "static",
+        "2": "dynamic",
+        "3": "staticAndDynamic"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.6.9.0",
+      "name": "rcTinAndWinUniAddr",
+      "description": "The device address table in which addresses will be found for unicast messages.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcTinAndWinUniAddr",
+      "transform": null,
+      "enumMap": {
+        "1": "static",
+        "2": "dynamic",
+        "3": "staticAndDynamic"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.6.10.0",
+      "name": "rcTinAndWinLinkStats",
+      "description": "Enables links statistics collection for TIN and WIN protocols.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcTinAndWinLinkStats",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "EnabledStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.6.11.0",
+      "name": "rcTinAndWinWinDscp",
+      "description": "The value of DS byte to be set in the IP header. DS byte setting is supported in the egress direction only.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcTinAndWinWinDscp",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.6.12.0",
+      "name": "rcTinAndWinTinDscp",
+      "description": "The value of DS byte to be set in the IP header. DS byte setting is supported in the egress direction only.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcTinAndWinTinDscp",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.7.1.0",
+      "name": "rcMicrolokTransport",
+      "description": "A transport protocol used for IP traffic for Microloc protocol.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcMicrolokTransport",
+      "transform": null,
+      "enumMap": {
+        "1": "udp",
+        "2": "tcp"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "RcTransport"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.7.2.0",
+      "name": "rcMicrolokIpPort",
+      "description": "A local port number on which Microloc protocol listens to connections or UDP datagrams.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcMicrolokIpPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.7.3.0",
+      "name": "rcMicrolokLinkStats",
+      "description": "Enables links statistics collection.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcMicrolokLinkStats",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "EnabledStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.7.4.0",
+      "name": "rcMicrolokDscp",
+      "description": "The value of DS byte to be set in the IP header. DS byte setting is supported in the egress direction only.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcMicrolokDscp",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.8.1.0",
+      "name": "rcDnpTransport",
+      "description": "A transport protocol used for IP traffic for DNP protocol.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDnpTransport",
+      "transform": null,
+      "enumMap": {
+        "1": "udp",
+        "2": "tcp"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "RcTransport"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.8.2.0",
+      "name": "rcDnpIpPort",
+      "description": "A local port number on which DNP protocol listens to connections or UDP datagrams.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDnpIpPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.8.3.0",
+      "name": "rcDnpLearning",
+      "description": "Enable or disable address learning. Learning can be disabled, or enabled on management IP interface, or enabled on the interface with specific IP address. If learning is enabled and remote address ...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDnpLearning",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.8.4.0",
+      "name": "rcDnpAgingTimer",
+      "description": "The time of communication inactivity after which a learned DNP address is removed from the device address table. Entries in Link Statistics Table with the aged address will be kept until statistics...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDnpAgingTimer",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.8.5.0",
+      "name": "rcDnpLinkStats",
+      "description": "Enables links statistics collection.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDnpLinkStats",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.8.6.0",
+      "name": "rcDnpDscp",
+      "description": "The value of DS byte to be set in the IP header. DS byte setting is supported in the egress direction only.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcDnpDscp",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.9.1.1.2",
+      "name": "rcDnpRsCalllDir",
+      "description": "Defines following: - whether to accept an incoming connection 'in(0)' or - to place an outgoing connection 'out(1)' or - to place an outgoing connection and wait for incomming 'both(2)' Note: This ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcDnpRsCalllDir",
+      "transform": null,
+      "enumMap": {
+        "0": "in",
+        "1": "out",
+        "2": "both"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "RcCallDir"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.9.1.1.3",
+      "name": "rcDnpRsTransport",
+      "description": "A transport protocol used for IP traffic for DNPRS on this port.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcDnpRsTransport",
+      "transform": null,
+      "enumMap": {
+        "1": "udp",
+        "2": "tcp"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "RcTransport"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.9.1.1.4",
+      "name": "rcDnpRsMaxConns",
+      "description": "The maximum number of allowed incoming TCP connections.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcDnpRsMaxConns",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.9.1.1.5",
+      "name": "rcDnpRsLocPort",
+      "description": "The local IP port to listen to an incoming TCP connection or UDP datagrams.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcDnpRsLocPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.9.1.1.6",
+      "name": "rcDnpRsRemPort",
+      "description": "The remote TCP port to use when placing an outgoing connection.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcDnpRsRemPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.9.1.1.7",
+      "name": "rcDnpRsIpAdd",
+      "description": "Defines the IpAddress based on the following: - For outgoing TCP connection (client) 'rcRawSockCallDir' is 'out(2)' this is the remote IP address to communicate with. - For incoming TCP connection ...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcDnpRsIpAdd",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.9.1.1.8",
+      "name": "rcDnpRsLinkStats",
+      "description": "Enables links statistics collection.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcDnpRsLinkStats",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "EnabledStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.10.1.1.2",
+      "name": "rcMirrBitsTransport",
+      "description": "A transport protocol used for IP traffic for MorroredBits on this port. This object is always set to the value of 'udp(2)'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcMirrBitsTransport",
+      "transform": null,
+      "enumMap": {
+        "1": "udp",
+        "2": "tcp"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "RcTransport"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.10.1.1.3",
+      "name": "rcMirrBitsLocPort",
+      "description": "The local IP port to listen to UDP datagrams.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcMirrBitsLocPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.10.1.1.4",
+      "name": "rcMirrBitsRemPort",
+      "description": "The Remote port to which protocol on this port can exchange UDP datagrams.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcMirrBitsRemPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.10.1.1.5",
+      "name": "rcMirrBitsIpAdd",
+      "description": "The IP Address of interface to listen to UDP datagrams.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcMirrBitsIpAdd",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.10.1.1.6",
+      "name": "rcMirrBitsLinkStats",
+      "description": "Enables links statistics collection.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcMirrBitsLinkStats",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "EnabledStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.11.1.1.2",
+      "name": "rcTelnetComportPackChar",
+      "description": "The character that can be used to force forwarding of accumulated data to the network. If a packetization character is not configured - object is set to the value of '256', accumulated data will be...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcTelnetComportPackChar",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.11.1.1.3",
+      "name": "rcTelnetComportPackTimer",
+      "description": "The delay from the last received character until when data is forwarded.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcTelnetComportPackTimer",
+      "transform": null,
+      "enumMap": null,
+      "units": "milliseconds",
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.11.1.1.4",
+      "name": "rcTelnetComportPackSize",
+      "description": "The maximum number of bytes received from serial port to be packed in one IP packet.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcTelnetComportPackSize",
+      "transform": null,
+      "enumMap": null,
+      "units": "bytes",
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.11.1.1.5",
+      "name": "rcTelnetComportFlowControl",
+      "description": "The type of FlowControl to be used on the port.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcTelnetComportFlowControl",
+      "transform": null,
+      "enumMap": {
+        "1": "none",
+        "2": "xonXoff"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "RcFlowControl"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.11.1.1.6",
+      "name": "rcTelnetComportCallDir",
+      "description": "Defines following: - whether to accept an incoming connection 'in(0)' or - to place an outgoing connection 'out(1)' or - to place an outgoing connection and wait for incomming 'both(2)'. This proto...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcTelnetComportCallDir",
+      "transform": null,
+      "enumMap": {
+        "0": "in",
+        "1": "out",
+        "2": "both"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "RcCallDir"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.11.1.1.7",
+      "name": "rcTelnetComportLocPort",
+      "description": "The local IP port to listen to an incoming TCP connection.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcTelnetComportLocPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.11.1.1.8",
+      "name": "rcTelnetComportRemPort",
+      "description": "The remote TCP port to use when placing an outgoing connection.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcTelnetComportRemPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.11.1.1.9",
+      "name": "rcTelnetComportIpAdd",
+      "description": "Defines the IpAddress based on the following: - For outgoing TCP connection (client) 'rcRawSockCallDir' is 'out(2)' this is the remote IP address to communicate with. - For incoming TCP connection ...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcTelnetComportIpAdd",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.11.1.1.10",
+      "name": "rcTelnetComportLinkStats",
+      "description": "Enables links statistics collection.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcTelnetComportLinkStats",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "EnabledStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.15.1.1.4",
+      "name": "rcConnStatsRxPkts",
+      "description": "The number of received packets.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcConnStatsRxPkts",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.15.1.1.5",
+      "name": "rcConnStatsTxPkts",
+      "description": "The number of transmitted packets.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcConnStatsTxPkts",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.16.1.0",
+      "name": "rcSerDeviceCmndResetPort",
+      "description": "The list of ports for which Reset should be performed on the RuggedCom Serial devices. A read attempt for this object always returns an empty list of ports.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcSerDeviceCmndResetPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "PortList"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.6.16.2.0",
+      "name": "rcSerDeviceCmndClearStats",
+      "description": "The list of ports for which Clearing statistics command should be performed on the RuggedCom Serial devices. A read attempt for this object always returns an empty list of ports.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcSerDeviceCmndClearStats",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SERIAL-MIB",
+      "tc": "PortList"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.7.1.1.0",
+      "name": "rcPoeCapacity",
+      "description": "The maximum total output power that can be provided by PoE ports. If the value of this object is set to '0', that means that capacity is 'unlimited'. When total power consumption reaches this limit...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPoeCapacity",
+      "transform": null,
+      "enumMap": null,
+      "units": "W",
+      "module": "RUGGEDCOM-POE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.7.1.2.0",
+      "name": "rcPoeMinimumVoltage",
+      "description": "The minimum required voltage to be provided by PoE ports. The minimum required voltage for PoE ports. When PoE voltage droppes below this threshold, low priority PoE ports will be shutdown.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPoeMinimumVoltage",
+      "transform": null,
+      "enumMap": null,
+      "units": "V",
+      "module": "RUGGEDCOM-POE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.7.1.3.0",
+      "name": "rcPoeReenableTime",
+      "description": "The time to wait to turn on low priority PoE ports again after they were shutdown due to overload condition.",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "rcPoeReenableTime",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "RUGGEDCOM-POE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.7.1.4.0",
+      "name": "rcPoeConsumption",
+      "description": "Current total power consumption by all PoE devices.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPoeConsumption",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "RUGGEDCOM-POE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.7.1.5.0",
+      "name": "rcPoeOverheatStatus",
+      "description": "The value of this object will be set to 'true(1) if PoE is overheated. Whenever the value of this object changes from false(2) to true(1), the device will generate rcPoeOverheat notification.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPoeOverheatStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-POE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.7.1.6.0",
+      "name": "rcPoeOverloadStatus",
+      "description": "The value of this object will be set to 'true(1) if PoE is overloaded. Whenever the value of this object changes from false(2) to true(1), the device will generate rcPoeOverload notification.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPoeOverloadStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-POE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.7.1.7.0",
+      "name": "rcPoeUndervoltageStatus",
+      "description": "The value of this object will be set to 'true(1) if PoE is undervoltage. Whenever the value of this object changes from false(2) to true(1), the device will generate rcPoeUndervoltage notification.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPoeUndervoltageStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-POE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.7.2.1.1.2",
+      "name": "rcPoePortAdmin",
+      "description": "The PoE port for which this entry contains information. The value is limitted by number of ports in the device.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPoePortAdmin",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-POE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.7.2.1.1.3",
+      "name": "rcPoePortPriority",
+      "description": "The priority of the port. Low priority ports will be shut down first if the power supply is overloaded.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPoePortPriority",
+      "transform": null,
+      "enumMap": {
+        "1": "normal",
+        "2": "low"
+      },
+      "module": "RUGGEDCOM-POE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.7.2.1.1.4",
+      "name": "rcPoePortPowered",
+      "description": "Whether or not power is currently supplied by the port.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPoePortPowered",
+      "transform": null,
+      "enumMap": {
+        "1": "powerOn",
+        "2": "powerOff",
+        "3": "twoPairsOn",
+        "4": "fourPairsOn"
+      },
+      "module": "RUGGEDCOM-POE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.7.2.1.1.5",
+      "name": "rcPoePortClass",
+      "description": "PoE Class value that defines the power level.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPoePortClass",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-POE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.7.2.1.1.6",
+      "name": "rcPoePortVoltage",
+      "description": "PoE Class value that defines the power level.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPoePortVoltage",
+      "transform": null,
+      "enumMap": null,
+      "units": "V",
+      "module": "RUGGEDCOM-POE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.7.2.1.1.7",
+      "name": "rcPoePortCurrent",
+      "description": "PoE Class value that defines the power level.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPoePortCurrent",
+      "transform": null,
+      "enumMap": null,
+      "units": "mA",
+      "module": "RUGGEDCOM-POE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.8.1.1.1.2",
+      "name": "rcDiAlarm",
+      "description": "Enable or disable alarm for this sigital input.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcDiAlarm",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "RUGGEDCOM-DIGITAL-INPUTS-MIB",
+      "tc": "EnabledStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.8.1.1.1.3",
+      "name": "rcDiActiveState",
+      "description": "A state that would activate alarm for this digital input.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcDiActiveState",
+      "transform": null,
+      "enumMap": {
+        "1": "low",
+        "2": "high"
+      },
+      "module": "RUGGEDCOM-DIGITAL-INPUTS-MIB",
+      "tc": "RcLowOrHigh"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.8.1.1.1.4",
+      "name": "rcDiDelayOn",
+      "description": "A time for which the input must be active before the alarm is activated.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcDiDelayOn",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DIGITAL-INPUTS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.8.1.1.1.5",
+      "name": "rcDiDelayOff",
+      "description": "A time for which the input must be inactive before the alarm is deactivated.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcDiDelayOff",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DIGITAL-INPUTS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.8.1.1.1.6",
+      "name": "rcDiDescription",
+      "description": "Current digital input state read from hardware.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcDiDescription",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-DIGITAL-INPUTS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.8.1.1.1.7",
+      "name": "rcDiInputState",
+      "description": "Current digital input state read from hardware.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcDiInputState",
+      "transform": null,
+      "enumMap": {
+        "1": "low",
+        "2": "high"
+      },
+      "module": "RUGGEDCOM-DIGITAL-INPUTS-MIB",
+      "tc": "RcLowOrHigh"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.8.1.1.1.8",
+      "name": "rcDiAlarmStatus",
+      "description": "Current alarm status for this digital input. Change of the value of this object will result in sending notification (trap) digitalInputTrap.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcDiAlarmStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "inactive"
+      },
+      "module": "RUGGEDCOM-DIGITAL-INPUTS-MIB",
+      "tc": "RcActiveOrInactive"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.9.1.1.0",
+      "name": "rcGpsStatus",
+      "description": "The system synchronization status when GPS is a primary time source. If value of this object is changed, rcGpsStatusChange notification will be generated.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcGpsStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "notPresent",
+        "2": "disabled",
+        "3": "locked",
+        "4": "searching",
+        "5": "aquiring",
+        "6": "holdover",
+        "7": "parity",
+        "8": "decoder",
+        "9": "shortckt",
+        "10": "cfgfailure"
+      },
+      "module": "RUGGEDCOM-GPS-MIB",
+      "tc": "RcTimeSyncStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.9.1.2.0",
+      "name": "rcGpsLocInt",
+      "description": "To set time interval in minute with in which GPS receiver should acquire lock to the time source. Normally GPS receiver needs couple of minutes to lock the signal. User should set reasonable time i...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcGpsLocInt",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-GPS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.9.1.3.0",
+      "name": "rcGpsCableCompensate",
+      "description": "Cable compensation in ns may be desired to compensate for a long cable run in order to minimize the timing inaccuracy.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcGpsCableCompensate",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-GPS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.9.1.4.0",
+      "name": "rcGpsAntPower",
+      "description": "GPS receiver requires an active antenna. An active antenna includes preamplifier that filters and amplifies the GPS signals before delivery to the receiver. This option allows user to activate or d...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcGpsAntPower",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-GPS-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.9.1.5.0",
+      "name": "rcSatelliteInView",
+      "description": "The Number of Satellites shows how many satellites are currently being tracked by the GPS module.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcSatelliteInView",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-GPS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.9.1.6.0",
+      "name": "rcGpsLatitude",
+      "description": "GPS Latitude",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcGpsLatitude",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-GPS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.9.1.7.0",
+      "name": "rcGpsLongtitude",
+      "description": "GPS Longtitude",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcGpsLongtitude",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-GPS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.9.1.8.0",
+      "name": "rcOFM",
+      "description": "The current time offset between system and reference clocks",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcOFM",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-GPS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.9.1.9.0",
+      "name": "rcFreqAdj",
+      "description": "The current amount of discipline applied to the local frequency reference (TCXO).",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcFreqAdj",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-GPS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.1.0",
+      "name": "rcIrigbStatus",
+      "description": "The system synchronization status when IRIGB is a primary time source. If value of this object is changed, rcIrigbStatusChange notification will be sent.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcIrigbStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "notPresent",
+        "2": "disabled",
+        "3": "locked",
+        "4": "searching",
+        "5": "aquiring",
+        "6": "holdover",
+        "7": "parity",
+        "8": "decoder",
+        "9": "shortckt",
+        "10": "cfgfailure"
+      },
+      "module": "RUGGEDCOM-IRIGB-MIB",
+      "tc": "RcTimeSyncStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.2.0",
+      "name": "rcIrigbAMOutput",
+      "description": "Selects AM (Amplitude Modulation) mode of IRIGB port.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcIrigbAMOutput",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "4": "am"
+      },
+      "module": "RUGGEDCOM-IRIGB-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.3.0",
+      "name": "rcIrigbTimeCode",
+      "description": "This device uses the following convention to decode the IRIGB time code: letter [B] represents IRIG-B format, [xx] represents [00] for PWM/TTL mode of operation and [12] for AM operation. For examp...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcIrigbTimeCode",
+      "transform": null,
+      "enumMap": {
+        "1": "bxx0",
+        "2": "bxx1",
+        "3": "bxx2",
+        "4": "bxx3",
+        "5": "bxx4",
+        "6": "bxx5",
+        "7": "bxx6",
+        "8": "bxx7"
+      },
+      "module": "RUGGEDCOM-IRIGB-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.4.0",
+      "name": "rcIrigbExt",
+      "description": "IRIGB extensions use extra bits of the Control Functions (CF) portion of the IRIGB time code. Within this portion of the time code, bits are designated for additional features, including: Calendar ...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcIrigbExt",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "ieee1344",
+        "3": "c37-118-2005",
+        "4": "c37-118-2011"
+      },
+      "module": "RUGGEDCOM-IRIGB-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.5.0",
+      "name": "rcIrigbInput",
+      "description": "Selects operational mode of IRIGB input port. IRIGB module is capable of interpreting IRIGB extensions such as C37.118-2011, C37.118-2005 and IEEE1344.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcIrigbInput",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "pwm",
+        "3": "pps",
+        "4": "am"
+      },
+      "module": "RUGGEDCOM-IRIGB-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.6.0",
+      "name": "rcIrigbLockInt",
+      "description": "To set time interval in minute with in which IRIGB receiver should acquire lock to the time source. Normally IRIGB receiver needs couple of minutes to lock the signal. User should set reasonable ti...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcIrigbLockInt",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-IRIGB-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.7.0",
+      "name": "rcIrigbCableComp",
+      "description": "Cable compensation in ns may be desired to compensate for a long cable run in order to minimize the timing inaccuracy.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcIrigbCableComp",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-IRIGB-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.8.0",
+      "name": "rcIrigbOFM",
+      "description": "The current time offset between system and reference clocks.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcIrigbOFM",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-IRIGB-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.9.0",
+      "name": "rcIrigbFreqAdj",
+      "description": "The current amount of discipline applied to the local frequency reference (TCXO).",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcIrigbFreqAdj",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-IRIGB-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.10.0",
+      "name": "rcIrigbOutputPWM1",
+      "description": "Selects Operational mode of TTL output port. PWM mode complies with IRIG Standard 200-04. PPx provides generic pulse per x second interface to synchronize external devices.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcIrigbOutputPWM1",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "pwm",
+        "3": "pps",
+        "5": "ppx"
+      },
+      "module": "RUGGEDCOM-IRIGB-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.11.0",
+      "name": "rcIrigbPulseInterval1",
+      "description": "Selects Pulse Interval in s for TTL output port. This parameter is used in conjunction with PPx in order to provides generic pulse per x second interface to synchronize external devices.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcIrigbPulseInterval1",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-IRIGB-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.12.0",
+      "name": "rcIrigbPulseWidth1",
+      "description": "Selects Pulse Width in ms for TTL output port. This parameter is used in conjunction with PPx to control the width of the pulse.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcIrigbPulseWidth1",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-IRIGB-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.13.0",
+      "name": "rcIrigbStartTime1",
+      "description": "This parameter is used in conjunction with PPx to set the starting time of first PPx event. Note that this parameter must be set at least 15 seconds before the start of desired PPx otherwise first ...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcIrigbStartTime1",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-IRIGB-MIB",
+      "tc": "RcTimeStamp"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.14.0",
+      "name": "rcIrigbOutputPWM2",
+      "description": "Selects Operational mode of TTL output port2. PWM mode complies with IRIG Standard 200-04. PPx provides generic pulse per x second interface to synchronize external devices.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcIrigbOutputPWM2",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "pwm",
+        "3": "pps",
+        "5": "ppx"
+      },
+      "module": "RUGGEDCOM-IRIGB-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.15.0",
+      "name": "rcIrigbPulseInterval2",
+      "description": "Selects Pulse Interval in s for TTL output port2. This parameter is used in conjunction with PPx in order to provides generic pulse per x second interface to synchronize external devices.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcIrigbPulseInterval2",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-IRIGB-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.16.0",
+      "name": "rcIrigbPulseWidth2",
+      "description": "Selects Pulse Width in ms for TTL output port2. This parameter is used in conjunction with PPx to control the width of the pulse.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcIrigbPulseWidth2",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-IRIGB-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.10.1.17.0",
+      "name": "rcIrigbStartTime2",
+      "description": "This parameter is used in conjunction with PPx to set the starting time of first PPx event. Note that this parameter must be set at least 15 seconds before the start of desired PPx otherwise first ...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcIrigbStartTime2",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-IRIGB-MIB",
+      "tc": "RcTimeStamp"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.11.1.1.0",
+      "name": "rcTimeSource",
+      "description": "A time source that is driving the local clock.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcTimeSource",
+      "transform": null,
+      "enumMap": {
+        "2": "irigb",
+        "3": "gps",
+        "4": "ieee1588",
+        "5": "ntp",
+        "6": "localclk"
+      },
+      "module": "RUGGEDCOM-TIMECONFIG-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.11.1.2.0",
+      "name": "rcTimeAndDate",
+      "description": "This parameter allows for both the viewing and setting of the local time and date in DateAndTime format. DateAndTime is a standard Textual Convention which is defined in the SNMPv2-TC",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcTimeAndDate",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-TIMECONFIG-MIB",
+      "tc": "DateAndTime"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.11.1.3.0",
+      "name": "rcDSTOfst",
+      "description": "This parameter specifies the amount of time to be shifted forward/backward when DST begins and ends. For example for most part of USA and Canada, DST time shift is 1 hour (01:00:00) forward when DS...",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "rcDSTOfst",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "RUGGEDCOM-TIMECONFIG-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.11.1.4.0",
+      "name": "rcCurrentUTCOfst",
+      "description": "Current UTC offset parameter allows user to adjust the difference between UTC and TAI.",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "rcCurrentUTCOfst",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "RUGGEDCOM-TIMECONFIG-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.11.1.5.0",
+      "name": "rcLeapSecPending",
+      "description": "This parameter allows user to manage the leap second event. A leap second is a second added to Coordinated",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcLeapSecPending",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-TIMECONFIG-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.11.1.6.0",
+      "name": "rcDSTRule",
+      "description": "This parameter specifies a rule for time and date when the transition between Standard and Daylight Saving Time occurs. Format: mm.n.d/HH:MM:SS mm.n.d/HH:MM:SS mm - Month of the year (01 - January,...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcDSTRule",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-TIMECONFIG-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.1.0",
+      "name": "rcPTP1588ClkType",
+      "description": "PTP1588 Clock Type.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588ClkType",
+      "transform": null,
+      "enumMap": {
+        "2": "ordinaryClock",
+        "3": "p2ptc",
+        "4": "boundaryClock",
+        "5": "e2etc",
+        "6": "ocp2ptc",
+        "7": "oce2etc",
+        "8": "transparentClock",
+        "9": "ocAndTc"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.2.0",
+      "name": "rcPTP1588EthPorts",
+      "description": "Selects which Ethernet ports will take part in PTP (Precision Time Protocol) message exchanges.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcPTP1588EthPorts",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB",
+      "tc": "PortList"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.3.0",
+      "name": "rcPTP1588StartUpWait",
+      "description": "This parameter in seconds provides the ability to bootstrap the PTP network in an orderly fashion.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588StartUpWait",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.4.0",
+      "name": "rcPTP1588NetClass",
+      "description": "This parameter indicates all devices in the timing plane are IEEE1588 aware (IEEE1588 network) or whether the timing plane includes non-IEEE1588 devices as well (non-IEEE1588 network).",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588NetClass",
+      "transform": null,
+      "enumMap": {
+        "1": "netclass1588",
+        "2": "nonnetclass1588"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.5.0",
+      "name": "rcPTP1588SlaveEthPort",
+      "description": "Selects the Ethernet port which will act as the Slave port when the device is configured as a Boundary Clock.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcPTP1588SlaveEthPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB",
+      "tc": "PortList"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.6.0",
+      "name": "rcPTP1588SlaveDomain",
+      "description": "Selects the PTP (Precision Time Protocol) domain number for the Slave Clock. A PTP domain is a logical grouping of PTP clocks that synchronize to each other using the PTP protocol.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588SlaveDomain",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.7.0",
+      "name": "rcPTP1588SlaveAutoReg",
+      "description": "This parameter is specific to unicast transport. This parameter allows user to auto register the slave clock to unicast master as specified by the 'Master IP Address' attribute.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588SlaveAutoReg",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.8.0",
+      "name": "rcPTP1588SlaveMasteIP",
+      "description": "This parameter is specific to unicast transport and represents the IP address of the unicast PTP (Precision Time Protocol) master clock.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcPTP1588SlaveMasteIP",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.9.0",
+      "name": "rcPTP1588SlaveBackUpIP",
+      "description": "This parameter is specific to unicast transport and represents the IP address of the unicast backup PTP (Precision Time Protocol) master clock.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcPTP1588SlaveBackUpIP",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.10.0",
+      "name": "rcPTP1588ServoStatus",
+      "description": "It Shows the status of clock servo. Clock servo mechanism is use to discipline the system clock. The lock status represents clock accuracy is with in the desired limits. User might see system alarm...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcPTP1588ServoStatus",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.11.0",
+      "name": "rcPTP1588SlaveFeqAdj",
+      "description": "This parameter shows the current amount of discipline applied to the local frequency reference (TCXO), i.e. the amount of correction on this system required to syntonize to the current reference",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588SlaveFeqAdj",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.12.0",
+      "name": "rcPTP1588E2EDelay",
+      "description": "This parameter shows measured E2E (also called request-response) delay between master and slave clocks",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588E2EDelay",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.13.0",
+      "name": "rcPTP1588GlobalEnable",
+      "description": "True if PTP is enabled globally.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588GlobalEnable",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.14.0",
+      "name": "rcPTP1588GlobalP2PRequestInterval",
+      "description": "The PTP (Precision Time Protocol) Announce interval (mean time interval between successive Announce messages) in seconds. Interpretation placed on the value: 1: Announce value is 1 Second. 2: Annou...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588GlobalP2PRequestInterval",
+      "transform": null,
+      "enumMap": {
+        "1": "value1Sec",
+        "2": "value2Sec",
+        "3": "value4Sec",
+        "4": "value8Sec",
+        "5": "value16Sec",
+        "6": "value32Sec"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.15.0",
+      "name": "rcPTP1588GlobalE2ERequestInterval",
+      "description": "The PTP (Precision Time Protocol) Announce interval (mean time interval between successive Announce messages) in seconds. Interpretation placed on the value: 1: Announce value is 1 Second. 2: Annou...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588GlobalE2ERequestInterval",
+      "transform": null,
+      "enumMap": {
+        "1": "value1Sec",
+        "2": "value2Sec",
+        "3": "value4Sec",
+        "4": "value8Sec",
+        "5": "value16Sec",
+        "6": "value32Sec"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.16.0",
+      "name": "rcPTP1588Global1Step",
+      "description": "True if PTP is enabled globally.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588Global1Step",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.17.0",
+      "name": "rcPTP1588ClkAnnounceInt",
+      "description": "The PTP (Precision Time Protocol) Announce interval (mean time interval between successive Announce messages) in seconds. Interpretation placed on the value: 1: Announce value is 1 Second. 2: Annou...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588ClkAnnounceInt",
+      "transform": null,
+      "enumMap": {
+        "1": "value1Sec",
+        "2": "value2Sec",
+        "3": "value4Sec",
+        "4": "value8Sec",
+        "5": "value16Sec",
+        "6": "value32Sec"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.18.0",
+      "name": "rcPTP1588ClkAnnounceRcTout",
+      "description": "The AnnounceReceiptTimeout, an integral multiple of announceInterval.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588ClkAnnounceRcTout",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.19.0",
+      "name": "rcPTP1588ClkSyncInt",
+      "description": "The PTP (Precision Time Protocol) Sync interval (mean time interval between successive Sync messages). Interpretation placed on the value: 1: Sync interval value is 125 Millisecond. 2: Sync interva...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588ClkSyncInt",
+      "transform": null,
+      "enumMap": {
+        "1": "value125millSec",
+        "2": "value250millSec",
+        "3": "value500millSec",
+        "4": "value1Sec",
+        "5": "value2Sec"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.20.0",
+      "name": "rcPTP1588ClkDelayMech",
+      "description": "The propagation delay measuring option used by the port. For IEEE C37.238 compliant implementations this value shall be 2 (p2p).",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588ClkDelayMech",
+      "transform": null,
+      "enumMap": {
+        "1": "e2e",
+        "2": "p2p",
+        "254": "disabled"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.21.0",
+      "name": "rcPTP1588ClkProfileId",
+      "description": "Indicates the PTP Profile in use.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588ClkProfileId",
+      "transform": null,
+      "enumMap": {
+        "0": "defaultP2PProfile",
+        "1": "powerProfile",
+        "2": "ieee8021as",
+        "3": "lxi",
+        "4": "telecom",
+        "5": "utilityProfile",
+        "6": "defaultE2EProfile",
+        "7": "customProfile",
+        "8": "powerProfileV2"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.22.0",
+      "name": "rcPTP1588ClkDomainNumber",
+      "description": "Selects the PTP (Precision Time Protocol) domain number. A PTP domain is a logical grouping of PTP clocks that synchronize to each other using the PTP protocol.",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "rcPTP1588ClkDomainNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.23.0",
+      "name": "rcPTP1588ClkNetProtocol",
+      "description": "Indicates Network Protocol in use. For IEEE C37.238 compliant implementations this value shall be 1 (ieee8023).",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588ClkNetProtocol",
+      "transform": null,
+      "enumMap": {
+        "1": "ieee8023",
+        "2": "udpIpv4"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.24.0",
+      "name": "rcPTP1588ClkVlanId",
+      "description": "Indicates VLAN ID in use. -2 = PVID -1 = Priority tagged 0 = Untagged 1 to 4094 = VID set",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588ClkVlanId",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.25.0",
+      "name": "rcPTP1588ClkPriority",
+      "description": "Indicates VLAN tag Priority in use.",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "rcPTP1588ClkPriority",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.1.26.0",
+      "name": "rcPTP1588ClkAccuracy",
+      "description": "This parameter allows the user to configure the desired clock accuracy. This represents the instantaneous value of the time offset between master and slave clocks. The system will generate an alarm...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcPTP1588ClkAccuracy",
+      "transform": null,
+      "enumMap": {
+        "0": "timeAccurateTo50ns",
+        "1": "timeAccurateTo100ns",
+        "2": "timeAccurateTo250ns",
+        "3": "timeAccurateTo1us",
+        "4": "timeAccurateTo2to5us",
+        "5": "timeAccurateTo10us",
+        "6": "timeAccurateTo25us",
+        "7": "timeAccurateTo100us",
+        "8": "timeAccurateTo250us",
+        "9": "timeAccurateTo1ms",
+        "10": "timeAccurateTo2to5ms",
+        "11": "timeAccurateTo10ms",
+        "12": "timeAccurateTo25ms",
+        "13": "timeAccurateTo100ms",
+        "14": "timeAccurateTo250ms"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.4.1.1.1",
+      "name": "rcPTP1588BClkPorts",
+      "description": "The set of ports",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcPTP1588BClkPorts",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB",
+      "tc": "PortList"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.4.1.1.2",
+      "name": "rcPTP1588BClkGroupName",
+      "description": "Name assigned to the port group",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcPTP1588BClkGroupName",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.4.1.1.3",
+      "name": "rcPTP1588BClkProfileId",
+      "description": "Indicates the PTP Profile in use.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPTP1588BClkProfileId",
+      "transform": null,
+      "enumMap": {
+        "0": "defaultP2PProfile",
+        "1": "powerProfile",
+        "2": "ieee8021as",
+        "3": "lxi",
+        "4": "telecom",
+        "5": "utilityProfile",
+        "6": "defaultE2EProfile",
+        "7": "customProfile",
+        "8": "powerProfileV2"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.4.1.1.4",
+      "name": "rcPTP1588BClkDomainNumber",
+      "description": "Selects the PTP (Precision Time Protocol) domain number. A PTP domain is a logical grouping of PTP clocks that synchronize to each other using the PTP protocol.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "rcPTP1588BClkDomainNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.4.1.1.5",
+      "name": "rcPTP1588BClkTransportProtocol",
+      "description": "Indicates Transport Protocol in use.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPTP1588BClkTransportProtocol",
+      "transform": null,
+      "enumMap": {
+        "1": "layer2multicast",
+        "2": "layer3multicast",
+        "3": "layer3unicast"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.4.1.1.6",
+      "name": "rcPTP1588BClkPathDelayMech",
+      "description": "The propagation delay measuring option used by the port.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPTP1588BClkPathDelayMech",
+      "transform": null,
+      "enumMap": {
+        "1": "end2end",
+        "2": "peer2peer",
+        "3": "disabled"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.4.1.1.7",
+      "name": "rcPTP1588BClkPTPPortType",
+      "description": "Selects the PTP (Precision Time Protocol) Port Type.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPTP1588BClkPTPPortType",
+      "transform": null,
+      "enumMap": {
+        "1": "auto",
+        "2": "slaveonly",
+        "3": "masteronly"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.4.1.1.8",
+      "name": "rcPTP1588BClkSyncInt",
+      "description": "The PTP (Precision Time Protocol) Sync interval (mean time interval between successive Sync messages). Interpretation placed on the value: 1: Sync interval value is 125 Millisecond. 2: Sync interva...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPTP1588BClkSyncInt",
+      "transform": null,
+      "enumMap": {
+        "1": "value125millSec",
+        "2": "value250millSec",
+        "3": "value500millSec",
+        "4": "value1Sec",
+        "5": "value2Sec"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.4.1.1.9",
+      "name": "rcPTP1588BClkAnnounceInt",
+      "description": "The PTP (Precision Time Protocol) Announce interval (mean time interval between successive Announce messages) in seconds. Interpretation placed on the value: 1: Announce value is 1 Second. 2: Annou...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPTP1588BClkAnnounceInt",
+      "transform": null,
+      "enumMap": {
+        "1": "value1Sec",
+        "2": "value2Sec",
+        "3": "value4Sec",
+        "4": "value8Sec",
+        "5": "value16Sec",
+        "6": "value32Sec"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.4.1.1.10",
+      "name": "rcPTP1588BClkAnnounceRcTout",
+      "description": "The AnnounceReceiptTimeout, an integral multiple of announceInterval.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPTP1588BClkAnnounceRcTout",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.4.1.1.11",
+      "name": "rcPTP1588BClkAutoReg",
+      "description": "This parameter is specific to unicast transport. This parameter allows user to auto register the slave clock to unicast master as specified by the 'Master IP Address' attribute.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPTP1588BClkAutoReg",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-PTP1588-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.4.1.1.12",
+      "name": "rcPTP1588BClkMasterIP",
+      "description": "This parameter is specific to unicast transport and represents the IP address of the unicast PTP (Precision Time Protocol) master clock.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcPTP1588BClkMasterIP",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.4.1.1.13",
+      "name": "rcPTP1588BClkBackUpIP",
+      "description": "This parameter is specific to unicast transport and represents the IP address of the unicast backup PTP (Precision Time Protocol) master clock.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcPTP1588BClkBackUpIP",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.4.1.1.14",
+      "name": "rcPTP1588BClkGMIdentity",
+      "description": "Grandmaster Identity received in GRANDMASTER_ID TLV.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPTP1588BClkGMIdentity",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.4.1.1.15",
+      "name": "rcPTP1588BClkVlanId",
+      "description": "Indicates VLAN ID in use. -2 = PVID -1 = Priority tagged 0 = Untagged 1 to 4094 = VID set",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcPTP1588BClkVlanId",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.12.4.1.1.16",
+      "name": "rcPTP1588BClkPriority",
+      "description": "Indicates VLAN tag Priority in use.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "rcPTP1588BClkPriority",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-PTP1588-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.13.1.1.0",
+      "name": "rcSNTPEnabled",
+      "description": "Enable/disable SNTP server functionality.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcSNTPEnabled",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-NTP-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.13.1.2.0",
+      "name": "rcNTPPriServerIP",
+      "description": "The Primary Server IP Address.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcNTPPriServerIP",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-NTP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.13.1.3.0",
+      "name": "rcNTPPriServerUpdatePeriod",
+      "description": "This parameter in minutes determines how frequently the (S)NTP server is polled for a time update.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcNTPPriServerUpdatePeriod",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-NTP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.13.1.4.0",
+      "name": "rcNTPBackUpServerIP",
+      "description": "The Backup Server IP Address.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "rcNTPBackUpServerIP",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-NTP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.13.1.5.0",
+      "name": "rcNTPBackUpServerUpdatePeriod",
+      "description": "This parameter in minutes determines how frequently the (S)NTP server is polled for a time update.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcNTPBackUpServerUpdatePeriod",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-NTP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.13.1.6.0",
+      "name": "rcNTPOFM",
+      "description": "The current time offset between (S)NTP server and client clocks and is calculated as <time on the client clock> - <time on the server clock>.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcNTPOFM",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-NTP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.13.1.7.0",
+      "name": "rcNTPFRQADJ",
+      "description": "The current amount of discipline applied to the local frequency reference (TCXO); i.e. the amount of correction on this system required to syntonize to the current reference.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcNTPFRQADJ",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-NTP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.13.1.8.0",
+      "name": "rcNTPPriServerReachable",
+      "description": "The status of the primary NTP server.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcNTPPriServerReachable",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-NTP-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.13.1.9.0",
+      "name": "rcNTPBackUpServerReachable",
+      "description": "The status of the backup NTP server.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcNTPBackUpServerReachable",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-NTP-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.14.1.1.1.1.1",
+      "name": "rcRadiusServerId",
+      "description": "The index value used to identfy the Radius Server. 1: Primary Server, 2: Backup Server",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcRadiusServerId",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-AAA-SERVER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.14.1.1.1.1.2",
+      "name": "rcRadiusServerIP",
+      "description": "The RADIUS server IP address.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcRadiusServerIP",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-AAA-SERVER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.14.1.1.1.1.3",
+      "name": "rcRadiusServerAutUdpPort",
+      "description": "The RADIUS server UDP port.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcRadiusServerAutUdpPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-AAA-SERVER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.14.1.1.1.1.4",
+      "name": "rcRadiusServerMaxRetry",
+      "description": "The maximum number of times the Authenticator will attempt to contact the RADIUS server to authenticate the user in case of any failure.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcRadiusServerMaxRetry",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-AAA-SERVER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.14.1.1.1.1.5",
+      "name": "rcRadiusServerTimeOut",
+      "description": "The amount of time in milliseconds the Authenticator will wait for a response from the RADIUS server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcRadiusServerTimeOut",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-AAA-SERVER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.14.1.1.1.1.6",
+      "name": "rcRadiusServerReachable",
+      "description": "The status of the primary RADIUS server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcRadiusServerReachable",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-AAA-SERVER-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.14.2.1.1.1.1",
+      "name": "rcTacacsServerId",
+      "description": "The index value used to identfy the Tacacs Server. 1: Primary Server, 2: Backup Server",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcTacacsServerId",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-AAA-SERVER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.14.2.1.1.1.2",
+      "name": "rcTacacsServerIP",
+      "description": "The TACACS server IP address.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcTacacsServerIP",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-AAA-SERVER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.14.2.1.1.1.3",
+      "name": "rcTacacsServerAutTcpPort",
+      "description": "The TACACS server TCP port.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcTacacsServerAutTcpPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-AAA-SERVER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.14.2.1.1.1.4",
+      "name": "rcTacacsServerMaxRetry",
+      "description": "The maximum number of times the Authenticator will attempt to contact the TACACS server to authenticate the user in case of any failure.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcTacacsServerMaxRetry",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-AAA-SERVER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.14.2.1.1.1.5",
+      "name": "rcTacacsServerTimeOut",
+      "description": "The amount of time in milliseconds the Authenticator will wait for a response from the TACACS server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcTacacsServerTimeOut",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-AAA-SERVER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.14.2.1.1.1.6",
+      "name": "rcTacacsServerReachable",
+      "description": "The status of the TACACS server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcTacacsServerReachable",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-AAA-SERVER-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.1.1.0",
+      "name": "rcSfpDdmPollingInterval",
+      "description": "The time interval in minutes to wait between two consecutive readings from SFP/SFP+ transceivers installed. When this interval is set to 0, the SFP DDM feature will be disabled on the system.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "rcSfpDdmPollingInterval",
+      "transform": null,
+      "enumMap": null,
+      "units": "minutes",
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.2",
+      "name": "rcSfpPlugged",
+      "description": "SFP transceiver is plugged or not. true(1) is plugged and false(2) is unplugged.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpPlugged",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-SFP-DDM-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.3",
+      "name": "rcSfpDdmVendorName",
+      "description": "The vendor's name of the SFP transceiver.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcSfpDdmVendorName",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.4",
+      "name": "rcSfpDdmVendorPartNumber",
+      "description": "The vendor's part number of the SFP transceiver.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcSfpDdmVendorPartNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.5",
+      "name": "rcSfpDdmVendorRevision",
+      "description": "The vendor's revision of the SFP transceiver.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcSfpDdmVendorRevision",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.6",
+      "name": "rcSfpDdmVendorSerialNumber",
+      "description": "The vendor's serial number of the SFP transceiver.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcSfpDdmVendorSerialNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.7",
+      "name": "rcSfpDdmEncoding",
+      "description": "The encoding mechanism of the SFP transceiver.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcSfpDdmEncoding",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.8",
+      "name": "rcSfpDdmNominalBitrate",
+      "description": "The nominal bit rate of the SFP transceiver.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcSfpDdmNominalBitrate",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.9",
+      "name": "rcSfpDdmConnectorType",
+      "description": "The connector type of the SFP transceiver.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcSfpDdmConnectorType",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.10",
+      "name": "rcSfpDdmWavelength",
+      "description": "The laser wavelength of the SFP transceiver.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcSfpDdmWavelength",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.11",
+      "name": "rcSfpDdmLinkLength",
+      "description": "The link length of the SFP transceiver.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcSfpDdmLinkLength",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.12",
+      "name": "rcSfpDdmImplemented",
+      "description": "SFP DDM is implemented on the SFP transceiver or not. true(1) is implemented and false(2) is not implemented.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmImplemented",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "RUGGEDCOM-SFP-DDM-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.13",
+      "name": "rcSfpDdmCurrentStatus",
+      "description": "The current alarm and warning status of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmCurrentStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "notAvailable",
+        "2": "ok",
+        "3": "warning",
+        "4": "alarm"
+      },
+      "module": "RUGGEDCOM-SFP-DDM-MIB",
+      "tc": "RcSfpDdmAlarmWarnStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.14",
+      "name": "rcSfpDdmCurrentTemperature",
+      "description": "The current temperature (in units of 0.001 degrees Celsius) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmCurrentTemperature",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.15",
+      "name": "rcSfpDdmThreshTempAlarmLow",
+      "description": "The threshold of low temperature alarm (in units of 0.001 degrees Celsius) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshTempAlarmLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.16",
+      "name": "rcSfpDdmThreshTempWarnLow",
+      "description": "The threshold of low temperature warning (in units of 0.001 degrees Celsius) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshTempWarnLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.17",
+      "name": "rcSfpDdmThreshTempWarnHigh",
+      "description": "The threshold of high temperature warning (in units of 0.001 degrees Celsius) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshTempWarnHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.18",
+      "name": "rcSfpDdmThreshTempAlarmHigh",
+      "description": "The threshold of high temperature alarm (in units of 0.001 degrees Celsius) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshTempAlarmHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.19",
+      "name": "rcSfpDdmCurrentVoltage",
+      "description": "The current voltage (in millivolts) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmCurrentVoltage",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.20",
+      "name": "rcSfpDdmThreshVoltageAlarmLow",
+      "description": "The threshold of low voltage alarm (in millivolts) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshVoltageAlarmLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.21",
+      "name": "rcSfpDdmThreshVoltageWarnLow",
+      "description": "The threshold of low voltage warning (in millivolts) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshVoltageWarnLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.22",
+      "name": "rcSfpDdmThreshVoltageWarnHigh",
+      "description": "The threshold of high voltage warning (in millivolts) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshVoltageWarnHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.23",
+      "name": "rcSfpDdmThreshVoltageAlarmHigh",
+      "description": "The threshold of high voltage alarm (in millivolts) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshVoltageAlarmHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.24",
+      "name": "rcSfpDdmCurrentTxBiasCurrent",
+      "description": "The current Tx bias current (in microamperes) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmCurrentTxBiasCurrent",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.25",
+      "name": "rcSfpDdmThreshTxBiasAlarmLow",
+      "description": "The threshold of low Tx bias current alarm (in microamperes) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshTxBiasAlarmLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.26",
+      "name": "rcSfpDdmThreshTxBiasWarnLow",
+      "description": "The threshold of low Tx bias current warning (in microamperes) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshTxBiasWarnLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.27",
+      "name": "rcSfpDdmThreshTxBiasWarnHigh",
+      "description": "The threshold of high Tx bias current warning (in microamperes) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshTxBiasWarnHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.28",
+      "name": "rcSfpDdmThreshTxBiasAlarmHigh",
+      "description": "The threshold of high Tx bias current alarm (in microamperes) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshTxBiasAlarmHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.29",
+      "name": "rcSfpDdmCurrentRxPower",
+      "description": "The current Rx power (in nanowatts) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmCurrentRxPower",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.30",
+      "name": "rcSfpDdmThreshRxPowerAlarmLow",
+      "description": "The threshold of low Rx power alarm (in nanowatts) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshRxPowerAlarmLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.31",
+      "name": "rcSfpDdmThreshRxPowerWarnLow",
+      "description": "The threshold of low Rx power warning (in nanowatts) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshRxPowerWarnLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.32",
+      "name": "rcSfpDdmThreshRxPowerWarnHigh",
+      "description": "The threshold of high Rx power warning (in nanowatts) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshRxPowerWarnHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.33",
+      "name": "rcSfpDdmThreshRxPowerAlarmHigh",
+      "description": "The threshold of high Rx power alarm (in nanowatts) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshRxPowerAlarmHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.34",
+      "name": "rcSfpDdmCurrentTxPower",
+      "description": "The current Tx power (in microwatts) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmCurrentTxPower",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.35",
+      "name": "rcSfpDdmThreshTxPowerAlarmLow",
+      "description": "The threshold of low Tx power alarm (in microwatts) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshTxPowerAlarmLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.36",
+      "name": "rcSfpDdmThreshTxPowerWarnLow",
+      "description": "The threshold of low Tx power warning (in microwatts) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshTxPowerWarnLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.37",
+      "name": "rcSfpDdmThreshTxPowerWarnHigh",
+      "description": "The threshold of high Tx power warning (in microwatts) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshTxPowerWarnHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.38",
+      "name": "rcSfpDdmThreshTxPowerAlarmHigh",
+      "description": "The threshold of high Tx power alarm (in microwatts) of the SFP transceiver.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "rcSfpDdmThreshTxPowerAlarmHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.39",
+      "name": "rcSfpDdmWarningFlags",
+      "description": "Warning flags indicate if any of the monitored parameters exceeds its warning threshold or not. The change in the value of any of these bits will generate a warning trap.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcSfpDdmWarningFlags",
+      "transform": null,
+      "enumMap": {
+        "0": "tempHighWarning",
+        "1": "tempLowWarning",
+        "2": "vccHighWarning",
+        "3": "vccLowWarning",
+        "4": "txbiasHighWarning",
+        "5": "txbiasLowWarning",
+        "6": "rxpowerHighWarning",
+        "7": "rxpowerLowWarning",
+        "8": "txpowerHighWarning",
+        "9": "txpowerLowWarning"
+      },
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.15004.4.17.2.1.1.40",
+      "name": "rcSfpDdmAlarmFlags",
+      "description": "Alarm flags indicate if any of the monitored parameters exceeds its alarm threshold or not. The change in the value of any of these bits will generate an alarm trap.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "rcSfpDdmAlarmFlags",
+      "transform": null,
+      "enumMap": {
+        "0": "tempHighAlarm",
+        "1": "tempLowAlarm",
+        "2": "vccHighAlarm",
+        "3": "vccLowAlarm",
+        "4": "txbiasHighAlarm",
+        "5": "txbiasLowAlarm",
+        "6": "rxpowerHighAlarm",
+        "7": "rxpowerLowAlarm",
+        "8": "txpowerHighAlarm",
+        "9": "txpowerLowAlarm"
+      },
+      "module": "RUGGEDCOM-SFP-DDM-MIB"
+    }
+  ]
+}

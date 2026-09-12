@@ -1,0 +1,5014 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-ipt-generic",
+  "name": "IPT Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "IPT",
+  "vendorOidPrefix": "1.3.6.1.4.1.38218",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 426 readable OIDs under 1.3.6.1.4.1.38218.",
+  "generated": {
+    "source": "mibs/ipt",
+    "date": "2026-09-12",
+    "oidCount": 426,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "PDUSNMP"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.38218.1.1.1.0",
+      "name": "slave-SiteTotalkWh",
+      "description": "Total Energy used by all slaves on site in kWh x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-SiteTotalkWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.1.2.0",
+      "name": "slave-SiteTotalBtu",
+      "description": "Total Energy used by all slaves on site in Btu x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-SiteTotalBtu",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.1.3.0",
+      "name": "slave-SiteTotalKgCO2",
+      "description": "Total Energy used by all slaves on site in KgCO2 x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-SiteTotalKgCO2",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.2.1.0",
+      "name": "slave-Nopdus",
+      "description": "Compatible - Number of pdu's connected in SLAVE mode",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-Nopdus",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.2.2.0",
+      "name": "slaves-Online",
+      "description": "Compatible - Number of pdu's ONLINE in SLAVE mode.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slaves-Online",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.2.3.0",
+      "name": "slave-ServerStatus",
+      "description": "Compatible - Server status",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-ServerStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "stopped",
+        "1": "running",
+        "2": "searching",
+        "3": "getinfo",
+        "4": "listening"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.1.0",
+      "name": "pdu-ClientName",
+      "description": "Compatible - pdu Client name.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-ClientName",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.2.0",
+      "name": "pdu-LocationName",
+      "description": "Compatible - pdu Location Name.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-LocationName",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.3.0",
+      "name": "pdu-FirmwareVersion",
+      "description": "Compatible - pdu firmware version.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-FirmwareVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.4.0",
+      "name": "pdu-KgCO2Conversion",
+      "description": "Compatible - KgCO2 conversion factor x1000 [544 = 0.544]",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-KgCO2Conversion",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.5.0",
+      "name": "pdu-MODBUSTimeout",
+      "description": "Compatible - MODBUS Timeout in mS.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-MODBUSTimeout",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.6.0",
+      "name": "pdu-MODBUSRetry",
+      "description": "Compatible - MODBUS Retry value.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-MODBUSRetry",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.7.0",
+      "name": "pdu-NotUsed1",
+      "description": "Compatible - Not used.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-NotUsed1",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.8.0",
+      "name": "pdu-AlarmPeriod",
+      "description": "Compatible - Alarm period check in minutes.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-AlarmPeriod",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.9.0",
+      "name": "pdu-DHCPStatus",
+      "description": "Compatible - DHCP Enable.Set to 1 to ENABLE or 0 to DISABLE DHCP support.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-DHCPStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.10.0",
+      "name": "pdu-IPAddress",
+      "description": "Compatible - pdu IP Address.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-IPAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.11.0",
+      "name": "pdu-SubNetMask",
+      "description": "Compatible - pdu Sub-net mask.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-SubNetMask",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.12.0",
+      "name": "pdu-CabinetID",
+      "description": "pdu Cabinet ID.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-CabinetID",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.13.0",
+      "name": "pdu-socketPeriod",
+      "description": "pdu socket ON sequence period (mS) 0=OFF.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-socketPeriod",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.14.0",
+      "name": "pdu-LockPeriod",
+      "description": "pdu Lock activation period (S).",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-LockPeriod",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.15.0",
+      "name": "pdu-RTC-Hour",
+      "description": "pdu RTC Hour [24 hour clock].",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-RTC-Hour",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.16.0",
+      "name": "pdu-RTC-Minute",
+      "description": "pdu RTC Minute.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-RTC-Minute",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.17.0",
+      "name": "pdu-RTC-Date",
+      "description": "pdu RTC Date.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-RTC-Date",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.18.0",
+      "name": "pdu-RTC-Month",
+      "description": "pdu RTC Month.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-RTC-Month",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.3.19.0",
+      "name": "pdu-RTC-Year",
+      "description": "pdu RTC Year [tens only].",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-RTC-Year",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.4.1.1.2",
+      "name": "trapDestinationsStatus",
+      "description": "Trap destination status. Set to 1 to ENABLE or 0 to DISABLE trap destination.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "trapDestinationsStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.4.1.1.3",
+      "name": "trapDestinationsIP",
+      "description": "Trap destination IP address. Set to the IP address of the destination SNMP manager.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "trapDestinationsIP",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.4.1.1.4",
+      "name": "trapDestinationsCommunity",
+      "description": "Trap destination SNMP community. Set to the community name to be used with the destination SNMP manager.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "trapDestinationsCommunity",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.5.1.0",
+      "name": "pdu-Firmware",
+      "description": "pdu Firmware version.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-Firmware",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.5.2.0",
+      "name": "pdu-Nosockets",
+      "description": "pdu Number of sockets.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-Nosockets",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.5.3.0",
+      "name": "pdu-ProductName",
+      "description": "pdu Product name.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-ProductName",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.5.4.0",
+      "name": "pdu-SerialNumber",
+      "description": "pdu Serial number.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-SerialNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.1.0",
+      "name": "pdu-meter1-VRMS",
+      "description": "pdu Meter 1 RMS Voltage (VAC) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter1-VRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.2.0",
+      "name": "pdu-meter1-IRMS",
+      "description": "pdu Meter 1 RMS Current (A) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter1-IRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.3.0",
+      "name": "pdu-meter1-KWH",
+      "description": "pdu Meter 1 total energy consumption (kW/h) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter1-KWH",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.4.0",
+      "name": "pdu-meter1-KW",
+      "description": "pdu Meter 1 Kilowatts (kW) x1000.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter1-KW",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.5.0",
+      "name": "pdu-meter1-TPMU",
+      "description": "pdu Meter 1 Internal Temperature (C) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter1-TPMU",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.6.0",
+      "name": "pdu-meter1-IPK",
+      "description": "pdu Meter 1 Peak Current (A) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter1-IPK",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.7.0",
+      "name": "pdu-meter1-VPK",
+      "description": "pdu Meter 1 Peak Voltage (V) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter1-VPK",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.8.0",
+      "name": "pdu-meter1-PF",
+      "description": "pdu Meter 1 Power Factor x1000",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter1-PF",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.9.0",
+      "name": "pdu-meter1-Freq",
+      "description": "pdu Meter 1 Frequency x10",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter1-Freq",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.10.0",
+      "name": "pdu-meter2-VRMS",
+      "description": "pdu Meter 2 RMS Voltage (VAC) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter2-VRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.11.0",
+      "name": "pdu-meter2-IRMS",
+      "description": "pdu Meter 2 RMS Current (A) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter2-IRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.12.0",
+      "name": "pdu-meter2-KWH",
+      "description": "pdu Meter 2 total energy consumption (kW/h) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter2-KWH",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.13.0",
+      "name": "pdu-meter2-KW",
+      "description": "pdu Meter 2 Kilowatts (kW) x1000.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter2-KW",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.14.0",
+      "name": "pdu-meter2-TPMU",
+      "description": "pdu Meter 2 Internal Temperature (C) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter2-TPMU",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.15.0",
+      "name": "pdu-meter2-IPK",
+      "description": "pdu Meter 2 Peak Current (A) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter2-IPK",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.16.0",
+      "name": "pdu-meter2-VPK",
+      "description": "pdu Meter 2 Peak Voltage (V) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter2-VPK",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.17.0",
+      "name": "pdu-meter2-PF",
+      "description": "pdu Meter 2 Power Factor x1000",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter2-PF",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.18.0",
+      "name": "pdu-meter2-Freq",
+      "description": "pdu Meter 2 Frequency x10",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter2-Freq",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.19.0",
+      "name": "pdu-meter3-VRMS",
+      "description": "pdu Meter 3 RMS Voltage (VAC) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter3-VRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.20.0",
+      "name": "pdu-meter3-IRMS",
+      "description": "pdu Meter 3 RMS Current (A) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter3-IRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.21.0",
+      "name": "pdu-meter3-KWH",
+      "description": "pdu Meter 3 total energy consumption (kW/h) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter3-KWH",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.22.0",
+      "name": "pdu-meter3-KW",
+      "description": "pdu Meter 3 Kilowatts (kW) x1000.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter3-KW",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.23.0",
+      "name": "pdu-meter3-TPMU",
+      "description": "pdu Meter 3 Internal Temperature (C) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter3-TPMU",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.24.0",
+      "name": "pdu-meter3-IPK",
+      "description": "pdu Meter 3 Peak Current (A) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter3-IPK",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.25.0",
+      "name": "pdu-meter3-VPK",
+      "description": "pdu Meter 3 Peak Voltage (V) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter3-VPK",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.26.0",
+      "name": "pdu-meter3-PF",
+      "description": "pdu Meter 3 Power Factor x1000",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter3-PF",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.6.27.0",
+      "name": "pdu-meter3-Freq",
+      "description": "pdu Meter 3 Frequency x10",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-meter3-Freq",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.7.1.1.2",
+      "name": "socket-Number",
+      "description": "socket number [Range 1 to 48]",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "socket-Number",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.7.1.1.3",
+      "name": "socket-Equipment",
+      "description": "socket equipment name.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "socket-Equipment",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.7.1.1.4",
+      "name": "socket-ONOFF",
+      "description": "socket ON/OFF status [Set to 1 to switch ON, 0 to switch OFF]",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "socket-ONOFF",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.7.1.1.5",
+      "name": "socket-AMPS",
+      "description": "socket current (Amps) x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "socket-AMPS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.7.1.1.6",
+      "name": "socket-KWH",
+      "description": "socket Energy (kWh) x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "socket-KWH",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.7.1.1.7",
+      "name": "socket-INFO",
+      "description": "socket information (status, phase and picture).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "socket-INFO",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.1.0",
+      "name": "pdu-environmental-Temp1",
+      "description": "Environmental Temperature probe 1 (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-environmental-Temp1",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.2.0",
+      "name": "pdu-environmental-Temp1-Location",
+      "description": "Environmental Temperature probe 1 location name.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-environmental-Temp1-Location",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.3.0",
+      "name": "pdu-environmental-Temp2",
+      "description": "Environmental Temperature probe 2 (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-environmental-Temp2",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.4.0",
+      "name": "pdu-environmental-Temp2-Location",
+      "description": "Environmental Temperature probe 2 location name.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-environmental-Temp2-Location",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.5.0",
+      "name": "pdu-environmental-Temp3",
+      "description": "Environmental Temperature probe 3 (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-environmental-Temp3",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.6.0",
+      "name": "pdu-environmental-Temp3-Location",
+      "description": "Environmental Temperature probe 3 location name.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-environmental-Temp3-Location",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.7.0",
+      "name": "pdu-environmental-Temp4",
+      "description": "Environmental Temperature probe 4 (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-environmental-Temp4",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.8.0",
+      "name": "pdu-environmental-Temp4-Location",
+      "description": "Environmental Temperature probe 4 location name.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-environmental-Temp4-Location",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.9.0",
+      "name": "pdu-environmental-Temp5",
+      "description": "Environmental Temperature probe 5 (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-environmental-Temp5",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.10.0",
+      "name": "pdu-environmental-Temp5-Location",
+      "description": "Environmental Temperature probe 5 location name.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-environmental-Temp5-Location",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.11.0",
+      "name": "pdu-environmental-Temp6",
+      "description": "Environmental Temperature probe 6 (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-environmental-Temp6",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.12.0",
+      "name": "pdu-environmental-Temp6-Location",
+      "description": "Environmental Temperature probe 6 location name.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-environmental-Temp6-Location",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.13.0",
+      "name": "pdu-environmental-Temp7",
+      "description": "Environmental Temperature probe 7 (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-environmental-Temp7",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.14.0",
+      "name": "pdu-environmental-Temp7-Location",
+      "description": "Environmental Temperature probe 7 location name.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-environmental-Temp7-Location",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.15.0",
+      "name": "pdu-environmental-Temp8",
+      "description": "Environmental Temperature probe 8 (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-environmental-Temp8",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.16.0",
+      "name": "pdu-environmental-Temp8-Location",
+      "description": "Environmental Temperature probe 8 location name.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-environmental-Temp8-Location",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.17.0",
+      "name": "pdu-environmental-HumidityTemp",
+      "description": "Environmental Humidity probe Temperature (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-environmental-HumidityTemp",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.18.0",
+      "name": "pdu-environmental-Humidity",
+      "description": "Environmental humidity probe (%) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-environmental-Humidity",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.19.0",
+      "name": "pdu-environmental-Contact1",
+      "description": "Environmental contact input 1 status.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-environmental-Contact1",
+      "transform": null,
+      "enumMap": {
+        "0": "open",
+        "1": "closed"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.20.0",
+      "name": "pdu-environmental-Contact1-Location",
+      "description": "Environmental contact input 1 location name.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-environmental-Contact1-Location",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.21.0",
+      "name": "pdu-environmental-Contact2",
+      "description": "Environmental contact input 2 status.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-environmental-Contact2",
+      "transform": null,
+      "enumMap": {
+        "0": "open",
+        "1": "closed"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.22.0",
+      "name": "pdu-environmental-Contact2-Location",
+      "description": "Environmental contact input 2 location name.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-environmental-Contact2-Location",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.23.0",
+      "name": "pdu-environmental-Contact3",
+      "description": "Environmental contact input 3 status.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-environmental-Contact3",
+      "transform": null,
+      "enumMap": {
+        "0": "open",
+        "1": "closed"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.8.24.0",
+      "name": "pdu-environmental-Contact3-Location",
+      "description": "Environmental contact input 3 location name.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-environmental-Contact3-Location",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.9.1.0",
+      "name": "pdu-Security-Door",
+      "description": "Security door contact status.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-Security-Door",
+      "transform": null,
+      "enumMap": {
+        "0": "open",
+        "1": "closed"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.9.2.0",
+      "name": "pdu-Security-Lock",
+      "description": "Security lock status [Set to 1 to unlock]",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-Security-Lock",
+      "transform": null,
+      "enumMap": {
+        "0": "locked",
+        "1": "unlocked"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.9.3.0",
+      "name": "pdu-Security-Wild",
+      "description": "Security Card/PIN Wildcard status. Set with 1 to enable or 0 to disable Wildcard feature.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-Security-Wild",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.9.4.0",
+      "name": "pdu-Security-UnlockTimeDate",
+      "description": "Time and data of last unlock.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-Security-UnlockTimeDate",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.9.5.1.2",
+      "name": "pdu-Security-Code",
+      "description": "Security Card/PIN number.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdu-Security-Code",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.10.1.0",
+      "name": "pdu-Logs-Number",
+      "description": "Log file number of log lines stored.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-Logs-Number",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.10.2.0",
+      "name": "pdu-Logs-Index",
+      "description": "Log file line index pointer. Set to line to be read.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-Logs-Index",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.10.3.0",
+      "name": "pdu-Logs-Data",
+      "description": "Log file log line data.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "pdu-Logs-Data",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.10.4.0",
+      "name": "pdu-Logs-Clear",
+      "description": "Log file clear. Set with 1 to clear log file.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdu-Logs-Clear",
+      "transform": null,
+      "enumMap": {
+        "1": "reset"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.1.0",
+      "name": "meter1-VRMSLowAlarm",
+      "description": "Meter 1 Voltage LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-VRMSLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.2.0",
+      "name": "meter1-VRMSLow",
+      "description": "eter 1 Voltage LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-VRMSLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.3.0",
+      "name": "meter1-VRMSHighAlarm",
+      "description": "Meter 1 Voltage HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-VRMSHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.4.0",
+      "name": "meter1-VRMSHigh",
+      "description": "Meter 1 Voltage HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-VRMSHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.5.0",
+      "name": "meter1-IRMSLowAlarm",
+      "description": "Meter 1 Current LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-IRMSLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.6.0",
+      "name": "meter1-IRMSLow",
+      "description": "Meter 1 Current LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-IRMSLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.7.0",
+      "name": "meter1-IRMSHighAlarm",
+      "description": "Meter 1 Current HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-IRMSHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.8.0",
+      "name": "meter1-IRMSHigh",
+      "description": "Meter 1 Current HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-IRMSHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.9.0",
+      "name": "meter1-KWSLowAlarm",
+      "description": "Meter 1 Kilowatts LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-KWSLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.10.0",
+      "name": "meter1-KWSLow",
+      "description": "Meter 1 Kilowatts LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-KWSLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.11.0",
+      "name": "meter1-KWSHighAlarm",
+      "description": "Meter 1 Kilowatts HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-KWSHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.12.0",
+      "name": "meter1-KWSHigh",
+      "description": "Meter 1 Kilowatts HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-KWSHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.13.0",
+      "name": "meter1-TempLowAlarm",
+      "description": "Meter 1 Internal temperature LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-TempLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.14.0",
+      "name": "meter1-TempLow",
+      "description": "Meter 1 Internal temperature LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-TempLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.15.0",
+      "name": "meter1-TempHighAlarm",
+      "description": "Meter 1 Internal temperature HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-TempHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.16.0",
+      "name": "meter1-TempHigh",
+      "description": "Meter 1 Internal temperature HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-TempHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.17.0",
+      "name": "meter1-PFLowAlarm",
+      "description": "Meter 1 Power factor LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-PFLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.18.0",
+      "name": "meter1-PFLow",
+      "description": "Meter 1 Power factor LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-PFLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.19.0",
+      "name": "meter1-PFHighAlarm",
+      "description": "Meter 1 Power factor HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-PFHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.20.0",
+      "name": "meter1-PFHigh",
+      "description": "Meter 1 Power factor HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-PFHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.21.0",
+      "name": "meter1-FreqLowAlarm",
+      "description": "Meter 1 Frequency LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-FreqLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.22.0",
+      "name": "meter1-FreqLow",
+      "description": "Meter 1 Frequency LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-FreqLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.23.0",
+      "name": "meter1-FreqHighAlarm",
+      "description": "Meter 1 Frequency HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-FreqHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.24.0",
+      "name": "meter1-FreqHigh",
+      "description": "Meter 1 Frequency HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter1-FreqHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.25.0",
+      "name": "meter2-VRMSLowAlarm",
+      "description": "Meter 2 Voltage LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-VRMSLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.26.0",
+      "name": "meter2-VRMSLow",
+      "description": "eter 1 Voltage LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-VRMSLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.27.0",
+      "name": "meter2-VRMSHighAlarm",
+      "description": "Meter 2 Voltage HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-VRMSHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.28.0",
+      "name": "meter2-VRMSHigh",
+      "description": "Meter 2 Voltage HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-VRMSHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.29.0",
+      "name": "meter2-IRMSLowAlarm",
+      "description": "Meter 2 Current LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-IRMSLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.30.0",
+      "name": "meter2-IRMSLow",
+      "description": "Meter 2 Current LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-IRMSLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.31.0",
+      "name": "meter2-IRMSHighAlarm",
+      "description": "Meter 2 Current HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-IRMSHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.32.0",
+      "name": "meter2-IRMSHigh",
+      "description": "Meter 2 Current HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-IRMSHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.33.0",
+      "name": "meter2-KWSLowAlarm",
+      "description": "Meter 2 Kilowatts LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-KWSLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.34.0",
+      "name": "meter2-KWSLow",
+      "description": "Meter 2 Kilowatts LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-KWSLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.35.0",
+      "name": "meter2-KWSHighAlarm",
+      "description": "Meter 2 Kilowatts HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-KWSHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.36.0",
+      "name": "meter2-KWSHigh",
+      "description": "Meter 2 Kilowatts HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-KWSHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.37.0",
+      "name": "meter2-TempLowAlarm",
+      "description": "Meter 2 Internal temperature LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-TempLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.38.0",
+      "name": "meter2-TempLow",
+      "description": "Meter 2 Internal temperature LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-TempLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.39.0",
+      "name": "meter2-TempHighAlarm",
+      "description": "Meter 2 Internal temperature HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-TempHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.40.0",
+      "name": "meter2-TempHigh",
+      "description": "Meter 2 Internal temperature HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-TempHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.41.0",
+      "name": "meter2-PFLowAlarm",
+      "description": "Meter 2 Power factor LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-PFLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.42.0",
+      "name": "meter2-PFLow",
+      "description": "Meter 2 Power factor LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-PFLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.43.0",
+      "name": "meter2-PFHighAlarm",
+      "description": "Meter 2 Power factor HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-PFHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.44.0",
+      "name": "meter2-PFHigh",
+      "description": "Meter 2 Power factor HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-PFHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.45.0",
+      "name": "meter2-FreqLowAlarm",
+      "description": "Meter 2 Frequency LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-FreqLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.46.0",
+      "name": "meter2-FreqLow",
+      "description": "Meter 2 Frequency LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-FreqLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.47.0",
+      "name": "meter2-FreqHighAlarm",
+      "description": "Meter 2 Frequency HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-FreqHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.48.0",
+      "name": "meter2-FreqHigh",
+      "description": "Meter 2 Frequency HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter2-FreqHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.49.0",
+      "name": "meter3-VRMSLowAlarm",
+      "description": "Meter 3 Voltage LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-VRMSLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.50.0",
+      "name": "meter3-VRMSLow",
+      "description": "eter 1 Voltage LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-VRMSLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.51.0",
+      "name": "meter3-VRMSHighAlarm",
+      "description": "Meter 3 Voltage HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-VRMSHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.52.0",
+      "name": "meter3-VRMSHigh",
+      "description": "Meter 3 Voltage HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-VRMSHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.53.0",
+      "name": "meter3-IRMSLowAlarm",
+      "description": "Meter 3 Current LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-IRMSLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.54.0",
+      "name": "meter3-IRMSLow",
+      "description": "Meter 3 Current LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-IRMSLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.55.0",
+      "name": "meter3-IRMSHighAlarm",
+      "description": "Meter 3 Current HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-IRMSHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.56.0",
+      "name": "meter3-IRMSHigh",
+      "description": "Meter 3 Current HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-IRMSHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.57.0",
+      "name": "meter3-KWSLowAlarm",
+      "description": "Meter 3 Kilowatts LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-KWSLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.58.0",
+      "name": "meter3-KWSLow",
+      "description": "Meter 3 Kilowatts LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-KWSLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.59.0",
+      "name": "meter3-KWSHighAlarm",
+      "description": "Meter 3 Kilowatts HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-KWSHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.60.0",
+      "name": "meter3-KWSHigh",
+      "description": "Meter 3 Kilowatts HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-KWSHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.61.0",
+      "name": "meter3-TempLowAlarm",
+      "description": "Meter 3 Internal temperature LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-TempLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.62.0",
+      "name": "meter3-TempLow",
+      "description": "Meter 3 Internal temperature LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-TempLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.63.0",
+      "name": "meter3-TempHighAlarm",
+      "description": "Meter 3 Internal temperature HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-TempHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.64.0",
+      "name": "meter3-TempHigh",
+      "description": "Meter 3 Internal temperature HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-TempHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.65.0",
+      "name": "meter3-PFLowAlarm",
+      "description": "Meter 3 Power factor LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-PFLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.66.0",
+      "name": "meter3-PFLow",
+      "description": "Meter 3 Power factor LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-PFLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.67.0",
+      "name": "meter3-PFHighAlarm",
+      "description": "Meter 3 Power factor HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-PFHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.68.0",
+      "name": "meter3-PFHigh",
+      "description": "Meter 3 Power factor HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-PFHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.69.0",
+      "name": "meter3-FreqLowAlarm",
+      "description": "Meter 3 Frequency LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-FreqLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.70.0",
+      "name": "meter3-FreqLow",
+      "description": "Meter 3 Frequency LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-FreqLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.71.0",
+      "name": "meter3-FreqHighAlarm",
+      "description": "Meter 3 Frequency HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-FreqHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.72.0",
+      "name": "meter3-FreqHigh",
+      "description": "Meter 3 Frequency HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "meter3-FreqHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.73.1.2",
+      "name": "socket-AMPSLowAlarm",
+      "description": "socket Current LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "socket-AMPSLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.73.1.3",
+      "name": "socket-AMPSLow",
+      "description": "socket Current LOW trap threshold x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "socket-AMPSLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.73.1.4",
+      "name": "socket-AMPSHighAlarm",
+      "description": "socket Current HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "socket-AMPSHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.73.1.5",
+      "name": "socket-AMPSHigh",
+      "description": "socket Current HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "socket-AMPSHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.74.0",
+      "name": "environmental-Temp1LowAlarm",
+      "description": "Environmental temperature probe 1 LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp1LowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.75.0",
+      "name": "environmental-Temp1Low",
+      "description": "Environmental temperature probe 1 LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp1Low",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.76.0",
+      "name": "environmental-Temp1HighAlarm",
+      "description": "Environmental temperature probe 1 HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp1HighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.77.0",
+      "name": "environmental-Temp1High",
+      "description": "Environmental temperature probe 1 HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp1High",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.78.0",
+      "name": "environmental-Temp2LowAlarm",
+      "description": "Environmental temperature probe 2 LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp2LowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.79.0",
+      "name": "environmental-Temp2Low",
+      "description": "Environmental temperature probe 2 LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp2Low",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.80.0",
+      "name": "environmental-Temp2HighAlarm",
+      "description": "Environmental temperature probe 2 HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp2HighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.81.0",
+      "name": "environmental-Temp2High",
+      "description": "Environmental temperature probe 2 HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp2High",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.82.0",
+      "name": "environmental-Temp3LowAlarm",
+      "description": "Environmental temperature probe 3 LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp3LowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.83.0",
+      "name": "environmental-Temp3Low",
+      "description": "Environmental temperature probe 3 LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp3Low",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.84.0",
+      "name": "environmental-Temp3HighAlarm",
+      "description": "Environmental temperature probe 3 HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp3HighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.85.0",
+      "name": "environmental-Temp3High",
+      "description": "Environmental temperature probe 3 HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp3High",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.86.0",
+      "name": "environmental-Temp4LowAlarm",
+      "description": "Environmental temperature probe 4 LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp4LowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.87.0",
+      "name": "environmental-Temp4Low",
+      "description": "Environmental temperature probe 4 LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp4Low",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.88.0",
+      "name": "environmental-Temp4HighAlarm",
+      "description": "Environmental temperature probe 4 HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp4HighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.89.0",
+      "name": "environmental-Temp4High",
+      "description": "Environmental temperature probe 4 HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp4High",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.90.0",
+      "name": "environmental-Temp5LowAlarm",
+      "description": "Environmental temperature probe 5 LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp5LowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.91.0",
+      "name": "environmental-Temp5Low",
+      "description": "Environmental temperature probe 5 LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp5Low",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.92.0",
+      "name": "environmental-Temp5HighAlarm",
+      "description": "Environmental temperature probe 5 HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp5HighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.93.0",
+      "name": "environmental-Temp5High",
+      "description": "Environmental temperature probe 5 HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp5High",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.94.0",
+      "name": "environmental-Temp6LowAlarm",
+      "description": "Environmental temperature probe 6 LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp6LowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.95.0",
+      "name": "environmental-Temp6Low",
+      "description": "Environmental temperature probe 6 LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp6Low",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.96.0",
+      "name": "environmental-Temp6HighAlarm",
+      "description": "Environmental temperature probe 6 HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp6HighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.97.0",
+      "name": "environmental-Temp6High",
+      "description": "Environmental temperature probe 6 HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp6High",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.98.0",
+      "name": "environmental-Temp7LowAlarm",
+      "description": "Environmental temperature probe 7 LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp7LowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.99.0",
+      "name": "environmental-Temp7Low",
+      "description": "Environmental temperature probe 7 LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp7Low",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.100.0",
+      "name": "environmental-Temp7HighAlarm",
+      "description": "Environmental temperature probe 7 HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp7HighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.101.0",
+      "name": "environmental-Temp7High",
+      "description": "Environmental temperature probe 7 HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp7High",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.102.0",
+      "name": "environmental-Temp8LowAlarm",
+      "description": "Environmental temperature probe 8 LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp8LowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.103.0",
+      "name": "environmental-Temp8Low",
+      "description": "Environmental temperature probe 8 LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp8Low",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.104.0",
+      "name": "environmental-Temp8HighAlarm",
+      "description": "Environmental temperature probe 8 HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp8HighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.105.0",
+      "name": "environmental-Temp8High",
+      "description": "Environmental temperature probe 8 HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Temp8High",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.106.0",
+      "name": "environmental-HumidityTempLowAlarm",
+      "description": "Environmental humidity probe temperature LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-HumidityTempLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.107.0",
+      "name": "environmental-HumidityTempLow",
+      "description": "Environmental humidity probe temperature LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-HumidityTempLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.108.0",
+      "name": "environmental-HumidityTempHighAlarm",
+      "description": "Environmental humidity probe temperature HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-HumidityTempHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.109.0",
+      "name": "environmental-HumidityTempHigh",
+      "description": "Environmental humidity probe temperature HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-HumidityTempHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.110.0",
+      "name": "environmental-HumidityLowAlarm",
+      "description": "Environmental humidity probe LOW alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-HumidityLowAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.111.0",
+      "name": "environmental-HumidityLow",
+      "description": "Environmental humidity probe LOW trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-HumidityLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.112.0",
+      "name": "environmental-HumidityHighAlarm",
+      "description": "Environmental humidity probe HIGH alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-HumidityHighAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.113.0",
+      "name": "environmental-HumidityHigh",
+      "description": "Environmental humidity probe HIGH trap threshold x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-HumidityHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.114.0",
+      "name": "environmental-Contact1OpenedAlarm",
+      "description": "Environmental Contact 1 OPENED alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Contact1OpenedAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.115.0",
+      "name": "environmental-Contact1ClosedAlarm",
+      "description": "Environmental Contact 1 CLOSED alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Contact1ClosedAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.116.0",
+      "name": "environmental-Contact2OpenedAlarm",
+      "description": "Environmental Contact 2 OPENED alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Contact2OpenedAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.117.0",
+      "name": "environmental-Contact2ClosedAlarm",
+      "description": "Environmental Contact 2 CLOSED alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Contact2ClosedAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.118.0",
+      "name": "environmental-Contact3OpenedAlarm",
+      "description": "Environmental Contact 3 OPENED alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Contact3OpenedAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.119.0",
+      "name": "environmental-Contact3ClosedAlarm",
+      "description": "Environmental Contact 3 CLOSED alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "environmental-Contact3ClosedAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.120.0",
+      "name": "security-DoorOpenedAlarm",
+      "description": "Security Door OPENED alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "security-DoorOpenedAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.121.0",
+      "name": "security-DoorClosedAlarm",
+      "description": "Security Door CLOSED alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "security-DoorClosedAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.122.0",
+      "name": "security-LockUnlockedAlarm",
+      "description": "Security Lock UNLOCKED alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "security-LockUnlockedAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.1.11.1.123.0",
+      "name": "security-LockLockedAlarm",
+      "description": "Security Lock LOCKED alarm disabled/enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "security-LockLockedAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.1.0",
+      "name": "slave-slaveSelected",
+      "description": "Compatible - Currently selected slave pdu. Set to number between 1 and slave-Nopdus",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-slaveSelected",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.2.1.0",
+      "name": "slave-pduName",
+      "description": "Compatible - slave pdu Name.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "slave-pduName",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.2.2.0",
+      "name": "slave-pduStatus",
+      "description": "Compatible - slave pdu ONLINE / OFFLINE or DISABLED status.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-pduStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "offline",
+        "1": "online",
+        "2": "disabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.2.3.0",
+      "name": "slave-pduAddress",
+      "description": "Compatible - slave pdu MODBUS Address.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-pduAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.2.4.0",
+      "name": "slave-pduFirmware",
+      "description": "Compatible - slave pdu Firmware version.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "slave-pduFirmware",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.2.5.0",
+      "name": "slave-Info-NotUsed2",
+      "description": "Compatible - Not used.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "slave-Info-NotUsed2",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.2.6.0",
+      "name": "slave-pduNosockets",
+      "description": "Compatible - slave pdu Number of sockets.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-pduNosockets",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.2.7.0",
+      "name": "slave-Info-NotUsed3",
+      "description": "Compatible - Not used.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-Info-NotUsed3",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.2.8.0",
+      "name": "slave-Info-NotUsed4",
+      "description": "Compatible - Not used.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-Info-NotUsed4",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.2.9.0",
+      "name": "slave-Info-pduReset",
+      "description": "Compatible - slave pdu Reset.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-Info-pduReset",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.2.10.0",
+      "name": "slave-Info-pdukWhReset",
+      "description": "Compatible - slave pdu Reset energy.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-Info-pdukWhReset",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.1.0",
+      "name": "slave-meter1-VRMS",
+      "description": "Compatible - slave Meter 1 RMS Voltage (VAC) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter1-VRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.2.0",
+      "name": "slave-meter1-IRMS",
+      "description": "Compatible - slave Meter 1 RMS Current (A) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter1-IRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.3.0",
+      "name": "slave-meter1-KWH",
+      "description": "Compatible - slave Meter 1 total energy consumption (kW/h) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter1-KWH",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.4.0",
+      "name": "slave-meter1-KW",
+      "description": "Compatible - slave Meter 1 Kilowatts (kW) x1000.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter1-KW",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.5.0",
+      "name": "slave-meter1-TPMU",
+      "description": "Compatible - slave Meter 1 Internal Temperature (C) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter1-TPMU",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.6.0",
+      "name": "slave-Status-NotUsed1",
+      "description": "Compatible - Not used.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-Status-NotUsed1",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.7.0",
+      "name": "slave-Status-NotUsed2",
+      "description": "Compatible - Not used.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-Status-NotUsed2",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.8.0",
+      "name": "slave-meter1-IPK",
+      "description": "Compatible - slave Meter 1 Peak Current (A) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter1-IPK",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.9.0",
+      "name": "slave-meter1-VPK",
+      "description": "Compatible - slave Meter 1 Peak Voltage (V) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter1-VPK",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.10.0",
+      "name": "slave-meter1-PF",
+      "description": "Compatible - slave Meter 1 Power Factor x1000",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter1-PF",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.11.0",
+      "name": "slave-Status-NotUsed3",
+      "description": "Compatible - Not used.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-Status-NotUsed3",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.12.0",
+      "name": "slave-Status-NotUsed4",
+      "description": "Compatible - Not used.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-Status-NotUsed4",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.13.0",
+      "name": "slave-Status-NotUsed5",
+      "description": "Compatible - Not used.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-Status-NotUsed5",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.14.0",
+      "name": "slave-meter1-Freq",
+      "description": "Compatible - slave Meter 1 Frequency x10",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter1-Freq",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.15.0",
+      "name": "slave-meter2-VRMS",
+      "description": "Compatible - slave Meter 2 RMS Voltage (VAC) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter2-VRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.16.0",
+      "name": "slave-meter2-IRMS",
+      "description": "Compatible - slave Meter 2 RMS Current (A) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter2-IRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.17.0",
+      "name": "slave-meter2-KWH",
+      "description": "Compatible - slave Meter 2 total energy consumption (kW/h) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter2-KWH",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.18.0",
+      "name": "slave-meter2-KW",
+      "description": "Compatible - slave Meter 2 Kilowatts (kW) x1000.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter2-KW",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.19.0",
+      "name": "slave-meter2-TPMU",
+      "description": "Compatible - slave Meter 2 Internal Temperature (C) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter2-TPMU",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.20.0",
+      "name": "slave-meter2-IPK",
+      "description": "Compatible - slave Meter 2 Peak Current (A) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter2-IPK",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.21.0",
+      "name": "slave-meter2-VPK",
+      "description": "Compatible - slave Meter 2 Peak Voltage (V) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter2-VPK",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.22.0",
+      "name": "slave-meter2-PF",
+      "description": "Compatible - slave Meter 2 Power Factor x1000",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter2-PF",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.23.0",
+      "name": "slave-meter2-Freq",
+      "description": "Compatible - slave Meter 2 Frequency x10",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter2-Freq",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.24.0",
+      "name": "slave-meter3-VRMS",
+      "description": "Compatible - slave Meter 3 RMS Voltage (VAC) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter3-VRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.25.0",
+      "name": "slave-meter3-IRMS",
+      "description": "Compatible - slave Meter 3 RMS Current (A) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter3-IRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.26.0",
+      "name": "slave-meter3-KWH",
+      "description": "Compatible - slave Meter 3 total energy consumption (kW/h) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter3-KWH",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.27.0",
+      "name": "slave-meter3-KW",
+      "description": "Compatible - slave Meter 3 Kilowatts (kW) x1000.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter3-KW",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.28.0",
+      "name": "slave-meter3-TPMU",
+      "description": "Compatible - slave Meter 3 Internal Temperature (C) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter3-TPMU",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.29.0",
+      "name": "slave-meter3-IPK",
+      "description": "Compatible - slave Meter 3 Peak Current (A) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter3-IPK",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.30.0",
+      "name": "slave-meter3-VPK",
+      "description": "Compatible - slave Meter 3 Peak Voltage (V) x10.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter3-VPK",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.31.0",
+      "name": "slave-meter3-PF",
+      "description": "Compatible - slave Meter 3 Power Factor x1000",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter3-PF",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.3.32.0",
+      "name": "slave-meter3-Freq",
+      "description": "Compatible - slave Meter 3 Frequency x10",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-meter3-Freq",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.4.1.1.3",
+      "name": "slave-socket-NotUsed1",
+      "description": "Compatible - Not used.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "slave-socket-NotUsed1",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.4.1.1.4",
+      "name": "slave-socket-ONOFF",
+      "description": "socket ON/OFF status [Compatible - Write ignored]",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-socket-ONOFF",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.4.1.1.5",
+      "name": "slave-socket-AMPS",
+      "description": "socket current (Amps) x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-socket-AMPS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.4.1.1.6",
+      "name": "slave-socket-KWH",
+      "description": "socket Energy (kWh) x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-socket-KWH",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.4.2.0",
+      "name": "socket-Selected",
+      "description": "Compatible - Currently selected socket. Set to number between 1 and slave-pduNosockets",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "socket-Selected",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.4.3.0",
+      "name": "socket-AllON",
+      "description": "Set all sockets in system to ON.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "socket-AllON",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.4.4.0",
+      "name": "socket-AllOFF",
+      "description": "Set all sockets in system to OFF.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "socket-AllOFF",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.5.1.0",
+      "name": "slave-environmental-Temp1",
+      "description": "Compatible - Environmental Temperature probe 1 (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-environmental-Temp1",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.5.2.0",
+      "name": "slave-environmental-Temp2",
+      "description": "Compatible - Environmental Temperature probe 2 (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-environmental-Temp2",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.5.3.0",
+      "name": "slave-environmental-Temp3",
+      "description": "Compatible - Environmental Temperature probe 3 (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-environmental-Temp3",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.5.4.0",
+      "name": "slave-environmental-Temp4",
+      "description": "Compatible - Environmental Temperature probe 4 (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-environmental-Temp4",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.5.5.0",
+      "name": "slave-environmental-Temp5",
+      "description": "Compatible - Environmental Temperature probe 5 (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-environmental-Temp5",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.5.6.0",
+      "name": "slave-environmental-Temp6",
+      "description": "Compatible - Environmental Temperature probe 6 (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-environmental-Temp6",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.5.7.0",
+      "name": "slave-environmental-Temp7",
+      "description": "Compatible - Environmental Temperature probe 7 (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-environmental-Temp7",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.5.8.0",
+      "name": "slave-environmental-Temp8",
+      "description": "Compatible - Environmental Temperature probe 8 (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-environmental-Temp8",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.5.9.0",
+      "name": "slave-environmental-HumidityTemp",
+      "description": "Compatible - Environmental Humidity probe Temperature (C) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-environmental-HumidityTemp",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.5.10.0",
+      "name": "slave-environmental-Humidity",
+      "description": "Compatible - Environmental humidity probe (%) x100.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-environmental-Humidity",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.5.11.0",
+      "name": "slave-environmental-Contact1",
+      "description": "Compatible - Environmental contact input 1 status.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-environmental-Contact1",
+      "transform": null,
+      "enumMap": {
+        "0": "open",
+        "1": "closed"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.5.12.0",
+      "name": "slave-environmental-Contact2",
+      "description": "Compatible - Environmental contact input 2 status.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-environmental-Contact2",
+      "transform": null,
+      "enumMap": {
+        "0": "open",
+        "1": "closed"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.5.13.0",
+      "name": "slave-environmental-Contact3",
+      "description": "Compatible - Environmental contact input 3 status.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-environmental-Contact3",
+      "transform": null,
+      "enumMap": {
+        "0": "open",
+        "1": "closed"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.6.1.0",
+      "name": "slave-Security-Door",
+      "description": "Compatible - Security door contact status.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-Security-Door",
+      "transform": null,
+      "enumMap": {
+        "0": "open",
+        "1": "closed"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.2.6.2.0",
+      "name": "slave-Security-Lock",
+      "description": "Compatible - Security lock status. Set with any data to force unlock.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "slave-Security-Lock",
+      "transform": null,
+      "enumMap": {
+        "0": "locked",
+        "1": "unlocked"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.2",
+      "name": "slave-Global-Status",
+      "description": "Compatible - pdu ONLINE / OFFLINE or DISABLED status.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-Status",
+      "transform": null,
+      "enumMap": {
+        "0": "offline",
+        "1": "online",
+        "2": "disabled"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.3",
+      "name": "slave-Global-Address",
+      "description": "Compatible - pdu MODBUS Address.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-Address",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.4",
+      "name": "slave-Global-Nosockets",
+      "description": "Compatible - pdu Number of sockets.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-Nosockets",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.5",
+      "name": "slave-Global-meter1-VRMS",
+      "description": "Compatible - Meter 1 RMS Voltage (VAC) x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter1-VRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.6",
+      "name": "slave-Global-meter1-IRMS",
+      "description": "Compatible - Meter 1 RMS Current (A) x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter1-IRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.7",
+      "name": "slave-Global-meter1-KWH",
+      "description": "Compatible - Meter 1 Total energy consumption (kW/h) x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter1-KWH",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.8",
+      "name": "slave-Global-meter1-KW",
+      "description": "Compatible - Meter 1 Kilowatts (kW) x1000.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter1-KW",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.9",
+      "name": "slave-Global-meter1-TPMU",
+      "description": "Compatible - Meter 1 Internal Temperature (C) x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter1-TPMU",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.10",
+      "name": "slave-Global-meter1-PF",
+      "description": "Compatible - Meter 1 Power Factor x1000",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter1-PF",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.11",
+      "name": "slave-Global-environmental-Temp1",
+      "description": "Compatible - Environmental Temperature probe 1 (C) x100.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-environmental-Temp1",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.12",
+      "name": "slave-Global-environmental-Temp2",
+      "description": "Compatible - Environmental Temperature probe 2 (C) x100.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-environmental-Temp2",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.13",
+      "name": "slave-Global-environmental-Temp3",
+      "description": "Compatible - Environmental Temperature probe 3 (C) x100.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-environmental-Temp3",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.14",
+      "name": "slave-Global-environmental-Temp4",
+      "description": "Compatible - Environmental Temperature probe 4 (C) x100.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-environmental-Temp4",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.15",
+      "name": "slave-Global-environmental-Temp5",
+      "description": "Compatible - Environmental Temperature probe 5 (C) x100.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-environmental-Temp5",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.16",
+      "name": "slave-Global-environmental-Temp6",
+      "description": "Compatible - Environmental Temperature probe 6 (C) x100.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-environmental-Temp6",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.17",
+      "name": "slave-Global-environmental-Temp7",
+      "description": "Compatible - Environmental Temperature probe 7 (C) x100.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-environmental-Temp7",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.18",
+      "name": "slave-Global-environmental-Temp8",
+      "description": "Compatible - Environmental Temperature probe 8 (C) x100.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-environmental-Temp8",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.19",
+      "name": "slave-Global-environmental-HumidityTemp",
+      "description": "Compatible - Environmental Humidity probe Temperature (C) x100.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-environmental-HumidityTemp",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.20",
+      "name": "slave-Global-environmental-Humidity",
+      "description": "Compatible - Environmental humidity probe (%) x100.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-environmental-Humidity",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.21",
+      "name": "slave-Global-environmental-Contact1",
+      "description": "Compatible - Environmental contact input 1 status. Set with any data to clear status.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-environmental-Contact1",
+      "transform": null,
+      "enumMap": {
+        "0": "open",
+        "1": "closed",
+        "3": "none"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.22",
+      "name": "slave-Global-environmental-Contact2",
+      "description": "Compatible - Environmental contact input 2 status. Set with any data to clear status.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-environmental-Contact2",
+      "transform": null,
+      "enumMap": {
+        "0": "open",
+        "1": "closed"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.23",
+      "name": "slave-Global-environmental-Contact3",
+      "description": "Compatible - Environmental contact input 3 status. Set with any data to clear status.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-environmental-Contact3",
+      "transform": null,
+      "enumMap": {
+        "0": "open",
+        "1": "closed"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.24",
+      "name": "slave-Global-Security-Door",
+      "description": "Compatible - Environmental door contact status.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-Security-Door",
+      "transform": null,
+      "enumMap": {
+        "0": "open",
+        "1": "closed"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.25",
+      "name": "slave-Global-Security-Lock",
+      "description": "Compatible - Environmental lock status. Set with any data to force unlock.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-Security-Lock",
+      "transform": null,
+      "enumMap": {
+        "0": "locked",
+        "1": "unlocked"
+      },
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.26",
+      "name": "slave-Global-sockets",
+      "description": "Compatible - socket status bits 1 to 32 Set or clear bit to control socket, Bit 0 = socket 1, Bit 31 = socket 32",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-sockets",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.27",
+      "name": "slave-Global-socket1Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket1Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.28",
+      "name": "slave-Global-socket2Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket2Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.29",
+      "name": "slave-Global-socket3Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket3Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.30",
+      "name": "slave-Global-socket4Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket4Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.31",
+      "name": "slave-Global-socket5Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket5Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.32",
+      "name": "slave-Global-socket6Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket6Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.33",
+      "name": "slave-Global-socket7Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket7Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.34",
+      "name": "slave-Global-socket8Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket8Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.35",
+      "name": "slave-Global-socket9Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket9Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.36",
+      "name": "slave-Global-socket10Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket10Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.37",
+      "name": "slave-Global-socket11Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket11Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.38",
+      "name": "slave-Global-socket12Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket12Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.39",
+      "name": "slave-Global-socket13Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket13Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.40",
+      "name": "slave-Global-socket14Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket14Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.41",
+      "name": "slave-Global-socket15Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket15Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.42",
+      "name": "slave-Global-socket16Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket16Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.43",
+      "name": "slave-Global-socket17Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket17Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.44",
+      "name": "slave-Global-socket18Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket18Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.45",
+      "name": "slave-Global-socket19Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket19Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.46",
+      "name": "slave-Global-socket20Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket20Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.47",
+      "name": "slave-Global-socket21Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket21Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.48",
+      "name": "slave-Global-socket22Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket22Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.49",
+      "name": "slave-Global-socket23Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket23Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.50",
+      "name": "slave-Global-socket24Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket24Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.51",
+      "name": "slave-Global-socket25Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket25Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.52",
+      "name": "slave-Global-socket26Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket26Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.53",
+      "name": "slave-Global-socket27Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket27Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.54",
+      "name": "slave-Global-socket28Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket28Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.55",
+      "name": "slave-Global-socket29Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket29Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.56",
+      "name": "slave-Global-socket30Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket30Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.57",
+      "name": "slave-Global-socket31Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket31Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.58",
+      "name": "slave-Global-socket32Amps",
+      "description": "Compatible - socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket32Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.59",
+      "name": "slave-Global-socket1kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket1kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.60",
+      "name": "slave-Global-socket2kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket2kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.61",
+      "name": "slave-Global-socket3kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket3kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.62",
+      "name": "slave-Global-socket4kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket4kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.63",
+      "name": "slave-Global-socket5kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket5kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.64",
+      "name": "slave-Global-socket6kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket6kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.65",
+      "name": "slave-Global-socket7kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket7kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.66",
+      "name": "slave-Global-socket8kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket8kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.67",
+      "name": "slave-Global-socket9kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket9kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.68",
+      "name": "slave-Global-socket10kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket10kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.69",
+      "name": "slave-Global-socket11kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket11kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.70",
+      "name": "slave-Global-socket12kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket12kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.71",
+      "name": "slave-Global-socket13kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket13kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.72",
+      "name": "slave-Global-socket14kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket14kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.73",
+      "name": "slave-Global-socket15kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket15kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.74",
+      "name": "slave-Global-socket16kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket16kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.75",
+      "name": "slave-Global-socket17kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket17kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.76",
+      "name": "slave-Global-socket18kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket18kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.77",
+      "name": "slave-Global-socket19kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket19kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.78",
+      "name": "slave-Global-socket20kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket20kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.79",
+      "name": "slave-Global-socket21kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket21kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.80",
+      "name": "slave-Global-socket22kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket22kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.81",
+      "name": "slave-Global-socket23kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket23kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.82",
+      "name": "slave-Global-socket24kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket24kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.83",
+      "name": "slave-Global-socket25kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket25kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.84",
+      "name": "slave-Global-socket26kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket26kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.85",
+      "name": "slave-Global-socket27kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket27kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.86",
+      "name": "slave-Global-socket28kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket28kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.87",
+      "name": "slave-Global-socket29kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket29kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.88",
+      "name": "slave-Global-socket30kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket30kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.89",
+      "name": "slave-Global-socket31kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket31kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.90",
+      "name": "slave-Global-socket32kWh",
+      "description": "Compatible - socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket32kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.91",
+      "name": "slave-Global-socket33Amps",
+      "description": "socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket33Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.92",
+      "name": "slave-Global-socket34Amps",
+      "description": "socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket34Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.93",
+      "name": "slave-Global-socket35Amps",
+      "description": "socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket35Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.94",
+      "name": "slave-Global-socket36Amps",
+      "description": "socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket36Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.95",
+      "name": "slave-Global-socket37Amps",
+      "description": "socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket37Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.96",
+      "name": "slave-Global-socket38Amps",
+      "description": "socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket38Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.97",
+      "name": "slave-Global-socket39Amps",
+      "description": "socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket39Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.98",
+      "name": "slave-Global-socket40Amps",
+      "description": "socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket40Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.99",
+      "name": "slave-Global-socket41Amps",
+      "description": "socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket41Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.100",
+      "name": "slave-Global-socket42Amps",
+      "description": "socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket42Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.101",
+      "name": "slave-Global-socket43Amps",
+      "description": "socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket43Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.102",
+      "name": "slave-Global-socket44Amps",
+      "description": "socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket44Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.103",
+      "name": "slave-Global-socket45Amps",
+      "description": "socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket45Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.104",
+      "name": "slave-Global-socket46Amps",
+      "description": "socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket46Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.105",
+      "name": "slave-Global-socket47Amps",
+      "description": "socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket47Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.106",
+      "name": "slave-Global-socket48Amps",
+      "description": "socket Amps value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket48Amps",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.107",
+      "name": "slave-Global-socket33kWh",
+      "description": "socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket33kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.108",
+      "name": "slave-Global-socket34kWh",
+      "description": "socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket34kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.109",
+      "name": "slave-Global-socket35kWh",
+      "description": "socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket35kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.110",
+      "name": "slave-Global-socket36kWh",
+      "description": "socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket36kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.111",
+      "name": "slave-Global-socket37kWh",
+      "description": "socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket37kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.112",
+      "name": "slave-Global-socket38kWh",
+      "description": "socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket38kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.113",
+      "name": "slave-Global-socket39kWh",
+      "description": "socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket39kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.114",
+      "name": "slave-Global-socket40kWh",
+      "description": "socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket40kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.115",
+      "name": "slave-Global-socket41kWh",
+      "description": "socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket41kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.116",
+      "name": "slave-Global-socket42kWh",
+      "description": "socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket42kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.117",
+      "name": "slave-Global-socket43kWh",
+      "description": "socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket43kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.118",
+      "name": "slave-Global-socket44kWh",
+      "description": "socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket44kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.119",
+      "name": "slave-Global-socket45kWh",
+      "description": "socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket45kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.120",
+      "name": "slave-Global-socket46kWh",
+      "description": "socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket46kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.121",
+      "name": "slave-Global-socket47kWh",
+      "description": "socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket47kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.122",
+      "name": "slave-Global-socket48kWh",
+      "description": "socket kWh value x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-socket48kWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.123",
+      "name": "slave-Global-sockets2",
+      "description": "socket status bits 33-48 Set or clear bit to control socket, Bit 0 = socket 33, Bit 15 = socket 48",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-sockets2",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.124",
+      "name": "slave-Global-meter1-Freq",
+      "description": "Meter 1 Frequency x10",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter1-Freq",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.125",
+      "name": "slave-Global-meter2-VRMS",
+      "description": "Meter 2 RMS Voltage (VAC) x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter2-VRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.126",
+      "name": "slave-Global-meter2-IRMS",
+      "description": "Meter 2 RMS Current (A) x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter2-IRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.127",
+      "name": "slave-Global-meter2-KWH",
+      "description": "Meter 2 Total energy consumption (kW/h) x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter2-KWH",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.128",
+      "name": "slave-Global-meter2-KW",
+      "description": "Meter 2 Kilowatts (kW) x1000.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter2-KW",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.129",
+      "name": "slave-Global-meter2-TPMU",
+      "description": "Meter 2 Internal Temperature (C) x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter2-TPMU",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.130",
+      "name": "slave-Global-meter2-PF",
+      "description": "Meter 2 Power Factor x1000",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter2-PF",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.131",
+      "name": "slave-Global-meter2-Freq",
+      "description": "Meter 2 Frequency x10",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter2-Freq",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.132",
+      "name": "slave-Global-meter3-VRMS",
+      "description": "Meter 3 RMS Voltage (VAC) x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter3-VRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.133",
+      "name": "slave-Global-meter3-IRMS",
+      "description": "Meter 3 RMS Current (A) x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter3-IRMS",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.134",
+      "name": "slave-Global-meter3-KWH",
+      "description": "Meter 3 Total energy consumption (kW/h) x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter3-KWH",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.135",
+      "name": "slave-Global-meter3-KW",
+      "description": "Meter 3 Kilowatts (kW) x1000.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter3-KW",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.136",
+      "name": "slave-Global-meter3-TPMU",
+      "description": "Meter 3 Internal Temperature (C) x10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter3-TPMU",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.137",
+      "name": "slave-Global-meter3-PF",
+      "description": "Meter 3 Power Factor x1000",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter3-PF",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    },
+    {
+      "oid": "1.3.6.1.4.1.38218.3.1.1.138",
+      "name": "slave-Global-meter3-Freq",
+      "description": "Meter 3 Frequency x10",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "slave-Global-meter3-Freq",
+      "transform": null,
+      "enumMap": null,
+      "module": "PDUSNMP"
+    }
+  ]
+}

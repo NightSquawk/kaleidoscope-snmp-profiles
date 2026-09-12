@@ -1,0 +1,69 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-temperature-lert-generic",
+  "name": "Temperature@lert Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "Temperature@lert",
+  "vendorOidPrefix": "1.3.6.1.4.1.27297",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 4 readable OIDs under 1.3.6.1.4.1.27297.",
+  "generated": {
+    "source": "mibs/tempalert",
+    "date": "2026-09-12",
+    "oidCount": 4,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "TEMPERATUREALERT-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.27297.1.1.0",
+      "name": "taDeviceIndex",
+      "description": "COM Port of the device",
+      "type": "string",
+      "walk": false,
+      "metricKey": "taDeviceIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "TEMPERATUREALERT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.27297.1.2.0",
+      "name": "taTemperature",
+      "description": "The temperature picked up by the monitor.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "taTemperature",
+      "transform": null,
+      "enumMap": null,
+      "module": "TEMPERATUREALERT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.27297.1.3.0",
+      "name": "taLastCheck",
+      "description": "The date and time when the monitor checked the temperature.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "taLastCheck",
+      "transform": null,
+      "enumMap": null,
+      "module": "TEMPERATUREALERT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.27297.2.7.1.7.0",
+      "name": "taTemperaturePort",
+      "description": "The temperature picked up by the monitor.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "taTemperaturePort",
+      "transform": null,
+      "enumMap": null,
+      "module": "TEMPERATUREALERT-MIB",
+      "tc": "DisplayString"
+    }
+  ]
+}

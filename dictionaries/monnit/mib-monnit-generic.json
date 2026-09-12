@@ -1,0 +1,34 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-monnit-generic",
+  "name": "Monnit Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "Monnit",
+  "vendorOidPrefix": "1.3.6.1.4.1.41542",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 1 readable OIDs under 1.3.6.1.4.1.41542.",
+  "generated": {
+    "source": "mibs/monnit",
+    "date": "2026-09-12",
+    "oidCount": 1,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "MONNIT-EGW-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.41542.1.20.1.0",
+      "name": "egw512trap-desc",
+      "description": "This OID defines a Trap String",
+      "type": "string",
+      "walk": false,
+      "metricKey": "egw512trap-desc",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MONNIT-EGW-MIB",
+      "tc": "DisplayString"
+    }
+  ]
+}

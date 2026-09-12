@@ -144,7 +144,10 @@ async function discoverGroups(mibDir: string, baseDirs: Set<string>): Promise<Gr
     const full = join(mibDir, name);
     const s = await stat(full);
     if (s.isDirectory()) {
-      if (baseDirs.has(resolve(full))) continue;
+      // Standard-module dirs (rfc/, iana/…) stay on SMIPATH for imports and
+      // are also compiled, so registry rows for standard subtrees can be
+      // filled from them. Nothing in them is under enterprises, so without
+      // such rows they only add to the "standard-tree" count.
       const files = await listMibFiles(full);
       if (files.length) groups.push({ name, dir: full, files });
     } else if (s.size > 0 && !SKIP_NAME.test(name) && !SKIP_EXT.has(extname(name).toLowerCase())) {
@@ -199,6 +202,10 @@ async function main() {
   if (smipathBase.length === 0) console.warn('warning: no standard-MIB directory found (mibs/rfc or /usr/share/snmp/mibs); imports of SNMPv2-SMI etc. will fail');
 
   let groups = await discoverGroups(mibDir, baseDirs);
+  // Standard-module dirs first: OIDs are deduped per dictionary in group order,
+  // so the canonical rfc/ copy of Printer-MIB wins over a vendor's bundled one
+  // and the IETF dictionaries list rfc as their source.
+  groups.sort((a, z) => Number(!baseDirs.has(resolve(a.dir))) - Number(!baseDirs.has(resolve(z.dir))) || a.name.localeCompare(z.name));
   if (onlyVendor) groups = groups.filter(g => g.name.toLowerCase() === onlyVendor || slugifyVendor(g.name) === onlyVendor);
   const totalFiles = groups.reduce((n, g) => n + g.files.length, 0);
   console.log(`groups: ${groups.length}   files: ${totalFiles}   smipath: ${smipathBase.map(show).join(':')}`);
@@ -258,11 +265,14 @@ async function main() {
       seenModules.add(m.name);
       for (const o of m.objects) {
         stats.objects++;
-        const root = enterpriseRoot(o.oid);
-        if (!root) { stats.standard++; continue; }
         if (!READABLE.has(o.access)) { stats.unpollable++; continue; }
+        // Registry rows may name standard subtrees too (Printer-MIB, UPS-MIB,
+        // HOST-RESOURCES…), so match rows first; only unmatched enterprise
+        // objects count as "unregistered", unmatched standard ones as "standard".
         const row = rowFor(o.oid, registry.entries);
+        const root = enterpriseRoot(o.oid);
         if (!row) {
+          if (!root) { stats.standard++; continue; }
           const u = unregistered.get(root) ?? { oids: 0, modules: new Set<string>(), dirs: new Set<string>() };
           u.oids++; u.modules.add(m.name); u.dirs.add(r.group.name); unregistered.set(root, u);
           continue;
@@ -356,7 +366,7 @@ async function main() {
   lines.push(`| MIB source | \`${show(mibDir)}\` |`);
   lines.push(`| Vendor directories | ${groups.length} |`, `| Files given to libsmi | ${totalFiles} |`, `| smidump invocations | ${results.reduce((n, r) => n + r.invocations, 0)} |`);
   lines.push(`| Modules parsed | ${seenModules.size} (${stats.dupModules} repeated module names, kept) |`);
-  lines.push(`| Objects seen | ${stats.objects} |`, `| Dropped: outside enterprises tree | ${stats.standard} |`, `| Dropped: not readable (not-accessible, accessible-for-notify) | ${stats.unpollable} |`);
+  lines.push(`| Objects seen | ${stats.objects} |`, `| Dropped: standard tree, no registry row | ${stats.standard} |`, `| Dropped: not readable (not-accessible, accessible-for-notify) | ${stats.unpollable} |`);
   lines.push(`| Dropped: enterprise has no registry row | ${unreg.reduce((n, [, u]) => n + u.oids, 0)} across ${unreg.length} roots |`);
   lines.push(`| Written | ${written.length} dictionaries, ${totalOids} OIDs |`);
   lines.push(`| Textual-convention modules fetched on demand | ${tcFetched} (${tcMissing.length} not found) |`);
@@ -409,7 +419,7 @@ async function main() {
   await writeFile(reportFile, lines.join('\n'));
 
   console.log(`\nwritten: ${written.length} dictionaries, ${totalOids} OIDs → ${show(outDir)}`);
-  console.log(`objects: ${stats.objects} seen, ${stats.standard} standard-tree, ${stats.unpollable} not readable, ${stats.dupModules} repeated module names, ${stats.unresolvedType} typed as string for lack of a TC`);
+  console.log(`objects: ${stats.objects} seen, ${stats.standard} standard-tree without a row, ${stats.unpollable} not readable, ${stats.dupModules} repeated module names, ${stats.unresolvedType} typed as string for lack of a TC`);
   console.log(`unregistered enterprises: ${unreg.length} (${unreg.reduce((n, [, u]) => n + u.oids, 0)} objects) — see ${show(reportFile)}`);
   if (crashed.length) console.log(`crashed files skipped: ${crashed.length} — listed in the report`);
   if (hung.length) console.log(`hung files skipped: ${hung.length} — listed in the report`);

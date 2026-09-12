@@ -1,0 +1,3351 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-etherwan-switch",
+  "name": "EtherWAN Switch (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "switch",
+  "vendor": "EtherWAN",
+  "vendorOidPrefix": "1.3.6.1.4.1.2736",
+  "description": "Auto-compiled with libsmi from 2 MIB module(s). 260 readable OIDs under 1.3.6.1.4.1.2736.",
+  "generated": {
+    "source": "mibs/etherwan",
+    "date": "2026-09-12",
+    "oidCount": 260,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "EtherWAN-ewnSwitchM",
+      "EtherWAN-sw72000"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.1.0",
+      "name": "ewnSystemFirmwareRev",
+      "description": "Firmware Revision",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSystemFirmwareRev",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.2.0",
+      "name": "ewnSystemConfigOperation",
+      "description": "System Configuration operations. This is a write-only variable. On read, it will always return none(0). On loadDefault(1) write, it will restore to default and reboot the system.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSystemConfigOperation",
+      "transform": null,
+      "enumMap": {
+        "0": "none",
+        "1": "loadDefault",
+        "2": "saveCurrent"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.3.0",
+      "name": "ewnSystemReboot",
+      "description": "System Warm Reboot Functionality",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSystemReboot",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.4.0",
+      "name": "ewnSystemRebootRequired",
+      "description": "System Warm Reboot Functionality",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSystemRebootRequired",
+      "transform": null,
+      "enumMap": {
+        "0": "rebootNotRequired",
+        "1": "rebootRequired"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.5.1.0",
+      "name": "ewnSystemTFTPFilename",
+      "description": "Filename for TFTP download",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSystemTFTPFilename",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.5.2.0",
+      "name": "ewnSystemTFTPIpAddress",
+      "description": "IPAddress of TFTP server",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSystemTFTPIpAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.5.3.0",
+      "name": "ewnSystemTFTPAction",
+      "description": "Action of the current TFTP session",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSystemTFTPAction",
+      "transform": null,
+      "enumMap": {
+        "1": "installConfiguration",
+        "2": "backupConfiguration"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.5.4.0",
+      "name": "ewnSystemTFTPState",
+      "description": "State of the current TFTP session",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSystemTFTPState",
+      "transform": null,
+      "enumMap": {
+        "0": "none",
+        "1": "start",
+        "2": "inProgress",
+        "3": "done",
+        "4": "error"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.6.0",
+      "name": "ewnSystemProductModel",
+      "description": "Product Model Number",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSystemProductModel",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.7.0",
+      "name": "ewnSystemHardwareRev",
+      "description": "Hardware Revision",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSystemHardwareRev",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.8.0",
+      "name": "ewnSystemGatewayIpAddress",
+      "description": "Default Gateway IP Address for this device",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSystemGatewayIpAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.9.0",
+      "name": "ewnSystemMacAddr",
+      "description": "MAC Address of the switch.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSystemMacAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.10.0",
+      "name": "ewnSystemPassword",
+      "description": "Password for the user root. Setting a zero-length string removes the password. Reading this object always returns a string of '******'.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSystemPassword",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.11.0",
+      "name": "ewnSystemPasswordEncrypted",
+      "description": "Password for the user root. Setting a zero-length string removes the password. The password will be encrypted before saved to the configuration file. Reading this object always returns a string of ...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSystemPasswordEncrypted",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.12.0",
+      "name": "ewnSystemAutoSaveState",
+      "description": "Auto save system configuration",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSystemAutoSaveState",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.13.0",
+      "name": "ewnSystemAutoSaveDelay",
+      "description": "Delay time in seconds for auto save system configuration",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSystemAutoSaveDelay",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.14.0",
+      "name": "ewnSystemProductSeries",
+      "description": "On fast Ethernet switches, this property indicates the name of the product series the switch belongs to. On the GbE switches, this property indicates the model number.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSystemProductSeries",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.16.0",
+      "name": "ewnSystemPowerState",
+      "description": "This object contains the information of Power change event. Each tuple consist of 2 octets in the format of <Power Id><Power State> where <Power Id> is of 1 octets and supports the following values...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSystemPowerState",
+      "transform": null,
+      "enumMap": null,
+      "status": "obsolete",
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.1.18.0",
+      "name": "ewnSystemIntegrateProductSeries",
+      "description": "The name of the product series the device belongs to.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSystemIntegrateProductSeries",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.1.0",
+      "name": "ewnPortCount",
+      "description": "Port count",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnPortCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.1",
+      "name": "ewnPortNo",
+      "description": "Port Number",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortNo",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.2",
+      "name": "ewnPortString",
+      "description": "Port String",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnPortString",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.3",
+      "name": "ewnPortHardwareType",
+      "description": "Port hardware type",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortHardwareType",
+      "transform": null,
+      "enumMap": {
+        "1": "type10M",
+        "2": "type100M",
+        "3": "typeMII",
+        "4": "type1G",
+        "5": "type1GFx",
+        "6": "type100MFX",
+        "7": "typeVDSL",
+        "8": "typeUnknown",
+        "9": "type10GFx"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.4",
+      "name": "ewnPortLinkStatus",
+      "description": "Port Link Status",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortLinkStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "down",
+        "1": "up"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.5",
+      "name": "ewnPortLinkConfig",
+      "description": "Port Administrative Link Status identical to ifAdminStatus",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortLinkConfig",
+      "transform": null,
+      "enumMap": {
+        "0": "down",
+        "1": "up"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.6",
+      "name": "ewnPortSpeedStatus",
+      "description": "Port Speed Status",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortSpeedStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "speed10M",
+        "1": "speed100M",
+        "2": "speed1G",
+        "3": "speedVDSL",
+        "4": "speedUnknown",
+        "5": "speed10G"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.7",
+      "name": "ewnPortSpeedConfig",
+      "description": "Port Speed Configuration",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortSpeedConfig",
+      "transform": null,
+      "enumMap": {
+        "0": "speed10M",
+        "1": "speed100M",
+        "2": "speed1G",
+        "3": "speedAuto",
+        "4": "speedVDSL",
+        "5": "speed10G"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.8",
+      "name": "ewnPortDupStatus",
+      "description": "Port Duplexity Status",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortDupStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "half",
+        "1": "full",
+        "2": "auto",
+        "3": "na"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.9",
+      "name": "ewnPortDupConfig",
+      "description": "Port Duplexity Configuration",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortDupConfig",
+      "transform": null,
+      "enumMap": {
+        "0": "half",
+        "1": "full",
+        "2": "auto",
+        "3": "na"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.10",
+      "name": "ewnPortFlowStatus",
+      "description": "Port Flow Control Status",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortFlowStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "txRxOn",
+        "2": "txOnOnly",
+        "3": "rxOnOnly"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.11",
+      "name": "ewnPortFlowConfig",
+      "description": "Port Flow Control Configuration",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortFlowConfig",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.12",
+      "name": "ewnPortFuncType",
+      "description": "The operational mode of the port",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortFuncType",
+      "transform": null,
+      "enumMap": {
+        "0": "switchport",
+        "1": "routerport"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.13",
+      "name": "ewnPortBroadcastLimit",
+      "description": "Switch Broadcast rate limit type.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortBroadcastLimit",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "enable"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.15",
+      "name": "ewnPortDlfMulticastLimit",
+      "description": "Switch DLF and Multicast rate limit type.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortDlfMulticastLimit",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "enable"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.16",
+      "name": "ewnPortLimitLevel",
+      "description": "Switch rate limit level.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnPortLimitLevel",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.17",
+      "name": "ewnPortPriority",
+      "description": "Default priority for untagged frames received by this port",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortPriority",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.18",
+      "name": "ewnPortVlanMode",
+      "description": "VLAN switch port mode.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortVlanMode",
+      "transform": null,
+      "enumMap": {
+        "1": "access",
+        "2": "hybrid",
+        "3": "trunk",
+        "4": "portbase"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.19",
+      "name": "ewnPortPVID",
+      "description": "Port VLAN ID (1..4094).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortPVID",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.20",
+      "name": "ewnPortResetRMONCount",
+      "description": "reset RMON counters on this port.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortResetRMONCount",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.21",
+      "name": "ewnPortDescription",
+      "description": "Port name",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnPortDescription",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.22",
+      "name": "ewnPortTrafficTx",
+      "description": "Percentage utilization of ifOutOctets. The utilization is a floating point number with two digits after the decimal point, but represented as a string value. For example, '100.00' indicates 100% an...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnPortTrafficTx",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.2.1.23",
+      "name": "ewnPortTrafficRx",
+      "description": "Percentage utilization of ifInOctets. The utilization is a floating point number with two digits after the decimal point, but represented as a string value. For example, '100.00' indicates 100% and...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnPortTrafficRx",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.4.1.0",
+      "name": "ewnStormDetectConfig",
+      "description": "Enable/disable the Storm Detect feature. A storm detect notification will always be generated when a storm event is detected and if this feature is enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnStormDetectConfig",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "enable"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.4.2.0",
+      "name": "ewnStormDetectInterval",
+      "description": "Storm Detect measurement interval in seconds, in the range of 2 to 65535 seconds, with a default of 10 seconds.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnStormDetectInterval",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.4.3.0",
+      "name": "ewnStormDetErrdisRecoveryTime",
+      "description": "Storm Detect error-disable recovery time interval, in the range of 2 to 65535 seconds. Default: 0 sec indicates that automatic recovery is disabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnStormDetErrdisRecoveryTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.4.4.0",
+      "name": "ewnStormDetectState",
+      "description": "Storm Detect state of action.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnStormDetectState",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "errdisable",
+        "2": "trap"
+      },
+      "status": "obsolete",
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.4.5.1.1",
+      "name": "ewnStormDetectPort",
+      "description": "Storm Detect Port",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnStormDetectPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.4.5.1.2",
+      "name": "ewnStormDetectPortState",
+      "description": "disabled(0) - indicates that storm detection is not enabled. normal(1) - indicates that storm detection is enabled, but no storm event has occurred yet. shutdown(2) - indicates that storm detect is...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnStormDetectPortState",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "normal",
+        "2": "shutdown"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.4.5.1.3",
+      "name": "ewnStormDetectThresholdUtil",
+      "description": "The threshold, in percentage of bandwidth utilization. When it is set to zero, the threshold is disabled. When inbound traffic of all traffic types on this interface exceeds the threshold, a storm ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnStormDetectThresholdUtil",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.4.5.1.4",
+      "name": "ewnStormDetectTrafficType",
+      "description": "This object identifies a particular traffice type for use in storm detect.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnStormDetectTrafficType",
+      "transform": null,
+      "enumMap": {
+        "0": "broadcast",
+        "1": "multicastBroadcast"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.4.5.1.5",
+      "name": "ewnStormDetectThresholdPktsPerSec",
+      "description": "The threshold, in packets per second. When it is set to zero, the threshold is disabled. When inbound traffic of a particular traffic type on this interface exceeds the threshold, a storm event wil...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnStormDetectThresholdPktsPerSec",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.5.1.1",
+      "name": "ewnPortAlarmNo",
+      "description": "Port Alarm Table Index",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortAlarmNo",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.5.1.2",
+      "name": "ewnPortAlarmPortName",
+      "description": "Name of an interface.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnPortAlarmPortName",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.5.1.3",
+      "name": "ewnPortAlarmEnable",
+      "description": "Individual port alarms can be enabled/disabled by this property.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortAlarmEnable",
+      "transform": null,
+      "enumMap": {
+        "0": "enable",
+        "1": "disable"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.5.1.4",
+      "name": "ewnPortAlarmPortStatus",
+      "description": "The current operational state of this interface.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPortAlarmPortStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "linkUp",
+        "1": "linkDown"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.6.1.1",
+      "name": "ewnPowerAlarmStatusNO",
+      "description": "Power Alarm Table Index",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPowerAlarmStatusNO",
+      "transform": null,
+      "enumMap": null,
+      "status": "deprecated",
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.6.1.2",
+      "name": "ewnPowerAlarmStatusPowerName",
+      "description": "Power Alarm Table Power Name",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnPowerAlarmStatusPowerName",
+      "transform": null,
+      "enumMap": null,
+      "status": "deprecated",
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.6.1.3",
+      "name": "ewnPowerAlarmStatusTrigger",
+      "description": "Power Alarm Table Trigger Enable/Disable",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPowerAlarmStatusTrigger",
+      "transform": null,
+      "enumMap": {
+        "0": "enable",
+        "1": "disable"
+      },
+      "status": "deprecated",
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.2.6.1.4",
+      "name": "ewnPowerAlarmStatusPowerStatus",
+      "description": "Power Alarm Table Power Status",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPowerAlarmStatusPowerStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "linkUp",
+        "1": "linkDown"
+      },
+      "status": "deprecated",
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.3.1.0",
+      "name": "ewnMirrorAvailablePortMap",
+      "description": "A bitmap of ports, with each bit indicating availability of a port to be a candidate for mirrored port. For example, if fe3 is mirrored-to port, and fe9 is mirrored port. This object would have a v...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnMirrorAvailablePortMap",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.3.2.0",
+      "name": "ewnMirrorCount",
+      "description": "Maximum number of mirror entries supported by the device.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnMirrorCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.3.3.1.1",
+      "name": "ewnMirrorIndex",
+      "description": "Mirror index",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnMirrorIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.3.3.1.2",
+      "name": "ewnMirrorToPort",
+      "description": "Mirror to port",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnMirrorToPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.3.3.1.3",
+      "name": "ewnMirrorFromPortMap",
+      "description": "Mirror from port map",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnMirrorFromPortMap",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.3.3.1.4",
+      "name": "ewnMirrorMode",
+      "description": "Mirror mode",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnMirrorMode",
+      "transform": null,
+      "enumMap": {
+        "1": "receive",
+        "2": "transmit",
+        "3": "receiveandtransmit"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.4.1.0",
+      "name": "ewnTrunkCount",
+      "description": "Trunk count",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnTrunkCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.4.2.1.1",
+      "name": "ewnTrunkIndex",
+      "description": "Trunk index",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnTrunkIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.4.2.1.2",
+      "name": "ewnTrunkPortMap",
+      "description": "Trunk port map",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnTrunkPortMap",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.4.2.1.3",
+      "name": "ewnTrunkAvailPortMap",
+      "description": "Available trunk port map",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnTrunkAvailPortMap",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.4.2.1.4",
+      "name": "ewnTrunkMaxNumOfPorts",
+      "description": "Maximum number of ports per trunk group.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnTrunkMaxNumOfPorts",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.5.1.1.0",
+      "name": "ewnLACPSYSPriority",
+      "description": "LACP SYSTEM Priority",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnLACPSYSPriority",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-sw72000"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.5.1.2.1.1",
+      "name": "ewnLACPPortIndex",
+      "description": "LACP Index",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnLACPPortIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-sw72000"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.5.1.2.1.2",
+      "name": "ewnLACPPortName",
+      "description": "LACP Port String",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnLACPPortName",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-sw72000",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.5.1.2.1.3",
+      "name": "ewnLACPTimeout",
+      "description": "LACP Port Timeout",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnLACPTimeout",
+      "transform": null,
+      "enumMap": {
+        "0": "short",
+        "1": "long",
+        "2": "disable"
+      },
+      "module": "EtherWAN-sw72000"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.5.1.2.1.4",
+      "name": "ewnLACPPriority",
+      "description": "LACP Port Priority",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnLACPPriority",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-sw72000"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.5.2.1.1.1",
+      "name": "ewnLACPIndex",
+      "description": "LACP Index",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnLACPIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-sw72000"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.5.2.1.1.2",
+      "name": "ewnLACPPortString",
+      "description": "LACP Port String",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnLACPPortString",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-sw72000",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.5.2.1.1.3",
+      "name": "ewnLACPAdminKey",
+      "description": "LACP Admin Key",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnLACPAdminKey",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "group1",
+        "2": "group2",
+        "3": "group3",
+        "4": "statictrunk"
+      },
+      "module": "EtherWAN-sw72000"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.5.2.1.1.4",
+      "name": "ewnLACPPortMode",
+      "description": "LACP Port Mode",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnLACPPortMode",
+      "transform": null,
+      "enumMap": {
+        "0": "passive",
+        "1": "active",
+        "2": "notAvailable"
+      },
+      "module": "EtherWAN-sw72000"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.6.1.0",
+      "name": "ewnBridgeSTPState",
+      "description": "Spanning Tree Protocol functionality",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnBridgeSTPState",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.6.2.0",
+      "name": "ewnBridgeAgingTime",
+      "description": "Bridge aging time",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnBridgeAgingTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.7.1.0",
+      "name": "ewnIGMPState",
+      "description": "Internet Group Management Protocol functionality",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnIGMPState",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "passive",
+        "2": "querier"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.7.2.1.1",
+      "name": "ewnIGMPCfgIndex",
+      "description": "IGMP configuration entry index",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnIGMPCfgIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.7.2.1.2",
+      "name": "ewnIGMPCfgVlanID",
+      "description": "IGMP configuration entry's VLAN ID",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnIGMPCfgVlanID",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.7.2.1.3",
+      "name": "ewnIGMPCfgIGMPVersion",
+      "description": "IGMP Version",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnIGMPCfgIGMPVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.7.2.1.4",
+      "name": "ewnIGMPCfgFastLeave",
+      "description": "IGMP Fast-leave function",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnIGMPCfgFastLeave",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "enable"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.7.2.1.5",
+      "name": "ewnIGMPCfgQueryInterval",
+      "description": "IGMP Querrier Interval for active mode",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnIGMPCfgQueryInterval",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.7.2.1.6",
+      "name": "ewnIGMPCfgMaxResponseTime",
+      "description": "IGMP Max Response Time for active mode",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnIGMPCfgMaxResponseTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.7.2.1.7",
+      "name": "ewnIGMPCfgReportSuppression",
+      "description": "IGMP Report Suppression function",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnIGMPCfgReportSuppression",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "enable"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.7.3.1.1",
+      "name": "ewnIGMPRecordIndex",
+      "description": "IGMP Group index",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnIGMPRecordIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.7.3.1.2",
+      "name": "ewnIGMPRecordGroupAddress",
+      "description": "IGMP group address",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnIGMPRecordGroupAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.7.3.1.3",
+      "name": "ewnIGMPRecordInterface",
+      "description": "IGMP group member interface",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnIGMPRecordInterface",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.7.3.1.4",
+      "name": "ewnIGMPRecordUpTime",
+      "description": "IGMP group up time",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnIGMPRecordUpTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.7.3.1.5",
+      "name": "ewnIGMPRecordExpireTime",
+      "description": "IGMP group expire time",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnIGMPRecordExpireTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.7.3.1.6",
+      "name": "ewnIGMPRecordLastReporter",
+      "description": "IGMP group last reporter",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnIGMPRecordLastReporter",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.8.1.0",
+      "name": "ewnVLANGVRPState",
+      "description": "GARP VLAN Registration Protocol functionality",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnVLANGVRPState",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.8.2.1.1",
+      "name": "ewnVLANIndex",
+      "description": "VLAN index",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnVLANIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.8.2.1.2",
+      "name": "ewnVLANID",
+      "description": "VLAN ID (valid values 1-4094)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnVLANID",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.8.2.1.3",
+      "name": "ewnVLANName",
+      "description": "VLAN Name. This can only be set during creation of VLAN. It cannot be modified in a later time.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnVLANName",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.8.2.1.4",
+      "name": "ewnVLANState",
+      "description": "The VLAN state.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnVLANState",
+      "transform": null,
+      "enumMap": {
+        "0": "invalid",
+        "1": "disabled",
+        "2": "active"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.8.2.1.5",
+      "name": "ewnVLANType",
+      "description": "The VLAN type.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnVLANType",
+      "transform": null,
+      "enumMap": {
+        "0": "invalid",
+        "1": "static",
+        "2": "dynamic"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.8.2.1.6",
+      "name": "ewnVLANStaticPortMap",
+      "description": "Ports that always belong to the VLAN.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnVLANStaticPortMap",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.8.2.1.7",
+      "name": "ewnVLANStaticUntaggedPortMap",
+      "description": "Untagged ports of the VLAN.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnVLANStaticUntaggedPortMap",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.8.2.1.8",
+      "name": "ewnVLANCurrentPortMap",
+      "description": "Ports currently belonging to the VLAN.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnVLANCurrentPortMap",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.8.2.1.9",
+      "name": "ewnVLANCurrentUntaggedPortMap",
+      "description": "Untagged ports currently belonging to the VLAN.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnVLANCurrentUntaggedPortMap",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.8.2.1.10",
+      "name": "ewnVLANCurrentRegisteredPortMap",
+      "description": "Registered ports currently belonging to the VLAN.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnVLANCurrentRegisteredPortMap",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.8.2.1.11",
+      "name": "ewnVLANIPAddress",
+      "description": "VLAN IP address / mask",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnVLANIPAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.8.3.0",
+      "name": "ewnVLANAddVlan",
+      "description": "Add a new VLAN to ewnVLANTable",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnVLANAddVlan",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.8.4.0",
+      "name": "ewnVLANDeleteVlan",
+      "description": "Delete a VLAN from ewnVLANTable",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnVLANDeleteVlan",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.9.1.0",
+      "name": "ewnQoSState",
+      "description": "QoS state",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnQoSState",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.9.2.0",
+      "name": "ewnQoSTrust",
+      "description": "QoS trust mode",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnQoSTrust",
+      "transform": null,
+      "enumMap": {
+        "0": "none",
+        "1": "cos",
+        "2": "dscp",
+        "3": "cosanddscp"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.9.3.0",
+      "name": "ewnQoSPriorityQueueOut",
+      "description": "QoS priority queue out mode",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnQoSPriorityQueueOut",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.9.4.1.1",
+      "name": "ewnQoSQueueIndex",
+      "description": "QoS Queue Index",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnQoSQueueIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.9.4.1.2",
+      "name": "ewnQoSWRRqueueID",
+      "description": "QoS WRR queue ID",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnQoSWRRqueueID",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.9.4.1.3",
+      "name": "ewnQoSWRRqueueCoSmap",
+      "description": "QoS WRR queue CoS mapping",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnQoSWRRqueueCoSmap",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.9.4.1.4",
+      "name": "ewnQoSWRRqueueDSCPmap",
+      "description": "QoS WRR queue DSCP mapping",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnQoSWRRqueueDSCPmap",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.9.4.1.5",
+      "name": "ewnQoSWRRqueueBandwidth",
+      "description": "QoS WRR queue bandwidth",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnQoSWRRqueueBandwidth",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.1.0",
+      "name": "ewnSNMPState",
+      "description": "SNMP state",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSNMPState",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.2.0",
+      "name": "ewnSNMPCommunitySet",
+      "description": "Set community string currently active for this device",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSNMPCommunitySet",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.3.0",
+      "name": "ewnSNMPCommunityGet",
+      "description": "Get community string currently active for this device",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSNMPCommunityGet",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.4.0",
+      "name": "ewnSNMPTrapCommunity1",
+      "description": "Trap community string 1 for this device",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapCommunity1",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.5.0",
+      "name": "ewnSNMPTrapCommunity2",
+      "description": "Trap community string 2 for this device",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapCommunity2",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.6.0",
+      "name": "ewnSNMPTrapCommunity3",
+      "description": "Trap community string 3 for this device",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapCommunity3",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.7.0",
+      "name": "ewnSNMPTrapCommunity4",
+      "description": "Trap community string 4 for this device",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapCommunity4",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.8.0",
+      "name": "ewnSNMPTrapCommunity5",
+      "description": "Trap community string 5 for this device",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapCommunity5",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.9.0",
+      "name": "ewnSNMPTrapIpAddress1",
+      "description": "Trap IP Address 1 for this device",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapIpAddress1",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.10.0",
+      "name": "ewnSNMPTrapIpAddress2",
+      "description": "Trap IP Address 2 for this device",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapIpAddress2",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.11.0",
+      "name": "ewnSNMPTrapIpAddress3",
+      "description": "Trap IP Address 3 for this device",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapIpAddress3",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.12.0",
+      "name": "ewnSNMPTrapIpAddress4",
+      "description": "Trap IP Address 4 for this device",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapIpAddress4",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.13.0",
+      "name": "ewnSNMPTrapIpAddress5",
+      "description": "Trap IP Address 5 for this device",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapIpAddress5",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.16.0",
+      "name": "ewnSNMPTrapLinkDown",
+      "description": "Link Down Trap functionality",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapLinkDown",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.17.0",
+      "name": "ewnSNMPTrapLinkUp",
+      "description": "Link Up Trap functionality",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapLinkUp",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.20.0",
+      "name": "ewnSNMPResetNeed",
+      "description": "Indicate need to reset SNMP process for SNMP entry changed.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSNMPResetNeed",
+      "transform": null,
+      "enumMap": {
+        "0": "no",
+        "1": "yes"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.21.0",
+      "name": "ewnSNMPResetSNMP",
+      "description": "Reset SNMP process for enable SNMP new setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSNMPResetSNMP",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.22.0",
+      "name": "ewnSNMPResetRMONCount",
+      "description": "Reset RMON counters on all the ports. Please refer to ewnPortEntry group to reset specific port.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSNMPResetRMONCount",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.23.0",
+      "name": "ewnSNMPDescription",
+      "description": "Snmp Description",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSNMPDescription",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.24.0",
+      "name": "ewnSNMPMacNotificationInterval",
+      "description": "Specify the notification trap interval in seconds between each set of traps that are generated.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSNMPMacNotificationInterval",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.25.0",
+      "name": "ewnSNMPMacNotifyHistorySize",
+      "description": "Specify the maximum number of entries in the MAC notification history table.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSNMPMacNotifyHistorySize",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.26.0",
+      "name": "ewnSNMPMacNotifyAddedPortMap",
+      "description": "MAC notification added port map.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSNMPMacNotifyAddedPortMap",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.27.0",
+      "name": "ewnSNMPMacNotifyRemovedPortMap",
+      "description": "MAC notification removed port map.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSNMPMacNotifyRemovedPortMap",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.28.0",
+      "name": "ewnSNMPTrapMacNotification",
+      "description": "MAC Notification Trap functionality",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapMacNotification",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.29.0",
+      "name": "ewnSNMPTrapPowerDown",
+      "description": "Power Down Trap functionality",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapPowerDown",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled",
+        "2": "na"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.30.0",
+      "name": "ewnSNMPTrapPowerUp",
+      "description": "Power Up Trap functionality",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapPowerUp",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled",
+        "2": "na"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.31.0",
+      "name": "ewnSNMPTrapPoEIFDown",
+      "description": "PoE Interface Down Trap functionality",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapPoEIFDown",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.32.0",
+      "name": "ewnSNMPTrapPoEIFUp",
+      "description": "PoE Interface Trap functionality",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapPoEIFUp",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.10.33.0",
+      "name": "ewnSNMPTrapPoEOverLoad",
+      "description": "PoE Interface or System budget Trap functionality",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSNMPTrapPoEOverLoad",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.11.1.1.1",
+      "name": "ewnBridgeSDBIndex",
+      "description": "Switching Database Index",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnBridgeSDBIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.11.1.1.2",
+      "name": "ewnBridgeSDBMacAddress",
+      "description": "Switching Database MAC address",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnBridgeSDBMacAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "PhysAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.11.1.1.3",
+      "name": "ewnBridgeSDBVlanId",
+      "description": "Switching Database VLAN ID",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnBridgeSDBVlanId",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.11.1.1.4",
+      "name": "ewnBridgeSDBPortNo",
+      "description": "Switching Database port number",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnBridgeSDBPortNo",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.1.1.0",
+      "name": "ewnRingCtrl",
+      "description": "Enable/disable the Ring Protocol for the bridge. When 'disable(1)', the ring port will be operating in (R)STP mode if (R)STP is enabled, or placed in a forwarding state if (R)STP is not enabled. Wh...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnRingCtrl",
+      "transform": null,
+      "enumMap": {
+        "1": "disable",
+        "2": "enable"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.1.2.0",
+      "name": "ewnRingCouplingCtrl",
+      "description": "Enable/disable the Ring-coupling Protocol for the bridge. When 'disable(1)', the coupling port will be operating in (R)STP mode if (R)STP is enabled, or placed in a forwarding state if (R)STP is no...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnRingCouplingCtrl",
+      "transform": null,
+      "enumMap": {
+        "1": "disable",
+        "2": "enable",
+        "3": "neighborOnly"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.1.3.0",
+      "name": "ewnRingAvailablePortList",
+      "description": "This object identifies a list of ports that are eligible to run Ring or Ring-coupling protocol. Each octet within this value specifies a set of eight ports, with the first octet specifying ports 1 ...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnRingAvailablePortList",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.1.4.0",
+      "name": "ewnRingPortList",
+      "description": "This object identifies a list of ports that are enabled to run Ring protocol. It should be noted that only 2 ports can be set as Ring ports. Each octet within this value specifies a set of eight po...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnRingPortList",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.1.5.0",
+      "name": "ewnRingCouplingPortList",
+      "description": "This object identifies a list of ports that are enabled to run Ring-coupling protocol. It should be noted that only 2 ports can be set as Ring-coupling ports. Each octet within this value specifies...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnRingCouplingPortList",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.1.6.1.1",
+      "name": "ewnRingPortIndex",
+      "description": "This object identifies the ring(coupling) port identifier for which this entry contains information.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnRingPortIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.1.6.1.2",
+      "name": "ewnRingPortType",
+      "description": "This object identifies the ring(coupling) port type.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnRingPortType",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.1.6.1.3",
+      "name": "ewnRingPortNumber",
+      "description": "This object identifies the ring(coupling) port number.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnRingPortNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.1.6.1.4",
+      "name": "ewnRingPortState",
+      "description": "This object identifies the ring(coupling) port state.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnRingPortState",
+      "transform": null,
+      "enumMap": {
+        "1": "down",
+        "2": "suspend",
+        "3": "block",
+        "4": "forward"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.2.1.0",
+      "name": "ewnChainVLAN",
+      "description": "The chain VLAN configuration of bridge .",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnChainVLAN",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.2.2.0",
+      "name": "ewnChainPriority",
+      "description": "The chain priority configuration of the device. Lower numbers indicate higher priority.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnChainPriority",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.2.3.0",
+      "name": "ewnChainTimeOutCount",
+      "description": "The chain timeout count configuration of bridge.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnChainTimeOutCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.2.4.0",
+      "name": "ewnChainStormControl",
+      "description": "Enable / disable the broadcast and multicast storm control function for chain port.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnChainStormControl",
+      "transform": null,
+      "enumMap": {
+        "1": "disable",
+        "2": "enable"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.2.5.1.1",
+      "name": "ewnChainPortIndex",
+      "description": "This object identifies the port identifier for which this entry contains information.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnChainPortIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.2.5.1.2",
+      "name": "ewnChainPort",
+      "description": "Enable / disable the port to run chain protocol.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnChainPort",
+      "transform": null,
+      "enumMap": {
+        "1": "disable",
+        "2": "enable"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.2.5.1.3",
+      "name": "ewnChainPortRole",
+      "description": "This object identifies the chain port role.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnChainPortRole",
+      "transform": null,
+      "enumMap": {
+        "1": "noLink",
+        "2": "init",
+        "3": "master",
+        "4": "slave",
+        "5": "unknown"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.2.5.1.4",
+      "name": "ewnChainPortState",
+      "description": "This object identifies the chain port state.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnChainPortState",
+      "transform": null,
+      "enumMap": {
+        "1": "block",
+        "2": "forward",
+        "3": "unknown"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.2.6.0",
+      "name": "ewnChainPassPortList",
+      "description": "This object identifies the set of ports enabled to run Chain pass-through protocol. It should be noted that only 2 ports can be set as Chain pass-through ports.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnChainPassPortList",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.2.7.1.1",
+      "name": "ewnChainPassPortIndex",
+      "description": "This object identifies the port identifier for which this entry contains information.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnChainPassPortIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.2.7.1.2",
+      "name": "ewnChainPassPortNum",
+      "description": "This object identifies the chain pass-through port number.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnChainPassPortNum",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.2.7.1.3",
+      "name": "ewnChainPassPortRole",
+      "description": "This object identifies the chain pass-through port role.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnChainPassPortRole",
+      "transform": null,
+      "enumMap": {
+        "1": "noLink",
+        "2": "init",
+        "3": "fowarder",
+        "4": "unknown"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.14.2.7.1.4",
+      "name": "ewnChainPassPortState",
+      "description": "This object identifies the chain pass-through port state.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnChainPassPortState",
+      "transform": null,
+      "enumMap": {
+        "1": "block",
+        "2": "forward",
+        "3": "unknown"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.1.0",
+      "name": "ewnSensorPollEnable",
+      "description": "A value of true(1) indicates that sensor polling is enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorPollEnable",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.2.0",
+      "name": "ewnSensorPollInterval",
+      "description": "Specifies how often (in seconds) the switch polls for the change that triggers an alarm. This applies to all sensors (including Digital Input). Default value is 60 seconds.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorPollInterval",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.3.0",
+      "name": "ewnSensorTempTrapEnable",
+      "description": "When the value of this object is true(1), generation of ewnSensorTempOverTrap and ewnSensorTempUnderTrap is enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorTempTrapEnable",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.4.0",
+      "name": "ewnSensorHumidityTrapEnable",
+      "description": "When the value of this object is true(1), generation of ewnSensorHumidityOverTrap and ewnSensorHumidityUnderTrap is enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorHumidityTrapEnable",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.5.0",
+      "name": "ewnSensorTempHighThreshold",
+      "description": "The upper threshold for this sensor. The value would be interpreted as (degrees C * 10) or (degrees F * 10). A value of -2730 indicates no threshold is defined.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorTempHighThreshold",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.6.0",
+      "name": "ewnSensorTempLowhreshold",
+      "description": "The lower threshold for this sensor. The value would be interpreted as (degrees C * 10) or (degrees F * 10). A value of -2730 indicates no threshold is defined.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorTempLowhreshold",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.7.0",
+      "name": "ewnSensorHumidityHighThreshold",
+      "description": "The upper threshold for this sensor in percentRH. A value of 0 indicates no threhold is defined.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorHumidityHighThreshold",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.8.0",
+      "name": "ewnSensorHumidityLowThreshold",
+      "description": "The upper threshold for this sensor in percentRH. A value of 0 indicates no threhold is defined.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorHumidityLowThreshold",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.9.0",
+      "name": "ewnSensorTemperatureMinInterval",
+      "description": "Specifies the minimum period in seconds between two successive traps. This applies to e-mail notification too. A value of 0 indicates no trap will be sent on the same event.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorTemperatureMinInterval",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.10.0",
+      "name": "ewnSensorHumidityMinInterval",
+      "description": "Specifies the minimum period in seconds between two successive traps. This applies to e-mail notification too.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorHumidityMinInterval",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.11.0",
+      "name": "ewnSensorTempUnit",
+      "description": "This variable indicates the present temperature unit.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorTempUnit",
+      "transform": null,
+      "enumMap": {
+        "0": "celsius",
+        "1": "fahrenheit"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.12.0",
+      "name": "ewnSensorTempValue",
+      "description": "The current Celsius temperature reading if a temperature sensor is present on this system. The value would be interpreted as (degrees C * 10) or (degrees F * 10)",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorTempValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.13.0",
+      "name": "ewnSensorHumidityValue",
+      "description": "The current humidity reading if a humidity sensor is present on this system.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorHumidityValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.17.0",
+      "name": "ewnSensorDigitalInput1Description",
+      "description": "Administratively assigned human-readable name for this digital input pin.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput1Description",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.18.0",
+      "name": "ewnSensorDigitalInput1State",
+      "description": "This variable reports the most recent measurement seen by this digital input. A value of high(2) indicates HIGH.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput1State",
+      "transform": null,
+      "enumMap": {
+        "1": "low",
+        "2": "high"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.19.0",
+      "name": "ewnSensorDigitalInput1Status",
+      "description": "This variable indicates the present operational status of this sensor.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput1Status",
+      "transform": null,
+      "enumMap": {
+        "1": "ok",
+        "2": "unavailable",
+        "3": "nonoperational"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.20.0",
+      "name": "ewnSensorDigitalInput1TrapEnable",
+      "description": "When the value of this object is lowLevel(1) or highLevel(2), generation of ewnSensorDigitalInput1Trap is enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput1TrapEnable",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "lowLevel",
+        "2": "highLevel"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.21.0",
+      "name": "ewnSensorDigitalInput1MinInterval",
+      "description": "Specifies the minimum period in seconds between two successive traps. This applies to e-mail notification too.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput1MinInterval",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.22.0",
+      "name": "ewnSensorDigitalInput2Description",
+      "description": "Administratively assigned human-readable name for this digital input pin.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput2Description",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.23.0",
+      "name": "ewnSensorDigitalInput2State",
+      "description": "This variable reports the most recent measurement seen by this digital input. A value of high(2) indicates HIGH.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput2State",
+      "transform": null,
+      "enumMap": {
+        "1": "low",
+        "2": "high"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.24.0",
+      "name": "ewnSensorDigitalInput2Status",
+      "description": "This variable indicates the present operational status of this sensor.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput2Status",
+      "transform": null,
+      "enumMap": {
+        "1": "ok",
+        "2": "unavailable",
+        "3": "nonoperational"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.25.0",
+      "name": "ewnSensorDigitalInput2TrapEnable",
+      "description": "When the value of this object is lowLevel(1) or highLevel(2), generation of ewnSensorDigitalInput2Trap is enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput2TrapEnable",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "lowLevel",
+        "2": "highLevel"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.26.0",
+      "name": "ewnSensorDigitalInput2MinInterval",
+      "description": "Specifies the minimum period in seconds between two successive traps. This applies to e-mail notification too.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput2MinInterval",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.27.0",
+      "name": "ewnSensorDigitalInput3Description",
+      "description": "Administratively assigned human-readable name for this digital input pin.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput3Description",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.28.0",
+      "name": "ewnSensorDigitalInput3State",
+      "description": "This variable reports the most recent measurement seen by this digital input. A value of high(2) indicates HIGH.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput3State",
+      "transform": null,
+      "enumMap": {
+        "1": "low",
+        "2": "high"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.29.0",
+      "name": "ewnSensorDigitalInput3Status",
+      "description": "This variable indicates the present operational status of this sensor.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput3Status",
+      "transform": null,
+      "enumMap": {
+        "1": "ok",
+        "2": "unavailable",
+        "3": "nonoperational"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.30.0",
+      "name": "ewnSensorDigitalInput3TrapEnable",
+      "description": "When the value of this object is lowLevel(1) or highLevel(2), generation of ewnSensorDigitalInput3Trap is enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput3TrapEnable",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "lowLevel",
+        "2": "highLevel"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.31.0",
+      "name": "ewnSensorDigitalInput3MinInterval",
+      "description": "Specifies the minimum period in seconds between two successive traps. This applies to e-mail notification too.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput3MinInterval",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.32.0",
+      "name": "ewnSensorDigitalInput4Description",
+      "description": "Administratively assigned human-readable name for this digital input pin.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput4Description",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.33.0",
+      "name": "ewnSensorDigitalInput4State",
+      "description": "This variable reports the most recent measurement seen by this digital input. A value of high(2) indicates HIGH.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput4State",
+      "transform": null,
+      "enumMap": {
+        "1": "low",
+        "2": "high"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.34.0",
+      "name": "ewnSensorDigitalInput4Status",
+      "description": "This variable indicates the present operational status of this sensor.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput4Status",
+      "transform": null,
+      "enumMap": {
+        "1": "ok",
+        "2": "unavailable",
+        "3": "nonoperational"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.35.0",
+      "name": "ewnSensorDigitalInput4TrapEnable",
+      "description": "When the value of this object is lowLevel(1) or highLevel(2), generation of ewnSensorDigitalInput3Trap is enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput4TrapEnable",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "lowLevel",
+        "2": "highLevel"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.15.2.36.0",
+      "name": "ewnSensorDigitalInput4MinInterval",
+      "description": "Specifies the minimum period in seconds between two successive traps. This applies to e-mail notification too.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnSensorDigitalInput4MinInterval",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.1.0",
+      "name": "ewnVDSLCount",
+      "description": "VDSL port count",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnVDSLCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.2.1.1",
+      "name": "ewnVDSLCfgIndex",
+      "description": "VDSL configuration entry index",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnVDSLCfgIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.2.1.2",
+      "name": "ewnVDSLAsymMode",
+      "description": "VDSL asymmetric mode",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnVDSLAsymMode",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.2.1.3",
+      "name": "ewnVDSLMaxSpeed",
+      "description": "VDSL maximum speed",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnVDSLMaxSpeed",
+      "transform": null,
+      "enumMap": {
+        "0": "speed50Mbps",
+        "1": "speed40Mbps",
+        "2": "speed30Mbps",
+        "3": "speed25Mbps",
+        "4": "speed20Mbps",
+        "5": "speed15Mbps",
+        "6": "speed10Mbps",
+        "7": "speed5Mbps",
+        "8": "speed3Mbps",
+        "9": "speed1Mbps"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.2.1.4",
+      "name": "ewnVDSLFixedRate",
+      "description": "VDSL fixed rate bandwidth in Mbps: SYM means Symmetric mode and ASYM is used for Asymmetric mode",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnVDSLFixedRate",
+      "transform": null,
+      "enumMap": {
+        "0": "sym50MAsym59M31M",
+        "1": "sym40MAsym52M24M",
+        "2": "sym30MAsym47M14M",
+        "3": "sym25MAsym42M8M",
+        "4": "sym20MAsym35M6M",
+        "5": "sym15MAsym28M5M",
+        "6": "sym10MAsym22M3M",
+        "7": "sym5MAsym14M2M",
+        "8": "sym3MAsym12M1M",
+        "9": "sym1MAsym1M1M",
+        "10": "disable"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.2.1.5",
+      "name": "ewnVDSLRetrain",
+      "description": "Upgrade VDSL speed",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnVDSLRetrain",
+      "transform": null,
+      "enumMap": {
+        "0": "none",
+        "1": "retrain"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.3.1.1",
+      "name": "ewnVDSLStatIndex",
+      "description": "VDSL status entry index",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnVDSLStatIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.3.1.2",
+      "name": "ewnVDSLLinkSpeed",
+      "description": "VDSL link speed",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnVDSLLinkSpeed",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.3.1.3",
+      "name": "ewnVDSLOperMode",
+      "description": "VDSL operation mode",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnVDSLOperMode",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.3.1.4",
+      "name": "ewnVDSLSNR1BandOnLocal",
+      "description": "SNR of the 1st received band on local side",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnVDSLSNR1BandOnLocal",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.3.1.5",
+      "name": "ewnVDSLSNR2BandOnLocal",
+      "description": "SNR of the 2nd received band on local side",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnVDSLSNR2BandOnLocal",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.3.1.6",
+      "name": "ewnVDSLSNR1BandOnRemote",
+      "description": "SNR of the 1st received band on remote side",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnVDSLSNR1BandOnRemote",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.3.1.7",
+      "name": "ewnVDSLSNR2BandOnRemote",
+      "description": "SNR of the 2nd received band on remote side",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnVDSLSNR2BandOnRemote",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.4.1.1",
+      "name": "ewnVDSLStatsIndex",
+      "description": "VDSL statistics entry index",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnVDSLStatsIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.4.1.2",
+      "name": "ewnVDSLChannelFail",
+      "description": "VDSL Channel failures counter",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "ewnVDSLChannelFail",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.4.1.3",
+      "name": "ewnVDSLFrameLoss",
+      "description": "VDSL Local loss of frame counter",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "ewnVDSLFrameLoss",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.4.1.4",
+      "name": "ewnVDSLErrs",
+      "description": "VDSL Number of uncorrectable code words",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "ewnVDSLErrs",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.4.1.5",
+      "name": "ewnVDSLBroadcast",
+      "description": "VDSL Broadcast frames received counter",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "ewnVDSLBroadcast",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.4.1.6",
+      "name": "ewnVDSLRxFrame",
+      "description": "VDSL Received frames counter",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "ewnVDSLRxFrame",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.4.1.7",
+      "name": "ewnVDSLRxPause",
+      "description": "VDSL Reception pause packets counter",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "ewnVDSLRxPause",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.4.1.8",
+      "name": "ewnVDSLRxBytes",
+      "description": "VDSL Bytes received OK counter",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "ewnVDSLRxBytes",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.4.1.9",
+      "name": "ewnVDSLTxFrame",
+      "description": "VDSL Transmitted Frames Counter",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "ewnVDSLTxFrame",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.4.1.10",
+      "name": "ewnVDSLTxPause",
+      "description": "VDSL Transmission pause packets counter",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "ewnVDSLTxPause",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.16.4.1.11",
+      "name": "ewnVDSLTxBytes",
+      "description": "VDSL Bytes transmitted OK counter",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "ewnVDSLTxBytes",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.1.0",
+      "name": "ewnPortPoEBudgetPower",
+      "description": "System Power Budget",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnPortPoEBudgetPower",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.2.0",
+      "name": "ewnPortPoEAvailablePower",
+      "description": "System Power Available",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ewnPortPoEAvailablePower",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.3.1.1",
+      "name": "ewnPoEPortIndex",
+      "description": "Power Over Ethernet Port Number",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPoEPortIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.3.1.2",
+      "name": "ewnPoEEnableMode",
+      "description": "Power Over Ethernet Port Mode Control : Disable/Enable/Scheduling",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPoEEnableMode",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "enable",
+        "2": "scheduling"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.3.1.3",
+      "name": "ewnPoEPowerLimitbyClassification",
+      "description": "Power Limit by Classification : Disable/Enable No Suppert : NA",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPoEPowerLimitbyClassification",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "enable",
+        "2": "na"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.3.1.4",
+      "name": "ewnPoEPowerLimitFixed",
+      "description": "Fixed Power Limit",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnPoEPowerLimitFixed",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.3.1.5",
+      "name": "ewnPoEPowerPriority",
+      "description": "Power Priority : Critical/High/Low",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPoEPowerPriority",
+      "transform": null,
+      "enumMap": {
+        "0": "critical",
+        "1": "high",
+        "2": "low"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.3.1.6",
+      "name": "ewnPoEPowerDownAlarm",
+      "description": "Power Down Alarm : Disable/Enable",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPoEPowerDownAlarm",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "enable",
+        "2": "na"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.3.1.7",
+      "name": "ewnPoEPowerStatus",
+      "description": "Power Status : Searching/Delivering Power/DC Disconnect/Over Power",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPoEPowerStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "searching",
+        "1": "deliveringPower",
+        "2": "dcDisconnect",
+        "3": "overPower",
+        "4": "disable"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.3.1.8",
+      "name": "ewnPoEPowerDeviceClass",
+      "description": "Classification is a way to tag different terminals on the Power over LAN network according to their power consumption. Devices such as IP telephones, WLAN access points and others, will be classifi...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPoEPowerDeviceClass",
+      "transform": null,
+      "enumMap": {
+        "1": "class0",
+        "2": "class1",
+        "3": "class2",
+        "4": "class3",
+        "5": "class4",
+        "6": "na"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.3.1.9",
+      "name": "ewnPoEPowerCurrent",
+      "description": "Power Current : Measured usage current expressed in Milliampere.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnPoEPowerCurrent",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.3.1.10",
+      "name": "ewnPoEPowerConsumption",
+      "description": "Power Consumption : Measured usage power expressed in Watts.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnPoEPowerConsumption",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.3.1.11",
+      "name": "ewnPoEExtendMode",
+      "description": "If the value of this object is enable(1), the speed of the port is forced to set at 10Mbps so the port can deliver long range data and power up to 250 meters (656ft).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPoEExtendMode",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "enable"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.3.1.12",
+      "name": "ewnPoEPowerDelivery",
+      "description": "A value of twoPairs(0) indicates power is delivered over 2 pairs of RJ45 pins. A value of fourPairs(1) indicates power is delivered over 4 pairs of RJ45 pins.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPoEPowerDelivery",
+      "transform": null,
+      "enumMap": {
+        "0": "twoPairs",
+        "1": "fourPairs"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.3.1.13",
+      "name": "ewnPoEForcePower",
+      "description": "A value of enable(1) indicates no PD detection is performed. Power is automatically injected.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPoEForcePower",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "enable"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.5.1.2",
+      "name": "ewnPoEWatchdogState",
+      "description": "Disable or enable PoE watchdog function on this interface.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPoEWatchdogState",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "enable"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.5.1.3",
+      "name": "ewnPoEWatchdogTargetAddress",
+      "description": "IP address of the target to ping",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnPoEWatchdogTargetAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.5.1.4",
+      "name": "ewnPoEWatchdogPingInterval",
+      "description": "Specifies how often ping test will be run.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPoEWatchdogPingInterval",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.5.1.5",
+      "name": "ewnPoEWatchdogMaxFailures",
+      "description": "Specifies the maximum number of ping failures before determining the target is unreachable.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPoEWatchdogMaxFailures",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.5.1.6",
+      "name": "ewnPoEWatchdogAction",
+      "description": "Action should be done when the number of ICMP requests with no response exceeds ewnPoEWatchdogMaxFailures.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPoEWatchdogAction",
+      "transform": null,
+      "enumMap": {
+        "0": "noAction",
+        "1": "powerCycle",
+        "2": "powerOff"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.17.5.1.7",
+      "name": "ewnPoEWatchdogStartupDelay",
+      "description": "Specifies the initial time to delay before starting the PoE watchdog at system startup.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPoEWatchdogStartupDelay",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.18.1.1.1.0",
+      "name": "ewnLogServerState",
+      "description": "Indicates whether the remote log system is enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ewnLogServerState",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.18.1.1.2.1.2",
+      "name": "ewnLogServerRowStatus",
+      "description": "Controls creation/deletion of entries in this table. Only 'createAndGo' and 'destroy' are supported.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnLogServerRowStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.18.1.3.3.1.2",
+      "name": "ewnLogHistFacility",
+      "description": "Name of the facility that generated this message. For example: 'SYS'.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnLogHistFacility",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.18.1.3.3.1.3",
+      "name": "ewnLogHistMsgSeverity",
+      "description": "The severity of the message.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnLogHistMsgSeverity",
+      "transform": null,
+      "enumMap": {
+        "1": "emergency",
+        "2": "alert",
+        "3": "critical",
+        "4": "error",
+        "5": "warning",
+        "6": "notice",
+        "7": "info",
+        "8": "debug"
+      },
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "EwnLogSeverity"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.18.1.3.3.1.4",
+      "name": "ewnLogHistMsgText",
+      "description": "The text of the message. If the text of the message exceeds 160 bytes, the message will be truncated to 160 bytes and a '*' character will be appended - indicating that the message has been truncated.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnLogHistMsgText",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.18.1.3.3.1.5",
+      "name": "ewnLogHistTimestamp",
+      "description": "The value of sysUpTime when this message was generated.",
+      "type": "timeticks",
+      "walk": true,
+      "metricKey": "ewnLogHistTimestamp",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "TimeStamp"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.21.1.1.1",
+      "name": "ewnPowerSupplyIndex",
+      "description": "Index to the ewnPowerSupplyTable.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPowerSupplyIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.21.1.1.2",
+      "name": "ewnPowerSupplyName",
+      "description": "Name of a power supply, e.g. Power1, Power2.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ewnPowerSupplyName",
+      "transform": null,
+      "enumMap": null,
+      "module": "EtherWAN-ewnSwitchM",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.21.1.1.3",
+      "name": "ewnPowerSupplyAlarmEnable",
+      "description": "Individual power alarms can be enabled/disabled by this property.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPowerSupplyAlarmEnable",
+      "transform": null,
+      "enumMap": {
+        "0": "enable",
+        "1": "disable"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    },
+    {
+      "oid": "1.3.6.1.4.1.2736.1.1.21.1.1.4",
+      "name": "ewnPowerSupplyStatus",
+      "description": "Status of a power supply.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ewnPowerSupplyStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "up",
+        "1": "down"
+      },
+      "module": "EtherWAN-ewnSwitchM"
+    }
+  ]
+}

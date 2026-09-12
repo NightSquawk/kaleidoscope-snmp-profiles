@@ -1,0 +1,252 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-powershield-ups",
+  "name": "PowerShield Ups (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "ups",
+  "vendor": "PowerShield",
+  "vendorOidPrefix": "1.3.6.1.4.1.35154",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 21 readable OIDs under 1.3.6.1.4.1.35154.",
+  "generated": {
+    "source": "mibs/powershield",
+    "date": "2026-09-12",
+    "oidCount": 21,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "PS-POWERSHIELD-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.1.18.0",
+      "name": "psAlarmMinimum",
+      "description": "Minimum Limit",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "psAlarmMinimum",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.1.19.0",
+      "name": "psAlarmMaximum",
+      "description": "Maximum Limit",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "psAlarmMaximum",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.3.1.1.2",
+      "name": "psStringFirstMonoblock",
+      "description": "First Monoblock",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "psStringFirstMonoblock",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.3.1.1.3",
+      "name": "psStringLastMonoblock",
+      "description": "Last Monoblock",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "psStringLastMonoblock",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.3.1.1.4",
+      "name": "psStringState",
+      "description": "String State",
+      "type": "string",
+      "walk": true,
+      "metricKey": "psStringState",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.3.1.1.5",
+      "name": "psStringVoltage",
+      "description": "String Voltage (Volts x 10)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "psStringVoltage",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.3.1.1.6",
+      "name": "psStringTemperature",
+      "description": "String Temperature (Degrees celsius x 10)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "psStringTemperature",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.3.1.1.7",
+      "name": "psStringCurrent",
+      "description": "String Current",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "psStringCurrent",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.3.1.1.8",
+      "name": "psStringTimestamp",
+      "description": "String Timestamp",
+      "type": "string",
+      "walk": true,
+      "metricKey": "psStringTimestamp",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.4.1.1.2",
+      "name": "psMonoblockOwner",
+      "description": "String number that the monoblock belongs to",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "psMonoblockOwner",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.4.1.1.3",
+      "name": "psMonoblockVoltage",
+      "description": "Monoblock Voltage (mV)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "psMonoblockVoltage",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.4.1.1.4",
+      "name": "psMonoblockTemperature",
+      "description": "Monoblock Temperature (Degrees celsius x 10)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "psMonoblockTemperature",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.4.1.1.5",
+      "name": "psMonoblockImpedance",
+      "description": "Monoblock Impedance (uOhms)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "psMonoblockImpedance",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.4.1.1.6",
+      "name": "psMonoblockTimestamp",
+      "description": "Monoblock Timestamp",
+      "type": "string",
+      "walk": true,
+      "metricKey": "psMonoblockTimestamp",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.5.1.0",
+      "name": "psDebuggingTimeouts",
+      "description": "Number of serial timeouts",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "psDebuggingTimeouts",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.5.2.0",
+      "name": "psDebuggingOverflows",
+      "description": "Number of serial overflows",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "psDebuggingOverflows",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.5.3.0",
+      "name": "psDebuggingRequests",
+      "description": "Total packets requested",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "psDebuggingRequests",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.5.4.0",
+      "name": "psDebuggingResponses",
+      "description": "Total response packets",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "psDebuggingResponses",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.5.5.0",
+      "name": "psDebuggingValid",
+      "description": "Total packets valid",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "psDebuggingValid",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.5.6.0",
+      "name": "psDebuggingInvalid",
+      "description": "Total packets invalid",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "psDebuggingInvalid",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.35154.1001.5.7.0",
+      "name": "psDebuggingRetries",
+      "description": "Total retries send",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "psDebuggingRetries",
+      "transform": null,
+      "enumMap": null,
+      "module": "PS-POWERSHIELD-MIB"
+    }
+  ]
+}

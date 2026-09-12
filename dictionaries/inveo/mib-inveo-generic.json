@@ -1,0 +1,226 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-inveo-generic",
+  "name": "Inveo Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "Inveo",
+  "vendorOidPrefix": "1.3.6.1.4.1.42814",
+  "description": "Auto-compiled with libsmi from 2 MIB module(s). 15 readable OIDs under 1.3.6.1.4.1.42814.",
+  "generated": {
+    "source": "mibs/inveo",
+    "date": "2026-09-12",
+    "oidCount": 15,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "Hero",
+      "Nano"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.42814.12.3.1.1.0",
+      "name": "ch1_on",
+      "description": "Channel On State",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ch1_on",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "status": "mandatory",
+      "module": "Hero",
+      "tc": "Onoff"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42814.12.3.1.2.0",
+      "name": "ch2_on",
+      "description": "Channel On State",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ch2_on",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "status": "mandatory",
+      "module": "Hero",
+      "tc": "Onoff"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42814.12.3.2.1.0",
+      "name": "ch1_out",
+      "description": "Channel Out State",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ch1_out",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "status": "mandatory",
+      "module": "Hero",
+      "tc": "Onoff"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42814.12.3.2.2.0",
+      "name": "ch2_out",
+      "description": "Channel Out State",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ch2_out",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "status": "mandatory",
+      "module": "Hero",
+      "tc": "Onoff"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42814.12.4.1.0",
+      "name": "busFail",
+      "description": "Bus failure",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "busFail",
+      "transform": null,
+      "enumMap": {
+        "0": "ok",
+        "1": "fail"
+      },
+      "status": "mandatory",
+      "module": "Hero",
+      "tc": "Fail"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42814.14.1.1.0",
+      "name": "name",
+      "description": "Name of product",
+      "type": "string",
+      "walk": false,
+      "metricKey": "name",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "Nano",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42814.14.1.2.0",
+      "name": "version",
+      "description": "Version string",
+      "type": "string",
+      "walk": false,
+      "metricKey": "version",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "Nano",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42814.14.1.3.0",
+      "name": "date",
+      "description": "Date of version",
+      "type": "string",
+      "walk": false,
+      "metricKey": "date",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "Nano",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42814.14.3.1.1.0",
+      "name": "ch1-on",
+      "description": "Channel On State",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ch1-on",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "Nano"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42814.14.3.2.1.0",
+      "name": "ch1-out",
+      "description": "Channel Out State",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ch1-out",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "Nano"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42814.14.3.3.1.0",
+      "name": "ch1-in",
+      "description": "Channel In State",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ch1-in",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "Nano"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42814.14.3.4.1.0",
+      "name": "ch1-cnt",
+      "description": "Counter",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ch1-cnt",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "Nano"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42814.14.3.5.1.0",
+      "name": "ch1-temp",
+      "description": "Temperature String",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ch1-temp",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "Nano",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42814.14.3.5.2.0",
+      "name": "ch1-tempint",
+      "description": "Temperature Integer",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ch1-tempint",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "Nano"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42814.14.3.5.3.0",
+      "name": "ch1-tempint10",
+      "description": "Temperature x10 Integer",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ch1-tempint10",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "Nano"
+    }
+  ]
+}

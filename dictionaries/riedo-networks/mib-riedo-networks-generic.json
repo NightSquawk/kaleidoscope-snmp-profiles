@@ -1,0 +1,432 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-riedo-networks-generic",
+  "name": "Riedo Networks Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "Riedo Networks",
+  "vendorOidPrefix": "1.3.6.1.4.1.55108",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 32 readable OIDs under 1.3.6.1.4.1.55108.",
+  "generated": {
+    "source": "mibs/bachmann",
+    "date": "2026-09-12",
+    "oidCount": 32,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "RNX-UPDU-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.55108.1.1.1.0",
+      "name": "upduInfoPartNumber",
+      "description": "Part number",
+      "type": "string",
+      "walk": false,
+      "metricKey": "upduInfoPartNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.1.2.0",
+      "name": "upduInfoSerialNumber",
+      "description": "Serial number",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "upduInfoSerialNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.1.3.0",
+      "name": "upduInfoLotNumber",
+      "description": "Lot number",
+      "type": "string",
+      "walk": false,
+      "metricKey": "upduInfoLotNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.2.1.1.2",
+      "name": "upduModuleType",
+      "description": "Module type: tells what type of module it is.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduModuleType",
+      "transform": null,
+      "enumMap": {
+        "0": "unknown",
+        "1": "icm",
+        "2": "meterModule"
+      },
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.2.1.1.3",
+      "name": "upduModulePartNumber",
+      "description": "Part number",
+      "type": "string",
+      "walk": true,
+      "metricKey": "upduModulePartNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.2.1.1.4",
+      "name": "upduModuleSerialNumber",
+      "description": "Module serial number.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduModuleSerialNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.2.1.1.5",
+      "name": "upduModuleLotNumber",
+      "description": "Module lot number.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "upduModuleLotNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.1.1.2",
+      "name": "upduMeterName",
+      "description": "Meter name.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "upduMeterName",
+      "transform": null,
+      "enumMap": null,
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.1.1.3",
+      "name": "upduMeterType",
+      "description": "Meter type: Tell if the meter is per-phase, per PDU, per module or for a single outlet or outlet group. For pduTotalCalc, phaseTotalCalc, moduleTotalCalc, the total is calculated (sum of the measur...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduMeterType",
+      "transform": null,
+      "enumMap": {
+        "0": "pduTotal",
+        "1": "pduTotalCalc",
+        "2": "phaseTotal",
+        "3": "phaseTotalCalc",
+        "4": "moduleTotal",
+        "5": "moduleTotalCalc",
+        "6": "outlet",
+        "7": "outletGroup"
+      },
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.1.1.4",
+      "name": "upduMeterEnergyP",
+      "description": "Positive active energy in watt hours.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "upduMeterEnergyP",
+      "transform": null,
+      "enumMap": null,
+      "units": "Wh",
+      "module": "RNX-UPDU-MIB",
+      "tc": "WattHours"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.1.1.5",
+      "name": "upduMeterEnergyR1",
+      "description": "Reactive energy from quadrant R1 in volt-ampere reactives hours.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "upduMeterEnergyR1",
+      "transform": null,
+      "enumMap": null,
+      "units": "varh",
+      "module": "RNX-UPDU-MIB",
+      "tc": "VoltAmpereReactiveHours"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.1.1.6",
+      "name": "upduMeterEnergyR4",
+      "description": "Reactive energy from quadrant R4 in volt-ampere reactives hours.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "upduMeterEnergyR4",
+      "transform": null,
+      "enumMap": null,
+      "units": "varh",
+      "module": "RNX-UPDU-MIB",
+      "tc": "VoltAmpereReactiveHours"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.1.1.7",
+      "name": "upduMeterPowerP",
+      "description": "Active power at a given instant.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduMeterPowerP",
+      "transform": null,
+      "enumMap": null,
+      "units": "W",
+      "module": "RNX-UPDU-MIB",
+      "tc": "Watts"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.1.1.8",
+      "name": "upduMeterPowerQ",
+      "description": "Reactive power at a given instant.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduMeterPowerQ",
+      "transform": null,
+      "enumMap": null,
+      "units": "var",
+      "module": "RNX-UPDU-MIB",
+      "tc": "VoltAmpereReactives"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.1.1.9",
+      "name": "upduMeterPowerS",
+      "description": "Apparent power at a given instant.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduMeterPowerS",
+      "transform": null,
+      "enumMap": null,
+      "units": "VA",
+      "module": "RNX-UPDU-MIB",
+      "tc": "VoltAmperes"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.1.1.10",
+      "name": "upduMeterUrms",
+      "description": "RMS voltage at a given instant.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduMeterUrms",
+      "transform": null,
+      "enumMap": null,
+      "units": "mV",
+      "module": "RNX-UPDU-MIB",
+      "tc": "MilliVolts"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.1.1.11",
+      "name": "upduMeterIrms",
+      "description": "RMS current at a given instant.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduMeterIrms",
+      "transform": null,
+      "enumMap": null,
+      "units": "mA",
+      "module": "RNX-UPDU-MIB",
+      "tc": "MilliAmperes"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.1.1.12",
+      "name": "upduMeterSystemName",
+      "description": "System-defined object name.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "upduMeterSystemName",
+      "transform": null,
+      "enumMap": null,
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.1.1.13",
+      "name": "upduMeterCustomName",
+      "description": "User-configured unique object name. Write access has to be explicitly enabled in the UPDU configuration (see SNMP options).",
+      "type": "string",
+      "walk": true,
+      "metricKey": "upduMeterCustomName",
+      "transform": null,
+      "enumMap": null,
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.1.1.14",
+      "name": "upduMeterDescription",
+      "description": "User-configured description. Write access has to be explicitly enabled in the UPDU configuration (see SNMP options).",
+      "type": "string",
+      "walk": true,
+      "metricKey": "upduMeterDescription",
+      "transform": null,
+      "enumMap": null,
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.2.1.2",
+      "name": "upduSensorPortName",
+      "description": "Sensor port name as printed on the front plate.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "upduSensorPortName",
+      "transform": null,
+      "enumMap": null,
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.2.1.3",
+      "name": "upduSensorType",
+      "description": "Sensor type.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduSensorType",
+      "transform": null,
+      "enumMap": {
+        "0": "none",
+        "1": "temp",
+        "2": "tempHumidity"
+      },
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.2.1.4",
+      "name": "upduSensorTemperatureCelsius",
+      "description": "Temperature in tenth degrees.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduSensorTemperatureCelsius",
+      "transform": null,
+      "enumMap": null,
+      "units": "deg-C/10",
+      "module": "RNX-UPDU-MIB",
+      "tc": "TenthDegreesCelsius"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.2.1.5",
+      "name": "upduSensorHumidity",
+      "description": "Relative humidity in per mil. Set to 0 for temperature only sensor.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduSensorHumidity",
+      "transform": null,
+      "enumMap": null,
+      "units": "/1000",
+      "module": "RNX-UPDU-MIB",
+      "tc": "Permil"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.3.1.2",
+      "name": "upduRcmName",
+      "description": "RCM name.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "upduRcmName",
+      "transform": null,
+      "enumMap": null,
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.3.1.3",
+      "name": "upduRcmCurrentRms",
+      "description": "RMS residual current.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduRcmCurrentRms",
+      "transform": null,
+      "enumMap": null,
+      "units": "mA/10",
+      "module": "RNX-UPDU-MIB",
+      "tc": "TenthMilliAmperes"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.3.1.4",
+      "name": "upduRcmCurrentDc",
+      "description": "DC residual current.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduRcmCurrentDc",
+      "transform": null,
+      "enumMap": null,
+      "units": "mA/10",
+      "module": "RNX-UPDU-MIB",
+      "tc": "TenthMilliAmperes"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.3.3.1.5",
+      "name": "upduRcmSensorQuality",
+      "description": "RCM sensor health",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduRcmSensorQuality",
+      "transform": null,
+      "enumMap": {
+        "0": "ok",
+        "1": "nodata",
+        "2": "timeout",
+        "3": "internalerror",
+        "4": "selftestfailed"
+      },
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.4.1.1.2",
+      "name": "upduRelayMeterNames",
+      "description": "Comma-separated list of meter names this relay controls.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "upduRelayMeterNames",
+      "transform": null,
+      "enumMap": null,
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.4.1.1.3",
+      "name": "upduRelayAdminStatus",
+      "description": "Defines the desired state of the relay.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduRelayAdminStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on",
+        "2": "unknown"
+      },
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.4.1.1.4",
+      "name": "upduRelayOperStatus",
+      "description": "Defines the operational state of the relay.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduRelayOperStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on",
+        "2": "unknown"
+      },
+      "module": "RNX-UPDU-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.55108.1.4.1.1.5",
+      "name": "upduRelayCondition",
+      "description": "Gives the relay condition. Ok if the desired state corresponds to the operational state, failed if it differs and unknown if the operational state is not known.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "upduRelayCondition",
+      "transform": null,
+      "enumMap": {
+        "0": "ok",
+        "1": "failed",
+        "2": "unknown"
+      },
+      "module": "RNX-UPDU-MIB"
+    }
+  ]
+}

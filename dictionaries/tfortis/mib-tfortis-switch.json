@@ -1,0 +1,732 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-tfortis-switch",
+  "name": "TFortis Switch (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "switch",
+  "vendor": "TFortis",
+  "vendorOidPrefix": "1.3.6.1.4.1.42019",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 60 readable OIDs under 1.3.6.1.4.1.42019.",
+  "generated": {
+    "source": "mibs/tfortis",
+    "date": "2026-09-12",
+    "oidCount": 60,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "FORT-TELECOM-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.1.1.1.0",
+      "name": "comfortStartTime",
+      "description": "Comfort Start Time (in Hours)",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "comfortStartTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.1.1.2.1.1",
+      "name": "comfStIndex",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "comfStIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.1.1.2.1.2",
+      "name": "comfStState",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "comfStState",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.1.2.1.1.1",
+      "name": "autoRstIndex",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "autoRstIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.1.2.1.1.2",
+      "name": "autoRstMode",
+      "description": "Mode of Auto Restart controller",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "autoRstMode",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "link",
+        "2": "ping",
+        "3": "speed",
+        "4": "time"
+      },
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.1.2.1.1.3",
+      "name": "autoRstDstIP",
+      "description": "IP address of device",
+      "type": "string",
+      "walk": true,
+      "metricKey": "autoRstDstIP",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.1.2.1.1.4",
+      "name": "autoRstSpeedDown",
+      "description": "Lower level of speed",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "autoRstSpeedDown",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.1.2.1.1.5",
+      "name": "autoRstSpeedUp",
+      "description": "Upper level of speed",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "autoRstSpeedUp",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.1.2.1.1.6",
+      "name": "autoReStartTimeOnHour",
+      "description": "Hour of PoE Enable",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "autoReStartTimeOnHour",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.1.2.1.1.7",
+      "name": "autoReStartTimeOnMin",
+      "description": "Minute of PoE Enable",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "autoReStartTimeOnMin",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.1.2.1.1.8",
+      "name": "autoReStartTimeOffHour",
+      "description": "Hour of PoE Disable",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "autoReStartTimeOffHour",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.1.2.1.1.9",
+      "name": "autoReStartTimeOffMin",
+      "description": "Minute of PoE Disable",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "autoReStartTimeOffMin",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.1.3.1.1.1",
+      "name": "portPoeIndex",
+      "description": "Port Number",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "portPoeIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.1.3.1.1.2",
+      "name": "portPoeState",
+      "description": "PoE State",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "portPoeState",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.1.4.1.0",
+      "name": "state",
+      "description": "Output Relay State",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "state",
+      "transform": null,
+      "enumMap": {
+        "1": "open",
+        "2": "short"
+      },
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.1.1.0",
+      "name": "upsModeAvalible",
+      "description": "UPS option is avalible. 'true' for switches with UPS module.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "upsModeAvalible",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.1.2.0",
+      "name": "upsPwrSource",
+      "description": "This variable shows the power source for switch. 'Battery' - power source is battery, no external AC voltage. 'AC' - power source is external AC voltage,normal operation. This option only for switc...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "upsPwrSource",
+      "transform": null,
+      "enumMap": {
+        "1": "battery",
+        "2": "ac"
+      },
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.1.3.0",
+      "name": "upsBatteryVoltage",
+      "description": "This variable shows battery voltage. This option only for switches with UPS module.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "upsBatteryVoltage",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.1.4.0",
+      "name": "upsBatteryTime",
+      "description": "This variable shows estimated operating time (in sec.) of the device after switching to battery power (only for devices with UPS module).",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "upsBatteryTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.2.1.1.1",
+      "name": "inputIndex",
+      "description": "Input Number",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "inputIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.2.1.1.2",
+      "name": "inputType",
+      "description": "Input Type: 'buil-in' - inputs on main board, 'plc' - inputs on optional board",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "inputType",
+      "transform": null,
+      "enumMap": {
+        "1": "build-in",
+        "2": "plc"
+      },
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.2.1.1.3",
+      "name": "inputState",
+      "description": "Input State",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "inputState",
+      "transform": null,
+      "enumMap": {
+        "1": "short",
+        "2": "open"
+      },
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.2.1.1.4",
+      "name": "inputAlarm",
+      "description": "Alarm state condition",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "inputAlarm",
+      "transform": null,
+      "enumMap": {
+        "1": "short",
+        "2": "open",
+        "3": "any"
+      },
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.3.1.0",
+      "name": "fwVersion",
+      "description": "Firmware version",
+      "type": "string",
+      "walk": false,
+      "metricKey": "fwVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.4.1.0",
+      "name": "emConnectionStatus",
+      "description": "Energy meter connection status. 'true' if EM is connected via RS845 and option board (PLC) is avalible.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "emConnectionStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.4.2.0",
+      "name": "emResultTotal",
+      "description": "This variable shows total indication of Energy meter, if EM is connected.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "emResultTotal",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.4.3.0",
+      "name": "emResultT1",
+      "description": "This variable shows indication T1 of Energy meter, if EM is connected.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "emResultT1",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.4.4.0",
+      "name": "emResultT2",
+      "description": "This variable shows indication T2 of Energy meter, if EM is connected.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "emResultT2",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.4.5.0",
+      "name": "emResultT3",
+      "description": "This variable shows indication T3 of Energy meter, if EM is connected.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "emResultT3",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.4.6.0",
+      "name": "emResultT4",
+      "description": "This variable shows indication T4 of Energy meter, if EM is connected.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "emResultT4",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.4.7.0",
+      "name": "emPollingInterval",
+      "description": "This variable shows polling interval of Energy meter in minutes. Counters emResultTotal, emResultT1, emResultT2, emResultT3, emResultT4 updated with the same interval.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "emPollingInterval",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.5.1.1.1",
+      "name": "portPoeStatusIndex",
+      "description": "Port Number",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "portPoeStatusIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.5.1.1.2",
+      "name": "portPoeStatusState",
+      "description": "PoE State",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "portPoeStatusState",
+      "transform": null,
+      "enumMap": {
+        "1": "up",
+        "2": "down"
+      },
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.5.1.1.3",
+      "name": "portPoeStatusPower",
+      "description": "PoE load power (in mW)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "portPoeStatusPower",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.6.1.1.1.1",
+      "name": "arPortIndex",
+      "description": "Port Number",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "arPortIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.6.1.1.1.2",
+      "name": "arPortStatus",
+      "description": "State of special function 'AutoRestart'. 'normal' - no error, 'noLink' - no link activity on port, 'noPing' - no answer to ping, 'lowSpeed' - low speed on port",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "arPortStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "normal",
+        "2": "noLink",
+        "3": "noPing",
+        "4": "lowSpeed"
+      },
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.6.2.1.1.1",
+      "name": "csPortIndex",
+      "description": "Port Number",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "csPortIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.6.2.1.1.2",
+      "name": "csPortStatus",
+      "description": "State of special function 'ComfortStart' on port. 'normal' - ComfortStart is ready, 'processing' - ComfortStart in processing",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "csPortStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "normal",
+        "2": "processing"
+      },
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.7.1.1.1",
+      "name": "portSfpIndex",
+      "description": "SFP port number",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "portSfpIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.7.1.1.2",
+      "name": "portSfpPresent",
+      "description": "Present of SFP module in the case",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "portSfpPresent",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.7.1.1.3",
+      "name": "portSfpSignalDetect",
+      "description": "Optical Signal Detect of SFP module",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "portSfpSignalDetect",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.7.1.1.4",
+      "name": "portSfpVendor",
+      "description": "SFP module Vendor",
+      "type": "string",
+      "walk": true,
+      "metricKey": "portSfpVendor",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.7.1.1.5",
+      "name": "portSfpOui",
+      "description": "SFP module Vendor OUI",
+      "type": "string",
+      "walk": true,
+      "metricKey": "portSfpOui",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.7.1.1.6",
+      "name": "portSfpPartNumber",
+      "description": "SFP module Part Number",
+      "type": "string",
+      "walk": true,
+      "metricKey": "portSfpPartNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.7.1.1.7",
+      "name": "portSfpRevision",
+      "description": "SFP module Revision",
+      "type": "string",
+      "walk": true,
+      "metricKey": "portSfpRevision",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.7.1.1.8",
+      "name": "portSfpTemperature",
+      "description": "Temperature of SFP module. In degrees Celsius",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "portSfpTemperature",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.7.1.1.9",
+      "name": "portSfpVoltage",
+      "description": "Voltage in SFP module (mV)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "portSfpVoltage",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.7.1.1.10",
+      "name": "portSfpBiasCurrent",
+      "description": "TX bias current (uA)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "portSfpBiasCurrent",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.7.1.1.11",
+      "name": "portSfpTxOutPower",
+      "description": "TX output optical power (uW)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "portSfpTxOutPower",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.7.1.1.12",
+      "name": "portSfpTxOutPowerDb",
+      "description": "TX output optical power (dB)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "portSfpTxOutPowerDb",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.7.1.1.13",
+      "name": "portSfpRxOutPower",
+      "description": "RX output optical power (uW)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "portSfpRxOutPower",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.7.1.1.14",
+      "name": "portSfpRxOutPowerDb",
+      "description": "RX output optical power (dB)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "portSfpRxOutPowerDb",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.8.1.0",
+      "name": "sensorConnected",
+      "description": "Connection status of temperature/humidity sensor",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "sensorConnected",
+      "transform": null,
+      "enumMap": {
+        "1": "connected",
+        "2": "disconnected"
+      },
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.8.2.0",
+      "name": "sensorTemperature",
+      "description": "Temperature value",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "sensorTemperature",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.3.2.2.8.3.0",
+      "name": "sensorHumidity",
+      "description": "Humidity value",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "sensorHumidity",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.4.2.2.1.1.1",
+      "name": "inputIndexTLP",
+      "description": "Input Number",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "inputIndexTLP",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.4.2.2.1.1.2",
+      "name": "inputStateTLP",
+      "description": "Input State",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "inputStateTLP",
+      "transform": null,
+      "enumMap": {
+        "1": "open",
+        "2": "short"
+      },
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.4.2.3.1.1.1",
+      "name": "outIndex",
+      "description": "Index of Output",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "outIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.4.2.3.1.1.2",
+      "name": "outState",
+      "description": "State of Output",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "outState",
+      "transform": null,
+      "enumMap": {
+        "1": "open",
+        "2": "short"
+      },
+      "module": "FORT-TELECOM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.42019.4.2.4.1.0",
+      "name": "fwVersionTLP",
+      "description": "Firmware version",
+      "type": "string",
+      "walk": false,
+      "metricKey": "fwVersionTLP",
+      "transform": null,
+      "enumMap": null,
+      "module": "FORT-TELECOM-MIB"
+    }
+  ]
+}
