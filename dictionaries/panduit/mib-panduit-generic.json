@@ -1,0 +1,2935 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-panduit-generic",
+  "name": "Panduit Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "Panduit",
+  "vendorOidPrefix": "1.3.6.1.4.1.19536",
+  "description": "Auto-compiled with libsmi from 2 MIB module(s). 233 readable OIDs under 1.3.6.1.4.1.19536.",
+  "generated": {
+    "source": "mibs/panduit",
+    "date": "2026-09-12",
+    "oidCount": 233,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "PANDUIT-MIB",
+      "PANDUIT-OLD-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.19536.0.1.1.1.0",
+      "name": "pdug5NumberPDU",
+      "description": "The number of PDUs detected (in its daisy chain).",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdug5NumberPDU",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "PANDUIT-OLD-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.1.0",
+      "name": "pdug5NumberPDU",
+      "description": "The number of PDUs detected (in its daisy chain).",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "pdug5NumberPDU",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.2.1.2",
+      "name": "pdug5Name",
+      "description": "The string identify the device in daisy chain. Example PDU A.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5Name",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.2.1.3",
+      "name": "pdug5Model",
+      "description": "The Device Model.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5Model",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.2.1.4",
+      "name": "pdug5Manufacturer",
+      "description": "The Device Manufacturer Name.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5Manufacturer",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.2.1.5",
+      "name": "pdug5FirmwareVersion",
+      "description": "The firmware revision level of the device.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5FirmwareVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.2.1.6",
+      "name": "pdug5FirmwareVersionTimeStamp",
+      "description": "Timestamp of when the PDU firmware was last updated",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5FirmwareVersionTimeStamp",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.2.1.7",
+      "name": "pdug5PartNumber",
+      "description": "The device part number. Example P36E09M.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5PartNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.2.1.8",
+      "name": "pdug5SerialNumber",
+      "description": "The device serial number, 10-digit.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5SerialNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.2.1.9",
+      "name": "pdug5Status",
+      "description": "The overall status of the device. A value of OK(2) indicates the device is operating normally. A value of degraded(3) indicates the device is operating with warning indicators. A value of failed(4)...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5Status",
+      "transform": null,
+      "enumMap": {
+        "1": "other",
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.2.1.10",
+      "name": "pdug5Controllable",
+      "description": "This object indicates whether or not the device is controllable.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5Controllable",
+      "transform": null,
+      "enumMap": {
+        "1": "yes",
+        "2": "no"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.2.1.11",
+      "name": "pdug5InputPhaseCount",
+      "description": "The number of input phase on this pdu 1 or 3.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.2.1.12",
+      "name": "pdug5GroupCount",
+      "description": "The number of groups (breakers) on this pdu.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.2.1.13",
+      "name": "pdug5OutletCount",
+      "description": "The number of outlets in this PDU.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.2.1.14",
+      "name": "pdug5MACAddress",
+      "description": "The assigned MAC address for this PDU.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5MACAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.2.1.15",
+      "name": "pdug5IPv4Address",
+      "description": "The current IPv4 Address. A value of 0.0.0.0 indicates an error or an unset option.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5IPv4Address",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.2.1.16",
+      "name": "pdug5IPv6Address",
+      "description": "The current IPv6 Address. A value of 0.0.0.0.0.0 indicates an error or an unset option.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5IPv6Address",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.2.1.17",
+      "name": "pdug5HWVersion",
+      "description": "The current Hardware Version. 1.0 - G5 (STM) No Powershare, 1.5 - G5 (STM) with Powershare, 2.0 - G6 Processor",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5HWVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.3.1.2",
+      "name": "pdug5ConfigSsh",
+      "description": "Setting this OID to off(0) will disable the SSH connection. Setting this OID to on(1) will enable the SSH connection. iNC reboot will be required for the settings to take effect.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5ConfigSsh",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.3.1.3",
+      "name": "pdug5ConfigFtps",
+      "description": "Setting this OID to off(0) will disable the FTPS connection. Setting this OID to on(1) will enable the FTPS connection. iNC reboot will be required for the settings to take effect",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5ConfigFtps",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.3.1.4",
+      "name": "pdug5ConfigHttp",
+      "description": "Setting this OID to off(0) will disable the HTTP connection. Setting this OID to on(1) will enable the HTTP connection.iNC reboot will be required for the settings to take effect",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5ConfigHttp",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.3.1.5",
+      "name": "pdug5ConfigHttps",
+      "description": "Setting this OID to off(0) will disable the HTTPS connection. Setting this OID to on(1) will enable the HTTPS connection.iNC reboot will be required for the settings to take effect",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5ConfigHttps",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.3.1.6",
+      "name": "pdug5ConfigIPv4IPv6Switch",
+      "description": "Setting this OID to IPv4(1) will enable the IPv4 configuration. Setting this OID to IPv6(2) will enable the IPv6 configuration. Setting this OID to IPv4&IPv6(3) will enable both IPv4 and IPv6 confi...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5ConfigIPv4IPv6Switch",
+      "transform": null,
+      "enumMap": {
+        "1": "iPv4",
+        "2": "iPv6",
+        "3": "iPv4IPv6"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.3.1.7",
+      "name": "pdug5ConfigRedfishAPI",
+      "description": "Setting this OID to off(0) will disable the Redfish API. Setting this OID to on(1) will enable the Redfish API.iNC reboot will be required for the settings to take effect",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5ConfigRedfishAPI",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.3.1.8",
+      "name": "pdug5ConfigOledDispalyOrientation",
+      "description": "Indicates the intended physical orientation of OLED display. displayNormal(1) indicates normal orientation. displayReverse(2) indicates upside down orientation.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5ConfigOledDispalyOrientation",
+      "transform": null,
+      "enumMap": {
+        "1": "displayNormal",
+        "2": "displayReverse"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.3.1.9",
+      "name": "pdug5ConfigEnergyReset",
+      "description": "Setting this OID to reset(2) will cause the device energy meter value to be reset to zero. Getting this OID in models that support this feature will do nothing and return the noOperation(1) value. ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5ConfigEnergyReset",
+      "transform": null,
+      "enumMap": {
+        "1": "noOperation",
+        "2": "reset",
+        "3": "notSupported"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.3.1.10",
+      "name": "pdug5ConfigNetworkManagementCardReset",
+      "description": "Getting this OID will return noOperation(0). Getting this OID to reset(1) will reset iNC.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5ConfigNetworkManagementCardReset",
+      "transform": null,
+      "enumMap": {
+        "0": "noOperation",
+        "1": "reset"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.3.1.11",
+      "name": "pdug5ConfigDaisyChainStatus",
+      "description": "Setting this OID will change daisychain mode. 0:QNA,1:DNA.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5ConfigDaisyChainStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "daisychain",
+        "1": "rna"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.3.1.12",
+      "name": "pdug5ConfigTelnet",
+      "description": "Setting this OID to off(0) will disable the Telnet connection. Setting this OID to on(1) will enable the Telnet connection. iNC reboot will be required for the settings to take effect.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5ConfigTelnet",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.4.1.2",
+      "name": "pdug5PowershareFunctionStatus",
+      "description": "Power share function status on PDU.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5PowershareFunctionStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "notAvailable",
+        "1": "available"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.4.1.3",
+      "name": "pdug5PowershareFunctionUpstreamStatus",
+      "description": "Power share function status on upstream PDU",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5PowershareFunctionUpstreamStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "notAvailable",
+        "1": "available"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.4.1.4",
+      "name": "pdug5PowershareOutput",
+      "description": "Power share output status.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5PowershareOutput",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.4.1.5",
+      "name": "pdug5PowershareInput",
+      "description": "Power share input status.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5PowershareInput",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.4.1.6",
+      "name": "pdug5PowershareOptMode",
+      "description": "Power share operation status of PDU. 0 meaning pdu is using powershare to power the NMC, 1 meaning pdu is using mains power to power the NMC",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5PowershareOptMode",
+      "transform": null,
+      "enumMap": {
+        "0": "powerByPowershare",
+        "1": "powerByMains"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.1.4.1.7",
+      "name": "pdug5PowershareFunc",
+      "description": "Enable/Disable Powershare function of PDU. Set 1 to enable powershare. Set 0 to disable powershare",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5PowershareFunc",
+      "transform": null,
+      "enumMap": {
+        "0": "disablePowershare",
+        "1": "enablePowershare"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.1.1.1",
+      "name": "pdug5InputType",
+      "description": "Type of input - single phase, split phase, three phase delta, or three phase wye.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputType",
+      "transform": null,
+      "enumMap": {
+        "1": "singlePhase",
+        "2": "splitPhase",
+        "3": "threePhaseDelta",
+        "4": "threePhaseWye"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.1.1.2",
+      "name": "pdug5InputFrequency",
+      "description": "The measured input frequency from the PDU meters in tenths of Hz.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputFrequency",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.1.1.3",
+      "name": "pdug5InputFrequencyStatus",
+      "description": "Status of the measured input frequency relative to the nominal frequency and the admitted tolerance.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputFrequencyStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "good",
+        "2": "outOfRange"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.1.1.4",
+      "name": "pdug5InputPowerVA",
+      "description": "A total input VA of all phases. Units are VA. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPowerVA",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.1.1.5",
+      "name": "pdug5InputPowerWatts",
+      "description": "A total input Watts of all phases. Units are Watts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPowerWatts",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.1.1.6",
+      "name": "pdug5InputTotalEnergy",
+      "description": "A total input Watt-Hour value for all phases. Units are KWh. This value is accumulated since PDU in service. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputTotalEnergy",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.1.1.7",
+      "name": "pdug5InputPowerWattHourTimer",
+      "description": "A Timestamp of when the Total Input WH was last reset.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5InputPowerWattHourTimer",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.1.1.8",
+      "name": "pdug5InputResettableEnergy",
+      "description": "A total input Watt-Hour value for all phases. Units are Wh. This value can be reset to 0 using GUI. In that case, the pdug5InputPowerWattHourTimer will be reset as well A negative value indicates t...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputResettableEnergy",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.1.1.9",
+      "name": "pdug5InputPowerFactor",
+      "description": "An input PF value. Units are in hundredths, for example a power factor of 0.95 would be returned as 95, and 0.92 would be returned as 92. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPowerFactor",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.1.1.10",
+      "name": "pdug5InputPowerVAR",
+      "description": "An input VAR value. Units are VAR. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPowerVAR",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.1.1.11",
+      "name": "pdug5InputTotalCurrent",
+      "description": "All phases total current value. Units are 0.01 amps. For 3 phase, mathematically add totally 3 phase current together.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputTotalCurrent",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.2",
+      "name": "pdug5InputPhaseVoltageMeasType",
+      "description": "Value indicates what input voltage is being measured in this table row - single phase voltage, phase 1 to neutral, phase 2 to neutral, phase 3 to neutral, phase 1 to phase 2, phase 2 to phase 3, or...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseVoltageMeasType",
+      "transform": null,
+      "enumMap": {
+        "1": "singlePhase",
+        "2": "phase1toN",
+        "3": "phase2toN",
+        "4": "phase3toN",
+        "5": "phase1to2",
+        "6": "phase2to3",
+        "7": "phase3to1"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.3",
+      "name": "pdug5InputPhaseVoltage",
+      "description": "An input voltage measurement value. Values is in 0.1 V.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseVoltage",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.4",
+      "name": "pdug5InputPhaseVoltageThStatus",
+      "description": "Status of the measured input voltage relative to the configured thresholds.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseVoltageThStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "good",
+        "2": "lowWarning",
+        "3": "lowCritical",
+        "4": "highWarning",
+        "5": "highCritical"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.5",
+      "name": "pdug5InputPhaseVoltageThLowerWarning",
+      "description": "Lower warning threshold. Units are 0.1 volts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseVoltageThLowerWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.6",
+      "name": "pdug5InputPhaseVoltageThLowerCritical",
+      "description": "Lower critical threshold. Units are 0.1 volts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseVoltageThLowerCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.7",
+      "name": "pdug5InputPhaseVoltageThUpperWarning",
+      "description": "Upper warning threshold. Units are 0.1 volts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseVoltageThUpperWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.8",
+      "name": "pdug5InputPhaseVoltageThUpperCritical",
+      "description": "Upper critical threshold. Units are 0.1 volts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseVoltageThUpperCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.9",
+      "name": "pdug5InputPhaseCurrentMeasType",
+      "description": "Which input wire is being measured in this table row - single phase, neutral, phase 1, phase 2, or phase 3.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseCurrentMeasType",
+      "transform": null,
+      "enumMap": {
+        "1": "singlePhase",
+        "2": "neutral",
+        "3": "phase1",
+        "4": "phase2",
+        "5": "phase3"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.10",
+      "name": "pdug5InputPhaseCurrentRating",
+      "description": "Rated current capacity of the input. A negative value indicates that the hardware current capacity is unknown. Units are 0.01 amps.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseCurrentRating",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.11",
+      "name": "pdug5InputPhaseCurrent",
+      "description": "An input current measurement value. Units are 0.01 amps.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseCurrent",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.12",
+      "name": "pdug5InputPhaseCurrentThStatus",
+      "description": "Status of the measured input current relative to the configured thresholds.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseCurrentThStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "good",
+        "2": "lowWarning",
+        "3": "lowCritical",
+        "4": "highWarning",
+        "5": "highCritical"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.13",
+      "name": "pdug5InputPhaseCurrentThLowerWarning",
+      "description": "Lower warning threshold. Units are 0.01 amps. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseCurrentThLowerWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.14",
+      "name": "pdug5InputPhaseCurrentThLowerCritical",
+      "description": "Lower critical threshold. Units are 0.01 amps. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseCurrentThLowerCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.15",
+      "name": "pdug5InputPhaseCurrentThUpperWarning",
+      "description": "Upper warning threshold. Units are 0.01 amps. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseCurrentThUpperWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.16",
+      "name": "pdug5InputPhaseCurrentThUpperCritical",
+      "description": "Upper critical threshold. Units are 0.01 amps. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseCurrentThUpperCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.17",
+      "name": "pdug5InputPhaseCurrentPercentLoad",
+      "description": "Current percent load, based on the rated current capacity. Units are percentage, for example 80% will be returned as 80. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseCurrentPercentLoad",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.18",
+      "name": "pdug5InputPhasePowerMeasType",
+      "description": "Which input wire is being measured in this table row - single phase, neutral, phase 1, phase 2, or phase 3.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhasePowerMeasType",
+      "transform": null,
+      "enumMap": {
+        "1": "singlePhase",
+        "2": "neutral",
+        "3": "phase1",
+        "4": "phase2",
+        "5": "phase3"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.19",
+      "name": "pdug5InputPhasePowerVA",
+      "description": "An input VA value. Units are VA. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhasePowerVA",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.20",
+      "name": "pdug5InputPhasePowerWatts",
+      "description": "An input Watts value. Units are Watts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhasePowerWatts",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.21",
+      "name": "pdug5InputPhasePowerWattHour",
+      "description": "A Watt-Hour value for each Input phase. Units are WH. This value can be reset to 0 using GUI. In that case, the pdug5InputPhasePowerWattHourTimer will be reset as well A negative value indicates th...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhasePowerWattHour",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.22",
+      "name": "pdug5InputPhasePowerWattHourTimer",
+      "description": "Timestamp of when input Watt-hours (inputWh) was last reset.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5InputPhasePowerWattHourTimer",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.23",
+      "name": "pdug5InputPhasePowerFactor",
+      "description": "An input PF value. Units are in hundredths, for example a power factor of 0.95 would be returned as 95, and 0.92 would be returned as 92. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhasePowerFactor",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.24",
+      "name": "pdug5InputPhasePowerVAR",
+      "description": "An input VAR value. Units are VAR. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhasePowerVAR",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.25",
+      "name": "pdug5InputPhaseVoltageThResetThld",
+      "description": "The Reset threshold is the number of volts the reading needs to fall below the threshold setting for the condition to be cleared. Units are 0.1 volts.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseVoltageThResetThld",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.26",
+      "name": "pdug5InputPhaseVoltageThChangeDelay",
+      "description": "The number of consecutive sample that the condition is present before an alarm is raised.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseVoltageThChangeDelay",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.27",
+      "name": "pdug5InputPhaseVoltageThCtrl",
+      "description": "Input phase voltage alarm threshold control: bit 0: up critical alarm control bit, 0 - enable, 1 - disable bit 1: up warning alarm control bit, 0 - enable, 1 - disable bit 2: low warning alarm cont...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseVoltageThCtrl",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.28",
+      "name": "pdug5InputPhaseCurrentThResetThld",
+      "description": "The Reset threshold is the number of amps the reading needs to fall below the threshold setting for the condition to be cleared. Units are 0.01 amps.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseCurrentThResetThld",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.29",
+      "name": "pdug5InputPhaseCurrentThChangeDelay",
+      "description": "The number of consecutive sample that the condition is present before an alarm is raised.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseCurrentThChangeDelay",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.30",
+      "name": "pdug5InputPhaseCurrentThCtrl",
+      "description": "Input phase current alarm threshold control: bit 0: up critical alarm control bit, 0 - enable, 1 - disable bit 1: up warning alarm control bit, 0 - enable, 1 - disable bit 2: low warning alarm cont...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhaseCurrentThCtrl",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.31",
+      "name": "pdug5InputPowerThresholdThLowerWarning",
+      "description": "Lower warning Power threshold. Units are in Watts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPowerThresholdThLowerWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.32",
+      "name": "pdug5InputPowerThresholdThLowerCritical",
+      "description": "Lower critical Power threshold. Units are in Watts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPowerThresholdThLowerCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.33",
+      "name": "pdug5InputPowerThresholdThUpperWarning",
+      "description": "Upper warning Power threshold. Units are in Watts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPowerThresholdThUpperWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.34",
+      "name": "pdug5InputPowerThresholdThUpperCritical",
+      "description": "Upper critical Power threshold. Units are in Watts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPowerThresholdThUpperCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.35",
+      "name": "pdug5InputPowerThresholdThResetThld",
+      "description": "The Reset threshold is the number of watts the reading needs to fall below the threshold setting for the condition to be cleared. Units are watts.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPowerThresholdThResetThld",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.36",
+      "name": "pdug5InputPowerThresholdThChangeDelay",
+      "description": "The number of consecutive sample that the condition is present before an alarm is raised.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPowerThresholdThChangeDelay",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.37",
+      "name": "pdug5InputPowerThresholdThCtrl",
+      "description": "Power alarm threshold control: bit 0: up critical alarm control bit, 0 - enable, 1 - disable bit 1: up warning alarm control bit, 0 - enable, 1 - disable bit 2: low warning alarm control bit, 0 - e...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPowerThresholdThCtrl",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.38",
+      "name": "pdug5InputEnergyThresholdThUpperWarning",
+      "description": "Upper warning Energy threshold. Units are in Watts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputEnergyThresholdThUpperWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.39",
+      "name": "pdug5InputEnergyThresholdThUpperCritical",
+      "description": "Upper critical Energy threshold. Units are in Watts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputEnergyThresholdThUpperCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.40",
+      "name": "pdug5InputEnergyThresholdThResetThld",
+      "description": "The Reset threshold is the number of watts the reading needs to fall below the threshold setting for the condition to be cleared. Units are watts.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputEnergyThresholdThResetThld",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.41",
+      "name": "pdug5InputEnergyThresholdThChangeDelay",
+      "description": "The number of consecutive sample that the condition is present before an alarm is raised.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputEnergyThresholdThChangeDelay",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.42",
+      "name": "pdug5InputEnergyThresholdThCtrl",
+      "description": "Energy alarm threshold control: bit 0: up critical alarm control bit, 0 - enable, 1 - disable bit 1: up warning alarm control bit, 0 - enable, 1 - disable bit 2: low warning alarm control bit, 0 - ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputEnergyThresholdThCtrl",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.2.1.43",
+      "name": "pdug5InputPhasePowerThStatus",
+      "description": "Status of the measured input current relative to the configured thresholds.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputPhasePowerThStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "good",
+        "2": "lowWarning",
+        "3": "lowCritical",
+        "4": "highWarning",
+        "5": "highCritical"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.3.1.1",
+      "name": "pdug5InputRcmEnabled",
+      "description": "RCM configuration value off(0) if the PDU doesn't have RCM, on(1) if the PDU has RCM.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmEnabled",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on",
+        "-1": "featureNotAvailable"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.3.1.2",
+      "name": "pdug5InputRcmModStatus",
+      "description": "RCM module status ok(2) if the PDU can communicate with the RCM module, failed(4) if the PDU cannot communicate with the RCM module, degraded(3) if the PDU can communicate with the RCM module and t...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmModStatus",
+      "transform": null,
+      "enumMap": {
+        "2": "ok",
+        "3": "degraded",
+        "4": "failed",
+        "-1": "featureNotAvailable"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.3.1.3",
+      "name": "pdug5InputRcmThUpperWarning",
+      "description": "RCM Current Upper warning threshold. Units are 0.01 amps. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmThUpperWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.3.1.4",
+      "name": "pdug5InputRcmThUpperCritical",
+      "description": "RCM Current Upper critical threshold. Units are 0.01 amps. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmThUpperCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.3.1.5",
+      "name": "pdug5InputRcmThResetThld",
+      "description": "The Reset threshold is the number of amps the reading needs to fall below the threshold setting for the condition to be cleared. Units are 0.01 amps.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmThResetThld",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.3.1.6",
+      "name": "pdug5InputRcmThChangeDelay",
+      "description": "The number of consecutive sample that the condition is present before an alarm is raised.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmThChangeDelay",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.3.1.7",
+      "name": "pdug5InputRcmThCtrl",
+      "description": "Rcm current alarm threshold control: 0 - Enable UC and UW 1 - Disable UC and Enable UW 2 - Enable UC and Disable UW 3 - Disable UC and UW 4 and above - Bad input",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmThCtrl",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.3.1.8",
+      "name": "pdug5InputRcmThStatus",
+      "description": "Status of the measured Rcm current relative to the configured thresholds.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmThStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "good",
+        "4": "highWarning",
+        "5": "highCritical",
+        "-1": "featureNotAvailable"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.3.1.9",
+      "name": "pdug5InputRcmCurrent",
+      "description": "Rcm module current reading. Units are milliAmps.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmCurrent",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.4.1.1",
+      "name": "pdug5InputRcmSelfTestEnable",
+      "description": "Rcm Self Test configuration value Disable(0) if the self test is disabled on the PDU, Enable(1) if self test is enabled on the PDU .",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmSelfTestEnable",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "enable",
+        "-1": "featureNotAvailable"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.4.1.2",
+      "name": "pdug5InputRcmSelfTestFreq",
+      "description": "Rcm module self test run frequency , the time for the test is set from Pdug5RcmSelfTestNextRunTime, the self test will be repeated based on the setting as Daily(1),Weekly(2),First Day Of Month(3),Y...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmSelfTestFreq",
+      "transform": null,
+      "enumMap": {
+        "1": "daily",
+        "2": "weekly",
+        "3": "monthly",
+        "4": "yearly",
+        "-1": "featureNotAvailable"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.4.1.3",
+      "name": "pdug5InputRcmSelfTestHour",
+      "description": "Rcm module self test schedule hour setting (0 to 23 hour),-1 means feature not available",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmSelfTestHour",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.4.1.4",
+      "name": "pdug5InputRcmSelfTestMinute",
+      "description": "Rcm module self test schedule minute setting (0 to 59 minute),-1 means feature not available",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmSelfTestMinute",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.4.1.5",
+      "name": "pdug5InputRcmSelfTestDay",
+      "description": "Rcm module self test schedule day setting - Can be 0 to 6 when pduInputRcmSelfTestFreq is weekly(2), - Can be 1 to 31 when pduInputRcmSelfTestFreq is monthly(3) or yearly(4), - (-1) means feature n...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmSelfTestDay",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.4.1.6",
+      "name": "pdug5InputRcmSelfTestMonth",
+      "description": "Rcm module self test schedule month setting,-1 means feature not available",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmSelfTestMonth",
+      "transform": null,
+      "enumMap": {
+        "0": "january",
+        "1": "february",
+        "2": "march",
+        "3": "april",
+        "4": "may",
+        "5": "june",
+        "6": "july",
+        "7": "august",
+        "8": "september",
+        "9": "october",
+        "10": "november",
+        "11": "december",
+        "-1": "featureNotAvailable"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.4.1.7",
+      "name": "pdug5InputRcmSelfTestNextRunTime",
+      "description": "next run date and Time for self test.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5InputRcmSelfTestNextRunTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.4.1.8",
+      "name": "pdug5InputRcmSelfTestLastRunTime",
+      "description": "Date and Time when the self test run previously",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5InputRcmSelfTestLastRunTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.4.1.9",
+      "name": "pdug5InputRcmSelfTestLastRunStatus",
+      "description": "Status of the lastest self test run",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmSelfTestLastRunStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "passed",
+        "2": "failed",
+        "3": "pending",
+        "-1": "featureNotAvailable"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.2.4.1.10",
+      "name": "pdug5InputRcmSelfTest",
+      "description": "Rcm module on demand self test, 1 to start the on demand self test",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5InputRcmSelfTest",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.2",
+      "name": "pdug5GroupName",
+      "description": "A descriptive name for the group.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5GroupName",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.3",
+      "name": "pdug5GroupType",
+      "description": "The type of the group. (5) has no breaker",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupType",
+      "transform": null,
+      "enumMap": {
+        "2": "breaker1pole",
+        "3": "breaker2pole",
+        "4": "breaker3pole",
+        "5": "outletSection"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.4",
+      "name": "pdug5GroupVoltageMeasType",
+      "description": "Value indicates what input voltage is being measured in this table row - single phase voltage, phase 1 to neutral, phase 2 to neutral, phase 3 to neutral, phase 1 to phase 2, phase 2 to phase 3, or...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupVoltageMeasType",
+      "transform": null,
+      "enumMap": {
+        "1": "singlePhase",
+        "2": "phase1toN",
+        "3": "phase2toN",
+        "4": "phase3toN",
+        "5": "phase1to2",
+        "6": "phase2to3",
+        "7": "phase3to1"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.5",
+      "name": "pdug5GroupVoltage",
+      "description": "Units are 0.1 volts.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupVoltage",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.6",
+      "name": "pdug5GroupVoltageThStatus",
+      "description": "Status of the measured group voltage relative to the configured thresholds.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupVoltageThStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "good",
+        "2": "lowWarning",
+        "3": "lowCritical",
+        "4": "highWarning",
+        "5": "highCritical"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.7",
+      "name": "pdug5GroupVoltageThLowerWarning",
+      "description": "Lower warning threshold. Units are 0.1 volts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupVoltageThLowerWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.8",
+      "name": "pdug5GroupVoltageThLowerCritical",
+      "description": "Lower critical threshold. Units are 0.1 volts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupVoltageThLowerCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.9",
+      "name": "pdug5GroupVoltageThUpperWarning",
+      "description": "Upper warning threshold. Units are 0.1 volts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupVoltageThUpperWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.10",
+      "name": "pdug5GroupVoltageThUpperCritical",
+      "description": "Upper critical threshold. Units are 0.1 volts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupVoltageThUpperCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.11",
+      "name": "pdug5groupCurrentRating",
+      "description": "Rated current capacity of the group. Units are 0.01 amps. A negative value indicates that the hardware current capacity is unknown (it will always be unknown for custom groups).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5groupCurrentRating",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.12",
+      "name": "pdug5GroupCurrent",
+      "description": "A group current measurement value. Units are 0.01 amps.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupCurrent",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.13",
+      "name": "pdug5GroupCurrentThStatus",
+      "description": "Status of the measured group current relative to the configured thresholds.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupCurrentThStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "good",
+        "2": "lowWarning",
+        "3": "lowCritical",
+        "4": "highWarning",
+        "5": "highCritical",
+        "6": "cbOff"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.14",
+      "name": "pdug5GroupCurrentThLowerWarning",
+      "description": "Lower warning threshold. Units are 0.01 amps. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupCurrentThLowerWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.15",
+      "name": "pdug5GroupCurrentThLowerCritical",
+      "description": "Lower critical threshold. Units are 0.01 amps. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupCurrentThLowerCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.16",
+      "name": "pdug5GroupCurrentThUpperWarning",
+      "description": "Upper warning threshold. Units are 0.01 amps. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupCurrentThUpperWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.17",
+      "name": "pdug5GroupCurrentThUpperCritical",
+      "description": "Upper critical threshold. Units are 0.01 amps. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupCurrentThUpperCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.18",
+      "name": "pdug5GroupCurrentPercentLoad",
+      "description": "Current percent load, based on the rated current capacity. Units are percentage, for example 80% will be returned as 80. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupCurrentPercentLoad",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.19",
+      "name": "pdug5GroupPowerVA",
+      "description": "A group VA value. Units are VA. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupPowerVA",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.20",
+      "name": "pdug5GroupPowerWatts",
+      "description": "A group power value. Units are Watts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupPowerWatts",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.21",
+      "name": "pdug5GroupPowerWattHour",
+      "description": "A Watt-Hour value for each section. Units are WH. This value can be reset to 0 using GUI. In that case, the pdug5GroupPowerWattHourTimer will be reset as well. A negative value indicates that this ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupPowerWattHour",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.22",
+      "name": "pdug5GroupPowerWattHourTimer",
+      "description": "Timestamp of when group Watt-hours (groupWh) was last reset.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5GroupPowerWattHourTimer",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.23",
+      "name": "pdug5GroupPowerFactor",
+      "description": "A group PF value. Units are in hundredths, for example a power factor of 0.95 would be returned as 95, and 0.92 would be returned as 92. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupPowerFactor",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.24",
+      "name": "pdug5GroupPowerVAR",
+      "description": "A group VAR value. Units are VAR. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupPowerVAR",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.25",
+      "name": "pdug5GroupOutletCount",
+      "description": "The number of outlets in each group (breaker).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupOutletCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.26",
+      "name": "pdug5GroupBreakerStatus",
+      "description": "Only applicable to groups with breaker. Indicates whether a breaker is turned off or on.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupBreakerStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "notApplicable",
+        "2": "breakerOn",
+        "3": "breakerOff"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.27",
+      "name": "pdug5GroupVoltageThCtrl",
+      "description": "Circuit Breaker voltage alarm threshold control: bit 0: up critical alarm control bit, 0 - enable, 1 - disable bit 1: up warning alarm control bit, 0 - enable, 1 - disable bit 2: low warning alarm ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupVoltageThCtrl",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.3.1.1.28",
+      "name": "pdug5GroupCurrentThCtrl",
+      "description": "Circuit Breaker current alarm threshold control: bit 0: up critical alarm control bit, 0 - enable, 1 - disable bit 1: up warning alarm control bit, 0 - enable, 1 - disable bit 2: low warning alarm ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5GroupCurrentThCtrl",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.1.1.1",
+      "name": "pdug5TemperatureScale",
+      "description": "Scale used to return temperature objects.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5TemperatureScale",
+      "transform": null,
+      "enumMap": {
+        "1": "celsius",
+        "2": "fahrenheit"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.1.1.2",
+      "name": "pdug5TemperatureCount",
+      "description": "The number of temperature measurements.The MAX is 6 (1 per probe).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5TemperatureCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.1.1.3",
+      "name": "pdug5HumidityCount",
+      "description": "The number of humidity measurements.The MAX is 6(1 per probe).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HumidityCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.1.1.4",
+      "name": "pdug5DoorCount",
+      "description": "The number of door sensors.The MAX is 6(1 per probe).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5DoorCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.1.1.5",
+      "name": "pdug5DryCount",
+      "description": "The number of dry sensors.The MAX is 2(1 per probe).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5DryCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.1.1.6",
+      "name": "pdug5SpotCount",
+      "description": "The number of spot sensors.The MAX is 2(1 per probe).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5SpotCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.1.1.7",
+      "name": "pdug5RopeCount",
+      "description": "The number of rope sensors.The MAX is 2(1 per probe).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5RopeCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.1.1.10",
+      "name": "pdug5HidCount",
+      "description": "The number of hid sensors. The MAX is 2(1 per probe).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HidCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.2.1.2",
+      "name": "pdug5TemperatureName",
+      "description": "A descriptive name for the temperature probe.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5TemperatureName",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.2.1.3",
+      "name": "pdug5TemperatureProbeStatus",
+      "description": "Indicates whether a probe is connected or not.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5TemperatureProbeStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "disconnected",
+        "2": "connected",
+        "3": "bad"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.2.1.4",
+      "name": "pdug5TemperatureValue",
+      "description": "Units are degree(either Fahrenheit or Celsius).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5TemperatureValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.2.1.5",
+      "name": "pdug5TemperatureThStatus",
+      "description": "Status of the measured temperature relative to the configured thresholds.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5TemperatureThStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "good",
+        "2": "lowWarning",
+        "3": "lowCritical",
+        "4": "highWarning",
+        "5": "highCritical"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.2.1.6",
+      "name": "pdug5TemperatureThLowerWarning",
+      "description": "Lower warning threshold. Units are degrees. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5TemperatureThLowerWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.2.1.7",
+      "name": "pdug5TemperatureThLowerCritical",
+      "description": "Lower critical threshold. Units are degrees. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5TemperatureThLowerCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.2.1.8",
+      "name": "pdug5TemperatureThUpperWarning",
+      "description": "Upper warning threshold. Units are degrees. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5TemperatureThUpperWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.2.1.9",
+      "name": "pdug5TemperatureThUpperCritical",
+      "description": "Upper critical threshold. Units are degrees. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5TemperatureThUpperCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.2.1.10",
+      "name": "pdug5TemperatureThCtrl",
+      "description": "Temperature alarm threshold control: bit 0: up critical alarm control bit, 0 - enable, 1 - disable bit 1: up warning alarm control bit, 0 - enable, 1 - disable bit 2: low warning alarm control bit,...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5TemperatureThCtrl",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.3.1.2",
+      "name": "pdug5HumidityName",
+      "description": "A descriptive name for the humidity probe.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5HumidityName",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.3.1.3",
+      "name": "pdug5HumidityProbeStatus",
+      "description": "Indicates whether a probe is connected or not.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HumidityProbeStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "disconnected",
+        "2": "connected",
+        "3": "bad"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.3.1.4",
+      "name": "pdug5HumidityValue",
+      "description": "Units are %RH.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HumidityValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.3.1.5",
+      "name": "pdug5HumidityThStatus",
+      "description": "Status of the measured humidity relative to the configured thresholds.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HumidityThStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "good",
+        "2": "lowWarning",
+        "3": "lowCritical",
+        "4": "highWarning",
+        "5": "highCritical"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.3.1.6",
+      "name": "pdug5HumidityThLowerWarning",
+      "description": "Lower warning threshold. Units are %RH. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HumidityThLowerWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.3.1.7",
+      "name": "pdug5HumidityThLowerCritical",
+      "description": "Lower critical threshold. Units are %RH. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HumidityThLowerCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.3.1.8",
+      "name": "pdug5HumidityThUpperWarning",
+      "description": "Upper warning threshold. Units are %RH. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HumidityThUpperWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.3.1.9",
+      "name": "pdug5HumidityThUpperCritical",
+      "description": "Upper critical threshold. Units are %RH. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HumidityThUpperCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.3.1.10",
+      "name": "pdug5HumidityThCtrl",
+      "description": "Humidity alarm threshold control: bit 0: up critical alarm control bit, 0 - enable, 1 - disable bit 1: up warning alarm control bit, 0 - enable, 1 - disable bit 2: low warning alarm control bit, 0 ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HumidityThCtrl",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.4.1.2",
+      "name": "pdug5DoorName",
+      "description": "A descriptive name for the door sensor.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5DoorName",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.4.1.3",
+      "name": "pdug5DoorProbeStatus",
+      "description": "Indicates whether a probe is connected or not. Will not be returned if the door sensor is internal to the ePDU, in that case only doorState should be read.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5DoorProbeStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "disconnected",
+        "2": "connected",
+        "3": "bad"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.4.1.4",
+      "name": "pdug5DoorState",
+      "description": "The state of the door sensor.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5DoorState",
+      "transform": null,
+      "enumMap": {
+        "1": "doorOpen",
+        "2": "doorClosed",
+        "3": "badDoorSensor"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.5.1.2",
+      "name": "pdug5DryName",
+      "description": "A descriptive name for the dry sensor.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5DryName",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.5.1.3",
+      "name": "pdug5DryProbeStatus",
+      "description": "Indicates whether a probe is connected or not.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5DryProbeStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "disconnected",
+        "2": "connected",
+        "3": "bad"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.5.1.4",
+      "name": "pdug5DryState",
+      "description": "The state of the dry sensor.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5DryState",
+      "transform": null,
+      "enumMap": {
+        "1": "good",
+        "2": "alarmed"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.6.1.2",
+      "name": "pdug5SpotName",
+      "description": "A descriptive name for the spot sensor.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5SpotName",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.6.1.3",
+      "name": "pdug5SpotProbeStatus",
+      "description": "Indicates whether a probe is connected or not.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5SpotProbeStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "disconnected",
+        "2": "connected",
+        "3": "bad"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.6.1.4",
+      "name": "pdug5SpotState",
+      "description": "The state of the spot sensor.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5SpotState",
+      "transform": null,
+      "enumMap": {
+        "1": "noleak",
+        "2": "leak"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.7.1.2",
+      "name": "pdug5RopeName",
+      "description": "A descriptive name for the rope sensor.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5RopeName",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.7.1.3",
+      "name": "pdug5RopeProbeStatus",
+      "description": "Indicates whether a probe is connected or not.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5RopeProbeStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "disconnected",
+        "2": "connected",
+        "3": "bad"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.7.1.4",
+      "name": "pdug5RopeState",
+      "description": "The state of the rope sensor.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5RopeState",
+      "transform": null,
+      "enumMap": {
+        "1": "noleak",
+        "2": "leak"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.1.1.2",
+      "name": "pdug5HidAisle",
+      "description": "Aisle of HID handle.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HidAisle",
+      "transform": null,
+      "enumMap": {
+        "1": "cold",
+        "2": "hot"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.1.1.3",
+      "name": "pdug5HidHandleOperation",
+      "description": "HID handle control operations",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HidHandleOperation",
+      "transform": null,
+      "enumMap": {
+        "1": "unlock",
+        "2": "lock"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.1.1.4",
+      "name": "pduHIDVer",
+      "description": "The firmware revision level of the HID",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pduHIDVer",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.1.1.5",
+      "name": "pdug5MechanicalLock",
+      "description": "HID Mechanical operations",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5MechanicalLock",
+      "transform": null,
+      "enumMap": {
+        "1": "unlock",
+        "2": "lock"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.1.1.6",
+      "name": "pduHIDSerial",
+      "description": "The Serial Number of the HID",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pduHIDSerial",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.1.1.7",
+      "name": "pduHIDHwVer",
+      "description": "The hardware revision level of the HID",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pduHIDHwVer",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.1.1.8",
+      "name": "pdug5HIDAutoLockTime",
+      "description": "HID Electronic Latch Autolock Time in seconds, Value ranges (0-999)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HIDAutoLockTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.1.1.9",
+      "name": "pdug5HIDDoorOpenTime",
+      "description": "HID Door Open Time in seconds, Value ranges (0-999)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HIDDoorOpenTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.1.1.10",
+      "name": "pdug5HIDMaxDoorOpenTime",
+      "description": "HID Max Door Open Time in seconds, Value ranges (0-32400), critical alarm will be raised if door is left open past this time",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HIDMaxDoorOpenTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.1.1.11",
+      "name": "pdug5HIDUserPinLength",
+      "description": "Rack Access User minimum PIN Length, value ranges(0-16)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HIDUserPinLength",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.1.1.12",
+      "name": "pdug5HIDUserPinMode",
+      "description": "Rack Access User PIN mode setting",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HIDUserPinMode",
+      "transform": null,
+      "enumMap": {
+        "1": "visible",
+        "2": "hidden"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.1.1.13",
+      "name": "pdug5HIDAisleControl",
+      "description": "Rack Access Aisle Control setting, when set to standalone each aisle will controlled separately, when set to combined opposite aisle can be controlled with authenticated control action on either aisle",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HIDAisleControl",
+      "transform": null,
+      "enumMap": {
+        "1": "combined",
+        "2": "standalone"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.1.1.14",
+      "name": "pdug5HIDBeaconFuncControl",
+      "description": "Beacon Function Control",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HIDBeaconFuncControl",
+      "transform": null,
+      "enumMap": {
+        "0": "locate",
+        "1": "standby"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.1.1.15",
+      "name": "pdug5HidBeaconColorControl",
+      "description": "Beacon Color Control",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HidBeaconColorControl",
+      "transform": null,
+      "enumMap": {
+        "0": "red",
+        "1": "green",
+        "2": "blue",
+        "3": "yellow",
+        "4": "magenta",
+        "5": "aqua",
+        "6": "white",
+        "7": "beaconoff"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.2.1.2",
+      "name": "pdug5HidControlUserName",
+      "description": "User name of smartcard. Use #delete# to delete the HID user",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5HidControlUserName",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.2.1.3",
+      "name": "pdug5HidControlCardID",
+      "description": "HID smartcard ID.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HidControlCardID",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.2.1.4",
+      "name": "pdug5HidControlTimestamp",
+      "description": "Indicates the date and time of accessing",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5HidControlTimestamp",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.2.1.5",
+      "name": "pdug5HidControlCardAisle",
+      "description": "Aisle of authorized card",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HidControlCardAisle",
+      "transform": null,
+      "enumMap": {
+        "1": "cold",
+        "2": "hot",
+        "3": "both"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.2.1.6",
+      "name": "pdug5HidControlStartTime",
+      "description": "Indicates the start date and time Rack access user is given access",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5HidControlStartTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.2.1.7",
+      "name": "pdug5HidControlExpireTime",
+      "description": "Indicates the date and time when the access of user card will expire, To set expire time first set user as temporary user",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5HidControlExpireTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.2.1.8",
+      "name": "pdug5HidControlTempUser",
+      "description": "Indicates if the card user has temporary access",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5HidControlTempUser",
+      "transform": null,
+      "enumMap": {
+        "1": "no",
+        "2": "yes"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.2.1.9",
+      "name": "pdug5HidControlPin",
+      "description": "Rack access control entry keypad PIN",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5HidControlPin",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.4.10.2.1.10",
+      "name": "pdug5HidControlCardIdStr",
+      "description": "Smartrack Access Card ID String",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5HidControlCardIdStr",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.2",
+      "name": "pdug5OutletName",
+      "description": "A descriptive name for the outlet.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5OutletName",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.3",
+      "name": "pdug5OutletType",
+      "description": "Type of this outlet - C13, C19, 5-20R, iecC13/C15 COMBO, iecC13/C15/C19 COMBO...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletType",
+      "transform": null,
+      "enumMap": {
+        "1": "iecC13",
+        "2": "iecC19",
+        "3": "nema5-20R",
+        "4": "iecC13iecC15combo",
+        "5": "iecC13iecC15iec19combo",
+        "10": "uk",
+        "11": "french",
+        "12": "schuko",
+        "20": "nema515",
+        "21": "nema51520",
+        "22": "nema520",
+        "23": "nemaL520",
+        "24": "nemaL530",
+        "25": "nema615",
+        "26": "nema620",
+        "27": "nemaL620",
+        "28": "nemaL630",
+        "29": "nemaL715",
+        "30": "rf203p277"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.4",
+      "name": "pdug5OutletCurrentRating",
+      "description": "Rated current capacity of this outlet. Units are 0.01 amps. A negative value indicates that the hardware current capacity is unknown.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletCurrentRating",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.5",
+      "name": "pdug5OutletCurrent",
+      "description": "A outlet current measurement value. Units are 0.01 amps.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletCurrent",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.6",
+      "name": "pdug5OutletActivePowerThStatus",
+      "description": "Status of the measured outlet active power relative to the configured thresholds.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletActivePowerThStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "good",
+        "2": "lowWarning",
+        "3": "lowCritical",
+        "4": "highWarning",
+        "5": "highCritical"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.7",
+      "name": "pdug5OutletActivePowerThLowerWarning",
+      "description": "Lower warning threshold. Units are Watts(W). A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletActivePowerThLowerWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.8",
+      "name": "pdug5OutletActivePowerThLowerCritical",
+      "description": "Lower critical threshold. Units are Watts(W). A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletActivePowerThLowerCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.9",
+      "name": "pdug5OutletActivePowerThUpperWarning",
+      "description": "Upper warning threshold. Units are Watts(W). A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletActivePowerThUpperWarning",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.10",
+      "name": "pdug5OutletActivePowerThUpperCritical",
+      "description": "Upper critical threshold. Units are Watts(W). A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletActivePowerThUpperCritical",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.11",
+      "name": "pdug5OutletCurrentPercentLoad",
+      "description": "Current percent load, based on the rated current capacity. Units are percentage, for example 80% will be returned as 80. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletCurrentPercentLoad",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.12",
+      "name": "pdug5OutletVA",
+      "description": "A outlet VA value. Units are VA. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletVA",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.13",
+      "name": "pdug5OutletWatts",
+      "description": "A outlet Watts value. Units are Watts. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletWatts",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.14",
+      "name": "pdug5OutletWh",
+      "description": "A Watt-Hour value for each outlet. Units are WH. This object is writable so that it can be reset to 0. When it is written to, the pdug5OutletWhTimer will be reset updated as well A negative value i...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletWh",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.15",
+      "name": "pdug5OutletWhTimer",
+      "description": "Timestamp (date and time) of outlet Watt-hours was last reset.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5OutletWhTimer",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.16",
+      "name": "pdug5OutletPowerFactor",
+      "description": "An outlet PF value. Units are in hundredths, for example a power factor of 0.95 would be returned as 95, and 0.92 would be returned as 92. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletPowerFactor",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.17",
+      "name": "pdug5OutletVAR",
+      "description": "An outlet VAR value. Units are VAR. A negative value indicates that this object is not available.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletVAR",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.18",
+      "name": "pdug5OutletBranch",
+      "description": "The branch number outlet located.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletBranch",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.19",
+      "name": "pdug5OutletActivePowerThResetThld",
+      "description": "The Reset threshold is the number of watss the reading needs to fall below the threshold setting for the condition to be cleared. Units are watts.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletActivePowerThResetThld",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.20",
+      "name": "pdug5OutletActivePowerThChangeDelay",
+      "description": "The number of consecutive sample that the condition is present before an alarm is raised.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletActivePowerThChangeDelay",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.1.1.21",
+      "name": "pdug5OutletActivePowerThCtrl",
+      "description": "Outlet Active Power alarm threshold control: bit 0: up critical alarm control bit, 0 - enable, 1 - disable bit 1: up warning alarm control bit, 0 - enable, 1 - disable bit 2: low warning alarm cont...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletActivePowerThCtrl",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.2.1.1",
+      "name": "pdug5OutletControlStatus",
+      "description": "current state of a control outlet.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletControlStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on",
+        "3": "pendingOff",
+        "4": "pendingOn"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.2.1.2",
+      "name": "pdug5OutletControlOffCmd",
+      "description": "When write, once issued, the outlet will turn Off immediately. 0-n: Time in seconds until the outlet command is issued -1: Cancel a pending outlet Off command When read, returns -1 if no command is...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletControlOffCmd",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.2.1.3",
+      "name": "pdug5OutletControlOnCmd",
+      "description": "When write, once issued, the outlet will turn On immediately. 0-n: Time in seconds until the outlet command is issued -1: Cancel a pending outlet On command When read, returns -1 if no command is p...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletControlOnCmd",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.2.1.4",
+      "name": "pdug5OutletControlRebootCmd",
+      "description": "When write, for outlets that are On prior to this Reboot command, they will switch Off immediately when the command is issued, remain Off for outletControlRebootOffTime seconds, and then turn back ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletControlRebootCmd",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.2.1.5",
+      "name": "pdug5OutletControlPowerOnState",
+      "description": "Determines the outlet state when power is applied to the unit. 1 : not restart at device startup 2 : should sequence back ON in line with outletControlSequenceTime 3 : should take the state the out...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletControlPowerOnState",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on",
+        "3": "lastState"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.2.1.6",
+      "name": "pdug5OutletControlSequenceDelay",
+      "description": "Time delay in seconds from when a Global Sequence On command is issued to when the command is executed on this outlet. This delay is also used as a power-on delay.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletControlSequenceDelay",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.2.1.7",
+      "name": "pdug5OutletControlRebootOffTime",
+      "description": "Time delay in seconds that the outlet should remain in the Off state when executing a Reboot command.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletControlRebootOffTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.2.1.8",
+      "name": "pdug5OutletControlSwitchable",
+      "description": "Determines the outlet capability to be controlled On/Off from the communication channels. 1 : control On/Off enabled 2 : control On/Off disabled.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletControlSwitchable",
+      "transform": null,
+      "enumMap": {
+        "1": "switchable",
+        "2": "notSwitchable"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.2.1.9",
+      "name": "pdug5OutletControlShutoffDelay",
+      "description": "Time delay in seconds that could be taken in account before shutting of the outlet. An application which need to shutoff properly an outlet will read this parameter first then write it to the comma...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletControlShutoffDelay",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.2.1.10",
+      "name": "pdug5OutletControlCommand",
+      "description": "Getting this variable will return the outlet state. If the outlet is on, the immediateOn (2) value will be returned. If the outlet is off, the immediateOff (1) value will be returned. If the state ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletControlCommand",
+      "transform": null,
+      "enumMap": {
+        "1": "immediateOff",
+        "2": "immediateOn",
+        "3": "delayedOff",
+        "4": "delayedOn",
+        "5": "immediateReboot",
+        "6": "delayedReboot",
+        "7": "outletUnknown"
+      },
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.3.1.1",
+      "name": "pdug5OutletGroupCount",
+      "description": "The numeric Switched Outlet Groups Count",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletGroupCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.3.1.2",
+      "name": "pdug5OutletGroupName",
+      "description": "The user-defined switched outlet Groups Name string",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5OutletGroupName",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.3.1.3",
+      "name": "pdug5OutletGroupMemberID",
+      "description": "The user-defined switched outlet Group Members string",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5OutletGroupMemberID",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.3.1.4",
+      "name": "pdug5OutletGroupControl",
+      "description": "Getting this variable will return the group state. If the group is on, the immediateOn (2) value will be returned. If the group is off, the immediateOff (1) value will be returned. If the state of ...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "pdug5OutletGroupControl",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.3.1.5",
+      "name": "pdug5OutletGroupActivePower",
+      "description": "The Sum of Active power of all Grouped Outlet.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletGroupActivePower",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.5.3.1.6",
+      "name": "pdug5OutletGroupApparentPower",
+      "description": "The Sum of Apparent power of all Grouped Outlet.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "pdug5OutletGroupApparentPower",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.7.1.1.0",
+      "name": "trapCode",
+      "description": "A number identifying the event for the trap that was sent.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "trapCode",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.19536.10.1.7.1.2.0",
+      "name": "trapDescription",
+      "description": "A string identifying the event for that last trap that was sent.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "trapDescription",
+      "transform": null,
+      "enumMap": null,
+      "module": "PANDUIT-MIB",
+      "tc": "DisplayString"
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-silver-peak-generic",
+  "name": "Silver Peak Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "Silver Peak",
+  "vendorOidPrefix": "1.3.6.1.4.1.23867",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 18 readable OIDs under 1.3.6.1.4.1.23867.",
+  "generated": {
+    "source": "mibs/silverpeak",
+    "date": "2026-09-12",
+    "oidCount": 18,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "SILVERPEAK-MGMT-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.1.1.0",
+      "name": "spsSystemVersion",
+      "description": "System software version string",
+      "type": "string",
+      "walk": false,
+      "metricKey": "spsSystemVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "SILVERPEAK-MGMT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.1.2.0",
+      "name": "spsProductModel",
+      "description": "System product model",
+      "type": "string",
+      "walk": false,
+      "metricKey": "spsProductModel",
+      "transform": null,
+      "enumMap": null,
+      "module": "SILVERPEAK-MGMT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.1.3.0",
+      "name": "spsOperStatus",
+      "description": "The current operational state of the appliance.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "spsOperStatus",
+      "transform": null,
+      "enumMap": null,
+      "module": "SILVERPEAK-MGMT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.1.4.0",
+      "name": "spsActiveAlarmCount",
+      "description": "The number of active alarm entries in the alarm table - spsActiveAlarmTable, defined under silverpeakMgmtMIBTables subtree.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "spsActiveAlarmCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "SILVERPEAK-MGMT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.1.5.0",
+      "name": "spsSystemUptime",
+      "description": "The amount of time in hundredth of a second since this NX was last initialized. Note that this is different from sysUpTime in the SNMPv2-MIB [RFC1907] because sysUpTime is the uptime of the network...",
+      "type": "timeticks",
+      "walk": false,
+      "metricKey": "spsSystemUptime",
+      "transform": null,
+      "enumMap": null,
+      "module": "SILVERPEAK-MGMT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.1.6.0",
+      "name": "spsSystemSerial",
+      "description": "System serial number string",
+      "type": "string",
+      "walk": false,
+      "metricKey": "spsSystemSerial",
+      "transform": null,
+      "enumMap": null,
+      "module": "SILVERPEAK-MGMT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.2.1.1.2",
+      "name": "spsActiveAlarmSeqNum",
+      "description": "The active alarm's sequence number at the time it was generated.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "spsActiveAlarmSeqNum",
+      "transform": null,
+      "enumMap": null,
+      "module": "SILVERPEAK-MGMT-MIB",
+      "tc": "SilverpeakSeqNum"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.2.1.1.3",
+      "name": "spsActiveAlarmSeverity",
+      "description": "The alarm severity for the active alarm.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "spsActiveAlarmSeverity",
+      "transform": null,
+      "enumMap": {
+        "0": "info",
+        "1": "warning",
+        "2": "minor",
+        "3": "major",
+        "4": "critical",
+        "5": "cleared",
+        "6": "acknowledged",
+        "7": "unacknowledged",
+        "8": "indeterminate"
+      },
+      "module": "SILVERPEAK-MGMT-MIB",
+      "tc": "SilverpeakAlarmSeverity"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.2.1.1.4",
+      "name": "spsActiveAlarmName",
+      "description": "A short name for the active alarm.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "spsActiveAlarmName",
+      "transform": null,
+      "enumMap": null,
+      "module": "SILVERPEAK-MGMT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.2.1.1.5",
+      "name": "spsActiveAlarmDescr",
+      "description": "A description for the active alarm.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "spsActiveAlarmDescr",
+      "transform": null,
+      "enumMap": null,
+      "module": "SILVERPEAK-MGMT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.2.1.1.6",
+      "name": "spsActiveAlarmSource",
+      "description": "The source for the active alarm.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "spsActiveAlarmSource",
+      "transform": null,
+      "enumMap": null,
+      "module": "SILVERPEAK-MGMT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.2.1.1.7",
+      "name": "spsActiveAlarmType",
+      "description": "The alarm type for the active alarm.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "spsActiveAlarmType",
+      "transform": null,
+      "enumMap": null,
+      "module": "SILVERPEAK-MGMT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.2.1.1.8",
+      "name": "spsActiveAlarmAcked",
+      "description": "Identifies if the user has acknowledged the alarm.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "spsActiveAlarmAcked",
+      "transform": null,
+      "enumMap": {
+        "0": "no",
+        "1": "yes"
+      },
+      "module": "SILVERPEAK-MGMT-MIB",
+      "tc": "SilverpeakYesNo"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.2.1.1.9",
+      "name": "spsActiveAlarmActive",
+      "description": "Identifies if the alarm is currently active.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "spsActiveAlarmActive",
+      "transform": null,
+      "enumMap": {
+        "0": "no",
+        "1": "yes"
+      },
+      "module": "SILVERPEAK-MGMT-MIB",
+      "tc": "SilverpeakYesNo"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.2.1.1.10",
+      "name": "spsActiveAlarmClearable",
+      "description": "Identifies if the user can manually clear the alarm.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "spsActiveAlarmClearable",
+      "transform": null,
+      "enumMap": {
+        "0": "no",
+        "1": "yes"
+      },
+      "module": "SILVERPEAK-MGMT-MIB",
+      "tc": "SilverpeakYesNo"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.2.1.1.11",
+      "name": "spsActiveAlarmLogTime",
+      "description": "The value of sysUpTime when the alarm was generated.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "spsActiveAlarmLogTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "SILVERPEAK-MGMT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.2.1.1.12",
+      "name": "spsActiveAlarmServiceAffect",
+      "description": "Identifies if the alarm is service affecting.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "spsActiveAlarmServiceAffect",
+      "transform": null,
+      "enumMap": {
+        "0": "no",
+        "1": "yes"
+      },
+      "module": "SILVERPEAK-MGMT-MIB",
+      "tc": "SilverpeakYesNo"
+    },
+    {
+      "oid": "1.3.6.1.4.1.23867.3.1.1.2.1.1.13",
+      "name": "spsActiveAlarmTypeId",
+      "description": "An ID that uniquely identifies a type of alarm. The following is a list of currently defined type IDs (ID listed below is in hexadecimal): ID Description ----- -------------------------------------...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "spsActiveAlarmTypeId",
+      "transform": null,
+      "enumMap": null,
+      "module": "SILVERPEAK-MGMT-MIB"
+    }
+  ]
+}

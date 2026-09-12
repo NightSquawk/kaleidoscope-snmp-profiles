@@ -1,0 +1,2869 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-samsung-printer",
+  "name": "Samsung Printer (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "printer",
+  "vendor": "Samsung",
+  "vendorOidPrefix": "1.3.6.1.4.1.236",
+  "description": "Auto-compiled with libsmi from 4 MIB module(s). 213 readable OIDs under 1.3.6.1.4.1.236.",
+  "generated": {
+    "source": "mibs/samsung",
+    "date": "2026-09-12",
+    "oidCount": 213,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "SAMSUNG-CLONING-MIB",
+      "SAMSUNG-DIAGNOSTICS-MIB",
+      "SAMSUNG-HOST-RESOURCES-EXT-MIB",
+      "SAMSUNG-PRINTER-EXT-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.53.11.2.1.1",
+      "name": "scmHrDevCountIndex",
+      "description": "A unique value used by the host to identify this Count item. This value indicate index of usage count value. If host device supports three count value (total page count, total color print count, to...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmHrDevCountIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-HOST-RESOURCES-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.53.11.2.1.2",
+      "name": "scmHrDevCountJobType",
+      "description": "scmHrDevCount defines items that are outside of the normal numeric range: other(-1), unknown(-2). scm defines many a job type. but current samsung device supports counts of print, fax, copy and sca...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmHrDevCountJobType",
+      "transform": null,
+      "enumMap": {
+        "1": "print",
+        "2": "copy",
+        "3": "faxIn",
+        "4": "faxOut",
+        "5": "scan",
+        "6": "report",
+        "11": "digitalSend",
+        "12": "digitalRecieve",
+        "21": "localStorage"
+      },
+      "module": "SAMSUNG-HOST-RESOURCES-EXT-MIB",
+      "tc": "ScmHrDevCountJobTypeTC"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.53.11.2.1.3",
+      "name": "scmHrDevCountMediaSize",
+      "description": "smcHrDevCount defines items that are outside of the normal numeric range: other(-1), unknown(-2). scm defines many a size of media. But, We use 'small' or 'large' as media size so that application ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmHrDevCountMediaSize",
+      "transform": null,
+      "enumMap": {
+        "1": "small",
+        "2": "large",
+        "3": "letter",
+        "4": "legal",
+        "5": "a4",
+        "6": "executive",
+        "7": "jisB5",
+        "8": "isoB5",
+        "9": "com10",
+        "10": "monarch",
+        "11": "dl",
+        "12": "c5",
+        "13": "postA6",
+        "14": "c6",
+        "15": "folio",
+        "16": "a5",
+        "17": "statement",
+        "18": "a6",
+        "19": "ledger",
+        "20": "a3",
+        "21": "jisB4",
+        "22": "jpost",
+        "23": "jpostd",
+        "24": "custom",
+        "25": "letterP",
+        "26": "a4P",
+        "27": "jisB5P",
+        "28": "a5P",
+        "29": "executiveP",
+        "30": "statementP",
+        "31": "a3Over",
+        "32": "b5Envelope"
+      },
+      "module": "SAMSUNG-HOST-RESOURCES-EXT-MIB",
+      "tc": "ScmHrDevCountMediaSizeTC"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.53.11.2.1.4",
+      "name": "scmHrDevCountUnit",
+      "description": "smcHrDevCount define items that are outside of the normal numeric range: other(-1), unknown(-2). PWG define count unit in printer mib(RFC1759, RFC3805). Default value is sheet(8), but specifically ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmHrDevCountUnit",
+      "transform": null,
+      "enumMap": {
+        "1": "other",
+        "2": "unknown",
+        "3": "tenThousandthsOfInches",
+        "4": "micrometers",
+        "7": "impressions",
+        "8": "sheets",
+        "11": "hours",
+        "12": "thousandthsOfOunces",
+        "13": "tenthsOfGrams",
+        "14": "hundrethsOfFluidOunces",
+        "15": "tenthsOfMilliliters",
+        "16": "feet",
+        "17": "meters",
+        "18": "items",
+        "19": "percent"
+      },
+      "module": "SAMSUNG-HOST-RESOURCES-EXT-MIB",
+      "tc": "ScmHrDevCountUnitTC"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.53.11.2.1.5",
+      "name": "scmHrDevCountDuplex",
+      "description": "smcHrDevCount define items that are outside of the normal numeric range: other(-1), unknown(-2). samsung device suppor three duplex job type, simple, duplex, duplex(single).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmHrDevCountDuplex",
+      "transform": null,
+      "enumMap": {
+        "1": "simplex",
+        "2": "duplex",
+        "3": "duplexSingle"
+      },
+      "module": "SAMSUNG-HOST-RESOURCES-EXT-MIB",
+      "tc": "ScmHrDevCountDuplexTC"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.53.11.2.1.6",
+      "name": "scmHrDevCountColor",
+      "description": "smcHrDevCount define items that are outside of the normal numeric range: other(-1), unknown(-2). single-color is defined for extension of color job count.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmHrDevCountColor",
+      "transform": null,
+      "enumMap": {
+        "1": "fullColor",
+        "2": "singleColor",
+        "3": "monoColor"
+      },
+      "module": "SAMSUNG-HOST-RESOURCES-EXT-MIB",
+      "tc": "ScmHrDevCountColorTC"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.53.11.2.1.7",
+      "name": "scmHrDevCountValue",
+      "description": "Value of usage count.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "scmHrDevCountValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-HOST-RESOURCES-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.1.2.1.2",
+      "name": "scmPrtBaseRowStatus",
+      "description": "This object is used to display status of the ONLY valid conceptual row in the 'scmPrtBaseTable'. Usage: 'scmPrtBaseRowStatus' is 'read-only' because the ONLY valid conceptual row shall NOT be deleted.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtBaseRowStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.1.0",
+      "name": "scmPrtGeneralPrnModelName",
+      "description": "Represent the printer model name currently being connected with NPC.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnModelName",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.2.0",
+      "name": "scmPrtGeneralPrnOSFWVer",
+      "description": "Printer Software version number.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnOSFWVer",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.3.0",
+      "name": "scmPrtGeneralPrnModelVer",
+      "description": "Model version number.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnModelVer",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.4.0",
+      "name": "scmPrtGeneralPrnSerialNo",
+      "description": "Printer Serial number.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnSerialNo",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.5.0",
+      "name": "scmPrtGeneralPrnModelDescr",
+      "description": "Printer HDD Size.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnModelDescr",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.6.0",
+      "name": "scmPrtGeneralPrnManufacture",
+      "description": "Printer DRAM Size.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnManufacture",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.7.0",
+      "name": "scmPrtGeneralPrnVendor",
+      "description": "Print Per Minute",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnVendor",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.11.0",
+      "name": "scmPrtGeneralPrnPCLFWVer",
+      "description": "PCL Version information of printer",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnPCLFWVer",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.12.0",
+      "name": "scmPrtGeneralPrnEngFWVer",
+      "description": "Print Engine FW Version",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnEngFWVer",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.13.0",
+      "name": "scmPrtGeneralPrnSCFFWVer",
+      "description": "Print SCF FW Version",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnSCFFWVer",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.14.0",
+      "name": "scmPrtGeneralPrnEpsonVer",
+      "description": "Print Epson Version",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnEpsonVer",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.15.0",
+      "name": "scmPrtGeneralPrnPCL5eVer",
+      "description": "Print PCL5e Version",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnPCL5eVer",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.16.0",
+      "name": "scmPrtGeneralPrnPSFWVer",
+      "description": "PS Version information of printer",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnPSFWVer",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.17.0",
+      "name": "scmPrtGeneralPrnScanFWVer",
+      "description": "Scanner FW Version",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnScanFWVer",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.18.0",
+      "name": "scmPrtGeneralPrnKS5843Ver",
+      "description": "Printer KS5843 Version.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnKS5843Ver",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.19.0",
+      "name": "scmPrtGeneralPrnKSSMVer",
+      "description": "Printer KSSM Version.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnKSSMVer",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.20.0",
+      "name": "scmPrtGeneralPrnKS5895Ver",
+      "description": "Printer KS5895 Version.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnKS5895Ver",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.21.0",
+      "name": "scmPrtGeneralPrnMainSystemVer",
+      "description": "Printer Main System Versio.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnMainSystemVer",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.22.0",
+      "name": "scmPrtGeneralPrnSPLVer",
+      "description": "Print SPL Version",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnSPLVer",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.23.0",
+      "name": "scmPrtGeneralPrncolorPPM",
+      "description": "Color Printing PPM",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrncolorPPM",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.1.24.0",
+      "name": "scmPrtGeneralPrnPCL5CeVer",
+      "description": "Print PCL5Ce Version",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmPrtGeneralPrnPCL5CeVer",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.5.2.1.1",
+      "name": "scmPrtGeneralRowStatus",
+      "description": "Manages the status of this conceptual row in the scmPrtGeneralTable.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtGeneralRowStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.8.1.1.0",
+      "name": "scmPrtInputTraySwitch",
+      "description": "if language is set to AUTO, this options can the printer anlyzes the stream of data being sent to determine which language is being used by the printer job, and the printer's emulation language aut...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtInputTraySwitch",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.8.1.2.0",
+      "name": "scmPrtInputTraySwitchOptions",
+      "description": "available options of the model",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtInputTraySwitchOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "auto",
+        "4": "tray1",
+        "8": "tray2"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.8.1.3.0",
+      "name": "scmPrtInputLockTray",
+      "description": "Trays and combination trays can be locked out of the paper selection process. The available options depend on the configuration of MP tray.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtInputLockTray",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.8.1.4.0",
+      "name": "scmPrtInputLockTrayOptions",
+      "description": "available options of the model",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtInputLockTrayOptions",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.8.1.5.0",
+      "name": "scmPrtInputPaperType",
+      "description": "It determines paper thickness.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtInputPaperType",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.8.1.6.0",
+      "name": "scmPrtInputPaperTypeOptions",
+      "description": "available options of current model",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtInputPaperTypeOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "normal",
+        "2": "thick",
+        "4": "wet",
+        "8": "transparency"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.8.2.1.1",
+      "name": "scmPrtInputRowStatus",
+      "description": "Manages the status of this conceptual row in the scmPrtInputTable.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtInputRowStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.8.2.1.2",
+      "name": "scmPrtInputNextPrtInputIndex",
+      "description": "The value of prtInputIndex corresponding to the input subunit which will be used when this input subunit is emptied. The value of zero indicates that auto input switching will not occur when this i...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtInputNextPrtInputIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.8.2.1.3",
+      "name": "scmPrtInputUseCustomSize",
+      "description": "Specifies how this input subunit determines the paper size to use. If the value is 'Off' this input subunit uses the paper size automatically sensed by the subunit. If the value is 'On' this input ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtInputUseCustomSize",
+      "transform": null,
+      "enumMap": {
+        "1": "other",
+        "3": "on",
+        "4": "off",
+        "5": "notPresent"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "PresentOnOff"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.8.2.1.4",
+      "name": "scmPrtInputCustDimFeedDirDecl",
+      "description": "Provides the dimension, in the feed direction, of the media in this input subunit, when the value of scmPrtInputUseCustomSize is set to 'On'. When scmPrtInputUseCustomSize is set to On, this value ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtInputCustDimFeedDirDecl",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.8.2.1.5",
+      "name": "scmPrtInputCustDimXFeedDirDecl",
+      "description": "Provides the dimension, in the feed direction, of the media in this input subunit, when the value of scmPrtInputUseCustomSize is set to 'On'. When scmPrtInputUseCustomSize is set to 'On', this valu...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtInputCustDimXFeedDirDecl",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.8.2.1.6",
+      "name": "scmPrtInputTrayPriority",
+      "description": "The current priority of this tray. This value/mechanism is independent of scmPrtNextPrtInputIndex and scmPrtInputAliasGroup. Usage: The priority of this device, where '0' is unspecified (default), ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtInputTrayPriority",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.8.2.1.7",
+      "name": "scmPrtInputPaperSize",
+      "description": "Value of Paper size for printing. Some printer such like ML6060 or Modena have a 4 bytes data length. So, to distinguish these models we have to check model id or version.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtInputPaperSize",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.8.2.1.8",
+      "name": "scmPrtInputPaperSizeOptions",
+      "description": "Paper size options that are available in this model. Some printer such like ML6060 or Modena have a 4 bytes data length. So, to distinguish these models we have to check model id or version.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtInputPaperSizeOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "letter",
+        "2": "legal",
+        "4": "a4",
+        "8": "executive",
+        "16": "jisB5",
+        "32": "isoB5",
+        "64": "com10",
+        "128": "monarch",
+        "256": "dl",
+        "512": "c5",
+        "1024": "postA6",
+        "2048": "c6",
+        "4096": "folio",
+        "8192": "a5",
+        "16384": "statement",
+        "32768": "a6",
+        "65536": "ledger",
+        "131072": "a3",
+        "262144": "jisB4",
+        "524288": "jpost",
+        "1048576": "jpostd",
+        "2097152": "custom",
+        "4194304": "letterP",
+        "8388608": "a4P",
+        "16777216": "jisB5P",
+        "33554432": "a5P",
+        "67108864": "executiveP",
+        "134217728": "statementP",
+        "268435456": "a3Over",
+        "536870912": "b5Envelope"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.8.2.1.9",
+      "name": "scmPrtInputTrayNum",
+      "description": "It can select the type of paper tray. The types of tray can be varied according to the printer model",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtInputTrayNum",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.8.2.1.10",
+      "name": "scmPrtInputTrayNumOptions",
+      "description": "available options of tray types",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtInputTrayNumOptions",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.9.1.1.1",
+      "name": "scmPrtOutputRowStatus",
+      "description": "Manages the status of this conceptual row in the scmPrtOutputTable.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtOutputRowStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.9.1.1.2",
+      "name": "scmPrtOutputNextIndex",
+      "description": "The value of prtOutputIndex corresponding to the output subunit which will be used when this output subunit is filled. A value of zero(0) indicates that auto output switching will not occur when th...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtOutputNextIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.9.1.1.3",
+      "name": "scmPrtOutputPassword",
+      "description": "This object is used as the password for an Output Tray, e.g. an output mailbox. It is the value that must be entered to open the output tray.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "scmPrtOutputPassword",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.9.1.1.4",
+      "name": "scmPrtOutputOffsetStackingType",
+      "description": "This object further refines the type of offset stacking from that specified by the object prtOutputOffsetStacking in the Printer MIB.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtOutputOffsetStackingType",
+      "transform": null,
+      "enumMap": {
+        "1": "other",
+        "2": "unknown",
+        "3": "notSpecified",
+        "4": "noOffset",
+        "5": "offsetOnJob",
+        "6": "offsetOnJobandCopy"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "ScmPrtOutputOffsetStackingType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.9.1.1.5",
+      "name": "scmPrtOutputTrayTimeoutSupport",
+      "description": "Determines whether the printer should wait before sending the printed output to another output destination when the selected or default destination is full. 'On' indicates that would should wait as...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtOutputTrayTimeoutSupport",
+      "transform": null,
+      "enumMap": {
+        "1": "other",
+        "3": "on",
+        "4": "off",
+        "5": "notPresent"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "PresentOnOff"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.9.1.1.6",
+      "name": "scmPrtOutputTrayTimeout",
+      "description": "Determines how long the printer should wait before sending the printed output to another output destination when the selected or default destination is full. A value of (0) implies 'other' or 'infi...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtOutputTrayTimeout",
+      "transform": null,
+      "enumMap": null,
+      "units": "Seconds",
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "Cardinal32"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.9.1.1.51",
+      "name": "scmPrtOutputFinishier",
+      "description": "This object declares the printer output finishier.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtOutputFinishier",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.9.1.1.52",
+      "name": "scmPrtOutputFinishierOptions",
+      "description": "This object declares the printer output finishier option. options 1. staple 2. punch",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtOutputFinishierOptions",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.14.2.1.1",
+      "name": "scmPrtChannelRowStatus",
+      "description": "Manages the status of this conceptual row in the scmPrtChannelTable.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtChannelRowStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.14.2.1.2",
+      "name": "scmPrtChannelEOJTimeout",
+      "description": "Defines the number of seconds that the channel waits before timing out. For example, this may be used for the parallel channel. The value zero means infinite or no timeout on the channel.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtChannelEOJTimeout",
+      "transform": null,
+      "enumMap": null,
+      "units": "Seconds",
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "Cardinal32"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.15.1.1.0",
+      "name": "scmPrtInterpreterCopyNum",
+      "description": "It can select how many papers are printed Normally it can be selected 1- 999.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtInterpreterCopyNum",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.15.1.2.0",
+      "name": "scmPrtInterpreterEmulation",
+      "description": "Emulation option",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtInterpreterEmulation",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.15.1.3.0",
+      "name": "scmPrtInterpreterEmulationOptions",
+      "description": "available options of the model",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtInterpreterEmulationOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "auto",
+        "2": "pcl5e",
+        "4": "pcl4",
+        "8": "wps3",
+        "16": "wps6",
+        "32": "ksc5843",
+        "64": "kssm",
+        "128": "ksc5895",
+        "256": "hwp",
+        "512": "pclxl",
+        "1024": "ps2",
+        "2048": "hexDump",
+        "4096": "epson",
+        "8192": "ps3swrender",
+        "16384": "ps3",
+        "32768": "colorGDI"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.15.2.1.1",
+      "name": "scmPrtInterpRowStatus",
+      "description": "Manages the status of this conceptual row in the scmPrtInterpreterTable.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtInterpRowStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.15.2.1.9",
+      "name": "scmPrtInterpJobCopiesDefault",
+      "description": "This defines the default number of job copies to be printed by this interpreter. If set incorrectly, this object may cause difficulties at customer sites. Agent developers should consider making th...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtInterpJobCopiesDefault",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "Ordinal32"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.15.2.1.33",
+      "name": "scmPrtInterpLineTerm",
+      "description": "Enables adding a Carriage Return after every Line Feed. The value 'On' indicates that a Carriage Return will be added after every Line Feed. Usage example: This is a useful feature when printing te...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtInterpLineTerm",
+      "transform": null,
+      "enumMap": {
+        "1": "other",
+        "3": "on",
+        "4": "off",
+        "5": "notPresent"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "PresentOnOff"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.15.2.1.54",
+      "name": "scmPrtInterpProcessBarcodes",
+      "description": "Specifies whether the 'extra' barcode processing within the interpreter should be used.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtInterpProcessBarcodes",
+      "transform": null,
+      "enumMap": {
+        "1": "other",
+        "3": "on",
+        "4": "off",
+        "5": "notPresent"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "PresentOnOff"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.15.2.1.60",
+      "name": "scmPrtInterpOrientation",
+      "description": "It determines the direction of the print image on the page. The first two kinds of options are portrait(tall) and landscape(wide). reversePortrait is 180 degrees rotation of portrait. reverseLandsc...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtInterpOrientation",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.15.2.1.61",
+      "name": "scmPrtInterpOrientationOptions",
+      "description": "available options in orientation",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtInterpOrientationOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "portrait",
+        "2": "landscape",
+        "4": "reverseLandscape",
+        "8": "reversePortrait"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.1.1.0",
+      "name": "scmPrtMarkerMarginUnit",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtMarkerMarginUnit",
+      "transform": null,
+      "enumMap": {
+        "1": "mm",
+        "2": "inch"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.1.2.0",
+      "name": "scmPrtMarkerSrt",
+      "description": "It determin Samsung Resolution Technology option when it is ON.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtMarkerSrt",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.1.3.0",
+      "name": "scmPrtMarkerSrtOptions",
+      "description": "available options of current model",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtMarkerSrtOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "enhance",
+        "2": "normal",
+        "4": "grayPlus",
+        "8": "gray",
+        "16": "res1200fast",
+        "32": "res1200true"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.1.4.0",
+      "name": "scmPrtMarkerDensity",
+      "description": "It determines the overall density of page",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtMarkerDensity",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.1.5.0",
+      "name": "scmPrtMarkerDensityOptions",
+      "description": "available options of current model",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtMarkerDensityOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "light",
+        "2": "medium",
+        "4": "dark"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.1.6.0",
+      "name": "scmPrtMarkerSmetMode",
+      "description": "The value of this object indicates whether the SMET mode is currently enabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtMarkerSmetMode",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.1.7.0",
+      "name": "scmPrtMarkerSmetModeOptions",
+      "description": "The value of this object will be the bitwise OR of the supported values for smetMode in this printer.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtMarkerSmetModeOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.1.8.0",
+      "name": "scmPrtMarkerduplexTopMargin",
+      "description": "The value of this object gives the top margin on the backside of a page when printing in duplex mode. The actual value used in the printer is the value of this object divided by 10. The unit is inch.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtMarkerduplexTopMargin",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.1.9.0",
+      "name": "scmPrtMarkerduplexLeftMargin",
+      "description": "The value of this object gives the left margin on the backside of a page when printing in duplex mode. The actual value used in the printer is the value of this object divided by 10. The unit is inch.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtMarkerduplexLeftMargin",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.1.10.0",
+      "name": "scmPrtMarkerShortEdgeBindingMargin",
+      "description": "The value of this object gives the margin left for binding on the short edge of the paper when printing is done in short edge duplex mode. The actual value used in the printer is the value of this ...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtMarkerShortEdgeBindingMargin",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.1.11.0",
+      "name": "scmPrtMarkerLongEdgeBindingMargin",
+      "description": "The value of this object gives the margin left for binding on the long edge of the paper when printing is done in long edge duplex mode. The actual value used in the printer is the value of this ob...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtMarkerLongEdgeBindingMargin",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.1.12.0",
+      "name": "scmPrtMarkerTonerSave",
+      "description": "Echo mode option. Echo mode Off Echo mode On",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtMarkerTonerSave",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.1.13.0",
+      "name": "scmPrtMarkerTonerSaveOptions",
+      "description": "available options of the model",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtMarkerTonerSaveOptions",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.1.14.0",
+      "name": "scmPrtMarkerTonerOutAction",
+      "description": "The value of this object gives the action taken by the printer when the tonerLow condition occurs. If the value is continue(1), the printer continues to print in spite of the toner being low. If th...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtMarkerTonerOutAction",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.1.15.0",
+      "name": "scmPrtMarkerTonerOutActionOptions",
+      "description": "The value of this object will be the bitwise OR of the supported values for tonerLowAction in this printer.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtMarkerTonerOutActionOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "continue",
+        "2": "stop"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.2.1.1",
+      "name": "scmPrtMarkerTonerIndex",
+      "description": "Index of the Toner number",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtMarkerTonerIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "Ordinal32"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.2.1.2",
+      "name": "scmPrtMarkerResolution",
+      "description": "The value of this object gives the current resolution used while printing. The value res300(1) means 300X300 dpi resolution. The value res600(2) means 600X600 dpi resolution. The value res1200(4) m...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtMarkerResolution",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.2.1.3",
+      "name": "scmPrtMarkerResolutionOptions",
+      "description": "The value of this object will be the bitwise OR of all the supported values for resolution in this printer.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtMarkerResolutionOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "res300",
+        "2": "res600",
+        "4": "res1200",
+        "8": "res1200fast",
+        "16": "res1200best"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.2.1.4",
+      "name": "scmPrtMarkerTonerColor",
+      "description": "color of Toner",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtMarkerTonerColor",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.2.1.5",
+      "name": "scmPrtMarkerTonerColorDescription",
+      "description": "Description of Toner",
+      "type": "string",
+      "walk": true,
+      "metricKey": "scmPrtMarkerTonerColorDescription",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.17.2.1.6",
+      "name": "scmPrtMarkerTonerLevel",
+      "description": "Indication of Toner remainder",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtMarkerTonerLevel",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.18.1.1.0",
+      "name": "scmPrtOperationJobCancel",
+      "description": "Printer Operation Job Cancel Request",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtOperationJobCancel",
+      "transform": null,
+      "enumMap": {
+        "1": "cancelJob"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.18.1.2.0",
+      "name": "scmPrtOperarionMenuClear",
+      "description": "When the value of this object is set to clearMenus(1), the values of all the printer properties in all the menus will be set to default values.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtOperarionMenuClear",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.18.1.3.0",
+      "name": "scmPrtOperationMenuClearOptions",
+      "description": "The value of this object will be the bitwise OR of the supported values for menuClear in this printer.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtOperationMenuClearOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "disable",
+        "2": "enable"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.18.1.4.0",
+      "name": "scmPrtOperationFuserClean",
+      "description": "When the value of this object is set to fuserClean(2),the printer fuser will be clear",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtOperationFuserClean",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.18.1.5.0",
+      "name": "scmPrtOperationFuserCleanOptions",
+      "description": "The value of this object will be the bitwise OR of the supported values for nfuserClean in this printer.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtOperationFuserCleanOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "disable",
+        "2": "enable"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.18.1.6.0",
+      "name": "scmPrtOperationOpcClean",
+      "description": "When the value of this object is set to opcClean(2),the printer OPC will be clear",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtOperationOpcClean",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.18.1.7.0",
+      "name": "scmPrtOperationOpcCleanOptions",
+      "description": "The value of this object will be the bitwise OR of the supported values for nopcClean in this printer.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtOperationOpcCleanOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "disable",
+        "2": "enable"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.18.1.8.0",
+      "name": "scmPrtOperationTestPrtRequest",
+      "description": "request test printing 1: request",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtOperationTestPrtRequest",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.18.1.9.0",
+      "name": "scmPrtOperationPrintFontRequest",
+      "description": "request test printing 1: pcl request 2: ps request 3: ks5843 request 4: kssm request 5: ks5895 request 6: epson requese, 7: opcClean request, 8: fuserClean request, 9: configpage request, 10: kssm ...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtOperationPrintFontRequest",
+      "transform": null,
+      "enumMap": {
+        "1": "pcl",
+        "2": "ps",
+        "3": "ks5843",
+        "4": "kssm",
+        "5": "ks5895",
+        "6": "epson",
+        "7": "opcClean",
+        "8": "fuserClean",
+        "9": "configpage",
+        "10": "demopage",
+        "11": "menuMap",
+        "12": "psFlashDirectory"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.18.1.10.0",
+      "name": "scmPrtOperationPrintBlackOnly",
+      "description": "Description.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtOperationPrintBlackOnly",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.18.2.1.1",
+      "name": "scmPrtOperationIndex",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtOperationIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "Ordinal32"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.19.1.1.0",
+      "name": "scmPrtConfigurationPowerSave",
+      "description": "set power save mode 1: power save mode",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtConfigurationPowerSave",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.19.1.2.0",
+      "name": "scmPrtConfigurationPowerSaveOptions",
+      "description": "available options of the model",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtConfigurationPowerSaveOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "pwSaveoff",
+        "2": "pwSave15",
+        "4": "pwSave30",
+        "8": "pwSave45",
+        "16": "pwSave60"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.19.1.3.0",
+      "name": "scmPrtConfigurationAutocont",
+      "description": "It determines the printer action when the user prints a page without paper in the manual feed slot but the paper source is set to manual feed. If Auto Continue is ON the printer pick up the paper f...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtConfigurationAutocont",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.19.1.4.0",
+      "name": "scmPrtConfigurationAutoCountOptions",
+      "description": "available options of the model",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtConfigurationAutoCountOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.19.1.5.0",
+      "name": "scmPrtConfigurationJam2Recover",
+      "description": "if it is on and occur JAM at Jam2 point printer will print this page again.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtConfigurationJam2Recover",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.19.1.6.0",
+      "name": "scmPrtConfigurationJam2RecOptions",
+      "description": "available options of the model",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtConfigurationJam2RecOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.19.1.7.0",
+      "name": "scmPrtConfigurationAltitudeAction",
+      "description": "The value 'low(1)' will be used when the printer is in the low altitude location. The value 'high(2)' will be used when the printer is in the high altitude location.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtConfigurationAltitudeAction",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.19.1.8.0",
+      "name": "scmPrtConfigurationAltitudeActionOptions",
+      "description": "The value of this object will be the bitwise OR of the supported values for altitudeAction in this printer.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtConfigurationAltitudeActionOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "low",
+        "2": "high"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.19.2.1.1",
+      "name": "scmPrtConfigurationIndex",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtConfigurationIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "Ordinal32"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.1.1.0",
+      "name": "scmPrtCountDrumImageCount",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtCountDrumImageCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.1.2.0",
+      "name": "scmPrtCountDrumImageCountReset",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtCountDrumImageCountReset",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.1.3.0",
+      "name": "scmPrtCountTransferImageCount",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtCountTransferImageCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.1.4.0",
+      "name": "scmPrtCountTransferImageCountReset",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtCountTransferImageCountReset",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.1.5.0",
+      "name": "scmPrtCountFuserImageCount",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtCountFuserImageCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.1.6.0",
+      "name": "scmPrtCountFuserImageCountReset",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtCountFuserImageCountReset",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.1.7.0",
+      "name": "scmPrtCountTwoRollerCount",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtCountTwoRollerCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.1.8.0",
+      "name": "scmPrtCountTwoRollerReset",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtCountTwoRollerReset",
+      "transform": null,
+      "enumMap": {
+        "1": "on"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.1.9.0",
+      "name": "scmPrtCountPickupMPCount",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtCountPickupMPCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.1.10.0",
+      "name": "scmPrtCountPickupMPReset",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtCountPickupMPReset",
+      "transform": null,
+      "enumMap": {
+        "1": "on"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.1.11.0",
+      "name": "scmPrtCountPickupTray1Count",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtCountPickupTray1Count",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.1.12.0",
+      "name": "scmPrtCountPickupTray1Reset",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtCountPickupTray1Reset",
+      "transform": null,
+      "enumMap": {
+        "1": "on"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.1.13.0",
+      "name": "scmPrtCountPickupTray2Count",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtCountPickupTray2Count",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.1.14.0",
+      "name": "scmPrtCountPickupTray2Reset",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtCountPickupTray2Reset",
+      "transform": null,
+      "enumMap": {
+        "1": "on"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.2.1.1",
+      "name": "scmPrtCountIndex",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtCountIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.2.1.2",
+      "name": "scmPrtCountDeviceType",
+      "description": "Description.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtCountDeviceType",
+      "transform": null,
+      "enumMap": {
+        "1": "printer",
+        "2": "scanner",
+        "3": "copier",
+        "4": "fax",
+        "5": "mailbox",
+        "6": "finisher",
+        "7": "feeder",
+        "8": "sorter",
+        "9": "marker",
+        "10": "basicFunctionFinisher",
+        "11": "multiFunctionFinisher",
+        "12": "externalIFFinisher",
+        "13": "thirdPartyFinisher",
+        "14": "payment"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.2.1.3",
+      "name": "scmPrtCountType",
+      "description": "Description.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtCountType",
+      "transform": null,
+      "enumMap": {
+        "1": "other",
+        "2": "unknown",
+        "3": "copy",
+        "4": "faxIn",
+        "5": "faxout",
+        "6": "digitalSend",
+        "7": "digitalReceive",
+        "8": "scan",
+        "9": "print"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.2.1.4",
+      "name": "scmPrtCountMediaSize",
+      "description": "Paper size options that are available in this model. Some printer such like ML6060 or Modena have a 4 bytes data length. So, to distinguish these models we have to check model id or version.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtCountMediaSize",
+      "transform": null,
+      "enumMap": {
+        "1": "unknown",
+        "2": "letter",
+        "3": "legal",
+        "4": "a4",
+        "5": "executive",
+        "6": "jisB5",
+        "7": "isoB5",
+        "8": "com10",
+        "9": "monarch",
+        "10": "dl",
+        "11": "c5",
+        "12": "postA6",
+        "13": "c6",
+        "14": "folio",
+        "15": "a5",
+        "16": "statement",
+        "17": "a6",
+        "18": "ledger",
+        "19": "a3",
+        "20": "jisB4",
+        "21": "jpost",
+        "22": "jpostd",
+        "23": "custom",
+        "24": "letterP",
+        "25": "a4P",
+        "26": "jisB5P",
+        "27": "a5P",
+        "28": "executiveP",
+        "29": "statementP",
+        "30": "a3Over",
+        "31": "b5Envelope"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.2.1.5",
+      "name": "scmPrtCountColorant",
+      "description": "Description.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtCountColorant",
+      "transform": null,
+      "enumMap": {
+        "1": "mono",
+        "2": "color"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.2.1.6",
+      "name": "scmPrtCountDuplex",
+      "description": "Description.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtCountDuplex",
+      "transform": null,
+      "enumMap": {
+        "1": "simplex",
+        "2": "duplex"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.2.1.7",
+      "name": "scmPrtCountResolution",
+      "description": "Description.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtCountResolution",
+      "transform": null,
+      "enumMap": {
+        "1": "low300dpi",
+        "2": "normal600dpi",
+        "3": "high1200dpi"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.2.1.8",
+      "name": "scmPrtCountUnit",
+      "description": "Description.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtCountUnit",
+      "transform": null,
+      "enumMap": {
+        "3": "tenThousandthsOfInches",
+        "4": "micrometers",
+        "5": "characters",
+        "6": "lines",
+        "7": "impressions",
+        "8": "sheets",
+        "9": "dotRow",
+        "11": "hours",
+        "16": "feet",
+        "17": "meters"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.20.2.1.9",
+      "name": "scmPrtCountValue",
+      "description": "Description.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtCountValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.21.2.1.2",
+      "name": "scmPrtSerialNbaudRate",
+      "description": "the speed when user use a serial port",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtSerialNbaudRate",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.21.2.1.3",
+      "name": "scmPrtSerialBrOptions",
+      "description": "available options of printer",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtSerialBrOptions",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.21.2.1.4",
+      "name": "scmPrtSerialBobuxon",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtSerialBobuxon",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.21.2.1.5",
+      "name": "scmPrtSerialBobuxonOptions",
+      "description": "The value of this object will be the bitwise OR of the supported values for robuxon in this printer.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtSerialBobuxonOptions",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.22.1.1.0",
+      "name": "scmPrtPCLFont",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtPCLFont",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.22.1.2.0",
+      "name": "scmPrtPCLSymbolSet",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtPCLSymbolSet",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.22.1.3.0",
+      "name": "scmPrtPCLFormLine",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtPCLFormLine",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.22.1.4.0",
+      "name": "scmPrtPCLPitch",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtPCLPitch",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.22.1.5.0",
+      "name": "scmPrtPCLPointSize",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtPCLPointSize",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.22.1.6.0",
+      "name": "scmPrtPCLCourier",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtPCLCourier",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.22.1.7.0",
+      "name": "scmPrtPCLCourierOptions",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtPCLCourierOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "regular",
+        "2": "dark"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.22.1.8.0",
+      "name": "scmPrtPCLAppendCR",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtPCLAppendCR",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.22.1.9.0",
+      "name": "scmPrtPCLAppendCROptions",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtPCLAppendCROptions",
+      "transform": null,
+      "enumMap": {
+        "1": "lf",
+        "2": "lfCR"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.22.1.10.0",
+      "name": "scmPrtPCLWideA4",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtPCLWideA4",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.22.1.11.0",
+      "name": "scmPrtPCLWideA4Options",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtPCLWideA4Options",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.22.1.12.0",
+      "name": "scmPrtPCLTopMargin",
+      "description": "Margine between top and first line of this page ,actuall value of printing is a value divided by 10. basic unit is inch. If Orientation is portrait or reverse portrait, then the range of topMargine...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtPCLTopMargin",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.22.1.13.0",
+      "name": "scmPrtPCLLeftMargin",
+      "description": "Left margine of printed page, actual value is a value divided by 10. Basic unit is inch. If Orentation is landscape or reverse landscape, the range is 0 to 99 and if the Orientation is portrait or ...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtPCLLeftMargin",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.22.2.1.1",
+      "name": "scmPrtPCLIndex",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmPrtPCLIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB",
+      "tc": "Ordinal32"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.23.1.1.0",
+      "name": "scmPrtKS5843Font",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKS5843Font",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.23.1.2.0",
+      "name": "scmPrtKS5843FontOptions",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKS5843FontOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "myoungjo",
+        "2": "gothic",
+        "4": "gungseo",
+        "8": "gullim",
+        "16": "sammool",
+        "32": "yetche",
+        "64": "post",
+        "128": "newgraph",
+        "256": "sunmyun",
+        "512": "pilgi",
+        "1024": "headline",
+        "2048": "ocrB1"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.23.1.3.0",
+      "name": "scmPrtKS5843Code",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKS5843Code",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.23.1.4.0",
+      "name": "scmPrtKS5843CodeOptions",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKS5843CodeOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "wansung",
+        "2": "johap"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.23.1.5.0",
+      "name": "scmPrtKS5843cpi",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKS5843cpi",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.23.1.6.0",
+      "name": "scmPrtKS5843cpiOptions",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKS5843cpiOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "kscpi10",
+        "2": "kscpi12",
+        "4": "kscpi133",
+        "8": "kscpi15",
+        "16": "kscpi20",
+        "32": "kscpi24",
+        "64": "kscpi267",
+        "128": "kscpi30"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.23.1.7.0",
+      "name": "scmPrtKS5843Lines",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKS5843Lines",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.23.1.8.0",
+      "name": "scmPrtKS5843Zoom",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKS5843Zoom",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.23.1.9.0",
+      "name": "scmPrtKS5843AutoWrap",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKS5843AutoWrap",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.23.1.10.0",
+      "name": "scmPrtKS5843AutoWrapOptions",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKS5843AutoWrapOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.23.1.11.0",
+      "name": "scmPrtKS5843Topmargin",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKS5843Topmargin",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.23.1.12.0",
+      "name": "scmPrtKS5843Sitemode",
+      "description": "Each site special Mode except ksc5843 standard",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKS5843Sitemode",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.24.1.1.0",
+      "name": "scmPrtKSSMFont",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKSSMFont",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.24.1.2.0",
+      "name": "scmPrtKSSMFontOptions",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKSSMFontOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "myoungjo",
+        "2": "gothic",
+        "4": "gungseo",
+        "8": "gullim",
+        "16": "sammool",
+        "32": "yetche",
+        "64": "post",
+        "128": "newgraph",
+        "256": "sunmyun",
+        "512": "pilgi",
+        "1024": "headline",
+        "2048": "ocrB1"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.24.1.3.0",
+      "name": "scmPrtKSSMCode",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKSSMCode",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.24.1.4.0",
+      "name": "scmPrtKSSMCodeOptions",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKSSMCodeOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "wansung",
+        "2": "johap"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.24.1.5.0",
+      "name": "scmPrtKSSMCPI",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKSSMCPI",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.24.1.6.0",
+      "name": "scmPrtKSSMCPIOptions",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKSSMCPIOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "kscpi10",
+        "2": "kscpi12",
+        "4": "kscpi133",
+        "8": "kscpi15",
+        "16": "kscpi20",
+        "32": "kscpi24",
+        "64": "kscpi267",
+        "128": "kscpi30"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.24.1.7.0",
+      "name": "scmPrtKSSMLines",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKSSMLines",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.24.1.8.0",
+      "name": "scmPrtKSSMZoom",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKSSMZoom",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.24.1.9.0",
+      "name": "scmPrtKSSMAutoWrap",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKSSMAutoWrap",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.24.1.10.0",
+      "name": "scmPrtKSSMAutoWrapOptions",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKSSMAutoWrapOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.24.1.11.0",
+      "name": "scmPrtKSSMTopMargin",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKSSMTopMargin",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.24.1.12.0",
+      "name": "scmPrtKSSMSiteMode",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtKSSMSiteMode",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.1.0",
+      "name": "scmPrtIPPColorSupported",
+      "description": "The value of this object indicates whether the printer supports color printing.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPColorSupported",
+      "transform": null,
+      "enumMap": {
+        "1": "yes",
+        "2": "no"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.2.0",
+      "name": "scmPrtIPPJobKOctetsSupportedLBound",
+      "description": "The value of this object gives the lower bound of the size in units of 1024 octets for jobs accepted by the printer.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPJobKOctetsSupportedLBound",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.3.0",
+      "name": "scmPrtIPPJobKOctetsSupportedUBound",
+      "description": "The value of this object gives the upper bound of the size in units of 1024 octets for jobs accepted by the printer.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPJobKOctetsSupportedUBound",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.4.0",
+      "name": "scmPrtIPPJobImpressionsSupportedLBound",
+      "description": "The value of this object gives the lower bound of the number of print images for a job.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPJobImpressionsSupportedLBound",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.5.0",
+      "name": "scmPrtIPPJobImpressionsSupportedUBound",
+      "description": "The value of this object gives the upper bound of the number of print images for a job.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPJobImpressionsSupportedUBound",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.6.0",
+      "name": "scmPrtIPPJobMediaSheetsSupportedLBound",
+      "description": "The value of this object gives the lower bound of the number of pages printed for a job.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPJobMediaSheetsSupportedLBound",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.7.0",
+      "name": "scmPrtIPPJobMediaSheetsSupportedUBound",
+      "description": "The value of this object gives the upper bound of the number of pages printed for a job.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPJobMediaSheetsSupportedUBound",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.8.0",
+      "name": "scmPrtIPPJobSheets",
+      "description": "The value of this object specifies the type of job start/end sheets printed with every IPP job. If the value is standard(1), the printer specific standard job start/end sheets will be printed for e...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPJobSheets",
+      "transform": null,
+      "enumMap": {
+        "1": "standard",
+        "2": "none"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.9.0",
+      "name": "scmPrtIPPCollatedCopiesLBound",
+      "description": "The value of this object gives the lower bound of the number of collated copies supported in this printer.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPCollatedCopiesLBound",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.10.0",
+      "name": "scmPrtIPPCollatedCopiesUBound",
+      "description": "The value of this object gives the upper bound of the number of collated copies supported in this printer.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPCollatedCopiesUBound",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.11.0",
+      "name": "scmPrtIPPCollatedCopies",
+      "description": "The value of this object gives the number of collated copies printed for the each job.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPCollatedCopies",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.12.0",
+      "name": "scmPrtIPPFinishingsSupported",
+      "description": "The value of this object gives the type of finishings supported in the printer. If bit 1 is set, stapling is supported. If bit 2 is set, punching is supported. If bit 3 is set, covering of printed ...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPFinishingsSupported",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.13.0",
+      "name": "scmPrtIPPFinishings",
+      "description": "The value of this object gives the set of finishings applied for each job. If bit 0 is set, no finishings are applied. If bit 1 is set, stapling is done for each job. If bit 2 is set, punching is d...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPFinishings",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.14.0",
+      "name": "scmPrtIPPPageRangesSupported",
+      "description": "The value of this object indicates whether printing only a range of pages for IPP jobs is supported. If the value is on(1), printing only specified page ranges of the given IPP job is supported.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPPageRangesSupported",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.15.0",
+      "name": "scmPrtIPPNumberUp",
+      "description": "The value of this object indicates the number of print images imposed on one side of a page.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPNumberUp",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.16.0",
+      "name": "scmPrtIPPNumberUpOptions",
+      "description": "The value of this object will be the bitwise OR of the supported values for numberUp in this printer.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPNumberUpOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "numberUp1",
+        "2": "numberUp2",
+        "4": "numberUp4",
+        "8": "numberUp6",
+        "16": "numberUp9",
+        "32": "numberUp16"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.17.0",
+      "name": "scmPrtIPPPrintQuality",
+      "description": "The value of this object indicates the print quality that the printer uses for a print job. The value draft(1) means lowest quality available on the printer. Tha value normal(2) means normal or int...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPPrintQuality",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.18.0",
+      "name": "scmPrtIPPPrintQualityOptions",
+      "description": "The value of this object will be the bitwise OR of the supported values for printQuality in this printer.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPPrintQualityOptions",
+      "transform": null,
+      "enumMap": {
+        "1": "draft",
+        "2": "normal",
+        "4": "high"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.19.0",
+      "name": "scmPrtIPPJobKOctetsProcessed",
+      "description": "The value of this object gives the number of units of 1024 octets printed for the current job.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPJobKOctetsProcessed",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.20.0",
+      "name": "scmPrtIPPJobImpressionsCompleted",
+      "description": "The value of this object gives the number of print images printed for the current job.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPJobImpressionsCompleted",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.25.1.21.0",
+      "name": "scmPrtIPPJobMediaSheetsCompleted",
+      "description": "The value of this object gives the number of pages printed for the current job.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtIPPJobMediaSheetsCompleted",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.26.1.1.0",
+      "name": "scmPrtAlertAlarmShortage",
+      "description": "Printer Alert Alarm Shortage",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtAlertAlarmShortage",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "on"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.26.1.2.0",
+      "name": "scmPrtAlertAlarmShortageOptions",
+      "description": "Printer Alert Shortage Oprions",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtAlertAlarmShortageOptions",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.27.1.1.0",
+      "name": "scmPrtConsoleDisplayBufferLcdLangType",
+      "description": "Printer Console (LCD) Display String Language Type",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtConsoleDisplayBufferLcdLangType",
+      "transform": null,
+      "enumMap": {
+        "1": "english",
+        "2": "german",
+        "4": "french",
+        "8": "italian",
+        "16": "spanish"
+      },
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.55.27.1.2.0",
+      "name": "scmPrtConsoleDisplayBufferLcdLangTypeOptions",
+      "description": "Printer Console (LCD) Display String Language Type Option",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmPrtConsoleDisplayBufferLcdLangTypeOptions",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-PRINTER-EXT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.64.1.2.1.1",
+      "name": "scmDiagnosticsDeviceIndex",
+      "description": "A unique value for each device contained by the host. The value for each device must remain constant at least from one re-initialization of the agent to the next re-initialization.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmDiagnosticsDeviceIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-DIAGNOSTICS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.64.1.2.1.2",
+      "name": "scmDiagnosticsDeviceItem",
+      "description": "An indication of the Item of device.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "scmDiagnosticsDeviceItem",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-DIAGNOSTICS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.64.1.2.1.3",
+      "name": "scmDiagnosticsDeviceType",
+      "description": "An indication of the type of device. If this value is `hrDeviceProcessor hrDeviceTypes 3 ' then an entry exists in the hrProcessorTable which corresponds to this device. If this value is `hrDeviceN...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmDiagnosticsDeviceType",
+      "transform": null,
+      "enumMap": {
+        "1": "input",
+        "2": "output",
+        "3": "cover",
+        "4": "geeralPrinter",
+        "5": "mediaPath",
+        "6": "marker",
+        "7": "markerSupplies",
+        "8": "markerColorant",
+        "21": "fax",
+        "22": "scanner",
+        "23": "network",
+        "24": "usb",
+        "25": "parallel",
+        "26": "finisher",
+        "41": "motor",
+        "42": "smps",
+        "43": "memory"
+      },
+      "module": "SAMSUNG-DIAGNOSTICS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.64.1.2.1.4",
+      "name": "scmDiagnosticsDeviceDescr",
+      "description": "A description of the type and instance of the storage described by this entry.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "scmDiagnosticsDeviceDescr",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-DIAGNOSTICS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.64.1.2.1.5",
+      "name": "scmDiagnosticsDeviceID",
+      "description": "The product ID for this device.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmDiagnosticsDeviceID",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-DIAGNOSTICS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.64.1.2.1.6",
+      "name": "scmDiagnosticsDeviceStatus",
+      "description": "The current operational state of the device described by this row of the table. A value unknown(1) indicates that the current state of the device is unknown. running(2) indicates that the device is...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmDiagnosticsDeviceStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "unknown",
+        "2": "running",
+        "3": "warning",
+        "4": "testing",
+        "5": "down",
+        "6": "printing"
+      },
+      "module": "SAMSUNG-DIAGNOSTICS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.64.1.2.1.7",
+      "name": "scmDiagnosticsDeviceErrors",
+      "description": "The number of errors detected on this device. It should be noted that as this object has a SYNTAX of Counter, that it does not have a defined initial value. However, it is recommended that this obj...",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "scmDiagnosticsDeviceErrors",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-DIAGNOSTICS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.64.1.2.1.8",
+      "name": "scmDiagnosticsRequest",
+      "description": "Diagnotics Request",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmDiagnosticsRequest",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off"
+      },
+      "module": "SAMSUNG-DIAGNOSTICS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.64.1.2.1.999",
+      "name": "scmGenBaseDeviceImageFileName",
+      "description": "It is the temporay Value. --> It will be moved to SCM General Mib",
+      "type": "string",
+      "walk": true,
+      "metricKey": "scmGenBaseDeviceImageFileName",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-DIAGNOSTICS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.82.1.1.1.1",
+      "name": "scmCloningIndex",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmCloningIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-CLONING-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.82.1.1.1.2",
+      "name": "scmCloningIPAddress",
+      "description": "This object indicates IPAdderss of device executing cloning",
+      "type": "string",
+      "walk": true,
+      "metricKey": "scmCloningIPAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-CLONING-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.82.1.1.1.3",
+      "name": "scmCloningResult",
+      "description": "This object indicates result of the cloning",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "scmCloningResult",
+      "transform": null,
+      "enumMap": {
+        "1": "completed",
+        "2": "processing",
+        "3": "invalidFile",
+        "4": "versionMismatch",
+        "5": "notSupportedCloning",
+        "6": "busy"
+      },
+      "module": "SAMSUNG-CLONING-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.82.1.1.1.4",
+      "name": "scmCloningDate",
+      "description": "This date represents when cloning is executed. Format of date is yyyy/mm/dd/hh/mm/ss",
+      "type": "string",
+      "walk": true,
+      "metricKey": "scmCloningDate",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-CLONING-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.82.1.2.1.0",
+      "name": "scmCloningLastIPAddress",
+      "description": "This object indicates IPAdderss of device executing cloning lately",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmCloningLastIPAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-CLONING-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.82.1.2.2.0",
+      "name": "scmCloningLastResult",
+      "description": "This object indicates result of the latest cloning",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmCloningLastResult",
+      "transform": null,
+      "enumMap": {
+        "1": "completed",
+        "2": "processing",
+        "3": "invalidFile",
+        "4": "versionMismatch",
+        "5": "notSupportedCloning",
+        "6": "busy"
+      },
+      "module": "SAMSUNG-CLONING-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.82.1.2.3.0",
+      "name": "scmCloningLastDate",
+      "description": "This object indicates date of the latest cloning. Format of date is yyyy/mm/dd/hh/mm/ss",
+      "type": "string",
+      "walk": false,
+      "metricKey": "scmCloningLastDate",
+      "transform": null,
+      "enumMap": null,
+      "module": "SAMSUNG-CLONING-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.236.11.5.11.82.1.2.4.0",
+      "name": "scmCloningSupported",
+      "description": "This object indicates whethere device supports cloning or not",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "scmCloningSupported",
+      "transform": null,
+      "enumMap": {
+        "1": "supported",
+        "2": "notSupported"
+      },
+      "module": "SAMSUNG-CLONING-MIB"
+    }
+  ]
+}

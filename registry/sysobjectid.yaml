@@ -63,3 +63,193 @@ entries:
   # ── NAS ──────────────────────────────────────────────────────────────
   - { oidPrefix: 1.3.6.1.4.1.6574,  vendor: Synology,   deviceCategory: nas,      defaultParent: generic-nas }
   - { oidPrefix: 1.3.6.1.4.1.24681, vendor: QNAP,       deviceCategory: nas,      defaultParent: generic-nas }
+
+  # ══ Batch 2, 2026-09-12: 107 rows chosen from the compile report of a public
+  #    MIB mirror (MSP-relevant vendors; carrier/optical/industrial gear left
+  #    out for now). Source directories imported under mibs/ at the same time.
+
+  # ── Switches (batch 2, 2026-09-12) ──────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.6486, vendor: "Alcatel-Lucent Enterprise", deviceCategory: switch, defaultParent: generic-switch,
+      note: "OmniSwitch (AOS)." }
+  - { oidPrefix: 1.3.6.1.4.1.207, vendor: "Allied Telesis", deviceCategory: switch, defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.30065, vendor: Arista, deviceCategory: switch, defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.45, vendor: Avaya, deviceCategory: switch, defaultParent: generic-switch,
+      note: "Nortel/Avaya Ethernet Routing Switch (SynOptics enterprise)." }
+  - { oidPrefix: 1.3.6.1.4.1.1991, vendor: Brocade, deviceCategory: switch, defaultParent: generic-switch,
+      note: "Foundry/Brocade IP switches (now Ruckus ICX)." }
+  - { oidPrefix: 1.3.6.1.4.1.1588, vendor: "Brocade FC", deviceCategory: switch, defaultParent: generic-switch,
+      note: "Brocade Fibre Channel SAN switches." }
+  - { oidPrefix: 1.3.6.1.4.1.40310, vendor: Cumulus, deviceCategory: switch, defaultParent: generic-switch,
+      note: "Cumulus Linux (now NVIDIA)." }
+  - { oidPrefix: 1.3.6.1.4.1.171, vendor: D-Link, deviceCategory: switch, defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.6027, vendor: Dell, deviceCategory: switch, defaultParent: generic-switch,
+      note: "Force10 / Dell Networking OS9." }
+  - { oidPrefix: 1.3.6.1.4.1.259, vendor: Edgecore, deviceCategory: switch, defaultParent: generic-switch,
+      note: "Accton/Edgecore." }
+  - { oidPrefix: 1.3.6.1.4.1.5624, vendor: Enterasys, deviceCategory: switch, defaultParent: generic-switch,
+      note: "Now Extreme; old Enterasys enterprise." }
+  - { oidPrefix: 1.3.6.1.4.1.1916, vendor: Extreme, deviceCategory: switch, defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.25506, vendor: "HPE Comware", deviceCategory: switch, defaultParent: generic-switch,
+      note: "H3C/HPE Comware (hh3c) switches and routers." }
+  - { oidPrefix: 1.3.6.1.4.1.2011, vendor: Huawei, deviceCategory: switch, defaultParent: generic-switch,
+      note: "Huawei and legacy H3C share the enterprise; also carries routers, firewalls, and APs." }
+  - { oidPrefix: 1.3.6.1.4.1.3955, vendor: Linksys, deviceCategory: switch, defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.33049, vendor: Mellanox, deviceCategory: switch, defaultParent: generic-switch,
+      note: "Now NVIDIA." }
+  - { oidPrefix: 1.3.6.1.4.1.8691, vendor: Moxa, deviceCategory: switch, defaultParent: generic-switch,
+      note: "Industrial switches and serial servers." }
+  - { oidPrefix: 1.3.6.1.4.1.4526, vendor: Netgear, deviceCategory: switch, defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.46242, vendor: Netonix, deviceCategory: switch, defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.2272, vendor: Nortel, deviceCategory: switch, defaultParent: generic-switch,
+      note: "Nortel RAPID-CITY (Passport/ERS 8000)." }
+  - { oidPrefix: 1.3.6.1.4.1.10456, vendor: Planet, deviceCategory: switch, defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.89, vendor: Radlan, deviceCategory: switch, defaultParent: generic-switch,
+      note: "RND/Radlan/Marvell reference agent used by Dell PowerConnect, Netgear, Linksys and others." }
+  - { oidPrefix: 1.3.6.1.4.1.4881, vendor: Ruijie, deviceCategory: switch, defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.11863, vendor: TP-Link, deviceCategory: switch, defaultParent: generic-switch }
+
+  # ── Multi-product network vendors and appliances: category too broad to imply, identity only 
+  - { oidPrefix: 1.3.6.1.4.1.664, vendor: Adtran, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.3854, vendor: AKCP, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Environmental sensors." }
+  - { oidPrefix: 1.3.6.1.4.1.9694, vendor: Arbor, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Now NETSCOUT." }
+  - { oidPrefix: 1.3.6.1.4.1.5003, vendor: AudioCodes, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "VoIP gateways and SBCs." }
+  - { oidPrefix: 1.3.6.1.4.1.368, vendor: Axis, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Cameras." }
+  - { oidPrefix: 1.3.6.1.4.1.3417, vendor: "Blue Coat", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Now Symantec/Broadcom ProxySG." }
+  - { oidPrefix: 1.3.6.1.4.1.29671, vendor: "Cisco Meraki", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "MX, MS and MR under one enterprise." }
+  - { oidPrefix: 1.3.6.1.4.1.5951, vendor: Citrix, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "NetScaler / ADC." }
+  - { oidPrefix: 1.3.6.1.4.1.20992, vendor: Cradlepoint, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "LTE routers." }
+  - { oidPrefix: 1.3.6.1.4.1.3375, vendor: F5, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "BIG-IP." }
+  - { oidPrefix: 1.3.6.1.4.1.25597, vendor: FireEye, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.21239, vendor: Geist, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Now Vertiv; PDUs and sensors." }
+  - { oidPrefix: 1.3.6.1.4.1.26866, vendor: Gigamon, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.42397, vendor: Grandstream, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "VoIP." }
+  - { oidPrefix: 1.3.6.1.4.1.39165, vendor: Hikvision, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Cameras and NVRs." }
+  - { oidPrefix: 1.3.6.1.4.1.21796, vendor: "HW group", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Environmental sensors." }
+  - { oidPrefix: 1.3.6.1.4.1.7779, vendor: Infoblox, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "DNS/DHCP appliances." }
+  - { oidPrefix: 1.3.6.1.4.1.12196, vendor: Kemp, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "LoadMaster." }
+  - { oidPrefix: 1.3.6.1.4.1.244, vendor: Lantronix, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.5597, vendor: Meinberg, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "NTP appliances." }
+  - { oidPrefix: 1.3.6.1.4.1.14988, vendor: MikroTik, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Routers, switches and APs under one enterprise." }
+  - { oidPrefix: 1.3.6.1.4.1.1027, vendor: Mitel, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "VoIP." }
+  - { oidPrefix: 1.3.6.1.4.1.25049, vendor: Opengear, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Console servers." }
+  - { oidPrefix: 1.3.6.1.4.1.19536, vendor: Panduit, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.23695, vendor: Peplink, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.1966, vendor: Perle, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Console and serial servers." }
+  - { oidPrefix: 1.3.6.1.4.1.13742, vendor: Raritan, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "PDUs and KVM." }
+  - { oidPrefix: 1.3.6.1.4.1.2606, vendor: Rittal, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "CMC monitoring." }
+  - { oidPrefix: 1.3.6.1.4.1.17163, vendor: Riverbed, deviceCategory: generic, defaultParent: generic-network-device }
+  - { oidPrefix: 1.3.6.1.4.1.1718, vendor: "Server Technology", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "PDUs." }
+  - { oidPrefix: 1.3.6.1.4.1.23867, vendor: "Silver Peak", deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Now HPE Aruba EdgeConnect." }
+  - { oidPrefix: 1.3.6.1.4.1.48690, vendor: Teltonika, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "LTE routers." }
+  - { oidPrefix: 1.3.6.1.4.1.2634, vendor: WTI, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Console servers and PDUs." }
+  - { oidPrefix: 1.3.6.1.4.1.890, vendor: Zyxel, deviceCategory: generic, defaultParent: generic-network-device,
+      note: "Switches, firewalls, APs and DSL gear under one enterprise." }
+
+  # ── Firewalls ───────────────────────────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.20632, vendor: Barracuda, deviceCategory: firewall, defaultParent: generic-firewall }
+  - { oidPrefix: 1.3.6.1.4.1.2620, vendor: "Check Point", deviceCategory: firewall, defaultParent: generic-firewall }
+  - { oidPrefix: 1.3.6.1.4.1.5089, vendor: Clavister, deviceCategory: firewall, defaultParent: generic-firewall }
+  - { oidPrefix: 1.3.6.1.4.1.7367, vendor: DrayTek, deviceCategory: firewall, defaultParent: generic-firewall }
+  - { oidPrefix: 1.3.6.1.4.1.1369, vendor: Forcepoint, deviceCategory: firewall, defaultParent: generic-firewall,
+      note: "Stonesoft." }
+  - { oidPrefix: 1.3.6.1.4.1.3224, vendor: Juniper, deviceCategory: firewall, defaultParent: generic-firewall,
+      note: "NetScreen / ScreenOS." }
+  - { oidPrefix: 1.3.6.1.4.1.12532, vendor: "Pulse Secure", deviceCategory: firewall, defaultParent: generic-firewall,
+      note: "Juniper IVE / Pulse Connect Secure VPN." }
+  - { oidPrefix: 1.3.6.1.4.1.11256, vendor: Stormshield, deviceCategory: firewall, defaultParent: generic-firewall }
+  - { oidPrefix: 1.3.6.1.4.1.3097, vendor: WatchGuard, deviceCategory: firewall, defaultParent: generic-firewall }
+
+  # ── Wireless ────────────────────────────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.26928, vendor: Aerohive, deviceCategory: access_point, defaultParent: generic-ap,
+      note: "Now Extreme." }
+  - { oidPrefix: 1.3.6.1.4.1.17713, vendor: Cambium, deviceCategory: access_point, defaultParent: generic-ap }
+  - { oidPrefix: 1.3.6.1.4.1.8744, vendor: Colubris, deviceCategory: access_point, defaultParent: generic-ap,
+      note: "Now HPE MSM." }
+  - { oidPrefix: 1.3.6.1.4.1.14125, vendor: EnGenius, deviceCategory: access_point, defaultParent: generic-ap }
+  - { oidPrefix: 1.3.6.1.4.1.32750, vendor: LigoWave, deviceCategory: access_point, defaultParent: generic-ap }
+  - { oidPrefix: 1.3.6.1.4.1.15983, vendor: Meru, deviceCategory: access_point, defaultParent: generic-ap,
+      note: "Now Fortinet." }
+  - { oidPrefix: 1.3.6.1.4.1.43356, vendor: Mimosa, deviceCategory: access_point, defaultParent: generic-ap }
+  - { oidPrefix: 1.3.6.1.4.1.841, vendor: Proxim, deviceCategory: access_point, defaultParent: generic-ap }
+  - { oidPrefix: 1.3.6.1.4.1.25053, vendor: Ruckus, deviceCategory: access_point, defaultParent: generic-ap }
+  - { oidPrefix: 1.3.6.1.4.1.388, vendor: Symbol, deviceCategory: access_point, defaultParent: generic-ap,
+      note: "Symbol/Motorola/Zebra WLAN." }
+  - { oidPrefix: 1.3.6.1.4.1.14525, vendor: Trapeze, deviceCategory: access_point, defaultParent: generic-ap,
+      note: "Now Juniper WLA." }
+  - { oidPrefix: 1.3.6.1.4.1.21013, vendor: Xirrus, deviceCategory: access_point, defaultParent: generic-ap }
+
+  # ── Servers and hypervisors ─────────────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.674, vendor: Dell, deviceCategory: server, defaultParent: generic-server,
+      note: "iDRAC, OpenManage, and PowerConnect (674.10895) share this root." }
+  - { oidPrefix: 1.3.6.1.4.1.674.10895, vendor: Dell, deviceCategory: switch, defaultParent: generic-switch, compile: false,
+      note: "PowerConnect / Dell Networking under the Dell root. Identity only: objects compile into mib-dell-server with the rest of the root." }
+  - { oidPrefix: 1.3.6.1.4.1.232, vendor: HPE, deviceCategory: server, defaultParent: generic-server,
+      note: "Compaq/HPE ProLiant, iLO, Insight Manager. Octet-anchored: distinct from Novell 23." }
+  - { oidPrefix: 1.3.6.1.4.1.2, vendor: IBM, deviceCategory: server, defaultParent: generic-server,
+      note: "IBM enterprise root (BladeCenter, IMM, storage)." }
+  - { oidPrefix: 1.3.6.1.4.1.9586, vendor: Keepalived, deviceCategory: server, defaultParent: generic-server }
+  - { oidPrefix: 1.3.6.1.4.1.19046, vendor: Lenovo, deviceCategory: server, defaultParent: generic-server,
+      note: "Lenovo XClarity / System x." }
+  - { oidPrefix: 1.3.6.1.4.1.41263, vendor: Nutanix, deviceCategory: server, defaultParent: generic-server }
+  - { oidPrefix: 1.3.6.1.4.1.42, vendor: Oracle, deviceCategory: server, defaultParent: generic-server,
+      note: "Sun Microsystems enterprise." }
+  - { oidPrefix: 1.3.6.1.4.1.7244, vendor: Quanta, deviceCategory: server, defaultParent: generic-server }
+  - { oidPrefix: 1.3.6.1.4.1.3495, vendor: Squid, deviceCategory: server, defaultParent: generic-server }
+  - { oidPrefix: 1.3.6.1.4.1.10876, vendor: Supermicro, deviceCategory: server, defaultParent: generic-server }
+  - { oidPrefix: 1.3.6.1.4.1.6876, vendor: VMware, deviceCategory: server, defaultParent: generic-server }
+
+  # ── Storage ─────────────────────────────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.5227, vendor: Buffalo, deviceCategory: nas, defaultParent: generic-nas }
+  - { oidPrefix: 1.3.6.1.4.1.19746, vendor: "Data Domain", deviceCategory: nas, defaultParent: generic-nas,
+      note: "Dell EMC Data Domain." }
+  - { oidPrefix: 1.3.6.1.4.1.12740, vendor: "Dell EqualLogic", deviceCategory: nas, defaultParent: generic-nas }
+  - { oidPrefix: 1.3.6.1.4.1.12124, vendor: Isilon, deviceCategory: nas, defaultParent: generic-nas,
+      note: "Dell EMC Isilon." }
+  - { oidPrefix: 1.3.6.1.4.1.50536, vendor: iXsystems, deviceCategory: nas, defaultParent: generic-nas,
+      note: "TrueNAS / FreeNAS." }
+  - { oidPrefix: 1.3.6.1.4.1.789, vendor: NetApp, deviceCategory: nas, defaultParent: generic-nas }
+  - { oidPrefix: 1.3.6.1.4.1.22274, vendor: QSAN, deviceCategory: nas, defaultParent: generic-nas }
+
+  # ── UPS and DC power ────────────────────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.2254, vendor: Delta, deviceCategory: ups, defaultParent: generic-ups,
+      note: "Delta Electronics UPS." }
+  - { oidPrefix: 1.3.6.1.4.1.12148, vendor: Eltek, deviceCategory: ups, defaultParent: generic-ups,
+      note: "DC power systems." }
+  - { oidPrefix: 1.3.6.1.4.1.935, vendor: Megatec, deviceCategory: ups, defaultParent: generic-ups,
+      note: "Reference UPS agent used by many white-label UPS cards." }
+  - { oidPrefix: 1.3.6.1.4.1.4555, vendor: Socomec, deviceCategory: ups, defaultParent: generic-ups }
+  - { oidPrefix: 1.3.6.1.4.1.850, vendor: "Tripp Lite", deviceCategory: ups, defaultParent: generic-ups }
+  - { oidPrefix: 1.3.6.1.4.1.476, vendor: Vertiv, deviceCategory: ups, defaultParent: generic-ups,
+      note: "Liebert." }
+
+  # ── Printers ────────────────────────────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.1347, vendor: Kyocera, deviceCategory: printer, defaultParent: generic-printer }
+  - { oidPrefix: 1.3.6.1.4.1.367, vendor: Ricoh, deviceCategory: printer, defaultParent: generic-printer }
+  - { oidPrefix: 1.3.6.1.4.1.236, vendor: Samsung, deviceCategory: printer, defaultParent: generic-printer }
+  - { oidPrefix: 1.3.6.1.4.1.253, vendor: Xerox, deviceCategory: printer, defaultParent: generic-printer }

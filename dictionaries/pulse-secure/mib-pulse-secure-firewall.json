@@ -1,0 +1,330 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-pulse-secure-firewall",
+  "name": "Pulse Secure Firewall (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "firewall",
+  "vendor": "Pulse Secure",
+  "vendorOidPrefix": "1.3.6.1.4.1.12532",
+  "description": "Auto-compiled with libsmi from 2 MIB module(s). 28 readable OIDs under 1.3.6.1.4.1.12532.",
+  "generated": {
+    "source": "mibs/juniper, mibs/pulsesecure",
+    "date": "2026-09-12",
+    "oidCount": 28,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "JUNIPER-IVE-MIB",
+      "PULSESECURE-PSG-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.12532.1.0",
+      "name": "logFullPercent",
+      "description": "Percentage of log file full",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "logFullPercent",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.2.0",
+      "name": "signedInWebUsers",
+      "description": "Number of Signed-In Web Users",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "signedInWebUsers",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.3.0",
+      "name": "signedInMailUsers",
+      "description": "Number of Signed-In Mail Users",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "signedInMailUsers",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.6.0",
+      "name": "productName",
+      "description": "IVE Licensed Product Name",
+      "type": "string",
+      "walk": false,
+      "metricKey": "productName",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.7.0",
+      "name": "productVersion",
+      "description": "IVE System Software Version",
+      "type": "string",
+      "walk": false,
+      "metricKey": "productVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.10.0",
+      "name": "iveCpuUtil",
+      "description": "The CPU Utilization of the IVE system",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "iveCpuUtil",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.11.0",
+      "name": "iveMemoryUtil",
+      "description": "The Memory Utilization of the IVE system",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "iveMemoryUtil",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.12.0",
+      "name": "iveConcurrentUsers",
+      "description": "The Total number of Users Logged In for the IVE Node",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "iveConcurrentUsers",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.13.0",
+      "name": "clusterConcurrentUsers",
+      "description": "The Total number of Users Logged In for the Cluster",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "clusterConcurrentUsers",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.14.0",
+      "name": "iveTotalHits",
+      "description": "The Total number of hits to the IVE since last reboot",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "iveTotalHits",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.15.0",
+      "name": "iveFileHits",
+      "description": "The Total number of File hits to the IVE since last reboot",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "iveFileHits",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.16.0",
+      "name": "iveWebHits",
+      "description": "The Total number of hits via the Web Interface since the last reboot",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "iveWebHits",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.17.0",
+      "name": "iveAppletHits",
+      "description": "The Total number of applet hits to the IVE since last reboot",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "iveAppletHits",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.18.0",
+      "name": "ivetermHits",
+      "description": "The Total number of terminal hits to the IVE since last reboot",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "ivetermHits",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.19.0",
+      "name": "iveSAMHits",
+      "description": "The Total number of SAM(Secure Application manager)hits of since last reboot",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "iveSAMHits",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.20.0",
+      "name": "iveNCHits",
+      "description": "The Total number of NC(Network Connect) hits of since last reboot",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "iveNCHits",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.21.0",
+      "name": "meetingHits",
+      "description": "The Total number of Meeting hits of since last reboot",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "meetingHits",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.24.0",
+      "name": "iveSwapUtil",
+      "description": "The Swap Utilization of the IVE system",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "iveSwapUtil",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.25.0",
+      "name": "diskFullPercent",
+      "description": "Percentage of disk space full",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "diskFullPercent",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.26.1.1",
+      "name": "ipIndex",
+      "description": "Index for IP Table",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "ipIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.26.1.2",
+      "name": "ipValue",
+      "description": "Blocked IP Entry",
+      "type": "string",
+      "walk": true,
+      "metricKey": "ipValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.42.0",
+      "name": "iveTemperature",
+      "description": "The Temperature of MAG application blade. Other platform such as SA and IC will return 0",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "iveTemperature",
+      "transform": null,
+      "enumMap": null,
+      "module": "JUNIPER-IVE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.43.0",
+      "name": "iveVPNTunnels",
+      "description": "The number of concurrent Pulse IPSec and NC users",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "iveVPNTunnels",
+      "transform": null,
+      "enumMap": null,
+      "module": "PULSESECURE-PSG-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.44.0",
+      "name": "iveSSLConnections",
+      "description": "Total number of SSL connection",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "iveSSLConnections",
+      "transform": null,
+      "enumMap": null,
+      "module": "PULSESECURE-PSG-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.45.0",
+      "name": "esapVersion",
+      "description": "Active ESAP Version",
+      "type": "string",
+      "walk": false,
+      "metricKey": "esapVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "PULSESECURE-PSG-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.48.0",
+      "name": "iveTotalSignedInUsers",
+      "description": "The Total number of Users Logged In for the Cluster",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "iveTotalSignedInUsers",
+      "transform": null,
+      "enumMap": null,
+      "module": "PULSESECURE-PSG-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.54.0",
+      "name": "pclsRemainingGracePeriod",
+      "description": "Number of days remaining in grace period for contacting PCLS",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "pclsRemainingGracePeriod",
+      "transform": null,
+      "enumMap": null,
+      "module": "PULSESECURE-PSG-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.12532.55.0",
+      "name": "iveMaxConcurrentUsersLicenseCapacity",
+      "description": "Total licensed concurrent users capacity",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "iveMaxConcurrentUsersLicenseCapacity",
+      "transform": null,
+      "enumMap": null,
+      "module": "PULSESECURE-PSG-MIB"
+    }
+  ]
+}

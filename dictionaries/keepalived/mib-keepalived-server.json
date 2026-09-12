@@ -1,0 +1,1907 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-keepalived-server",
+  "name": "Keepalived Server (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "server",
+  "vendor": "Keepalived",
+  "vendorOidPrefix": "1.3.6.1.4.1.9586",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 145 readable OIDs under 1.3.6.1.4.1.9586.",
+  "generated": {
+    "source": "mibs/keepalived",
+    "date": "2026-09-12",
+    "oidCount": 145,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "KEEPALIVED-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.1.1.0",
+      "name": "version",
+      "description": "Version of keepalived",
+      "type": "string",
+      "walk": false,
+      "metricKey": "version",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.1.2.0",
+      "name": "routerId",
+      "description": "Router ID",
+      "type": "string",
+      "walk": false,
+      "metricKey": "routerId",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.1.3.1.0",
+      "name": "smtpServerAddressType",
+      "description": "Address type for SMTP server.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "smtpServerAddressType",
+      "transform": null,
+      "enumMap": {
+        "0": "unknown",
+        "1": "ipv4",
+        "2": "ipv6",
+        "3": "ipv4z",
+        "4": "ipv6z",
+        "16": "dns",
+        "25": "l2vpn"
+      },
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddressType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.1.3.2.0",
+      "name": "smtpServerAddress",
+      "description": "Address of SMTP server.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "smtpServerAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.1.3.3.0",
+      "name": "smtpServerTimeout",
+      "description": "SMTP server connection timeout.",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "smtpServerTimeout",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.1.3.4.0",
+      "name": "emailFrom",
+      "description": "Email address for the From field.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "emailFrom",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.1.3.5.1.2",
+      "name": "emailAddress",
+      "description": "Email address to be notified when an alert is raised.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "emailAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.1.4.0",
+      "name": "trapEnable",
+      "description": "Indicate whether traps should be sent for various events.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "trapEnable",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.1.5.0",
+      "name": "linkBeat",
+      "description": "Indicate which method is used to check if a link is up or down. netlink(1) means that the kernel will push a link state change while polling(2) means that the status of the link is checked periodic...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "linkBeat",
+      "transform": null,
+      "enumMap": {
+        "1": "netlink",
+        "2": "polling"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.1.1.2",
+      "name": "vrrpSyncGroupName",
+      "description": "Name of the synchronisation group.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpSyncGroupName",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.1.1.3",
+      "name": "vrrpSyncGroupState",
+      "description": "Current state of the synchronisation group.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpSyncGroupState",
+      "transform": null,
+      "enumMap": {
+        "0": "init",
+        "1": "backup",
+        "2": "master",
+        "3": "fault",
+        "4": "unknown"
+      },
+      "module": "KEEPALIVED-MIB",
+      "tc": "VrrpState"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.1.1.4",
+      "name": "vrrpSyncGroupSmtpAlert",
+      "description": "Will SMTP alert be sent for this synchronisation group?",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpSyncGroupSmtpAlert",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.1.1.5",
+      "name": "vrrpSyncGroupNotifyExec",
+      "description": "Will we execute notification script for this group?",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpSyncGroupNotifyExec",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.1.1.6",
+      "name": "vrrpSyncGroupScriptMaster",
+      "description": "Script to execute when the group becomes master.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpSyncGroupScriptMaster",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.1.1.7",
+      "name": "vrrpSyncGroupScriptBackup",
+      "description": "Script to execute when the group becomes backup.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpSyncGroupScriptBackup",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.1.1.8",
+      "name": "vrrpSyncGroupScriptFault",
+      "description": "Script to execute when the group is in fault state.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpSyncGroupScriptFault",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.1.1.9",
+      "name": "vrrpSyncGroupScript",
+      "description": "Script to execute whenever a state change occurs.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpSyncGroupScript",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.2.1.2",
+      "name": "vrrpSyncGroupMemberName",
+      "description": "Name of the instance contained in the synchronisation group.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpSyncGroupMemberName",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.2",
+      "name": "vrrpInstanceName",
+      "description": "Name of the VRRP instance.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpInstanceName",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.3",
+      "name": "vrrpInstanceVirtualRouterId",
+      "description": "Virtual Router ID (VRID) for this VRRP instance.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "vrrpInstanceVirtualRouterId",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.4",
+      "name": "vrrpInstanceState",
+      "description": "Current state of this VRRP instance.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpInstanceState",
+      "transform": null,
+      "enumMap": {
+        "0": "init",
+        "1": "backup",
+        "2": "master",
+        "3": "fault",
+        "4": "unknown"
+      },
+      "module": "KEEPALIVED-MIB",
+      "tc": "VrrpState"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.5",
+      "name": "vrrpInstanceInitialState",
+      "description": "Initial state of this VRRP instance.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpInstanceInitialState",
+      "transform": null,
+      "enumMap": {
+        "0": "init",
+        "1": "backup",
+        "2": "master",
+        "3": "fault",
+        "4": "unknown"
+      },
+      "module": "KEEPALIVED-MIB",
+      "tc": "VrrpState"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.6",
+      "name": "vrrpInstanceWantedState",
+      "description": "State wanted by the operator for this VRRP instance.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpInstanceWantedState",
+      "transform": null,
+      "enumMap": {
+        "0": "init",
+        "1": "backup",
+        "2": "master",
+        "3": "fault",
+        "4": "unknown"
+      },
+      "module": "KEEPALIVED-MIB",
+      "tc": "VrrpState"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.7",
+      "name": "vrrpInstanceBasePriority",
+      "description": "Base priority (as defined in the configuration file) for this VRRP instance. This value can be modified to force the virtual router instance to become backup or master.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpInstanceBasePriority",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.8",
+      "name": "vrrpInstanceEffectivePriority",
+      "description": "Effective priority for this VRRP instance. Status of interfaces and script results are used to compute this value from the base priority.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpInstanceEffectivePriority",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.9",
+      "name": "vrrpInstanceVipsStatus",
+      "description": "Are all VIP of this VRRP instance enabled?",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpInstanceVipsStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "allSet",
+        "2": "notAllSet"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.10",
+      "name": "vrrpInstancePrimaryInterface",
+      "description": "Primary interface of this VRRP instance.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpInstancePrimaryInterface",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.11",
+      "name": "vrrpInstanceTrackPrimaryIf",
+      "description": "Do we track the status of the primary interface?",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpInstanceTrackPrimaryIf",
+      "transform": null,
+      "enumMap": {
+        "1": "tracked",
+        "2": "notTracked"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.12",
+      "name": "vrrpInstanceAdvertisementsInt",
+      "description": "Delay in seconds between two VRRP advertisements.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "vrrpInstanceAdvertisementsInt",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.13",
+      "name": "vrrpInstancePreempt",
+      "description": "Will a higher priority advertisement preempt a lower instance?",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpInstancePreempt",
+      "transform": null,
+      "enumMap": {
+        "1": "preempt",
+        "2": "noPreempt"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.14",
+      "name": "vrrpInstancePreemptDelay",
+      "description": "Delay after startup until preemption can happen. 0 means that there is no delay.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "vrrpInstancePreemptDelay",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.15",
+      "name": "vrrpInstanceAuthType",
+      "description": "Authentication method to authenticate other peers.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpInstanceAuthType",
+      "transform": null,
+      "enumMap": {
+        "0": "none",
+        "1": "password",
+        "2": "ah"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.16",
+      "name": "vrrpInstanceLvsSyncDaemon",
+      "description": "Is LVS sync daemon enabled for this VRRP instance?",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpInstanceLvsSyncDaemon",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.17",
+      "name": "vrrpInstanceLvsSyncInterface",
+      "description": "If LVS sync daemon is enabled, which interface to use for syncing?",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpInstanceLvsSyncInterface",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.18",
+      "name": "vrrpInstanceSyncGroup",
+      "description": "Name of the synchronisation group this VRRP instance belongs, if any.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpInstanceSyncGroup",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.19",
+      "name": "vrrpInstanceGarpDelay",
+      "description": "Delay to launch gratuitous ARP (GARP).",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "vrrpInstanceGarpDelay",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.20",
+      "name": "vrrpInstanceSmtpAlert",
+      "description": "Will SMTP alert be sent for this VRRP instance?",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpInstanceSmtpAlert",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.21",
+      "name": "vrrpInstanceNotifyExec",
+      "description": "Will we execute notification script for this instance?",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpInstanceNotifyExec",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.22",
+      "name": "vrrpInstanceScriptMaster",
+      "description": "Script to execute when the instance becomes master.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpInstanceScriptMaster",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.23",
+      "name": "vrrpInstanceScriptBackup",
+      "description": "Script to execute when the instance becomes backup.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpInstanceScriptBackup",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.24",
+      "name": "vrrpInstanceScriptFault",
+      "description": "Script to execute when the instance is in fault state.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpInstanceScriptFault",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.25",
+      "name": "vrrpInstanceScriptStop",
+      "description": "Script to execute when the instance is stopped.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpInstanceScriptStop",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.3.1.26",
+      "name": "vrrpInstanceScript",
+      "description": "Script to execute whenever a state change occurs.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpInstanceScript",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.4.1.1",
+      "name": "vrrpTrackedInterfaceName",
+      "description": "Name of the tracked interface.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpTrackedInterfaceName",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.4.1.2",
+      "name": "vrrpTrackedInterfaceWeight",
+      "description": "Weight of the tracked interface.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpTrackedInterfaceWeight",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.5.1.2",
+      "name": "vrrpTrackedScriptName",
+      "description": "Name of the tracked interface.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpTrackedScriptName",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.5.1.3",
+      "name": "vrrpTrackedScriptWeight",
+      "description": "Weight of the tracked interface.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpTrackedScriptWeight",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.6.1.2",
+      "name": "vrrpAddressType",
+      "description": "A value that represents a type of Internet address.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpAddressType",
+      "transform": null,
+      "enumMap": {
+        "0": "unknown",
+        "1": "ipv4",
+        "2": "ipv6",
+        "3": "ipv4z",
+        "4": "ipv6z",
+        "16": "dns",
+        "25": "l2vpn"
+      },
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddressType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.6.1.3",
+      "name": "vrrpAddressValue",
+      "description": "Actual IP address.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpAddressValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.6.1.4",
+      "name": "vrrpAddressBroadcast",
+      "description": "Broadcast address associated with the IP address.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpAddressBroadcast",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.6.1.5",
+      "name": "vrrpAddressMask",
+      "description": "Address mask.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "vrrpAddressMask",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddressPrefixLength"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.6.1.6",
+      "name": "vrrpAddressScope",
+      "description": "Address scope.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpAddressScope",
+      "transform": null,
+      "enumMap": {
+        "1": "interfaceLocal",
+        "2": "linkLocal",
+        "3": "subnetLocal",
+        "4": "adminLocal",
+        "5": "siteLocal",
+        "8": "organizationLocal",
+        "14": "global"
+      },
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetScopeType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.6.1.7",
+      "name": "vrrpAddressIfIndex",
+      "description": "Index of the interface to which the IP address is linked to.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpAddressIfIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InterfaceIndex"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.6.1.8",
+      "name": "vrrpAddressIfName",
+      "description": "Name of the interface to which the IP address is linked to.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpAddressIfName",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.6.1.9",
+      "name": "vrrpAddressIfAlias",
+      "description": "Alias name of the interface.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpAddressIfAlias",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.6.1.10",
+      "name": "vrrpAddressStatus",
+      "description": "Is the IP address set?",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpAddressStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "set",
+        "2": "unset"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.6.1.11",
+      "name": "vrrpAddressAdvertising",
+      "description": "Status of VRRP advertising for this IP address.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpAddressAdvertising",
+      "transform": null,
+      "enumMap": {
+        "1": "advertised",
+        "2": "notAdvertised"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.7.1.2",
+      "name": "vrrpRouteAddressType",
+      "description": "Route type of internet address.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpRouteAddressType",
+      "transform": null,
+      "enumMap": {
+        "0": "unknown",
+        "1": "ipv4",
+        "2": "ipv6",
+        "3": "ipv4z",
+        "4": "ipv6z",
+        "16": "dns",
+        "25": "l2vpn"
+      },
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddressType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.7.1.3",
+      "name": "vrrpRouteDestination",
+      "description": "Route destination.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpRouteDestination",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.7.1.4",
+      "name": "vrrpRouteDestinationMask",
+      "description": "Route destination mask.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "vrrpRouteDestinationMask",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddressPrefixLength"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.7.1.5",
+      "name": "vrrpRouteGateway",
+      "description": "Gateway for the given destination.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpRouteGateway",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.7.1.6",
+      "name": "vrrpRouteSecondaryGateway",
+      "description": "An optional second gateway for the given destination.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpRouteSecondaryGateway",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.7.1.7",
+      "name": "vrrpRouteSource",
+      "description": "Which source IP address to use with this route.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpRouteSource",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.7.1.8",
+      "name": "vrrpRouteMetric",
+      "description": "Metric of this route.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "vrrpRouteMetric",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.7.1.9",
+      "name": "vrrpRouteScope",
+      "description": "Scope of this route.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpRouteScope",
+      "transform": null,
+      "enumMap": {
+        "1": "interfaceLocal",
+        "2": "linkLocal",
+        "3": "subnetLocal",
+        "4": "adminLocal",
+        "5": "siteLocal",
+        "8": "organizationLocal",
+        "14": "global"
+      },
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetScopeType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.7.1.10",
+      "name": "vrrpRouteType",
+      "description": "Kind of route.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpRouteType",
+      "transform": null,
+      "enumMap": {
+        "1": "normal",
+        "2": "ecmp",
+        "3": "blackhole"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.7.1.11",
+      "name": "vrrpRouteIfIndex",
+      "description": "Interface attached to this route.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpRouteIfIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InterfaceIndex"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.7.1.12",
+      "name": "vrrpRouteIfName",
+      "description": "Name of the interface of attached to this route.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpRouteIfName",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.7.1.13",
+      "name": "vrrpRouteRoutingTable",
+      "description": "Routing table where to route should be inserted.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "vrrpRouteRoutingTable",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.7.1.14",
+      "name": "vrrpRouteStatus",
+      "description": "Is this route set in the kernel?",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpRouteStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "set",
+        "2": "unset"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.8.1.2",
+      "name": "vrrpScriptName",
+      "description": "Symbolic name of the script.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpScriptName",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.8.1.3",
+      "name": "vrrpScriptCommand",
+      "description": "Command executed when running the script.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "vrrpScriptCommand",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.8.1.4",
+      "name": "vrrpScriptInterval",
+      "description": "Interval between two runs of the script.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpScriptInterval",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.8.1.5",
+      "name": "vrrpScriptWeight",
+      "description": "Weight of the script if successful.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpScriptWeight",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.8.1.6",
+      "name": "vrrpScriptResult",
+      "description": "Current status of the script.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "vrrpScriptResult",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "init",
+        "2": "bad",
+        "3": "good",
+        "4": "initgood"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.8.1.7",
+      "name": "vrrpScriptRise",
+      "description": "How many times the script should succeed before OK.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "vrrpScriptRise",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.2.8.1.8",
+      "name": "vrrpScriptFall",
+      "description": "How many times the script should fail before KO.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "vrrpScriptFall",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.1.1.2",
+      "name": "virtualServerGroupName",
+      "description": "Name of the virtual server group.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "virtualServerGroupName",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.2.1.2",
+      "name": "virtualServerGroupMemberType",
+      "description": "Kind of entry: firewall mark, address with port or range of addresses with port.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "virtualServerGroupMemberType",
+      "transform": null,
+      "enumMap": {
+        "1": "fwmark",
+        "2": "ip",
+        "3": "iprange"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.2.1.3",
+      "name": "virtualServerGroupMemberFwMark",
+      "description": "Firewall mark for this member. If the kind of this member is not fwmark(1), then this entry should not exist for the current row.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "virtualServerGroupMemberFwMark",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.2.1.4",
+      "name": "virtualServerGroupMemberAddrType",
+      "description": "Type of IP address for this member. If the kind of this member is neither address(2) or range(3), then this entry should not exist for the current row.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "virtualServerGroupMemberAddrType",
+      "transform": null,
+      "enumMap": {
+        "0": "unknown",
+        "1": "ipv4",
+        "2": "ipv6",
+        "3": "ipv4z",
+        "4": "ipv6z",
+        "16": "dns",
+        "25": "l2vpn"
+      },
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddressType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.2.1.5",
+      "name": "virtualServerGroupMemberAddress",
+      "description": "IP address of this member. If the kind of this member is not address(2), then this entry should not exist for the current row.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "virtualServerGroupMemberAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.2.1.6",
+      "name": "virtualServerGroupMemberAddr1",
+      "description": "First IP address of the range for this member. If the kind of this member is not range(3), then this entry should not exist for the current row.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "virtualServerGroupMemberAddr1",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.2.1.7",
+      "name": "virtualServerGroupMemberAddr2",
+      "description": "Second IP address of the range for this member. If the kind of this member is not range(3), then this entry should not exist for the current row.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "virtualServerGroupMemberAddr2",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.2.1.8",
+      "name": "virtualServerGroupMemberPort",
+      "description": "V port for this member. If the kind of this member is neither address(2) nor range(3), then this entry should not exist for the current row.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "virtualServerGroupMemberPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetPortNumber"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.2",
+      "name": "virtualServerType",
+      "description": "Type of virtual server. A virtual server can either be defined from a firewall mark, an IP and a port or from a virtual server group.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "virtualServerType",
+      "transform": null,
+      "enumMap": {
+        "1": "fwmark",
+        "2": "ip",
+        "3": "group"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.3",
+      "name": "virtualServerNameOfGroup",
+      "description": "If the virtual is defined from a group, this is the name of the group.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "virtualServerNameOfGroup",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.4",
+      "name": "virtualServerFwMark",
+      "description": "If the virtual server is defined from a firewall mark, this is the value of the mark. Otherwise, this column should not exist in the current row.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "virtualServerFwMark",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.5",
+      "name": "virtualServerAddrType",
+      "description": "If the virtual server is defined from an IP, this is the address family. Otherwise, this column should not exist in the current row.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "virtualServerAddrType",
+      "transform": null,
+      "enumMap": {
+        "0": "unknown",
+        "1": "ipv4",
+        "2": "ipv6",
+        "3": "ipv4z",
+        "4": "ipv6z",
+        "16": "dns",
+        "25": "l2vpn"
+      },
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddressType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.6",
+      "name": "virtualServerAddress",
+      "description": "If the virtual server is defined from an IP address, this is the value of the IP. Otherwise, this column should not exist in the current row.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "virtualServerAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.7",
+      "name": "virtualServerPort",
+      "description": "If the virtual server is defined from an IP, this is the value of the port to listen for requests. Otherwise, this column should not exist in the current row.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "virtualServerPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetPortNumber"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.8",
+      "name": "virtualServerProtocol",
+      "description": "Which transport protocol should be used for this virtual server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "virtualServerProtocol",
+      "transform": null,
+      "enumMap": {
+        "1": "tcp",
+        "2": "udp"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.9",
+      "name": "virtualServerLoadBalancingAlgo",
+      "description": "Which load balancing algorithm (or scheduler) should be used for this virtual server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "virtualServerLoadBalancingAlgo",
+      "transform": null,
+      "enumMap": {
+        "1": "rr",
+        "2": "wrr",
+        "3": "lc",
+        "4": "wlc",
+        "5": "lblc",
+        "6": "lblcr",
+        "7": "dh",
+        "8": "sh",
+        "9": "sed",
+        "10": "nq",
+        "99": "unknown"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.10",
+      "name": "virtualServerLoadBalancingKind",
+      "description": "Forwarding method to use for this virtual server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "virtualServerLoadBalancingKind",
+      "transform": null,
+      "enumMap": {
+        "1": "nat",
+        "2": "dr",
+        "3": "tun"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.11",
+      "name": "virtualServerStatus",
+      "description": "Current status of this virtual server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "virtualServerStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "alive",
+        "2": "dead"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.12",
+      "name": "virtualServerVirtualHost",
+      "description": "Virtualhost of this server for HTTP like requests.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "virtualServerVirtualHost",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.13",
+      "name": "virtualServerPersist",
+      "description": "Is the virtual service persistence enabled?",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "virtualServerPersist",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.14",
+      "name": "virtualServerPersistTimeout",
+      "description": "If this virtual service is persistence, what is the timeout.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "virtualServerPersistTimeout",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.15",
+      "name": "virtualServerPersistGranularity",
+      "description": "Netmask specifying the granularity of the persistence mechanism.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "virtualServerPersistGranularity",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.16",
+      "name": "virtualServerDelayLoop",
+      "description": "Delay in seconds between two checks.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "virtualServerDelayLoop",
+      "transform": null,
+      "enumMap": null,
+      "units": "seconds",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.17",
+      "name": "virtualServerHaSuspend",
+      "description": "If set to true(1), checks will be suspended if the IP of the virtual server is currently not set.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "virtualServerHaSuspend",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "KEEPALIVED-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.18",
+      "name": "virtualServerAlpha",
+      "description": "Is alpha mode enabled?",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "virtualServerAlpha",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.19",
+      "name": "virtualServerOmega",
+      "description": "Is omega mode enabled?",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "virtualServerOmega",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.20",
+      "name": "virtualServerRealServersTotal",
+      "description": "Total number of real servers for this virtual server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "virtualServerRealServersTotal",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.21",
+      "name": "virtualServerRealServersUp",
+      "description": "Real servers actually up for this virtual server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "virtualServerRealServersUp",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.22",
+      "name": "virtualServerQuorum",
+      "description": "Quorum to get amond real servers to consider this virtual server up.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "virtualServerQuorum",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.23",
+      "name": "virtualServerQuorumStatus",
+      "description": "Current status of the quorum for this virtual server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "virtualServerQuorumStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "met",
+        "2": "notMet"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.24",
+      "name": "virtualServerQuorumUp",
+      "description": "Command to execute when the quorum is met.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "virtualServerQuorumUp",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.25",
+      "name": "virtualServerQuorumDown",
+      "description": "Command to execute when the quorum is not met.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "virtualServerQuorumDown",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.26",
+      "name": "virtualServerHysteresis",
+      "description": "Hysteresis with respect to quorum count.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "virtualServerHysteresis",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.27",
+      "name": "virtualServerStatsConns",
+      "description": "Total number of connections scheduled for this virtual server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "virtualServerStatsConns",
+      "transform": null,
+      "enumMap": null,
+      "units": "connections",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.28",
+      "name": "virtualServerStatsInPkts",
+      "description": "Total number of incoming packets for this virtual server.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "virtualServerStatsInPkts",
+      "transform": null,
+      "enumMap": null,
+      "units": "packets",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.29",
+      "name": "virtualServerStatsOutPkts",
+      "description": "Total number of outgoing packets for this virtual server.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "virtualServerStatsOutPkts",
+      "transform": null,
+      "enumMap": null,
+      "units": "packets",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.30",
+      "name": "virtualServerStatsInBytes",
+      "description": "Total number of incoming bytes for this virtual server.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "virtualServerStatsInBytes",
+      "transform": null,
+      "enumMap": null,
+      "units": "bytes",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.31",
+      "name": "virtualServerStatsOutBytes",
+      "description": "Total number of outgoing bytes for this virtual server.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "virtualServerStatsOutBytes",
+      "transform": null,
+      "enumMap": null,
+      "units": "bytes",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.32",
+      "name": "virtualServerRateCps",
+      "description": "Current connection rate for this virtual server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "virtualServerRateCps",
+      "transform": null,
+      "enumMap": null,
+      "units": "connections/s",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.33",
+      "name": "virtualServerRateInPPS",
+      "description": "Current in packet rate for this virtual server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "virtualServerRateInPPS",
+      "transform": null,
+      "enumMap": null,
+      "units": "packets/s",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.34",
+      "name": "virtualServerRateOutPPS",
+      "description": "Current out packet rate for this virtual server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "virtualServerRateOutPPS",
+      "transform": null,
+      "enumMap": null,
+      "units": "packets/s",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.35",
+      "name": "virtualServerRateInBPS",
+      "description": "Current incoming rate for this virtual server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "virtualServerRateInBPS",
+      "transform": null,
+      "enumMap": null,
+      "units": "bytes/s",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.3.1.36",
+      "name": "virtualServerRateOutBPS",
+      "description": "Current outgoing rate for this virtual server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "virtualServerRateOutBPS",
+      "transform": null,
+      "enumMap": null,
+      "units": "bytes/s",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.2",
+      "name": "realServerType",
+      "description": "Type of real server: either a regular real server or a sorry server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "realServerType",
+      "transform": null,
+      "enumMap": {
+        "1": "regular",
+        "2": "sorry"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.3",
+      "name": "realServerAddrType",
+      "description": "Address family for this real server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "realServerAddrType",
+      "transform": null,
+      "enumMap": {
+        "0": "unknown",
+        "1": "ipv4",
+        "2": "ipv6",
+        "3": "ipv4z",
+        "4": "ipv6z",
+        "16": "dns",
+        "25": "l2vpn"
+      },
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddressType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.4",
+      "name": "realServerAddress",
+      "description": "IP address of this real server.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "realServerAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.5",
+      "name": "realServerPort",
+      "description": "Port of the service.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "realServerPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "InetPortNumber"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.6",
+      "name": "realServerStatus",
+      "description": "Status of this real server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "realServerStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "alive",
+        "2": "dead"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.7",
+      "name": "realServerWeight",
+      "description": "Weight of this real server. This value can be set to 0 to disable the real server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "realServerWeight",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.8",
+      "name": "realServerUpperConnectionLimit",
+      "description": "Maximum number of connections for this real server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "realServerUpperConnectionLimit",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.9",
+      "name": "realServerLowerConnectionLimit",
+      "description": "Minimum number of connections for this real server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "realServerLowerConnectionLimit",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.10",
+      "name": "realServerActionWhenDown",
+      "description": "What action is performed when this server is down. Its weight can be set to 0 (inhibit) or it can be removed from the pool.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "realServerActionWhenDown",
+      "transform": null,
+      "enumMap": {
+        "1": "remove",
+        "2": "inhibit"
+      },
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.11",
+      "name": "realServerNotifyUp",
+      "description": "Command to execute when this server becomes alive.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "realServerNotifyUp",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.12",
+      "name": "realServerNotifyDown",
+      "description": "Command to execute when this server becomes dead.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "realServerNotifyDown",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.13",
+      "name": "realServerFailedChecks",
+      "description": "How many failed checks for this real server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "realServerFailedChecks",
+      "transform": null,
+      "enumMap": null,
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.14",
+      "name": "realServerStatsConns",
+      "description": "Total number of connections scheduled for this real server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "realServerStatsConns",
+      "transform": null,
+      "enumMap": null,
+      "units": "connections",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.15",
+      "name": "realServerStatsActiveConns",
+      "description": "Current active connections for this real server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "realServerStatsActiveConns",
+      "transform": null,
+      "enumMap": null,
+      "units": "connections",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.16",
+      "name": "realServerStatsInactiveConns",
+      "description": "Current inactive connections for this real server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "realServerStatsInactiveConns",
+      "transform": null,
+      "enumMap": null,
+      "units": "connections",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.17",
+      "name": "realServerStatsPersistentConns",
+      "description": "Current persistent connections for this real server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "realServerStatsPersistentConns",
+      "transform": null,
+      "enumMap": null,
+      "units": "connections",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.18",
+      "name": "realServerStatsInPkts",
+      "description": "Total number of incoming packets for this real server.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "realServerStatsInPkts",
+      "transform": null,
+      "enumMap": null,
+      "units": "packets",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.19",
+      "name": "realServerStatsOutPkts",
+      "description": "Total number of outgoing packets for this real server.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "realServerStatsOutPkts",
+      "transform": null,
+      "enumMap": null,
+      "units": "packets",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.20",
+      "name": "realServerStatsInBytes",
+      "description": "Total number of incoming bytes for this real server.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "realServerStatsInBytes",
+      "transform": null,
+      "enumMap": null,
+      "units": "bytes",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.21",
+      "name": "realServerStatsOutBytes",
+      "description": "Total number of outgoing bytes for this real server.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "realServerStatsOutBytes",
+      "transform": null,
+      "enumMap": null,
+      "units": "bytes",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.22",
+      "name": "realServerRateCps",
+      "description": "Current connection rate for this real server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "realServerRateCps",
+      "transform": null,
+      "enumMap": null,
+      "units": "connections/s",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.23",
+      "name": "realServerRateInPPS",
+      "description": "Current in packet rate for this real server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "realServerRateInPPS",
+      "transform": null,
+      "enumMap": null,
+      "units": "packets/s",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.24",
+      "name": "realServerRateOutPPS",
+      "description": "Current out packet rate for this real server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "realServerRateOutPPS",
+      "transform": null,
+      "enumMap": null,
+      "units": "packets/s",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.25",
+      "name": "realServerRateInBPS",
+      "description": "Current incoming rate for this real server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "realServerRateInBPS",
+      "transform": null,
+      "enumMap": null,
+      "units": "bytes/s",
+      "module": "KEEPALIVED-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.9586.100.5.3.4.1.26",
+      "name": "realServerRateOutBPS",
+      "description": "Current outgoing rate for this real server.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "realServerRateOutBPS",
+      "transform": null,
+      "enumMap": null,
+      "units": "bytes/s",
+      "module": "KEEPALIVED-MIB"
+    }
+  ]
+}

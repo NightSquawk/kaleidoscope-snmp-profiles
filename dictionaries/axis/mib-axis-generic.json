@@ -1,0 +1,155 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-axis-generic",
+  "name": "Axis Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "Axis",
+  "vendorOidPrefix": "1.3.6.1.4.1.368",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 10 readable OIDs under 1.3.6.1.4.1.368.",
+  "generated": {
+    "source": "mibs/axis",
+    "date": "2026-09-12",
+    "oidCount": 10,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "AXIS-VIDEO-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.368.4.1.1.1.3",
+      "name": "powerSupplyStatus",
+      "description": "The status of a power supply.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "powerSupplyStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "ok",
+        "2": "failure"
+      },
+      "module": "AXIS-VIDEO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.368.4.1.2.1.3",
+      "name": "fanStatus",
+      "description": "The status of a fan.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "fanStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "ok",
+        "2": "failure"
+      },
+      "module": "AXIS-VIDEO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.368.4.1.3.1.3",
+      "name": "tempSensorStatus",
+      "description": "The status of the temperature sensor.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "tempSensorStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "ok",
+        "2": "failure",
+        "3": "outOfBoundary"
+      },
+      "module": "AXIS-VIDEO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.368.4.1.3.1.4",
+      "name": "tempSensorValue",
+      "description": "The temperature measured by a specific temperature sensor. The temperature is given in degrees Celsius.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "tempSensorValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "AXIS-VIDEO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.368.4.1.4.1.2",
+      "name": "videoSignalStatus",
+      "description": "The status of the video signal for a channel.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "videoSignalStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "signalOk",
+        "2": "noSignal"
+      },
+      "module": "AXIS-VIDEO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.368.4.1.5.1.2",
+      "name": "audioSignalStatus",
+      "description": "The status of the audio signal for a channel.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "audioSignalStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "signalOk",
+        "2": "noSignal"
+      },
+      "module": "AXIS-VIDEO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.368.4.1.6.1.2",
+      "name": "casingName",
+      "description": "Used to identify a casing. If the original string is longer than the specified length then the middle of the string will be replaced by '..' in such a way that the length of the string becomes 32 c...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "casingName",
+      "transform": null,
+      "enumMap": null,
+      "module": "AXIS-VIDEO-MIB",
+      "tc": "SnmpAdminString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.368.4.1.6.1.3",
+      "name": "casingStatus",
+      "description": "The status of the casing.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "casingStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "closed",
+        "2": "open"
+      },
+      "module": "AXIS-VIDEO-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.368.4.1.8.1.2",
+      "name": "storageName",
+      "description": "Used to identify a storage medium. If the original string is longer than the specified length then the middle of the string will be replaced by '..' in such a way that the length of the string beco...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "storageName",
+      "transform": null,
+      "enumMap": null,
+      "module": "AXIS-VIDEO-MIB",
+      "tc": "SnmpAdminString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.368.4.1.8.1.3",
+      "name": "storageDisruptionDetected",
+      "description": "The status of the storage medium.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "storageDisruptionDetected",
+      "transform": null,
+      "enumMap": {
+        "1": "no",
+        "2": "yes"
+      },
+      "module": "AXIS-VIDEO-MIB"
+    }
+  ]
+}

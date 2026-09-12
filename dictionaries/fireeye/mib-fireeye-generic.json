@@ -1,0 +1,1457 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-fireeye-generic",
+  "name": "FireEye Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "FireEye",
+  "vendorOidPrefix": "1.3.6.1.4.1.25597",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 124 readable OIDs under 1.3.6.1.4.1.25597.",
+  "generated": {
+    "source": "mibs/fireeye",
+    "date": "2026-09-12",
+    "oidCount": 124,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "FE-FIREEYE-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.25597.11.1.1.1.0",
+      "name": "feSystemStatus",
+      "description": "Overall system status",
+      "type": "string",
+      "walk": false,
+      "metricKey": "feSystemStatus",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.1.1.2.0",
+      "name": "feHardwareModel",
+      "description": "Hardware model",
+      "type": "string",
+      "walk": false,
+      "metricKey": "feHardwareModel",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.1.1.3.0",
+      "name": "feSerialNumber",
+      "description": "Serial number",
+      "type": "string",
+      "walk": false,
+      "metricKey": "feSerialNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.1.1.4.0",
+      "name": "feTemperatureValue",
+      "description": "System temperature in Celsius",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "feTemperatureValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.1.1.5.0",
+      "name": "feTemperatureStatus",
+      "description": "System temperature status",
+      "type": "string",
+      "walk": false,
+      "metricKey": "feTemperatureStatus",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.1.1.6.0",
+      "name": "feTemperatureIsHealthy",
+      "description": "Whether or not the temperature is normal.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "feTemperatureIsHealthy",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.2.1.1.0",
+      "name": "feRaidStatus",
+      "description": "RAID status",
+      "type": "string",
+      "walk": false,
+      "metricKey": "feRaidStatus",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.2.1.2.0",
+      "name": "feRaidIsHealthy",
+      "description": "Whether or not RAID is healthy overall.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "feRaidIsHealthy",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.2.1.3.1.1",
+      "name": "fePhysicalDiskIndex",
+      "description": "A unique value for each disk",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "fePhysicalDiskIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.2.1.3.1.2",
+      "name": "fePhysicalDiskName",
+      "description": "Physical disk name",
+      "type": "string",
+      "walk": true,
+      "metricKey": "fePhysicalDiskName",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.2.1.3.1.3",
+      "name": "fePhysicalDiskStatus",
+      "description": "Physical disk status",
+      "type": "string",
+      "walk": true,
+      "metricKey": "fePhysicalDiskStatus",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.2.1.3.1.4",
+      "name": "fePhysicalDiskIsHealthy",
+      "description": "Whether a physical disk is healthy.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "fePhysicalDiskIsHealthy",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.2.1.3.1.5",
+      "name": "fePhysicalDiskDeviceSupport",
+      "description": "Physical disk configuration, e.g. RAID",
+      "type": "string",
+      "walk": true,
+      "metricKey": "fePhysicalDiskDeviceSupport",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.2.1.3.1.6",
+      "name": "fePhysicalDiskSelfAssess",
+      "description": "Self assess of a physical disk",
+      "type": "string",
+      "walk": true,
+      "metricKey": "fePhysicalDiskSelfAssess",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.2.1.3.1.7",
+      "name": "fePhysicalDiskTotalBytes",
+      "description": "The capacity of a physical disk.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "fePhysicalDiskTotalBytes",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.3.1.1.0",
+      "name": "fePowerSupplyOverallStatus",
+      "description": "Overall power supply status",
+      "type": "string",
+      "walk": false,
+      "metricKey": "fePowerSupplyOverallStatus",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.3.1.2.0",
+      "name": "fePowerSupplyOverallIsHealthy",
+      "description": "Whether or not power supply is healthy overall.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "fePowerSupplyOverallIsHealthy",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.3.1.3.1.1",
+      "name": "fePowerSupplyIndex",
+      "description": "A unique value for each power supply",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "fePowerSupplyIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.3.1.3.1.2",
+      "name": "fePowerSupplyStatus",
+      "description": "Power supply status",
+      "type": "string",
+      "walk": true,
+      "metricKey": "fePowerSupplyStatus",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.3.1.3.1.3",
+      "name": "fePowerSupplyIsHealthy",
+      "description": "Whether a power supply is healthy.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "fePowerSupplyIsHealthy",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.4.1.1.0",
+      "name": "feFanOverallStatus",
+      "description": "Overall fan status",
+      "type": "string",
+      "walk": false,
+      "metricKey": "feFanOverallStatus",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.4.1.2.0",
+      "name": "feFanOverallIsHealthy",
+      "description": "Whether or not fan is healthy overall.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "feFanOverallIsHealthy",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.4.1.3.1.1",
+      "name": "feFanIndex",
+      "description": "A unique value for each fan status table entry",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "feFanIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.4.1.3.1.2",
+      "name": "feFanStatus",
+      "description": "Fan status",
+      "type": "string",
+      "walk": true,
+      "metricKey": "feFanStatus",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.4.1.3.1.3",
+      "name": "feFanIsHealthy",
+      "description": "Whether a fan is healthy.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "feFanIsHealthy",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.4.1.3.1.4",
+      "name": "feFanSpeed",
+      "description": "Fan speed in rpm",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "feFanSpeed",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.5.1.1.0",
+      "name": "feInstalledSystemImage",
+      "description": "Current installed system image",
+      "type": "string",
+      "walk": false,
+      "metricKey": "feInstalledSystemImage",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.5.1.2.0",
+      "name": "feSystemImageVersionCurrent",
+      "description": "Current system image version",
+      "type": "string",
+      "walk": false,
+      "metricKey": "feSystemImageVersionCurrent",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.5.1.3.0",
+      "name": "feSystemImageVersionLatest",
+      "description": "Latest system image version",
+      "type": "string",
+      "walk": false,
+      "metricKey": "feSystemImageVersionLatest",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.5.1.4.0",
+      "name": "feIsSystemImageLatest",
+      "description": "Whether or not the current system image is the latest.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "feIsSystemImageLatest",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.5.1.5.0",
+      "name": "feSecurityContentVersion",
+      "description": "Security content version",
+      "type": "string",
+      "walk": false,
+      "metricKey": "feSecurityContentVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.5.1.6.0",
+      "name": "feLastContentUpdatePassed",
+      "description": "Whether the last security content updated has passed.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "feLastContentUpdatePassed",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.5.1.7.0",
+      "name": "feLastContentUpdateTime",
+      "description": "The last update time for security contents",
+      "type": "string",
+      "walk": false,
+      "metricKey": "feLastContentUpdateTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.5.1.8.1.1",
+      "name": "feGIIndex",
+      "description": "A unique value for each guest image",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "feGIIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.5.1.8.1.2",
+      "name": "feGIName",
+      "description": "Guest image name",
+      "type": "string",
+      "walk": true,
+      "metricKey": "feGIName",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.5.1.8.1.3",
+      "name": "feGIVersion",
+      "description": "Guest image version",
+      "type": "string",
+      "walk": true,
+      "metricKey": "feGIVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.5.1.8.1.4",
+      "name": "feGIEnabled",
+      "description": "Whether guest image is enabled.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "feGIEnabled",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.5.1.8.1.5",
+      "name": "feGIInstallDateTime",
+      "description": "Guest image install date and time",
+      "type": "string",
+      "walk": true,
+      "metricKey": "feGIInstallDateTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.5.1.9.0",
+      "name": "feActiveVMs",
+      "description": "Number of active VMs",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "feActiveVMs",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.5.1.10.0",
+      "name": "feProductLicenseActive",
+      "description": "Whether the product license is active.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "feProductLicenseActive",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.5.1.11.0",
+      "name": "feContentLicenseActive",
+      "description": "Whether the content license is active.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "feContentLicenseActive",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.11.5.1.12.0",
+      "name": "feSupportLicenseActive",
+      "description": "Whether the support license is active.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "feSupportLicenseActive",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.12.1.1.0",
+      "name": "feTotalAppliancesAttached",
+      "description": "Total appliances attached",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "feTotalAppliancesAttached",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.12.1.2.0",
+      "name": "feTotalWMPSAttached",
+      "description": "Total WMPS attached",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "feTotalWMPSAttached",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.12.1.3.0",
+      "name": "feTotalEMPSAttached",
+      "description": "Total EMPS attached",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "feTotalEMPSAttached",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.12.1.4.0",
+      "name": "feTotalFMPSAttached",
+      "description": "Total FMPS attached",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "feTotalFMPSAttached",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.12.1.5.0",
+      "name": "feTotalMASAttached",
+      "description": "Total MAS attached",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "feTotalMASAttached",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.12.1.6.1.1",
+      "name": "feCMSApplianceIndex",
+      "description": "A unique value for each CMS managed appliance",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "feCMSApplianceIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.12.1.6.1.2",
+      "name": "feCMSApplianceName",
+      "description": "The name of the CMS managed appliance",
+      "type": "string",
+      "walk": true,
+      "metricKey": "feCMSApplianceName",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.12.1.6.1.3",
+      "name": "feCMSApplianceDiskSpacePassed",
+      "description": "Whether a CMS managed appliance passed disk space check.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "feCMSApplianceDiskSpacePassed",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.12.1.6.1.4",
+      "name": "feCMSApplianceFanPassed",
+      "description": "Whether a CMS managed appliance passed fan check.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "feCMSApplianceFanPassed",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.12.1.6.1.5",
+      "name": "feCMSAppliancePowerSupplyPassed",
+      "description": "Whether a CMS managed appliance passed power supply check.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "feCMSAppliancePowerSupplyPassed",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.12.1.6.1.6",
+      "name": "feCMSApplianceRaidPassed",
+      "description": "Whether a CMS managed appliance passed RAID check.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "feCMSApplianceRaidPassed",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.12.1.6.1.7",
+      "name": "feCMSApplianceTemperaturePassed",
+      "description": "Whether a CMS managed appliance passed temperature check.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "feCMSApplianceTemperaturePassed",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "FE-FIREEYE-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.1.0",
+      "name": "feTotalEmailCount",
+      "description": "This is a count of all the emails coming into postfix and also includes emails which do not contain any URL or attachment (email on fast path). This will be the cumulative value and maintained acro...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalEmailCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.2.0",
+      "name": "feTotalEmailCountH",
+      "description": "This is a count of all the emails coming into postfix and also includes emails which do not contain any URL or attachment (email on fast path). This will be the cumulative value and maintained acro...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalEmailCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.3.0",
+      "name": "feTotalEmailCountL",
+      "description": "This is a count of all the emails coming into postfix and also includes emails which do not contain any URL or attachment (email on fast path). This will be the cumulative value and maintained acro...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalEmailCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.4.0",
+      "name": "feInfectedEmailCount",
+      "description": "This is a count of all the email which are determined to be malicious. This is the same as 'Total Email Received with Malicious Content' that we currently show in the output to CLI command 'show em...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feInfectedEmailCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.5.0",
+      "name": "feInfectedEmailCountH",
+      "description": "This is a count of all the email which are determined to be malicious. This is the same as 'Total Email Received with Malicious Content' that we currently show in the output to CLI command 'show em...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feInfectedEmailCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.6.0",
+      "name": "feInfectedEmailCountL",
+      "description": "This is a count of all the email which are determined to be malicious. This is the same as 'Total Email Received with Malicious Content' that we currently show in the output to CLI command 'show em...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feInfectedEmailCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.7.0",
+      "name": "feAnalyzedEmailCount",
+      "description": "This is cumulative count of all the email which were analyzed. This is the same as 'Total Emails Received and Analyzed' that we currently show in the output to CLI command 'show email-analysis stat...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feAnalyzedEmailCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.8.0",
+      "name": "feAnalyzedEmailCountH",
+      "description": "This is cumulative count of all the email which were analyzed. This is the same as 'Total Emails Received and Analyzed' that we currently show in the output to CLI command 'show email-analysis stat...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feAnalyzedEmailCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.9.0",
+      "name": "feAnalyzedEmailCountL",
+      "description": "This is cumulative count of all the email which were analyzed. This is the same as 'Total Emails Received and Analyzed' that we currently show in the output to CLI command 'show email-analysis stat...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feAnalyzedEmailCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.10.0",
+      "name": "feTotalUrlCount",
+      "description": "This is a count of all the URLs received whether they are processed or not. This is the same as 'Total URLs Received' that we currently show in the output to CLI command 'show email-analysis statis...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalUrlCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.11.0",
+      "name": "feTotalUrlCountH",
+      "description": "This is a count of all the URLs received whether they are processed or not. This is the same as 'Total URLs Received' that we currently show in the output to CLI command 'show email-analysis statis...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalUrlCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.12.0",
+      "name": "feTotalUrlCountL",
+      "description": "This is a count of all the URLs received whether they are processed or not. This is the same as 'Total URLs Received' that we currently show in the output to CLI command 'show email-analysis statis...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalUrlCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.13.0",
+      "name": "feInfectedUrlCount",
+      "description": "This is a count of all the URLs that are determined to be malicious and is the same as 'Total URLs Considered Malicious' that we currently show in the output to CLI command 'show email-analysis sta...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feInfectedUrlCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.14.0",
+      "name": "feInfectedUrlCountH",
+      "description": "This is a count of all the URLs that are determined to be malicious and is the same as 'Total URLs Considered Malicious' that we currently show in the output to CLI command 'show email-analysis sta...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feInfectedUrlCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.15.0",
+      "name": "feInfectedUrlCountL",
+      "description": "This is a count of all the URLs that are determined to be malicious and is the same as 'Total URLs Considered Malicious' that we currently show in the output to CLI command 'show email-analysis sta...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feInfectedUrlCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.16.0",
+      "name": "feAnalyzedUrlCount",
+      "description": "This is the cumulative count of all the URLs that were analyzed and is the same as 'Total URLs Analyzed' that we currently show in the output to CLI command 'show email-analysis statistics'. This c...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feAnalyzedUrlCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.17.0",
+      "name": "feAnalyzedUrlCountH",
+      "description": "This is the cumulative count of all the URLs that were analyzed and is the same as 'Total URLs Analyzed' that we currently show in the output to CLI command 'show email-analysis statistics'. This c...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feAnalyzedUrlCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.18.0",
+      "name": "feAnalyzedUrlCountL",
+      "description": "This is the cumulative count of all the URLs that were analyzed and is the same as 'Total URLs Analyzed' that we currently show in the output to CLI command 'show email-analysis statistics'. This c...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feAnalyzedUrlCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.19.0",
+      "name": "feTotalAttachmentCount",
+      "description": "This is a count of all the attachment received whether they are processed or not. This is the same as 'Total Attachments Received' that we currently show in the output to CLI command 'show email-an...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalAttachmentCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.20.0",
+      "name": "feTotalAttachmentCountH",
+      "description": "This is a count of all the attachment received whether they are processed or not. This is the same as 'Total Attachments Received' that we currently show in the output to CLI command 'show email-an...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalAttachmentCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.21.0",
+      "name": "feTotalAttachmentCountL",
+      "description": "This is a count of all the attachment received whether they are processed or not. This is the same as 'Total Attachments Received' that we currently show in the output to CLI command 'show email-an...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalAttachmentCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.22.0",
+      "name": "feInfectedAttachmentCount",
+      "description": "This is a count of all the attachment that are determined to be malicious and is the same as 'Total Attachments Considered Malicious' that we currently show in the output to CLI command 'show email...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feInfectedAttachmentCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.23.0",
+      "name": "feInfectedAttachmentCountH",
+      "description": "This is a count of all the attachment that are determined to be malicious and is the same as 'Total Attachments Considered Malicious' that we currently show in the output to CLI command 'show email...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feInfectedAttachmentCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.24.0",
+      "name": "feInfectedAttachmentCountL",
+      "description": "This is a count of all the attachment that are determined to be malicious and is the same as 'Total Attachments Considered Malicious' that we currently show in the output to CLI command 'show email...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feInfectedAttachmentCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.25.0",
+      "name": "feAnalyzedAttachmentCount",
+      "description": "This is the cumulative count of all the attachment that we analyzed for maliciousness. This is the same as 'Total Attachments Analyzed' that we currently show in the output to CLI command 'show ema...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feAnalyzedAttachmentCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.26.0",
+      "name": "feAnalyzedAttachmentCountH",
+      "description": "This is the cumulative count of all the attachment that we analyzed for maliciousness. This is the same as 'Total Attachments Analyzed' that we currently show in the output to CLI command 'show ema...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feAnalyzedAttachmentCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.27.0",
+      "name": "feAnalyzedAttachmentCountL",
+      "description": "This is the cumulative count of all the attachment that we analyzed for maliciousness. This is the same as 'Total Attachments Analyzed' that we currently show in the output to CLI command 'show ema...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feAnalyzedAttachmentCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.28.0",
+      "name": "feTotalEmailHasAttachment",
+      "description": "This is a count of all the emails containing at least one attachment. This value will be the cumulative and preserved across appliance reboots.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalEmailHasAttachment",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.29.0",
+      "name": "feTotalEmailHasAttachmentH",
+      "description": "This is a count of all the emails containing at least one attachment. This value will be the cumulative and preserved across appliance reboots. feTotalEmailHasAttachmentH is the high order 32bit of...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalEmailHasAttachmentH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.30.0",
+      "name": "feTotalEmailHasAttachmentL",
+      "description": "This is a count of all the emails containing at least one attachment. This value will be the cumulative and preserved across appliance reboots. feTotalEmailHasAttachmentL is the low order 32bit of ...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalEmailHasAttachmentL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.31.0",
+      "name": "feTotalEmailHasUrl",
+      "description": "This is a count of all the emails containing at least one URL. This value will be the cumulative and preserved across appliance reboots.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalEmailHasUrl",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.32.0",
+      "name": "feTotalEmailHasUrlH",
+      "description": "This is a count of all the emails containing at least one URL. This value will be the cumulative and preserved across appliance reboots. feTotalEmailHasUrlH is the high order 32bit of the 64bit cou...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalEmailHasUrlH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.33.0",
+      "name": "feTotalEmailHasUrlL",
+      "description": "This is a count of all the emails containing at least one URL. This value will be the cumulative and preserved across appliance reboots. feTotalEmailHasUrlL is the low order 32bit of the 64bit coun...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalEmailHasUrlL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.34.0",
+      "name": "feTotalEmailHasBadAttachment",
+      "description": "This is a count of all the emails containing at least one attachment determined to be malicious. This value will be the cumulative and preserved across appliance reboots.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalEmailHasBadAttachment",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.35.0",
+      "name": "feTotalEmailHasBadAttachmentH",
+      "description": "This is a count of all the emails containing at least one attachment determined to be malicious. This value will be the cumulative and preserved across appliance reboots. feTotalEmailHasBadAttachme...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalEmailHasBadAttachmentH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.36.0",
+      "name": "feTotalEmailHasBadAttachmentL",
+      "description": "This is a count of all the emails containing at least one attachment determined to be malicious. This value will be the cumulative and preserved across appliance reboots. feTotalEmailHasBadAttachme...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalEmailHasBadAttachmentL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.37.0",
+      "name": "feTotalEmailHasBadUrl",
+      "description": "This is a count of all the emails containing at least one URL determined to be malicious. This value will be the cumulative and preserved across appliance reboots.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalEmailHasBadUrl",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.38.0",
+      "name": "feTotalEmailHasBadUrlH",
+      "description": "This is a count of all the emails containing at least one URL determined to be malicious. This value will be the cumulative and preserved across appliance reboots. feTotalEmailHasBadUrlH is the hig...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalEmailHasBadUrlH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.39.0",
+      "name": "feTotalEmailHasBadUrlL",
+      "description": "This is a count of all the emails containing at least one URL determined to be malicious. This value will be the cumulative and preserved across appliance reboots. feTotalEmailHasBadUrlL is the low...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalEmailHasBadUrlL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.40.0",
+      "name": "feeQuarantineUsage",
+      "description": "This is consumed capacity in term of percentage of max capacity. This is a snapshot value and represents current consumption value.",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "feeQuarantineUsage",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.41.0",
+      "name": "feBypassEmailCount",
+      "description": "This is a count of Bypassed Emails and is the same as 'Total Emails Bypassed' that we currently show in the output to CLI command 'show email-analysis statistics'. This will be the cumulative value...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feBypassEmailCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.42.0",
+      "name": "feBypassEmailCountH",
+      "description": "This is a count of Bypassed Emails and is the same as 'Total Emails Bypassed' that we currently show in the output to CLI command 'show email-analysis statistics'. This will be the cumulative value...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feBypassEmailCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.43.0",
+      "name": "feBypassEmailCountL",
+      "description": "This is a count of Bypassed Emails and is the same as 'Total Emails Bypassed' that we currently show in the output to CLI command 'show email-analysis statistics'. This will be the cumulative value...",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feBypassEmailCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.44.0",
+      "name": "feDeferredEmailCount",
+      "description": "This is a count of deferred emails and will represent snapshot current value.",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "feDeferredEmailCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.45.0",
+      "name": "feHoldQueueEmailCount",
+      "description": "This is a count of emails in the hold queue and will represent current snapshot value.",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "feHoldQueueEmailCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.13.1.46.0",
+      "name": "feOpenSmtpConnections",
+      "description": "This is a snapshot value of currently open SMTP connections.",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "feOpenSmtpConnections",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.1.0",
+      "name": "feTotalObjectAnalyzedCount",
+      "description": "This is a count of all the object analyzed, including all children of any samples, including URL.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalObjectAnalyzedCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.2.0",
+      "name": "feTotalObjectAnalyzedCountH",
+      "description": "This is a count of all the object analyzed, including all children of any samples, including URL. feTotalObjectAnalyzedCountH is the high order 32bit of the 64bit counter.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalObjectAnalyzedCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.3.0",
+      "name": "feTotalObjectAnalyzedCountL",
+      "description": "This is a count of all the object analyzed, including all children of any samples, including URL. feTotalObjectAnalyzedCountL is the low order 32bit of the 64bit counter.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalObjectAnalyzedCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.4.0",
+      "name": "feTotalMaliciousObjectCount",
+      "description": "This is a count of all malicious samples detected.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalMaliciousObjectCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.5.0",
+      "name": "feTotalMaliciousObjectCountH",
+      "description": "This is a count of all malicious samples detected. feTotalMaliciousObjectCountH is the high order 32bit of the 64bit counter.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalMaliciousObjectCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.6.0",
+      "name": "feTotalMaliciousObjectCountL",
+      "description": "This is a count of all malicious samples detected. feTotalMaliciousObjectCountL is the low order 32bit of the 64bit counter.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalMaliciousObjectCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.7.0",
+      "name": "feTotalUrlAnalyzedCount",
+      "description": "This is a count of all samples that has file type: url.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalUrlAnalyzedCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.8.0",
+      "name": "feTotalUrlAnalyzedCountH",
+      "description": "This is a count of all samples that has file type: url. feTotalUrlAnalyzedCountH is the high order 32bit of the 64bit counter.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalUrlAnalyzedCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.9.0",
+      "name": "feTotalUrlAnalyzedCountL",
+      "description": "This is a count of all samples that has file type: url. feTotalUrlAnalyzedCountL is the low order 32bit of the 64bit counter.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalUrlAnalyzedCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.10.0",
+      "name": "feTotalMaliciousUrlCount",
+      "description": "This is a count of all samples that has file type 'url' and also are malicious.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalMaliciousUrlCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.11.0",
+      "name": "feTotalMaliciousUrlCountH",
+      "description": "This is a count of all samples that has file type 'url' and also are malicious. feTotalMaliciousUrlCountH is the high order 32bit of the 64bit counter.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalMaliciousUrlCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.12.0",
+      "name": "feTotalMaliciousUrlCountL",
+      "description": "This is a count of all samples that has file type 'url' and also are malicious. feTotalMaliciousUrlCountL is the low order 32bit of the 64bit counter.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalMaliciousUrlCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.13.0",
+      "name": "feTotalFileUploadedCount",
+      "description": "This is a count of all object that has no parent (basically, children will not be counted).",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalFileUploadedCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.14.0",
+      "name": "feTotalFileUploadedCountH",
+      "description": "This is a count of all object that has no parent (basically, children will not be counted). feTotalFileUploadedCountH is the high order 32bit of the 64bit counter.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalFileUploadedCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.15.0",
+      "name": "feTotalFileUploadedCountL",
+      "description": "This is a count of all object that has no parent (basically, children will not be counted). feTotalFileUploadedCountL is the low order 32bit of the 64bit counter.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalFileUploadedCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.16.0",
+      "name": "feTotalMaliciousFileCount",
+      "description": "This is a count of all object that has no parent (basically children will not be counted), and are not URL.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalMaliciousFileCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.17.0",
+      "name": "feTotalMaliciousFileCountH",
+      "description": "This is a count of all object that has no parent (basically children will not be counted), and are not URL. feTotalMaliciousFileCountH is the high order 32bit of the 64bit counter.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalMaliciousFileCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.18.0",
+      "name": "feTotalMaliciousFileCountL",
+      "description": "This is a count of all object that has no parent (basically children will not be counted), and are not URL. feTotalMaliciousFileCountL is the low order 32bit of the 64bit counter.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalMaliciousFileCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.19.0",
+      "name": "feTotalLiveModeCount",
+      "description": "This is a count of all object that are submitted for live mode.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalLiveModeCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.20.0",
+      "name": "feTotalLiveModeCountH",
+      "description": "This is a count of all object that are submitted for live mode. feTotalLiveModeCountH is the high order 32bit of the 64bit counter.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalLiveModeCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.21.0",
+      "name": "feTotalLiveModeCountL",
+      "description": "This is a count of all object that are submitted for live mode. feTotalLiveModeCountL is the low order 32bit of the 64bit counter.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalLiveModeCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.22.0",
+      "name": "feTotalMaliciousLiveModeCount",
+      "description": "This is a count of all object that are submitted for live mode and are malicious. Live mode object has no children.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalMaliciousLiveModeCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.23.0",
+      "name": "feTotalMaliciousLiveModeCountH",
+      "description": "This is a count of all object that are submitted for live mode and are malicious. Live mode object has no children. feTotalMaliciousLiveModeCountH is the high order 32bit of the 64bit counter.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalMaliciousLiveModeCountH",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.25597.15.1.24.0",
+      "name": "feTotalMaliciousLiveModeCountL",
+      "description": "This is a count of all object that are submitted for live mode and are malicious. Live mode object has no children. feTotalMaliciousLiveModeCountL is the low order 32bit of the 64bit counter.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "feTotalMaliciousLiveModeCountL",
+      "transform": null,
+      "enumMap": null,
+      "module": "FE-FIREEYE-MIB"
+    }
+  ]
+}

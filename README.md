@@ -2,7 +2,7 @@
 
 Public SNMP profile data for [Kaleidoscope](https://kaleidoscope.sh): vendor OID dictionaries, community device profiles, a sysObjectID identity registry, and the raw MIB sources they are compiled from.
 
-**Status:** published 2026-09-11. Dictionaries for 20 vendor/category pairs are compiled and validated. Format version 1 is a proposal until the Kaleidoscope importer ships support for it.
+**Status:** published 2026-09-11. Dictionaries for 127 vendor/category pairs (529,016 OIDs) are compiled and validated. Format version 1 is a proposal until the Kaleidoscope importer ships support for it.
 
 ## Why this repo exists
 
@@ -76,7 +76,8 @@ The platform-side work that closes those gaps is tracked in the Kaleidoscope mon
 
 - **libsmi 0.4.8 misbehaves on a few files.** It segfaults on some malformed MIBs, and its XML writer loops forever on at least one valid-looking one (ALCATEL-ENT1-TIMETRA-PORT-MIB). The compiler runs it in chunks with a deadline and an output cap, isolates offenders by bisection, and lists them in `dictionaries/COMPILE-REPORT.md`; everything else in the same directory still compiles.
 - **Type resolution depends on the textual-convention modules being reachable.** Standard ones come from `mibs/rfc/` or the system MIB directory; vendor ones from the vendor directory. Objects whose TC cannot be found are typed `string` and counted in the report.
-- **Only registered vendors have sources in `mibs/`.** 23 directories, about 210 MB. The compile report lists 486 further enterprise roots seen in a larger local mirror; each needs a registry row and its MIB directory imported before it compiles.
+- **Only registered vendors have sources in `mibs/`.** 134 directories, about 560 MB of text (much less packed). The compile report lists the enterprise roots present in `mibs/` that still have no registry row; a larger local mirror holds roughly 380 more, mostly carrier, optical, and industrial gear left out on purpose. Each needs a registry row and its MIB directory imported before it compiles.
+- **`dictionaries/` is 240 MB of JSON.** Cisco is 45 MB and Huawei about 30 MB. Git packs JSON well, but consumers should clone shallow.
 
 ## Contributing
 

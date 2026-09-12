@@ -244,14 +244,17 @@ async function main() {
   // Phase 3: resolve, group by registry row, dedupe by OID (first group in
   // alphabetical order wins, so output is deterministic).
   const buckets = new Map<string, Bucket>();
-  const unregistered = new Map<string, { oids: number; modules: Set<string> }>();
+  const unregistered = new Map<string, { oids: number; modules: Set<string>; dirs: Set<string> }>();
   const seenModules = new Set<string>();
   const stats = { objects: 0, standard: 0, unpollable: 0, dupModules: 0, unresolvedType: 0, kept: 0 };
   const unresolvedTc = new Map<string, number>();
 
   for (const r of results) {
     for (const m of r.modules) {
-      if (seenModules.has(m.name)) { stats.dupModules++; continue; }
+      // Different vendors reuse module names (D-Link and Nortel both ship an
+      // AAC-MIB), so a module name is not an identity. Count repeats for the
+      // report but keep going; the per-bucket OID map dedupes real copies.
+      if (seenModules.has(m.name)) stats.dupModules++;
       seenModules.add(m.name);
       for (const o of m.objects) {
         stats.objects++;
@@ -260,13 +263,21 @@ async function main() {
         if (!READABLE.has(o.access)) { stats.unpollable++; continue; }
         const row = rowFor(o.oid, registry.entries);
         if (!row) {
-          const u = unregistered.get(root) ?? { oids: 0, modules: new Set<string>() };
-          u.oids++; u.modules.add(m.name); unregistered.set(root, u);
+          const u = unregistered.get(root) ?? { oids: 0, modules: new Set<string>(), dirs: new Set<string>() };
+          u.oids++; u.modules.add(m.name); u.dirs.add(r.group.name); unregistered.set(root, u);
           continue;
         }
         const key = `${row.vendor}::${row.deviceCategory}`;
         let b = buckets.get(key);
         if (!b) { b = { entry: row, oids: new Map(), modules: new Set(), sourceDirs: new Set() }; buckets.set(key, b); }
+        else if (b.entry.oidPrefix !== row.oidPrefix) {
+          // Two compile-enabled rows with the same vendor + category but different
+          // roots would share one dictionary whose vendorOidPrefix can only name
+          // one of them, and validate would reject the other's OIDs. Give the
+          // second row a distinct vendor name (e.g. "Brocade FC") instead.
+          console.error(`registry: rows ${b.entry.oidPrefix} and ${row.oidPrefix} both map to ${key}; use distinct vendor names or compile: false`);
+          process.exit(2);
+        }
         if (b.oids.has(o.oid)) continue;
         const t = types.resolve(o);
         if (t.unresolved) { stats.unresolvedType++; if (t.tc) unresolvedTc.set(t.tc, (unresolvedTc.get(t.tc) ?? 0) + 1); }
@@ -344,7 +355,7 @@ async function main() {
   lines.push('| | |', '|---|---|');
   lines.push(`| MIB source | \`${show(mibDir)}\` |`);
   lines.push(`| Vendor directories | ${groups.length} |`, `| Files given to libsmi | ${totalFiles} |`, `| smidump invocations | ${results.reduce((n, r) => n + r.invocations, 0)} |`);
-  lines.push(`| Modules parsed | ${seenModules.size} (${stats.dupModules} duplicate module names skipped) |`);
+  lines.push(`| Modules parsed | ${seenModules.size} (${stats.dupModules} repeated module names, kept) |`);
   lines.push(`| Objects seen | ${stats.objects} |`, `| Dropped: outside enterprises tree | ${stats.standard} |`, `| Dropped: not readable (not-accessible, accessible-for-notify) | ${stats.unpollable} |`);
   lines.push(`| Dropped: enterprise has no registry row | ${unreg.reduce((n, [, u]) => n + u.oids, 0)} across ${unreg.length} roots |`);
   lines.push(`| Written | ${written.length} dictionaries, ${totalOids} OIDs |`);
@@ -354,8 +365,8 @@ async function main() {
   lines.push('## Dictionaries', '', '| Slug | OIDs | Modules | Source dirs |', '|---|---:|---:|---|');
   for (const w of written) lines.push(`| ${w.slug} | ${w.oids} | ${w.modules} | ${w.dirs.join(', ')} |`);
   lines.push('');
-  lines.push('## Enterprises with MIBs but no registry row', '', 'Add a row to `registry/sysobjectid.yaml` to compile any of these. Top 80 by object count.', '', '| Enterprise root | Readable objects | Modules | Example module |', '|---|---:|---:|---|');
-  for (const [root, u] of unreg.slice(0, 80)) lines.push(`| ${root} | ${u.oids} | ${u.modules.size} | ${[...u.modules].sort()[0]} |`);
+  lines.push('## Enterprises with MIBs but no registry row', '', 'Add a row to `registry/sysobjectid.yaml` to compile any of these, then import the source directory under `mibs/`. Sorted by object count.', '', '| Enterprise root | Readable objects | Modules | Example module | Source dirs |', '|---|---:|---:|---|---|');
+  for (const [root, u] of unreg) lines.push(`| ${root} | ${u.oids} | ${u.modules.size} | ${[...u.modules].sort()[0]} | ${[...u.dirs].sort().slice(0, 6).join(', ')}${u.dirs.size > 6 ? ', …' : ''} |`);
   lines.push('');
   if (crashed.length) {
     lines.push('## Files that crashed libsmi', '', 'smidump exited abnormally on these inputs; they were skipped. Each was isolated by bisection so the rest of the directory still compiled. They are malformed by other parsers too.', '');
@@ -365,6 +376,12 @@ async function main() {
   if (hung.length) {
     lines.push('## Files on which libsmi hung', '', 'smidump did not finish within the deadline on these inputs even alone; they were skipped.', '');
     for (const f of hung) lines.push(`- \`${f}\``);
+    lines.push('');
+  }
+  const rejected = [...new Set(results.flatMap(r => r.diagnostics).map(d => /cannot locate module [`']([^`']+)'/.exec(d)?.[1]).filter((p): p is string => !!p && p.startsWith('/')))].map(p => relative(mibDir, p)).sort();
+  if (rejected.length) {
+    lines.push('## Files libsmi rejected', '', 'libsmi could not parse these files as SMI modules (syntax errors, undeterminable SMI version). They contributed nothing. The exact message is in the diagnostics section.', '');
+    for (const f of rejected) lines.push(`- \`${f}\``);
     lines.push('');
   }
   if (runaway.length) {
@@ -392,7 +409,7 @@ async function main() {
   await writeFile(reportFile, lines.join('\n'));
 
   console.log(`\nwritten: ${written.length} dictionaries, ${totalOids} OIDs → ${show(outDir)}`);
-  console.log(`objects: ${stats.objects} seen, ${stats.standard} standard-tree, ${stats.unpollable} not readable, ${stats.dupModules} duplicate modules, ${stats.unresolvedType} typed as string for lack of a TC`);
+  console.log(`objects: ${stats.objects} seen, ${stats.standard} standard-tree, ${stats.unpollable} not readable, ${stats.dupModules} repeated module names, ${stats.unresolvedType} typed as string for lack of a TC`);
   console.log(`unregistered enterprises: ${unreg.length} (${unreg.reduce((n, [, u]) => n + u.oids, 0)} objects) — see ${show(reportFile)}`);
   if (crashed.length) console.log(`crashed files skipped: ${crashed.length} — listed in the report`);
   if (hung.length) console.log(`hung files skipped: ${hung.length} — listed in the report`);

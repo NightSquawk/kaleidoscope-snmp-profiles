@@ -1,0 +1,1424 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-buffalo-nas",
+  "name": "Buffalo Nas (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "nas",
+  "vendor": "Buffalo",
+  "vendorOidPrefix": "1.3.6.1.4.1.5227",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 109 readable OIDs under 1.3.6.1.4.1.5227.",
+  "generated": {
+    "source": "mibs/buffalo",
+    "date": "2026-09-12",
+    "oidCount": 109,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "BUFFALO-NAS-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.1.1.3",
+      "name": "nasBackupStatus",
+      "description": "The status of a backup job. This value is read from the 'status' line in the file at /etc/melco/backupx. -'ready(1)' means waiting for the backup job start. -'run(2)' means the backup job is runnin...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasBackupStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "ready",
+        "2": "run",
+        "3": "done",
+        "4": "error"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.2",
+      "name": "nasDiskStatus",
+      "description": "The status of internal drives. This value is read from the 'diskx' line in the file at /etc/melco/diskinfo. -'notSupport(-1)' means the drive slot does not exist. -'normal(1)' means the drive is be...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "normal",
+        "2": "array1",
+        "3": "array2",
+        "4": "standby",
+        "5": "degrade",
+        "6": "remove",
+        "7": "standbyRemoved",
+        "8": "degradeRemoved",
+        "9": "removeRemoved",
+        "10": "array3",
+        "11": "array4",
+        "12": "mediaCartridge",
+        "13": "array5",
+        "14": "array6",
+        "-1": "notSupport"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.3",
+      "name": "nasDiskCapacity",
+      "description": "The maximum capacity of each drive. The unit is in gigabytes to show the capacity. The default value is '-1'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskCapacity",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.4",
+      "name": "nasDiskUsed",
+      "description": "The usage of each drive. The default value is '-1'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskUsed",
+      "transform": null,
+      "enumMap": null,
+      "units": "%",
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.5",
+      "name": "nasDiskSMARTStatus",
+      "description": "Drive status from S.M.A.R.T.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "normal",
+        "2": "caution",
+        "3": "fail",
+        "-2": "unavailable",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.6",
+      "name": "nasDiskSMARTReallocatedSectorCtValue",
+      "description": "Current value of 'Reallocated_Sector_Ct'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTReallocatedSectorCtValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.7",
+      "name": "nasDiskSMARTReallocatedSectorCtWorst",
+      "description": "Worst value of 'Reallocated_Sector_Ct'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTReallocatedSectorCtWorst",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.8",
+      "name": "nasDiskSMARTReallocatedSectorCtThresh",
+      "description": "Threshold value of 'Reallocated_Sector_Ct'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTReallocatedSectorCtThresh",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.9",
+      "name": "nasDiskSMARTReallocatedSectorCtRAW",
+      "description": "Raw value of 'Reallocated_Sector_Ct'.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nasDiskSMARTReallocatedSectorCtRAW",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.10",
+      "name": "nasDiskSMARTCurrentPendingSectorValue",
+      "description": "Current value of 'Current_Pending_Sector'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTCurrentPendingSectorValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.11",
+      "name": "nasDiskSMARTCurrentPendingSectorWorst",
+      "description": "Worst value of 'Current_Pending_Sector'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTCurrentPendingSectorWorst",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.12",
+      "name": "nasDiskSMARTCurrentPendingSectorThresh",
+      "description": "Threshold value of 'Current_Pending_Sector'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTCurrentPendingSectorThresh",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.13",
+      "name": "nasDiskSMARTCurrentPendingSectorRAW",
+      "description": "Raw value of 'Current_Pending_Sector'.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nasDiskSMARTCurrentPendingSectorRAW",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.14",
+      "name": "nasDiskSMARTOfflineUncorrectableValue",
+      "description": "Current value of 'Offline_Uncorrectable'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTOfflineUncorrectableValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.15",
+      "name": "nasDiskSMARTOfflineUncorrectableWorst",
+      "description": "Worst value of 'Offline_Uncorrectable'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTOfflineUncorrectableWorst",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.16",
+      "name": "nasDiskSMARTOfflineUncorrectableThresh",
+      "description": "Threshold value of 'Offline_Uncorrectable'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTOfflineUncorrectableThresh",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.17",
+      "name": "nasDiskSMARTOfflineUncorrectableRAW",
+      "description": "Raw value of 'Offline_Uncorrectable'.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nasDiskSMARTOfflineUncorrectableRAW",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.18",
+      "name": "nasSSDSMARTRemainingLifeValue",
+      "description": "Percentage of remaining SSD lifetime's current value.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasSSDSMARTRemainingLifeValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.19",
+      "name": "nasSSDSMARTRemainingLifeWorst",
+      "description": "Percentage of remaining SSD lifetime's worst value.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasSSDSMARTRemainingLifeWorst",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.20",
+      "name": "nasSSDSMARTRemainingLifeThresh",
+      "description": "Percentage of remaining SSD lifetime's threshold value.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasSSDSMARTRemainingLifeThresh",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.21",
+      "name": "nasSSDSMARTBadBlockCountValue",
+      "description": "Current value of total bad block counts.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasSSDSMARTBadBlockCountValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.22",
+      "name": "nasSSDSMARTBadBlockCountWorst",
+      "description": "Worst value of total bad block counts.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasSSDSMARTBadBlockCountWorst",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.23",
+      "name": "nasSSDSMARTBadBlockCountThresh",
+      "description": "Threshold value of total bad block counts.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasSSDSMARTBadBlockCountThresh",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.24",
+      "name": "nasDiskCapacityGiB",
+      "description": "The maximum capacity of each drive. The unit is in gibibytes to show the capacity. The default value is '-1'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskCapacityGiB",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.25",
+      "name": "nasDiskCapacityLow",
+      "description": "The maximum capacity of each drive. The unit is in bytes to show the capacity. The default value is '0'. Together with nasDiskCapacityHigh composes 64-bit number.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "nasDiskCapacityLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.26",
+      "name": "nasDiskCapacityHigh",
+      "description": "The maximum capacity of each drive. The unit is in bytes to show the capacity. The default value is '0'. Together with nasDiskCapacityLow composes 64-bit number.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "nasDiskCapacityHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.27",
+      "name": "nasDiskUsedGiB",
+      "description": "The usage of each drive in gibibytes. The default value is '-1'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskUsedGiB",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.28",
+      "name": "nasDiskUsedLow",
+      "description": "The usage of each drive in bytes. The default value is '0'. Together with nasDiskUsedHigh composes 64-bit number.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "nasDiskUsedLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.29",
+      "name": "nasDiskUsedHigh",
+      "description": "The usage of each drive in bytes. The default value is '0'. Together with nasDiskUsedLow composes 64-bit number.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "nasDiskUsedHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.30",
+      "name": "nasDiskModelName",
+      "description": "HDD model.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nasDiskModelName",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.31",
+      "name": "nasDiskSMARTReallocatedSectorCtHealth",
+      "description": "ReallocatedSectorCtHealth",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTReallocatedSectorCtHealth",
+      "transform": null,
+      "enumMap": {
+        "1": "normal",
+        "3": "fail",
+        "-2": "unavailable"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.32",
+      "name": "nasDiskSMARTCurrentPendingSectorHealth",
+      "description": "CurrentPendingSectorHealth",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTCurrentPendingSectorHealth",
+      "transform": null,
+      "enumMap": {
+        "1": "normal",
+        "3": "fail",
+        "-2": "unavailable"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.33",
+      "name": "nasDiskSMARTOfflineUncorrectableHealth",
+      "description": "OfflineUncorrectableHealth",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTOfflineUncorrectableHealth",
+      "transform": null,
+      "enumMap": {
+        "1": "normal",
+        "3": "fail",
+        "-2": "unavailable"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.34",
+      "name": "nasDiskSMARTRawReadErrorRateValue",
+      "description": "RawReadErrorRateValue",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTRawReadErrorRateValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.35",
+      "name": "nasDiskSMARTRawReadErrorRateWorst",
+      "description": "RawReadErrorRateWorst",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTRawReadErrorRateWorst",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.36",
+      "name": "nasDiskSMARTRawReadErrorRateThresh",
+      "description": "RawReadErrorRateThresh",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTRawReadErrorRateThresh",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.37",
+      "name": "nasDiskSMARTRawReadErrorRateRAW",
+      "description": "RawReadErrorRateRAW.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nasDiskSMARTRawReadErrorRateRAW",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.38",
+      "name": "nasDiskSMARTRawReadErrorRateHealth",
+      "description": "RawReadErrorRateHealth",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTRawReadErrorRateHealth",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.39",
+      "name": "nasDiskSMARTPowerOnHoursValue",
+      "description": "PowerOnHoursValue",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTPowerOnHoursValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.40",
+      "name": "nasDiskSMARTPowerOnHoursWorst",
+      "description": "PowerOnHoursWorst",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTPowerOnHoursWorst",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.41",
+      "name": "nasDiskSMARTPowerOnHoursThresh",
+      "description": "PowerOnHoursThresh",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTPowerOnHoursThresh",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.42",
+      "name": "nasDiskSMARTPowerOnHoursRAW",
+      "description": "Raw value of 'Offline_Uncorrectable'.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nasDiskSMARTPowerOnHoursRAW",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.2.1.43",
+      "name": "nasDiskSMARTPowerOnHoursHealth",
+      "description": "PowerOnHoursHealth",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasDiskSMARTPowerOnHoursHealth",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.3.1.2",
+      "name": "nasArrayStatus",
+      "description": "The status of a RAID array. This value is read from the 'arrayx' line in the file at /etc/melco/diskinfo. -'NotSupport(-1)' means the RAID mode is not supported. -'off(1)' means the RAID array is n...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasArrayStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "off",
+        "2": "raid0",
+        "3": "raid1",
+        "4": "raid5",
+        "5": "raid6",
+        "6": "raid10",
+        "7": "raid50",
+        "8": "raid51",
+        "9": "raid60",
+        "10": "raid61",
+        "-1": "notSupport"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.3.1.3",
+      "name": "nasArrayCapacity",
+      "description": "The maximum capacity of each array. The displayed unit is in gigabytes. The defaultvalue is '-1'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasArrayCapacity",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.3.1.4",
+      "name": "nasArrayUsed",
+      "description": "The usage of each array. The default value is '-1'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasArrayUsed",
+      "transform": null,
+      "enumMap": null,
+      "units": "%",
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.3.1.5",
+      "name": "nasArrayCapacityGiB",
+      "description": "The maximum capacity of each array. The displayed unit is in gibibytes. The default value is '-1'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasArrayCapacityGiB",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.3.1.6",
+      "name": "nasArrayCapacityLow",
+      "description": "The maximum capacity of each array. The unit is in bytes to show the capacity. The default value is '0'. Together with nasArrayCapacityHigh composes 64-bit number.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "nasArrayCapacityLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.3.1.7",
+      "name": "nasArrayCapacityHigh",
+      "description": "The maximum capacity of each array. The unit is in bytes to show the capacity. The default value is '0'. Together with nasArrayCapacityLow composes 64-bit number.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "nasArrayCapacityHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.3.1.8",
+      "name": "nasArrayUsedGiB",
+      "description": "The usage of each array in gibibytes. The default value is '-1'.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasArrayUsedGiB",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.3.1.9",
+      "name": "nasArrayUsedLow",
+      "description": "The usage of each array in bytes. The default value is '0'. Together with nasArrayUsedHigh composes 64-bit number.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "nasArrayUsedLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.3.1.10",
+      "name": "nasArrayUsedHigh",
+      "description": "The usage of each array in bytes. The default value is '0'. Together with nasArrayUsedLow composes 64-bit number.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "nasArrayUsedHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.4.1.2",
+      "name": "nasErrorMsg",
+      "description": "The detail of an error event that occurred.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nasErrorMsg",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.4.1.3",
+      "name": "nasErrorDate",
+      "description": "The date and time on which an error event occurred.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nasErrorDate",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.4.1.4",
+      "name": "nasErrorDateAndTime",
+      "description": "The date and time on which an error event occurred.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nasErrorDateAndTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB",
+      "tc": "DateAndTime"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.5.1.2",
+      "name": "nasInformationMsg",
+      "description": "The details of an information event that occurred.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nasInformationMsg",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.5.1.3",
+      "name": "nasInformationDate",
+      "description": "The date and time on which an information event occurred.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nasInformationDate",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.5.1.4",
+      "name": "nasInformationDateAndTime",
+      "description": "The date and time on which an information event occurred.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nasInformationDateAndTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB",
+      "tc": "DateAndTime"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.6.1.1.2",
+      "name": "nasVGPESize",
+      "description": "Physical extent size.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasVGPESize",
+      "transform": null,
+      "enumMap": null,
+      "units": "GB",
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.6.1.1.3",
+      "name": "nasVGPETotal",
+      "description": "Total physical extent count.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasVGPETotal",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.6.1.1.4",
+      "name": "nasVGPEUsed",
+      "description": "Used physical extent count.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasVGPEUsed",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.6.1.1.5.1.2",
+      "name": "nasLVName",
+      "description": "Logical volume name.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nasLVName",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.6.1.1.5.1.3",
+      "name": "nasLVCapacity",
+      "description": "Logical volume capacity in gigabytes.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasLVCapacity",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.6.1.1.5.1.4",
+      "name": "nasLVUsed",
+      "description": "Used logical volume.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasLVUsed",
+      "transform": null,
+      "enumMap": null,
+      "units": "%",
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.6.1.1.5.1.5",
+      "name": "nasLVCapacityGiB",
+      "description": "Logical volume capacity in gibibytes.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasLVCapacityGiB",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.6.1.1.5.1.6",
+      "name": "nasLVCapacityLow",
+      "description": "Logical volume capacity in bytes. Together with nasLVCapacityHigh composes 64-bit number.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "nasLVCapacityLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.6.1.1.5.1.7",
+      "name": "nasLVCapacityHigh",
+      "description": "Logical volume capacity in bytes. Together with nasLVCapacityLow composes 64-bit number.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "nasLVCapacityHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.6.1.1.5.1.8",
+      "name": "nasLVUsedGiB",
+      "description": "Used logical volume in gibibytes.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasLVUsedGiB",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.6.1.1.5.1.9",
+      "name": "nasLVUsedLow",
+      "description": "Used logical volume in bytes. Together with nasLVUsedHigh composes 64-bit number.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "nasLVUsedLow",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.6.1.1.5.1.10",
+      "name": "nasLVUsedHigh",
+      "description": "Used logical volume in bytes. Together with nasLVUsedLow composes 64-bit number.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "nasLVUsedHigh",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.6.1.1.6.1.2",
+      "name": "nasPVName",
+      "description": "Physical volume name.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nasPVName",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.7.1.0",
+      "name": "nasFailoverRole",
+      "description": "The role of the TeraStation in failover.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasFailoverRole",
+      "transform": null,
+      "enumMap": {
+        "1": "standalone",
+        "2": "main",
+        "4": "aloneMain",
+        "8": "backup",
+        "16": "aloneBackup",
+        "32": "maintenanceMain",
+        "64": "maintenanceBackup",
+        "128": "emMode"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.7.2.0",
+      "name": "nasFailoverStatus",
+      "description": "Failover status.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasFailoverStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "idle",
+        "1": "busy",
+        "2": "startingMain",
+        "3": "startingBackup",
+        "4": "initializing",
+        "32": "stopping"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.7.3.0",
+      "name": "nasFailoverPartner",
+      "description": "IP address of failover partner.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "nasFailoverPartner",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.8.1.2",
+      "name": "nasRPSUStatus",
+      "description": "The status of the redundant power supply unit. This value is read from miconapl. -'unknown(-1)' means a redundant power supply unit is in an unknown state. -'fine(1)' means a redundant power supply...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasRPSUStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "fine",
+        "2": "broken",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.9.1.2",
+      "name": "nasISCSIName",
+      "description": "The iSCSI volume name.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nasISCSIName",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.9.1.3",
+      "name": "nasISCSIStatus",
+      "description": "The connection status of the iSCSI volume. -'unknown(-1)' means the iSCSI volume is in an unknown state. -'connected(1)' means the iSCSI volume is connected via the iSCSI initiator. -'standing-by(2...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nasISCSIStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "connected",
+        "2": "standing-by",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.10.1.0",
+      "name": "nasProductName",
+      "description": "Model name.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "nasProductName",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.10.2.0",
+      "name": "nasSerialNumber",
+      "description": "Serial number.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "nasSerialNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.10.3.0",
+      "name": "nasFWVersionMajor",
+      "description": "Major firmware version.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "nasFWVersionMajor",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.10.4.0",
+      "name": "nasFWVersionMinor",
+      "description": "Minor firmware version.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "nasFWVersionMinor",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.10.5.0",
+      "name": "nasIsFWUpdateAvailable",
+      "description": "Checking whether newer firmware has been released.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasIsFWUpdateAvailable",
+      "transform": null,
+      "enumMap": {
+        "1": "available",
+        "2": "unavailable",
+        "3": "latest",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.10.6.0",
+      "name": "nasSystemDateAndTime",
+      "description": "System date and time.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "nasSystemDateAndTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "BUFFALO-NAS-MIB",
+      "tc": "DateAndTime"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.1.0",
+      "name": "nasServiceStatusSMB",
+      "description": "The SMB setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusSMB",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.2.0",
+      "name": "nasServiceStatusDFS",
+      "description": "The DFS setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusDFS",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.3.0",
+      "name": "nasServiceStatusAFP",
+      "description": "The AFP setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusAFP",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.4.0",
+      "name": "nasServiceStatusFTP",
+      "description": "The FTP setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusFTP",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.5.0",
+      "name": "nasServiceStatusSFTP",
+      "description": "The SFTP setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusSFTP",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.6.0",
+      "name": "nasServiceStatusWebAxs",
+      "description": "The WebAccess setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusWebAxs",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.7.0",
+      "name": "nasServiceStatusNFS",
+      "description": "The NFS setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusNFS",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.8.0",
+      "name": "nasServiceStatusRAIDMaintenance",
+      "description": "The RAID scan setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusRAIDMaintenance",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.9.0",
+      "name": "nasServiceStatusiSCSI",
+      "description": "The iSCSI setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusiSCSI",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.10.0",
+      "name": "nasServiceStatusDLNAServer",
+      "description": "The DLNA setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusDLNAServer",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.11.0",
+      "name": "nasServiceStatusiTunesServer",
+      "description": "The iTunes server setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusiTunesServer",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.12.0",
+      "name": "nasServiceStatusSqueezeboxServer",
+      "description": "The Squeezebox server setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusSqueezeboxServer",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.13.0",
+      "name": "nasServiceStatusPrintServer",
+      "description": "The print server setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusPrintServer",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.14.0",
+      "name": "nasServiceStatusWebServer",
+      "description": "The web server setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusWebServer",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.15.0",
+      "name": "nasServiceStatusMySQLServer",
+      "description": "The MySQL server setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusMySQLServer",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.16.0",
+      "name": "nasServiceStatusWebAxsSync",
+      "description": "The WebAccess Remote setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusWebAxsSync",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.17.0",
+      "name": "nasServiceStatusCloudService",
+      "description": "The cloud storage setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusCloudService",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.18.0",
+      "name": "nasServiceStatusBitTorrent",
+      "description": "The BitTorrent setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusBitTorrent",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.19.0",
+      "name": "nasServiceStatusTeraSearch",
+      "description": "The TeraSearch setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusTeraSearch",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.20.0",
+      "name": "nasServiceStatusIpCamera",
+      "description": "The surveillance camera setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusIpCamera",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.21.0",
+      "name": "nasServiceStatusVirusScan",
+      "description": "The virus scan setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusVirusScan",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.22.0",
+      "name": "nasServiceStatusSNMP",
+      "description": "The SNMP setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusSNMP",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.23.0",
+      "name": "nasServiceStatusTimeMachine",
+      "description": "The Time Machine setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusTimeMachine",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.24.0",
+      "name": "nasServiceStatusDirectCopy",
+      "description": "The Direct Copy setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusDirectCopy",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.25.0",
+      "name": "nasServiceStatusMailNotification",
+      "description": "The email notification setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusMailNotification",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.5227.27.1.11.26.0",
+      "name": "nasServiceStatusWorkingFolder",
+      "description": "The Working Folder setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nasServiceStatusWorkingFolder",
+      "transform": null,
+      "enumMap": {
+        "1": "on",
+        "2": "off",
+        "-1": "unknown"
+      },
+      "module": "BUFFALO-NAS-MIB"
+    }
+  ]
+}

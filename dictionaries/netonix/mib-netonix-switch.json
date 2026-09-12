@@ -1,0 +1,138 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-netonix-switch",
+  "name": "Netonix Switch (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "switch",
+  "vendor": "Netonix",
+  "vendorOidPrefix": "1.3.6.1.4.1.46242",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 10 readable OIDs under 1.3.6.1.4.1.46242.",
+  "generated": {
+    "source": "mibs/netonix",
+    "date": "2026-09-12",
+    "oidCount": 10,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "NETONIX-SWITCH-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.46242.1.0",
+      "name": "firmwareVersion",
+      "description": "The version of the firmware running on the switch",
+      "type": "string",
+      "walk": false,
+      "metricKey": "firmwareVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETONIX-SWITCH-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.46242.2.1.2",
+      "name": "fanSpeed",
+      "description": "Integer reference number (row number) for the fan mib.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "fanSpeed",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETONIX-SWITCH-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.46242.3.1.2",
+      "name": "tempDescription",
+      "description": "Description of this temperature sensor",
+      "type": "string",
+      "walk": true,
+      "metricKey": "tempDescription",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETONIX-SWITCH-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.46242.3.1.3",
+      "name": "temp",
+      "description": "The current temperature for this sensor",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "temp",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETONIX-SWITCH-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.46242.4.1.2",
+      "name": "voltageDescription",
+      "description": "Description of this voltage sensor",
+      "type": "string",
+      "walk": true,
+      "metricKey": "voltageDescription",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETONIX-SWITCH-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.46242.4.1.3",
+      "name": "voltage",
+      "description": "The current voltage for this sensor",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "voltage",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETONIX-SWITCH-MIB",
+      "tc": "VoltageTC"
+    },
+    {
+      "oid": "1.3.6.1.4.1.46242.5.1.2",
+      "name": "poeStatus",
+      "description": "poe status.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "poeStatus",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETONIX-SWITCH-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.46242.6.0",
+      "name": "totalPowerConsumption",
+      "description": "Total power being consumed by the switch, in Watts",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "totalPowerConsumption",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETONIX-SWITCH-MIB",
+      "tc": "PowerTC"
+    },
+    {
+      "oid": "1.3.6.1.4.1.46242.7.0",
+      "name": "dcdcInputCurrent",
+      "description": "DCDC Input Current in amps",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "dcdcInputCurrent",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETONIX-SWITCH-MIB",
+      "tc": "CurrentTC"
+    },
+    {
+      "oid": "1.3.6.1.4.1.46242.8.0",
+      "name": "dcdcEfficiency",
+      "description": "DCDC power supply efficiency, percentage",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "dcdcEfficiency",
+      "transform": null,
+      "enumMap": null,
+      "module": "NETONIX-SWITCH-MIB"
+    }
+  ]
+}

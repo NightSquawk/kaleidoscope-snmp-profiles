@@ -1,0 +1,337 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-planet-switch",
+  "name": "Planet Switch (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "switch",
+  "vendor": "Planet",
+  "vendorOidPrefix": "1.3.6.1.4.1.10456",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 23 readable OIDs under 1.3.6.1.4.1.10456.",
+  "generated": {
+    "source": "mibs/planet",
+    "date": "2026-09-12",
+    "oidCount": 23,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "PLANET-MC1610MR-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.1.0",
+      "name": "chassisIfNumber",
+      "description": "The number of MC-1610MR interfaces.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "chassisIfNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.1.1.1",
+      "name": "chassisIfStatusIndex",
+      "description": "Interface index value",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "chassisIfStatusIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.1.1.2",
+      "name": "chassisIfStatusName",
+      "description": "Conveter Name.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "chassisIfStatusName",
+      "transform": null,
+      "enumMap": null,
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.1.1.3",
+      "name": "chassisIfStatusTPStatus",
+      "description": "The current TP state of the interface.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "chassisIfStatusTPStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "linkDown",
+        "1": "linkUp"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.1.1.4",
+      "name": "chassisIfStatusTPSpeed",
+      "description": "The current TP speed of the interface.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "chassisIfStatusTPSpeed",
+      "transform": null,
+      "enumMap": {
+        "0": "linkDown",
+        "1": "ifSpeed-10M",
+        "2": "ifSpeed-100M",
+        "3": "ifSpeed-1000M"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.1.1.5",
+      "name": "chassisIfStatusTPDuplex",
+      "description": "The current TP Duplex of the interface.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "chassisIfStatusTPDuplex",
+      "transform": null,
+      "enumMap": {
+        "0": "linkDown",
+        "1": "half",
+        "2": "full"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.1.1.6",
+      "name": "chassisIfStatusFXStatus",
+      "description": "The current FX state of the interface.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "chassisIfStatusFXStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "linkDown",
+        "1": "linkUp"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.1.1.7",
+      "name": "chassisIfStatusFXSpeed",
+      "description": "The current FX speed of the interface.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "chassisIfStatusFXSpeed",
+      "transform": null,
+      "enumMap": {
+        "0": "linkDown",
+        "1": "ifSpeed-10M",
+        "2": "ifSpeed-100M",
+        "3": "ifSpeed-1000M"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.1.1.8",
+      "name": "chassisIfStatusFXDuplex",
+      "description": "The current FX Duplex of the interface.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "chassisIfStatusFXDuplex",
+      "transform": null,
+      "enumMap": {
+        "0": "linkDown",
+        "1": "half",
+        "2": "full"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.2.1.1",
+      "name": "chassisIfConfAdmin",
+      "description": "The desired state of the interface.(FST-80X only)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "chassisIfConfAdmin",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "enable"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.2.1.2",
+      "name": "chassisIfConfTPANmode",
+      "description": "TP autonegotiation configuration.(FST-80X only)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "chassisIfConfTPANmode",
+      "transform": null,
+      "enumMap": {
+        "0": "enable",
+        "1": "disable"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.2.1.3",
+      "name": "chassisIfConfTPSpeed",
+      "description": "TP Speed configuration.(FST-80X only)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "chassisIfConfTPSpeed",
+      "transform": null,
+      "enumMap": {
+        "0": "ifSpeed-10M",
+        "1": "ifSpeed-100M",
+        "2": "ifSpeed-1000M"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.2.1.4",
+      "name": "chassisIfConfTPDuplex",
+      "description": "TP Speed configuration.(FST-80X only)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "chassisIfConfTPDuplex",
+      "transform": null,
+      "enumMap": {
+        "0": "half",
+        "1": "full"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.2.1.5",
+      "name": "chassisIfConfTPFlowControl",
+      "description": "TP flow control configuration.(FST-80X only)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "chassisIfConfTPFlowControl",
+      "transform": null,
+      "enumMap": {
+        "0": "enable",
+        "1": "disable"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.2.1.6",
+      "name": "chassisIfConfLLCF",
+      "description": "LLCF configuration.(FST-80X only)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "chassisIfConfLLCF",
+      "transform": null,
+      "enumMap": {
+        "0": "enable",
+        "1": "disable"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.2.1.7",
+      "name": "chassisIfConfFXDuplex",
+      "description": "Fiber duplex configuration.(FST-80X only)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "chassisIfConfFXDuplex",
+      "transform": null,
+      "enumMap": {
+        "0": "half",
+        "1": "full"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.2.1.8",
+      "name": "chassisIfConfFXLLR",
+      "description": "LLR configuration.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "chassisIfConfFXLLR",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "enable"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.2.2.1.9",
+      "name": "chassisIfConfFXANbyPass",
+      "description": "Fiber AN by pass configuration.(GST-70X only)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "chassisIfConfFXANbyPass",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "enable"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.3.0",
+      "name": "chassisTemperature",
+      "description": "chassis current temperature(C).",
+      "type": "string",
+      "walk": false,
+      "metricKey": "chassisTemperature",
+      "transform": null,
+      "enumMap": null,
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.4.0",
+      "name": "chassisPowerStatus",
+      "description": "chassis current Power Status.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "chassisPowerStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on",
+        "2": "fail"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.5.0",
+      "name": "chassisFanStatus",
+      "description": "chassis current Fan Status.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "chassisFanStatus",
+      "transform": null,
+      "enumMap": {
+        "0": "off",
+        "1": "on",
+        "2": "fail"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.6.0",
+      "name": "chassisRedundant",
+      "description": "chassis Redundant Configuration.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "chassisRedundant",
+      "transform": null,
+      "enumMap": {
+        "0": "disable",
+        "1": "enable"
+      },
+      "module": "PLANET-MC1610MR-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.10456.2.625.7.0",
+      "name": "chassisSlotLocation",
+      "description": "Slot location description.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "chassisSlotLocation",
+      "transform": null,
+      "enumMap": null,
+      "module": "PLANET-MC1610MR-MIB"
+    }
+  ]
+}

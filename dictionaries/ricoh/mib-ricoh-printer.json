@@ -1,0 +1,347 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-ricoh-printer",
+  "name": "Ricoh Printer (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "printer",
+  "vendor": "Ricoh",
+  "vendorOidPrefix": "1.3.6.1.4.1.367",
+  "description": "Auto-compiled with libsmi from 1 MIB module(s). 26 readable OIDs under 1.3.6.1.4.1.367.",
+  "generated": {
+    "source": "mibs/ricoh",
+    "date": "2026-09-12",
+    "oidCount": 26,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "RicohPrivateMIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.1.1.1.0.0",
+      "name": "ricohSysName",
+      "description": "System name in English.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ricohSysName",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.1.1.2.0.0",
+      "name": "ricohSysVers",
+      "description": "Version (string) of the controller system software.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ricohSysVers",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.1.1.3.0.0",
+      "name": "ricohSysContact",
+      "description": "Name and contact information for the system administrator. No effect on the printer's state.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ricohSysContact",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.1.1.4.0.0",
+      "name": "ricohSysLocation",
+      "description": "Describes the location of the system.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ricohSysLocation",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.1.1.5.0.0",
+      "name": "ricohSysProductID",
+      "description": "Product identifier that refers to this system.",
+      "type": "oid",
+      "walk": false,
+      "metricKey": "ricohSysProductID",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.1.1.7.0.0",
+      "name": "ricohSysOemID",
+      "description": "Vendor name to identify OEM.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ricohSysOemID",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.1.1.8.0.0",
+      "name": "ricohSysLanguage",
+      "description": "Language setting for the panel display.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ricohSysLanguage",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.1.1.9.0.0",
+      "name": "ricohSysCountry",
+      "description": "Returns the value of the language set for the panel display.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ricohSysCountry",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.1.1.10.0.0",
+      "name": "ricohSysMIBVersion",
+      "description": "Version code (string) of supported RicohPrivateMIB. (Format: 'YYMMDDhhmmT')",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ricohSysMIBVersion",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.1.1.11.0.0",
+      "name": "ricohSysDeviceID",
+      "description": "ID represented by string which is equivalent of IEEE1284 DeviceIDString.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ricohSysDeviceID",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.2.1.4.0.0",
+      "name": "ricohEngSerialNumber",
+      "description": "Serial number (string) of the plotter engine.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "ricohEngSerialNumber",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.2.2.11.0.0",
+      "name": "ricohEngScanStatShare",
+      "description": "Scanner status. [GET]: shareAble(1): Scanner available for sharing, notShareAble(2): Scanner unavailable for sharing",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ricohEngScanStatShare",
+      "transform": null,
+      "enumMap": {
+        "1": "shareAble",
+        "2": "notShareAble"
+      },
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.2.2.12.0.0",
+      "name": "ricohEngScanStatContactGlass",
+      "description": "Status of paper on contact glass. [GET]: unknown(0): Unknown, paperExist(1): There is paper remaining, notPaperExist(2): Out of paper",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ricohEngScanStatContactGlass",
+      "transform": null,
+      "enumMap": {
+        "0": "unknown",
+        "1": "paperExist",
+        "2": "notPaperExist"
+      },
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.2.2.13.0.0",
+      "name": "ricohEngScanStatError",
+      "description": "Error status [GET]: noError(0): No error, feedError(2): ADF error (Jam), hardwareError(3): Hardware error (never occurs), servicemanCall(4): Service Call",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ricohEngScanStatError",
+      "transform": null,
+      "enumMap": {
+        "0": "noError",
+        "2": "feedError",
+        "3": "hardwareError",
+        "4": "servicemanCall"
+      },
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.2.2.14.0.0",
+      "name": "ricohEngScanStatFunctionCurrent",
+      "description": "Feature in use. [GET]: Set when a scanning application is using the current scanner resource. The bit is not set when something other than the scanning application (e.g., copier) is using it. Bit0:...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ricohEngScanStatFunctionCurrent",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.2.2.16.0.0",
+      "name": "ricohEngScanStatCompressBiLevel",
+      "description": "Bi-level compression. [GET]: Instance of ricohEngScanCompressionType.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ricohEngScanStatCompressBiLevel",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.2.2.17.0.0",
+      "name": "ricohEngScanStatCompressMultiLevel",
+      "description": "Multi-level compression. [GET]: Instance of ricohEngScanCompressionType.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ricohEngScanStatCompressMultiLevel",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.2.2.18.0.0",
+      "name": "ricohEngScanStatSummary",
+      "description": "Summary error status of scanning application. [GET]: Bit0:errorPaperOnContactGlass: Paper on contact glass, Bit1:errorADFLiftUp: ADF lifted up, Bit2:errorADFJam: ADF jam, Bit3:errorADFCoverOpen: AD...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ricohEngScanStatSummary",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.2.2.20.0.0",
+      "name": "ricohEngMFPStatSummary",
+      "description": "Summary error status of MFP(Platform). [GET]: Fixed to 0(ZERO).",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ricohEngMFPStatSummary",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.2.2.21.0.0",
+      "name": "ricohEngFAXStatSummary",
+      "description": "Summary error status of fax application. [GET]: Bit0:alertOther: 0x00000001, Bit1:alertTonerLow: 0x00000002, Bit2:alertOccupied: 0x00000004, Bit3:alertWarmUp: 0x00000008, Bit4:errorOther: 0x0000001...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ricohEngFAXStatSummary",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.2.2.22.0.0",
+      "name": "ricohEngCopyStatSummary",
+      "description": "Summary error status. [GET]: Bit0:alertOther: 0x00000001, Bit1:alertTonerLow: 0x00000002, Bit2:alertOccupied: 0x00000004, Bit3:alertWarmUp: 0x00000008, Bit4:errorOther: 0x00000010, Bit5:errorScanne...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ricohEngCopyStatSummary",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.2.16.1.0.0",
+      "name": "ricohEngScanColorType",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ricohEngScanColorType",
+      "transform": null,
+      "enumMap": {
+        "1": "blackAndWhite",
+        "2": "color"
+      },
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.2.19.1.0.0",
+      "name": "ricohEngCounterTotal",
+      "description": "Total of all counters for the devices. [GET]: Total printed copies.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ricohEngCounterTotal",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.2.19.2.0.0",
+      "name": "ricohEngCounterPrinter",
+      "description": "Counter for printer application. [GET]: Number of copies printed in printer mode.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ricohEngCounterPrinter",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.2.19.3.0.0",
+      "name": "ricohEngCounterFax",
+      "description": "Counter for FAX application. [GET]: Number of copies printed in FAX mode. 0 for models with no FAX mode.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ricohEngCounterFax",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.367.3.2.1.2.19.4.0.0",
+      "name": "ricohEngCounterCopier",
+      "description": "Counter for copy application. [GET]: Number of copies in copy mode. 0 for models with no copy mode.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "ricohEngCounterCopier",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "RicohPrivateMIB"
+    }
+  ]
+}

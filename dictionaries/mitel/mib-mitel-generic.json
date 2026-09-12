@@ -1,0 +1,4754 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-mitel-generic",
+  "name": "Mitel Generic (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "generic",
+  "vendor": "Mitel",
+  "vendorOidPrefix": "1.3.6.1.4.1.1027",
+  "description": "Auto-compiled with libsmi from 24 MIB module(s). 362 readable OIDs under 1.3.6.1.4.1.1027.",
+  "generated": {
+    "source": "mibs/mitel",
+    "date": "2026-09-12",
+    "oidCount": 362,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "MITEL-APPCMN-MIB",
+      "MITEL-APPLICATION-MON-MIB",
+      "MITEL-BCM-MIB",
+      "MITEL-BWM-MIB",
+      "MITEL-CMNALM-MIB",
+      "MITEL-DHCP-MIB",
+      "MITEL-DNSGROUP-MIB",
+      "MITEL-ERN",
+      "MITEL-IPFILTER-MIB",
+      "MITEL-IPLOGICAL-MIB",
+      "MITEL-IPNETDATABASE-MIB",
+      "MITEL-IPVIRTUAL-MIB",
+      "MITEL-IperaVoiceLAN-MIB",
+      "MITEL-LOGICAL-MIB",
+      "MITEL-MIB",
+      "MITEL-MN3100-CALL-CONTROL-MIB",
+      "MITEL-NAT-MIB",
+      "MITEL-PPPGROUP-MIB",
+      "MITEL-RIP2EXTENSION-MIB",
+      "MITEL-ROUTERGROUP-MIB",
+      "MITEL-SX2000-MIB",
+      "MITEL-TRAPGROUP-MIB",
+      "MITEL-VOICE-MAIL-MIB",
+      "MITEL-WANBACKUP-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.1027.3.2.1.0",
+      "name": "mitelIfNumber",
+      "description": "The number of MITEL proprietary interfaces (regardless of their current state) present on this system.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelIfNumber",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.3.2.2.1.1",
+      "name": "mitelIfTblType",
+      "description": "The type of interface. Additional values for mitelIfTblType are assigned by the Standards Group, through updating the syntax of the MitelIfType textual convention. This row is deleted automatically...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIfTblType",
+      "transform": null,
+      "enumMap": {
+        "1": "dnic"
+      },
+      "module": "MITEL-MIB",
+      "tc": "MitelIfType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.1.1.1.0",
+      "name": "mitelCs2000SysName",
+      "description": "The name of the call server.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "mitelCs2000SysName",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-SX2000-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.1.2.1.0",
+      "name": "mitelCs2000AlmLevel",
+      "description": "The current overall alarm level for the call server.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelCs2000AlmLevel",
+      "transform": null,
+      "enumMap": {
+        "1": "almClear",
+        "2": "almMinor",
+        "3": "almMajor",
+        "4": "almCritical"
+      },
+      "status": "mandatory",
+      "module": "MITEL-SX2000-MIB",
+      "tc": "MitelCs2000AlarmLevelType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.1.2.2.0",
+      "name": "mitelCs2000AlmDetectDate",
+      "description": "Defines when the alarm was detected.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "mitelCs2000AlmDetectDate",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-SX2000-MIB",
+      "tc": "DateAndTime"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.1.2.3.0",
+      "name": "mitelCs2000AlmNbrCategories",
+      "description": "Defines the number of associated entries in the categories table.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelCs2000AlmNbrCategories",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-SX2000-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.1.2.4.1.1",
+      "name": "mitelCs2000CatTblIndex",
+      "description": "Differentiates the different category reports for the call server. The first category will have an index value of 1, the second will have 2, etc. up to the last category report. The highest possibl...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelCs2000CatTblIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-SX2000-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.1.2.4.1.2",
+      "name": "mitelCs2000CatTblAvailable",
+      "description": "The number of available resources of this type of category on this call server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelCs2000CatTblAvailable",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-SX2000-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.1.2.4.1.3",
+      "name": "mitelCs2000CatTblUnavailable",
+      "description": "The number of unavailable resources of this type of category on this call server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelCs2000CatTblUnavailable",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-SX2000-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.1.2.4.1.4",
+      "name": "mitelCs2000CatTblLevel",
+      "description": "Defines the alarm level for this category on this call server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelCs2000CatTblLevel",
+      "transform": null,
+      "enumMap": {
+        "1": "almClear",
+        "2": "almMinor",
+        "3": "almMajor",
+        "4": "almCritical"
+      },
+      "status": "mandatory",
+      "module": "MITEL-SX2000-MIB",
+      "tc": "MitelCs2000AlarmLevelType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.1.2.4.1.5",
+      "name": "mitelCs2000CatTblMinorThresh",
+      "description": "The percentage unavailable threshold indicating a minor alarm on this call server category.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelCs2000CatTblMinorThresh",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-SX2000-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.1.2.4.1.6",
+      "name": "mitelCs2000CatTblMajorThresh",
+      "description": "The percentage unavailable threshold indicating a major alarm on this call server category.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelCs2000CatTblMajorThresh",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-SX2000-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.1.2.4.1.7",
+      "name": "mitelCs2000CatTblCriticalThresh",
+      "description": "The percentage unavailable threshold indicating a critical alarm on this call server category.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelCs2000CatTblCriticalThresh",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-SX2000-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.1.2.4.1.8",
+      "name": "mitelCs2000CatTblName",
+      "description": "The name of this resource category.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelCs2000CatTblName",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-SX2000-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.1.2.1.0",
+      "name": "mitelIpera3000IPUsrLicPurchased",
+      "description": "The number of the user license purchased.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelIpera3000IPUsrLicPurchased",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.1.2.2.0",
+      "name": "mitelIpera3000IPUsrLicUsed",
+      "description": "The number of the user license used.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelIpera3000IPUsrLicUsed",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.1.2.3.0",
+      "name": "mitelIpera3000IPDevLicPurchased",
+      "description": "The number of the device license purchased.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelIpera3000IPDevLicPurchased",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.1.2.4.0",
+      "name": "mitelIpera3000IPDevLicUsed",
+      "description": "The number of the device license used.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelIpera3000IPDevLicUsed",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.1.3.0",
+      "name": "mitelIpera3000CEID",
+      "description": "The Cluster Element ID is a number to identify a node that is in a cluster. This number is not guaranteed to be unique.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "mitelIpera3000CEID",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.1.4.0",
+      "name": "mitelIpera3000PNI",
+      "description": "The Primary Node ID is a number assigned to a cluster of nodes for a dialing plan. Though a good candidate to identify a cluster, it is not unique across a network.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "mitelIpera3000PNI",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.1.5.0",
+      "name": "mitelIpera3000ClusterName",
+      "description": "The Cluster Name is a unique name that clearly identifies a cluster. Introduced in 3300 6.0 release.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "mitelIpera3000ClusterName",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.2.1.0",
+      "name": "mitelIpera3000AlmLevel",
+      "description": "The current overall alarm level for the call server.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelIpera3000AlmLevel",
+      "transform": null,
+      "enumMap": {
+        "1": "almClear",
+        "2": "almMinor",
+        "3": "almMajor",
+        "4": "almCritical"
+      },
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB",
+      "tc": "MitelIpera3000AlarmLevelType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.2.2.0",
+      "name": "mitelIpera3000AlmDetectDate",
+      "description": "Defines when the alarm was detected.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "mitelIpera3000AlmDetectDate",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB",
+      "tc": "DateAndTime"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.2.3.0",
+      "name": "mitelIpera3000AlmNbrCategories",
+      "description": "Defines the number of associated entries in the categories table.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelIpera3000AlmNbrCategories",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.2.4.1.1",
+      "name": "mitelIpera3000CatTblIndex",
+      "description": "Differentiates the different category reports for the call server. The first category will have an index value of 1, the second will have 2, etc. up to the last category report. The highest possibl...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpera3000CatTblIndex",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.2.4.1.2",
+      "name": "mitelIpera3000CatTblAvailable",
+      "description": "The number of available resources of this type of category on this call server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpera3000CatTblAvailable",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.2.4.1.3",
+      "name": "mitelIpera3000CatTblUnavailable",
+      "description": "The number of unavailable resources of this type of category on this call server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpera3000CatTblUnavailable",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.2.4.1.4",
+      "name": "mitelIpera3000CatTblLevel",
+      "description": "Defines the alarm level for this category on this call server.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpera3000CatTblLevel",
+      "transform": null,
+      "enumMap": {
+        "1": "almClear",
+        "2": "almMinor",
+        "3": "almMajor",
+        "4": "almCritical"
+      },
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB",
+      "tc": "MitelIpera3000AlarmLevelType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.2.4.1.5",
+      "name": "mitelIpera3000CatTblMinorThresh",
+      "description": "The percentage unavailable threshold indicating a minor alarm on this call server category.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpera3000CatTblMinorThresh",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.2.4.1.6",
+      "name": "mitelIpera3000CatTblMajorThresh",
+      "description": "The percentage unavailable threshold indicating a major alarm on this call server category.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpera3000CatTblMajorThresh",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.2.4.1.7",
+      "name": "mitelIpera3000CatTblCriticalThresh",
+      "description": "The percentage unavailable threshold indicating a critical alarm on this call server category.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpera3000CatTblCriticalThresh",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.2.4.1.8",
+      "name": "mitelIpera3000CatTblName",
+      "description": "The name of this resource category.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelIpera3000CatTblName",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.2.5.0",
+      "name": "mitelIpera3000TrapAlmShutdownCause",
+      "description": "This value is only useful for the shutdown trap. This scalar is not persistent. A GET on this scalar will always return: shutdownCauseNotReported (11). Defines the last known shutdown cause. This s...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelIpera3000TrapAlmShutdownCause",
+      "transform": null,
+      "enumMap": {
+        "1": "resourcesLowReboot",
+        "2": "softwareFailureReboot",
+        "3": "hardwareFailureReboot",
+        "4": "softwareUpgradedReboot",
+        "5": "databaseRestoreReboot",
+        "6": "intermediateReboot",
+        "7": "l2SwitchFailureReboot",
+        "8": "remoteAlarmButtonReboot",
+        "9": "programmedReboot",
+        "10": "maintenanceCommandReboot",
+        "11": "maintenanceCommandShutdown",
+        "12": "shutdownCauseNotReported"
+      },
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB",
+      "tc": "MitelIpera3000ShutdownCause"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.2.6.0",
+      "name": "mitelIpera3000TrapAlmShutdownDetailedCause",
+      "description": "The detailed reason for the last shutdown: This value is only useful for the shutdown trap. This scalar is not persistent. A GET on this scalar will always return: shutdownCauseNotReported. resourc...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelIpera3000TrapAlmShutdownDetailedCause",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.2.7.0",
+      "name": "mitelIpera3000AlmResetCause",
+      "description": "Defines the last known reset cause. As best can be determined by the platform.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelIpera3000AlmResetCause",
+      "transform": null,
+      "enumMap": {
+        "1": "pushButtonReset",
+        "2": "softwareInitiatedReset",
+        "3": "powerOnReset",
+        "4": "systemFaultReset",
+        "5": "uknownReset"
+      },
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB",
+      "tc": "MitelIpera3000ResetCause"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.2.8.0",
+      "name": "mitelIpera3000AlmResetCauseBITS",
+      "description": "The reset bits for this system. hardReset(0), softReset(1), busMonitorReset(2), cpuSwWatchdogReset(3), checkStopReset(4), JTAGReset(5), CPLDWatchdogReset(6), powerOnReset(7), softwareReset(8), push...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelIpera3000AlmResetCauseBITS",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.4.1.1.1",
+      "name": "mitelIpera3000ResTblPriSysName",
+      "description": "The System Name of the primary ICP. Empty strigs are no allowed. The index column for the Resilience Table.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelIpera3000ResTblPriSysName",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.4.1.1.2",
+      "name": "mitelIpera3000ResTblPriCEID",
+      "description": "The Cluster Element ID of the primary ICP.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelIpera3000ResTblPriCEID",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.4.1.1.3",
+      "name": "mitelIpera3000ResTblClusterName",
+      "description": "The Cluster Name of group that the primary and secondary are a member of.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelIpera3000ResTblClusterName",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.4.1.1.4",
+      "name": "mitelIpera3000ResTblDetectDate",
+      "description": "Defines when the alarm was detected.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelIpera3000ResTblDetectDate",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB",
+      "tc": "DateAndTime"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.4.1.1.5",
+      "name": "mitelIpera3000ResTblStatus",
+      "description": "Status of the entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpera3000ResTblStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "firstSetFailover",
+        "2": "healthCheckComplete",
+        "3": "handOffComplete"
+      },
+      "status": "mandatory",
+      "module": "MITEL-IperaVoiceLAN-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.1.1.1",
+      "name": "mitelBWMCurrentZoneID",
+      "description": "Zone access points are defined between a zone and it's parent, i.e. [a]<--b-->[c]. This is the ID of the zone (a).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWMCurrentZoneID",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMZoneID"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.1.1.2",
+      "name": "mitelBWMCurrentParentZoneID",
+      "description": "A zone access point is defined between a zone and it's parent, i.e. [a]<--b-->[c] This is the ID of the parent zone (c).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWMCurrentParentZoneID",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMZoneID"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.1.1.3",
+      "name": "mitelBWMCurrentZAPID",
+      "description": "A zone access point is defined between a zone and it's parent, i.e. [a]<--b-->[c] This is the ID of the zone access point (b).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWMCurrentZAPID",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMZAPID"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.1.1.4",
+      "name": "mitelBWMCurrentZAPLabel",
+      "description": "This the zone access point label, as supplied by the user.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelBWMCurrentZAPLabel",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.1.1.5",
+      "name": "mitelBWMCurrentBandwidthInUse",
+      "description": "This is the bandwidth currently in use at the zone access point by managed voice over IP media streams. Units in kilobits per second.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "mitelBWMCurrentBandwidthInUse",
+      "transform": null,
+      "enumMap": null,
+      "units": "kilobits per second",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.1.1.6",
+      "name": "mitelBWMCurrentBandwidthLimit",
+      "description": "This is the bandwidth limit currently configured at the zone access point for managed voice over IP media streams. Units in kilobits per second.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "mitelBWMCurrentBandwidthLimit",
+      "transform": null,
+      "enumMap": null,
+      "units": "kilobits per second",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.1.1.7",
+      "name": "mitelBWMCurrentBandwidthRatio",
+      "description": "This is the ratio of mitelBWMCurrentBandwidthInUse to mitelBWMCurrentBandwidthLimit expressed as a percentage.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWMCurrentBandwidthRatio",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMPercentage"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.2.1.1",
+      "name": "mitelBWMCumZoneID",
+      "description": "Zone access points are defined between a zone and it's parent, i.e. [a]<--b-->[c]. This is the ID of the zone (a).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWMCumZoneID",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMZoneID"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.2.1.2",
+      "name": "mitelBWMCumParentZoneID",
+      "description": "A zone access point is defined between a zone and it's parent, i.e. [a]<--b-->[c] This is the ID of the parent zone (c).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWMCumParentZoneID",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMZoneID"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.2.1.3",
+      "name": "mitelBWMCumZAPID",
+      "description": "A zone access point is defined between a zone and it's parent, i.e. [a]<--b-->[c] This is the ID of the zone access point (b).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWMCumZAPID",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMZAPID"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.2.1.4",
+      "name": "mitelBWMCumZAPLabel",
+      "description": "This the zone access point label, as supplied by the user.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelBWMCumZAPLabel",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.2.1.5",
+      "name": "mitelBWMCumCACAdmissions",
+      "description": "This is the number of calls admitted through this zone access point by this ICP since the system was started or the zone access point was created, or since the cumulative statistics were cleared.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "mitelBWMCumCACAdmissions",
+      "transform": null,
+      "enumMap": null,
+      "units": "calls",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.2.1.6",
+      "name": "mitelBWMCumCACRejections",
+      "description": "This is the number of calls rejected due to bandwidth being fully utilized at this zone access point by this ICP since the system was started or the zone access point was created, or since the cumu...",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "mitelBWMCumCACRejections",
+      "transform": null,
+      "enumMap": null,
+      "units": "calls",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.2.1.7",
+      "name": "mitelBWMCumCACRejectionRatio",
+      "description": "This is the ratio of mitelBWMCACRejections to the sum of mitelBWMCACRejections and mitelBWMCACAdmissions (i.e. rejections to all calls) expressed as a percentage.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWMCumCACRejectionRatio",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMPercentage"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.3.1.1",
+      "name": "mitelBWM15MinZoneID",
+      "description": "Zone access points are defined between a zone and it's parent, i.e. [a]<--b-->[c]. This is the ID of the zone (a).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWM15MinZoneID",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMZoneID"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.3.1.2",
+      "name": "mitelBWM15MinParentZoneID",
+      "description": "A zone access point is defined between a zone and it's parent, i.e. [a]<--b-->[c] This is the ID of the parent zone (c).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWM15MinParentZoneID",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMZoneID"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.3.1.3",
+      "name": "mitelBWM15MinZAPID",
+      "description": "A zone access point is defined between a zone and it's parent, i.e. [a]<--b-->[c] This is the ID of the zone access point (b).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWM15MinZAPID",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMZAPID"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.3.1.4",
+      "name": "mitelBWM15MinDateAndTime",
+      "description": "The system date and time as set when the interval was recorded. Note that if the system date and time are changed while recording intervals, the interval with the earliest Date and Time value may n...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelBWM15MinDateAndTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "DateAndTime"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.3.1.5",
+      "name": "mitelBWM15MinZAPLabel",
+      "description": "This the zone access point label, as supplied by the user.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelBWM15MinZAPLabel",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.3.1.6",
+      "name": "mitelBWM15MinCACAdmissions",
+      "description": "This is the number of calls admitted through this zone access point by this ICP during the interval.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "mitelBWM15MinCACAdmissions",
+      "transform": null,
+      "enumMap": null,
+      "units": "calls",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.3.1.7",
+      "name": "mitelBWM15MinCACRejections",
+      "description": "This is the number of calls rejected due to bandwidth being fully utilized at this zone access point by this ICP during the interval.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "mitelBWM15MinCACRejections",
+      "transform": null,
+      "enumMap": null,
+      "units": "calls",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.3.1.8",
+      "name": "mitelBWM15MinCACRejectionRatio",
+      "description": "This is the ratio of mitelBWMCACRejections to the sum of mitelBWMCACRejections and mitelBWMCACAdmissions (i.e. rejections to all calls) expressed as a percentage.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWM15MinCACRejectionRatio",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMPercentage"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.3.1.9",
+      "name": "mitelBWM15MinAverageBandwidthUsed",
+      "description": "This is the average bandwidth in use at the zone access point by managed voice over IP media streams over the interval. Units in kilobits per second.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "mitelBWM15MinAverageBandwidthUsed",
+      "transform": null,
+      "enumMap": null,
+      "units": "kilobits per second",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.3.1.10",
+      "name": "mitelBWM15MinPeakBandwidthUsed",
+      "description": "This is the peak bandwidth limit in use at the zone access point by managed voice over IP media streams during the interval. Units in kilobits per second.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "mitelBWM15MinPeakBandwidthUsed",
+      "transform": null,
+      "enumMap": null,
+      "units": "kilobits per second",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.3.1.11",
+      "name": "mitelBWM15MinAverageAvailable",
+      "description": "This is the average bandwidth available at the zone access point for managed voice over IP media streams during the interval. Units in kilobits per second.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "mitelBWM15MinAverageAvailable",
+      "transform": null,
+      "enumMap": null,
+      "units": "kilobits per second",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.3.1.12",
+      "name": "mitelBWM15MinFinalBandwidthLimit",
+      "description": "This is the configured bandwidth limit for the zone access point for managed voice over IP media streams recorded at the end of the interval. Units in kilobits per second.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "mitelBWM15MinFinalBandwidthLimit",
+      "transform": null,
+      "enumMap": null,
+      "units": "kilobits per second",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.3.1.13",
+      "name": "mitelBWM15MinPeakBandwidthRatio",
+      "description": "This is the ratio of mitelBWMPeakBandwidthUsed to mitelBWMFinalBandwidthLimit expressed as a percentage.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWM15MinPeakBandwidthRatio",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMPercentage"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.3.1.14",
+      "name": "mitelBWM15MinPeakBwdthAboveLimit",
+      "description": "This is the difference between mitelBWMPeakBandwidthUsed and mitelBWMFinalBandwidthLimit if it was ever over the limit for the the zone access point for managed voice over IP media streams during t...",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "mitelBWM15MinPeakBwdthAboveLimit",
+      "transform": null,
+      "enumMap": null,
+      "units": "kilobits per second",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.4.1.1",
+      "name": "mitelBWM24HrZoneID",
+      "description": "Zone access points are defined between a zone and it's parent, i.e. [a]<--b-->[c]. This is the ID of the zone (a).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWM24HrZoneID",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMZoneID"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.4.1.2",
+      "name": "mitelBWM24HrParentZoneID",
+      "description": "A zone access point is defined between a zone and it's parent, i.e. [a]<--b-->[c] This is the ID of the parent zone (c).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWM24HrParentZoneID",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMZoneID"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.4.1.3",
+      "name": "mitelBWM24HrZAPID",
+      "description": "A zone access point is defined between a zone and it's parent, i.e. [a]<--b-->[c] This is the ID of the zone access point (b).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWM24HrZAPID",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMZAPID"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.4.1.4",
+      "name": "mitelBWM24HrDateAndTime",
+      "description": "The system date and time as set when the interval was recorded. Note that if the system date and time are changed while recording intervals, the interval with the earliest Date and Time value may n...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelBWM24HrDateAndTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "DateAndTime"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.4.1.5",
+      "name": "mitelBWM24HrZAPLabel",
+      "description": "This the zone access point label, as supplied by the user.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelBWM24HrZAPLabel",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.4.1.6",
+      "name": "mitelBWM24HrCACAdmissions",
+      "description": "This is the number of calls admitted through this zone access point by this ICP during the interval.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "mitelBWM24HrCACAdmissions",
+      "transform": null,
+      "enumMap": null,
+      "units": "calls",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.4.1.7",
+      "name": "mitelBWM24HrCACRejections",
+      "description": "This is the number of calls rejected due to bandwidth being fully utilized at this zone access point by this ICP during the interval.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "mitelBWM24HrCACRejections",
+      "transform": null,
+      "enumMap": null,
+      "units": "calls",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.4.1.8",
+      "name": "mitelBWM24HrCACRejectionRatio",
+      "description": "This is the ratio of mitelBWMCACRejections to the sum of mitelBWMCACRejections and mitelBWMCACAdmissions (i.e. rejections to all calls) expressed as a percentage.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWM24HrCACRejectionRatio",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMPercentage"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.4.1.9",
+      "name": "mitelBWM24HrAverageBandwidthUsed",
+      "description": "This is the average bandwidth in use at the zone access point by managed voice over IP media streams over the interval. Units in kilobits per second.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "mitelBWM24HrAverageBandwidthUsed",
+      "transform": null,
+      "enumMap": null,
+      "units": "kilobits per second",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.4.1.10",
+      "name": "mitelBWM24HrPeakBandwidthUsed",
+      "description": "This is the peak bandwidth limit in use at the zone access point by managed voice over IP media streams during the interval. Units in kilobits per second.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "mitelBWM24HrPeakBandwidthUsed",
+      "transform": null,
+      "enumMap": null,
+      "units": "kilobits per second",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.4.1.11",
+      "name": "mitelBWM24HrAverageAvailable",
+      "description": "This is the average bandwidth available at the zone access point for managed voice over IP media streams during the interval. Units in kilobits per second.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "mitelBWM24HrAverageAvailable",
+      "transform": null,
+      "enumMap": null,
+      "units": "kilobits per second",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.4.1.12",
+      "name": "mitelBWM24HrFinalBandwidthLimit",
+      "description": "This is the configured bandwidth limit for the zone access point for managed voice over IP media streams recorded at the end of the interval. Units in kilobits per second.",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "mitelBWM24HrFinalBandwidthLimit",
+      "transform": null,
+      "enumMap": null,
+      "units": "kilobits per second",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.4.1.13",
+      "name": "mitelBWM24HrPeakBandwidthRatio",
+      "description": "This is the ratio of mitelBWMPeakBandwidthUsed to mitelBWMFinalBandwidthLimit expressed as a percentage.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBWM24HrPeakBandwidthRatio",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BWM-MIB",
+      "tc": "MitelBWMPercentage"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.2.5.1.1.4.1.14",
+      "name": "mitelBWM24HrPeakBwdthAboveLimit",
+      "description": "This is the difference between mitelBWMPeakBandwidthUsed and mitelBWMFinalBandwidthLimit if it was ever over the limit for the the zone access point for managed voice over IP media streams during t...",
+      "type": "gauge",
+      "walk": true,
+      "metricKey": "mitelBWM24HrPeakBwdthAboveLimit",
+      "transform": null,
+      "enumMap": null,
+      "units": "kilobits per second",
+      "module": "MITEL-BWM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.1.3.9.1.2",
+      "name": "mitelCsErUnackTableToken",
+      "description": "The status of this row. A status of active indicates that an acknowledgement is still expected. Write a destroy(6) here to acknowledge this notification. A status of notInService indicates that no ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelCsErUnackTableToken",
+      "transform": null,
+      "enumMap": null,
+      "status": "mandatory",
+      "module": "MITEL-ERN"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.2.1.1.1.1",
+      "name": "mitelAppTblProductOid",
+      "description": "The OID value of the application.",
+      "type": "oid",
+      "walk": true,
+      "metricKey": "mitelAppTblProductOid",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-APPCMN-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.2.1.1.1.2",
+      "name": "mitelAppTblProductManufacturer",
+      "description": "Product Manufacturer of this application.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelAppTblProductManufacturer",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-APPCMN-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.2.1.1.1.3",
+      "name": "mitelAppTblProductName",
+      "description": "Product Name of this application.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelAppTblProductName",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-APPCMN-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.2.1.1.1.4",
+      "name": "mitelAppTblProductVersion",
+      "description": "Product Version of this application. The format is described in document xxx.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelAppTblProductVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-APPCMN-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.2.1.1.1.5",
+      "name": "mitelAppTblProductDescr",
+      "description": "Product description of this application that may not be contained in of the MIB-variables. If the description is not available then this should return an empty string '' as its value.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelAppTblProductDescr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-APPCMN-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.2.1.1.1.6",
+      "name": "mitelAppTblAppAlrmStatus",
+      "description": "Indicates the application's alarm level severity.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAppTblAppAlrmStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "cleared",
+        "2": "indeterminate",
+        "3": "critical",
+        "4": "major",
+        "5": "minor",
+        "6": "warning"
+      },
+      "module": "MITEL-APPCMN-MIB",
+      "tc": "ItuPerceivedSeverity"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.1.2.1.2.0",
+      "name": "mitelAppNumberOfApps",
+      "description": "Indicates the number of applications installed on this platform registered with the Applications Table.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelAppNumberOfApps",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-APPCMN-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.2.1.1.1.1.1",
+      "name": "mitelBCMPortIndex",
+      "description": "The interface identifier for this switch port. Usually corresponds to ifIndex in the ifTable.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBCMPortIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BCM-MIB",
+      "tc": "InterfaceIndex"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.2.1.1.1.1.2",
+      "name": "mitelBCMPortRxSAChanges",
+      "description": "The number of times the source address (SA) of good received packets has changed. A count greater than one generally indicates the port is connected to a repeater based network.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "mitelBCMPortRxSAChanges",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BCM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.2.1.1.1.1.3",
+      "name": "mitelBCMPortRxLastSA",
+      "description": "The last received source address on this port.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelBCMPortRxLastSA",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BCM-MIB",
+      "tc": "PhysAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.2.1.1.2.0",
+      "name": "mitelBCMChipCount",
+      "description": "The number of BCM ethernet chips in the system.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelBCMChipCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BCM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.2.1.1.3.1.1",
+      "name": "mitelBCMChipIndex",
+      "description": "The identifier for this switch chip.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBCMChipIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BCM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.2.1.1.3.1.2",
+      "name": "mitelBCMChipBIST",
+      "description": "The status of the BCM ethernet chip built-in-self-test (BIST). BCRAM(0) bit 2^0 - Buffer control RAM (only in BCM5380M) IPDBM(1) bit 2^1 - Internal packet data buffer memory MRAM(2) bit 2^2 - MIB R...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelBCMChipBIST",
+      "transform": null,
+      "enumMap": {
+        "0": "bcRam",
+        "1": "ipDbm",
+        "2": "mRam",
+        "3": "gmRam"
+      },
+      "module": "MITEL-BCM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.2.1.1.3.1.3",
+      "name": "mitelBCMChipRev",
+      "description": "The BCM ethernet chip revision ID.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelBCMChipRev",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-BCM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.2.1.1.3.1.4",
+      "name": "mitelBCMChipType",
+      "description": "The BCM ethernet chip type.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBCMChipType",
+      "transform": null,
+      "enumMap": {
+        "1": "bcm5380m",
+        "2": "bcm5325e",
+        "3": "bcm5324m",
+        "4": "bcmOther"
+      },
+      "module": "MITEL-BCM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.1.0",
+      "name": "mitelFltGrpAccessRestrictEnable",
+      "description": "This object indicates if the IP Access Restriction table is being used to filter or forward packets.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelFltGrpAccessRestrictEnable",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.2.1.1",
+      "name": "mitelLogTableAccessDef",
+      "description": "This object indicates what default access rights will apply to IP packets that do not match any of the access restrictions.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogTableAccessDef",
+      "transform": null,
+      "enumMap": {
+        "1": "filter",
+        "2": "forward"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.2.1.2",
+      "name": "mitelLogTableAllowSrcRouting",
+      "description": "This indicates whether IP datagrams received on this interface and containing a source route option are to be discarded or accepted.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogTableAllowSrcRouting",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.1",
+      "name": "mitelAccResTableIfIndex",
+      "description": "Identifies the destination interface to which this filter apply.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableIfIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.2",
+      "name": "mitelAccResTableOrder",
+      "description": "Specifies the order that the filters on a destination are searched.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableOrder",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.3",
+      "name": "mitelAccResTableType",
+      "description": "This object indicates what action should be taken when a match on this entry has occurred.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableType",
+      "transform": null,
+      "enumMap": {
+        "1": "filter",
+        "2": "forward",
+        "3": "neither"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.4",
+      "name": "mitelAccResTableSrcAddrFrom",
+      "description": "Defines the lower bound of the source IP address range. When determining address ranges, these four values are sequential: 255.255.255.254, 255.255.255.255, 0.0.0.0, and 0.0.0.1.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelAccResTableSrcAddrFrom",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.5",
+      "name": "mitelAccResTableSrcAddrTo",
+      "description": "Defines the upper bound of the source IP address range. When determining address ranges, these four values are sequential: 255.255.255.254, 255.255.255.255, 0.0.0.0, and 0.0.0.1.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelAccResTableSrcAddrTo",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.6",
+      "name": "mitelAccResTableSrcAddrOutsideRange",
+      "description": "This indicates whether action is taken on values outside of the source IP address range or within that range.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableSrcAddrOutsideRange",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.7",
+      "name": "mitelAccResTableDstAddrFrom",
+      "description": "Defines the lower bound of the destination IP address range. When determining address ranges, these four values are sequential: 255.255.255.254, 255.255.255.255, 0.0.0.0, and 0.0.0.1.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelAccResTableDstAddrFrom",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.8",
+      "name": "mitelAccResTableDstAddrTo",
+      "description": "Defines the upper bound of the destination IP address range. When determining address ranges, these four values are sequential: 255.255.255.254, 255.255.255.255, 0.0.0.0, and 0.0.0.1.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelAccResTableDstAddrTo",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.9",
+      "name": "mitelAccResTableDstAddrOutsideRange",
+      "description": "This indicates whether action is taken on values outside of the destination IP address range or within that range.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableDstAddrOutsideRange",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.10",
+      "name": "mitelAccResTableProtocolFrom",
+      "description": "Defines the lower bound of the protocol ID range. When determining protocol ID ranges, these four values are sequential: 254, 255, 0, and 1.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableProtocolFrom",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.11",
+      "name": "mitelAccResTableProtocolTo",
+      "description": "Defines the upper bound of the protocol ID range. When determining protocol ID ranges, these four values are sequential: 254, 255, 0, and 1.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableProtocolTo",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.12",
+      "name": "mitelAccResTableProtocolOutsideRange",
+      "description": "This indicates whether action is taken on values outside of the protocol ID range or within that range.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableProtocolOutsideRange",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.13",
+      "name": "mitelAccResTableSrcPortFrom",
+      "description": "Defines the lower bound of the source port number range. When determining port number ranges, these four values are sequential: 65534, 65535, 0, and 1.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableSrcPortFrom",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.14",
+      "name": "mitelAccResTableSrcPortTo",
+      "description": "Defines the upper bound of the source port number range. When determining port number ranges, these four values are sequential: 65534, 65535, 0, and 1.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableSrcPortTo",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.15",
+      "name": "mitelAccResTableSrcPortOutsideRange",
+      "description": "This indicates whether action is taken on values outside of the source port number range or within that range.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableSrcPortOutsideRange",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.16",
+      "name": "mitelAccResTableDstPortFrom",
+      "description": "Defines the lower bound of the destination port number range. When determining port number ranges, these four values are sequential: 65534, 65535, 0, and 1.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableDstPortFrom",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.17",
+      "name": "mitelAccResTableDstPortTo",
+      "description": "Defines the upper bound of the destination port number range. When determining port number ranges, these four values are sequential: 65534, 65535, 0, and 1.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableDstPortTo",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.18",
+      "name": "mitelAccResTableDstPortOutsideRange",
+      "description": "This indicates whether action is taken on values outside of the destination port number range or within that range.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableDstPortOutsideRange",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.19",
+      "name": "mitelAccResTableTcpSyn",
+      "description": "TCP header, synchronize sequence numbers flag.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableTcpSyn",
+      "transform": null,
+      "enumMap": {
+        "1": "any",
+        "2": "zero",
+        "3": "one"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.20",
+      "name": "mitelAccResTableTcpAck",
+      "description": "TCP header, acknowledgment flag.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableTcpAck",
+      "transform": null,
+      "enumMap": {
+        "1": "any",
+        "2": "zero",
+        "3": "one"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.21",
+      "name": "mitelAccResTableTcpFin",
+      "description": "TCP header, finish flag.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableTcpFin",
+      "transform": null,
+      "enumMap": {
+        "1": "any",
+        "2": "zero",
+        "3": "one"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.22",
+      "name": "mitelAccResTableTcpRst",
+      "description": "TCP header, reset flag.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableTcpRst",
+      "transform": null,
+      "enumMap": {
+        "1": "any",
+        "2": "zero",
+        "3": "one"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.23",
+      "name": "mitelAccResTableMatchIn",
+      "description": "Indicates whether the filter applies to datagrams received on the interface. Normally, either mitelAccResTableMatchIn or mitelAccResTableMatchOut should be enabled.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableMatchIn",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.24",
+      "name": "mitelAccResTableMatchOut",
+      "description": "Indicates whether the filter applies to datagrams transmitted on the interface. Normally, either mitelAccResTableMatchIn or mitelAccResTableMatchOut should be enabled.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableMatchOut",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.25",
+      "name": "mitelAccResTableLog",
+      "description": "Controls whether a log message is to be produced each time a datagram matches the filter.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableLog",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.26",
+      "name": "mitelAccResTableTrap",
+      "description": "Controls the generation of SNMP trap.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableTrap",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.27",
+      "name": "mitelAccResTableStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-IPFILTER-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.1.3.1.28",
+      "name": "mitelAccResTableCount",
+      "description": "Records the number of datagrams that matched this instance.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAccResTableCount",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPFILTER-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.2.1.1.1",
+      "name": "mitelNatGrpIfAddr",
+      "description": "The IP address of the interface.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelNatGrpIfAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-NAT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.2.1.1.2",
+      "name": "mitelNatGrpIfEnable",
+      "description": "Configures the router to enable IP NAT on a virtual interface.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelNatGrpIfEnable",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-NAT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.2.1.1.3",
+      "name": "mitelNatGrpIfUdpLifetime",
+      "description": "Specifies timeout in seconds for a NAT UDP session.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelNatGrpIfUdpLifetime",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-NAT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.2.1.1.4",
+      "name": "mitelNatGrpIfTcpLifetime",
+      "description": "Specifies timeout in seconds for a NAT TCP session.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelNatGrpIfTcpLifetime",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-NAT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.2.1.1.5",
+      "name": "mitelNatGrpIfTcpFinLifetime",
+      "description": "Specifies timeout in seconds for a NAT TCP session once a FIN was seen.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelNatGrpIfTcpFinLifetime",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-NAT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.2.1.1.6",
+      "name": "mitelNatGrpIfTcpRstLifetime",
+      "description": "Specifies timeout in seconds for a NAT TCP session once a RST was seen.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelNatGrpIfTcpRstLifetime",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-NAT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.2.1.1.7",
+      "name": "mitelNatGrpIfPingLifetime",
+      "description": "Specifies timeout in seconds for an ICMP echo.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelNatGrpIfPingLifetime",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-NAT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.2.1.1.8",
+      "name": "mitelNatGrpIfStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelNatGrpIfStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-NAT-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.2.1.1.9",
+      "name": "mitelNatGrpIfIndex",
+      "description": "The current Interface this entry pertains to.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelNatGrpIfIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-NAT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.2.2.1.1",
+      "name": "mitelNatGrpRedirOldAddr",
+      "description": "The IP address of the interface.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelNatGrpRedirOldAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-NAT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.2.2.1.2",
+      "name": "mitelNatGrpRedirProto",
+      "description": "Identifies the IP protocol to redirect, 6 or 17.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelNatGrpRedirProto",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-NAT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.2.2.1.3",
+      "name": "mitelNatGrpRedirOldPort",
+      "description": "Identifies the TCP or UDP port to redirect.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelNatGrpRedirOldPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-NAT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.2.2.1.4",
+      "name": "mitelNatGrpRedirNewAddr",
+      "description": "The IP address to which the datagram is to be redirected. Default is 0.0.0.0",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelNatGrpRedirNewAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-NAT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.2.2.1.5",
+      "name": "mitelNatGrpRedirNewPort",
+      "description": "The TCP or UDP port to which the datagram is to be redirected.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelNatGrpRedirNewPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-NAT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.2.2.1.6",
+      "name": "mitelNatGrpRedirStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelNatGrpRedirStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-NAT-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.1.0",
+      "name": "mitelDnsGrpDomainName",
+      "description": "The Domain Name for this device.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "mitelDnsGrpDomainName",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DNSGROUP-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.2.0",
+      "name": "mitelDnsGrpPrimaryDns",
+      "description": "Address of Primary DNS Server.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "mitelDnsGrpPrimaryDns",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DNSGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.3.0",
+      "name": "mitelDnsGrpSecondaryDns",
+      "description": "Address of Secondary DNS Server.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "mitelDnsGrpSecondaryDns",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DNSGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.4.0",
+      "name": "mitelDnsGrpQueryOrder",
+      "description": "Order which DNS is queried.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDnsGrpQueryOrder",
+      "transform": null,
+      "enumMap": {
+        "1": "local-first",
+        "2": "dns-first",
+        "3": "dns-only"
+      },
+      "module": "MITEL-DNSGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.5.0",
+      "name": "mitelDnsGrpAnswerTtl",
+      "description": "Answer TTL to return in locally generated responses.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDnsGrpAnswerTtl",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DNSGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.6.0",
+      "name": "mitelDnsGrpDnsPort",
+      "description": "Port to listen for DNS requests on.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDnsGrpDnsPort",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DNSGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.7.0",
+      "name": "mitelDnsGrpFilterEnabled",
+      "description": "DNS Security Filtering Status. If Enabled, filter DNS quries that are not from localhost.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDnsGrpFilterEnabled",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-DNSGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.9.1.0",
+      "name": "mitelDnsStatsQueryTotal",
+      "description": "Total DNS query count.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDnsStatsQueryTotal",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DNSGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.9.2.0",
+      "name": "mitelDnsStatsQueryFiltered",
+      "description": "The number of queries filtered and rejected.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDnsStatsQueryFiltered",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DNSGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.9.3.0",
+      "name": "mitelDnsStatsQueryLocal",
+      "description": "The number of queries processed locally.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDnsStatsQueryLocal",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DNSGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.9.4.0",
+      "name": "mitelDnsStatsQueryLocalFail",
+      "description": "The number of failed queries processed locally.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDnsStatsQueryLocalFail",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DNSGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.9.5.0",
+      "name": "mitelDnsStatsQueryExternal",
+      "description": "The number of queries forwarded to an external DNS.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDnsStatsQueryExternal",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DNSGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.9.6.0",
+      "name": "mitelDnsStatsQueryExternalFail",
+      "description": "The number of queries forwarded to an external DNS that failed.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDnsStatsQueryExternalFail",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DNSGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.9.7.0",
+      "name": "mitelDnsStatsQueryInvalid",
+      "description": "The number of invalid queries.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDnsStatsQueryInvalid",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DNSGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.10.1.1",
+      "name": "mitelDnsHostTableIpAddress",
+      "description": "The IP address to be associated with mitelDnsHostTableHostName",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDnsHostTableIpAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DNSGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.10.1.2",
+      "name": "mitelDnsHostTableHostName",
+      "description": "The entry's Host Name",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDnsHostTableHostName",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DNSGROUP-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.3.10.1.3",
+      "name": "mitelDnsHostTableRowStatus",
+      "description": "The current status of this entry",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDnsHostTableRowStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-DNSGROUP-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.4.1.1.1",
+      "name": "mitelIpVGrpPortTableNetAddr",
+      "description": "The IP address that uniquely identifies this entry.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelIpVGrpPortTableNetAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPVIRTUAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.4.1.1.2",
+      "name": "mitelIpVGrpPortTableNetMask",
+      "description": "The subnet mask assigned to this entry.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelIpVGrpPortTableNetMask",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPVIRTUAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.4.1.1.11",
+      "name": "mitelIpVGrpPortTableIfIndex",
+      "description": "The interface that this virtual is associated with.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpVGrpPortTableIfIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPVIRTUAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.4.1.1.12",
+      "name": "mitelIpVGrpPortTableStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpVGrpPortTableStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-IPVIRTUAL-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.4.1.1.15",
+      "name": "mitelIpVGrpPortTableCfgMethod",
+      "description": "Determines how this virtual interface is configured. `static' and `addressless' indicate that all information is provided by the SNMP manager, while `dhcp' and `ipcp' indicate that some or all of t...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpVGrpPortTableCfgMethod",
+      "transform": null,
+      "enumMap": {
+        "1": "static",
+        "2": "addressless",
+        "3": "dhcp",
+        "4": "ipcp"
+      },
+      "module": "MITEL-IPVIRTUAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.4.2.1.1",
+      "name": "mitelIpVGrpTableRipIpAddr",
+      "description": "The IP Address that uniquely defines this entry",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelIpVGrpTableRipIpAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPVIRTUAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.4.2.1.2",
+      "name": "mitelIpVGrpTableRipRxPkts",
+      "description": "This object indicates the number of RIP packets regardless of RIP type received on this virtual port.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "mitelIpVGrpTableRipRxPkts",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPVIRTUAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.4.2.1.3",
+      "name": "mitelIpVGrpTableRipRxBadPkts",
+      "description": "This object indicates the number of received packets that contained incorrect header/packet definition (ie: unsupported version(0), non-zero must be zero fields).",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "mitelIpVGrpTableRipRxBadPkts",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPVIRTUAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.4.2.1.4",
+      "name": "mitelIpVGrpTableRipRxBadRtes",
+      "description": "This object indicates the number of received packet entries that contained bad route information (ie: unsupported family(AF_INET), bad metric or a bad network address.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "mitelIpVGrpTableRipRxBadRtes",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPVIRTUAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.4.2.1.5",
+      "name": "mitelIpVGrpTableRipTxUpdates",
+      "description": "The number of updates sent on this interface.",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "mitelIpVGrpTableRipTxUpdates",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPVIRTUAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.5.1.1.1",
+      "name": "mitelIpLogAdvertisementAddress",
+      "description": "The IP destination address to be used for multicast Router Advertisements sent from the interface. The only permissible values are the all-systems multicast address, 224.0.0.1, or the limited-broad...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelIpLogAdvertisementAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPLOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.5.1.1.2",
+      "name": "mitelIpLogMaxAdvertisementInterval",
+      "description": "The maximum time allowed between sending multicast Router Advertisements from the interface, in seconds.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpLogMaxAdvertisementInterval",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPLOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.5.1.1.3",
+      "name": "mitelIpLogMinAdvertisementInterval",
+      "description": "The minimum time allowed between sending unsolicited multicast Router Advertisements from the interface, in seconds. Must be no greater than grIpLMaxAdvertisementInterval.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpLogMinAdvertisementInterval",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPLOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.5.1.1.4",
+      "name": "mitelIpLogAdvertisementLifetime",
+      "description": "The value to be placed in the Lifetime field of Router Advertisements sent from the interface, in seconds. Must be no less than grIpLMaxAdvertisementInterval.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpLogAdvertisementLifetime",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPLOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.5.1.1.5",
+      "name": "mitelIpLogPerformRouterDiscovery",
+      "description": "A flag indicating whether or not the host is to perform ICMP router discovery on the interface.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpLogPerformRouterDiscovery",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-IPLOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.5.1.1.6",
+      "name": "mitelIpLogSolicitationAddress",
+      "description": "The IP destination address to be used for sending Router Solicitations from the interface. The only permissible values are the all-routers multicast address, 224.0.0.2, or the limited-broadcast add...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelIpLogSolicitationAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPLOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.5.1.1.7",
+      "name": "mitelIpLogStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpLogStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-IPLOGICAL-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.6.1.0",
+      "name": "mitelBackupWANDestIndex",
+      "description": "Identifies the destination used to backup WAN Ethernet connection.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelBackupWANDestIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-WANBACKUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.6.2.0",
+      "name": "mitelBackupWANEnable",
+      "description": "Enables or disables the backup WAN Ethernet application.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelBackupWANEnable",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-WANBACKUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.6.3.0",
+      "name": "mitelBackupWANPollFreq",
+      "description": "This object tells the WAN Ethernet application how often it polls the destination.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelBackupWANPollFreq",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-WANBACKUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.6.4.0",
+      "name": "mitelBackupWANLinkStatus",
+      "description": "Shows whether the backup is up and running, or down.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelBackupWANLinkStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "down"
+      },
+      "module": "MITEL-WANBACKUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.6.5.1.1",
+      "name": "mitelBackupWANServerIPAddr",
+      "description": "The IP address of the destination. It is used by the Backup WAN Ethernet application to send monitoring requests to.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelBackupWANServerIPAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-WANBACKUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.6.5.1.2",
+      "name": "mitelBackupWANServerSubnetAddr",
+      "description": "The subnet address of the destination.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelBackupWANServerSubnetAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-WANBACKUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.6.5.1.3",
+      "name": "mitelBackupWANServerPrimary",
+      "description": "Specifies whether this server is primary.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBackupWANServerPrimary",
+      "transform": null,
+      "enumMap": {
+        "1": "primary",
+        "2": "secondary"
+      },
+      "module": "MITEL-WANBACKUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.1.6.5.1.4",
+      "name": "mitelBackupWANServerStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelBackupWANServerStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-WANBACKUP-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.1.1.0",
+      "name": "mitelGblGrpNegotiateFirst",
+      "description": "This attribute defines which PPP authentication protocol is negotiated first on incoming call. DEFAULT = chap",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelGblGrpNegotiateFirst",
+      "transform": null,
+      "enumMap": {
+        "1": "chap",
+        "2": "pap",
+        "3": "mschap"
+      },
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.1.2.0",
+      "name": "mitelGblGrpDynamicIpAddr",
+      "description": "This attribute defines the start address of the dynamic addres pool.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "mitelGblGrpDynamicIpAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.1.3.0",
+      "name": "mitelGblGrpNumDynamicIpAddr",
+      "description": "This attribute defines the number of dynamic IP addresses in the pool.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelGblGrpNumDynamicIpAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.1.4.0",
+      "name": "mitelGblGrpDynamicIpAdrrHoldoff",
+      "description": "This attribute defines the time in seconds before the same IP address can be reused after a call has been disconnected.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelGblGrpDynamicIpAdrrHoldoff",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.1.5.0",
+      "name": "mitelGblGrpRemDnsIpAddrHandling",
+      "description": "This attribute determines wether the system can accept or override the DNS IP address submitted by a remote system. DEFAULT = accept. Override has been superceded by overridewith.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelGblGrpRemDnsIpAddrHandling",
+      "transform": null,
+      "enumMap": {
+        "1": "accept",
+        "2": "override",
+        "3": "overridewith"
+      },
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.1.6.0",
+      "name": "mitelGblGrpPrimaryWinsServerIpAddr",
+      "description": "This attribute defines the Primary WINS server IP address of your Network.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "mitelGblGrpPrimaryWinsServerIpAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.1.7.0",
+      "name": "mitelGblGrpSecondaryWinsServerIpAddr",
+      "description": "This attribute defines the Secondary WINS server IP address of your Network.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "mitelGblGrpSecondaryWinsServerIpAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.2.1.1",
+      "name": "mitelRmtCfgTableIndex",
+      "description": "This object uniquely identifies this object",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelRmtCfgTableIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.2.1.2",
+      "name": "mitelRmtCfgTableIpAddrHandling",
+      "description": "This attribute determines wether the system can accept or override the DNS IP address submitted by a remote system. DEFAULT = accept.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelRmtCfgTableIpAddrHandling",
+      "transform": null,
+      "enumMap": {
+        "1": "accept",
+        "2": "override",
+        "3": "assign"
+      },
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.2.1.3",
+      "name": "mitelRmtCfgTableRemIpAddr",
+      "description": "The IP address to assign to remote if mitelRmtCfgTableIPAddrHandling is set to assign(3)",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelRmtCfgTableRemIpAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.2.1.4",
+      "name": "mitelRmtCfgTableStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelRmtCfgTableStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-PPPGROUP-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.2.1.5",
+      "name": "mitelRmtCfgTablePppMode",
+      "description": "The mode PPP will be using for the given destination.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelRmtCfgTablePppMode",
+      "transform": null,
+      "enumMap": {
+        "1": "client",
+        "2": "server"
+      },
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.3.1.1",
+      "name": "mitelPppOEthTableIndex",
+      "description": "Unique Identifier for an entry in PPP over Ethernet Table.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelPppOEthTableIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.3.1.2",
+      "name": "mitelPppOEthTableEnabled",
+      "description": "Is this PPPoE instance enabled or not.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelPppOEthTableEnabled",
+      "transform": null,
+      "enumMap": {
+        "0": "disabled",
+        "1": "enabled"
+      },
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.3.1.3",
+      "name": "mitelPppOEthTablePacketTimeout",
+      "description": "The time to wait, in seconds, for a valid response to a discovery packet before resending it. Warning: this value is doubled ever time a packet is resent.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelPppOEthTablePacketTimeout",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.3.1.4",
+      "name": "mitelPppOEthTablePacketRetries",
+      "description": "The number of times to resend discovery packets before giving up on the negotiation.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelPppOEthTablePacketRetries",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.3.1.5",
+      "name": "mitelPppOEthTableTotalRetries",
+      "description": "The RFC states that failure to receive a valid PADS packet should restart the negotiation. This count stops the system retrying indefinitely on duff PADS packets by capping the total number of retr...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelPppOEthTableTotalRetries",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.3.1.6",
+      "name": "mitelPppOEthTableServiceName",
+      "description": "The service we wish to request from the remote access concentrator. Examples of the use of the service name are to indicate an ISP or a class or quality of service. An empty string indicates any se...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelPppOEthTableServiceName",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.3.1.7",
+      "name": "mitelPppOEthTableACName",
+      "description": "Description of the remote access concentrator we wish to connect to. An empty string indicates no preference.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelPppOEthTableACName",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-PPPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.2.3.1.8",
+      "name": "mitelPppOEthTableStatus",
+      "description": "The entry's row status.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelPppOEthTableStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-PPPGROUP-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.1.0",
+      "name": "mitelDhcpRelayAgentEnable",
+      "description": "Configures the router to enable the DHCP/BOOTP relay agent. The default is disabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDhcpRelayAgentEnable",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.2.0",
+      "name": "mitelDhcpRelayAgentMaxHops",
+      "description": "This object determines the maximum allowed value the hops field of the received DHCP/BOOTP packet can have. Packets with higher values will be rejected.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDhcpRelayAgentMaxHops",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.3.1.1",
+      "name": "mitelDhcpRelayAgentServerAddr",
+      "description": "The IP address of the DHCP/BOOTP server.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpRelayAgentServerAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.3.1.2",
+      "name": "mitelDhcpRelayAgentServerName",
+      "description": "This object indicates the associated name of the DHCP/BOOTP server. It's main purpose is to be used as a reference name.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpRelayAgentServerName",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.3.1.3",
+      "name": "mitelDhcpRelayAgentServerStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpRelayAgentServerStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-DHCP-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.4.0",
+      "name": "mitelDhcpRelayAgentBroadcast",
+      "description": "Determines wether or not the DHCP Relay Agent should retransmit received BOOTP requests using local broadcast on each IP interface. The default is disabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDhcpRelayAgentBroadcast",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.1.1.0",
+      "name": "mitelDhcpServerGeneralEnable",
+      "description": "Configures the router to enable the DHCP/BOOTP server The default is disabled.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDhcpServerGeneralEnable",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled",
+        "3": "autoconfig"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.1.2.0",
+      "name": "mitelDhcpServerGeneralGateway",
+      "description": "Determines wether or not the local IP address associated with the interface on which the DHCP request was received should be advertised as a default gateway, and if yes with which priority.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDhcpServerGeneralGateway",
+      "transform": null,
+      "enumMap": {
+        "1": "this-if-first",
+        "2": "this-if-last",
+        "3": "not-this-if"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.1.3.0",
+      "name": "mitelDhcpServerGeneralRefDhcpServer",
+      "description": "Indicates if unknown requested options values should be obtained from another DHCP server (if possible). Adequate values are: - a specific IP address of a known DHCP server - a IP address specifiyi...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "mitelDhcpServerGeneralRefDhcpServer",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.1.4.0",
+      "name": "mitelDhcpServerGeneralPingStatus",
+      "description": "Enable/disable PING server functionality when passing out leases.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDhcpServerGeneralPingStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "enable",
+        "2": "disable"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.2.1.1",
+      "name": "mitelDhcpServerSubnetAddr",
+      "description": "The IP address of the subnet (key).",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerSubnetAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.2.1.2",
+      "name": "mitelDhcpServerSubnetSharedNet",
+      "description": "The IP address of another subnet that is on the same shared media as this subnet. The address of the shared subnet MUST also be configured on this server. The address 0.0.0.0 should be used if this...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerSubnetSharedNet",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.2.1.3",
+      "name": "mitelDhcpServerSubnetMask",
+      "description": "The subnet mask of the subnet.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerSubnetMask",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.2.1.4",
+      "name": "mitelDhcpServerSubnetGateway",
+      "description": "Indicate whether or not the IP address configured on the interface which received the DHCP request should be advertised as a default gateway. If yes, this also indicate the relative priority compar...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerSubnetGateway",
+      "transform": null,
+      "enumMap": {
+        "1": "this-if-first",
+        "2": "this-if-last",
+        "3": "not-this-if",
+        "4": "default"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.2.1.5",
+      "name": "mitelDhcpServerSubnetName",
+      "description": "The name of the configured subnet (informational only).",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerSubnetName",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.2.1.6",
+      "name": "mitelDhcpServerSubnetDeleteTree",
+      "description": "If this flag is set to enable, when the object is deleted, all the DHCP server configuration objects that depend on it will be deleted at the same time.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerSubnetDeleteTree",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.2.1.7",
+      "name": "mitelDhcpServerSubnetStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerSubnetStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-DHCP-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.3.1.1",
+      "name": "mitelDhcpServerRangeStart",
+      "description": "The IP address of the first address in the range (key).",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerRangeStart",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.3.1.2",
+      "name": "mitelDhcpServerRangeEnd",
+      "description": "The IP address of the last address in the range.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerRangeEnd",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.3.1.3",
+      "name": "mitelDhcpServerRangeSubnet",
+      "description": "The IP address of the subnet which includes this range. This IP address is used to find the corresponding mitelDhcpServerSubnetEntry",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerRangeSubnet",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.3.1.4",
+      "name": "mitelDhcpServerRangeProtocol",
+      "description": "How the addresses in that group should be assigned. none = the address are reserved by the administrator (do we need this ?).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerRangeProtocol",
+      "transform": null,
+      "enumMap": {
+        "1": "none",
+        "2": "bootp",
+        "3": "dhcp",
+        "4": "bootp-or-dhcp"
+      },
+      "module": "MITEL-DHCP-MIB",
+      "tc": "MitelDhcpServerProtocol"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.3.1.5",
+      "name": "mitelDhcpServerRangeGateway",
+      "description": "Indicate whether or not the IP address configured on the interface which received the DHCP request should be advertised as a default gateway. If yes, this also indicate the relative priority compar...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerRangeGateway",
+      "transform": null,
+      "enumMap": {
+        "1": "this-if-first",
+        "2": "this-if-last",
+        "3": "not-this-if",
+        "4": "default"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.3.1.6",
+      "name": "mitelDhcpServerRangeLeaseTime",
+      "description": "The duration of the lease of IP addressed in this range in seconds. A value of 4294967295 (0xFFFFFFFF) means that the lease is permanent. A value of 0 (0x00000000) means that the address in that ra...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerRangeLeaseTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.3.1.7",
+      "name": "mitelDhcpServerRangeName",
+      "description": "The name of the configured range (informational only).",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerRangeName",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.3.1.8",
+      "name": "mitelDhcpServerRangeMatchClassId",
+      "description": "If this flag is set to enable, IP addresses in this range will only be assigned to clients indicating a class ID identical to the range name.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerRangeMatchClassId",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.3.1.9",
+      "name": "mitelDhcpServerRangeDeleteTree",
+      "description": "If this flag is set to enable, when the object is deleted, all the DHCP server configuration objects that depend on it will be deleted at the same time.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerRangeDeleteTree",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.3.1.10",
+      "name": "mitelDhcpServerRangeStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerRangeStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-DHCP-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.4.1.1",
+      "name": "mitelDhcpServerStaticIpAddr",
+      "description": "The IP address of the entry (key). This IP address has to be unique across the DHCP server configuration. It can not be duplicated in another mitelDhcpServerStaticIpEntry and it can not be part of ...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerStaticIpAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.4.1.2",
+      "name": "mitelDhcpServerStaticIpSubnet",
+      "description": "The IP address of the subnet which includes this IP address. This IP address is used to find the corresponding mitelDhcpServerSubnetEntry",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerStaticIpSubnet",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.4.1.3",
+      "name": "mitelDhcpServerStaticIpProtocol",
+      "description": "How the addresses in that group should be assigned. none = the address are reserved by the administrator (do we need this ?).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerStaticIpProtocol",
+      "transform": null,
+      "enumMap": {
+        "1": "none",
+        "2": "bootp",
+        "3": "dhcp",
+        "4": "bootp-or-dhcp"
+      },
+      "module": "MITEL-DHCP-MIB",
+      "tc": "MitelDhcpServerProtocol"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.4.1.4",
+      "name": "mitelDhcpServerStaticIpGateway",
+      "description": "Indicate whether or not the IP address configured on the interface which received the DHCP request should be advertised as a default gateway. If yes, this also indicate the relative priority compar...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerStaticIpGateway",
+      "transform": null,
+      "enumMap": {
+        "1": "this-if-first",
+        "2": "this-if-last",
+        "3": "not-this-if",
+        "4": "default"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.4.1.5",
+      "name": "mitelDhcpServerStaticIpMacAddress",
+      "description": "The hardware type and hardware address of the client that has been assigned this IP address. The first octet of this object contains the hardware type from the 'htype' field of the BOOTP packet and...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerStaticIpMacAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.4.1.6",
+      "name": "mitelDhcpServerStaticIpClientId",
+      "description": "The client-id of the client that has been assigned this lease. The client-id is the value specified in option 61 (client-id option) when the lease was assigned. This object may be empty if the leas...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerStaticIpClientId",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.4.1.7",
+      "name": "mitelDhcpServerStaticIpName",
+      "description": "The name of the configured range (informational only).",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerStaticIpName",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.4.1.8",
+      "name": "mitelDhcpServerStaticIpDeleteTree",
+      "description": "If this flag is set to enable, when the object is deleted, all the DHCP server configuration objects that depend on it will be deleted at the same time.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerStaticIpDeleteTree",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.4.1.9",
+      "name": "mitelDhcpServerStaticIpStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerStaticIpStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-DHCP-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.5.1.1",
+      "name": "mitelDhcpServerOptionAddr",
+      "description": "This IP address keys in either the mitelDhcpServerRangeTable or the mitelDhcpServerStaticIpTable or the mitelDhcpServerSubnetTable. It indicates the realm in which that particular option/value pair...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerOptionAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.5.1.2",
+      "name": "mitelDhcpServerOptionNumber",
+      "description": "This is the option number as specified in RFC 2132: 'DHCP Options and BOOTP Vendor Extensions'. Some of the options are not configurable that way (like subnet mask). The options that are not config...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerOptionNumber",
+      "transform": null,
+      "enumMap": {
+        "1": "subnet-mask",
+        "2": "time-offset",
+        "3": "default-router",
+        "4": "time-server",
+        "5": "name-server",
+        "6": "dns-server",
+        "7": "log-server",
+        "8": "cookie-server",
+        "9": "lpr-server",
+        "10": "impress-server",
+        "11": "resource-location-server",
+        "12": "host-name",
+        "13": "boot-file-size",
+        "14": "merit-dump-file-name",
+        "15": "domain-name",
+        "16": "swap-server",
+        "17": "root-path",
+        "18": "extension-path",
+        "19": "ip-forwarding",
+        "20": "non-local-source-routing",
+        "21": "policy-filter",
+        "22": "max-datagram-reassembly",
+        "23": "default-ip-time-to-live",
+        "24": "path-MTU-aging-timeout",
+        "25": "path-MTU-plateau-table",
+        "26": "interface-MTU-value",
+        "27": "all-subnets-are-local",
+        "28": "broadcast-address",
+        "29": "perform-mask-discovery",
+        "30": "mask-supplier",
+        "31": "perform-router-discovery",
+        "32": "router-solicitation-address",
+        "33": "static-route",
+        "34": "trailer-encapsulation",
+        "35": "arp-cache-timeout",
+        "36": "ethernet-encapsulation",
+        "37": "tcp-default-ttl",
+        "38": "tcp-keepalive-interval",
+        "39": "tcp-keepalive-garbage",
+        "40": "nis-domain-name",
+        "41": "nis-server",
+        "42": "ntp-server",
+        "43": "vendor-specific-information",
+        "44": "netbios-ip-name-server",
+        "45": "netbios-ip-dgram-distrib-server",
+        "46": "netbios-ip-node-type",
+        "47": "netbios-ip-scope",
+        "48": "x-window-font-server",
+        "49": "x-window-display-manager",
+        "50": "requested-ip",
+        "51": "lease-time",
+        "52": "option-overload",
+        "53": "message-type",
+        "54": "server-identifier",
+        "55": "parameter-request-list",
+        "56": "message",
+        "57": "max-dhcp-message-size",
+        "58": "renewal-time-value-t1",
+        "59": "rebinding-time-value-t2",
+        "60": "vendor-class-identifier",
+        "61": "client-identifier",
+        "64": "nis-plus-domain",
+        "65": "nis-plus-server",
+        "66": "tftp-server-name",
+        "67": "bootfile-name",
+        "68": "mobile-ip-home-agent",
+        "69": "smtp-server",
+        "70": "pop3-server",
+        "71": "nntp-server",
+        "72": "www-server",
+        "73": "finger-server",
+        "74": "irc-server",
+        "75": "streettalk-server",
+        "76": "streettalk-directory-assistance-server"
+      },
+      "module": "MITEL-DHCP-MIB",
+      "tc": "MitelDhcpServerOptionList"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.5.1.3",
+      "name": "mitelDhcpServerOptionDisplayFormat",
+      "description": "This indicates how the value should be formated. This is informational only and may be ignored. If something else than default is specified, the system will attempt to display the value field accor...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerOptionDisplayFormat",
+      "transform": null,
+      "enumMap": {
+        "1": "default",
+        "2": "ip-address",
+        "3": "ascii-string",
+        "4": "integer",
+        "5": "octet-string"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.5.1.4",
+      "name": "mitelDhcpServerOptionValue",
+      "description": "This contains the value of the option encoded as it will be sent in the DHCP packets.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerOptionValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.5.1.5",
+      "name": "mitelDhcpServerOptionStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerOptionStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-DHCP-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.6.1.1",
+      "name": "mitelDhcpServerLeaseAddr",
+      "description": "The IP address described in that lease.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerLeaseAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.6.1.2",
+      "name": "mitelDhcpServerLeaseSubnet",
+      "description": "The IP address indicating the subnet to which the IP address belongs. That IP address can be used as a key in the mitelDhcpServerSubnetTable.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerLeaseSubnet",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.6.1.3",
+      "name": "mitelDhcpServerLeaseRange",
+      "description": "A reference the the IP address Range from which this IP address has been assigned. This IP address can be used as a key for the mitelDhcpServerRangeTable.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerLeaseRange",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.6.1.4",
+      "name": "mitelDhcpServerLeaseType",
+      "description": "The type of this address.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerLeaseType",
+      "transform": null,
+      "enumMap": {
+        "1": "static",
+        "2": "dynamic",
+        "3": "configuration-reserved",
+        "4": "server-reserved"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.6.1.5",
+      "name": "mitelDhcpServerLeaseEndTime",
+      "description": "The value that sysUpTime will be when the lease expires. A value of 4294967295 (i.e.: 0xFFFFFFFF) should be used for leases that have a lease time which is 'infinite' and for BOOTP leases.",
+      "type": "timeticks",
+      "walk": true,
+      "metricKey": "mitelDhcpServerLeaseEndTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.6.1.6",
+      "name": "mitelDhcpServerLeaseAllowedProtocol",
+      "description": "The type of protocol that is allowed to be used to serve this address. A type of none(1) indicates that the address is not available to be served (e.g.: a reserved address).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerLeaseAllowedProtocol",
+      "transform": null,
+      "enumMap": {
+        "1": "none",
+        "2": "bootp",
+        "3": "dhcp",
+        "4": "bootp-or-dhcp"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.6.1.7",
+      "name": "mitelDhcpServerLeaseServedProtocol",
+      "description": "The type of protocol that was used when this address was assigned. This object will have the value of none(1) if the lease has not been served.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerLeaseServedProtocol",
+      "transform": null,
+      "enumMap": {
+        "1": "none",
+        "2": "bootp",
+        "3": "dhcp"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.6.1.8",
+      "name": "mitelDhcpServerLeaseMacAddress",
+      "description": "The hardware type and hardware address of the client that has been assigned this lease. The first octet of this object contains the hardware type from the 'htype' field of the BOOTP packet and the ...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerLeaseMacAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.6.1.9",
+      "name": "mitelDhcpServerLeaseClientId",
+      "description": "The client-id of the client that has been assigned this lease. The client-id is the value specified in option 61 (client-id option) when the lease was assigned. This object may be empty if the leas...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerLeaseClientId",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.6.1.10",
+      "name": "mitelDhcpServerLeaseHostName",
+      "description": "The host name the client is configured with or if no host name was configured then the host name that the client supplied when requesting an address.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerLeaseHostName",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.6.1.11",
+      "name": "mitelDhcpServerLeaseDomainName",
+      "description": "The domain name assigned to the client.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerLeaseDomainName",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.6.1.12",
+      "name": "mitelDhcpServerLeaseServedTime",
+      "description": "The system time at which this entry was created.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerLeaseServedTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.6.1.13",
+      "name": "mitelDhcpServerLeaseStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerLeaseStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-DHCP-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.7.1.0",
+      "name": "mitelDhcpServerStatsNumServers",
+      "description": "This indicates the number of configured DHCP servers which are used for the DHCP Relay Agent.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDhcpServerStatsNumServers",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.7.2.0",
+      "name": "mitelDhcpServerStatsConfSubnets",
+      "description": "This indicates the number of configured DHCP subnets.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDhcpServerStatsConfSubnets",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.7.3.0",
+      "name": "mitelDhcpServerStatsConfRanges",
+      "description": "This indicates the number of configured DHCP ranges.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDhcpServerStatsConfRanges",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.7.4.0",
+      "name": "mitelDhcpServerStatsConfStatic",
+      "description": "This indicates the number of configured static IP addresses.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDhcpServerStatsConfStatic",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.7.5.0",
+      "name": "mitelDhcpServerStatsConfOptions",
+      "description": "This indicates the number of configured DHCP Options.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDhcpServerStatsConfOptions",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.7.6.0",
+      "name": "mitelDhcpServerStatsConfLeases",
+      "description": "This indicates the number of served leases.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelDhcpServerStatsConfLeases",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.8.1.1",
+      "name": "mitelDhcpServerVendorInfoID",
+      "description": "The unique vendor Identifier. May or not make sense to someone viewing the data.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerVendorInfoID",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.8.1.2",
+      "name": "mitelDhcpServerVendorInfoName",
+      "description": "The unique name of the vendor. The suggestion is that this value be recognizable to someone viewing the data.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerVendorInfoName",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.8.1.3",
+      "name": "mitelDhcpServerVendorInfoOptionDisplayFormat",
+      "description": "This indicates how the value should be formated. This is informational only and may be ignored. If something else than default is specified, the system will attempt to display the value field accor...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerVendorInfoOptionDisplayFormat",
+      "transform": null,
+      "enumMap": {
+        "1": "default",
+        "2": "ip-address",
+        "3": "ascii-string",
+        "4": "integer",
+        "5": "octet-string"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.8.1.4",
+      "name": "mitelDhcpServerVendorInfoOptionValue",
+      "description": "The options that the vendor, the vendor specified in VendorInfoID, would want to send to it's clients. All content of this object would only make sense to the receiving client, no syntax or sematic...",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpServerVendorInfoOptionValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.5.8.1.5",
+      "name": "mitelDhcpServerVendorInfoStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpServerVendorInfoStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-DHCP-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.6.1.1",
+      "name": "mitelDhcpClientIndex",
+      "description": "The Index of this Client. This object's value has a direct correlation to the interface on which DHCP client has been defined.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpClientIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.6.1.2",
+      "name": "mitelDhcpClientId",
+      "description": "The ID of this client",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpClientId",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.6.1.3",
+      "name": "mitelDhcpClientLeaseAction",
+      "description": "The object allows the user to release the current IP address assigned to this DHCP client. The user can also conduct a renew action to obtain an IP address for this client. By default this object w...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpClientLeaseAction",
+      "transform": null,
+      "enumMap": {
+        "1": "none",
+        "2": "release",
+        "3": "renew"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.6.1.4",
+      "name": "mitelDhcpClientIpAddress",
+      "description": "The IP of this client assigned by the DHCP server.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpClientIpAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.6.1.5",
+      "name": "mitelDhcpClientLeaseObtained",
+      "description": "The time the lease was acquired",
+      "type": "timeticks",
+      "walk": true,
+      "metricKey": "mitelDhcpClientLeaseObtained",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.6.1.6",
+      "name": "mitelDhcpClientLeaseExpired",
+      "description": "The time the current lease expires.",
+      "type": "timeticks",
+      "walk": true,
+      "metricKey": "mitelDhcpClientLeaseExpired",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.6.1.7",
+      "name": "mitelDhcpClientDefaultGateway",
+      "description": "The default gateway IP for this client learned from the DHCP server.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpClientDefaultGateway",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.6.1.8",
+      "name": "mitelDhcpClientServerIp",
+      "description": "The IP of this client's DHCP server.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpClientServerIp",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.6.1.9",
+      "name": "mitelDhcpClientPrimaryDns",
+      "description": "The primary DNS IP address of the client learned from the DHCP server.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpClientPrimaryDns",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.6.1.10",
+      "name": "mitelDhcpClientSecondaryDns",
+      "description": "The secondary DNS IP address of the client learned from the DHCP server.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpClientSecondaryDns",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.6.1.11",
+      "name": "mitelDhcpClientPrimaryWins",
+      "description": "The primary WINS IP address of the client learned from the DHCP server.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpClientPrimaryWins",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.6.1.12",
+      "name": "mitelDhcpClientSecondaryWins",
+      "description": "The secondary WINS IP address of the client learned from the DHCP server.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpClientSecondaryWins",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.6.1.13",
+      "name": "mitelDhcpClientDomainName",
+      "description": "The domain name of this client learned from the DHCP server.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpClientDomainName",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.6.1.14",
+      "name": "mitelDhcpClientName",
+      "description": "The name of this client.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelDhcpClientName",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.3.6.1.15",
+      "name": "mitelDhcpClientAdminState",
+      "description": "The admin status of this client.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelDhcpClientAdminState",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-DHCP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.1.1.1",
+      "name": "mitelLogicalTblIndex",
+      "description": "This object identifies the instance of this entry in the table.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogicalTblIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.1.1.2",
+      "name": "mitelLogicalTblDestName",
+      "description": "The Ascii string associated with this logical destination LAN. Default is Net N (N is mitelLogicalTblIndex).",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelLogicalTblDestName",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-LOGICAL-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.1.1.3",
+      "name": "mitelLogicalTblType",
+      "description": "This object determines whether this network interface is locally connected to a LAN or is connected to a LAN via a WAN. If this object is set to local(1) then this interface is associated with one ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogicalTblType",
+      "transform": null,
+      "enumMap": {
+        "1": "local",
+        "2": "remote"
+      },
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.1.1.4",
+      "name": "mitelLogicalTblAdminStatus",
+      "description": "The current desired state of this sub-layer. Default is down.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogicalTblAdminStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "up",
+        "2": "down"
+      },
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.2.1.1",
+      "name": "mitelLogWanTblCmprsn",
+      "description": "This object indicates whether or not this interface is to perform data compression. Default is none.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanTblCmprsn",
+      "transform": null,
+      "enumMap": {
+        "1": "none",
+        "2": "any",
+        "3": "gandalf",
+        "4": "stac"
+      },
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.2.1.2",
+      "name": "mitelLogWanTblCmprsnStatus",
+      "description": "This object describes the type of compression used on this destination.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanTblCmprsnStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "none",
+        "2": "fza",
+        "3": "fzap",
+        "4": "concryption",
+        "5": "encryption",
+        "6": "stacNoCheckMode",
+        "7": "stacLCBCheckMode",
+        "8": "stacCRCCheckMode",
+        "9": "stacSeqNumbers",
+        "10": "stacExtendedMode",
+        "11": "stacAscendLCBMode"
+      },
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.2.1.3",
+      "name": "mitelLogWanTblEncryptn",
+      "description": "This object describes whether or not PPP encryption is proposed to the peer. Default is disabled.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanTblEncryptn",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled"
+      },
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.2.1.4",
+      "name": "mitelLogWanTblBackupOvrflow",
+      "description": "This object determines if this interface is to attempt to bring up another link to the same destination if the traffic over the primary link exceeds a pre-determined threshold, in the case of overf...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanTblBackupOvrflow",
+      "transform": null,
+      "enumMap": {
+        "1": "disabled",
+        "2": "backup",
+        "3": "overflow"
+      },
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.2.1.5",
+      "name": "mitelLogWanTblThshld",
+      "description": "This object determines the transmit threshold which when exceeded will cause an attempt to bring up another path. The returned value of this object has no meaning when threshold overflow is not ena...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanTblThshld",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.2.1.6",
+      "name": "mitelLogWanTblConnTimer",
+      "description": "When threshold overflow is enabled this object determines the amount of time in seconds that the average threshold must be exceeded (or below) before another link is established (or disconnected). ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanTblConnTimer",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.2.1.7",
+      "name": "mitelLogWanTblDiscTimer",
+      "description": "The time a non-permanent link will remain connected without traffic. Default is 30.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanTblDiscTimer",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.2.1.8",
+      "name": "mitelLogWanTblProtocolType",
+      "description": "The protocol type that this destination is over. Default is ppp.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanTblProtocolType",
+      "transform": null,
+      "enumMap": {
+        "1": "ppp",
+        "2": "framerelay",
+        "3": "x25"
+      },
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.3.1.1",
+      "name": "mitelLogWanPortTblIndex",
+      "description": "Identifies the port index associated with this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanPortTblIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.3.1.2",
+      "name": "mitelLogWanPortTblWanType",
+      "description": "Indicates whether or not this link is to be used as a permanent or ondemand link. Default is ondemand",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanPortTblWanType",
+      "transform": null,
+      "enumMap": {
+        "1": "permanent",
+        "2": "ondemand",
+        "3": "incomming",
+        "4": "outgoing"
+      },
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.3.1.3",
+      "name": "mitelLogWanPortTblTransType",
+      "description": "The transport type that this destination is over. Default is HDLC.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanPortTblTransType",
+      "transform": null,
+      "enumMap": {
+        "1": "hdlc",
+        "2": "modem",
+        "3": "ethernet"
+      },
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.3.1.4",
+      "name": "mitelLogWanPortTblRetry",
+      "description": "Determines the retry count for dial up WAN circuits. Default is 10.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanPortTblRetry",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.3.1.5",
+      "name": "mitelLogWanPortTblRetryPeriod",
+      "description": "Determines the retry period in seconds for dial up WAN circuits. Default is 10 seconds.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanPortTblRetryPeriod",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.3.1.6",
+      "name": "mitelLogWanPortTblPrepend",
+      "description": "Indicates in most cases an Ascii string that will be prepended to the destination address. Default is NULL.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelLogWanPortTblPrepend",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.3.1.7",
+      "name": "mitelLogWanPortTblDestAddr",
+      "description": "Indicates the destination address that this interface will call (ie: phone number). Default is NULL.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelLogWanPortTblDestAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-LOGICAL-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.3.1.8",
+      "name": "mitelLogWanPortTblNextDestAddr",
+      "description": "Indicates the next destination address that this interface will call (ie: phone number). Default is NULL.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelLogWanPortTblNextDestAddr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-LOGICAL-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.3.1.9",
+      "name": "mitelLogWanPortTblChId",
+      "description": "This object is a unique identifier for this network channel. e.g. DLCI for frame-relay. The value must be within the defined range or if not used the DEFAULT value should be 0.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanPortTblChId",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.3.1.10",
+      "name": "mitelLogWanPortTblDialback",
+      "description": "Enables/disables dialback option. If enabled the system will drop the link and then dial the user back using the configured dial string or a dial string reported from an authentication server. Defa...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanPortTblDialback",
+      "transform": null,
+      "enumMap": {
+        "1": "enable",
+        "2": "disable"
+      },
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.3.1.11",
+      "name": "mitelLogWanPortTblAdminStatus",
+      "description": "The current desired state of this sub-layer. Default is down.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanPortTblAdminStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "up",
+        "2": "down"
+      },
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.3.1.12",
+      "name": "mitelLogWanPortTblOperStatus",
+      "description": "The current active state of this sub-layer.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanPortTblOperStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "connecting",
+        "2": "connected",
+        "3": "disconnecting",
+        "4": "disconnected",
+        "5": "retryExhausted"
+      },
+      "module": "MITEL-LOGICAL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.4.3.1.13",
+      "name": "mitelLogWanPortTblStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelLogWanPortTblStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-LOGICAL-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.1",
+      "name": "mitelIpRouteTblDestAddress",
+      "description": "The IP address of the destination network",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblDestAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-ROUTERGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.2",
+      "name": "mitelIpRouteTblGateAddress",
+      "description": "The Destination Gateway IP address.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblGateAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-ROUTERGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.3",
+      "name": "mitelIpRouteTblNetmaskAddress",
+      "description": "Specifies the netmask to apply to this network.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblNetmaskAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-ROUTERGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.4",
+      "name": "mitelIpRouteTblIfIndex",
+      "description": "Specifies the IfIndex to use as a key into the table. 0 & 1 are not used",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblIfIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-ROUTERGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.5",
+      "name": "mitelIpRouteTblMetric1",
+      "description": "Metric 1",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblMetric1",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-ROUTERGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.6",
+      "name": "mitelIpRouteTblMetric2",
+      "description": "Metric 2",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblMetric2",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-ROUTERGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.7",
+      "name": "mitelIpRouteTblMetric3",
+      "description": "Metric 3",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblMetric3",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-ROUTERGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.8",
+      "name": "mitelIpRouteTblMetric4",
+      "description": "Metric 4",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblMetric4",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-ROUTERGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.9",
+      "name": "mitelIpRouteTblMetric5",
+      "description": "Metric 5",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblMetric5",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-ROUTERGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.10",
+      "name": "mitelIpRouteTblRouteType",
+      "description": "Specifies what kind of route this is.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblRouteType",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-ROUTERGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.11",
+      "name": "mitelIpRouteTblRouteProto",
+      "description": "Specifies what protocol to use for the routing table entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblRouteProto",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-ROUTERGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.12",
+      "name": "mitelIpRouteTblRouteAge",
+      "description": "Specifies the age of the route entry in the table.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblRouteAge",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-ROUTERGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.13",
+      "name": "mitelIpRouteTblBlockLearning",
+      "description": "If enabled will block the learned route in question",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblBlockLearning",
+      "transform": null,
+      "enumMap": {
+        "1": "enable",
+        "2": "disable"
+      },
+      "module": "MITEL-ROUTERGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.14",
+      "name": "mitelIpRouteTblInUse",
+      "description": "Specifies whether this routing entry is in use or not",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblInUse",
+      "transform": null,
+      "enumMap": {
+        "1": "enable",
+        "2": "disable"
+      },
+      "module": "MITEL-ROUTERGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.15",
+      "name": "mitelIpRouteTblDisableLearned",
+      "description": "Determines whether learned routes should be disabled or not",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblDisableLearned",
+      "transform": null,
+      "enumMap": {
+        "1": "enable",
+        "2": "disable"
+      },
+      "module": "MITEL-ROUTERGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.16",
+      "name": "mitelIpRouteTblConvertStatic",
+      "description": "An action to convert a learned route into a static route.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblConvertStatic",
+      "transform": null,
+      "enumMap": {
+        "1": "enable",
+        "2": "disable"
+      },
+      "module": "MITEL-ROUTERGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.5.1.1.17",
+      "name": "mitelIpRouteTblRowStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIpRouteTblRowStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-ROUTERGROUP-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.6.1.1.1",
+      "name": "mitelIfConfTblSendDefaultRoutes",
+      "description": "This entry determines whether default routes are sent with RIP information for this IP address.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIfConfTblSendDefaultRoutes",
+      "transform": null,
+      "enumMap": {
+        "1": "enable",
+        "2": "disable"
+      },
+      "module": "MITEL-RIP2EXTENSION-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.6.1.1.2",
+      "name": "mitelIfConfTblRipType",
+      "description": "This entry determines which type of RIP to use on this IP address.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIfConfTblRipType",
+      "transform": null,
+      "enumMap": {
+        "1": "rip",
+        "2": "triggerRip"
+      },
+      "module": "MITEL-RIP2EXTENSION-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.6.1.1.3",
+      "name": "mitelIfConfTblRowStatus",
+      "description": "The current status of this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelIfConfTblRowStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "MITEL-RIP2EXTENSION-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.7.1.0",
+      "name": "mitelSnmpTrapGlobal",
+      "description": "Enable/disable all traps sending traps to remote locations.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelSnmpTrapGlobal",
+      "transform": null,
+      "enumMap": {
+        "1": "enable",
+        "2": "disable"
+      },
+      "module": "MITEL-TRAPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.7.2.0",
+      "name": "mitelSnmpTrapControl",
+      "description": "A bit string used to represent the enable/disable state of all traps in in the system. The bit positions are: 1 Cold Start 2 Link Down 4 Link Up 8 Authentication Failure 16 New Root (Rfc 1493) 32 T...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelSnmpTrapControl",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-TRAPGROUP-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.8.1.0",
+      "name": "mitelRouterDatabaseMajorVersion",
+      "description": "Major version of the IP Networking database",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelRouterDatabaseMajorVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPNETDATABASE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.8.1.8.2.0",
+      "name": "mitelRouterDatabaseMinorVersion",
+      "description": "Minor version of the IP Networking database",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelRouterDatabaseMinorVersion",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-IPNETDATABASE-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.9.1.1.1",
+      "name": "mitelCallCtrlFaultTblIndex",
+      "description": "The index of the fault table.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelCallCtrlFaultTblIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-MN3100-CALL-CONTROL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.9.1.1.1.1.0",
+      "name": "mitelAlmSysSeverity",
+      "description": "Overall system alarm level severity. This relates to the alarms in the mitelAlmActiveTable.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "mitelAlmSysSeverity",
+      "transform": null,
+      "enumMap": {
+        "1": "cleared",
+        "2": "indeterminate",
+        "3": "critical",
+        "4": "major",
+        "5": "minor",
+        "6": "warning"
+      },
+      "module": "MITEL-CMNALM-MIB",
+      "tc": "ItuPerceivedSeverity"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.9.1.1.1.2.0",
+      "name": "mitelAlmSysSeverityDetectTime",
+      "description": "The time that the overall system alarm level changed.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "mitelAlmSysSeverityDetectTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-CMNALM-MIB",
+      "tc": "DateAndTime"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.9.1.1.1.3.0",
+      "name": "mitelAlmSysSeverityDescr",
+      "description": "Additional details of what may have caused the system severity to change.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "mitelAlmSysSeverityDescr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-CMNALM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.9.1.1.2",
+      "name": "mitelCallCtrlFaultId",
+      "description": "The mitelCallCtrlFaultId indicates the id of the fault.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelCallCtrlFaultId",
+      "transform": null,
+      "enumMap": {
+        "1": "mitelCallCtrlFailedSeizeLine",
+        "2": "mitelCallCtrlDdiMappingError"
+      },
+      "module": "MITEL-MN3100-CALL-CONTROL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.9.1.1.2.1.1",
+      "name": "mitelAlmActiveTblIndex",
+      "description": "The index of this row. The unique object identifier of the application that is raising this alarm.",
+      "type": "oid",
+      "walk": true,
+      "metricKey": "mitelAlmActiveTblIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-CMNALM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.9.1.1.2.1.2",
+      "name": "mitelAlmActiveTblClass",
+      "description": "The class that the active alarm belongs to.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelAlmActiveTblClass",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-CMNALM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.9.1.1.2.1.3",
+      "name": "mitelAlmActiveTblType",
+      "description": "The type of alarm within its Class.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelAlmActiveTblType",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-CMNALM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.9.1.1.2.1.4",
+      "name": "mitelAlmActiveTblTypeName",
+      "description": "A unique descriptive name that represent the alarm type within the class.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelAlmActiveTblTypeName",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-CMNALM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.9.1.1.2.1.5",
+      "name": "mitelAlmActiveTblSeverity",
+      "description": "The current severity of the active alarm type.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAlmActiveTblSeverity",
+      "transform": null,
+      "enumMap": {
+        "1": "cleared",
+        "2": "indeterminate",
+        "3": "critical",
+        "4": "major",
+        "5": "minor",
+        "6": "warning"
+      },
+      "module": "MITEL-CMNALM-MIB",
+      "tc": "ItuPerceivedSeverity"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.9.1.1.2.1.6",
+      "name": "mitelAlmActiveTblSeverityDetectTime",
+      "description": "When the alarm type trasitioned to the current Severity level.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelAlmActiveTblSeverityDetectTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-CMNALM-MIB",
+      "tc": "DateAndTime"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.9.1.1.2.1.7",
+      "name": "mitelAlmActiveTblThresholdType",
+      "description": "Threshold information as to the cause of the current severity of the alarm type.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAlmActiveTblThresholdType",
+      "transform": null,
+      "enumMap": {
+        "1": "percentage",
+        "2": "absoluteValue",
+        "3": "indeterminate"
+      },
+      "module": "MITEL-CMNALM-MIB",
+      "tc": "MitelCmnAlarmThresholdType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.9.1.1.2.1.8",
+      "name": "mitelAlmActiveTblThresholdValue",
+      "description": "The actual threshold value that caused the severity to change. This relates directly to the threshold type.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelAlmActiveTblThresholdValue",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-CMNALM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.9.1.1.2.1.9",
+      "name": "mitelAlmActiveTblDescr",
+      "description": "A textual description of the cause of the current alarm type's severity.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelAlmActiveTblDescr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-CMNALM-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.9.1.1.3",
+      "name": "mitelCallCtrlFaultStatus",
+      "description": "The mitelCallCtrlFaultStatus indicates whether the fault is raised or cleared.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelCallCtrlFaultStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "set",
+        "2": "clear",
+        "3": "message"
+      },
+      "module": "MITEL-MN3100-CALL-CONTROL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.9.1.1.4",
+      "name": "mitelCallCtrlFaultOccur",
+      "description": "The mitelCallCtrlFaultOccur indicates the occurence of the fault since the last system restart",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "mitelCallCtrlFaultOccur",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-MN3100-CALL-CONTROL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.10.1.1.1",
+      "name": "mitelVoiceMailFaultTblIndex",
+      "description": "The index of the fault table.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelVoiceMailFaultTblIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-VOICE-MAIL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.10.1.1.2",
+      "name": "mitelVoiceMailFaultId",
+      "description": "The mitelVoiceMailFaultId indicates the id of the fault.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelVoiceMailFaultId",
+      "transform": null,
+      "enumMap": {
+        "1": "voiceMailDiskNearlyFull",
+        "2": "voiceMailDiskFull"
+      },
+      "module": "MITEL-VOICE-MAIL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.10.1.1.3",
+      "name": "mitelVoiceMailFaultStatus",
+      "description": "The mitelVoiceMailFaultStatus indicates whether the fault is set or cleared or transient",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelVoiceMailFaultStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "set",
+        "2": "clear",
+        "3": "message"
+      },
+      "module": "MITEL-VOICE-MAIL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.10.1.1.4",
+      "name": "mitelVoiceMailFaultOccur",
+      "description": "The mitelVoiceMailFaultOccur indicates the occurence of the fault since the last system restart",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "mitelVoiceMailFaultOccur",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-VOICE-MAIL-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.11.1.1.1",
+      "name": "mitelApplicationMonFaultTblIndex",
+      "description": "The index of the fault table.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelApplicationMonFaultTblIndex",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-APPLICATION-MON-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.11.1.1.2",
+      "name": "mitelApplicationMonFaultId",
+      "description": "The mitelApplicationMonFaultId indicates the id of the fault.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelApplicationMonFaultId",
+      "transform": null,
+      "enumMap": {
+        "1": "appMonTaskCrashed"
+      },
+      "module": "MITEL-APPLICATION-MON-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.11.1.1.3",
+      "name": "mitelApplicationMonFaultStatus",
+      "description": "The mitelApplicationMonFaultStatus indicates whether the fault is set or cleared or transient.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "mitelApplicationMonFaultStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "set",
+        "2": "clear",
+        "3": "message"
+      },
+      "module": "MITEL-APPLICATION-MON-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.11.1.1.4",
+      "name": "mitelApplicationMonFaultOccur",
+      "description": "The mitelApplicationMonFaultOccur indicates the occurence of the fault since the last system restart",
+      "type": "counter",
+      "walk": true,
+      "metricKey": "mitelApplicationMonFaultOccur",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-APPLICATION-MON-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.11.1.1.5",
+      "name": "mitelApplicationMonFaultDateTime",
+      "description": "The mitelApplicationMonFaultOccur indicates the datetime of when the fault was detected.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelApplicationMonFaultDateTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-APPLICATION-MON-MIB",
+      "tc": "DateAndTime"
+    },
+    {
+      "oid": "1.3.6.1.4.1.1027.4.11.1.1.6",
+      "name": "mitelApplicationMonFaultDescr",
+      "description": "The mitelApplicationMonFaultDescr contains a brief description of the fault.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "mitelApplicationMonFaultDescr",
+      "transform": null,
+      "enumMap": null,
+      "module": "MITEL-APPLICATION-MON-MIB",
+      "tc": "DisplayString"
+    }
+  ]
+}
