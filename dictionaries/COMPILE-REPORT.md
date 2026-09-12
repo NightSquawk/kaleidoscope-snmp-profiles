@@ -1,6 +1,6 @@
 # Compile report
 
-Generated 2026-09-12 by `pnpm compile` with smidump 0.4.8 (Docker). Do not edit; rerun the compiler.
+Generated 2026-09-12 by `pnpm compile` with smidump 0.4.8. Do not edit; rerun the compiler.
 
 ## Summary
 
@@ -119,9 +119,3 @@ Add a row to `registry/sysobjectid.yaml` to compile any of these. Top 80 by obje
 smidump exited abnormally on these inputs; they were skipped. Each was isolated by bisection so the rest of the directory still compiled. They are malformed by other parsers too.
 
 - `juniper/EX2500-BASE-MIB`
-
-## libsmi diagnostics
-
-1 distinct message(s); first 100.
-
-- timeout: the monitored command dumped core
