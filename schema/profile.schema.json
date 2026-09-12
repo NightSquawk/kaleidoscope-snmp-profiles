@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/NightSquawk/kaleidoscope-snmp-profiles/schema/profile.schema.json",
+  "title": "Kaleidoscope SNMP profile (format 1)",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["formatVersion", "slug", "name", "deviceCategory", "oids"],
+  "properties": {
+    "formatVersion": { "const": 1 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$", "maxLength": 60 },
+    "name": { "type": "string", "minLength": 1, "maxLength": 100 },
+    "description": { "type": "string" },
+    "role": { "type": "string", "enum": ["profile", "dictionary"], "default": "profile" },
+    "deviceCategory": {
+      "type": "string",
+      "enum": ["ups", "switch", "access_point", "server", "printer", "firewall", "nas", "generic"]
+    },
+    "vendor": { "type": ["string", "null"], "maxLength": 100 },
+    "vendorOidPrefix": { "type": ["string", "null"], "pattern": "^[0-9]+(\\.[0-9]+)*$" },
+    "extends": { "type": "string", "pattern": "^(none|[a-z0-9][a-z0-9-]*)$" },
+    "includes": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" }, "uniqueItems": true },
+    "priority": { "type": "integer", "minimum": 0, "maximum": 1000 },
+    "enabled": { "type": "boolean" },
+    "pollIntervalSeconds": { "type": "integer", "minimum": 30, "maximum": 86400 },
+    "discoveryIntervalSeconds": { "type": "integer", "minimum": 60, "maximum": 604800 },
+    "matchPatterns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["field", "pattern"],
+        "properties": {
+          "field": { "type": "string", "enum": ["sysObjectId", "sysDescr", "deviceCategory"] },
+          "pattern": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "metricsTemplate": { "type": "object" },
+    "oids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["oid", "name", "metricKey", "type", "walk"],
+        "properties": {
+          "oid": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]+)+$" },
+          "name": { "type": "string", "minLength": 1 },
+          "metricKey": { "type": "string", "minLength": 1 },
+          "description": { "type": ["string", "null"] },
+          "type": { "type": "string", "enum": ["integer", "string", "gauge", "counter", "timeticks", "oid"] },
+          "walk": { "type": "boolean" },
+          "cadenceTier": { "type": "string", "enum": ["every-poll", "discovery", "fallback-only"] },
+          "cadenceOverride": { "type": "string", "enum": ["every-poll", "discovery", "fallback-only"] },
+          "coalesceKey": { "type": "array", "items": { "type": "string" } },
+          "friendlyName": { "type": "string" },
+          "transform": { "type": ["string", "null"] },
+          "enumMap": { "type": ["object", "null"], "additionalProperties": { "type": "string" } }
+        }
+      }
+    },
+    "tested": {
+      "type": "object",
+      "required": ["device", "date"],
+      "properties": {
+        "device": { "type": "string" },
+        "firmware": { "type": "string" },
+        "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "by": { "type": "string" }
+      }
+    },
+    "generated": {
+      "type": "object",
+      "required": ["source", "date", "oidCount"],
+      "properties": {
+        "source": { "type": "string" },
+        "date": { "type": "string" },
+        "oidCount": { "type": "integer" }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "role": { "const": "dictionary" } }, "required": ["role"] },
+      "then": {
+        "required": ["vendorOidPrefix", "generated"],
+        "not": { "required": ["matchPatterns"] }
+      },
+      "else": {
+        "required": ["matchPatterns"]
+      }
+    }
+  ]
+}

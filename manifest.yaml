@@ -1,0 +1,38 @@
+# Repo manifest. Read by the Kaleidoscope importer and by tools/.
+formatVersion: 1
+
+# Namespace the importer prefixes onto every slug from this repo.
+namespace: nightsquawk/kaleidoscope-snmp-profiles
+
+# Bump when the set of profiles or dictionaries changes in a way that
+# existing tenants should re-sync for. Revision is monotonic.
+revision: 1
+
+# When a vendor profile in profiles/ has a vendor, a deviceCategory, and no
+# `extends`, the platform applies this parent. `extends: none` opts out.
+defaultParents:
+  printer: generic-printer
+  ups: generic-ups
+  switch: generic-switch
+  firewall: generic-firewall
+  nas: generic-nas
+  server: generic-server
+  access_point: generic-ap
+
+# Slugs that live in the Kaleidoscope monorepo's curated set, not here.
+# `extends` may reference these. tools/validate checks against this list.
+externalParents:
+  - generic-printer
+  - generic-ups
+  - generic-switch
+  - generic-firewall
+  - generic-nas
+  - generic-server
+  - generic-ap
+  - generic-network-device
+
+paths:
+  profiles: profiles
+  dictionaries: dictionaries
+  registry: registry/sysobjectid.yaml
+  mibs: mibs

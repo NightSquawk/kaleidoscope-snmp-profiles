@@ -1,0 +1,32 @@
+#!/bin/sh
+# Run libsmi's smidump inside the kaleidoscope-smitools container.
+#
+# Every directory listed in SMIPATH and SMIDUMP_MOUNTS (colon-separated) is
+# mounted read-only at its own host path, so file arguments and search paths
+# mean the same thing inside and outside the container. The compiler sets
+# both variables; for manual use, export them first:
+#
+#   export SMIPATH=/usr/share/snmp/mibs:/path/to/mibs/rfc
+#   export SMIDUMP_MOUNTS=/path/to/mibs
+#   tools/bin/smidump-docker -f identifiers -k /path/to/mibs/cisco/CISCO-SMI
+set -eu
+IMAGE=${SMIDUMP_IMAGE:-kaleidoscope-smitools}
+HERE=$(cd "$(dirname "$0")" && pwd)
+if ! docker image inspect "$IMAGE" >/dev/null 2>&1; then
+  echo "smidump-docker: building $IMAGE (one time)" >&2
+  docker build -q -t "$IMAGE" "$HERE/../docker/smitools" >/dev/null
+fi
+vols=""
+old_ifs=$IFS; IFS=:
+for p in ${SMIPATH:-} ${SMIDUMP_MOUNTS:-}; do
+  [ -n "$p" ] && [ -d "$p" ] && vols="$vols -v $p:$p:ro"
+done
+IFS=$old_ifs
+# SMIDUMP_TIMEOUT (seconds) is enforced inside the container: killing this
+# client process would not stop the container, and libsmi can hang.
+if [ -n "${SMIDUMP_TIMEOUT:-}" ]; then
+  # shellcheck disable=SC2086
+  exec docker run --rm $vols -e SMIPATH="${SMIPATH:-}" --entrypoint timeout "$IMAGE" -s KILL "$SMIDUMP_TIMEOUT" smidump "$@"
+fi
+# shellcheck disable=SC2086
+exec docker run --rm $vols -e SMIPATH="${SMIPATH:-}" "$IMAGE" "$@"

@@ -1,0 +1,61 @@
+# Copy to profiles/<category>/<vendor>/<slug>.yaml and fill in.
+# Full key reference: docs/FORMAT.md
+formatVersion: 1
+slug: vendor-device            # file name without .yaml; lowercase, hyphens, <= 60 chars
+name: Vendor Device
+description: One line on what this profile adds over the generic parent.
+deviceCategory: printer        # ups | switch | access_point | server | printer | firewall | nas | generic
+vendor: Vendor
+extends: generic-printer       # generic-<category>, or `none`; omit to take the manifest default
+priority: 5
+enabled: false                 # flip to true only after `tested` is filled in
+pollIntervalSeconds: 900       # printers 900, UPS 300, switches 60
+discoveryIntervalSeconds: 3600
+
+matchPatterns:
+  - field: sysObjectId
+    pattern: 1.3.6.1.4.1.99999   # vendor enterprise prefix, or a more specific product sub-tree
+
+metricsTemplate: {}
+
+oids:
+  # A live gauge: fetched every poll.
+  - oid: 1.3.6.1.4.1.99999.1.1.0
+    name: vendorSomethingLevel
+    metricKey: somethingPercent
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    transform: percent
+
+  # A static string: fetched on discovery only (hourly by default).
+  - oid: 1.3.6.1.4.1.99999.1.2.0
+    name: vendorSerialNumber
+    metricKey: serialNumber
+    type: string
+    walk: false
+    cadenceTier: discovery
+
+  # A status string that changes: force every-poll, or the platform will
+  # infer `discovery` from the string type.
+  - oid: 1.3.6.1.4.1.99999.1.3.0
+    name: vendorErrorState
+    metricKey: errorState
+    type: string
+    walk: false
+    cadenceTier: every-poll
+
+  # A table: walked, with its index column named so rows can be joined.
+  - oid: 1.3.6.1.4.1.99999.2.1.1.3
+    name: vendorTrayLevel
+    metricKey: trayLevel
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vendorTrayIndex]
+
+tested:
+  device: Vendor Model 1234
+  firmware: "1.0.0"
+  date: 2026-01-01
+  by: "@github-handle"

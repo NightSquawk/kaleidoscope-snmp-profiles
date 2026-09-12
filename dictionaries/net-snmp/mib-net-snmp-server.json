@@ -1,0 +1,719 @@
+{
+  "formatVersion": 1,
+  "slug": "mib-net-snmp-server",
+  "name": "Net-SNMP Server (MIB)",
+  "role": "dictionary",
+  "deviceCategory": "server",
+  "vendor": "Net-SNMP",
+  "vendorOidPrefix": "1.3.6.1.4.1.8072",
+  "description": "Auto-compiled with libsmi from 5 MIB module(s). 51 readable OIDs under 1.3.6.1.4.1.8072.",
+  "generated": {
+    "source": "mibs/net-snmp",
+    "date": "2026-09-12",
+    "oidCount": 51,
+    "compiler": "smidump 0.4.8",
+    "modules": [
+      "NET-SNMP-AGENT-MIB",
+      "NET-SNMP-EXAMPLES-MIB",
+      "NET-SNMP-EXTEND-MIB",
+      "NET-SNMP-PASS-MIB",
+      "NET-SNMP-VACM-MIB"
+    ]
+  },
+  "oids": [
+    {
+      "oid": "1.3.6.1.4.1.8072.1.2.1.1.4",
+      "name": "nsModuleName",
+      "description": "The module name that registered this OID.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nsModuleName",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-AGENT-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.2.1.1.5",
+      "name": "nsModuleModes",
+      "description": "The modes that the particular lower level handler can cope with directly.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nsModuleModes",
+      "transform": null,
+      "enumMap": {
+        "0": "getAndGetNext",
+        "1": "set",
+        "2": "getBulk"
+      },
+      "module": "NET-SNMP-AGENT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.2.1.1.6",
+      "name": "nsModuleTimeout",
+      "description": "The registered timeout. This is only meaningful for handlers that expect to return results at a later date (subagents, etc)",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsModuleTimeout",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-AGENT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.3.2.1.0",
+      "name": "nsExtendNumEntries",
+      "description": "The number of rows in the nsExtendConfigTable",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nsExtendNumEntries",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-EXTEND-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.3.2.2.1.2",
+      "name": "nsExtendCommand",
+      "description": "The full path of the command binary (or script) to run",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nsExtendCommand",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-EXTEND-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.3.2.2.1.3",
+      "name": "nsExtendArgs",
+      "description": "Any command-line arguments for the command",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nsExtendArgs",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-EXTEND-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.3.2.2.1.4",
+      "name": "nsExtendInput",
+      "description": "The standard input for the command",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nsExtendInput",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-EXTEND-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.3.2.2.1.5",
+      "name": "nsExtendCacheTime",
+      "description": "The length of time for which the output of this command will be cached. During this time, retrieving the output-related values will not reinvoke the command. A value of -1 indicates that the output...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsExtendCacheTime",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-EXTEND-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.3.2.2.1.6",
+      "name": "nsExtendExecType",
+      "description": "The mechanism used to invoke the command.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsExtendExecType",
+      "transform": null,
+      "enumMap": {
+        "1": "exec",
+        "2": "shell"
+      },
+      "module": "NET-SNMP-EXTEND-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.3.2.2.1.7",
+      "name": "nsExtendRunType",
+      "description": "Used to implement 'push-button' command invocation. The command for a 'run-on-read' entry will be invoked whenever one of the corresponding output-related instances is requested (and assuming the c...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsExtendRunType",
+      "transform": null,
+      "enumMap": {
+        "1": "run-on-read",
+        "2": "run-on-set",
+        "3": "run-command"
+      },
+      "module": "NET-SNMP-EXTEND-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.3.2.2.1.20",
+      "name": "nsExtendStorage",
+      "description": "The storage type for this conceptual row.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsExtendStorage",
+      "transform": null,
+      "enumMap": {
+        "1": "other",
+        "2": "volatile",
+        "3": "nonVolatile",
+        "4": "permanent",
+        "5": "readOnly"
+      },
+      "module": "NET-SNMP-EXTEND-MIB",
+      "tc": "StorageType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.3.2.2.1.21",
+      "name": "nsExtendStatus",
+      "description": "Used to create new rows in the table, in the standard manner. Note that is valid for an instance to be left with the value notInService(2) indefinitely - i.e. the meaning of 'abnormally long' (see ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsExtendStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "NET-SNMP-EXTEND-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.3.2.3.1.1",
+      "name": "nsExtendOutput1Line",
+      "description": "The first line of output from the command",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nsExtendOutput1Line",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-EXTEND-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.3.2.3.1.2",
+      "name": "nsExtendOutputFull",
+      "description": "The full output from the command, as a single string",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nsExtendOutputFull",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-EXTEND-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.3.2.3.1.3",
+      "name": "nsExtendOutNumLines",
+      "description": "The number of lines of output (and hence the number of rows in nsExtendOutputTable relating to this particular entry).",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsExtendOutNumLines",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-EXTEND-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.3.2.3.1.4",
+      "name": "nsExtendResult",
+      "description": "The return value of the command.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsExtendResult",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-EXTEND-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.3.2.4.1.2",
+      "name": "nsExtendOutLine",
+      "description": "A single line of output from the extension command.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nsExtendOutLine",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-EXTEND-MIB",
+      "tc": "DisplayString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.5.1.0",
+      "name": "nsCacheDefaultTimeout",
+      "description": "Default cache timeout value (unless overridden for a particular cache entry).",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nsCacheDefaultTimeout",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-AGENT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.5.2.0",
+      "name": "nsCacheEnabled",
+      "description": "Whether data caching is active overall.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nsCacheEnabled",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "NET-SNMP-AGENT-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.5.3.1.2",
+      "name": "nsCacheTimeout",
+      "description": "The length of time (?in seconds) for which the data in this particular cache entry will remain valid.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsCacheTimeout",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-AGENT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.5.3.1.3",
+      "name": "nsCacheStatus",
+      "description": "The current status of this particular cache entry. Acceptable values for Set requests are 'enabled(1)', 'disabled(2)' or 'empty(3)' (to clear all cached data). Requests to read the value of such an...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsCacheStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "enabled",
+        "2": "disabled",
+        "3": "empty",
+        "4": "cached",
+        "5": "expired"
+      },
+      "module": "NET-SNMP-AGENT-MIB",
+      "tc": "NetsnmpCacheStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.7.1.1.0",
+      "name": "nsDebugEnabled",
+      "description": "Whether the agent is configured to generate debugging output",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nsDebugEnabled",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "NET-SNMP-AGENT-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.7.1.2.0",
+      "name": "nsDebugOutputAll",
+      "description": "Whether the agent is configured to display all debugging output rather than filtering on individual debug tokens. Nothing will be generated unless nsDebugEnabled is also true(1)",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nsDebugOutputAll",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "NET-SNMP-AGENT-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.7.1.3.0",
+      "name": "nsDebugDumpPdu",
+      "description": "Whether the agent is configured to display raw packet dumps. This is unrelated to the nsDebugEnabled setting.",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "nsDebugDumpPdu",
+      "transform": null,
+      "enumMap": {
+        "1": "true",
+        "2": "false"
+      },
+      "module": "NET-SNMP-AGENT-MIB",
+      "tc": "TruthValue"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.7.1.4.1.4",
+      "name": "nsDebugTokenStatus",
+      "description": "Whether to generate debug output for the corresponding debug token prefix. Nothing will be generated unless both nsDebuggingEnabled is true(1) and this instance is active(1). Note that is valid for...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsDebugTokenStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "NET-SNMP-AGENT-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.7.2.1.1.3",
+      "name": "nsLogType",
+      "description": "The type of logging for this entry.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsLogType",
+      "transform": null,
+      "enumMap": {
+        "1": "stdout",
+        "2": "stderr",
+        "3": "file",
+        "4": "syslog",
+        "5": "callback"
+      },
+      "module": "NET-SNMP-AGENT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.7.2.1.1.4",
+      "name": "nsLogMaxLevel",
+      "description": "The maximum priority level for which this logging entry should be applied.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsLogMaxLevel",
+      "transform": null,
+      "enumMap": {
+        "0": "emergency",
+        "1": "alert",
+        "2": "critical",
+        "3": "error",
+        "4": "warning",
+        "5": "notice",
+        "6": "info",
+        "7": "debug"
+      },
+      "module": "NET-SNMP-AGENT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.7.2.1.1.5",
+      "name": "nsLogStatus",
+      "description": "Whether to generate logging output for this entry. Note that is valid for an instance to be left with the value notInService(2) indefinitely - i.e. the meaning of 'abnormally long' (see RFC 2579, R...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsLogStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "NET-SNMP-AGENT-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.8.1.1.2",
+      "name": "nsTransactionMode",
+      "description": "The mode number for the current operation being performed.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsTransactionMode",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-AGENT-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.9.1.1.2",
+      "name": "nsVacmContextMatch",
+      "description": "If the value of this object is exact(1), then all rows where the contextName exactly matches vacmAccessContextPrefix are selected. If the value of this object is prefix(2), then all rows where the ...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsVacmContextMatch",
+      "transform": null,
+      "enumMap": {
+        "1": "exact",
+        "2": "prefix"
+      },
+      "module": "NET-SNMP-VACM-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.9.1.1.3",
+      "name": "nsVacmViewName",
+      "description": "The MIB view authorised for the appropriate style of processing (as indicated by nsVacmToken). The interpretation of this value is the same as for the standard VACM ViewName objects.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nsVacmViewName",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-VACM-MIB",
+      "tc": "SnmpAdminString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.9.1.1.4",
+      "name": "nsVacmStorageType",
+      "description": "The storage type for this (group of) conceptual rows. Conceptual rows having the value 'permanent' need not allow write-access to any columnar objects in the row. The value of this object should be...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsVacmStorageType",
+      "transform": null,
+      "enumMap": {
+        "1": "other",
+        "2": "volatile",
+        "3": "nonVolatile",
+        "4": "permanent",
+        "5": "readOnly"
+      },
+      "module": "NET-SNMP-VACM-MIB",
+      "tc": "StorageType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.1.9.1.1.5",
+      "name": "nsVacmStatus",
+      "description": "The status of this (group of) conceptual rows. The RowStatus TC [RFC2579] requires that this DESCRIPTION clause states under which circumstances other objects in this row can be modified: The value...",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "nsVacmStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "NET-SNMP-VACM-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.1.1.0",
+      "name": "netSnmpExampleInteger",
+      "description": "This is a simple object which merely houses a writable integer. It's only purposes is to hold the value of a single integer. Writing to it will simply change the value for subsequent GET/GETNEXT/GE...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "netSnmpExampleInteger",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-EXAMPLES-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.1.2.0",
+      "name": "netSnmpExampleSleeper",
+      "description": "This is a simple object which is a basic integer. It's value indicates the number of seconds that the agent will take in responding to requests of this object. This is implemented in a way which wi...",
+      "type": "integer",
+      "walk": false,
+      "metricKey": "netSnmpExampleSleeper",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-EXAMPLES-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.1.3.0",
+      "name": "netSnmpExampleString",
+      "description": "This is a simple object which merely houses a writable string. It's only purposes is to hold the value of a single string. Writing to it will simply change the value for subsequent GET/GETNEXT/GETB...",
+      "type": "string",
+      "walk": false,
+      "metricKey": "netSnmpExampleString",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-EXAMPLES-MIB",
+      "tc": "SnmpAdminString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.2.1.1.2",
+      "name": "nsIETFWGChair1",
+      "description": "One of the names of the chairs for the IETF working group.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nsIETFWGChair1",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-EXAMPLES-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.2.1.1.3",
+      "name": "nsIETFWGChair2",
+      "description": "The other name, if one exists, of the chairs for the IETF working group.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "nsIETFWGChair2",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-EXAMPLES-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.2.2.1.2",
+      "name": "netSnmpHostAddressType",
+      "description": "The address type of then given host.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "netSnmpHostAddressType",
+      "transform": null,
+      "enumMap": {
+        "0": "unknown",
+        "1": "ipv4",
+        "2": "ipv6",
+        "3": "ipv4z",
+        "4": "ipv6z",
+        "16": "dns",
+        "25": "l2vpn"
+      },
+      "module": "NET-SNMP-EXAMPLES-MIB",
+      "tc": "InetAddressType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.2.2.1.3",
+      "name": "netSnmpHostAddress",
+      "description": "The address of then given host.",
+      "type": "string",
+      "walk": true,
+      "metricKey": "netSnmpHostAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-EXAMPLES-MIB",
+      "tc": "InetAddress"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.2.2.1.4",
+      "name": "netSnmpHostStorage",
+      "description": "The storage type for this conceptual row.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "netSnmpHostStorage",
+      "transform": null,
+      "enumMap": {
+        "1": "other",
+        "2": "volatile",
+        "3": "nonVolatile",
+        "4": "permanent",
+        "5": "readOnly"
+      },
+      "module": "NET-SNMP-EXAMPLES-MIB",
+      "tc": "StorageType"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.2.2.1.5",
+      "name": "netSnmpHostRowStatus",
+      "description": "The status of this conceptual row.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "netSnmpHostRowStatus",
+      "transform": null,
+      "enumMap": {
+        "1": "active",
+        "2": "notInService",
+        "3": "notReady",
+        "4": "createAndGo",
+        "5": "createAndWait",
+        "6": "destroy"
+      },
+      "module": "NET-SNMP-EXAMPLES-MIB",
+      "tc": "RowStatus"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.255.1.0",
+      "name": "netSnmpPassString",
+      "description": "Example string scalar object.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "netSnmpPassString",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-PASS-MIB",
+      "tc": "SnmpAdminString"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.255.2.1.2",
+      "name": "netSnmpPassInteger",
+      "description": "Example Integer (table) object.",
+      "type": "integer",
+      "walk": true,
+      "metricKey": "netSnmpPassInteger",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-PASS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.255.2.1.3",
+      "name": "netSnmpPassOID",
+      "description": "Example OID (table) object.",
+      "type": "oid",
+      "walk": true,
+      "metricKey": "netSnmpPassOID",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-PASS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.255.3.0",
+      "name": "netSnmpPassTimeTicks",
+      "description": "Example timetick object.",
+      "type": "timeticks",
+      "walk": false,
+      "metricKey": "netSnmpPassTimeTicks",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-PASS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.255.4.0",
+      "name": "netSnmpPassIpAddress",
+      "description": "Example IP Address object.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "netSnmpPassIpAddress",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-PASS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.255.5.0",
+      "name": "netSnmpPassCounter",
+      "description": "Example counter object. Note that this object will always return the value '42'.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "netSnmpPassCounter",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-PASS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.255.6.0",
+      "name": "netSnmpPassGauge",
+      "description": "Example Gauge object.",
+      "type": "gauge",
+      "walk": false,
+      "metricKey": "netSnmpPassGauge",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-PASS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.255.7.0",
+      "name": "netSnmpPassCounter64",
+      "description": "Example Counter64 object.",
+      "type": "counter",
+      "walk": false,
+      "metricKey": "netSnmpPassCounter64",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-PASS-MIB"
+    },
+    {
+      "oid": "1.3.6.1.4.1.8072.2.255.8.0",
+      "name": "netSnmpPassInteger64",
+      "description": "Example Opaque Integer64 object.",
+      "type": "string",
+      "walk": false,
+      "metricKey": "netSnmpPassInteger64",
+      "transform": null,
+      "enumMap": null,
+      "module": "NET-SNMP-PASS-MIB"
+    }
+  ]
+}

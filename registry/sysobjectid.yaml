@@ -1,0 +1,65 @@
+# sysObjectID identity registry.
+#
+# One row per enterprise OID prefix. Longest octet-anchored prefix wins.
+# Used by tools/compile to decide which dictionary a MIB belongs to, and by
+# Kaleidoscope's auto-match to pick vendor, category, and default parent
+# before it scans profile matchPatterns.
+#
+#   action: assign     (default) normal match; profileSlug optional
+#   action: downgrade  device claims this identity but answers as something
+#                      simpler; assign only profileSlug, skip category fallback
+#   action: ignore     never auto-assign anything for this prefix
+#   compile: false     exclude from dictionary compilation (identity only)
+#
+# Seeded 2026-09-11 from the Kaleidoscope monorepo's ENTERPRISE_REGISTRY.
+formatVersion: 1
+entries:
+  # ── UPS ──────────────────────────────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.318,   vendor: APC,        deviceCategory: ups,      defaultParent: generic-ups }
+  - { oidPrefix: 1.3.6.1.4.1.534,   vendor: Eaton,      deviceCategory: ups,      defaultParent: generic-ups }
+  - { oidPrefix: 1.3.6.1.4.1.3808,  vendor: CyberPower, deviceCategory: ups,      defaultParent: generic-ups }
+
+  # ── Firewalls ────────────────────────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.12356, vendor: Fortinet,   deviceCategory: firewall, defaultParent: generic-firewall }
+  - { oidPrefix: 1.3.6.1.4.1.2604,  vendor: Sophos,     deviceCategory: firewall, defaultParent: generic-firewall }
+  - { oidPrefix: 1.3.6.1.4.1.8741,  vendor: SonicWall,  deviceCategory: firewall, defaultParent: generic-firewall }
+  - { oidPrefix: 1.3.6.1.4.1.25461, vendor: Palo Alto,  deviceCategory: firewall, defaultParent: generic-firewall }
+
+  # ── Switches ─────────────────────────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.9,     vendor: Cisco,      deviceCategory: switch,   defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.2636,  vendor: Juniper,    deviceCategory: switch,   defaultParent: generic-switch }
+  - { oidPrefix: 1.3.6.1.4.1.14823, vendor: Aruba,      deviceCategory: switch,   defaultParent: generic-switch }
+
+  # ── HP: one enterprise, several product lines. Children win over the root.
+  - { oidPrefix: 1.3.6.1.4.1.11,          vendor: HP, deviceCategory: generic, defaultParent: null,
+      note: "HP enterprise root. Too broad to imply a category for auto-match; children below carry the real identity. All HP MIB objects compile into one mib-hp-generic dictionary." }
+  - { oidPrefix: 1.3.6.1.4.1.11.2.3.7,    vendor: HP, deviceCategory: switch,  defaultParent: generic-switch,
+      note: "hp.nm.system.netElement — ProCurve / Aruba-branded switches." }
+  - { oidPrefix: 1.3.6.1.4.1.11.2.3.9,    vendor: HP, deviceCategory: printer, defaultParent: generic-printer,
+      note: "hp.nm.system.netPeripheral — JetDirect-attached printers." }
+  # Example of a downgrade row. Fill in the exact sub-tree from a real
+  # JetDirect EX external print server's sysObjectID before enabling.
+  # - { oidPrefix: 1.3.6.1.4.1.11.2.3.9.<fill-in>, vendor: HP, deviceCategory: generic,
+  #     action: downgrade, profileSlug: generic-network-device, compile: false,
+  #     note: "JetDirect EX external print server: no Printer-MIB behind it." }
+
+  # ── Wireless ─────────────────────────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.41112, vendor: Ubiquiti,   deviceCategory: access_point, defaultParent: generic-ap }
+
+  # ── Printers ─────────────────────────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.2001,  vendor: OKI,        deviceCategory: printer,  defaultParent: generic-printer }
+  - { oidPrefix: 1.3.6.1.4.1.641,   vendor: Lexmark,    deviceCategory: printer,  defaultParent: generic-printer }
+  - { oidPrefix: 1.3.6.1.4.1.683,   vendor: Zebra,      deviceCategory: printer,  defaultParent: generic-printer }
+  - { oidPrefix: 1.3.6.1.4.1.10642, vendor: Zebra,      deviceCategory: printer,  defaultParent: generic-printer }
+  - { oidPrefix: 1.3.6.1.4.1.1602,  vendor: Canon,      deviceCategory: printer,  defaultParent: generic-printer }
+  - { oidPrefix: 1.3.6.1.4.1.2435,  vendor: Brother,    deviceCategory: printer,  defaultParent: generic-printer }
+
+  # ── Servers ──────────────────────────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.8072,  vendor: Net-SNMP,   deviceCategory: server,   defaultParent: generic-server }
+  - { oidPrefix: 1.3.6.1.4.1.311,   vendor: Microsoft,  deviceCategory: server,   defaultParent: generic-server }
+  - { oidPrefix: 1.3.6.1.4.1.23,    vendor: Novell,     deviceCategory: server,   defaultParent: generic-server,
+      note: "Octet-anchored: must NOT match 1.3.6.1.4.1.232 (Compaq/HPE)." }
+
+  # ── NAS ──────────────────────────────────────────────────────────────
+  - { oidPrefix: 1.3.6.1.4.1.6574,  vendor: Synology,   deviceCategory: nas,      defaultParent: generic-nas }
+  - { oidPrefix: 1.3.6.1.4.1.24681, vendor: QNAP,       deviceCategory: nas,      defaultParent: generic-nas }

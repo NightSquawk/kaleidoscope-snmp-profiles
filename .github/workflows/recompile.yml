@@ -1,0 +1,64 @@
+name: recompile
+
+# Rebuild dictionaries/ whenever the inputs change on main, and commit the
+# result. Contributors therefore only need to add MIB files and a registry
+# row; libsmi runs here, not on their machine.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'mibs/**'
+      - 'registry/**'
+      - 'manifest.yaml'
+      - 'tools/src/**'
+      - 'tools/package.json'
+      - 'tools/pnpm-lock.yaml'
+      - '.github/workflows/recompile.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: recompile-main
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  recompile:
+    # The commit this job pushes never matches the paths above except through
+    # dictionaries/, so it will not retrigger; the guard is belt and braces.
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq smitools
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: tools/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+        working-directory: tools
+      - run: pnpm compile --jobs 4
+        working-directory: tools
+      - run: pnpm validate
+        working-directory: tools
+      - name: commit regenerated dictionaries
+        run: |
+          git add -A dictionaries
+          if git diff --cached --quiet; then
+            echo "dictionaries unchanged"
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m "chore(dictionaries): recompile from ${GITHUB_SHA::12}" \
+                     -m "Triggered by ${{ github.event.head_commit.message && 'push' || 'workflow_dispatch' }} on main. See dictionaries/COMPILE-REPORT.md." \
+                     -- dictionaries
+          git push origin HEAD:main

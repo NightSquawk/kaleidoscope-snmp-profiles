@@ -1,0 +1,23 @@
+{
+  "name": "@kaleidoscope/snmp-profiles-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Validate and compile tooling for kaleidoscope-snmp-profiles",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "validate": "tsx src/validate.ts",
+    "compile": "node --max-old-space-size=8192 --import tsx src/compile-dictionaries.ts",
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "ajv": "^8.17.1",
+    "fast-xml-parser": "^5.11.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "yaml": "^2.6.1"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/NightSquawk/kaleidoscope-snmp-profiles/schema/registry.schema.json",
+  "title": "sysObjectID identity registry (format 1)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["formatVersion", "entries"],
+  "properties": {
+    "formatVersion": { "const": 1 },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["oidPrefix", "vendor", "deviceCategory"],
+        "properties": {
+          "oidPrefix": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]+)*$" },
+          "vendor": { "type": "string", "minLength": 1 },
+          "deviceCategory": {
+            "type": "string",
+            "enum": ["ups", "switch", "access_point", "server", "printer", "firewall", "nas", "generic"]
+          },
+          "defaultParent": { "type": ["string", "null"], "pattern": "^[a-z0-9][a-z0-9-]*$" },
+          "action": { "type": "string", "enum": ["assign", "downgrade", "ignore"], "default": "assign" },
+          "profileSlug": { "type": ["string", "null"], "pattern": "^[a-z0-9][a-z0-9-]*$" },
+          "compile": { "type": "boolean", "default": true },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+KSP-FIXTURE-MIB DEFINITIONS ::= BEGIN
+
+-- Smoke-test input for `pnpm compile`. Lives under the Cisco enterprise
+-- prefix only so the registry has a row for it; it is compiled to a temp
+-- directory by CI and never into dictionaries/.
+--
+-- It deliberately uses the shapes that broke the old regex parser:
+-- MODULE-IDENTITY listed first in IMPORTS, a textual convention imported
+-- from another module, an enumeration, a table, and a double dash inside
+-- a multi-line DESCRIPTION. (Not written literally here: in ASN.1 a double
+-- dash inside a comment ends the comment.)
+
+IMPORTS
+    MODULE-IDENTITY, OBJECT-TYPE, Integer32, Gauge32, Counter32, enterprises
+        FROM SNMPv2-SMI
+    DisplayString, TruthValue
+        FROM SNMPv2-TC;
+
+kspFixtureMIB MODULE-IDENTITY
+    LAST-UPDATED "202609110000Z"
+    ORGANIZATION "NightSquawk Tech"
+    CONTACT-INFO "https://github.com/NightSquawk/kaleidoscope-snmp-profiles"
+    DESCRIPTION "Compiler smoke-test module."
+    ::= { enterprises 9 99999 }
+
+kspObjects OBJECT IDENTIFIER ::= { kspFixtureMIB 1 }
+
+kspName OBJECT-TYPE
+    SYNTAX DisplayString (SIZE (0..64))
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Device name -- with a double dash inside the text
+                 that used to be mistaken for a comment."
+    ::= { kspObjects 1 }
+
+kspLoad OBJECT-TYPE
+    SYNTAX Gauge32
+    UNITS "percent"
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Current load."
+    ::= { kspObjects 2 }
+
+kspState OBJECT-TYPE
+    SYNTAX INTEGER { normal(1), warning(2), critical(3) }
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Overall state."
+    ::= { kspObjects 3 }
+
+kspEnabled OBJECT-TYPE
+    SYNTAX TruthValue
+    MAX-ACCESS read-write
+    STATUS current
+    DESCRIPTION "Imported textual convention."
+    ::= { kspObjects 4 }
+
+kspPortTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF KspPortEntry
+    MAX-ACCESS not-accessible
+    STATUS current
+    DESCRIPTION "Per-port counters."
+    ::= { kspObjects 5 }
+
+kspPortEntry OBJECT-TYPE
+    SYNTAX KspPortEntry
+    MAX-ACCESS not-accessible
+    STATUS current
+    DESCRIPTION "One port."
+    INDEX { kspPortIndex }
+    ::= { kspPortTable 1 }
+
+KspPortEntry ::= SEQUENCE {
+    kspPortIndex   Integer32,
+    kspPortInOctets Counter32
+}
+
+kspPortIndex OBJECT-TYPE
+    SYNTAX Integer32 (1..1024)
+    MAX-ACCESS not-accessible
+    STATUS current
+    DESCRIPTION "Port index."
+    ::= { kspPortEntry 1 }
+
+kspPortInOctets OBJECT-TYPE
+    SYNTAX Counter32
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Octets received."
+    ::= { kspPortEntry 2 }
+
+END

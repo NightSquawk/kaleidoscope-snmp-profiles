@@ -1,0 +1,7 @@
+# Raw MIB sources are plain text and stay in regular git (no LFS): they diff,
+# blame, and check out in CI without quota. Normalise line endings.
+mibs/** text eol=lf
+mibs/** linguist-vendored=true
+
+# Generated dictionaries are large JSON; keep diffs readable.
+dictionaries/**/*.json -diff linguist-generated=true

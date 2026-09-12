@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/NightSquawk/kaleidoscope-snmp-profiles/schema/manifest.schema.json",
+  "title": "Repo manifest (format 1)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["formatVersion", "namespace", "revision", "defaultParents", "externalParents", "paths"],
+  "properties": {
+    "formatVersion": { "const": 1 },
+    "namespace": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*/[a-z0-9][a-z0-9._-]*$" },
+    "revision": { "type": "integer", "minimum": 1 },
+    "defaultParents": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" }
+    },
+    "externalParents": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+      "uniqueItems": true
+    },
+    "paths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["profiles", "dictionaries", "registry", "mibs"],
+      "properties": {
+        "profiles": { "type": "string" },
+        "dictionaries": { "type": "string" },
+        "registry": { "type": "string" },
+        "mibs": { "type": "string" }
+      }
+    }
+  }
+}
