@@ -1,0 +1,1206 @@
+formatVersion: 1
+slug: citrix-netscaler
+name: Citrix NetScaler
+description: "Converted from Datadog's citrix-netscaler.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: Citrix
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.5951.1}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.2.1.0
+    name: ifNumber
+    metricKey: ifNumber
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.14
+    name: ifInErrors
+    metricKey: ifInErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.13
+    name: ifInDiscards
+    metricKey: ifInDiscards
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.20
+    name: ifOutErrors
+    metricKey: ifOutErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.19
+    name: ifOutDiscards
+    metricKey: ifOutDiscards
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.1
+    name: ifName
+    metricKey: ifName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [column-tag, metadata], tags: [interface], fields: [interface.name], features: [cross-table tag from ifXTable], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.18
+    name: ifAlias
+    metricKey: ifAlias
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [column-tag, metadata], tags: [interface_alias], fields: [interface.alias], features: [cross-table tag from ifXTable], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.7
+    name: ifAdminStatus
+    metricKey: ifAdminStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    enumMap: {"1": up, "2": down, "3": testing}
+    datadog: {as: [metric, metadata], fields: [interface.admin_status], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.8
+    name: ifOperStatus
+    metricKey: ifOperStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    enumMap: {"1": up, "2": down, "3": testing, "4": unknown, "5": dormant, "6": notPresent, "7": lowerLayerDown}
+    datadog: {as: [metric, metadata], fields: [interface.oper_status], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.5
+    name: ifSpeed
+    metricKey: ifSpeed
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.7
+    name: ifHCInUcastPkts
+    metricKey: ifHCInUcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.8
+    name: ifHCInMulticastPkts
+    metricKey: ifHCInMulticastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.9
+    name: ifHCInBroadcastPkts
+    metricKey: ifHCInBroadcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.11
+    name: ifHCOutUcastPkts
+    metricKey: ifHCOutUcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.12
+    name: ifHCOutMulticastPkts
+    metricKey: ifHCOutMulticastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.13
+    name: ifHCOutBroadcastPkts
+    metricKey: ifHCOutBroadcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.6
+    name: ifHCInOctets
+    metricKey: ifHCInOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.10
+    name: ifHCOutOctets
+    metricKey: ifHCOutOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.15
+    name: ifHighSpeed
+    metricKey: ifHighSpeed
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.41.1.0
+    name: resCpuUsage
+    metricKey: resCpuUsage
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [cpu.usage], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.41.2.0
+    name: resMemUsage
+    metricKey: resMemUsage
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [memory.usage], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.23.4.0
+    name: haTotStateTransitions
+    metricKey: haTotStateTransitions
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.haTotStateTransitions], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.23.5.0
+    name: haTimeofLastStateTransition
+    metricKey: haTimeofLastStateTransition
+    type: timeticks
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.haTimeofLastStateTransition], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.6.1.0
+    name: svcCount
+    metricKey: svcCount
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.svcCount], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.6.2.0
+    name: serverCount
+    metricKey: serverCount
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.serverCount], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.6.3.0
+    name: svcgroupCount
+    metricKey: svcgroupCount
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.svcgroupCount], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.6.4.0
+    name: svcgroupmemCount
+    metricKey: svcgroupmemCount
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.svcgroupmemCount], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.6.5.0
+    name: syssvcCount
+    metricKey: syssvcCount
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.syssvcCount], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.6.6.0
+    name: sysupsvcCount
+    metricKey: sysupsvcCount
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.sysupsvcCount], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.6.7.0
+    name: sysupsvcitmCount
+    metricKey: sysupsvcitmCount
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.sysupsvcitmCount], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.5.1.0
+    name: curConfigVservers
+    metricKey: curConfigVservers
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.curConfigVservers], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.5.2.0
+    name: vsvrBindCount
+    metricKey: vsvrBindCount
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.vsvrBindCount], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.5.3.0
+    name: vsvrSvcGrpBindCount
+    metricKey: vsvrSvcGrpBindCount
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.vsvrSvcGrpBindCount], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.5.4.0
+    name: curConfigLbVservers
+    metricKey: curConfigLbVservers
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.curConfigLbVservers], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.5.5.0
+    name: curConfigGslbVservers
+    metricKey: curConfigGslbVservers
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.curConfigGslbVservers], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.5.6.0
+    name: totSpilloverCount
+    metricKey: totSpilloverCount
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.totSpilloverCount], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.47.296.0
+    name: sslCurSessions
+    metricKey: sslCurSessions
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.sslCurSessions], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.47.3.0
+    name: sslSessionsPerSec
+    metricKey: sslSessionsPerSec
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.sslSessionsPerSec], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.46.12.0
+    name: tcpCurClientConnEstablished
+    metricKey: tcpCurClientConnEstablished
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.tcpCurClientConnEstablished], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.46.69.0
+    name: tcpErrAnyPortFail
+    metricKey: tcpErrAnyPortFail
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.tcpErrAnyPortFail], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.46.70.0
+    name: tcpErrIpPortFail
+    metricKey: tcpErrIpPortFail
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.tcpErrIpPortFail], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.46.59.0
+    name: tcpErrRetransmit
+    metricKey: tcpErrRetransmit
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.tcpErrRetransmit], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.46.61.0
+    name: tcpTotRxPkts
+    metricKey: tcpTotRxPkts
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.tcpTotRxPkts], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.46.63.0
+    name: tcpTotTxPkts
+    metricKey: tcpTotTxPkts
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.tcpTotTxPkts], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.48.45.0
+    name: httpTotGets
+    metricKey: httpTotGets
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.httpTotGets], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.48.46.0
+    name: httpTotPosts
+    metricKey: httpTotPosts
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.httpTotPosts], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.48.47.0
+    name: httpTotOthers
+    metricKey: httpTotOthers
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.httpTotOthers], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.48.48.0
+    name: httpTotRxRequestBytes
+    metricKey: httpTotRxRequestBytes
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.httpTotRxRequestBytes], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.48.49.0
+    name: httpTotRxResponseBytes
+    metricKey: httpTotRxResponseBytes
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.httpTotRxResponseBytes], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.48.50.0
+    name: httpTotTxRequestBytes
+    metricKey: httpTotTxRequestBytes
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.httpTotTxRequestBytes], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.48.51.0
+    name: httpTotTxResponseBytes
+    metricKey: httpTotTxResponseBytes
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.httpTotTxResponseBytes], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.48.52.0
+    name: httpTot10Requests
+    metricKey: httpTot10Requests
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.httpTot10Requests], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.48.53.0
+    name: httpTotResponses
+    metricKey: httpTotResponses
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.httpTotResponses], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.48.54.0
+    name: httpTot10Responses
+    metricKey: httpTot10Responses
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.httpTot10Responses], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.48.57.0
+    name: httpErrIncompleteRequests
+    metricKey: httpErrIncompleteRequests
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.httpErrIncompleteRequests], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.48.58.0
+    name: httpErrIncompleteResponses
+    metricKey: httpErrIncompleteResponses
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.httpErrIncompleteResponses], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.48.60.0
+    name: httpErrIncompleteHeaders
+    metricKey: httpErrIncompleteHeaders
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.httpErrIncompleteHeaders], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.48.61.0
+    name: httpErrServerBusy
+    metricKey: httpErrServerBusy
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.httpErrServerBusy], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.48
+    name: svcTotalClients
+    metricKey: svcTotalClients
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcTotalClients], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.49
+    name: svcTotalServers
+    metricKey: svcTotalServers
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcTotalServers], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.7
+    name: vsvrCurClntConnections
+    metricKey: vsvrCurClntConnections
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrCurClntConnections], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.1
+    name: vsvrName
+    metricKey: vsvrName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [column-tag], tags: [netscaler_vsvr_name], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.2
+    name: vsvrIpAddress
+    metricKey: vsvrIpAddress
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [column-tag], tags: [netscaler_vsvr_ip_address], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.3
+    name: vsvrPort
+    metricKey: vsvrPort
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [column-tag], tags: [netscaler_vsvr_port], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.4
+    name: vsvrType
+    metricKey: vsvrType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    enumMap: {"0": http, "1": ftp, "2": tcp, "3": udp, "4": sslBridge, "5": monitor, "6": monitorUdp, "7": nntp, "8": httpserver, "9": httpclient, "10": rpcserver, "11": rpcclient, "12": nat, "13": any, "14": ssl, "16": dns, "17": adns, "18": snmp, "19": ha, "20": monitorPing, "21": sslOtherTcp, "22": aaa, "23": secureMonitor, "24": sslvpnUdp, "25": rip, "26": dnsClient, "27": rpcServer, "28": rpcClient, "36": dhcrpa, "39": sipudp, "40": siptcp, "41": siptls, "48": dnstcp, "49": adnstcp, "50": rtsp, "52": push, "53": sslPush, "54": dhcpClient, "55": radius, "61": rdp, "62": mysql, "63": mssql, "73": diameter, "74": sslDiameter, "75": tftp, "90": tftp, "91": pptp, "92": gre, "95": fix, "96": sslFix, "104": userTcp, "105": userSslTcp, "113": mongo, "114": mongoTls, "116": mqtt, "117": mqttTls, "118": quicBridge, "123": serviceUnknown}
+    datadog: {as: [column-tag], tags: [netscaler_vsvr_type], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.5
+    name: vsvrState
+    metricKey: vsvrState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    enumMap: {"1": down, "2": unknown, "3": busy, "4": outOfService, "5": transitionToOutOfService, "7": up, "8": transitionToOutOfServiceDown}
+    datadog: {as: [column-tag], tags: [netscaler_vsvr_state], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.41.8.1.2
+    name: sysHealthDiskSize
+    metricKey: sysHealthDiskSize
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [sysHealthDiskName]
+    datadog: {as: [metric], metric: [netscaler.sysHealthDiskSize], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.41.8.1.3
+    name: sysHealthDiskAvail
+    metricKey: sysHealthDiskAvail
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [sysHealthDiskName]
+    datadog: {as: [metric], metric: [netscaler.sysHealthDiskAvail], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.41.8.1.4
+    name: sysHealthDiskUsed
+    metricKey: sysHealthDiskUsed
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [sysHealthDiskName]
+    datadog: {as: [metric], metric: [netscaler.sysHealthDiskUsed], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.41.8.1.5
+    name: sysHealthDiskPerusage
+    metricKey: sysHealthDiskPerusage
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [sysHealthDiskName]
+    datadog: {as: [metric], metric: [netscaler.sysHealthDiskPerusage], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.41.8.1.1
+    name: sysHealthDiskName
+    metricKey: sysHealthDiskName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [sysHealthDiskName]
+    datadog: {as: [column-tag], tags: [netscaler_sys_health_disk_name], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.54.1.3
+    name: ifTotRxBytes
+    metricKey: ifTotRxBytes
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifName]
+    datadog: {as: [metric], metric: [netscaler.ifTotRxBytes], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.54.1.4
+    name: ifRxAvgBandwidthUsage
+    metricKey: ifRxAvgBandwidthUsage
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifName]
+    datadog: {as: [metric], metric: [netscaler.ifRxAvgBandwidthUsage], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.54.1.7
+    name: ifTotTxBytes
+    metricKey: ifTotTxBytes
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifName]
+    datadog: {as: [metric], metric: [netscaler.ifTotTxBytes], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.54.1.8
+    name: ifTxAvgBandwidthUsage
+    metricKey: ifTxAvgBandwidthUsage
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifName]
+    datadog: {as: [metric], metric: [netscaler.ifTxAvgBandwidthUsage], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.54.1.48
+    name: ifThroughput
+    metricKey: ifThroughput
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifName]
+    datadog: {as: [metric], metric: [netscaler.ifThroughput], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.54.1.19
+    name: ifTotRxMbits
+    metricKey: ifTotRxMbits
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifName]
+    datadog: {as: [metric], metric: [netscaler.ifTotRxMbits], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.54.1.20
+    name: ifTotTxMbits
+    metricKey: ifTotTxMbits
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifName]
+    datadog: {as: [metric], metric: [netscaler.ifTotTxMbits], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.54.1.1
+    name: ifName
+    metricKey: ifName_walk
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifName]
+    datadog: {as: [column-tag], tags: [netscaler_if_name], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.54.1.2
+    name: ifMedia
+    metricKey: ifMedia
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifName]
+    datadog: {as: [column-tag], tags: [netscaler_if_media], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.2.1.5
+    name: vsvrServiceHits
+    metricKey: vsvrServiceHits
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName, vsvrServiceName]
+    datadog: {as: [metric], metric: [netscaler.vsvrServiceHits], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.2.1.6
+    name: servicePersistentHits
+    metricKey: servicePersistentHits
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName, vsvrServiceName]
+    datadog: {as: [metric], metric: [netscaler.servicePersistentHits], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.2.1.8
+    name: vsvrServiceName
+    metricKey: vsvrServiceName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName, vsvrServiceName]
+    datadog: {as: [column-tag], tags: [netscaler_vsvr_service_name], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.2.1.9
+    name: vsvrServiceFullName
+    metricKey: vsvrServiceFullName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName, vsvrServiceName]
+    datadog: {as: [column-tag], tags: [netscaler_vsvr_service_full_name], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.2.1.10
+    name: vserverFullName
+    metricKey: vserverFullName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName, vsvrServiceName]
+    datadog: {as: [column-tag], tags: [netscaler_vserver_full_name], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.41.6.1.2
+    name: nsCPUusage
+    metricKey: nsCPUusage
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsCPUname]
+    datadog: {as: [metric], metric: [netscaler.nsCPUusage], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.41.6.1.1
+    name: nsCPUname
+    metricKey: nsCPUname
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsCPUname]
+    datadog: {as: [column-tag], tags: [netscaler_ns_cp_uname], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.46.2.0
+    name: tcpCurClientConn
+    metricKey: tcpCurClientConn
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.tcpCurClientConn], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.46.10.0
+    name: tcpCurServerConnEstablished
+    metricKey: tcpCurServerConnEstablished
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.tcpCurServerConnEstablished], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.47.204.0
+    name: sslTotSessions
+    metricKey: sslTotSessions
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [netscaler.sslTotSessions], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.6.1.3
+    name: lbvsvrPersistenceTimeOut
+    metricKey: lbvsvrPersistenceTimeOut
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.lbvsvrPersistenceTimeOut], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.6.1.4
+    name: lbvsvrActiveConn
+    metricKey: lbvsvrActiveConn
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.lbvsvrActiveConn], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.6.1.5
+    name: lbvsvrAvgSvrTTFB
+    metricKey: lbvsvrAvgSvrTTFB
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.lbvsvrAvgSvrTTFB], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.6.1.1
+    name: lbvsvrLBMethod
+    metricKey: lbvsvrLBMethod
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    enumMap: {"1": weightedRoundRobin, "2": leastConnections, "3": leastResponse, "4": asynchronousMAC, "5": urlHashed, "6": domainHashed, "7": destinationIPHashed, "8": sourceIPHashed, "9": leastBandwidth, "10": leastPackets, "11": customLoad, "12": token, "13": staticProximity, "14": rdp, "15": leastreq, "16": rtt, "17": sourceIPDestinationIPHashed, "18": sourceIPSourcePort, "19": lrtm, "20": callIDHashed, "21": api}
+    datadog: {as: [column-tag], tags: [netscaler_lbvsvr_lb_method], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.6.1.2
+    name: lbvsvrPersistanceType
+    metricKey: lbvsvrPersistanceType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    enumMap: {"0": none, "1": sourceIp, "2": cookieInsert, "3": cookieDelete, "4": cookieRead, "5": cookieHash, "6": sessionId, "7": server, "8": rule, "9": urlPassive, "10": customServerID, "11": groupSourceID, "12": groupCookieInsert, "13": groupRule, "14": destinationIP, "15": spillOver, "16": sourceIPdestinationIP, "17": callerID, "18": gslbBackup, "19": rtspSessionID, "20": diameter, "21": fixSession, "22": userSession}
+    datadog: {as: [column-tag], tags: [netscaler_lbvsvr_persistance_type], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.11.1.1
+    name: svcgrpSvcGroupName
+    metricKey: svcgrpSvcGroupName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcgrpSvcGroupName]
+    datadog: {as: [column-tag], tags: [netscaler_svcgrp_svc_group_name], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.11.1.2
+    name: svcgrpSvcGroupType
+    metricKey: svcgrpSvcGroupType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcgrpSvcGroupName]
+    enumMap: {"0": http, "1": ftp, "2": tcp, "3": udp, "4": sslBridge, "5": monitor, "6": monitorUdp, "7": nntp, "8": httpserver, "9": httpclient, "10": rpcserver, "11": rpcclient, "12": nat, "13": any, "14": ssl, "16": dns, "17": adns, "18": snmp, "19": ha, "20": monitorPing, "21": sslOtherTcp, "22": aaa, "23": secureMonitor, "24": sslvpnUdp, "25": rip, "26": dnsClient, "27": rpcServer, "28": rpcClient, "36": dhcrpa, "39": sipudp, "40": siptcp, "41": siptls, "48": dnstcp, "49": adnstcp, "50": rtsp, "52": push, "53": sslPush, "54": dhcpClient, "55": radius, "61": rdp, "62": mysql, "63": mssql, "73": diameter, "74": sslDiameter, "75": tftp, "90": tftp, "91": pptp, "92": gre, "95": fix, "96": sslFix, "104": userTcp, "105": userSslTcp, "113": mongo, "114": mongoTls, "116": mqtt, "117": mqttTls, "118": quicBridge, "123": serviceUnknown}
+    datadog: {as: [column-tag], tags: [netscaler_svcgrp_svc_group_type], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.11.1.4
+    name: svcgrpSvcGroupFullName
+    metricKey: svcgrpSvcGroupFullName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcgrpSvcGroupName]
+    datadog: {as: [column-tag], tags: [netscaler_svcgrp_svc_group_full_name], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.11.1.3
+    name: svcgrpSvcGroupState
+    metricKey: svcgrpSvcGroupState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcgrpSvcGroupName]
+    enumMap: {"0": disabled, "1": enabled}
+    datadog: {as: [column-tag], tags: [netscaler_svcgrp_svc_group_state], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.56.1.1.5
+    name: sslDaysToExpire
+    metricKey: sslDaysToExpire
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [sslCertKeyName]
+    datadog: {as: [metric], metric: [netscaler.sslDaysToExpire], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.56.1.1.1
+    name: sslCertKeyName
+    metricKey: sslCertKeyName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [sslCertKeyName]
+    datadog: {as: [column-tag], tags: [netscaler_ssl_cert_key_name], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.8
+    name: vsvrCurSrvrConnections
+    metricKey: vsvrCurSrvrConnections
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrCurSrvrConnections], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.30
+    name: vsvrTotalRequests
+    metricKey: vsvrTotalRequests
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrTotalRequests], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.31
+    name: vsvrTotalRequestBytes
+    metricKey: vsvrTotalRequestBytes
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrTotalRequestBytes], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.32
+    name: vsvrTotalResponses
+    metricKey: vsvrTotalResponses
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrTotalResponses], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.33
+    name: vsvrTotalResponseBytes
+    metricKey: vsvrTotalResponseBytes
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrTotalResponseBytes], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.37
+    name: vsvrCurServicesDown
+    metricKey: vsvrCurServicesDown
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrCurServicesDown], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.41
+    name: vsvrCurServicesUp
+    metricKey: vsvrCurServicesUp
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrCurServicesUp], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.43
+    name: vsvrRequestRate
+    metricKey: vsvrRequestRate
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrRequestRate], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.44
+    name: vsvrRxBytesRate
+    metricKey: vsvrRxBytesRate
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrRxBytesRate], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.45
+    name: vsvrTxBytesRate
+    metricKey: vsvrTxBytesRate
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrTxBytesRate], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.46
+    name: vsvrSynfloodRate
+    metricKey: vsvrSynfloodRate
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrSynfloodRate], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.54
+    name: vsvrTotSpillOvers
+    metricKey: vsvrTotSpillOvers
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrTotSpillOvers], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.56
+    name: vsvrTotalClients
+    metricKey: vsvrTotalClients
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrTotalClients], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.61
+    name: vsvrTotalServicesBound
+    metricKey: vsvrTotalServicesBound
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrTotalServicesBound], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.62
+    name: vsvrHealth
+    metricKey: vsvrHealth
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrHealth], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.65
+    name: vsvrTotalServers
+    metricKey: vsvrTotalServers
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrTotalServers], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.70
+    name: vsvrSoThreshold
+    metricKey: vsvrSoThreshold
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [metric], metric: [netscaler.vsvrSoThreshold], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.59
+    name: vsvrFullName
+    metricKey: vsvrFullName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    datadog: {as: [column-tag], tags: [netscaler_vsvr_full_name], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.3.1.1.66
+    name: vsvrActiveActiveState
+    metricKey: vsvrActiveActiveState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [vsvrName]
+    enumMap: {"0": notApplicable, "1": active, "2": backup}
+    datadog: {as: [column-tag], tags: [netscaler_vsvr_active_active_state], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.7
+    name: svcAvgTransactionTime
+    metricKey: svcAvgTransactionTime
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcAvgTransactionTime], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.8
+    name: svcEstablishedConn
+    metricKey: svcEstablishedConn
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcEstablishedConn], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.9
+    name: svcActiveConn
+    metricKey: svcActiveConn
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcActiveConn], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.10
+    name: svcSurgeCount
+    metricKey: svcSurgeCount
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcSurgeCount], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.30
+    name: svcTotalRequests
+    metricKey: svcTotalRequests
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcTotalRequests], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.31
+    name: svcTotalRequestBytes
+    metricKey: svcTotalRequestBytes
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcTotalRequestBytes], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.32
+    name: svcTotalResponses
+    metricKey: svcTotalResponses
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcTotalResponses], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.33
+    name: svcTotalResponseBytes
+    metricKey: svcTotalResponseBytes
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcTotalResponseBytes], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.34
+    name: svcTotalPktsRecvd
+    metricKey: svcTotalPktsRecvd
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcTotalPktsRecvd], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.35
+    name: svcTotalPktsSent
+    metricKey: svcTotalPktsSent
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcTotalPktsSent], metricType: [monotonic_count], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.38
+    name: svcAvgSvrTTFB
+    metricKey: svcAvgSvrTTFB
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcAvgSvrTTFB], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.41
+    name: svcCurClntConnections
+    metricKey: svcCurClntConnections
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcCurClntConnections], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.42
+    name: svcRequestRate
+    metricKey: svcRequestRate
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcRequestRate], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.43
+    name: svcRxBytesRate
+    metricKey: svcRxBytesRate
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcRxBytesRate], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.44
+    name: svcTxBytesRate
+    metricKey: svcTxBytesRate
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcTxBytesRate], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.53
+    name: svcActiveTransactions
+    metricKey: svcActiveTransactions
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [metric], metric: [netscaler.svcActiveTransactions], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.1
+    name: svcServiceName
+    metricKey: svcServiceName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [column-tag], tags: [netscaler_svc_service_name], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.2
+    name: svcIpAddress
+    metricKey: svcIpAddress
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [column-tag], tags: [netscaler_svc_ip_address], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.3
+    name: svcPort
+    metricKey: svcPort
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [column-tag], tags: [netscaler_svc_port], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.4
+    name: svcServiceType
+    metricKey: svcServiceType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    enumMap: {"0": http, "1": ftp, "2": tcp, "3": udp, "4": sslBridge, "5": monitor, "6": monitorUdp, "7": nntp, "8": httpserver, "9": httpclient, "10": rpcserver, "11": rpcclient, "12": nat, "13": any, "14": ssl, "16": dns, "17": adns, "18": snmp, "19": ha, "20": monitorPing, "21": sslOtherTcp, "22": aaa, "23": secureMonitor, "24": sslvpnUdp, "25": rip, "26": dnsClient, "27": rpcServer, "28": rpcClient, "36": dhcrpa, "39": sipudp, "40": siptcp, "41": siptls, "48": dnstcp, "49": adnstcp, "50": rtsp, "52": push, "53": sslPush, "54": dhcpClient, "55": radius, "61": rdp, "62": mysql, "63": mssql, "73": diameter, "74": sslDiameter, "75": tftp, "90": tftp, "91": pptp, "92": gre, "95": fix, "96": sslFix, "104": userTcp, "105": userSslTcp, "113": mongo, "114": mongoTls, "116": mqtt, "117": mqttTls, "118": quicBridge, "123": serviceUnknown}
+    datadog: {as: [column-tag], tags: [netscaler_svc_service_type], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.1.1.54
+    name: svcServiceFullName
+    metricKey: svcServiceFullName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svcServiceName]
+    datadog: {as: [column-tag], tags: [netscaler_svc_service_full_name], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.2.1.1
+    name: serverName
+    metricKey: serverName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [serverName]
+    datadog: {as: [column-tag], tags: [netscaler_server_name], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.2.1.2
+    name: serverIpAddress
+    metricKey: serverIpAddress
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [serverName]
+    datadog: {as: [column-tag], tags: [netscaler_server_ip_address], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.2.2.1.3
+    name: serverState
+    metricKey: serverState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [serverName]
+    enumMap: {"1": down, "2": unknown, "3": busy, "4": outOfService, "5": transitionToOutOfService, "7": up, "8": transitionToOutOfServiceDown}
+    datadog: {as: [column-tag], tags: [netscaler_server_state], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.2
+    name: ifDescr
+    metricKey: ifDescr
+    type: string
+    walk: true
+    cadenceTier: discovery
+    coalesceKey: [ifIndex]
+    datadog: {as: [metadata], fields: [interface.description], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.6
+    name: ifPhysAddress
+    metricKey: ifPhysAddress
+    type: string
+    walk: true
+    cadenceTier: discovery
+    coalesceKey: [ifIndex]
+    datadog: {as: [metadata], fields: [interface.mac_address], features: ["format=mac_address"], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.3
+    name: ifType
+    metricKey: ifType
+    type: integer
+    walk: true
+    cadenceTier: discovery
+    coalesceKey: [ifIndex]
+    enumMap: {"1": other, "2": regular1822, "3": hdh1822, "4": ddnX25, "5": rfc877x25, "6": ethernetCsmacd, "7": iso88023Csmacd, "8": iso88024TokenBus, "9": iso88025TokenRing, "10": iso88026Man, "11": starLan, "12": proteon10Mbit, "13": proteon80Mbit, "14": hyperchannel, "15": fddi, "16": lapb, "17": sdlc, "18": ds1, "19": e1, "20": basicISDN, "21": primaryISDN, "22": propPointToPointSerial, "23": ppp, "24": softwareLoopback, "25": eon, "26": ethernet3Mbit, "27": nsip, "28": slip, "29": ultra, "30": ds3, "31": sip, "32": frameRelay, "33": rs232, "34": para, "35": arcnet, "36": arcnetPlus, "37": atm, "38": miox25, "39": sonet, "40": x25ple, "41": iso88022llc, "42": localTalk, "43": smdsDxi, "44": frameRelayService, "45": v35, "46": hssi, "47": hippi, "48": modem, "49": aal5, "50": sonetPath, "51": sonetVT, "52": smdsIcip, "53": propVirtual, "54": propMultiplexor, "55": ieee80212, "56": fibreChannel, "57": hippiInterface, "58": frameRelayInterconnect, "59": aflane8023, "60": aflane8025, "61": cctEmul, "62": fastEther, "63": isdn, "64": v11, "65": v36, "66": g703at64k, "67": g703at2mb, "68": qllc, "69": fastEtherFX, "70": channel, "71": ieee80211, "72": ibm370parChan, "73": escon, "74": dlsw, "75": isdns, "76": isdnu, "77": lapd, "78": ipSwitch, "79": rsrb, "80": atmLogical, "81": ds0, "82": ds0Bundle, "83": bsc, "84": async, "85": cnr, "86": iso88025Dtr, "87": eplrs, "88": arap, "89": propCnls, "90": hostPad, "91": termPad, "92": frameRelayMPI, "93": x213, "94": adsl, "95": radsl, "96": sdsl, "97": vdsl, "98": iso88025CRFPInt, "99": myrinet, "100": voiceEM, "101": voiceFXO, "102": voiceFXS, "103": voiceEncap, "104": voiceOverIp, "105": atmDxi, "106": atmFuni, "107": atmIma, "108": pppMultilinkBundle, "109": ipOverCdlc, "110": ipOverClaw, "111": stackToStack, "112": virtualIpAddress, "113": mpc, "114": ipOverAtm, "115": iso88025Fiber, "116": tdlc, "117": gigabitEthernet, "118": hdlc, "119": lapf, "120": v37, "121": x25mlp, "122": x25huntGroup, "123": transpHdlc, "124": interleave, "125": fast, "126": ip, "127": docsCableMaclayer, "128": docsCableDownstream, "129": docsCableUpstream, "130": a12MppSwitch, "131": tunnel, "132": coffee, "133": ces, "134": atmSubInterface, "135": l2vlan, "136": l3ipvlan, "137": l3ipxvlan, "138": digitalPowerline, "139": mediaMailOverIp, "140": dtm, "141": dcn, "142": ipForward, "143": msdsl, "144": ieee1394, "145": if-gsn, "146": dvbRccMacLayer, "147": dvbRccDownstream, "148": dvbRccUpstream, "149": atmVirtual, "150": mplsTunnel, "151": srp, "152": voiceOverAtm, "153": voiceOverFrameRelay, "154": idsl, "155": compositeLink, "156": ss7SigLink, "157": propWirelessP2P, "158": frForward, "159": rfc1483, "160": usb, "161": ieee8023adLag, "162": bgppolicyaccounting, "163": frf16MfrBundle, "164": h323Gatekeeper, "165": h323Proxy, "166": mpls, "167": mfSigLink, "168": hdsl2, "169": shdsl, "170": ds1FDL, "171": pos, "172": dvbAsiIn, "173": dvbAsiOut, "174": plc, "175": nfas, "176": tr008, "177": gr303RDT, "178": gr303IDT, "179": isup, "180": propDocsWirelessMaclayer, "181": propDocsWirelessDownstream, "182": propDocsWirelessUpstream, "183": hiperlan2, "184": propBWAp2Mp, "185": sonetOverheadChannel, "186": digitalWrapperOverheadChannel, "187": aal2, "188": radioMAC, "189": atmRadio, "190": imt, "191": mvl, "192": reachDSL, "193": frDlciEndPt, "194": atmVciEndPt, "195": opticalChannel, "196": opticalTransport, "197": propAtm, "198": voiceOverCable, "199": infiniband, "200": teLink, "201": q2931, "202": virtualTg, "203": sipTg, "204": sipSig, "205": docsCableUpstreamChannel, "206": econet, "207": pon155, "208": pon622, "209": bridge, "210": linegroup, "211": voiceEMFGD, "212": voiceFGDEANA, "213": voiceDID, "214": mpegTransport, "215": sixToFour, "216": gtp, "217": pdnEtherLoop1, "218": pdnEtherLoop2, "219": opticalChannelGroup, "220": homepna, "221": gfp, "222": ciscoISLvlan, "223": actelisMetaLOOP, "224": fcipLink, "225": rpr, "226": qam, "227": lmp, "228": cblVectaStar, "229": docsCableMCmtsDownstream, "230": adsl2, "231": macSecControlledIF, "232": macSecUncontrolledIF, "233": aviciOpticalEther, "234": atmbond, "235": voiceFGDOS, "236": mocaVersion1, "237": ieee80216WMAN, "238": adsl2plus, "239": dvbRcsMacLayer, "240": dvbTdm, "241": dvbRcsTdma, "242": x86Laps, "243": wwanPP, "244": wwanPP2, "245": voiceEBS, "246": ifPwType, "247": ilan, "248": pip, "249": aluELP, "250": gpon, "251": vdsl2, "252": capwapDot11Profile, "253": capwapDot11Bss, "254": capwapWtpVirtualRadio, "255": bits, "256": docsCableUpstreamRfPort, "257": cableDownstreamRfPort, "258": vmwareVirtualNic, "259": ieee802154, "260": otnOdu, "261": otnOtu, "262": ifVfiType, "263": g9981, "264": g9982, "265": g9983, "266": aluEpon, "267": aluEponOnu, "268": aluEponPhysicalUni, "269": aluEponLogicalLink, "270": aluGponOnu, "271": aluGponPhysicalUni, "272": vmwareNicTeam, "277": docsOfdmDownstream, "278": docsOfdmaUpstream, "279": gfast, "280": sdci, "281": xboxWireless, "282": fastdsl, "283": docsCableScte55d1FwdOob, "284": docsCableScte55d1RetOob, "285": docsCableScte55d2DsOob, "286": docsCableScte55d2UsOob, "287": docsCableNdf, "288": docsCableNdr, "289": ptm, "290": ghn, "291": otnOtsi, "292": otnOtuc, "293": otnOduc, "294": otnOtsig, "295": microwaveCarrierTermination, "296": microwaveRadioLinkTerminal, "297": ieee8021axDrni, "298": ax25, "299": ieee19061nanocom, "300": cpri, "301": omni, "302": roe, "303": p2pOverLan}
+    datadog: {as: [metadata], fields: [interface.type], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.14.0
+    name: sysHardwareSerialNumber
+    metricKey: sysHardwareSerialNumber
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.serial_number], from: [citrix-netscaler.yaml]}
+  - oid: 1.3.6.1.4.1.5951.4.1.1.1.0
+    name: sysBuildVersion
+    metricKey: sysBuildVersion
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.version], from: [citrix-netscaler.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/citrix-netscaler.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_generic-if.yaml, _base.yaml, citrix.yaml]

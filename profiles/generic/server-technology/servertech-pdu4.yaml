@@ -1,0 +1,881 @@
+formatVersion: 1
+slug: servertech-pdu4
+name: Server Technology PDU4
+description: "Converted from Datadog's servertech-pdu4.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: Server Technology
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.1718.4}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.2.2.1.2
+    name: st4UnitID
+    metricKey: st4UnitID
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_unit_id], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.2.2.1.3
+    name: st4UnitName
+    metricKey: st4UnitName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_unit_name], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.2.2.1.4
+    name: st4UnitProductSN
+    metricKey: st4UnitProductSN
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_unit_product_sn], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.2.2.1.5
+    name: st4UnitModel
+    metricKey: st4UnitModel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_unit_model], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.2.2.1.6
+    name: st4UnitAssetTag
+    metricKey: st4UnitAssetTag
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_unit_asset_tag], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.2.2.1.7
+    name: st4UnitType
+    metricKey: st4UnitType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex]
+    enumMap: {"0": primary, "1": link, "2": controller, "3": emcu}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_unit_type], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.2.2.1.9
+    name: st4UnitProductMfrDate
+    metricKey: st4UnitProductMfrDate
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_unit_product_mfr_date], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.2.3.1.1
+    name: st4UnitStatus
+    metricKey: st4UnitStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_unit_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.3.1.3
+    name: st4InputCordActivePower
+    metricKey: st4InputCordActivePower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4InputCordActivePower], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.3.1.5
+    name: st4InputCordApparentPower
+    metricKey: st4InputCordApparentPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4InputCordApparentPower], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.3.1.7
+    name: st4InputCordPowerUtilized
+    metricKey: st4InputCordPowerUtilized
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4InputCordPowerUtilized], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.3.1.8
+    name: st4InputCordPowerFactor
+    metricKey: st4InputCordPowerFactor
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4InputCordPowerFactor], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.3.1.10
+    name: st4InputCordEnergy
+    metricKey: st4InputCordEnergy
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4InputCordEnergy], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.3.1.11
+    name: st4InputCordFrequency
+    metricKey: st4InputCordFrequency
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4InputCordFrequency], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.3.1.12
+    name: st4InputCordOutOfBalance
+    metricKey: st4InputCordOutOfBalance
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4InputCordOutOfBalance], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.2.1.2
+    name: st4InputCordID
+    metricKey: st4InputCordID
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_id], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.2.1.3
+    name: st4InputCordName
+    metricKey: st4InputCordName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_name], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.2.1.6
+    name: st4InputCordInletType
+    metricKey: st4InputCordInletType
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_inlet_type], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.2.1.7
+    name: st4InputCordNominalVoltage
+    metricKey: st4InputCordNominalVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_nominal_voltage], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.2.1.8
+    name: st4InputCordNominalVoltageMin
+    metricKey: st4InputCordNominalVoltageMin
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_nominal_voltage_min], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.2.1.9
+    name: st4InputCordNominalVoltageMax
+    metricKey: st4InputCordNominalVoltageMax
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_nominal_voltage_max], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.2.1.10
+    name: st4InputCordCurrentCapacity
+    metricKey: st4InputCordCurrentCapacity
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_current_capacity], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.2.1.11
+    name: st4InputCordCurrentCapacityMax
+    metricKey: st4InputCordCurrentCapacityMax
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_current_capacity_max], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.2.1.12
+    name: st4InputCordPowerCapacity
+    metricKey: st4InputCordPowerCapacity
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_power_capacity], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.2.1.20
+    name: st4InputCordLineCount
+    metricKey: st4InputCordLineCount
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_line_count], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.2.1.21
+    name: st4InputCordPhaseCount
+    metricKey: st4InputCordPhaseCount
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_phase_count], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.2.1.22
+    name: st4InputCordOcpCount
+    metricKey: st4InputCordOcpCount
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_ocp_count], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.2.1.23
+    name: st4InputCordBranchCount
+    metricKey: st4InputCordBranchCount
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_branch_count], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.2.1.24
+    name: st4InputCordOutletCount
+    metricKey: st4InputCordOutletCount
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_outlet_count], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.3.1.1
+    name: st4InputCordState
+    metricKey: st4InputCordState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    enumMap: {"0": unknown, "1": "on", "2": "off"}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_state], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.3.1.2
+    name: st4InputCordStatus
+    metricKey: st4InputCordStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.3.1.4
+    name: st4InputCordActivePowerStatus
+    metricKey: st4InputCordActivePowerStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_active_power_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.3.1.6
+    name: st4InputCordApparentPowerStatus
+    metricKey: st4InputCordApparentPowerStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_apparent_power_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.3.1.9
+    name: st4InputCordPowerFactorStatus
+    metricKey: st4InputCordPowerFactorStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_power_factor_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.3.3.1.13
+    name: st4InputCordOutOfBalanceStatus
+    metricKey: st4InputCordOutOfBalanceStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_input_cord_out_of_balance_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.4.3.1.3
+    name: st4LineCurrent
+    metricKey: st4LineCurrent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4LineIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4LineCurrent], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.4.3.1.5
+    name: st4LineCurrentUtilized
+    metricKey: st4LineCurrentUtilized
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4LineIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4LineCurrentUtilized], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.4.2.1.2
+    name: st4LineID
+    metricKey: st4LineID
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4LineIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_line_id], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.4.2.1.4
+    name: st4LineLabel
+    metricKey: st4LineLabel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4LineIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_line_label], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.4.2.1.6
+    name: st4LineCurrentCapacity
+    metricKey: st4LineCurrentCapacity
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4LineIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_line_current_capacity], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.4.3.1.1
+    name: st4LineState
+    metricKey: st4LineState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4LineIndex]
+    enumMap: {"0": unknown, "1": "on", "2": "off"}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_line_state], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.4.3.1.2
+    name: st4LineStatus
+    metricKey: st4LineStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4LineIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_line_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.4.3.1.4
+    name: st4LineCurrentStatus
+    metricKey: st4LineCurrentStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4LineIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_line_current_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.3.1.3
+    name: st4PhaseVoltage
+    metricKey: st4PhaseVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4PhaseVoltage], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.3.1.5
+    name: st4PhaseVoltageDeviation
+    metricKey: st4PhaseVoltageDeviation
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4PhaseVoltageDeviation], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.3.1.6
+    name: st4PhaseCurrent
+    metricKey: st4PhaseCurrent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4PhaseCurrent], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.3.1.7
+    name: st4PhaseCurrentCrestFactor
+    metricKey: st4PhaseCurrentCrestFactor
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4PhaseCurrentCrestFactor], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.3.1.8
+    name: st4PhaseActivePower
+    metricKey: st4PhaseActivePower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4PhaseActivePower], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.3.1.9
+    name: st4PhaseApparentPower
+    metricKey: st4PhaseApparentPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4PhaseApparentPower], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.3.1.10
+    name: st4PhasePowerFactor
+    metricKey: st4PhasePowerFactor
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4PhasePowerFactor], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.3.1.13
+    name: st4PhaseEnergy
+    metricKey: st4PhaseEnergy
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4PhaseEnergy], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.2.1.2
+    name: st4PhaseID
+    metricKey: st4PhaseID
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_phase_id], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.2.1.4
+    name: st4PhaseLabel
+    metricKey: st4PhaseLabel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_phase_label], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.2.1.6
+    name: st4PhaseNominalVoltage
+    metricKey: st4PhaseNominalVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_phase_nominal_voltage], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.2.1.21
+    name: st4PhaseOutletCount
+    metricKey: st4PhaseOutletCount
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_phase_outlet_count], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.3.1.1
+    name: st4PhaseState
+    metricKey: st4PhaseState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    enumMap: {"0": unknown, "1": "on", "2": "off"}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_phase_state], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.3.1.2
+    name: st4PhaseStatus
+    metricKey: st4PhaseStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_phase_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.3.1.4
+    name: st4PhaseVoltageStatus
+    metricKey: st4PhaseVoltageStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_phase_voltage_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.3.1.11
+    name: st4PhasePowerFactorStatus
+    metricKey: st4PhasePowerFactorStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_phase_power_factor_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.5.3.1.12
+    name: st4PhaseReactance
+    metricKey: st4PhaseReactance
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4PhaseIndex]
+    enumMap: {"0": unknown, "1": capacitive, "2": inductive, "3": resistive}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_phase_reactance], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.6.2.1.2
+    name: st4OcpID
+    metricKey: st4OcpID
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OcpIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_ocp_id], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.6.2.1.4
+    name: st4OcpLabel
+    metricKey: st4OcpLabel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OcpIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_ocp_label], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.6.2.1.6
+    name: st4OcpType
+    metricKey: st4OcpType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OcpIndex]
+    enumMap: {"0": fuse, "1": breaker}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_ocp_type], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.6.2.1.7
+    name: st4OcpCurrentCapacity
+    metricKey: st4OcpCurrentCapacity
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OcpIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_ocp_current_capacity], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.6.2.1.8
+    name: st4OcpCurrentCapacityMax
+    metricKey: st4OcpCurrentCapacityMax
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OcpIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_ocp_current_capacity_max], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.6.2.1.20
+    name: st4OcpBranchCount
+    metricKey: st4OcpBranchCount
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OcpIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_ocp_branch_count], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.6.2.1.21
+    name: st4OcpOutletCount
+    metricKey: st4OcpOutletCount
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OcpIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_ocp_outlet_count], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.6.3.1.1
+    name: st4OcpStatus
+    metricKey: st4OcpStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OcpIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_ocp_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.7.3.1.3
+    name: st4BranchCurrent
+    metricKey: st4BranchCurrent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4BranchIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4BranchCurrent], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.7.3.1.5
+    name: st4BranchCurrentUtilized
+    metricKey: st4BranchCurrentUtilized
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4BranchIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4BranchCurrentUtilized], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.7.2.1.2
+    name: st4BranchID
+    metricKey: st4BranchID
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4BranchIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_branch_id], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.7.2.1.4
+    name: st4BranchLabel
+    metricKey: st4BranchLabel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4BranchIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_branch_label], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.7.2.1.6
+    name: st4BranchCurrentCapacity
+    metricKey: st4BranchCurrentCapacity
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4BranchIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_branch_current_capacity], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.7.2.1.20
+    name: st4BranchPhaseID
+    metricKey: st4BranchPhaseID
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4BranchIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_branch_phase_id], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.7.2.1.21
+    name: st4BranchOcpID
+    metricKey: st4BranchOcpID
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4BranchIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_branch_ocp_id], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.7.2.1.30
+    name: st4BranchOutletCount
+    metricKey: st4BranchOutletCount
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4BranchIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_branch_outlet_count], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.7.3.1.1
+    name: st4BranchState
+    metricKey: st4BranchState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4BranchIndex]
+    enumMap: {"0": unknown, "1": "on", "2": "off"}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_branch_state], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.7.3.1.2
+    name: st4BranchStatus
+    metricKey: st4BranchStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4BranchIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_branch_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.7.3.1.4
+    name: st4BranchCurrentStatus
+    metricKey: st4BranchCurrentStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4BranchIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_branch_current_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.8.2.1.2
+    name: st4OutletID
+    metricKey: st4OutletID
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OutletIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_outlet_id], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.8.2.1.3
+    name: st4OutletName
+    metricKey: st4OutletName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OutletIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_outlet_name], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.8.2.1.6
+    name: st4OutletSocketType
+    metricKey: st4OutletSocketType
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OutletIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_outlet_socket_type], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.8.2.1.7
+    name: st4OutletCurrentCapacity
+    metricKey: st4OutletCurrentCapacity
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OutletIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_outlet_current_capacity], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.8.2.1.8
+    name: st4OutletPowerCapacity
+    metricKey: st4OutletPowerCapacity
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OutletIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_outlet_power_capacity], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.8.2.1.20
+    name: st4OutletWakeupState
+    metricKey: st4OutletWakeupState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OutletIndex]
+    enumMap: {"0": "on", "1": "off", "2": last}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_outlet_wakeup_state], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.8.2.1.21
+    name: st4OutletPostOnDelay
+    metricKey: st4OutletPostOnDelay
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OutletIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_outlet_post_on_delay], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.8.2.1.30
+    name: st4OutletPhaseID
+    metricKey: st4OutletPhaseID
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OutletIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_outlet_phase_id], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.8.2.1.31
+    name: st4OutletOcpID
+    metricKey: st4OutletOcpID
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OutletIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_outlet_ocp_id], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.8.2.1.32
+    name: st4OutletBranchID
+    metricKey: st4OutletBranchID
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OutletIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_outlet_branch_id], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.8.3.1.1
+    name: st4OutletState
+    metricKey: st4OutletState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OutletIndex]
+    enumMap: {"0": unknown, "1": "on", "2": "off"}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_outlet_state], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.8.3.1.2
+    name: st4OutletStatus
+    metricKey: st4OutletStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4InputCordIndex, st4OutletIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_outlet_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.9.3.1.1
+    name: st4TempSensorValue
+    metricKey: st4TempSensorValue
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4TempSensorIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4TempSensorValue], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.9.2.1.2
+    name: st4TempSensorID
+    metricKey: st4TempSensorID
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4TempSensorIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_temp_sensor_id], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.9.2.1.3
+    name: st4TempSensorName
+    metricKey: st4TempSensorName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4TempSensorIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_temp_sensor_name], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.9.2.1.4
+    name: st4TempSensorValueMin
+    metricKey: st4TempSensorValueMin
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4TempSensorIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_temp_sensor_value_min], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.9.2.1.5
+    name: st4TempSensorValueMax
+    metricKey: st4TempSensorValueMax
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4TempSensorIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_temp_sensor_value_max], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.9.3.1.2
+    name: st4TempSensorStatus
+    metricKey: st4TempSensorStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4TempSensorIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_temp_sensor_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.10.3.1.1
+    name: st4HumidSensorValue
+    metricKey: st4HumidSensorValue
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4HumidSensorIndex]
+    datadog: {as: [metric], metric: [servertech.sentry4.st4HumidSensorValue], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.10.2.1.2
+    name: st4HumidSensorID
+    metricKey: st4HumidSensorID
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4HumidSensorIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_humid_sensor_id], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.10.2.1.3
+    name: st4HumidSensorName
+    metricKey: st4HumidSensorName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4HumidSensorIndex]
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_humid_sensor_name], features: [cross-table tag from another table], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.4.1.1718.4.1.10.3.1.2
+    name: st4HumidSensorStatus
+    metricKey: st4HumidSensorStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [st4UnitIndex, st4HumidSensorIndex]
+    enumMap: {"0": normal, "1": disabled, "2": purged, "5": reading, "6": settle, "7": notFound, "8": lost, "9": readError, "10": noComm, "11": pwrError, "12": breakerTripped, "13": fuseBlown, "14": lowAlarm, "15": lowWarning, "16": highWarning, "17": highAlarm, "18": alarm, "19": underLimit, "20": overLimit, "21": nvmFail, "22": profileError, "23": conflict}
+    datadog: {as: [column-tag], tags: [servertech_sentry4_st4_humid_sensor_status], from: [servertech-pdu4.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/servertech-pdu4.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, servertech.yaml]

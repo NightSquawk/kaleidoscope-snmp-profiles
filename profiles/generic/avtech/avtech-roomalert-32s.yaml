@@ -1,0 +1,516 @@
+formatVersion: 1
+slug: avtech-roomalert-32s
+name: Avtech Room Alert 32s
+description: "Converted from Datadog's avtech-roomalert-32s.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: AVTECH
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.20916.1.11}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.1.1.1.0
+    name: internal-tempf
+    metricKey: internal-tempf
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.internal_tempf], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.1.1.2.0
+    name: internal-tempc
+    metricKey: internal-tempc
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.internal_tempc], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.1.2.1.0
+    name: internal-humidity
+    metricKey: internal-humidity
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.internal_humidity], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.1.4.1.0
+    name: internal-heat-index
+    metricKey: internal-heat-index
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.internal_heat_index], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.1.4.2.0
+    name: internal-heat-indexC
+    metricKey: internal-heat-indexC
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.internal_heat_indexC], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.1.5.1.0
+    name: internal-analog1
+    metricKey: internal-analog1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.internal_analog1], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.1.5.2.0
+    name: internal-analog2
+    metricKey: internal-analog2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.internal_analog2], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.1.6.1.0
+    name: internal-relay1
+    metricKey: internal-relay1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.internal_relay1], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.1.6.2.0
+    name: internal-relay2
+    metricKey: internal-relay2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.internal_relay2], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.1.7.1.0
+    name: internal-dew-point-c
+    metricKey: internal-dew-point-c
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.internal_dew_point_c], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.1.7.2.0
+    name: internal-dew-point-f
+    metricKey: internal-dew-point-f
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.internal_dew_point_f], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.1.1.0
+    name: digital-sen1-1
+    metricKey: digital-sen1-1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen1_1], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.1.2.0
+    name: digital-sen1-2
+    metricKey: digital-sen1-2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen1_2], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.1.3.0
+    name: digital-sen1-3
+    metricKey: digital-sen1-3
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen1_3], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.1.4.0
+    name: digital-sen1-4
+    metricKey: digital-sen1-4
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen1_4], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.1.5.0
+    name: digital-sen1-5
+    metricKey: digital-sen1-5
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen1_5], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.1.6.0
+    name: digital-sen1-6
+    metricKey: digital-sen1-6
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen1_6], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.1.7.0
+    name: digital-sen1-7
+    metricKey: digital-sen1-7
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen1_7], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.2.1.0
+    name: digital-sen2-1
+    metricKey: digital-sen2-1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen2_1], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.2.2.0
+    name: digital-sen2-2
+    metricKey: digital-sen2-2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen2_2], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.2.3.0
+    name: digital-sen2-3
+    metricKey: digital-sen2-3
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen2_3], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.2.4.0
+    name: digital-sen2-4
+    metricKey: digital-sen2-4
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen2_4], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.2.5.0
+    name: digital-sen2-5
+    metricKey: digital-sen2-5
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen2_5], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.2.6.0
+    name: digital-sen2-6
+    metricKey: digital-sen2-6
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen2_6], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.2.7.0
+    name: digital-sen2-7
+    metricKey: digital-sen2-7
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen2_7], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.3.1.0
+    name: digital-sen3-1
+    metricKey: digital-sen3-1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen3_1], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.3.2.0
+    name: digital-sen3-2
+    metricKey: digital-sen3-2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen3_2], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.3.3.0
+    name: digital-sen3-3
+    metricKey: digital-sen3-3
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen3_3], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.3.4.0
+    name: digital-sen3-4
+    metricKey: digital-sen3-4
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen3_4], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.3.5.0
+    name: digital-sen3-5
+    metricKey: digital-sen3-5
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen3_5], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.3.6.0
+    name: digital-sen3-6
+    metricKey: digital-sen3-6
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen3_6], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.3.7.0
+    name: digital-sen3-7
+    metricKey: digital-sen3-7
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen3_7], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.4.1.0
+    name: digital-sen4-1
+    metricKey: digital-sen4-1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen4_1], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.4.2.0
+    name: digital-sen4-2
+    metricKey: digital-sen4-2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen4_2], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.4.3.0
+    name: digital-sen4-3
+    metricKey: digital-sen4-3
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen4_3], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.4.4.0
+    name: digital-sen4-4
+    metricKey: digital-sen4-4
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen4_4], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.4.5.0
+    name: digital-sen4-5
+    metricKey: digital-sen4-5
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen4_5], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.4.6.0
+    name: digital-sen4-6
+    metricKey: digital-sen4-6
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen4_6], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.4.7.0
+    name: digital-sen4-7
+    metricKey: digital-sen4-7
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen4_7], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.5.1.0
+    name: digital-sen5-1
+    metricKey: digital-sen5-1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen5_1], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.5.2.0
+    name: digital-sen5-2
+    metricKey: digital-sen5-2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen5_2], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.5.3.0
+    name: digital-sen5-3
+    metricKey: digital-sen5-3
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen5_3], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.5.4.0
+    name: digital-sen5-4
+    metricKey: digital-sen5-4
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen5_4], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.5.5.0
+    name: digital-sen5-5
+    metricKey: digital-sen5-5
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen5_5], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.5.6.0
+    name: digital-sen5-6
+    metricKey: digital-sen5-6
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen5_6], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.5.7.0
+    name: digital-sen5-7
+    metricKey: digital-sen5-7
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen5_7], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.6.1.0
+    name: digital-sen6-1
+    metricKey: digital-sen6-1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen6_1], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.6.2.0
+    name: digital-sen6-2
+    metricKey: digital-sen6-2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen6_2], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.6.3.0
+    name: digital-sen6-3
+    metricKey: digital-sen6-3
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen6_3], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.6.4.0
+    name: digital-sen6-4
+    metricKey: digital-sen6-4
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen6_4], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.6.5.0
+    name: digital-sen6-5
+    metricKey: digital-sen6-5
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen6_5], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.6.6.0
+    name: digital-sen6-6
+    metricKey: digital-sen6-6
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen6_6], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.6.7.0
+    name: digital-sen6-7
+    metricKey: digital-sen6-7
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen6_7], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.7.1.0
+    name: digital-sen7-1
+    metricKey: digital-sen7-1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen7_1], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.7.2.0
+    name: digital-sen7-2
+    metricKey: digital-sen7-2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen7_2], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.7.3.0
+    name: digital-sen7-3
+    metricKey: digital-sen7-3
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen7_3], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.7.4.0
+    name: digital-sen7-4
+    metricKey: digital-sen7-4
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen7_4], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.7.5.0
+    name: digital-sen7-5
+    metricKey: digital-sen7-5
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen7_5], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.7.6.0
+    name: digital-sen7-6
+    metricKey: digital-sen7-6
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen7_6], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.7.7.0
+    name: digital-sen7-7
+    metricKey: digital-sen7-7
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen7_7], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.8.1.0
+    name: digital-sen8-1
+    metricKey: digital-sen8-1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen8_1], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.8.2.0
+    name: digital-sen8-2
+    metricKey: digital-sen8-2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen8_2], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.8.3.0
+    name: digital-sen8-3
+    metricKey: digital-sen8-3
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen8_3], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.8.4.0
+    name: digital-sen8-4
+    metricKey: digital-sen8-4
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen8_4], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.8.5.0
+    name: digital-sen8-5
+    metricKey: digital-sen8-5
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen8_5], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.8.6.0
+    name: digital-sen8-6
+    metricKey: digital-sen8-6
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen8_6], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.11.1.2.8.7.0
+    name: digital-sen8-7
+    metricKey: digital-sen8-7
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.32s.digital_sen8_7], from: [avtech-roomalert-32s.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/avtech-roomalert-32s.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, avtech.yaml]

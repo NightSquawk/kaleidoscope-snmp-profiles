@@ -6,7 +6,7 @@ namespace: nightsquawk/kaleidoscope-snmp-profiles
 
 # Bump when the set of profiles or dictionaries changes in a way that
 # existing tenants should re-sync for. Revision is monotonic.
-revision: 1
+revision: 2
 
 # When a vendor profile in profiles/ has a vendor, a deviceCategory, and no
 # `extends`, the platform applies this parent. `extends: none` opts out.

@@ -1,0 +1,391 @@
+formatVersion: 1
+slug: eaton-epdu
+name: Eaton Epdu
+description: "Converted from Datadog's eaton-epdu.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: Eaton
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.534.6.6.7}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.3.1.1.3
+    name: inputFrequency
+    metricKey: inputFrequency
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, inputIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.inputFrequency], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.3.1.1.10
+    name: inputFeedName
+    metricKey: inputFeedName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, inputIndex]
+    datadog: {as: [column-tag], tags: [eaton_epdu_input_feed_name], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.3.1.1.4
+    name: inputFrequencyStatus
+    metricKey: inputFrequencyStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, inputIndex]
+    enumMap: {"0": good, "1": outOfRange}
+    datadog: {as: [column-tag], tags: [eaton_epdu_input_frequency_status], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.3.2.1.3
+    name: inputVoltage
+    metricKey: inputVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, inputIndex, inputVoltageIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.inputVoltage], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.3.3.1.12
+    name: inputPhaseDesignator
+    metricKey: inputPhaseDesignator
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, inputIndex, inputCurrentIndex]
+    datadog: {as: [column-tag], tags: [eaton_epdu_input_description], features: [cross-table tag from another table], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.3.2.1.4
+    name: inputVoltageThStatus
+    metricKey: inputVoltageThStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, inputIndex, inputVoltageIndex]
+    enumMap: {"0": good, "1": lowWarning, "2": lowCritical, "3": highWarning, "4": highCritical}
+    datadog: {as: [column-tag], tags: [eaton_epdu_input_voltage_th_status], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.3.3.1.4
+    name: inputCurrent
+    metricKey: inputCurrent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, inputIndex, inputCurrentIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.inputCurrent], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.3.3.1.11
+    name: inputCurrentPercentLoad
+    metricKey: inputCurrentPercentLoad
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, inputIndex, inputCurrentIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.inputCurrentPercentLoad], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.3.3.1.5
+    name: inputCurrentThStatus
+    metricKey: inputCurrentThStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, inputIndex, inputCurrentIndex]
+    enumMap: {"0": good, "1": lowWarning, "2": lowCritical, "3": highWarning, "4": highCritical}
+    datadog: {as: [column-tag], tags: [eaton_epdu_input_current_th_status], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.3.4.1.3
+    name: inputVA
+    metricKey: inputVA
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, inputIndex, inputPowerIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.inputVA], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.3.4.1.4
+    name: inputWatts
+    metricKey: inputWatts
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, inputIndex, inputPowerIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.inputWatts], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.5.1.1.3
+    name: groupName
+    metricKey: groupName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, groupIndex]
+    datadog: {as: [column-tag], tags: [eaton_epdu_group_name], features: [cross-table tag from another table], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.5.1.1.4
+    name: groupType
+    metricKey: groupType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, groupIndex]
+    enumMap: {"0": unknown, "1": breaker1pole, "2": breaker2pole, "3": breaker3pole, "4": outletSection, "5": userDefined}
+    datadog: {as: [column-tag], tags: [eaton_epdu_group_type], features: [cross-table tag from another table], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.5.1.1.5
+    name: groupBreakerStatus
+    metricKey: groupBreakerStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, groupIndex]
+    enumMap: {"0": notApplicable, "1": breakerOn, "2": breakerOff}
+    datadog: {as: [column-tag], tags: [eaton_epdu_group_breaker_status], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.5.3.1.3
+    name: groupVoltage
+    metricKey: groupVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, groupIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.groupVoltage], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.5.3.1.4
+    name: groupVoltageThStatus
+    metricKey: groupVoltageThStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, groupIndex]
+    enumMap: {"0": good, "1": lowWarning, "2": lowCritical, "3": highWarning, "4": highCritical}
+    datadog: {as: [column-tag], tags: [eaton_epdu_group_voltage_th_status], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.5.4.1.3
+    name: groupCurrent
+    metricKey: groupCurrent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, groupIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.groupCurrent], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.5.4.1.10
+    name: groupCurrentPercentLoad
+    metricKey: groupCurrentPercentLoad
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, groupIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.groupCurrentPercentLoad], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.5.4.1.4
+    name: groupCurrentThStatus
+    metricKey: groupCurrentThStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, groupIndex]
+    enumMap: {"0": good, "1": lowWarning, "2": lowCritical, "3": highWarning, "4": highCritical}
+    datadog: {as: [column-tag], tags: [eaton_epdu_group_current_th_status], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.5.5.1.2
+    name: groupVA
+    metricKey: groupVA
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, groupIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.groupVA], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.5.5.1.3
+    name: groupWatts
+    metricKey: groupWatts
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, groupIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.groupWatts], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.5.6.1.2
+    name: groupControlStatus
+    metricKey: groupControlStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, groupIndex]
+    enumMap: {"0": "off", "1": "on", "2": rebooting, "3": mixed}
+    datadog: {as: [column-tag], tags: [eaton_epdu_group_control_status], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.6.3.1.2
+    name: outletVoltage
+    metricKey: outletVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, outletIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.outletVoltage], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.6.1.1.3
+    name: outletName
+    metricKey: outletName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, outletIndex]
+    datadog: {as: [column-tag], tags: [eaton_epdu_outlet_name], features: [cross-table tag from another table], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.6.3.1.3
+    name: outletVoltageThStatus
+    metricKey: outletVoltageThStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, outletIndex]
+    enumMap: {"0": good, "1": lowWarning, "2": lowCritical, "3": highWarning, "4": highCritical}
+    datadog: {as: [column-tag], tags: [eaton_epdu_outlet_voltage_th_status], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.6.4.1.3
+    name: outletCurrent
+    metricKey: outletCurrent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, outletIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.outletCurrent], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.6.4.1.10
+    name: outletCurrentPercentLoad
+    metricKey: outletCurrentPercentLoad
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, outletIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.outletCurrentPercentLoad], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.6.4.1.4
+    name: outletCurrentThStatus
+    metricKey: outletCurrentThStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, outletIndex]
+    enumMap: {"0": good, "1": lowWarning, "2": lowCritical, "3": highWarning, "4": highCritical}
+    datadog: {as: [column-tag], tags: [eaton_epdu_outlet_current_th_status], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.6.5.1.2
+    name: outletVA
+    metricKey: outletVA
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, outletIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.outletVA], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.6.5.1.3
+    name: outletWatts
+    metricKey: outletWatts
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, outletIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.outletWatts], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.7.1.1.4
+    name: temperatureValue
+    metricKey: temperatureValue
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, temperatureIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.temperatureValue], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.7.1.1.2
+    name: temperatureName
+    metricKey: temperatureName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, temperatureIndex]
+    datadog: {as: [column-tag], tags: [eaton_epdu_temperature_name], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.7.1.1.3
+    name: temperatureProbeStatus
+    metricKey: temperatureProbeStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, temperatureIndex]
+    enumMap: {"0": disconnected, "1": connected, "-1": bad}
+    datadog: {as: [column-tag], tags: [eaton_epdu_temperature_probe_status], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.7.1.1.5
+    name: temperatureThStatus
+    metricKey: temperatureThStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, temperatureIndex]
+    enumMap: {"0": good, "1": lowWarning, "2": lowCritical, "3": highWarning, "4": highCritical}
+    datadog: {as: [column-tag], tags: [eaton_epdu_temperature_th_status], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.7.2.1.4
+    name: humidityValue
+    metricKey: humidityValue
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, humidityIndex]
+    datadog: {as: [metric], metric: [eaton.epdu.humidityValue], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.7.2.1.2
+    name: humidityName
+    metricKey: humidityName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, humidityIndex]
+    datadog: {as: [column-tag], tags: [eaton_epdu_humidity_name], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.7.2.1.3
+    name: humidityProbeStatus
+    metricKey: humidityProbeStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, humidityIndex]
+    enumMap: {"0": disconnected, "1": connected, "-1": bad}
+    datadog: {as: [column-tag], tags: [eaton_epdu_humidity_probe_status], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.7.2.1.5
+    name: humidityThStatus
+    metricKey: humidityThStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, humidityIndex]
+    enumMap: {"0": good, "1": lowWarning, "2": lowCritical, "3": highWarning, "4": highCritical}
+    datadog: {as: [column-tag], tags: [eaton_epdu_humidity_th_status], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.7.3.1.2
+    name: contactName
+    metricKey: contactName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, contactIndex]
+    datadog: {as: [column-tag], tags: [eaton_epdu_contact_name], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.7.3.1.3
+    name: contactProbeStatus
+    metricKey: contactProbeStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, contactIndex]
+    enumMap: {"0": disconnected, "1": connected, "-1": bad}
+    datadog: {as: [column-tag], tags: [eaton_epdu_contact_probe_status], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.4.1.534.6.6.7.7.3.1.4
+    name: contactState
+    metricKey: contactState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [strappingIndex, contactIndex]
+    enumMap: {"0": contactOpen, "1": contactClosed, "-1": contactBad}
+    datadog: {as: [column-tag], tags: [eaton_epdu_contact_state], from: [eaton-epdu.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/eaton-epdu.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml]

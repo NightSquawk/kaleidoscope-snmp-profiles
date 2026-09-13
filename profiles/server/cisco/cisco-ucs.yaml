@@ -1,0 +1,1348 @@
+formatVersion: 1
+slug: cisco-ucs
+name: Cisco UCS
+description: "Converted from Datadog's cisco-ucs.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: server
+vendor: Cisco
+extends: none
+priority: 5
+enabled: false
+matchPatterns: []
+matchAny:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.9.1.1683}
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.9.1.2178}
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.9.1.2492}
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.9.12.3.1.3.1062}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.2.1.0
+    name: ifNumber
+    metricKey: ifNumber
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.14
+    name: ifInErrors
+    metricKey: ifInErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.13
+    name: ifInDiscards
+    metricKey: ifInDiscards
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.20
+    name: ifOutErrors
+    metricKey: ifOutErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.19
+    name: ifOutDiscards
+    metricKey: ifOutDiscards
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.1
+    name: ifName
+    metricKey: ifName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [column-tag, metadata], tags: [interface], fields: [interface.name], features: [cross-table tag from ifXTable], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.18
+    name: ifAlias
+    metricKey: ifAlias
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [column-tag, metadata], tags: [interface_alias], fields: [interface.alias], features: [cross-table tag from ifXTable], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.7
+    name: ifAdminStatus
+    metricKey: ifAdminStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    enumMap: {"1": up, "2": down, "3": testing}
+    datadog: {as: [metric, metadata], fields: [interface.admin_status], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.8
+    name: ifOperStatus
+    metricKey: ifOperStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    enumMap: {"1": up, "2": down, "3": testing, "4": unknown, "5": dormant, "6": notPresent, "7": lowerLayerDown}
+    datadog: {as: [metric, metadata], fields: [interface.oper_status], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.5
+    name: ifSpeed
+    metricKey: ifSpeed
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.7
+    name: ifHCInUcastPkts
+    metricKey: ifHCInUcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.8
+    name: ifHCInMulticastPkts
+    metricKey: ifHCInMulticastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.9
+    name: ifHCInBroadcastPkts
+    metricKey: ifHCInBroadcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.11
+    name: ifHCOutUcastPkts
+    metricKey: ifHCOutUcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.12
+    name: ifHCOutMulticastPkts
+    metricKey: ifHCOutMulticastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.13
+    name: ifHCOutBroadcastPkts
+    metricKey: ifHCOutBroadcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.6
+    name: ifHCInOctets
+    metricKey: ifHCInOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.10
+    name: ifHCOutOctets
+    metricKey: ifHCOutOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.15
+    name: ifHighSpeed
+    metricKey: ifHighSpeed
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.6.1.2
+    name: cucsComputeBoardDn
+    metricKey: cucsComputeBoardDn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeBoardInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_compute_board_dn], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.6.1.6
+    name: cucsComputeBoardModel
+    metricKey: cucsComputeBoardModel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeBoardInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_compute_board_model], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.6.1.14
+    name: cucsComputeBoardSerial
+    metricKey: cucsComputeBoardSerial
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeBoardInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_compute_board_serial], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.6.1.16
+    name: cucsComputeBoardVendor
+    metricKey: cucsComputeBoardVendor
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeBoardInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_compute_board_vendor], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.6.1.7
+    name: cucsComputeBoardOperPower
+    metricKey: cucsComputeBoardOperPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeBoardInstanceId]
+    enumMap: {"0": unknown, "1": "on", "2": test, "3": "off", "4": online, "5": offline, "6": offduty, "7": degraded, "8": powerSave, "9": error, "10": ok, "11": failed, "100": notSupported}
+    datadog: {as: [column-tag], tags: [cucs_compute_board_oper_power], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.6.1.8
+    name: cucsComputeBoardOperState
+    metricKey: cucsComputeBoardOperState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeBoardInstanceId]
+    enumMap: {"0": unknown, "1": operable, "2": inoperable, "3": degraded, "4": poweredOff, "5": powerProblem, "6": removed, "7": voltageProblem, "8": thermalProblem, "9": performanceProblem, "10": accessibilityProblem, "11": identityUnestablishable, "12": biosPostTimeout, "13": disabled, "14": malformedFru, "15": backplanePortProblem, "16": chassisIntrusion, "51": fabricConnProblem, "52": fabricUnsupportedConn, "81": config, "82": equipmentProblem, "83": decomissioning, "84": chassisLimitExceeded, "100": notSupported, "101": discovery, "102": discoveryFailed, "103": identify, "104": postFailure, "105": upgradeProblem, "106": peerCommProblem, "107": autoUpgrade, "108": linkActivateBlocked}
+    datadog: {as: [column-tag], tags: [cucs_compute_board_oper_state], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.6.1.9
+    name: cucsComputeBoardOperability
+    metricKey: cucsComputeBoardOperability
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeBoardInstanceId]
+    enumMap: {"0": unknown, "1": operable, "2": inoperable, "3": degraded, "4": poweredOff, "5": powerProblem, "6": removed, "7": voltageProblem, "8": thermalProblem, "9": performanceProblem, "10": accessibilityProblem, "11": identityUnestablishable, "12": biosPostTimeout, "13": disabled, "14": malformedFru, "15": backplanePortProblem, "16": chassisIntrusion, "51": fabricConnProblem, "52": fabricUnsupportedConn, "81": config, "82": equipmentProblem, "83": decomissioning, "84": chassisLimitExceeded, "100": notSupported, "101": discovery, "102": discoveryFailed, "103": identify, "104": postFailure, "105": upgradeProblem, "106": peerCommProblem, "107": autoUpgrade, "108": linkActivateBlocked}
+    datadog: {as: [column-tag], tags: [cucs_compute_board_operability], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.6.1.10
+    name: cucsComputeBoardPerf
+    metricKey: cucsComputeBoardPerf
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeBoardInstanceId]
+    enumMap: {"0": unknown, "1": ok, "2": upperNonRecoverable, "3": upperCritical, "4": upperNonCritical, "5": lowerNonCritical, "6": lowerCritical, "7": lowerNonRecoverable, "100": notSupported}
+    datadog: {as: [column-tag], tags: [cucs_compute_board_perf], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.6.1.11
+    name: cucsComputeBoardPower
+    metricKey: cucsComputeBoardPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeBoardInstanceId]
+    enumMap: {"0": unknown, "1": "on", "2": test, "3": "off", "4": online, "5": offline, "6": offduty, "7": degraded, "8": powerSave, "9": error, "10": ok, "11": failed, "100": notSupported}
+    datadog: {as: [column-tag], tags: [cucs_compute_board_power], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.6.1.12
+    name: cucsComputeBoardPresence
+    metricKey: cucsComputeBoardPresence
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeBoardInstanceId]
+    enumMap: {"0": unknown, "1": empty, "10": equipped, "11": missing, "12": mismatch, "13": equippedNotPrimary, "14": equippedSlave, "15": mismatchSlave, "16": missingSlave, "20": equippedIdentityUnestablishable, "21": mismatchIdentityUnestablishable, "22": equippedWithMalformedFru, "30": inaccessible, "40": unauthorized, "100": notSupported, "101": equippedUnsupported, "102": equippedDiscNotStarted, "103": equippedDiscInProgress, "104": equippedDiscError, "105": equippedDiscUnknown}
+    datadog: {as: [column-tag], tags: [cucs_compute_board_presence], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.6.1.15
+    name: cucsComputeBoardThermal
+    metricKey: cucsComputeBoardThermal
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeBoardInstanceId]
+    enumMap: {"0": unknown, "1": ok, "2": upperNonRecoverable, "3": upperCritical, "4": upperNonCritical, "5": lowerNonCritical, "6": lowerCritical, "7": lowerNonRecoverable, "100": notSupported}
+    datadog: {as: [column-tag], tags: [cucs_compute_board_thermal], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.6.1.17
+    name: cucsComputeBoardVoltage
+    metricKey: cucsComputeBoardVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeBoardInstanceId]
+    enumMap: {"0": unknown, "1": ok, "2": upperNonRecoverable, "3": upperCritical, "4": upperNonCritical, "5": lowerNonCritical, "6": lowerCritical, "7": lowerNonRecoverable, "100": notSupported}
+    datadog: {as: [column-tag], tags: [cucs_compute_board_voltage], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.14.1.4
+    name: cucsComputeMbPowerStatsConsumedPower
+    metricKey: cucsComputeMbPowerStatsConsumedPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeMbPowerStatsInstanceId]
+    datadog: {as: [metric], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.14.1.8
+    name: cucsComputeMbPowerStatsInputCurrent
+    metricKey: cucsComputeMbPowerStatsInputCurrent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeMbPowerStatsInstanceId]
+    datadog: {as: [metric], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.14.1.12
+    name: cucsComputeMbPowerStatsInputVoltage
+    metricKey: cucsComputeMbPowerStatsInputVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeMbPowerStatsInstanceId]
+    datadog: {as: [metric], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.14.1.2
+    name: cucsComputeMbPowerStatsDn
+    metricKey: cucsComputeMbPowerStatsDn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeMbPowerStatsInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_compute_mb_power_stats_dn], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.9
+    name: cucsComputeRackUnitAvailableMemory
+    metricKey: cucsComputeRackUnitAvailableMemory
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    datadog: {as: [metric], metric: [memory.free], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.49
+    name: cucsComputeRackUnitTotalMemory
+    metricKey: cucsComputeRackUnitTotalMemory
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    datadog: {as: [metric], metric: [memory.total], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.2
+    name: cucsComputeRackUnitDn
+    metricKey: cucsComputeRackUnitDn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_dn], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.32
+    name: cucsComputeRackUnitModel
+    metricKey: cucsComputeRackUnitModel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_model], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.33
+    name: cucsComputeRackUnitName
+    metricKey: cucsComputeRackUnitName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_name], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.35
+    name: cucsComputeRackUnitNumOfCores
+    metricKey: cucsComputeRackUnitNumOfCores
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_num_of_cores], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.36
+    name: cucsComputeRackUnitNumOfCpus
+    metricKey: cucsComputeRackUnitNumOfCpus
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_num_of_cpus], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.39
+    name: cucsComputeRackUnitNumOfThreads
+    metricKey: cucsComputeRackUnitNumOfThreads
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_num_of_threads], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.47
+    name: cucsComputeRackUnitSerial
+    metricKey: cucsComputeRackUnitSerial
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_serial], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.50
+    name: cucsComputeRackUnitUuid
+    metricKey: cucsComputeRackUnitUuid
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_uuid], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.51
+    name: cucsComputeRackUnitVendor
+    metricKey: cucsComputeRackUnitVendor
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_vendor], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.4
+    name: cucsComputeRackUnitAdminPower
+    metricKey: cucsComputeRackUnitAdminPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    enumMap: {"2": cycleImmediate, "3": cycleWait, "4": hardResetImmediate, "5": hardResetWait, "12": cmosResetImmediate, "13": bmcResetImmediate, "14": bmcResetWait, "15": diagnosticInterrupt, "16": kvmReset, "30": policy, "31": adminUp, "32": adminDown, "33": ipmiReset}
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_admin_power], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.5
+    name: cucsComputeRackUnitAdminState
+    metricKey: cucsComputeRackUnitAdminState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    enumMap: {"1": inService, "2": outOfService, "3": inMaintenance}
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_admin_state], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.7
+    name: cucsComputeRackUnitAssociation
+    metricKey: cucsComputeRackUnitAssociation
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    enumMap: {"0": none, "1": establishing, "2": associated, "3": removing, "4": failed, "5": throttled}
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_association], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.8
+    name: cucsComputeRackUnitAvailability
+    metricKey: cucsComputeRackUnitAvailability
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    enumMap: {"0": unavailable, "1": available}
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_availability], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.10
+    name: cucsComputeRackUnitCheckPoint
+    metricKey: cucsComputeRackUnitCheckPoint
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    enumMap: {"0": unknown, "1": removing, "2": shallowCheckpoint, "3": deepCheckpoint, "4": discovered}
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_check_point], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.40
+    name: cucsComputeRackUnitOperPower
+    metricKey: cucsComputeRackUnitOperPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    enumMap: {"0": unknown, "1": "on", "2": test, "3": "off", "4": online, "5": offline, "6": offduty, "7": degraded, "8": powerSave, "9": error, "10": ok, "11": failed, "100": notSupported}
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_oper_power], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.42
+    name: cucsComputeRackUnitOperState
+    metricKey: cucsComputeRackUnitOperState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    enumMap: {"0": indeterminate, "1": unassociated, "10": ok, "11": discovery, "12": config, "13": unconfig, "14": powerOff, "15": restart, "20": maintenance, "21": test, "29": computeMismatch, "30": computeFailed, "31": degraded, "32": discoveryFailed, "33": configFailure, "34": unconfigFailed, "35": testFailed, "36": maintenanceFailed, "40": removed, "41": disabled, "50": inaccessible, "60": thermalProblem, "61": powerProblem, "62": voltageProblem, "63": inoperable, "101": decomissioning, "201": biosRestore, "202": cmosReset, "203": diagnostics, "204": diagnosticsFailed, "210": pendingReboot, "211": pendingReassociation, "212": svnicNotPresent}
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_oper_state], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.43
+    name: cucsComputeRackUnitOperability
+    metricKey: cucsComputeRackUnitOperability
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    enumMap: {"0": unknown, "1": operable, "2": inoperable, "3": degraded, "4": poweredOff, "5": powerProblem, "6": removed, "7": voltageProblem, "8": thermalProblem, "9": performanceProblem, "10": accessibilityProblem, "11": identityUnestablishable, "12": biosPostTimeout, "13": disabled, "14": malformedFru, "15": backplanePortProblem, "16": chassisIntrusion, "51": fabricConnProblem, "52": fabricUnsupportedConn, "81": config, "82": equipmentProblem, "83": decomissioning, "84": chassisLimitExceeded, "100": notSupported, "101": discovery, "102": discoveryFailed, "103": identify, "104": postFailure, "105": upgradeProblem, "106": peerCommProblem, "107": autoUpgrade, "108": linkActivateBlocked}
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_operability], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.35.1.45
+    name: cucsComputeRackUnitPresence
+    metricKey: cucsComputeRackUnitPresence
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitInstanceId]
+    enumMap: {"0": unknown, "1": empty, "10": equipped, "11": missing, "12": mismatch, "13": equippedNotPrimary, "14": equippedSlave, "15": mismatchSlave, "16": missingSlave, "20": equippedIdentityUnestablishable, "21": mismatchIdentityUnestablishable, "22": equippedWithMalformedFru, "30": inaccessible, "40": unauthorized, "101": equippedUnsupported, "102": equippedDeprecated}
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_presence], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.44.1.4
+    name: cucsComputeRackUnitMbTempStatsAmbientTemp
+    metricKey: cucsComputeRackUnitMbTempStatsAmbientTemp
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitMbTempStatsInstanceId]
+    datadog: {as: [metric], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.44.1.8
+    name: cucsComputeRackUnitMbTempStatsFrontTemp
+    metricKey: cucsComputeRackUnitMbTempStatsFrontTemp
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitMbTempStatsInstanceId]
+    datadog: {as: [metric], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.44.1.13
+    name: cucsComputeRackUnitMbTempStatsIoh1Temp
+    metricKey: cucsComputeRackUnitMbTempStatsIoh1Temp
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitMbTempStatsInstanceId]
+    datadog: {as: [metric], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.44.1.21
+    name: cucsComputeRackUnitMbTempStatsRearTemp
+    metricKey: cucsComputeRackUnitMbTempStatsRearTemp
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitMbTempStatsInstanceId]
+    datadog: {as: [metric], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.9.44.1.2
+    name: cucsComputeRackUnitMbTempStatsDn
+    metricKey: cucsComputeRackUnitMbTempStatsDn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsComputeRackUnitMbTempStatsInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_compute_rack_unit_mb_temp_stats_dn], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.12.1.2
+    name: cucsEquipmentFanDn
+    metricKey: cucsEquipmentFanDn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentFanInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_equipment_fan_dn], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.12.1.6
+    name: cucsEquipmentFanIntType
+    metricKey: cucsEquipmentFanIntType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentFanInstanceId]
+    enumMap: {"0": chassis, "1": switch, "2": fex}
+    datadog: {as: [column-tag], tags: [cucs_equipment_fan_int_type], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.12.1.9
+    name: cucsEquipmentFanOperState
+    metricKey: cucsEquipmentFanOperState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentFanInstanceId]
+    enumMap: {"0": unknown, "1": operable, "2": inoperable, "3": degraded, "4": poweredOff, "5": powerProblem, "6": removed, "7": voltageProblem, "8": thermalProblem, "9": performanceProblem, "10": accessibilityProblem, "11": identityUnestablishable, "12": biosPostTimeout, "13": disabled, "14": malformedFru, "15": backplanePortProblem, "16": chassisIntrusion, "51": fabricConnProblem, "52": fabricUnsupportedConn, "81": config, "82": equipmentProblem, "83": decomissioning, "84": chassisLimitExceeded, "100": notSupported, "101": discovery, "102": discoveryFailed, "103": identify, "104": postFailure, "105": upgradeProblem, "106": peerCommProblem, "107": autoUpgrade, "108": linkActivateBlocked}
+    datadog: {as: [column-tag], tags: [cucs_equipment_fan_oper_state], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.12.1.10
+    name: cucsEquipmentFanOperability
+    metricKey: cucsEquipmentFanOperability
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentFanInstanceId]
+    enumMap: {"0": unknown, "1": operable, "2": inoperable, "3": degraded, "4": poweredOff, "5": powerProblem, "6": removed, "7": voltageProblem, "8": thermalProblem, "9": performanceProblem, "10": accessibilityProblem, "11": identityUnestablishable, "12": biosPostTimeout, "13": disabled, "14": malformedFru, "15": backplanePortProblem, "16": chassisIntrusion, "51": fabricConnProblem, "52": fabricUnsupportedConn, "81": config, "82": equipmentProblem, "83": decomissioning, "84": chassisLimitExceeded, "100": notSupported, "101": discovery, "102": discoveryFailed, "103": identify, "104": postFailure, "105": upgradeProblem, "106": peerCommProblem, "107": autoUpgrade, "108": linkActivateBlocked}
+    datadog: {as: [column-tag], tags: [cucs_equipment_fan_operability], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.12.1.11
+    name: cucsEquipmentFanPerf
+    metricKey: cucsEquipmentFanPerf
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentFanInstanceId]
+    enumMap: {"0": unknown, "1": ok, "2": upperNonRecoverable, "3": upperCritical, "4": upperNonCritical, "5": lowerNonCritical, "6": lowerCritical, "7": lowerNonRecoverable, "100": notSupported}
+    datadog: {as: [column-tag], tags: [cucs_equipment_fan_perf], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.12.1.12
+    name: cucsEquipmentFanPower
+    metricKey: cucsEquipmentFanPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentFanInstanceId]
+    enumMap: {"0": unknown, "1": "on", "2": test, "3": "off", "4": online, "5": offline, "6": offduty, "7": degraded, "8": powerSave, "9": error, "10": ok, "11": failed, "100": notSupported}
+    datadog: {as: [column-tag], tags: [cucs_equipment_fan_power], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.12.1.13
+    name: cucsEquipmentFanPresence
+    metricKey: cucsEquipmentFanPresence
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentFanInstanceId]
+    enumMap: {"0": unknown, "1": empty, "10": equipped, "11": missing, "12": mismatch, "13": equippedNotPrimary, "14": equippedSlave, "15": mismatchSlave, "16": missingSlave, "20": equippedIdentityUnestablishable, "21": mismatchIdentityUnestablishable, "22": equippedWithMalformedFru, "30": inaccessible, "40": unauthorized, "100": notSupported, "101": equippedUnsupported, "102": equippedDiscNotStarted, "103": equippedDiscInProgress, "104": equippedDiscError, "105": equippedDiscUnknown}
+    datadog: {as: [column-tag], tags: [cucs_equipment_fan_presence], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.56.1.2
+    name: cucsEquipmentPsuDn
+    metricKey: cucsEquipmentPsuDn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentPsuInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_equipment_psu_dn], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.56.1.6
+    name: cucsEquipmentPsuModel
+    metricKey: cucsEquipmentPsuModel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentPsuInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_equipment_psu_model], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.56.1.12
+    name: cucsEquipmentPsuRevision
+    metricKey: cucsEquipmentPsuRevision
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentPsuInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_equipment_psu_revision], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.56.1.13
+    name: cucsEquipmentPsuSerial
+    metricKey: cucsEquipmentPsuSerial
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentPsuInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_equipment_psu_serial], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.56.1.7
+    name: cucsEquipmentPsuOperState
+    metricKey: cucsEquipmentPsuOperState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentPsuInstanceId]
+    enumMap: {"0": unknown, "1": operable, "2": inoperable, "3": degraded, "4": poweredOff, "5": powerProblem, "6": removed, "7": voltageProblem, "8": thermalProblem, "9": performanceProblem, "10": accessibilityProblem, "11": identityUnestablishable, "12": biosPostTimeout, "13": disabled, "14": malformedFru, "15": backplanePortProblem, "16": chassisIntrusion, "51": fabricConnProblem, "52": fabricUnsupportedConn, "81": config, "82": equipmentProblem, "83": decomissioning, "84": chassisLimitExceeded, "100": notSupported, "101": discovery, "102": discoveryFailed, "103": identify, "104": postFailure, "105": upgradeProblem, "106": peerCommProblem, "107": autoUpgrade, "108": linkActivateBlocked}
+    datadog: {as: [column-tag], tags: [cucs_equipment_psu_oper_state], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.56.1.8
+    name: cucsEquipmentPsuOperability
+    metricKey: cucsEquipmentPsuOperability
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentPsuInstanceId]
+    enumMap: {"0": unknown, "1": operable, "2": inoperable, "3": degraded, "4": poweredOff, "5": powerProblem, "6": removed, "7": voltageProblem, "8": thermalProblem, "9": performanceProblem, "10": accessibilityProblem, "11": identityUnestablishable, "12": biosPostTimeout, "13": disabled, "14": malformedFru, "15": backplanePortProblem, "16": chassisIntrusion, "51": fabricConnProblem, "52": fabricUnsupportedConn, "81": config, "82": equipmentProblem, "83": decomissioning, "84": chassisLimitExceeded, "100": notSupported, "101": discovery, "102": discoveryFailed, "103": identify, "104": postFailure, "105": upgradeProblem, "106": peerCommProblem, "107": autoUpgrade, "108": linkActivateBlocked}
+    datadog: {as: [column-tag], tags: [cucs_equipment_psu_operability], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.56.1.9
+    name: cucsEquipmentPsuPerf
+    metricKey: cucsEquipmentPsuPerf
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentPsuInstanceId]
+    enumMap: {"0": unknown, "1": ok, "2": upperNonRecoverable, "3": upperCritical, "4": upperNonCritical, "5": lowerNonCritical, "6": lowerCritical, "7": lowerNonRecoverable, "100": notSupported}
+    datadog: {as: [column-tag], tags: [cucs_equipment_psu_perf], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.56.1.10
+    name: cucsEquipmentPsuPower
+    metricKey: cucsEquipmentPsuPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentPsuInstanceId]
+    enumMap: {"0": unknown, "1": "on", "2": test, "3": "off", "4": online, "5": offline, "6": offduty, "7": degraded, "8": powerSave, "9": error, "10": ok, "11": failed, "100": notSupported}
+    datadog: {as: [column-tag], tags: [cucs_equipment_psu_power], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.56.1.11
+    name: cucsEquipmentPsuPresence
+    metricKey: cucsEquipmentPsuPresence
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentPsuInstanceId]
+    enumMap: {"0": unknown, "1": empty, "10": equipped, "11": missing, "12": mismatch, "13": equippedNotPrimary, "14": equippedSlave, "15": mismatchSlave, "16": missingSlave, "20": equippedIdentityUnestablishable, "21": mismatchIdentityUnestablishable, "22": equippedWithMalformedFru, "30": inaccessible, "40": unauthorized, "100": notSupported, "101": equippedUnsupported, "102": equippedDiscNotStarted, "103": equippedDiscInProgress, "104": equippedDiscError, "105": equippedDiscUnknown}
+    datadog: {as: [column-tag], tags: [cucs_equipment_psu_presence], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.114.1.2
+    name: cucsEquipmentHealthLedDn
+    metricKey: cucsEquipmentHealthLedDn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentHealthLedInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_equipment_health_led_dn], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.114.1.4
+    name: cucsEquipmentHealthLedColor
+    metricKey: cucsEquipmentHealthLedColor
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentHealthLedInstanceId]
+    enumMap: {"0": unknown, "1": green, "2": amber, "3": red, "4": blue}
+    datadog: {as: [column-tag], tags: [cucs_equipment_health_led_color], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.114.1.5
+    name: cucsEquipmentHealthLedHealthLedState
+    metricKey: cucsEquipmentHealthLedHealthLedState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentHealthLedInstanceId]
+    enumMap: {"0": normal, "1": minor, "2": critical}
+    datadog: {as: [column-tag], tags: [cucs_equipment_health_led_state], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.15.114.1.9
+    name: cucsEquipmentHealthLedOperState
+    metricKey: cucsEquipmentHealthLedOperState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsEquipmentHealthLedInstanceId]
+    enumMap: {"0": unknown, "1": "on", "2": "off", "3": blinking, "4": eth, "5": fc, "6": unsupported}
+    datadog: {as: [column-tag], tags: [cucs_equipment_health_led_oper_state], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.30.11.1.6
+    name: cucsMemoryUnitCapacity
+    metricKey: cucsMemoryUnitCapacity
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsMemoryUnitInstanceId]
+    datadog: {as: [metric], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.30.11.1.2
+    name: cucsMemoryUnitDn
+    metricKey: cucsMemoryUnitDn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsMemoryUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_memory_unit_dn], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.30.11.1.11
+    name: cucsMemoryUnitLocation
+    metricKey: cucsMemoryUnitLocation
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsMemoryUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_memory_unit_location], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.30.11.1.23
+    name: cucsMemoryUnitType
+    metricKey: cucsMemoryUnitType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsMemoryUnitInstanceId]
+    enumMap: {"0": undiscovered, "1": other, "2": unknown, "3": dram, "4": edram, "5": vram, "6": sram, "7": ram, "8": rom, "9": flash, "10": eeprom, "11": feprom, "12": eprom, "13": cdram, "14": n3DRAM, "15": sdram, "16": sgram, "17": rdram, "18": ddr, "19": ddr2, "20": ddr2FbDimm, "24": ddr3, "25": fbd2, "26": ddr4, "27": ddr5}
+    datadog: {as: [column-tag], tags: [cucs_memory_unit_type], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.30.11.1.13
+    name: cucsMemoryUnitOperState
+    metricKey: cucsMemoryUnitOperState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsMemoryUnitInstanceId]
+    enumMap: {"0": unknown, "1": operable, "2": inoperable, "3": degraded, "4": poweredOff, "5": powerProblem, "6": removed, "7": voltageProblem, "8": thermalProblem, "9": performanceProblem, "10": accessibilityProblem, "11": identityUnestablishable, "12": biosPostTimeout, "13": disabled, "14": malformedFru, "15": backplanePortProblem, "16": chassisIntrusion, "51": fabricConnProblem, "52": fabricUnsupportedConn, "81": config, "82": equipmentProblem, "83": decomissioning, "84": chassisLimitExceeded, "100": notSupported, "101": discovery, "102": discoveryFailed, "103": identify, "104": postFailure, "105": upgradeProblem, "106": peerCommProblem, "107": autoUpgrade, "108": linkActivateBlocked}
+    datadog: {as: [column-tag], tags: [cucs_memory_unit_oper_state], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.30.11.1.14
+    name: cucsMemoryUnitOperability
+    metricKey: cucsMemoryUnitOperability
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsMemoryUnitInstanceId]
+    enumMap: {"0": unknown, "1": operable, "2": inoperable, "3": degraded, "4": poweredOff, "5": powerProblem, "6": removed, "7": voltageProblem, "8": thermalProblem, "9": performanceProblem, "10": accessibilityProblem, "11": identityUnestablishable, "12": biosPostTimeout, "13": disabled, "14": malformedFru, "15": backplanePortProblem, "16": chassisIntrusion, "51": fabricConnProblem, "52": fabricUnsupportedConn, "81": config, "82": equipmentProblem, "83": decomissioning, "84": chassisLimitExceeded, "100": notSupported, "101": discovery, "102": discoveryFailed, "103": identify, "104": postFailure, "105": upgradeProblem, "106": peerCommProblem, "107": autoUpgrade, "108": linkActivateBlocked}
+    datadog: {as: [column-tag], tags: [cucs_memory_unit_operability], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.30.11.1.15
+    name: cucsMemoryUnitPerf
+    metricKey: cucsMemoryUnitPerf
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsMemoryUnitInstanceId]
+    enumMap: {"0": unknown, "1": ok, "2": upperNonRecoverable, "3": upperCritical, "4": upperNonCritical, "5": lowerNonCritical, "6": lowerCritical, "7": lowerNonRecoverable, "100": notSupported}
+    datadog: {as: [column-tag], tags: [cucs_memory_unit_perf], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.30.11.1.16
+    name: cucsMemoryUnitPower
+    metricKey: cucsMemoryUnitPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsMemoryUnitInstanceId]
+    enumMap: {"0": unknown, "1": "on", "2": test, "3": "off", "4": online, "5": offline, "6": offduty, "7": degraded, "8": powerSave, "9": error, "10": ok, "11": failed, "100": notSupported}
+    datadog: {as: [column-tag], tags: [cucs_memory_unit_power], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.30.11.1.17
+    name: cucsMemoryUnitPresence
+    metricKey: cucsMemoryUnitPresence
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsMemoryUnitInstanceId]
+    enumMap: {"0": unknown, "1": empty, "10": equipped, "11": missing, "12": mismatch, "13": equippedNotPrimary, "14": equippedSlave, "15": mismatchSlave, "16": missingSlave, "20": equippedIdentityUnestablishable, "21": mismatchIdentityUnestablishable, "22": equippedWithMalformedFru, "30": inaccessible, "40": unauthorized, "100": notSupported, "101": equippedUnsupported, "102": equippedDiscNotStarted, "103": equippedDiscInProgress, "104": equippedDiscError, "105": equippedDiscUnknown}
+    datadog: {as: [column-tag], tags: [cucs_memory_unit_presence], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.30.12.1.6
+    name: cucsMemoryUnitEnvStatsTemperature
+    metricKey: cucsMemoryUnitEnvStatsTemperature
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsMemoryUnitEnvStatsInstanceId]
+    datadog: {as: [metric], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.30.12.1.2
+    name: cucsMemoryUnitEnvStatsDn
+    metricKey: cucsMemoryUnitEnvStatsDn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsMemoryUnitEnvStatsInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_memory_unit_env_stats_dn], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.41.2.1.10
+    name: cucsProcessorEnvStatsTemperature
+    metricKey: cucsProcessorEnvStatsTemperature
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsProcessorEnvStatsInstanceId]
+    datadog: {as: [metric], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.41.2.1.2
+    name: cucsProcessorEnvStatsDn
+    metricKey: cucsProcessorEnvStatsDn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsProcessorEnvStatsInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_processor_env_stats_dn], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.41.9.1.2
+    name: cucsProcessorUnitDn
+    metricKey: cucsProcessorUnitDn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsProcessorUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_processor_unit_dn], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.41.9.1.4
+    name: cucsProcessorUnitArch
+    metricKey: cucsProcessorUnitArch
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsProcessorUnitInstanceId]
+    enumMap: {"0": any, "1": intelP4C, "107": zen, "132": opteron, "134": turion64, "135": dualCoreOpteron, "178": pentium4, "179": xeon, "181": xeonMP}
+    datadog: {as: [column-tag], tags: [cucs_processor_unit_arch], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.41.9.1.5
+    name: cucsProcessorUnitCores
+    metricKey: cucsProcessorUnitCores
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsProcessorUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_processor_unit_cores], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.41.9.1.6
+    name: cucsProcessorUnitCoresEnabled
+    metricKey: cucsProcessorUnitCoresEnabled
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsProcessorUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_processor_unit_cores_enabled], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.41.9.1.8
+    name: cucsProcessorUnitModel
+    metricKey: cucsProcessorUnitModel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsProcessorUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_processor_unit_model], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.41.9.1.20
+    name: cucsProcessorUnitThreads
+    metricKey: cucsProcessorUnitThreads
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsProcessorUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_processor_unit_threads], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.41.9.1.21
+    name: cucsProcessorUnitVendor
+    metricKey: cucsProcessorUnitVendor
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsProcessorUnitInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_processor_unit_vendor], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.41.9.1.9
+    name: cucsProcessorUnitOperState
+    metricKey: cucsProcessorUnitOperState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsProcessorUnitInstanceId]
+    enumMap: {"0": unknown, "1": operable, "2": inoperable, "3": degraded, "4": poweredOff, "5": powerProblem, "6": removed, "7": voltageProblem, "8": thermalProblem, "9": performanceProblem, "10": accessibilityProblem, "11": identityUnestablishable, "12": biosPostTimeout, "13": disabled, "14": malformedFru, "15": backplanePortProblem, "16": chassisIntrusion, "51": fabricConnProblem, "52": fabricUnsupportedConn, "81": config, "82": equipmentProblem, "83": decomissioning, "84": chassisLimitExceeded, "100": notSupported, "101": discovery, "102": discoveryFailed, "103": identify, "104": postFailure, "105": upgradeProblem, "106": peerCommProblem, "107": autoUpgrade, "108": linkActivateBlocked}
+    datadog: {as: [column-tag], tags: [cucs_processor_unit_oper_state], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.41.9.1.10
+    name: cucsProcessorUnitOperability
+    metricKey: cucsProcessorUnitOperability
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsProcessorUnitInstanceId]
+    enumMap: {"0": unknown, "1": operable, "2": inoperable, "3": degraded, "4": poweredOff, "5": powerProblem, "6": removed, "7": voltageProblem, "8": thermalProblem, "9": performanceProblem, "10": accessibilityProblem, "11": identityUnestablishable, "12": biosPostTimeout, "13": disabled, "14": malformedFru, "15": backplanePortProblem, "16": chassisIntrusion, "51": fabricConnProblem, "52": fabricUnsupportedConn, "81": config, "82": equipmentProblem, "83": decomissioning, "84": chassisLimitExceeded, "100": notSupported, "101": discovery, "102": discoveryFailed, "103": identify, "104": postFailure, "105": upgradeProblem, "106": peerCommProblem, "107": autoUpgrade, "108": linkActivateBlocked}
+    datadog: {as: [column-tag], tags: [cucs_processor_unit_operability], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.41.9.1.11
+    name: cucsProcessorUnitPerf
+    metricKey: cucsProcessorUnitPerf
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsProcessorUnitInstanceId]
+    enumMap: {"0": unknown, "1": ok, "2": upperNonRecoverable, "3": upperCritical, "4": upperNonCritical, "5": lowerNonCritical, "6": lowerCritical, "7": lowerNonRecoverable, "100": notSupported}
+    datadog: {as: [column-tag], tags: [cucs_processor_unit_perf], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.41.9.1.12
+    name: cucsProcessorUnitPower
+    metricKey: cucsProcessorUnitPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsProcessorUnitInstanceId]
+    enumMap: {"0": unknown, "1": "on", "2": test, "3": "off", "4": online, "5": offline, "6": offduty, "7": degraded, "8": powerSave, "9": error, "10": ok, "11": failed, "100": notSupported}
+    datadog: {as: [column-tag], tags: [cucs_processor_unit_power], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.41.9.1.13
+    name: cucsProcessorUnitPresence
+    metricKey: cucsProcessorUnitPresence
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsProcessorUnitInstanceId]
+    enumMap: {"0": unknown, "1": empty, "10": equipped, "11": missing, "12": mismatch, "13": equippedNotPrimary, "14": equippedSlave, "15": mismatchSlave, "16": missingSlave, "20": equippedIdentityUnestablishable, "21": mismatchIdentityUnestablishable, "22": equippedWithMalformedFru, "30": inaccessible, "40": unauthorized, "100": notSupported, "101": equippedUnsupported, "102": equippedDiscNotStarted, "103": equippedDiscInProgress, "104": equippedDiscError, "105": equippedDiscUnknown}
+    datadog: {as: [column-tag], tags: [cucs_processor_unit_presence], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.34.1.19
+    name: cucsStorageFlexFlashCardReadIOErrorCount
+    metricKey: cucsStorageFlexFlashCardReadIOErrorCount
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashCardInstanceId]
+    datadog: {as: [metric], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.34.1.22
+    name: cucsStorageFlexFlashCardSize
+    metricKey: cucsStorageFlexFlashCardSize
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashCardInstanceId]
+    datadog: {as: [metric], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.34.1.26
+    name: cucsStorageFlexFlashCardWriteIOErrorCount
+    metricKey: cucsStorageFlexFlashCardWriteIOErrorCount
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashCardInstanceId]
+    datadog: {as: [metric], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.34.1.2
+    name: cucsStorageFlexFlashCardDn
+    metricKey: cucsStorageFlexFlashCardDn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashCardInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_card_dn], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.34.1.6
+    name: cucsStorageFlexFlashCardCardMode
+    metricKey: cucsStorageFlexFlashCardCardMode
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashCardInstanceId]
+    enumMap: {"0": ffPhyDriveUnpairedPrimary, "1": ffPhyDrivePrimary, "2": ffPhyDriveSecondaryAct, "3": ffPhyDriveSecondaryUnhealthy}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_card_mode], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.34.1.7
+    name: cucsStorageFlexFlashCardCardType
+    metricKey: cucsStorageFlexFlashCardCardType
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashCardInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_card_card_type], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.34.1.8
+    name: cucsStorageFlexFlashCardConnectionProtocol
+    metricKey: cucsStorageFlexFlashCardConnectionProtocol
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashCardInstanceId]
+    enumMap: {"0": unspecified, "1": sas, "2": sata, "3": nvme}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_card_connection_protocol], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.34.1.20
+    name: cucsStorageFlexFlashCardRevision
+    metricKey: cucsStorageFlexFlashCardRevision
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashCardInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_card_revision], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.34.1.21
+    name: cucsStorageFlexFlashCardSerial
+    metricKey: cucsStorageFlexFlashCardSerial
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashCardInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_card_serial], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.34.1.29
+    name: cucsStorageFlexFlashCardDrivesEnabled
+    metricKey: cucsStorageFlexFlashCardDrivesEnabled
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashCardInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_card_drives_enabled], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.34.1.5
+    name: cucsStorageFlexFlashCardCardHealth
+    metricKey: cucsStorageFlexFlashCardCardHealth
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashCardInstanceId]
+    enumMap: {"0": ffPhyHealthNa, "1": ffPhyHealthOk, "2": ffPhyUnhealthyRaid, "3": ffPhyUnhealthyOther, "4": ffPhyRaidSyncInProgress, "5": ffPhyRaidOutOfSync}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_card_card_health], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.34.1.17
+    name: cucsStorageFlexFlashCardOperability
+    metricKey: cucsStorageFlexFlashCardOperability
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashCardInstanceId]
+    enumMap: {"0": unknown, "1": operable, "2": inoperable, "3": degraded, "4": poweredOff, "5": powerProblem, "6": removed, "7": voltageProblem, "8": thermalProblem, "9": performanceProblem, "10": accessibilityProblem, "11": identityUnestablishable, "12": biosPostTimeout, "13": disabled, "14": malformedFru, "15": backplanePortProblem, "16": chassisIntrusion, "51": fabricConnProblem, "52": fabricUnsupportedConn, "81": config, "82": equipmentProblem, "83": decomissioning, "84": chassisLimitExceeded, "100": notSupported, "101": discovery, "102": discoveryFailed, "103": identify, "104": postFailure, "105": upgradeProblem, "106": peerCommProblem, "107": autoUpgrade, "108": linkActivateBlocked}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_card_operability], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.34.1.18
+    name: cucsStorageFlexFlashCardPresence
+    metricKey: cucsStorageFlexFlashCardPresence
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashCardInstanceId]
+    enumMap: {"0": unknown, "1": empty, "10": equipped, "11": missing, "12": mismatch, "13": equippedNotPrimary, "14": equippedSlave, "15": mismatchSlave, "16": missingSlave, "20": equippedIdentityUnestablishable, "21": mismatchIdentityUnestablishable, "22": equippedWithMalformedFru, "30": inaccessible, "40": unauthorized, "100": notSupported, "101": equippedUnsupported, "102": equippedDiscNotStarted, "103": equippedDiscInProgress, "104": equippedDiscError, "105": equippedDiscUnknown}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_card_presence], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.34.1.27
+    name: cucsStorageFlexFlashCardCardState
+    metricKey: cucsStorageFlexFlashCardCardState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashCardInstanceId]
+    enumMap: {"0": undefined, "1": configured, "2": initializing, "3": active, "4": ignored, "5": failed, "6": unknown}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_card_card_state], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.34.1.28
+    name: cucsStorageFlexFlashCardCardSync
+    metricKey: cucsStorageFlexFlashCardCardSync
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashCardInstanceId]
+    enumMap: {"0": na, "1": manual, "2": auto, "3": unknown}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_card_card_sync], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.2
+    name: cucsStorageFlexFlashControllerDn
+    metricKey: cucsStorageFlexFlashControllerDn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_dn], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.6
+    name: cucsStorageFlexFlashControllerFlexFlashType
+    metricKey: cucsStorageFlexFlashControllerFlexFlashType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    enumMap: {"0": unknown, "1": astoria, "2": fx3s}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_flex_flash_type], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.8
+    name: cucsStorageFlexFlashControllerModel
+    metricKey: cucsStorageFlexFlashControllerModel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_model], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.15
+    name: cucsStorageFlexFlashControllerPhysicalDriveCount
+    metricKey: cucsStorageFlexFlashControllerPhysicalDriveCount
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_physical_drive_count], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.24
+    name: cucsStorageFlexFlashControllerType
+    metricKey: cucsStorageFlexFlashControllerType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    enumMap: {"0": unknown, "1": sas, "2": sata, "3": flash, "4": sd, "5": pt, "6": pch, "7": external, "8": nvme, "9": hba, "10": m2}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_type], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.25
+    name: cucsStorageFlexFlashControllerVendor
+    metricKey: cucsStorageFlexFlashControllerVendor
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_vendor], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.26
+    name: cucsStorageFlexFlashControllerVirtualDriveCount
+    metricKey: cucsStorageFlexFlashControllerVirtualDriveCount
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_virtual_drive_count], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.4
+    name: cucsStorageFlexFlashControllerControllerHealth
+    metricKey: cucsStorageFlexFlashControllerControllerHealth
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    enumMap: {"0": ffchOk, "1": ffchMetadataFailure, "2": ffchErrorCardsAccessError, "3": ffchErrorOldFirmwareRunning, "4": ffchErrorMediaWriteProtected, "5": ffchErrorInvalidSize, "6": ffchErrorCardSizeMismatch, "7": ffchInconsistentMetadata, "8": ffchErrorSecondaryUnhealthyCard, "9": ffchErrorSdCardNotConfigured, "10": ffchErrorInconsistantMetadataIgnored, "11": ffchErrorSd253WithUnOrSd247, "12": ffchErrorRebootedDuringRebuild, "13": ffchErrorSd247CardDetected, "14": ffchFlexdErrorSdCardOpModeMismatch, "15": ffchFlexdErrorSdOpModeMismatchWithUn, "16": ffchFlexdErrorImSdUnhealthySdUnIgnored, "17": ffchFlexdErrorImSdHealthySdUnIgnored, "18": ffchFlexdErrorImSdCardsOpModeMismatch, "19": ffchFlexdErrorSdCard0UnhealthyOpModeMismatch, "20": ffchFlexdErrorSdCard0HealthyOpModeMismatch, "21": ffchFlexdErrorSdCard1UnhealthyOpModeMismatch, "22": ffchFlexdErrorSdCard1HealthyOpModeMismatch, "23": ffchFlexdErrorImSd0IgnoredSd1, "24": ffchFlexdErrorImSd0Sd1Ignored}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_controller_health], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.5
+    name: cucsStorageFlexFlashControllerControllerState
+    metricKey: cucsStorageFlexFlashControllerControllerState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    enumMap: {"0": ffcUninitalized, "1": ffcSoftwareErr, "2": ffcInit, "3": ffcConfig, "4": ffcWaitUser, "5": ffcUsbDisconnecting, "6": ffcUsbDisconnected, "7": ffcUsbConnecting, "8": ffcUsbConnected, "9": ffcRebuilding, "10": ffcFailed}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_controller_state], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.10
+    name: cucsStorageFlexFlashControllerOperState
+    metricKey: cucsStorageFlexFlashControllerOperState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    enumMap: {"0": unknown, "1": operable, "2": inoperable, "3": degraded, "4": poweredOff, "5": powerProblem, "6": removed, "7": voltageProblem, "8": thermalProblem, "9": performanceProblem, "10": accessibilityProblem, "11": identityUnestablishable, "12": biosPostTimeout, "13": disabled, "14": malformedFru, "15": backplanePortProblem, "16": chassisIntrusion, "51": fabricConnProblem, "52": fabricUnsupportedConn, "81": config, "82": equipmentProblem, "83": decomissioning, "84": chassisLimitExceeded, "100": notSupported, "101": discovery, "102": discoveryFailed, "103": identify, "104": postFailure, "105": upgradeProblem, "106": peerCommProblem, "107": autoUpgrade, "108": linkActivateBlocked}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_oper_state], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.11
+    name: cucsStorageFlexFlashControllerOperability
+    metricKey: cucsStorageFlexFlashControllerOperability
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    enumMap: {"0": unknown, "1": operable, "2": inoperable, "3": degraded, "4": poweredOff, "5": powerProblem, "6": removed, "7": voltageProblem, "8": thermalProblem, "9": performanceProblem, "10": accessibilityProblem, "11": identityUnestablishable, "12": biosPostTimeout, "13": disabled, "14": malformedFru, "15": backplanePortProblem, "16": chassisIntrusion, "51": fabricConnProblem, "52": fabricUnsupportedConn, "81": config, "82": equipmentProblem, "83": decomissioning, "84": chassisLimitExceeded, "100": notSupported, "101": discovery, "102": discoveryFailed, "103": identify, "104": postFailure, "105": upgradeProblem, "106": peerCommProblem, "107": autoUpgrade, "108": linkActivateBlocked}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_operability], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.14
+    name: cucsStorageFlexFlashControllerPerf
+    metricKey: cucsStorageFlexFlashControllerPerf
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    enumMap: {"0": unknown, "1": ok, "2": upperNonRecoverable, "3": upperCritical, "4": upperNonCritical, "5": lowerNonCritical, "6": lowerCritical, "7": lowerNonRecoverable, "100": notSupported}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_perf], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.16
+    name: cucsStorageFlexFlashControllerPower
+    metricKey: cucsStorageFlexFlashControllerPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    enumMap: {"0": unknown, "1": "on", "2": test, "3": "off", "4": online, "5": offline, "6": offduty, "7": degraded, "8": powerSave, "9": error, "10": ok, "11": failed, "100": notSupported}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_power], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.17
+    name: cucsStorageFlexFlashControllerPresence
+    metricKey: cucsStorageFlexFlashControllerPresence
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    enumMap: {"0": unknown, "1": empty, "10": equipped, "11": missing, "12": mismatch, "13": equippedNotPrimary, "14": equippedSlave, "15": mismatchSlave, "16": missingSlave, "20": equippedIdentityUnestablishable, "21": mismatchIdentityUnestablishable, "22": equippedWithMalformedFru, "30": inaccessible, "40": unauthorized, "100": notSupported, "101": equippedUnsupported, "102": equippedDiscNotStarted, "103": equippedDiscInProgress, "104": equippedDiscError, "105": equippedDiscUnknown}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_presence], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.43
+    name: cucsStorageFlexFlashControllerHasError
+    metricKey: cucsStorageFlexFlashControllerHasError
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    enumMap: {"0": error, "1": noError}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_has_error], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.45
+    name: cucsStorageFlexFlashControllerIsFormatFSMRunning
+    metricKey: cucsStorageFlexFlashControllerIsFormatFSMRunning
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    enumMap: {"0": na, "1": "yes", "2": "no"}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_is_format_fsm_running], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.35.1.46
+    name: cucsStorageFlexFlashControllerOperatingMode
+    metricKey: cucsStorageFlexFlashControllerOperatingMode
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashControllerInstanceId]
+    enumMap: {"0": unknown, "1": mirror, "2": util}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_controller_operating_mode], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.36.1.18
+    name: cucsStorageFlexFlashDriveSize
+    metricKey: cucsStorageFlexFlashDriveSize
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashDriveInstanceId]
+    datadog: {as: [metric], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.36.1.2
+    name: cucsStorageFlexFlashDriveDn
+    metricKey: cucsStorageFlexFlashDriveDn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashDriveInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_drive_dn], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.36.1.5
+    name: cucsStorageFlexFlashDriveConnectionProtocol
+    metricKey: cucsStorageFlexFlashDriveConnectionProtocol
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashDriveInstanceId]
+    enumMap: {"0": unspecified, "1": sas, "2": sata, "3": nvme}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_drive_connection_protocol], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.36.1.8
+    name: cucsStorageFlexFlashDriveDriveType
+    metricKey: cucsStorageFlexFlashDriveDriveType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashDriveInstanceId]
+    enumMap: {"0": unknown, "1": scu, "2": huu, "3": hv, "4": drivers}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_drive_drive_type], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.36.1.10
+    name: cucsStorageFlexFlashDriveModel
+    metricKey: cucsStorageFlexFlashDriveModel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashDriveInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_drive_model], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.36.1.11
+    name: cucsStorageFlexFlashDriveName
+    metricKey: cucsStorageFlexFlashDriveName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashDriveInstanceId]
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_drive_name], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.36.1.21
+    name: cucsStorageFlexFlashDriveVisible
+    metricKey: cucsStorageFlexFlashDriveVisible
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashDriveInstanceId]
+    enumMap: {"0": "no", "1": "yes"}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_drive_visible], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.36.1.22
+    name: cucsStorageFlexFlashDriveRemovable
+    metricKey: cucsStorageFlexFlashDriveRemovable
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashDriveInstanceId]
+    enumMap: {"0": na, "1": "yes", "2": "no"}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_drive_removable], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.36.1.23
+    name: cucsStorageFlexFlashDriveRWType
+    metricKey: cucsStorageFlexFlashDriveRWType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashDriveInstanceId]
+    enumMap: {"0": readWrite, "1": readOnly}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_drive_rw_type], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.36.1.7
+    name: cucsStorageFlexFlashDriveDriveState
+    metricKey: cucsStorageFlexFlashDriveDriveState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashDriveInstanceId]
+    enumMap: {"0": nonraid, "1": raid}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_drive_state], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.36.1.14
+    name: cucsStorageFlexFlashDriveOperability
+    metricKey: cucsStorageFlexFlashDriveOperability
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashDriveInstanceId]
+    enumMap: {"0": unknown, "1": operable, "2": inoperable, "3": degraded, "4": poweredOff, "5": powerProblem, "6": removed, "7": voltageProblem, "8": thermalProblem, "9": performanceProblem, "10": accessibilityProblem, "11": identityUnestablishable, "12": biosPostTimeout, "13": disabled, "14": malformedFru, "15": backplanePortProblem, "16": chassisIntrusion, "51": fabricConnProblem, "52": fabricUnsupportedConn, "81": config, "82": equipmentProblem, "83": decomissioning, "84": chassisLimitExceeded, "100": notSupported, "101": discovery, "102": discoveryFailed, "103": identify, "104": postFailure, "105": upgradeProblem, "106": peerCommProblem, "107": autoUpgrade, "108": linkActivateBlocked}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_drive_operability], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.36.1.15
+    name: cucsStorageFlexFlashDrivePresence
+    metricKey: cucsStorageFlexFlashDrivePresence
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashDriveInstanceId]
+    enumMap: {"0": unknown, "1": empty, "10": equipped, "11": missing, "12": mismatch, "13": equippedNotPrimary, "14": equippedSlave, "15": mismatchSlave, "16": missingSlave, "20": equippedIdentityUnestablishable, "21": mismatchIdentityUnestablishable, "22": equippedWithMalformedFru, "30": inaccessible, "40": unauthorized, "100": notSupported, "101": equippedUnsupported, "102": equippedDiscNotStarted, "103": equippedDiscInProgress, "104": equippedDiscError, "105": equippedDiscUnknown}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_drive_presence], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.719.1.45.36.1.25
+    name: cucsStorageFlexFlashDriveOperationState
+    metricKey: cucsStorageFlexFlashDriveOperationState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cucsStorageFlexFlashDriveInstanceId]
+    enumMap: {"0": partitionNonMirrored, "1": partitionMirrored, "2": partitionMirroredSyncing, "3": partitionMirroredErasing, "4": partitionMirroredUpdating, "5": partitionNonMirroredUpdating, "6": partitionNonMirroredErasing, "7": partitionMirroredSyncingFail, "8": partitionMirroredErasingFail, "9": partitionMirroredUpdatingFail, "10": partitionNonMirroredUpdatingFail, "11": partitionNonMirroredErasingFail, "12": partitionMirroredSyncingSuccess, "13": partitionMirroredErasingSuccess, "14": partitionMirroredUpdatingSuccess, "15": partitionNonMirroredUpdatingSuccess, "16": partitionNonMirroredErasingSuccess, "17": unknown}
+    datadog: {as: [column-tag], tags: [cucs_storage_flex_flash_drive_operation_state], from: [cisco-ucs.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.2
+    name: ifDescr
+    metricKey: ifDescr
+    type: string
+    walk: true
+    cadenceTier: discovery
+    coalesceKey: [ifIndex]
+    datadog: {as: [metadata], fields: [interface.description], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.6
+    name: ifPhysAddress
+    metricKey: ifPhysAddress
+    type: string
+    walk: true
+    cadenceTier: discovery
+    coalesceKey: [ifIndex]
+    datadog: {as: [metadata], fields: [interface.mac_address], features: ["format=mac_address"], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.3
+    name: ifType
+    metricKey: ifType
+    type: integer
+    walk: true
+    cadenceTier: discovery
+    coalesceKey: [ifIndex]
+    enumMap: {"1": other, "2": regular1822, "3": hdh1822, "4": ddnX25, "5": rfc877x25, "6": ethernetCsmacd, "7": iso88023Csmacd, "8": iso88024TokenBus, "9": iso88025TokenRing, "10": iso88026Man, "11": starLan, "12": proteon10Mbit, "13": proteon80Mbit, "14": hyperchannel, "15": fddi, "16": lapb, "17": sdlc, "18": ds1, "19": e1, "20": basicISDN, "21": primaryISDN, "22": propPointToPointSerial, "23": ppp, "24": softwareLoopback, "25": eon, "26": ethernet3Mbit, "27": nsip, "28": slip, "29": ultra, "30": ds3, "31": sip, "32": frameRelay, "33": rs232, "34": para, "35": arcnet, "36": arcnetPlus, "37": atm, "38": miox25, "39": sonet, "40": x25ple, "41": iso88022llc, "42": localTalk, "43": smdsDxi, "44": frameRelayService, "45": v35, "46": hssi, "47": hippi, "48": modem, "49": aal5, "50": sonetPath, "51": sonetVT, "52": smdsIcip, "53": propVirtual, "54": propMultiplexor, "55": ieee80212, "56": fibreChannel, "57": hippiInterface, "58": frameRelayInterconnect, "59": aflane8023, "60": aflane8025, "61": cctEmul, "62": fastEther, "63": isdn, "64": v11, "65": v36, "66": g703at64k, "67": g703at2mb, "68": qllc, "69": fastEtherFX, "70": channel, "71": ieee80211, "72": ibm370parChan, "73": escon, "74": dlsw, "75": isdns, "76": isdnu, "77": lapd, "78": ipSwitch, "79": rsrb, "80": atmLogical, "81": ds0, "82": ds0Bundle, "83": bsc, "84": async, "85": cnr, "86": iso88025Dtr, "87": eplrs, "88": arap, "89": propCnls, "90": hostPad, "91": termPad, "92": frameRelayMPI, "93": x213, "94": adsl, "95": radsl, "96": sdsl, "97": vdsl, "98": iso88025CRFPInt, "99": myrinet, "100": voiceEM, "101": voiceFXO, "102": voiceFXS, "103": voiceEncap, "104": voiceOverIp, "105": atmDxi, "106": atmFuni, "107": atmIma, "108": pppMultilinkBundle, "109": ipOverCdlc, "110": ipOverClaw, "111": stackToStack, "112": virtualIpAddress, "113": mpc, "114": ipOverAtm, "115": iso88025Fiber, "116": tdlc, "117": gigabitEthernet, "118": hdlc, "119": lapf, "120": v37, "121": x25mlp, "122": x25huntGroup, "123": transpHdlc, "124": interleave, "125": fast, "126": ip, "127": docsCableMaclayer, "128": docsCableDownstream, "129": docsCableUpstream, "130": a12MppSwitch, "131": tunnel, "132": coffee, "133": ces, "134": atmSubInterface, "135": l2vlan, "136": l3ipvlan, "137": l3ipxvlan, "138": digitalPowerline, "139": mediaMailOverIp, "140": dtm, "141": dcn, "142": ipForward, "143": msdsl, "144": ieee1394, "145": if-gsn, "146": dvbRccMacLayer, "147": dvbRccDownstream, "148": dvbRccUpstream, "149": atmVirtual, "150": mplsTunnel, "151": srp, "152": voiceOverAtm, "153": voiceOverFrameRelay, "154": idsl, "155": compositeLink, "156": ss7SigLink, "157": propWirelessP2P, "158": frForward, "159": rfc1483, "160": usb, "161": ieee8023adLag, "162": bgppolicyaccounting, "163": frf16MfrBundle, "164": h323Gatekeeper, "165": h323Proxy, "166": mpls, "167": mfSigLink, "168": hdsl2, "169": shdsl, "170": ds1FDL, "171": pos, "172": dvbAsiIn, "173": dvbAsiOut, "174": plc, "175": nfas, "176": tr008, "177": gr303RDT, "178": gr303IDT, "179": isup, "180": propDocsWirelessMaclayer, "181": propDocsWirelessDownstream, "182": propDocsWirelessUpstream, "183": hiperlan2, "184": propBWAp2Mp, "185": sonetOverheadChannel, "186": digitalWrapperOverheadChannel, "187": aal2, "188": radioMAC, "189": atmRadio, "190": imt, "191": mvl, "192": reachDSL, "193": frDlciEndPt, "194": atmVciEndPt, "195": opticalChannel, "196": opticalTransport, "197": propAtm, "198": voiceOverCable, "199": infiniband, "200": teLink, "201": q2931, "202": virtualTg, "203": sipTg, "204": sipSig, "205": docsCableUpstreamChannel, "206": econet, "207": pon155, "208": pon622, "209": bridge, "210": linegroup, "211": voiceEMFGD, "212": voiceFGDEANA, "213": voiceDID, "214": mpegTransport, "215": sixToFour, "216": gtp, "217": pdnEtherLoop1, "218": pdnEtherLoop2, "219": opticalChannelGroup, "220": homepna, "221": gfp, "222": ciscoISLvlan, "223": actelisMetaLOOP, "224": fcipLink, "225": rpr, "226": qam, "227": lmp, "228": cblVectaStar, "229": docsCableMCmtsDownstream, "230": adsl2, "231": macSecControlledIF, "232": macSecUncontrolledIF, "233": aviciOpticalEther, "234": atmbond, "235": voiceFGDOS, "236": mocaVersion1, "237": ieee80216WMAN, "238": adsl2plus, "239": dvbRcsMacLayer, "240": dvbTdm, "241": dvbRcsTdma, "242": x86Laps, "243": wwanPP, "244": wwanPP2, "245": voiceEBS, "246": ifPwType, "247": ilan, "248": pip, "249": aluELP, "250": gpon, "251": vdsl2, "252": capwapDot11Profile, "253": capwapDot11Bss, "254": capwapWtpVirtualRadio, "255": bits, "256": docsCableUpstreamRfPort, "257": cableDownstreamRfPort, "258": vmwareVirtualNic, "259": ieee802154, "260": otnOdu, "261": otnOtu, "262": ifVfiType, "263": g9981, "264": g9982, "265": g9983, "266": aluEpon, "267": aluEponOnu, "268": aluEponPhysicalUni, "269": aluEponLogicalLink, "270": aluGponOnu, "271": aluGponPhysicalUni, "272": vmwareNicTeam, "277": docsOfdmDownstream, "278": docsOfdmaUpstream, "279": gfast, "280": sdci, "281": xboxWireless, "282": fastdsl, "283": docsCableScte55d1FwdOob, "284": docsCableScte55d1RetOob, "285": docsCableScte55d2DsOob, "286": docsCableScte55d2UsOob, "287": docsCableNdf, "288": docsCableNdr, "289": ptm, "290": ghn, "291": otnOtsi, "292": otnOtuc, "293": otnOduc, "294": otnOtsig, "295": microwaveCarrierTermination, "296": microwaveRadioLinkTerminal, "297": ieee8021axDrni, "298": ax25, "299": ieee19061nanocom, "300": cpri, "301": omni, "302": roe, "303": p2pOverLan}
+    datadog: {as: [metadata], fields: [interface.type], from: [_generic-if.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/cisco-ucs.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, _generic-if.yaml]

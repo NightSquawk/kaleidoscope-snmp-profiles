@@ -1,0 +1,199 @@
+formatVersion: 1
+slug: netapp
+name: NetApp
+description: "Converted from Datadog's netapp.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: nas
+vendor: NetApp
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.789.2}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.19.11.1.9
+    name: svTotalFailures
+    metricKey: svTotalFailures
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.19.11.1.1
+    name: svIndex
+    metricKey: svIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svIndex]
+    datadog: {as: [column-tag], tags: [index], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.19.11.1.3
+    name: svDst
+    metricKey: svDst
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svIndex]
+    datadog: {as: [column-tag], tags: [destination], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.19.11.1.5
+    name: svState
+    metricKey: svState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [svIndex]
+    enumMap: {"1": uninitialized, "2": snapvaulted, "3": brokenOff, "4": quiesced, "5": source, "6": unknown, "7": restoring}
+    datadog: {as: [column-tag], tags: [state], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.9.20.1.6
+    name: snapmirrorLag
+    metricKey: snapmirrorLag
+    type: timeticks
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [snapmirrorIndex]
+    datadog: {as: [metric], metricType: [gauge], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.9.20.1.1
+    name: snapmirrorIndex
+    metricKey: snapmirrorIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [snapmirrorIndex]
+    datadog: {as: [column-tag], tags: [index], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.9.20.1.5
+    name: snapmirrorState
+    metricKey: snapmirrorState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [snapmirrorIndex]
+    enumMap: {"1": uninitialized, "2": snapmirrored, "3": brokenOff, "4": quiesced, "5": source, "6": unknown}
+    datadog: {as: [column-tag], tags: [state], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.9.20.1.9
+    name: snapmirrorTotalFailures
+    metricKey: snapmirrorTotalFailures
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [snapmirrorIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.5.4.1.14
+    name: dfHighTotalKBytes
+    metricKey: dfHighTotalKBytes
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dfIndex]
+    datadog: {as: [metric], metricType: [gauge], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.5.4.1.18
+    name: dfHighAvailKBytes
+    metricKey: dfHighAvailKBytes
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dfIndex]
+    datadog: {as: [metric], metricType: [gauge], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.5.4.1.7
+    name: dfInodesUsed
+    metricKey: dfInodesUsed
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dfIndex]
+    datadog: {as: [metric], metricType: [gauge], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.5.4.1.8
+    name: dfInodesFree
+    metricKey: dfInodesFree
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dfIndex]
+    datadog: {as: [metric], metricType: [gauge], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.5.4.1.1
+    name: dfIndex
+    metricKey: dfIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dfIndex]
+    datadog: {as: [column-tag], tags: [index], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.5.4.1.2
+    name: dfFileSys
+    metricKey: dfFileSys
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dfIndex]
+    datadog: {as: [column-tag], tags: [filesystem], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.22.1.2.1.3
+    name: ifHighInOctets
+    metricKey: ifHighInOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [netifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.22.1.2.1.1
+    name: netifIndex
+    metricKey: netifIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [netifIndex]
+    datadog: {as: [column-tag], tags: [index], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.22.1.2.1.2
+    name: netifDescr
+    metricKey: netifDescr
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [netifIndex]
+    datadog: {as: [column-tag], tags: [interface], from: [netapp.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description, device.version, device.os_version], features: ["match_pattern=NetApp Release\\s+(\\S+)[:\\s]", "match_pattern=NetApp Release\\s+(\\d+(?:\\.\\d+)*)"], from: [_base.yaml, netapp.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.1.9.0
+    name: productSerialNum
+    metricKey: productSerialNum
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.serial_number], from: [netapp.yaml]}
+  - oid: 1.3.6.1.4.1.789.1.1.5.0
+    name: productModel
+    metricKey: productModel
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.model], from: [netapp.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/netapp.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml]

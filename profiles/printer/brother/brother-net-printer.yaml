@@ -1,0 +1,98 @@
+formatVersion: 1
+slug: brother-net-printer
+name: Brother Net Printer
+description: "Converted from Datadog's brother-net-printer.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: printer
+vendor: Brother
+extends: none
+priority: 5
+enabled: false
+pollIntervalSeconds: 900
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.2435.2.3.9.1}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.2435.2.3.9.1.1.2.9.0
+    name: brJamPlace
+    metricKey: brJamPlace
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [brother-net-printer.yaml]}
+  - oid: 1.3.6.1.4.1.2435.2.3.9.1.1.2.10.1.0
+    name: brToner1Low
+    metricKey: brToner1Low
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [brother-net-printer.yaml]}
+  - oid: 1.3.6.1.4.1.2435.2.3.9.1.1.2.10.2.0
+    name: brToner2Low
+    metricKey: brToner2Low
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [brother-net-printer.yaml]}
+  - oid: 1.3.6.1.4.1.2435.2.3.9.1.1.2.10.3.0
+    name: brToner3Low
+    metricKey: brToner3Low
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [brother-net-printer.yaml]}
+  - oid: 1.3.6.1.4.1.2435.2.3.9.1.1.2.10.4.0
+    name: brToner4Low
+    metricKey: brToner4Low
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [brother-net-printer.yaml]}
+  - oid: 1.3.6.1.4.1.2435.2.3.9.4.2.1.5.5.51.2.1.2
+    name: brErrorHistoryDescription
+    metricKey: brErrorHistoryDescription
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [brErrorHistoryIndex]
+    datadog: {as: [column-tag], tags: [br_error_history_description], from: [brother-net-printer.yaml]}
+  - oid: 1.3.6.1.4.1.2435.2.3.9.4.2.1.5.5.1.0
+    name: brInfoSerialNumber
+    metricKey: brInfoSerialNumber
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [br_info_serial_number], from: [brother-net-printer.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/brother-net-printer.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, brother.yaml]

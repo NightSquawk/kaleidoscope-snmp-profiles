@@ -1,0 +1,320 @@
+formatVersion: 1
+slug: tripplite-pdu
+name: Tripp Lite PDU
+description: "Converted from Datadog's tripplite-pdu.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: Tripp Lite
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.850.1.1.1}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.1.2.1.4
+    name: tlpDeviceManufacturer
+    metricKey: tlpDeviceManufacturer
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex]
+    datadog: {as: [column-tag], tags: [tlp_device_manufacturer], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.1.2.1.5
+    name: tlpDeviceModel
+    metricKey: tlpDeviceModel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex]
+    datadog: {as: [column-tag], tags: [tlp_device_model], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.1.2.1.6
+    name: tlpDeviceName
+    metricKey: tlpDeviceName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex]
+    datadog: {as: [column-tag], tags: [tlp_device_name], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.1.2.1.8
+    name: tlpDeviceLocation
+    metricKey: tlpDeviceLocation
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex]
+    datadog: {as: [column-tag], tags: [tlp_device_location], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.1.2.1.9
+    name: tlpDeviceRegion
+    metricKey: tlpDeviceRegion
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex]
+    datadog: {as: [column-tag], tags: [tlp_device_region], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.1.2.1.10
+    name: tlpDeviceStatus
+    metricKey: tlpDeviceStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex]
+    enumMap: {"0": none, "1": critical, "2": warning, "3": info, "4": status, "5": offline, "6": custom, "7": configuration}
+    datadog: {as: [column-tag], tags: [tlp_device_status], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.2.1.1.5
+    name: tlpDeviceIdentSerialNum
+    metricKey: tlpDeviceIdentSerialNum
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex]
+    datadog: {as: [column-tag], tags: [tlp_device_ident_serial_num], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.2.1.1.6
+    name: tlpDeviceIdentDateInstalled
+    metricKey: tlpDeviceIdentDateInstalled
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex]
+    datadog: {as: [column-tag], tags: [tlp_device_ident_date_installed], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.2.1.1.6
+    name: tlpPduDeviceTemperatureC
+    metricKey: tlpPduDeviceTemperatureC
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex]
+    datadog: {as: [metric], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.2.1.1.7
+    name: tlpPduDeviceTemperatureF
+    metricKey: tlpPduDeviceTemperatureF
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex]
+    datadog: {as: [metric], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.2.1.1.8
+    name: tlpPduDevicePhaseImbalance
+    metricKey: tlpPduDevicePhaseImbalance
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex]
+    datadog: {as: [metric], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.2.1.1.9
+    name: tlpPduDeviceOutputPowerTotal
+    metricKey: tlpPduDeviceOutputPowerTotal
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex]
+    datadog: {as: [metric], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.2.1.1.11
+    name: tlpPduDeviceOutputCurrentPrecision
+    metricKey: tlpPduDeviceOutputCurrentPrecision
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex]
+    enumMap: {"0": wholeNumber, "1": tenths, "2": hundredths}
+    datadog: {as: [column-tag], tags: [tlp_pdu_device_output_current_precision], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.2.1.1.1
+    name: tlpPduDeviceMainLoadState
+    metricKey: tlpPduDeviceMainLoadState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex]
+    enumMap: {"0": unknown, "1": "off", "2": "on"}
+    datadog: {as: [column-tag], tags: [tlp_pdu_device_main_load_state], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.3.2.1.1.4
+    name: tlpPduOutputVoltage
+    metricKey: tlpPduOutputVoltage
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex, tlpPduOutputIndex]
+    datadog: {as: [metric], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.3.2.1.1.5
+    name: tlpPduOutputCurrent
+    metricKey: tlpPduOutputCurrent
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex, tlpPduOutputIndex]
+    datadog: {as: [metric], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.3.2.1.1.10
+    name: tlpPduOutputSource
+    metricKey: tlpPduOutputSource
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex, tlpPduOutputIndex]
+    enumMap: {"0": none, "1": normal}
+    datadog: {as: [metric], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.3.2.1.1.11
+    name: tlpPduOutputFrequency
+    metricKey: tlpPduOutputFrequency
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex, tlpPduOutputIndex]
+    datadog: {as: [metric], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.3.2.1.1.2
+    name: tlpPduOutputPhase
+    metricKey: tlpPduOutputPhase
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex, tlpPduOutputIndex]
+    enumMap: {"1": phase1, "2": phase2, "3": phase3}
+    datadog: {as: [column-tag], tags: [tlp_pdu_output_phase], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.3.2.1.1.3
+    name: tlpPduOutputPhaseType
+    metricKey: tlpPduOutputPhaseType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex, tlpPduOutputIndex]
+    enumMap: {"0": phaseToNeutral, "1": phaseToPhase}
+    datadog: {as: [column-tag], tags: [tlp_pdu_output_phase_type], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.3.3.1.1.4
+    name: tlpPduOutletState
+    metricKey: tlpPduOutletState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex, tlpPduOutletIndex]
+    enumMap: {"0": unknown, "1": "off", "2": "on"}
+    datadog: {as: [metric], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.3.3.1.1.7
+    name: tlpPduOutletVoltage
+    metricKey: tlpPduOutletVoltage
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex, tlpPduOutletIndex]
+    datadog: {as: [metric], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.3.3.1.1.8
+    name: tlpPduOutletCurrent
+    metricKey: tlpPduOutletCurrent
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex, tlpPduOutletIndex]
+    datadog: {as: [metric], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.3.3.1.1.9
+    name: tlpPduOutletPower
+    metricKey: tlpPduOutletPower
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex, tlpPduOutletIndex]
+    datadog: {as: [metric], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.3.3.1.1.2
+    name: tlpPduOutletName
+    metricKey: tlpPduOutletName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex, tlpPduOutletIndex]
+    datadog: {as: [column-tag], tags: [tlp_pdu_outlet_name], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.3.3.1.1.3
+    name: tlpPduOutletDescription
+    metricKey: tlpPduOutletDescription
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex, tlpPduOutletIndex]
+    datadog: {as: [column-tag], tags: [tlp_pdu_outlet_description], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.1.3.2.3.5.1.1.2
+    name: tlpPduBreakerStatus
+    metricKey: tlpPduBreakerStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpDeviceIndex, tlpPduBreakerIndex]
+    enumMap: {"0": open, "1": closed, "2": notInstalled}
+    datadog: {as: [column-tag], tags: [tlp_pdu_breaker_status], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.3.1.0
+    name: tlpAlarmsPresent
+    metricKey: tlpAlarmsPresent
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.3.2.1.2
+    name: tlpAlarmDescr
+    metricKey: tlpAlarmDescr
+    type: oid
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpAlarmId]
+    datadog: {as: [column-tag], tags: [tlp_alarm_descr], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.3.2.1.3
+    name: tlpAlarmTime
+    metricKey: tlpAlarmTime
+    type: timeticks
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpAlarmId]
+    datadog: {as: [column-tag], tags: [tlp_alarm_time], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.3.2.1.6
+    name: tlpAlarmDetail
+    metricKey: tlpAlarmDetail
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpAlarmId]
+    datadog: {as: [column-tag], tags: [tlp_alarm_detail], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.3.2.1.8
+    name: tlpAlarmState
+    metricKey: tlpAlarmState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpAlarmId]
+    enumMap: {"1": active, "2": inactive}
+    datadog: {as: [column-tag], tags: [tlp_alarm_state], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.850.1.3.2.1.9
+    name: tlpAlarmAcknowledged
+    metricKey: tlpAlarmAcknowledged
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlpAlarmId]
+    enumMap: {"1": notAcknowledged, "2": acknowledged}
+    datadog: {as: [column-tag], tags: [tlp_alarm_acknowledged], from: [tripplite-pdu.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/tripplite-pdu.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, tripplite.yaml]

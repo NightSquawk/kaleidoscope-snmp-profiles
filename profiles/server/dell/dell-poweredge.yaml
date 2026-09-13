@@ -1,0 +1,1519 @@
+formatVersion: 1
+slug: dell-poweredge
+name: Dell PowerEdge
+description: "Converted from Datadog's dell-poweredge.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: server
+vendor: Dell
+extends: none
+priority: 5
+enabled: false
+matchPatterns: []
+matchAny:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.674.10892.1}
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.674.10892.6}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.343.2.7.2.2.1.3.1.1
+    name: adapterRxPackets
+    metricKey: adapterRxPackets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [adapterIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_intel-lan-adapters.yaml]}
+  - oid: 1.3.6.1.4.1.343.2.7.2.2.1.3.1.2
+    name: adapterTxPackets
+    metricKey: adapterTxPackets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [adapterIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_intel-lan-adapters.yaml]}
+  - oid: 1.3.6.1.4.1.343.2.7.2.2.1.3.1.3
+    name: adapterRxBytes
+    metricKey: adapterRxBytes
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [adapterIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_intel-lan-adapters.yaml]}
+  - oid: 1.3.6.1.4.1.343.2.7.2.2.1.3.1.4
+    name: adapterTxBytes
+    metricKey: adapterTxBytes
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [adapterIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_intel-lan-adapters.yaml]}
+  - oid: 1.3.6.1.4.1.343.2.7.2.2.1.3.1.5
+    name: adapterRxErrors
+    metricKey: adapterRxErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [adapterIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_intel-lan-adapters.yaml]}
+  - oid: 1.3.6.1.4.1.343.2.7.2.2.1.3.1.6
+    name: adapterTxErrors
+    metricKey: adapterTxErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [adapterIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_intel-lan-adapters.yaml]}
+  - oid: 1.3.6.1.4.1.343.2.7.2.2.1.3.1.7
+    name: adapterRxDropped
+    metricKey: adapterRxDropped
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [adapterIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_intel-lan-adapters.yaml]}
+  - oid: 1.3.6.1.4.1.343.2.7.2.2.1.3.1.8
+    name: adapterTxDropped
+    metricKey: adapterTxDropped
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [adapterIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_intel-lan-adapters.yaml]}
+  - oid: 1.3.6.1.4.1.343.2.7.2.2.1.3.1.9
+    name: adapterRxMulticast
+    metricKey: adapterRxMulticast
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [adapterIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_intel-lan-adapters.yaml]}
+  - oid: 1.3.6.1.4.1.343.2.7.2.2.1.3.1.10
+    name: adapterCollisions
+    metricKey: adapterCollisions
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [adapterIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_intel-lan-adapters.yaml]}
+  - oid: 1.3.6.1.4.1.343.2.7.2.2.1.1.1.2
+    name: adapterName
+    metricKey: adapterName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [adapterIndex]
+    datadog: {as: [column-tag], tags: [adapter], features: [cross-table tag from genericAdaptersAttrTable], from: [_intel-lan-adapters.yaml]}
+  - oid: 1.3.6.1.2.1.6.5.0
+    name: tcpActiveOpens
+    metricKey: tcpActiveOpens
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.6.0
+    name: tcpPassiveOpens
+    metricKey: tcpPassiveOpens
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.7.0
+    name: tcpAttemptFails
+    metricKey: tcpAttemptFails
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.8.0
+    name: tcpEstabResets
+    metricKey: tcpEstabResets
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.9.0
+    name: tcpCurrEstab
+    metricKey: tcpCurrEstab
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.17.0
+    name: tcpHCInSegs
+    metricKey: tcpHCInSegs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.18.0
+    name: tcpHCOutSegs
+    metricKey: tcpHCOutSegs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.12.0
+    name: tcpRetransSegs
+    metricKey: tcpRetransSegs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.14.0
+    name: tcpInErrs
+    metricKey: tcpInErrs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.15.0
+    name: tcpOutRsts
+    metricKey: tcpOutRsts
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.7.8.0
+    name: udpHCInDatagrams
+    metricKey: udpHCInDatagrams
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-udp.yaml]}
+  - oid: 1.3.6.1.2.1.7.2.0
+    name: udpNoPorts
+    metricKey: udpNoPorts
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-udp.yaml]}
+  - oid: 1.3.6.1.2.1.7.3.0
+    name: udpInErrors
+    metricKey: udpInErrors
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-udp.yaml]}
+  - oid: 1.3.6.1.2.1.7.9.0
+    name: udpHCOutDatagrams
+    metricKey: udpHCOutDatagrams
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-udp.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.4
+    name: ipSystemStatsHCInReceives
+    metricKey: ipSystemStatsHCInReceives
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.6
+    name: ipSystemStatsHCInOctets
+    metricKey: ipSystemStatsHCInOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.7
+    name: ipSystemStatsInHdrErrors
+    metricKey: ipSystemStatsInHdrErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.8
+    name: ipSystemStatsInNoRoutes
+    metricKey: ipSystemStatsInNoRoutes
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.9
+    name: ipSystemStatsInAddrErrors
+    metricKey: ipSystemStatsInAddrErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.10
+    name: ipSystemStatsInUnknownProtos
+    metricKey: ipSystemStatsInUnknownProtos
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.11
+    name: ipSystemStatsInTruncatedPkts
+    metricKey: ipSystemStatsInTruncatedPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.13
+    name: ipSystemStatsHCInForwDatagrams
+    metricKey: ipSystemStatsHCInForwDatagrams
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.14
+    name: ipSystemStatsReasmReqds
+    metricKey: ipSystemStatsReasmReqds
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.15
+    name: ipSystemStatsReasmOKs
+    metricKey: ipSystemStatsReasmOKs
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.16
+    name: ipSystemStatsReasmFails
+    metricKey: ipSystemStatsReasmFails
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.17
+    name: ipSystemStatsInDiscards
+    metricKey: ipSystemStatsInDiscards
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.19
+    name: ipSystemStatsHCInDelivers
+    metricKey: ipSystemStatsHCInDelivers
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.21
+    name: ipSystemStatsHCOutRequests
+    metricKey: ipSystemStatsHCOutRequests
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.22
+    name: ipSystemStatsOutNoRoutes
+    metricKey: ipSystemStatsOutNoRoutes
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.24
+    name: ipSystemStatsHCOutForwDatagrams
+    metricKey: ipSystemStatsHCOutForwDatagrams
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.25
+    name: ipSystemStatsOutDiscards
+    metricKey: ipSystemStatsOutDiscards
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.26
+    name: ipSystemStatsOutFragReqds
+    metricKey: ipSystemStatsOutFragReqds
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.27
+    name: ipSystemStatsOutFragOKs
+    metricKey: ipSystemStatsOutFragOKs
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.28
+    name: ipSystemStatsOutFragFails
+    metricKey: ipSystemStatsOutFragFails
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.29
+    name: ipSystemStatsOutFragCreates
+    metricKey: ipSystemStatsOutFragCreates
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.31
+    name: ipSystemStatsHCOutTransmits
+    metricKey: ipSystemStatsHCOutTransmits
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.33
+    name: ipSystemStatsHCOutOctets
+    metricKey: ipSystemStatsHCOutOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.35
+    name: ipSystemStatsHCInMcastPkts
+    metricKey: ipSystemStatsHCInMcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.37
+    name: ipSystemStatsHCInMcastOctets
+    metricKey: ipSystemStatsHCInMcastOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.39
+    name: ipSystemStatsHCOutMcastPkts
+    metricKey: ipSystemStatsHCOutMcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.41
+    name: ipSystemStatsHCOutMcastOctets
+    metricKey: ipSystemStatsHCOutMcastOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.43
+    name: ipSystemStatsHCInBcastPkts
+    metricKey: ipSystemStatsHCInBcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.45
+    name: ipSystemStatsHCOutBcastPkts
+    metricKey: ipSystemStatsHCOutBcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.6
+    name: ipIfStatsHCInOctets
+    metricKey: ipIfStatsHCInOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.7
+    name: ipIfStatsInHdrErrors
+    metricKey: ipIfStatsInHdrErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.8
+    name: ipIfStatsInNoRoutes
+    metricKey: ipIfStatsInNoRoutes
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.9
+    name: ipIfStatsInAddrErrors
+    metricKey: ipIfStatsInAddrErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.10
+    name: ipIfStatsInUnknownProtos
+    metricKey: ipIfStatsInUnknownProtos
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.11
+    name: ipIfStatsInTruncatedPkts
+    metricKey: ipIfStatsInTruncatedPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.13
+    name: ipIfStatsHCInForwDatagrams
+    metricKey: ipIfStatsHCInForwDatagrams
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.14
+    name: ipIfStatsReasmReqds
+    metricKey: ipIfStatsReasmReqds
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.15
+    name: ipIfStatsReasmOKs
+    metricKey: ipIfStatsReasmOKs
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.16
+    name: ipIfStatsReasmFails
+    metricKey: ipIfStatsReasmFails
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.17
+    name: ipIfStatsInDiscards
+    metricKey: ipIfStatsInDiscards
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.19
+    name: ipIfStatsHCInDelivers
+    metricKey: ipIfStatsHCInDelivers
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.21
+    name: ipIfStatsHCOutRequests
+    metricKey: ipIfStatsHCOutRequests
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.24
+    name: ipIfStatsHCOutForwDatagrams
+    metricKey: ipIfStatsHCOutForwDatagrams
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.25
+    name: ipIfStatsOutDiscards
+    metricKey: ipIfStatsOutDiscards
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.26
+    name: ipIfStatsOutFragReqds
+    metricKey: ipIfStatsOutFragReqds
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.27
+    name: ipIfStatsOutFragOKs
+    metricKey: ipIfStatsOutFragOKs
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.28
+    name: ipIfStatsOutFragFails
+    metricKey: ipIfStatsOutFragFails
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.29
+    name: ipIfStatsOutFragCreates
+    metricKey: ipIfStatsOutFragCreates
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.31
+    name: ipIfStatsHCOutTransmits
+    metricKey: ipIfStatsHCOutTransmits
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.33
+    name: ipIfStatsHCOutOctets
+    metricKey: ipIfStatsHCOutOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.35
+    name: ipIfStatsHCInMcastPkts
+    metricKey: ipIfStatsHCInMcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.37
+    name: ipIfStatsHCInMcastOctets
+    metricKey: ipIfStatsHCInMcastOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.39
+    name: ipIfStatsHCOutMcastPkts
+    metricKey: ipIfStatsHCOutMcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.41
+    name: ipIfStatsHCOutMcastOctets
+    metricKey: ipIfStatsHCOutMcastOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.43
+    name: ipIfStatsHCInBcastPkts
+    metricKey: ipIfStatsHCInBcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.45
+    name: ipIfStatsHCOutBcastPkts
+    metricKey: ipIfStatsHCOutBcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.200.10.1.4
+    name: systemStateChassisStatus
+    metricKey: systemStateChassisStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemStatechassisIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.200.10.1.6
+    name: systemStatePowerUnitStatusRedundancy
+    metricKey: systemStatePowerUnitStatusRedundancy
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemStatechassisIndex]
+    enumMap: {"1": other, "2": unknown, "3": full, "4": degraded, "5": lost, "6": notRedundant, "7": redundancyOffline}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.200.10.1.9
+    name: systemStatePowerSupplyStatusCombined
+    metricKey: systemStatePowerSupplyStatusCombined
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemStatechassisIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric, column-tag], tags: [system_state_power_supply_status_combined], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.200.10.1.15
+    name: systemStateAmperageStatusCombined
+    metricKey: systemStateAmperageStatusCombined
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemStatechassisIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.200.10.1.18
+    name: systemStateCoolingUnitStatusRedundancy
+    metricKey: systemStateCoolingUnitStatusRedundancy
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemStatechassisIndex]
+    enumMap: {"1": other, "2": unknown, "3": full, "4": degraded, "5": lost, "6": notRedundant, "7": redundancyOffline}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.200.10.1.21
+    name: systemStateCoolingDeviceStatusCombined
+    metricKey: systemStateCoolingDeviceStatusCombined
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemStatechassisIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.200.10.1.24
+    name: systemStateTemperatureStatusCombined
+    metricKey: systemStateTemperatureStatusCombined
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemStatechassisIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.200.10.1.27
+    name: systemStateMemoryDeviceStatusCombined
+    metricKey: systemStateMemoryDeviceStatusCombined
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemStatechassisIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.200.10.1.30
+    name: systemStateChassisIntrusionStatusCombined
+    metricKey: systemStateChassisIntrusionStatusCombined
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemStatechassisIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.200.10.1.42
+    name: systemStatePowerUnitStatusCombined
+    metricKey: systemStatePowerUnitStatusCombined
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemStatechassisIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.200.10.1.44
+    name: systemStateCoolingUnitStatusCombined
+    metricKey: systemStateCoolingUnitStatusCombined
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemStatechassisIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.200.10.1.50
+    name: systemStateProcessorDeviceStatusCombined
+    metricKey: systemStateProcessorDeviceStatusCombined
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemStatechassisIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.200.10.1.1
+    name: systemStatechassisIndex
+    metricKey: systemStatechassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemStatechassisIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.400.20.1.6
+    name: operatingSystemMemoryAvailablePhysicalSize
+    metricKey: operatingSystemMemoryAvailablePhysicalSize
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [operatingSystemMemorychassisIndex]
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.400.20.1.7
+    name: operatingSystemMemoryTotalPageFileSize
+    metricKey: operatingSystemMemoryTotalPageFileSize
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [operatingSystemMemorychassisIndex]
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.400.20.1.8
+    name: operatingSystemMemoryAvailablePageFileSize
+    metricKey: operatingSystemMemoryAvailablePageFileSize
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [operatingSystemMemorychassisIndex]
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.400.20.1.9
+    name: operatingSystemMemoryTotalVirtualSize
+    metricKey: operatingSystemMemoryTotalVirtualSize
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [operatingSystemMemorychassisIndex]
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.400.20.1.10
+    name: operatingSystemMemoryAvailableVirtualSize
+    metricKey: operatingSystemMemoryAvailableVirtualSize
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [operatingSystemMemorychassisIndex]
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.400.20.1.1
+    name: operatingSystemMemorychassisIndex
+    metricKey: operatingSystemMemorychassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [operatingSystemMemorychassisIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.50.1.5
+    name: batteryStatus
+    metricKey: batteryStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [batteryChassisIndex, batteryIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.50.1.6
+    name: batteryReading
+    metricKey: batteryReading
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [batteryChassisIndex, batteryIndex]
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.50.1.1
+    name: batteryChassisIndex
+    metricKey: batteryChassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [batteryChassisIndex, batteryIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.50.1.2
+    name: batteryIndex
+    metricKey: batteryIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [batteryChassisIndex, batteryIndex]
+    datadog: {as: [column-tag], tags: [battery_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.50.1.7
+    name: batteryLocationName
+    metricKey: batteryLocationName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [batteryChassisIndex, batteryIndex]
+    datadog: {as: [column-tag], tags: [battery_location_name], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.80.1.5
+    name: pCIDeviceStatus
+    metricKey: pCIDeviceStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [pCIDevicechassisIndex, pCIDeviceIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.80.1.9
+    name: pCIDeviceDescriptionName
+    metricKey: pCIDeviceDescriptionName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [pCIDevicechassisIndex, pCIDeviceIndex]
+    datadog: {as: [column-tag], tags: [device_descr_name], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.80.1.1
+    name: pCIDevicechassisIndex
+    metricKey: pCIDevicechassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [pCIDevicechassisIndex, pCIDeviceIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.300.50.1.5
+    name: systemBIOSStatus
+    metricKey: systemBIOSStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemBIOSchassisIndex, systemBIOSIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.300.50.1.1
+    name: systemBIOSchassisIndex
+    metricKey: systemBIOSchassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemBIOSchassisIndex, systemBIOSIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.300.50.1.2
+    name: systemBIOSIndex
+    metricKey: systemBIOSIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemBIOSchassisIndex, systemBIOSIndex]
+    datadog: {as: [column-tag], tags: [system_bios_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.300.70.1.5
+    name: intrusionStatus
+    metricKey: intrusionStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [intrusionchassisIndex, intrusionIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.300.70.1.6
+    name: intrusionReading
+    metricKey: intrusionReading
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [intrusionchassisIndex, intrusionIndex]
+    enumMap: {"1": chassisNotBreached, "2": chassisBreached, "3": chassisBreachedPrior, "4": chassisBreachSensorFailure, "5": driveBayOpen, "6": driveBayOpenExtended}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.300.70.1.1
+    name: intrusionchassisIndex
+    metricKey: intrusionchassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [intrusionchassisIndex, intrusionIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.300.70.1.2
+    name: intrusionIndex
+    metricKey: intrusionIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [intrusionchassisIndex, intrusionIndex]
+    datadog: {as: [column-tag], tags: [intrusion_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.300.70.1.8
+    name: intrusionLocationName
+    metricKey: intrusionLocationName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [intrusionchassisIndex, intrusionIndex]
+    datadog: {as: [column-tag], tags: [intrusion_location_name], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.20.1.5
+    name: voltageProbeStatus
+    metricKey: voltageProbeStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [voltageProbechassisIndex, voltageProbeIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCriticalUpper, "5": criticalUpper, "6": nonRecoverableUpper, "7": nonCriticalLower, "8": criticalLower, "9": nonRecoverableLower, "10": failed}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.20.1.6
+    name: voltageProbeReading
+    metricKey: voltageProbeReading
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [voltageProbechassisIndex, voltageProbeIndex]
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.20.1.1
+    name: voltageProbechassisIndex
+    metricKey: voltageProbechassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [voltageProbechassisIndex, voltageProbeIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.20.1.2
+    name: voltageProbeIndex
+    metricKey: voltageProbeIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [voltageProbechassisIndex, voltageProbeIndex]
+    datadog: {as: [column-tag], tags: [voltage_probe_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.20.1.7
+    name: voltageProbeType
+    metricKey: voltageProbeType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [voltageProbechassisIndex, voltageProbeIndex]
+    enumMap: {"1": voltageProbeTypeIsOther, "2": voltageProbeTypeIsUnknown, "3": voltageProbeTypeIs1Point5Volt, "4": voltageProbeTypeIs3Point3Volt, "5": voltageProbeTypeIs5Volt, "6": voltageProbeTypeIsMinus5Volt, "7": voltageProbeTypeIs12Volt, "8": voltageProbeTypeIsMinus12Volt, "9": voltageProbeTypeIsIO, "10": voltageProbeTypeIsCore, "11": voltageProbeTypeIsFLEA, "12": voltageProbeTypeIsBattery, "13": voltageProbeTypeIsTerminator, "14": voltageProbeTypeIs2Point5Volt, "15": voltageProbeTypeIsGTL, "16": voltageProbeTypeIsDiscrete}
+    datadog: {as: [column-tag], tags: [probe_type], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.30.1.5
+    name: amperageProbeStatus
+    metricKey: amperageProbeStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [amperageProbechassisIndex, amperageProbeIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCriticalUpper, "5": criticalUpper, "6": nonRecoverableUpper, "7": nonCriticalLower, "8": criticalLower, "9": nonRecoverableLower, "10": failed}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.30.1.6
+    name: amperageProbeReading
+    metricKey: amperageProbeReading
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [amperageProbechassisIndex, amperageProbeIndex]
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.30.1.7
+    name: amperageProbeType
+    metricKey: amperageProbeType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [amperageProbechassisIndex, amperageProbeIndex]
+    enumMap: {"1": amperageProbeTypeIsOther, "2": amperageProbeTypeIsUnknown, "3": amperageProbeTypeIs1Point5Volt, "4": amperageProbeTypeIs3Point3volt, "5": amperageProbeTypeIs5Volt, "6": amperageProbeTypeIsMinus5Volt, "7": amperageProbeTypeIs12Volt, "8": amperageProbeTypeIsMinus12Volt, "9": amperageProbeTypeIsIO, "10": amperageProbeTypeIsCore, "11": amperageProbeTypeIsFLEA, "12": amperageProbeTypeIsBattery, "13": amperageProbeTypeIsTerminator, "14": amperageProbeTypeIs2Point5Volt, "15": amperageProbeTypeIsGTL, "16": amperageProbeTypeIsDiscrete, "23": amperageProbeTypeIsPowerSupplyAmps, "24": amperageProbeTypeIsPowerSupplyWatts, "25": amperageProbeTypeIsSystemAmps, "26": amperageProbeTypeIsSystemWatts}
+    datadog: {as: [column-tag], tags: [probe_type], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.30.1.1
+    name: amperageProbechassisIndex
+    metricKey: amperageProbechassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [amperageProbechassisIndex, amperageProbeIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.30.1.2
+    name: amperageProbeIndex
+    metricKey: amperageProbeIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [amperageProbechassisIndex, amperageProbeIndex]
+    datadog: {as: [column-tag], tags: [amperage_probe_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.12.1.5
+    name: powerSupplyStatus
+    metricKey: powerSupplyStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [powerSupplychassisIndex, powerSupplyIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], metricType: [gauge], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.12.1.6
+    name: powerSupplyOutputWatts
+    metricKey: powerSupplyOutputWatts
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [powerSupplychassisIndex, powerSupplyIndex]
+    datadog: {as: [metric], metricType: [gauge], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.12.1.9
+    name: powerSupplyInputVoltage
+    metricKey: powerSupplyInputVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [powerSupplychassisIndex, powerSupplyIndex]
+    datadog: {as: [metric], metric: [powerSupplyMaximumInputVoltage], metricType: [gauge], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.12.1.16
+    name: powerSupplyCurrentInputVoltage
+    metricKey: powerSupplyCurrentInputVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [gauge], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.12.1.1
+    name: powerSupplychassisIndex
+    metricKey: powerSupplychassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [powerSupplychassisIndex, powerSupplyIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.12.1.2
+    name: powerSupplyIndex
+    metricKey: powerSupplyIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [powerSupplychassisIndex, powerSupplyIndex]
+    datadog: {as: [column-tag], tags: [index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.60.1.5
+    name: powerUsageStatus
+    metricKey: powerUsageStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [powerUsageChassisIndex, powerUsageIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.60.1.1
+    name: powerUsageChassisIndex
+    metricKey: powerUsageChassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [powerUsageChassisIndex, powerUsageIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.60.1.2
+    name: powerUsageIndex
+    metricKey: powerUsageIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [powerUsageChassisIndex, powerUsageIndex]
+    datadog: {as: [column-tag], tags: [power_usage_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.600.60.1.6
+    name: powerUsageEntityName
+    metricKey: powerUsageEntityName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [powerUsageChassisIndex, powerUsageIndex]
+    datadog: {as: [column-tag], tags: [power_usage_entity_name], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.10.1.5
+    name: coolingUnitRedundancyStatus
+    metricKey: coolingUnitRedundancyStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [coolingUnitchassisIndex, coolingUnitIndex]
+    enumMap: {"1": other, "2": unknown, "3": full, "4": degraded, "5": lost, "6": notRedundant, "7": redundancyOffline}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.10.1.8
+    name: coolingUnitStatus
+    metricKey: coolingUnitStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [coolingUnitchassisIndex, coolingUnitIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.10.1.1
+    name: coolingUnitchassisIndex
+    metricKey: coolingUnitchassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [coolingUnitchassisIndex, coolingUnitIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.10.1.2
+    name: coolingUnitIndex
+    metricKey: coolingUnitIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [coolingUnitchassisIndex, coolingUnitIndex]
+    datadog: {as: [column-tag], tags: [cooling_unit_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.10.1.7
+    name: coolingUnitName
+    metricKey: coolingUnitName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [coolingUnitchassisIndex, coolingUnitIndex]
+    datadog: {as: [column-tag], tags: [cooling_unit_name], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.12.1.5
+    name: coolingDeviceStatus
+    metricKey: coolingDeviceStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [coolingDevicechassisIndex, coolingDeviceIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCriticalUpper, "5": criticalUpper, "6": nonRecoverableUpper, "7": nonCriticalLower, "8": criticalLower, "9": nonRecoverableLower, "10": failed}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.12.1.6
+    name: coolingDeviceReading
+    metricKey: coolingDeviceReading
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [coolingDevicechassisIndex, coolingDeviceIndex]
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.12.1.18
+    name: coolingDeviceDiscreteReading
+    metricKey: coolingDeviceDiscreteReading
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [coolingDevicechassisIndex, coolingDeviceIndex]
+    enumMap: {"1": coolingDeviceIsGood, "2": coolingDeviceIsBad}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.12.1.1
+    name: coolingDevicechassisIndex
+    metricKey: coolingDevicechassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [coolingDevicechassisIndex, coolingDeviceIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.12.1.2
+    name: coolingDeviceIndex
+    metricKey: coolingDeviceIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [coolingDevicechassisIndex, coolingDeviceIndex]
+    datadog: {as: [column-tag], tags: [cooling_device_name], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.12.1.7
+    name: coolingDeviceType
+    metricKey: coolingDeviceType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [coolingDevicechassisIndex, coolingDeviceIndex]
+    enumMap: {"1": coolingDeviceTypeIsOther, "2": coolingDeviceTypeIsUnknown, "3": coolingDeviceTypeIsAFan, "4": coolingDeviceTypeIsABlower, "5": coolingDeviceTypeIsAChipFan, "6": coolingDeviceTypeIsACabinetFan, "7": coolingDeviceTypeIsAPowerSupplyFan, "8": coolingDeviceTypeIsAHeatPipe, "9": coolingDeviceTypeIsRefrigeration, "10": coolingDeviceTypeIsActiveCooling, "11": coolingDeviceTypeIsPassiveCooling}
+    datadog: {as: [column-tag], tags: [cooling_device_type], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.12.1.8
+    name: coolingDeviceLocationName
+    metricKey: coolingDeviceLocationName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [coolingDevicechassisIndex, coolingDeviceIndex]
+    datadog: {as: [column-tag], tags: [cooling_device_location_name], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.20.1.5
+    name: temperatureProbeStatus
+    metricKey: temperatureProbeStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [temperatureProbechassisIndex, temperatureProbeIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCriticalUpper, "5": criticalUpper, "6": nonRecoverableUpper, "7": nonCriticalLower, "8": criticalLower, "9": nonRecoverableLower, "10": failed}
+    datadog: {as: [metric], metricType: [gauge], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.20.1.6
+    name: temperatureProbeReading
+    metricKey: temperatureProbeReading
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [temperatureProbechassisIndex, temperatureProbeIndex]
+    datadog: {as: [metric], metricType: [gauge], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.20.1.1
+    name: temperatureProbechassisIndex
+    metricKey: temperatureProbechassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [temperatureProbechassisIndex, temperatureProbeIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.20.1.2
+    name: temperatureProbeIndex
+    metricKey: temperatureProbeIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [temperatureProbechassisIndex, temperatureProbeIndex]
+    datadog: {as: [column-tag], tags: [index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.20.1.7
+    name: temperatureProbeType
+    metricKey: temperatureProbeType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [temperatureProbechassisIndex, temperatureProbeIndex]
+    enumMap: {"1": temperatureProbeTypeIsOther, "2": temperatureProbeTypeIsUnknown, "3": temperatureProbeTypeIsAmbientESM, "16": temperatureProbeTypeIsDiscrete}
+    datadog: {as: [column-tag], tags: [temperature_probe_type], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.700.20.1.8
+    name: temperatureProbeLocationName
+    metricKey: temperatureProbeLocationName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [temperatureProbechassisIndex, temperatureProbeIndex]
+    datadog: {as: [column-tag], tags: [temperature_probe_location_name], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.30.1.5
+    name: processorDeviceStatus
+    metricKey: processorDeviceStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [processorDevicechassisIndex, processorDeviceIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], metricType: [gauge], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.30.1.19
+    name: processorDeviceThreadCount
+    metricKey: processorDeviceThreadCount
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [processorDevicechassisIndex, processorDeviceIndex]
+    datadog: {as: [metric], metricType: [gauge], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.30.1.1
+    name: processorDevicechassisIndex
+    metricKey: processorDevicechassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [processorDevicechassisIndex, processorDeviceIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.30.1.2
+    name: processorDeviceIndex
+    metricKey: processorDeviceIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [processorDevicechassisIndex, processorDeviceIndex]
+    datadog: {as: [column-tag], tags: [index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.32.1.5
+    name: processorDeviceStatusStatus
+    metricKey: processorDeviceStatusStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [processorDeviceStatusChassisIndex, processorDeviceStatusIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.32.1.6
+    name: processorDeviceStatusReading
+    metricKey: processorDeviceStatusReading
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [processorDeviceStatusChassisIndex, processorDeviceStatusIndex]
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.32.1.1
+    name: processorDeviceStatusChassisIndex
+    metricKey: processorDeviceStatusChassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [processorDeviceStatusChassisIndex, processorDeviceStatusIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.32.1.2
+    name: processorDeviceStatusIndex
+    metricKey: processorDeviceStatusIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [processorDeviceStatusChassisIndex, processorDeviceStatusIndex]
+    datadog: {as: [column-tag], tags: [processor_device_status_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.32.1.7
+    name: processorDeviceStatusLocationName
+    metricKey: processorDeviceStatusLocationName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [processorDeviceStatusChassisIndex, processorDeviceStatusIndex]
+    datadog: {as: [column-tag], tags: [processor_device_status_location_name], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.40.1.5
+    name: cacheDeviceStatus
+    metricKey: cacheDeviceStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cacheDevicechassisIndex, cacheDeviceIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], metricType: [gauge], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.40.1.12
+    name: cacheDeviceMaximumSize
+    metricKey: cacheDeviceMaximumSize
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cacheDevicechassisIndex, cacheDeviceIndex]
+    datadog: {as: [metric], metricType: [gauge], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.40.1.13
+    name: cacheDeviceCurrentSize
+    metricKey: cacheDeviceCurrentSize
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cacheDevicechassisIndex, cacheDeviceIndex]
+    datadog: {as: [metric], metricType: [gauge], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.40.1.1
+    name: cacheDevicechassisIndex
+    metricKey: cacheDevicechassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cacheDevicechassisIndex, cacheDeviceIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.40.1.2
+    name: cacheDeviceIndex
+    metricKey: cacheDeviceIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cacheDevicechassisIndex, cacheDeviceIndex]
+    datadog: {as: [column-tag], tags: [index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.50.1.5
+    name: memoryDeviceStatus
+    metricKey: memoryDeviceStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [memoryDevicechassisIndex, memoryDeviceIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], metricType: [gauge], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.50.1.20
+    name: memoryDeviceFailureModes
+    metricKey: memoryDeviceFailureModes
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [memoryDevicechassisIndex, memoryDeviceIndex]
+    datadog: {as: [metric], metricType: [gauge], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.50.1.1
+    name: memoryDevicechassisIndex
+    metricKey: memoryDevicechassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [memoryDevicechassisIndex, memoryDeviceIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.5.4.1100.50.1.2
+    name: memoryDeviceIndex
+    metricKey: memoryDeviceIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [memoryDevicechassisIndex, memoryDeviceIndex]
+    datadog: {as: [column-tag], tags: [device_index], features: [cross-table tag from another table], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.50.1.23
+    name: memoryDeviceSerialNumberName
+    metricKey: memoryDeviceSerialNumberName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [memoryDevicechassisIndex, memoryDeviceIndex]
+    datadog: {as: [column-tag], tags: [serial_number_name], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.90.1.3
+    name: networkDeviceStatus
+    metricKey: networkDeviceStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [networkDeviceChassisIndex, networkDeviceIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], metricType: [gauge], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1100.90.1.11
+    name: networkDeviceIPAddress
+    metricKey: networkDeviceIPAddress
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [networkDeviceChassisIndex, networkDeviceIndex]
+    datadog: {as: [column-tag], tags: [ip_address], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1200.10.1.5
+    name: systemSlotStatus
+    metricKey: systemSlotStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemSlotchassisIndex, systemSlotIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable, "7": absent}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1200.10.1.8
+    name: systemSlotSlotExternalSlotName
+    metricKey: systemSlotSlotExternalSlotName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemSlotchassisIndex, systemSlotIndex]
+    datadog: {as: [column-tag], tags: [slot_name], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.1200.10.1.1
+    name: systemSlotchassisIndex
+    metricKey: systemSlotchassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [systemSlotchassisIndex, systemSlotIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.2000.10.1.3
+    name: fruInformationStatus
+    metricKey: fruInformationStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [fruChassisIndex, fruIndex]
+    enumMap: {"1": other, "2": unknown, "3": ok, "4": nonCritical, "5": critical, "6": nonRecoverable}
+    datadog: {as: [metric], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.2000.10.1.1
+    name: fruChassisIndex
+    metricKey: fruChassisIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [fruChassisIndex, fruIndex]
+    datadog: {as: [column-tag], tags: [chassis_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.4.1.674.10892.1.2000.10.1.2
+    name: fruIndex
+    metricKey: fruIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [fruChassisIndex, fruIndex]
+    datadog: {as: [column-tag], tags: [fru_index], from: [dell-poweredge.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/dell-poweredge.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, _dell.yaml, _intel-lan-adapters.yaml, _generic-tcp.yaml, _generic-udp.yaml, _generic-ip.yaml]

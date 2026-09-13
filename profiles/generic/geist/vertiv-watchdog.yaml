@@ -1,0 +1,149 @@
+formatVersion: 1
+slug: vertiv-watchdog
+name: Vertiv Watchdog
+description: "Converted from Datadog's vertiv-watchdog.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: Geist
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.21239.5.1}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.21239.5.1.2.1.5
+    name: internalTemp
+    metricKey: internalTemp
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [internalIndex]
+    datadog: {as: [metric], metric: [vertiv.internalTemp], from: [vertiv-watchdog.yaml]}
+  - oid: 1.3.6.1.4.1.21239.5.1.2.1.6
+    name: internalHumidity
+    metricKey: internalHumidity
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [internalIndex]
+    datadog: {as: [metric], metric: [vertiv.internalHumidity], from: [vertiv-watchdog.yaml]}
+  - oid: 1.3.6.1.4.1.21239.5.1.2.1.7
+    name: internalDewPoint
+    metricKey: internalDewPoint
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [internalIndex]
+    datadog: {as: [metric], metric: [vertiv.internalDewPoint], from: [vertiv-watchdog.yaml]}
+  - oid: 1.3.6.1.4.1.21239.5.1.2.1.2
+    name: internalSerial
+    metricKey: internalSerial
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [internalIndex]
+    datadog: {as: [column-tag], tags: [vertiv_internal_serial], from: [vertiv-watchdog.yaml]}
+  - oid: 1.3.6.1.4.1.21239.5.1.2.1.4
+    name: internalAvail
+    metricKey: internalAvail
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [internalIndex]
+    enumMap: {"0": unavailable, "1": available, "2": partially_unavailable}
+    datadog: {as: [column-tag], tags: [vertiv_internal_avail], from: [vertiv-watchdog.yaml]}
+  - oid: 1.3.6.1.4.1.21239.5.1.4.1.5
+    name: tempSensorTemp
+    metricKey: tempSensorTemp
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tempSensorIndex]
+    datadog: {as: [metric], metric: [vertiv.tempSensorTemp], from: [vertiv-watchdog.yaml]}
+  - oid: 1.3.6.1.4.1.21239.5.1.4.1.2
+    name: tempSensorSerial
+    metricKey: tempSensorSerial
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tempSensorIndex]
+    datadog: {as: [column-tag], tags: [vertiv_temp_sensor_serial], from: [vertiv-watchdog.yaml]}
+  - oid: 1.3.6.1.4.1.21239.5.1.4.1.3
+    name: tempSensorName
+    metricKey: tempSensorName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tempSensorIndex]
+    datadog: {as: [column-tag], tags: [vertiv_temp_sensor_label], from: [vertiv-watchdog.yaml]}
+  - oid: 1.3.6.1.4.1.21239.5.1.4.1.4
+    name: tempSensorAvail
+    metricKey: tempSensorAvail
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tempSensorIndex]
+    enumMap: {"0": unavailable, "1": available, "2": partially_unavailable}
+    datadog: {as: [column-tag], tags: [vertiv_temp_sensor_avail], from: [vertiv-watchdog.yaml]}
+  - oid: 1.3.6.1.4.1.21239.5.1.1.1.0
+    name: productTitle
+    metricKey: productTitle
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [vertiv_product_title], from: [vertiv-watchdog.yaml]}
+  - oid: 1.3.6.1.4.1.21239.5.1.1.2.0
+    name: productVersion
+    metricKey: productVersion
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [vertiv_product_version], from: [vertiv-watchdog.yaml]}
+  - oid: 1.3.6.1.4.1.21239.5.1.1.3.0
+    name: productFriendlyName
+    metricKey: productFriendlyName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [vertiv_product_friendly_name], from: [vertiv-watchdog.yaml]}
+  - oid: 1.3.6.1.4.1.21239.5.1.1.4.0
+    name: productMacAddress
+    metricKey: productMacAddress
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [vertiv_product_mac_address], from: [vertiv-watchdog.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/vertiv-watchdog.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, _vertiv.yaml]

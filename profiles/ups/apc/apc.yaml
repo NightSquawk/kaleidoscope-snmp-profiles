@@ -1,0 +1,146 @@
+formatVersion: 1
+slug: apc
+name: APC
+description: "Converted from Datadog's apc.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: ups
+vendor: APC
+extends: none
+priority: 5
+enabled: false
+pollIntervalSeconds: 300
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.318}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.6.5.0
+    name: tcpActiveOpens
+    metricKey: tcpActiveOpens
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.6.0
+    name: tcpPassiveOpens
+    metricKey: tcpPassiveOpens
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.7.0
+    name: tcpAttemptFails
+    metricKey: tcpAttemptFails
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.8.0
+    name: tcpEstabResets
+    metricKey: tcpEstabResets
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.9.0
+    name: tcpCurrEstab
+    metricKey: tcpCurrEstab
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.17.0
+    name: tcpHCInSegs
+    metricKey: tcpHCInSegs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.18.0
+    name: tcpHCOutSegs
+    metricKey: tcpHCOutSegs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.12.0
+    name: tcpRetransSegs
+    metricKey: tcpRetransSegs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.14.0
+    name: tcpInErrs
+    metricKey: tcpInErrs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.15.0
+    name: tcpOutRsts
+    metricKey: tcpOutRsts
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.7.8.0
+    name: udpHCInDatagrams
+    metricKey: udpHCInDatagrams
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-udp.yaml]}
+  - oid: 1.3.6.1.2.1.7.2.0
+    name: udpNoPorts
+    metricKey: udpNoPorts
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-udp.yaml]}
+  - oid: 1.3.6.1.2.1.7.3.0
+    name: udpInErrors
+    metricKey: udpInErrors
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-udp.yaml]}
+  - oid: 1.3.6.1.2.1.7.9.0
+    name: udpHCOutDatagrams
+    metricKey: udpHCOutDatagrams
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-udp.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description, device.serial_number, device.model, device.os_name, device.os_version], features: ["match_pattern=\\bSN:\\s+(\\w+)", "match_pattern=\\bMN:(\\w+)", "match_pattern=\\bPN:apc_hw(\\d+)_aos_", "match_pattern=\\bPF:(\\S+)"], from: [_base.yaml, _apc-metadata.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/apc.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, _apc.yaml, _apc-metadata.yaml, _generic-tcp.yaml, _generic-udp.yaml]

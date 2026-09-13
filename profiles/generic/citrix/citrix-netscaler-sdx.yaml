@@ -1,0 +1,563 @@
+formatVersion: 1
+slug: citrix-netscaler-sdx
+name: Citrix NetScaler SDX
+description: "Converted from Datadog's citrix-netscaler-sdx.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: Citrix
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.5951.6}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.1.1.1
+    name: hardwareResourceName
+    metricKey: hardwareResourceName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hardwareResourceName, hardwareResourceHostIPAddressType, hardwareResourceHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_hardware_resource_name], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.1.1.7
+    name: hardwareResourceStatus
+    metricKey: hardwareResourceStatus
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hardwareResourceName, hardwareResourceHostIPAddressType, hardwareResourceHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_hardware_resource_status], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.2.1.1
+    name: softwareResourceName
+    metricKey: softwareResourceName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [softwareResourceName, softwareResourceHostIPAddressType, softwareResourceHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_software_resource_name], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.2.1.7
+    name: softwareResourceStatus
+    metricKey: softwareResourceStatus
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [softwareResourceName, softwareResourceHostIPAddressType, softwareResourceHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_software_resource_status], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.4.1.5
+    name: srUtilized
+    metricKey: srUtilized
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [srName, srBayNumber, srHostIPAddressType, srHostIPAddress]
+    datadog: {as: [metric], metric: [netscaler.sdx.srUtilized], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.4.1.6
+    name: srSize
+    metricKey: srSize
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [srName, srBayNumber, srHostIPAddressType, srHostIPAddress]
+    datadog: {as: [metric], metric: [netscaler.sdx.srSize], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.4.1.1
+    name: srName
+    metricKey: srName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [srName, srBayNumber, srHostIPAddressType, srHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_sr_name], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.4.1.2
+    name: srBayNumber
+    metricKey: srBayNumber
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [srName, srBayNumber, srHostIPAddressType, srHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_sr_bay_number], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.4.1.7
+    name: srStatus
+    metricKey: srStatus
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [srName, srBayNumber, srHostIPAddressType, srHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_sr_status], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.5.1.5
+    name: interfaceRxPackets
+    metricKey: interfaceRxPackets
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [interfaceMappedPort, interfaceHostIPAddressType, interfaceHostIPAddress]
+    datadog: {as: [metric], metric: [netscaler.sdx.interfaceRxPackets], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.5.1.6
+    name: interfaceTxPackets
+    metricKey: interfaceTxPackets
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [interfaceMappedPort, interfaceHostIPAddressType, interfaceHostIPAddress]
+    datadog: {as: [metric], metric: [netscaler.sdx.interfaceTxPackets], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.5.1.7
+    name: interfaceRxBytes
+    metricKey: interfaceRxBytes
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [interfaceMappedPort, interfaceHostIPAddressType, interfaceHostIPAddress]
+    datadog: {as: [metric], metric: [netscaler.sdx.interfaceRxBytes], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.5.1.8
+    name: interfaceTxBytes
+    metricKey: interfaceTxBytes
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [interfaceMappedPort, interfaceHostIPAddressType, interfaceHostIPAddress]
+    datadog: {as: [metric], metric: [netscaler.sdx.interfaceTxBytes], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.5.1.9
+    name: interfaceRxErrors
+    metricKey: interfaceRxErrors
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [interfaceMappedPort, interfaceHostIPAddressType, interfaceHostIPAddress]
+    datadog: {as: [metric], metric: [netscaler.sdx.interfaceRxErrors], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.5.1.10
+    name: interfaceTxErrors
+    metricKey: interfaceTxErrors
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [interfaceMappedPort, interfaceHostIPAddressType, interfaceHostIPAddress]
+    datadog: {as: [metric], metric: [netscaler.sdx.interfaceTxErrors], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.5.1.1
+    name: interfacePort
+    metricKey: interfacePort
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [interfaceMappedPort, interfaceHostIPAddressType, interfaceHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_interface_port], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.5.1.13
+    name: interfaceMappedPort
+    metricKey: interfaceMappedPort
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [interfaceMappedPort, interfaceHostIPAddressType, interfaceHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_interface_mapped_port], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.5.1.4
+    name: interfaceState
+    metricKey: interfaceState
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [interfaceMappedPort, interfaceHostIPAddressType, interfaceHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_interface_state], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.6.1.7
+    name: hmCurrentValue
+    metricKey: hmCurrentValue
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hmName, hmHostIPAddressType, hmHostIPAddress]
+    datadog: {as: [metric], metric: [netscaler.sdx.hmCurrentValue], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.6.1.1
+    name: hmName
+    metricKey: hmName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hmName, hmHostIPAddressType, hmHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_hm_name], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.6.1.6
+    name: hmUnit
+    metricKey: hmUnit
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hmName, hmHostIPAddressType, hmHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_hm_unit], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.1000.6.1.4
+    name: hmStatus
+    metricKey: hmStatus
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hmName, hmHostIPAddressType, hmHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_hm_status], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.1.1.8
+    name: xenCpuUsage
+    metricKey: xenCpuUsage
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [xenIpAddressType, xenIpAddress]
+    datadog: {as: [metric], metric: [cpu.usage], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.1.1.11
+    name: xenMemoryUsage
+    metricKey: xenMemoryUsage
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [xenIpAddressType, xenIpAddress]
+    datadog: {as: [metric], metric: [memory.usage], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.1.1.1
+    name: xenIpAddressType
+    metricKey: xenIpAddressType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [xenIpAddressType, xenIpAddress]
+    enumMap: {"0": unknown, "1": ipv4, "2": ipv6, "3": ipv4z, "4": ipv6z, "16": dns, "25": l2vpn}
+    datadog: {as: [column-tag], tags: [netscaler_sdx_xen_ip_address_type], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.1.1.2
+    name: xenIpAddress
+    metricKey: xenIpAddress
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [xenIpAddressType, xenIpAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_xen_ip_address], features: ["format=ip_address"], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.1.1.6
+    name: xenUuid
+    metricKey: xenUuid
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [xenIpAddressType, xenIpAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_xen_uuid], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.33
+    name: nsNsCPUUsage
+    metricKey: nsNsCPUUsage
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [metric], metric: [netscaler.sdx.nsNsCPUUsage], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.35
+    name: nsNsMemoryUsage
+    metricKey: nsNsMemoryUsage
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [metric], metric: [netscaler.sdx.nsNsMemoryUsage], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.36
+    name: nsNsTx
+    metricKey: nsNsTx
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [metric], metric: [netscaler.sdx.nsNsTx], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.37
+    name: nsNsRx
+    metricKey: nsNsRx
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [metric], metric: [netscaler.sdx.nsNsRx], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.38
+    name: nsHttpReq
+    metricKey: nsHttpReq
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [metric], metric: [netscaler.sdx.nsHttpReq], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.1
+    name: nsIpAddressType
+    metricKey: nsIpAddressType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    enumMap: {"0": unknown, "1": ipv4, "2": ipv6, "3": ipv4z, "4": ipv6z, "16": dns, "25": l2vpn}
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_ip_address_type], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.2
+    name: nsIpAddress
+    metricKey: nsIpAddress
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_ip_address], features: ["format=ip_address"], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.5
+    name: nsProfileName
+    metricKey: nsProfileName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_profile_name], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.6
+    name: nsName
+    metricKey: nsName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_name], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.7
+    name: nsNetmaskType
+    metricKey: nsNetmaskType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    enumMap: {"0": unknown, "1": ipv4, "2": ipv6, "3": ipv4z, "4": ipv6z, "16": dns, "25": l2vpn}
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_netmask_type], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.8
+    name: nsNetmask
+    metricKey: nsNetmask
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_netmask], features: ["format=ip_address"], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.9
+    name: nsGatewayType
+    metricKey: nsGatewayType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    enumMap: {"0": unknown, "1": ipv4, "2": ipv6, "3": ipv4z, "4": ipv6z, "16": dns, "25": l2vpn}
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_gateway_type], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.10
+    name: nsGateway
+    metricKey: nsGateway
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_gateway], features: ["format=ip_address"], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.11
+    name: nsHostname
+    metricKey: nsHostname
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_hostname], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.12
+    name: nsDescription
+    metricKey: nsDescription
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_description], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.13
+    name: nsVersion
+    metricKey: nsVersion
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_version], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.30
+    name: nsVmDescription
+    metricKey: nsVmDescription
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_vm_description], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.31
+    name: nsThroughput
+    metricKey: nsThroughput
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_throughput], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.42
+    name: nsHaIPAddressType
+    metricKey: nsHaIPAddressType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    enumMap: {"0": unknown, "1": ipv4, "2": ipv6, "3": ipv4z, "4": ipv6z, "16": dns, "25": l2vpn}
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_ha_ip_address_type], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.43
+    name: nsHaIPAddress
+    metricKey: nsHaIPAddress
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_ha_ip_address], features: ["format=ip_address"], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.15
+    name: nsInstanceState
+    metricKey: nsInstanceState
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_instance_state], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.18
+    name: nsVmState
+    metricKey: nsVmState
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_vm_state], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.41
+    name: nsHaMasterState
+    metricKey: nsHaMasterState
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_ha_master_state], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.44
+    name: nsNodeState
+    metricKey: nsNodeState
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_node_state], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.3.2.1.45
+    name: nsHaSync
+    metricKey: nsHaSync
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [nsIpAddressType, nsIpAddress, nsHostIPAddressType, nsHostIPAddress]
+    datadog: {as: [column-tag], tags: [netscaler_sdx_ns_ha_sync], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.2.0
+    name: systemProduct
+    metricKey: systemProduct
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [netscaler_sdx_system_product], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.4.0
+    name: systemSvmIPAddressType
+    metricKey: systemSvmIPAddressType
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    enumMap: {"0": unknown, "1": ipv4, "2": ipv6, "3": ipv4z, "4": ipv6z, "16": dns, "25": l2vpn}
+    datadog: {as: [global-tag], tags: [netscaler_sdx_system_svm_ip_address_type], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.5.0
+    name: systemSvmIPAddress
+    metricKey: systemSvmIPAddress
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [netscaler_sdx_system_svm_ip_address], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.6.0
+    name: systemXenIPAddressType
+    metricKey: systemXenIPAddressType
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    enumMap: {"0": unknown, "1": ipv4, "2": ipv6, "3": ipv4z, "4": ipv6z, "16": dns, "25": l2vpn}
+    datadog: {as: [global-tag], tags: [netscaler_sdx_system_xen_ip_address_type], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.7.0
+    name: systemXenIPAddress
+    metricKey: systemXenIPAddress
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [netscaler_sdx_system_xen_ip_address], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.8.0
+    name: systemNetmaskType
+    metricKey: systemNetmaskType
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    enumMap: {"0": unknown, "1": ipv4, "2": ipv6, "3": ipv4z, "4": ipv6z, "16": dns, "25": l2vpn}
+    datadog: {as: [global-tag], tags: [netscaler_sdx_system_netmask_type], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.9.0
+    name: systemNetmask
+    metricKey: systemNetmask
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [netscaler_sdx_system_netmask], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.10.0
+    name: systemGatewayType
+    metricKey: systemGatewayType
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    enumMap: {"0": unknown, "1": ipv4, "2": ipv6, "3": ipv4z, "4": ipv6z, "16": dns, "25": l2vpn}
+    datadog: {as: [global-tag], tags: [netscaler_sdx_system_gateway_type], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.11.0
+    name: systemGateway
+    metricKey: systemGateway
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [netscaler_sdx_system_gateway], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.12.0
+    name: systemNetworkInterface
+    metricKey: systemNetworkInterface
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [netscaler_sdx_system_network_interface], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.19.0
+    name: systemBiosVersion
+    metricKey: systemBiosVersion
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [netscaler_sdx_system_bios_version], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.16.0
+    name: systemSerial
+    metricKey: systemSerial
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.serial_number], from: [citrix-netscaler-sdx.yaml]}
+  - oid: 1.3.6.1.4.1.5951.6.2.3.0
+    name: systemBuildNumber
+    metricKey: systemBuildNumber
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.version], from: [citrix-netscaler-sdx.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/citrix-netscaler-sdx.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, citrix.yaml]

@@ -1,0 +1,156 @@
+formatVersion: 1
+slug: vertiv-liebert-ac
+name: Vertiv Liebert AC
+description: "Converted from Datadog's vertiv-liebert-ac.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: Vertiv
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.476.1.42}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.476.1.42.3.4.1.2.1.0
+    name: lgpEnvTemperatureSettingDegF
+    metricKey: lgpEnvTemperatureSettingDegF
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [vertiv-liebert-ac.yaml]}
+  - oid: 1.3.6.1.4.1.476.1.42.3.4.1.2.2.0
+    name: lgpEnvTemperatureToleranceDegF
+    metricKey: lgpEnvTemperatureToleranceDegF
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [vertiv-liebert-ac.yaml]}
+  - oid: 1.3.6.1.4.1.476.1.42.3.4.1.2.3.1.3
+    name: lgpEnvTemperatureMeasurementDegF
+    metricKey: lgpEnvTemperatureMeasurementDegF
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [lgpEnvTemperatureIdDegF]
+    datadog: {as: [metric], from: [vertiv-liebert-ac.yaml]}
+  - oid: 1.3.6.1.4.1.476.1.42.3.4.1.2.3.1.2
+    name: lgpEnvTemperatureDescrDegF
+    metricKey: lgpEnvTemperatureDescrDegF
+    type: oid
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [lgpEnvTemperatureIdDegF]
+    datadog: {as: [column-tag], tags: [lgp_env_temperature_descr_deg_f], features: [cross-table tag from another table], from: [vertiv-liebert-ac.yaml]}
+  - oid: 1.3.6.1.4.1.476.1.42.3.4.1.3.3.1.3
+    name: lgpEnvTemperatureMeasurementDegC
+    metricKey: lgpEnvTemperatureMeasurementDegC
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [lgpEnvTemperatureIdDegC]
+    datadog: {as: [metric], from: [vertiv-liebert-ac.yaml]}
+  - oid: 1.3.6.1.4.1.476.1.42.3.4.2.2.3.1.3
+    name: lgpEnvHumidityMeasurementRel
+    metricKey: lgpEnvHumidityMeasurementRel
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [lgpEnvHumidityIdRel]
+    datadog: {as: [metric], from: [vertiv-liebert-ac.yaml]}
+  - oid: 1.3.6.1.4.1.476.1.42.3.4.6.1.0
+    name: lgpEnvStatisticsComp1RunHr
+    metricKey: lgpEnvStatisticsComp1RunHr
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [vertiv-liebert-ac.yaml]}
+  - oid: 1.3.6.1.4.1.476.1.42.3.4.6.2.0
+    name: lgpEnvStatisticsComp2RunHr
+    metricKey: lgpEnvStatisticsComp2RunHr
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [vertiv-liebert-ac.yaml]}
+  - oid: 1.3.6.1.4.1.476.1.42.3.4.6.3.0
+    name: lgpEnvStatisticsFanRunHr
+    metricKey: lgpEnvStatisticsFanRunHr
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [vertiv-liebert-ac.yaml]}
+  - oid: 1.3.6.1.4.1.476.1.42.3.4.6.4.0
+    name: lgpEnvStatisticsHumRunHr
+    metricKey: lgpEnvStatisticsHumRunHr
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [vertiv-liebert-ac.yaml]}
+  - oid: 1.3.6.1.4.1.476.1.42.3.4.6.7.0
+    name: lgpEnvStatisticsReheat1RunHr
+    metricKey: lgpEnvStatisticsReheat1RunHr
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [vertiv-liebert-ac.yaml]}
+  - oid: 1.3.6.1.4.1.476.1.42.3.4.6.8.0
+    name: lgpEnvStatisticsReheat2RunHr
+    metricKey: lgpEnvStatisticsReheat2RunHr
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [vertiv-liebert-ac.yaml]}
+  - oid: 1.3.6.1.4.1.476.1.42.3.4.6.9.0
+    name: lgpEnvStatisticsReheat3RunHr
+    metricKey: lgpEnvStatisticsReheat3RunHr
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [vertiv-liebert-ac.yaml]}
+  - oid: 1.3.6.1.4.1.476.1.42.2.1.2.0
+    name: lgpAgentIdentModel
+    metricKey: lgpAgentIdentModel
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [lgp_agent_ident_model], from: [vertiv-liebert-ac.yaml]}
+  - oid: 1.3.6.1.4.1.476.1.42.2.1.4.0
+    name: lgpAgentIdentSerialNumber
+    metricKey: lgpAgentIdentSerialNumber
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [lgp_agent_ident_serial_number], from: [vertiv-liebert-ac.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/vertiv-liebert-ac.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, _vertiv.yaml]

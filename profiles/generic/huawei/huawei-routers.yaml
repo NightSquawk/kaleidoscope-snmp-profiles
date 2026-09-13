@@ -1,0 +1,927 @@
+formatVersion: 1
+slug: huawei-routers
+name: Huawei Routers
+description: "Converted from Datadog's huawei-routers.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: Huawei
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.2011.2.224.279}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.2.1.0
+    name: ifNumber
+    metricKey: ifNumber
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.14
+    name: ifInErrors
+    metricKey: ifInErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.13
+    name: ifInDiscards
+    metricKey: ifInDiscards
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.20
+    name: ifOutErrors
+    metricKey: ifOutErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.19
+    name: ifOutDiscards
+    metricKey: ifOutDiscards
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.1
+    name: ifName
+    metricKey: ifName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [column-tag, metadata], tags: [interface], fields: [interface.name], features: [cross-table tag from ifXTable], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.18
+    name: ifAlias
+    metricKey: ifAlias
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [column-tag, metadata], tags: [interface_alias], fields: [interface.alias], features: [cross-table tag from ifXTable], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.7
+    name: ifAdminStatus
+    metricKey: ifAdminStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    enumMap: {"1": up, "2": down, "3": testing}
+    datadog: {as: [metric, metadata], fields: [interface.admin_status], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.8
+    name: ifOperStatus
+    metricKey: ifOperStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    enumMap: {"1": up, "2": down, "3": testing, "4": unknown, "5": dormant, "6": notPresent, "7": lowerLayerDown}
+    datadog: {as: [metric, metadata], fields: [interface.oper_status], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.5
+    name: ifSpeed
+    metricKey: ifSpeed
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.7
+    name: ifHCInUcastPkts
+    metricKey: ifHCInUcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.8
+    name: ifHCInMulticastPkts
+    metricKey: ifHCInMulticastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.9
+    name: ifHCInBroadcastPkts
+    metricKey: ifHCInBroadcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.11
+    name: ifHCOutUcastPkts
+    metricKey: ifHCOutUcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.12
+    name: ifHCOutMulticastPkts
+    metricKey: ifHCOutMulticastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.13
+    name: ifHCOutBroadcastPkts
+    metricKey: ifHCOutBroadcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.6
+    name: ifHCInOctets
+    metricKey: ifHCInOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.10
+    name: ifHCOutOctets
+    metricKey: ifHCOutOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.15
+    name: ifHighSpeed
+    metricKey: ifHighSpeed
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.11
+    name: hwEntityTemperature
+    metricKey: hwEntityTemperature
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    datadog: {as: [metric], metric: [huawei.hwEntityTemperature], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.13
+    name: hwEntityVoltage
+    metricKey: hwEntityVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    datadog: {as: [metric], metric: [huawei.hwEntityVoltage], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.43
+    name: hwEntityBoardName
+    metricKey: hwEntityBoardName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    datadog: {as: [column-tag], tags: [huawei_hw_entity_board_name], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.1
+    name: hwEntityAdminStatus
+    metricKey: hwEntityAdminStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    enumMap: {"1": notSupported, "2": locked, "3": shuttingDown, "4": unlocked, "11": up, "12": down, "13": loopback}
+    datadog: {as: [column-tag], tags: [huawei_hw_entity_admin_status], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.2
+    name: hwEntityOperStatus
+    metricKey: hwEntityOperStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    enumMap: {"1": notSupported, "2": disabled, "3": enabled, "4": offline, "11": up, "12": down, "13": connect, "15": protocolUp, "16": linkUp, "17": linkDown, "18": present, "19": absent}
+    datadog: {as: [column-tag], tags: [huawei_hw_entity_oper_status], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.3
+    name: hwEntityStandbyStatus
+    metricKey: hwEntityStandbyStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    enumMap: {"1": notSupported, "2": hotStandby, "3": coldStandby, "4": providingService}
+    datadog: {as: [column-tag], tags: [huawei_hw_entity_standby_status], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.42
+    name: hwEntityFaultLight
+    metricKey: hwEntityFaultLight
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    enumMap: {"1": notSupported, "2": normal, "3": underRepair}
+    datadog: {as: [column-tag], tags: [huawei_hw_entity_fault_light], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.10.1.5
+    name: hwEntityFanSpeed
+    metricKey: hwEntityFanSpeed
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwEntityFanSlot, hwEntityFanSn]
+    datadog: {as: [metric], metric: [huawei.hwEntityFanSpeed], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.10.1.1
+    name: hwEntityFanSlot
+    metricKey: hwEntityFanSlot
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwEntityFanSlot, hwEntityFanSn]
+    datadog: {as: [column-tag], tags: [huawei_hw_entity_fan_slot], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.10.1.2
+    name: hwEntityFanSn
+    metricKey: hwEntityFanSn
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwEntityFanSlot, hwEntityFanSn]
+    datadog: {as: [column-tag], tags: [huawei_hw_entity_fan_sn], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.10.1.3
+    name: hwEntityFanReg
+    metricKey: hwEntityFanReg
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwEntityFanSlot, hwEntityFanSn]
+    enumMap: {"1": "yes", "2": "no"}
+    datadog: {as: [column-tag], tags: [huawei_hw_entity_fan_reg], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.10.1.4
+    name: hwEntityFanSpdAdjMode
+    metricKey: hwEntityFanSpdAdjMode
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwEntityFanSlot, hwEntityFanSn]
+    enumMap: {"1": auto, "2": manual, "3": unknown, "4": silent, "11": denoise}
+    datadog: {as: [column-tag], tags: [huawei_hw_entity_fan_spd_adj_mode], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.10.1.6
+    name: hwEntityFanPresent
+    metricKey: hwEntityFanPresent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwEntityFanSlot, hwEntityFanSn]
+    enumMap: {"1": present, "2": absent}
+    datadog: {as: [column-tag], tags: [huawei_hw_entity_fan_present], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.10.1.7
+    name: hwEntityFanState
+    metricKey: hwEntityFanState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwEntityFanSlot, hwEntityFanSn]
+    enumMap: {"1": normal, "2": abnormal}
+    datadog: {as: [column-tag], tags: [huawei_hw_entity_fan_state], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.14.1.2
+    name: hwSystemPowerTotalPower
+    metricKey: hwSystemPowerTotalPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwSystemPowerDeviceID]
+    datadog: {as: [metric], metric: [huawei.hwSystemPowerTotalPower], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.14.1.3
+    name: hwSystemPowerUsedPower
+    metricKey: hwSystemPowerUsedPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwSystemPowerDeviceID]
+    datadog: {as: [metric], metric: [huawei.hwSystemPowerUsedPower], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.14.1.4
+    name: hwSystemPowerRemainPower
+    metricKey: hwSystemPowerRemainPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwSystemPowerDeviceID]
+    datadog: {as: [metric], metric: [huawei.hwSystemPowerRemainPower], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.1.1.14.1.1
+    name: hwSystemPowerDeviceID
+    metricKey: hwSystemPowerDeviceID
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwSystemPowerDeviceID]
+    datadog: {as: [column-tag], tags: [huawei_hw_system_power_device_id], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.155.6.1.12
+    name: hwOspfv2NbrPriority
+    metricKey: hwOspfv2NbrPriority
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwOspfv2ProcessIdIndex, hwOspfv2AreaIdIndex, hwOspfv2SelfIfnetIndex, hwOspfv2NbrIpAddrIndex]
+    datadog: {as: [metric], metric: [huawei.hwOspfv2NbrPriority], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.155.6.1.13
+    name: hwOspfv2NbrUpTime
+    metricKey: hwOspfv2NbrUpTime
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwOspfv2ProcessIdIndex, hwOspfv2AreaIdIndex, hwOspfv2SelfIfnetIndex, hwOspfv2NbrIpAddrIndex]
+    datadog: {as: [metric], metric: [huawei.hwOspfv2NbrUpTime], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.155.6.1.15
+    name: hwOspfv2NbrDeadTimeLeft
+    metricKey: hwOspfv2NbrDeadTimeLeft
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwOspfv2ProcessIdIndex, hwOspfv2AreaIdIndex, hwOspfv2SelfIfnetIndex, hwOspfv2NbrIpAddrIndex]
+    datadog: {as: [metric], metric: [huawei.hwOspfv2NbrDeadTimeLeft], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.155.6.1.3
+    name: hwOspfv2SelfRouterId
+    metricKey: hwOspfv2SelfRouterId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwOspfv2ProcessIdIndex, hwOspfv2AreaIdIndex, hwOspfv2SelfIfnetIndex, hwOspfv2NbrIpAddrIndex]
+    datadog: {as: [column-tag], tags: [huawei_hw_ospfv2_self_router_id], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.155.6.1.9
+    name: hwOspfv2NbrRouterId
+    metricKey: hwOspfv2NbrRouterId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwOspfv2ProcessIdIndex, hwOspfv2AreaIdIndex, hwOspfv2SelfIfnetIndex, hwOspfv2NbrIpAddrIndex]
+    datadog: {as: [column-tag], tags: [huawei_hw_ospfv2_neighbor_router_id], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.155.6.1.4
+    name: hwOspfv2SelfIfIpAddress
+    metricKey: hwOspfv2SelfIfIpAddress
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwOspfv2ProcessIdIndex, hwOspfv2AreaIdIndex, hwOspfv2SelfIfnetIndex, hwOspfv2NbrIpAddrIndex]
+    datadog: {as: [column-tag], tags: [huawei_hw_ospfv2_self_if_ip_address], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.155.6.1.5
+    name: hwOspfv2SelfIfName
+    metricKey: hwOspfv2SelfIfName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwOspfv2ProcessIdIndex, hwOspfv2AreaIdIndex, hwOspfv2SelfIfnetIndex, hwOspfv2NbrIpAddrIndex]
+    datadog: {as: [column-tag], tags: [huawei_hw_ospfv2_self_if_name], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.155.6.1.6
+    name: hwOspfv2NbrIfDesignatedRouter
+    metricKey: hwOspfv2NbrIfDesignatedRouter
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwOspfv2ProcessIdIndex, hwOspfv2AreaIdIndex, hwOspfv2SelfIfnetIndex, hwOspfv2NbrIpAddrIndex]
+    datadog: {as: [column-tag], tags: [huawei_hw_ospfv2_nbr_if_designated_router], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.155.6.1.7
+    name: hwOspfv2NbrIfBackupDesignatedRouter
+    metricKey: hwOspfv2NbrIfBackupDesignatedRouter
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwOspfv2ProcessIdIndex, hwOspfv2AreaIdIndex, hwOspfv2SelfIfnetIndex, hwOspfv2NbrIpAddrIndex]
+    datadog: {as: [column-tag], tags: [huawei_hw_ospfv2_nbr_if_backup_designated_router], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.155.6.1.10
+    name: hwOspfv2NbrState
+    metricKey: hwOspfv2NbrState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwOspfv2ProcessIdIndex, hwOspfv2AreaIdIndex, hwOspfv2SelfIfnetIndex, hwOspfv2NbrIpAddrIndex]
+    enumMap: {"1": down, "2": attempt, "3": init, "4": twoWay, "5": exchangeStart, "6": exchange, "7": loading, "8": full}
+    datadog: {as: [column-tag], tags: [huawei_hw_ospfv2_nbr_state], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.155.6.1.11
+    name: hwOspfv2NbrMode
+    metricKey: hwOspfv2NbrMode
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwOspfv2ProcessIdIndex, hwOspfv2AreaIdIndex, hwOspfv2SelfIfnetIndex, hwOspfv2NbrIpAddrIndex]
+    enumMap: {"1": master, "2": slave}
+    datadog: {as: [column-tag], tags: [huawei_hw_ospfv2_nbr_mode], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.155.6.1.16
+    name: hwOspfv2NbrGrStatus
+    metricKey: hwOspfv2NbrGrStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwOspfv2ProcessIdIndex, hwOspfv2AreaIdIndex, hwOspfv2SelfIfnetIndex, hwOspfv2NbrIpAddrIndex]
+    enumMap: {"1": normal, "2": doingGR, "3": helper, "4": notsupport}
+    datadog: {as: [column-tag], tags: [huawei_hw_ospfv2_nbr_gr_status], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.6.3.4.1.3
+    name: hwAvgDuty1min
+    metricKey: hwAvgDuty1min
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwFrameIndex, hwSlotIndex, hwCpuDevIndex]
+    datadog: {as: [metric], metric: [huawei.hwAvgDuty1min], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.6.3.5.1.1.2
+    name: hwMemoryDevSize
+    metricKey: hwMemoryDevSize
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwFrameIndex, hwSlotIndex, hwMemoryDevModuleIndex]
+    datadog: {as: [metric], metric: [huawei.hwMemoryDevSize], metricType: [monotonic_count], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.6.3.5.1.1.3
+    name: hwMemoryDevFree
+    metricKey: hwMemoryDevFree
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwFrameIndex, hwSlotIndex, hwMemoryDevModuleIndex]
+    datadog: {as: [metric], metric: [huawei.hwMemoryDevFree], metricType: [monotonic_count], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.31.6.5.0
+    name: hwEntitySystemModel
+    metricKey: hwEntitySystemModel
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [huawei_hw_entity_system_model], from: [huawei.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.2.1.1
+    name: hwBgpPeerNegotiatedVersion
+    metricKey: hwBgpPeerNegotiatedVersion
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerNegotiatedVersion], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.2.1.2
+    name: hwBgpPeerRemoteAs
+    metricKey: hwBgpPeerRemoteAs
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerRemoteAs], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.2.1.6
+    name: hwBgpPeerFsmEstablishedCounter
+    metricKey: hwBgpPeerFsmEstablishedCounter
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerFsmEstablishedCounter], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.2.1.7
+    name: hwBgpPeerFsmEstablishedTime
+    metricKey: hwBgpPeerFsmEstablishedTime
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerFsmEstablishedTime], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.1.1.6
+    name: hwBgpPeerVrfName
+    metricKey: hwBgpPeerVrfName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [column-tag], tags: [huawei_hw_bgp_peer_vrf_name], features: [cross-table tag from another table], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.2.1.4
+    name: hwBgpPeerRemoteAddr
+    metricKey: hwBgpPeerRemoteAddr
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [column-tag], tags: [huawei_hw_bgp_peer_remote_addr], features: ["format=ip_address", cross-table tag from another table], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.2.1.5
+    name: hwBgpPeerState
+    metricKey: hwBgpPeerState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    enumMap: {"1": idle, "2": connect, "3": active, "4": opensent, "5": openconfirm, "6": established}
+    datadog: {as: [column-tag], tags: [huawei_hw_bgp_peer_state], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.2.1.10
+    name: hwBgpPeerUnAvaiReason
+    metricKey: hwBgpPeerUnAvaiReason
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    enumMap: {"1": configuration_lead_peer_down, "2": receive_notification, "3": receive_error_packet, "4": hold_timer_expire, "5": remote_peer_not_reachable, "6": direct_connect_interface_down, "7": route_limit}
+    datadog: {as: [column-tag], tags: [huawei_hw_bgp_peer_un_avai_reason], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.3.1.1
+    name: hwBgpPeerPrefixRcvCounter
+    metricKey: hwBgpPeerPrefixRcvCounter
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerPrefixRcvCounter], metricType: [monotonic_count], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.3.1.2
+    name: hwBgpPeerPrefixActiveCounter
+    metricKey: hwBgpPeerPrefixActiveCounter
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerPrefixActiveCounter], metricType: [monotonic_count], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.3.1.3
+    name: hwBgpPeerPrefixAdvCounter
+    metricKey: hwBgpPeerPrefixAdvCounter
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerPrefixAdvCounter], metricType: [monotonic_count], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.4.1.1
+    name: hwBgpPeerInTotalMsgCounter
+    metricKey: hwBgpPeerInTotalMsgCounter
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerInTotalMsgCounter], metricType: [monotonic_count], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.4.1.2
+    name: hwBgpPeerOutTotalMsgCounter
+    metricKey: hwBgpPeerOutTotalMsgCounter
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerOutTotalMsgCounter], metricType: [monotonic_count], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.4.1.3
+    name: hwBgpPeerInOpenMsgCounter
+    metricKey: hwBgpPeerInOpenMsgCounter
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerInOpenMsgCounter], metricType: [monotonic_count], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.4.1.4
+    name: hwBgpPeerInUpdateMsgCounter
+    metricKey: hwBgpPeerInUpdateMsgCounter
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerInUpdateMsgCounter], metricType: [monotonic_count], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.4.1.5
+    name: hwBgpPeerInNotificationMsgCounter
+    metricKey: hwBgpPeerInNotificationMsgCounter
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerInNotificationMsgCounter], metricType: [monotonic_count], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.4.1.6
+    name: hwBgpPeerInKeepAliveMsgCounter
+    metricKey: hwBgpPeerInKeepAliveMsgCounter
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerInKeepAliveMsgCounter], metricType: [monotonic_count], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.4.1.7
+    name: hwBgpPeerInRouteFreshMsgCounter
+    metricKey: hwBgpPeerInRouteFreshMsgCounter
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerInRouteFreshMsgCounter], metricType: [monotonic_count], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.4.1.8
+    name: hwBgpPeerOutOpenMsgCounter
+    metricKey: hwBgpPeerOutOpenMsgCounter
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerOutOpenMsgCounter], metricType: [monotonic_count], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.4.1.9
+    name: hwBgpPeerOutUpdateMsgCounter
+    metricKey: hwBgpPeerOutUpdateMsgCounter
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerOutUpdateMsgCounter], metricType: [monotonic_count], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.4.1.10
+    name: hwBgpPeerOutNotificationMsgCounter
+    metricKey: hwBgpPeerOutNotificationMsgCounter
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerOutNotificationMsgCounter], metricType: [monotonic_count], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.4.1.11
+    name: hwBgpPeerOutKeepAliveMsgCounter
+    metricKey: hwBgpPeerOutKeepAliveMsgCounter
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerOutKeepAliveMsgCounter], metricType: [monotonic_count], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.177.1.1.4.1.12
+    name: hwBgpPeerOutRouteFreshMsgCounter
+    metricKey: hwBgpPeerOutRouteFreshMsgCounter
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwBgpPeerInstanceId, hwBgpPeerAddrFamilyAfi, hwBgpPeerAddrFamilySafi, hwBgpPeerType, hwBgpPeerIPAddr]
+    datadog: {as: [metric], metric: [huawei.hwBgpPeerOutRouteFreshMsgCounter], metricType: [monotonic_count], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.194.1.1.1.3
+    name: hwDnsTtl
+    metricKey: hwDnsTtl
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwDnsDomainName]
+    datadog: {as: [metric], metric: [huawei.hwDnsTtl], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.194.1.1.1.1
+    name: hwDnsDomainName
+    metricKey: hwDnsDomainName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwDnsDomainName]
+    datadog: {as: [column-tag], tags: [huawei_hw_dns_domain_name], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.194.1.1.1.2
+    name: hwDnsIpAddress
+    metricKey: hwDnsIpAddress
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwDnsDomainName]
+    datadog: {as: [column-tag], tags: [huawei_hw_dns_ip_address], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.194.1.1.1.4
+    name: hwDnsAlias
+    metricKey: hwDnsAlias
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwDnsDomainName]
+    datadog: {as: [column-tag], tags: [huawei_hw_dns_alias], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.194.1.4.1.1
+    name: hwServerAddr
+    metricKey: hwServerAddr
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwServerAddr]
+    datadog: {as: [column-tag], tags: [huawei_hw_server_addr], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.222.1.1.2.4.1.4
+    name: hwFwNetEventSrcIpAddress
+    metricKey: hwFwNetEventSrcIpAddress
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwFwNetEventIndex]
+    datadog: {as: [column-tag], tags: [huawei_hw_fw_net_event_src_ip_address], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.222.1.1.2.4.1.7
+    name: hwFwNetEventDstIpAddress
+    metricKey: hwFwNetEventDstIpAddress
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwFwNetEventIndex]
+    datadog: {as: [column-tag], tags: [huawei_hw_fw_net_event_dst_ip_address], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.222.1.1.2.4.1.2
+    name: hwFwNetEventInterface
+    metricKey: hwFwNetEventInterface
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwFwNetEventIndex]
+    datadog: {as: [column-tag], tags: [huawei_hw_fw_net_event_interface], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.222.1.1.2.4.1.3
+    name: hwFwNetEventSrcVrfName
+    metricKey: hwFwNetEventSrcVrfName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwFwNetEventIndex]
+    datadog: {as: [column-tag], tags: [huawei_hw_fw_net_event_src_vrf_name], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.222.1.1.2.4.1.9
+    name: hwFwNetEventSrcIpPort
+    metricKey: hwFwNetEventSrcIpPort
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwFwNetEventIndex]
+    datadog: {as: [column-tag], tags: [huawei_hw_fw_net_event_src_ip_port], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.222.1.1.2.4.1.11
+    name: hwFwNetEventDstIpPort
+    metricKey: hwFwNetEventDstIpPort
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwFwNetEventIndex]
+    datadog: {as: [column-tag], tags: [huawei_hw_fw_net_event_dst_ip_port], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.222.1.1.2.4.1.16
+    name: hwFwNetEventDescription
+    metricKey: hwFwNetEventDescription
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwFwNetEventIndex]
+    datadog: {as: [column-tag], tags: [huawei_hw_fw_net_event_description], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.222.1.2.2.2.1.4
+    name: hwFwConnectionStatCount
+    metricKey: hwFwConnectionStatCount
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwFwConnectionStatService, hwFwConnectionStatType]
+    datadog: {as: [metric], metric: [huawei.hwFwConnectionStatCount], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.222.1.2.2.2.1.3
+    name: hwFwConnectionStatDescription
+    metricKey: hwFwConnectionStatDescription
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwFwConnectionStatService, hwFwConnectionStatType]
+    datadog: {as: [column-tag], tags: [huawei_hw_fw_connection_stat_description], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.226.2.3.2.1.4
+    name: hwNatAddrPoolRefTimes
+    metricKey: hwNatAddrPoolRefTimes
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwNatAddrPoolIndex]
+    datadog: {as: [metric], metric: [huawei.hwNatAddrPoolRefTimes], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.226.2.3.2.1.2
+    name: hwNatAddrPoolStartAddr
+    metricKey: hwNatAddrPoolStartAddr
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwNatAddrPoolIndex]
+    datadog: {as: [column-tag], tags: [huawei_hw_nat_addr_pool_start_addr], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.226.2.3.2.1.3
+    name: hwNatAddrPoolEndAddr
+    metricKey: hwNatAddrPoolEndAddr
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwNatAddrPoolIndex]
+    datadog: {as: [column-tag], tags: [huawei_hw_nat_addr_pool_end_addr], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.226.2.14.2.1.1
+    name: hwNatSessionSrcLocalAddr
+    metricKey: hwNatSessionSrcLocalAddr
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwNatSessionSrcLocalAddr, hwNatSessionDstLocalAddr, hwNatSessionSrcLocalPort, hwNatSessionDstLocalPort, hwNatSessionProtocol, hwNatSessionSrcVPN]
+    datadog: {as: [column-tag], tags: [huawei_hw_nat_session_src_local_addr], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.226.2.14.2.1.2
+    name: hwNatSessionDstLocalAddr
+    metricKey: hwNatSessionDstLocalAddr
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwNatSessionSrcLocalAddr, hwNatSessionDstLocalAddr, hwNatSessionSrcLocalPort, hwNatSessionDstLocalPort, hwNatSessionProtocol, hwNatSessionSrcVPN]
+    datadog: {as: [column-tag], tags: [huawei_hw_nat_session_dst_local_addr], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.226.2.14.2.1.3
+    name: hwNatSessionSrcLocalPort
+    metricKey: hwNatSessionSrcLocalPort
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwNatSessionSrcLocalAddr, hwNatSessionDstLocalAddr, hwNatSessionSrcLocalPort, hwNatSessionDstLocalPort, hwNatSessionProtocol, hwNatSessionSrcVPN]
+    datadog: {as: [column-tag], tags: [huawei_hw_nat_session_src_local_port], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.226.2.14.2.1.4
+    name: hwNatSessionDstLocalPort
+    metricKey: hwNatSessionDstLocalPort
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwNatSessionSrcLocalAddr, hwNatSessionDstLocalAddr, hwNatSessionSrcLocalPort, hwNatSessionDstLocalPort, hwNatSessionProtocol, hwNatSessionSrcVPN]
+    datadog: {as: [column-tag], tags: [huawei_hw_nat_session_dst_local_port], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.226.2.14.2.1.6
+    name: hwNatSessionSrcGlobalAddr
+    metricKey: hwNatSessionSrcGlobalAddr
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwNatSessionSrcLocalAddr, hwNatSessionDstLocalAddr, hwNatSessionSrcLocalPort, hwNatSessionDstLocalPort, hwNatSessionProtocol, hwNatSessionSrcVPN]
+    datadog: {as: [column-tag], tags: [huawei_hw_nat_session_src_global_addr], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.226.2.14.2.1.7
+    name: hwNatSessionDstGlobalAddr
+    metricKey: hwNatSessionDstGlobalAddr
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwNatSessionSrcLocalAddr, hwNatSessionDstLocalAddr, hwNatSessionSrcLocalPort, hwNatSessionDstLocalPort, hwNatSessionProtocol, hwNatSessionSrcVPN]
+    datadog: {as: [column-tag], tags: [huawei_hw_nat_session_dst_global_addr], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.226.2.14.2.1.8
+    name: hwNatSessionSrcGlobalPort
+    metricKey: hwNatSessionSrcGlobalPort
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwNatSessionSrcLocalAddr, hwNatSessionDstLocalAddr, hwNatSessionSrcLocalPort, hwNatSessionDstLocalPort, hwNatSessionProtocol, hwNatSessionSrcVPN]
+    datadog: {as: [column-tag], tags: [huawei_hw_nat_session_src_global_port], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.226.2.14.2.1.9
+    name: hwNatSessionDstGlobalPort
+    metricKey: hwNatSessionDstGlobalPort
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwNatSessionSrcLocalAddr, hwNatSessionDstLocalAddr, hwNatSessionSrcLocalPort, hwNatSessionDstLocalPort, hwNatSessionProtocol, hwNatSessionSrcVPN]
+    datadog: {as: [column-tag], tags: [huawei_hw_nat_session_dst_global_port], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.226.2.14.2.1.5
+    name: hwNatSessionProtocol
+    metricKey: hwNatSessionProtocol
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwNatSessionSrcLocalAddr, hwNatSessionDstLocalAddr, hwNatSessionSrcLocalPort, hwNatSessionDstLocalPort, hwNatSessionProtocol, hwNatSessionSrcVPN]
+    enumMap: {"1": other, "2": icmp, "3": udp, "4": tcp}
+    datadog: {as: [column-tag], tags: [huawei_hw_nat_session_protocol], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.226.2.14.2.1.10
+    name: hwNatSessionSrcVPN
+    metricKey: hwNatSessionSrcVPN
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwNatSessionSrcLocalAddr, hwNatSessionDstLocalAddr, hwNatSessionSrcLocalPort, hwNatSessionDstLocalPort, hwNatSessionProtocol, hwNatSessionSrcVPN]
+    datadog: {as: [column-tag], tags: [huawei_hw_nat_session_src_vpn], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.226.2.14.2.1.11
+    name: hwNatSessionDstVPN
+    metricKey: hwNatSessionDstVPN
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwNatSessionSrcLocalAddr, hwNatSessionDstLocalAddr, hwNatSessionSrcLocalPort, hwNatSessionDstLocalPort, hwNatSessionProtocol, hwNatSessionSrcVPN]
+    datadog: {as: [column-tag], tags: [huawei_hw_nat_session_dst_vpn], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.4.1.2011.5.25.226.2.14.2.1.12
+    name: hwNatSessionStatus
+    metricKey: hwNatSessionStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [hwNatSessionSrcLocalAddr, hwNatSessionDstLocalAddr, hwNatSessionSrcLocalPort, hwNatSessionDstLocalPort, hwNatSessionProtocol, hwNatSessionSrcVPN]
+    enumMap: {"1": active, "2": notInService, "3": notReady, "4": createAndGo, "5": createAndWait, "6": destroy}
+    datadog: {as: [column-tag], tags: [huawei_hw_nat_session_status], from: [huawei-routers.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.2
+    name: ifDescr
+    metricKey: ifDescr
+    type: string
+    walk: true
+    cadenceTier: discovery
+    coalesceKey: [ifIndex]
+    datadog: {as: [metadata], fields: [interface.description], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.6
+    name: ifPhysAddress
+    metricKey: ifPhysAddress
+    type: string
+    walk: true
+    cadenceTier: discovery
+    coalesceKey: [ifIndex]
+    datadog: {as: [metadata], fields: [interface.mac_address], features: ["format=mac_address"], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.3
+    name: ifType
+    metricKey: ifType
+    type: integer
+    walk: true
+    cadenceTier: discovery
+    coalesceKey: [ifIndex]
+    enumMap: {"1": other, "2": regular1822, "3": hdh1822, "4": ddnX25, "5": rfc877x25, "6": ethernetCsmacd, "7": iso88023Csmacd, "8": iso88024TokenBus, "9": iso88025TokenRing, "10": iso88026Man, "11": starLan, "12": proteon10Mbit, "13": proteon80Mbit, "14": hyperchannel, "15": fddi, "16": lapb, "17": sdlc, "18": ds1, "19": e1, "20": basicISDN, "21": primaryISDN, "22": propPointToPointSerial, "23": ppp, "24": softwareLoopback, "25": eon, "26": ethernet3Mbit, "27": nsip, "28": slip, "29": ultra, "30": ds3, "31": sip, "32": frameRelay, "33": rs232, "34": para, "35": arcnet, "36": arcnetPlus, "37": atm, "38": miox25, "39": sonet, "40": x25ple, "41": iso88022llc, "42": localTalk, "43": smdsDxi, "44": frameRelayService, "45": v35, "46": hssi, "47": hippi, "48": modem, "49": aal5, "50": sonetPath, "51": sonetVT, "52": smdsIcip, "53": propVirtual, "54": propMultiplexor, "55": ieee80212, "56": fibreChannel, "57": hippiInterface, "58": frameRelayInterconnect, "59": aflane8023, "60": aflane8025, "61": cctEmul, "62": fastEther, "63": isdn, "64": v11, "65": v36, "66": g703at64k, "67": g703at2mb, "68": qllc, "69": fastEtherFX, "70": channel, "71": ieee80211, "72": ibm370parChan, "73": escon, "74": dlsw, "75": isdns, "76": isdnu, "77": lapd, "78": ipSwitch, "79": rsrb, "80": atmLogical, "81": ds0, "82": ds0Bundle, "83": bsc, "84": async, "85": cnr, "86": iso88025Dtr, "87": eplrs, "88": arap, "89": propCnls, "90": hostPad, "91": termPad, "92": frameRelayMPI, "93": x213, "94": adsl, "95": radsl, "96": sdsl, "97": vdsl, "98": iso88025CRFPInt, "99": myrinet, "100": voiceEM, "101": voiceFXO, "102": voiceFXS, "103": voiceEncap, "104": voiceOverIp, "105": atmDxi, "106": atmFuni, "107": atmIma, "108": pppMultilinkBundle, "109": ipOverCdlc, "110": ipOverClaw, "111": stackToStack, "112": virtualIpAddress, "113": mpc, "114": ipOverAtm, "115": iso88025Fiber, "116": tdlc, "117": gigabitEthernet, "118": hdlc, "119": lapf, "120": v37, "121": x25mlp, "122": x25huntGroup, "123": transpHdlc, "124": interleave, "125": fast, "126": ip, "127": docsCableMaclayer, "128": docsCableDownstream, "129": docsCableUpstream, "130": a12MppSwitch, "131": tunnel, "132": coffee, "133": ces, "134": atmSubInterface, "135": l2vlan, "136": l3ipvlan, "137": l3ipxvlan, "138": digitalPowerline, "139": mediaMailOverIp, "140": dtm, "141": dcn, "142": ipForward, "143": msdsl, "144": ieee1394, "145": if-gsn, "146": dvbRccMacLayer, "147": dvbRccDownstream, "148": dvbRccUpstream, "149": atmVirtual, "150": mplsTunnel, "151": srp, "152": voiceOverAtm, "153": voiceOverFrameRelay, "154": idsl, "155": compositeLink, "156": ss7SigLink, "157": propWirelessP2P, "158": frForward, "159": rfc1483, "160": usb, "161": ieee8023adLag, "162": bgppolicyaccounting, "163": frf16MfrBundle, "164": h323Gatekeeper, "165": h323Proxy, "166": mpls, "167": mfSigLink, "168": hdsl2, "169": shdsl, "170": ds1FDL, "171": pos, "172": dvbAsiIn, "173": dvbAsiOut, "174": plc, "175": nfas, "176": tr008, "177": gr303RDT, "178": gr303IDT, "179": isup, "180": propDocsWirelessMaclayer, "181": propDocsWirelessDownstream, "182": propDocsWirelessUpstream, "183": hiperlan2, "184": propBWAp2Mp, "185": sonetOverheadChannel, "186": digitalWrapperOverheadChannel, "187": aal2, "188": radioMAC, "189": atmRadio, "190": imt, "191": mvl, "192": reachDSL, "193": frDlciEndPt, "194": atmVciEndPt, "195": opticalChannel, "196": opticalTransport, "197": propAtm, "198": voiceOverCable, "199": infiniband, "200": teLink, "201": q2931, "202": virtualTg, "203": sipTg, "204": sipSig, "205": docsCableUpstreamChannel, "206": econet, "207": pon155, "208": pon622, "209": bridge, "210": linegroup, "211": voiceEMFGD, "212": voiceFGDEANA, "213": voiceDID, "214": mpegTransport, "215": sixToFour, "216": gtp, "217": pdnEtherLoop1, "218": pdnEtherLoop2, "219": opticalChannelGroup, "220": homepna, "221": gfp, "222": ciscoISLvlan, "223": actelisMetaLOOP, "224": fcipLink, "225": rpr, "226": qam, "227": lmp, "228": cblVectaStar, "229": docsCableMCmtsDownstream, "230": adsl2, "231": macSecControlledIF, "232": macSecUncontrolledIF, "233": aviciOpticalEther, "234": atmbond, "235": voiceFGDOS, "236": mocaVersion1, "237": ieee80216WMAN, "238": adsl2plus, "239": dvbRcsMacLayer, "240": dvbTdm, "241": dvbRcsTdma, "242": x86Laps, "243": wwanPP, "244": wwanPP2, "245": voiceEBS, "246": ifPwType, "247": ilan, "248": pip, "249": aluELP, "250": gpon, "251": vdsl2, "252": capwapDot11Profile, "253": capwapDot11Bss, "254": capwapWtpVirtualRadio, "255": bits, "256": docsCableUpstreamRfPort, "257": cableDownstreamRfPort, "258": vmwareVirtualNic, "259": ieee802154, "260": otnOdu, "261": otnOtu, "262": ifVfiType, "263": g9981, "264": g9982, "265": g9983, "266": aluEpon, "267": aluEponOnu, "268": aluEponPhysicalUni, "269": aluEponLogicalLink, "270": aluGponOnu, "271": aluGponPhysicalUni, "272": vmwareNicTeam, "277": docsOfdmDownstream, "278": docsOfdmaUpstream, "279": gfast, "280": sdci, "281": xboxWireless, "282": fastdsl, "283": docsCableScte55d1FwdOob, "284": docsCableScte55d1RetOob, "285": docsCableScte55d2DsOob, "286": docsCableScte55d2UsOob, "287": docsCableNdf, "288": docsCableNdr, "289": ptm, "290": ghn, "291": otnOtsi, "292": otnOtuc, "293": otnOduc, "294": otnOtsig, "295": microwaveCarrierTermination, "296": microwaveRadioLinkTerminal, "297": ieee8021axDrni, "298": ax25, "299": ieee19061nanocom, "300": cpri, "301": omni, "302": roe, "303": p2pOverLan}
+    datadog: {as: [metadata], fields: [interface.type], from: [_generic-if.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/huawei-routers.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, _generic-if.yaml, _huawei.yaml, huawei.yaml]

@@ -1,0 +1,110 @@
+formatVersion: 1
+slug: avtech-roomalert-3e
+name: Avtech Room Alert 3e
+description: "Converted from Datadog's avtech-roomalert-3e.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: AVTECH
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.20916.1.9}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.9.1.1.1.1.0
+    name: digital-sen1-1
+    metricKey: digital-sen1-1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.3e.digital_sen1_1], from: [avtech-roomalert-3e.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.9.1.1.1.2.0
+    name: digital-sen1-2
+    metricKey: digital-sen1-2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.3e.digital_sen1_2], from: [avtech-roomalert-3e.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.9.1.1.2.1.0
+    name: digital-sen2-1
+    metricKey: digital-sen2-1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.3e.digital_sen2_1], from: [avtech-roomalert-3e.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.9.1.1.2.2.0
+    name: digital-sen2-2
+    metricKey: digital-sen2-2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.3e.digital_sen2_2], from: [avtech-roomalert-3e.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.9.1.1.2.3.0
+    name: digital-sen2-3
+    metricKey: digital-sen2-3
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.3e.digital_sen2_3], from: [avtech-roomalert-3e.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.9.1.1.2.4.0
+    name: digital-sen2-4
+    metricKey: digital-sen2-4
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.3e.digital_sen2_4], from: [avtech-roomalert-3e.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.9.1.1.2.5.0
+    name: digital-sen2-5
+    metricKey: digital-sen2-5
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.3e.digital_sen2_5], from: [avtech-roomalert-3e.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.9.1.1.2.7.0
+    name: digital-sen2-7
+    metricKey: digital-sen2-7
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.3e.digital_sen2_7], from: [avtech-roomalert-3e.yaml]}
+  - oid: 1.3.6.1.4.1.20916.1.9.1.2.1.0
+    name: switch-sen1
+    metricKey: switch-sen1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [roomalert.3e.switch_sen1], from: [avtech-roomalert-3e.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/avtech-roomalert-3e.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, avtech.yaml]

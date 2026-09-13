@@ -1,0 +1,380 @@
+formatVersion: 1
+slug: apc-pdu
+name: APC PDU
+description: "Converted from Datadog's apc-pdu.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: APC
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.318.1.3.4}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.6.5.0
+    name: tcpActiveOpens
+    metricKey: tcpActiveOpens
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.6.0
+    name: tcpPassiveOpens
+    metricKey: tcpPassiveOpens
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.7.0
+    name: tcpAttemptFails
+    metricKey: tcpAttemptFails
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.8.0
+    name: tcpEstabResets
+    metricKey: tcpEstabResets
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.9.0
+    name: tcpCurrEstab
+    metricKey: tcpCurrEstab
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.17.0
+    name: tcpHCInSegs
+    metricKey: tcpHCInSegs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.18.0
+    name: tcpHCOutSegs
+    metricKey: tcpHCOutSegs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.12.0
+    name: tcpRetransSegs
+    metricKey: tcpRetransSegs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.14.0
+    name: tcpInErrs
+    metricKey: tcpInErrs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.15.0
+    name: tcpOutRsts
+    metricKey: tcpOutRsts
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.7.8.0
+    name: udpHCInDatagrams
+    metricKey: udpHCInDatagrams
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-udp.yaml]}
+  - oid: 1.3.6.1.2.1.7.2.0
+    name: udpNoPorts
+    metricKey: udpNoPorts
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-udp.yaml]}
+  - oid: 1.3.6.1.2.1.7.3.0
+    name: udpInErrors
+    metricKey: udpInErrors
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-udp.yaml]}
+  - oid: 1.3.6.1.2.1.7.9.0
+    name: udpHCOutDatagrams
+    metricKey: udpHCOutDatagrams
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-udp.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.2.3.1.1.2
+    name: rPDULoadStatusLoad
+    metricKey: rPDULoadStatusLoad
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDULoadStatusIndex]
+    datadog: {as: [metric], metric: [powernet.rPDULoadStatusLoad], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.2.3.1.1.1
+    name: rPDULoadStatusIndex
+    metricKey: rPDULoadStatusIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDULoadStatusIndex]
+    datadog: {as: [column-tag], tags: [powernet_r_pdu_load_status_index], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.2.3.1.1.3
+    name: rPDULoadStatusLoadState
+    metricKey: rPDULoadStatusLoadState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDULoadStatusIndex]
+    enumMap: {"1": phaseLoadNormal, "2": phaseLoadLow, "3": phaseLoadNearOverload, "4": phaseLoadOverload}
+    datadog: {as: [column-tag], tags: [powernet_r_pdu_load_status_load_state], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.3.5.1.1.7
+    name: rPDUOutletStatusLoad
+    metricKey: rPDUOutletStatusLoad
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDUOutletStatusIndex]
+    datadog: {as: [metric], metric: [powernet.rPDUOutletStatusLoad], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.3.5.1.1.1
+    name: rPDUOutletStatusIndex
+    metricKey: rPDUOutletStatusIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDUOutletStatusIndex]
+    datadog: {as: [column-tag], tags: [powernet_r_pdu_outlet_status_index], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.3.5.1.1.2
+    name: rPDUOutletStatusOutletName
+    metricKey: rPDUOutletStatusOutletName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDUOutletStatusIndex]
+    datadog: {as: [column-tag], tags: [powernet_r_pdu_outlet_status_outlet_name], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.3.5.1.1.4
+    name: rPDUOutletStatusOutletState
+    metricKey: rPDUOutletStatusOutletState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDUOutletStatusIndex]
+    enumMap: {"1": outletStatusOn, "2": outletStatusOff}
+    datadog: {as: [column-tag], tags: [powernet_r_pdu_outlet_status_outlet_state], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.4.1.3.0
+    name: rPDUPowerSupplyAlarm
+    metricKey: rPDUPowerSupplyAlarm
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    enumMap: {"1": allAvailablePowerSuppliesOK, "2": powerSupplyOneFailed, "3": powerSupplyTwoFailed, "4": powerSupplyOneandTwoFailed}
+    datadog: {as: [metric], metric: [powernet.rPDUPowerSupplyAlarm], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.5.2.1.1
+    name: rPDUStatusBankIndex
+    metricKey: rPDUStatusBankIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDUStatusBankIndex]
+    datadog: {as: [column-tag], tags: [powernet_r_pdu_status_bank_index], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.5.2.1.2
+    name: rPDUStatusBankNumber
+    metricKey: rPDUStatusBankNumber
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDUStatusBankIndex]
+    datadog: {as: [column-tag], tags: [powernet_r_pdu_status_bank_number], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.5.2.1.3
+    name: rPDUStatusBankState
+    metricKey: rPDUStatusBankState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDUStatusBankIndex]
+    enumMap: {"1": bankLoadNormal, "2": bankLoadLow, "3": bankLoadNearOverload, "4": bankLoadOverload}
+    datadog: {as: [column-tag], tags: [powernet_r_pdu_status_bank_state], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.5.4.1.1
+    name: rPDUStatusPhaseIndex
+    metricKey: rPDUStatusPhaseIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDUStatusPhaseIndex]
+    datadog: {as: [column-tag], tags: [powernet_r_pdu_status_phase_index], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.5.4.1.2
+    name: rPDUStatusPhaseNumber
+    metricKey: rPDUStatusPhaseNumber
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDUStatusPhaseIndex]
+    datadog: {as: [column-tag], tags: [powernet_r_pdu_status_phase_number], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.5.4.1.3
+    name: rPDUStatusPhaseState
+    metricKey: rPDUStatusPhaseState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDUStatusPhaseIndex]
+    enumMap: {"1": phaseLoadNormal, "2": phaseLoadLow, "3": phaseLoadNearOverload, "4": phaseLoadOverload}
+    datadog: {as: [column-tag], tags: [powernet_r_pdu_status_phase_state], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.5.6.1.1
+    name: rPDUStatusOutletIndex
+    metricKey: rPDUStatusOutletIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDUStatusOutletIndex]
+    datadog: {as: [column-tag], tags: [powernet_r_pdu_status_outlet_index], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.5.6.1.2
+    name: rPDUStatusOutletNumber
+    metricKey: rPDUStatusOutletNumber
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDUStatusOutletIndex]
+    datadog: {as: [column-tag], tags: [powernet_r_pdu_status_outlet_number], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.5.6.1.3
+    name: rPDUStatusOutletState
+    metricKey: rPDUStatusOutletState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDUStatusOutletIndex]
+    enumMap: {"1": outletLoadNormal, "2": outletLoadLow, "3": outletLoadNearOverload, "4": outletLoadOverload}
+    datadog: {as: [column-tag], tags: [powernet_r_pdu_status_outlet_state], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.26.10.2.2.1.7
+    name: rPDU2SensorTempHumidityStatusTempF
+    metricKey: rPDU2SensorTempHumidityStatusTempF
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDU2SensorTempHumidityStatusIndex]
+    datadog: {as: [metric], metric: [powernet.rPDU2SensorTempHumidityStatusTempF], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.26.10.2.2.1.8
+    name: rPDU2SensorTempHumidityStatusTempC
+    metricKey: rPDU2SensorTempHumidityStatusTempC
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDU2SensorTempHumidityStatusIndex]
+    datadog: {as: [metric], metric: [powernet.rPDU2SensorTempHumidityStatusTempC], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.26.10.2.2.1.10
+    name: rPDU2SensorTempHumidityStatusRelativeHumidity
+    metricKey: rPDU2SensorTempHumidityStatusRelativeHumidity
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDU2SensorTempHumidityStatusIndex]
+    datadog: {as: [metric], metric: [powernet.rPDU2SensorTempHumidityStatusRelativeHumidity], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.26.10.2.2.1.3
+    name: rPDU2SensorTempHumidityStatusName
+    metricKey: rPDU2SensorTempHumidityStatusName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDU2SensorTempHumidityStatusIndex]
+    datadog: {as: [column-tag], tags: [powernet_r_pdu2_sensor_temp_humidity_status_name], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.26.10.2.2.1.5
+    name: rPDU2SensorTempHumidityStatusType
+    metricKey: rPDU2SensorTempHumidityStatusType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDU2SensorTempHumidityStatusIndex]
+    enumMap: {"1": temperatureOnly, "2": temperatureHumidity, "3": commsLost, "4": notInstalled}
+    datadog: {as: [column-tag], tags: [powernet_r_pdu2_sensor_temp_humidity_status_type], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.26.10.2.2.1.9
+    name: rPDU2SensorTempHumidityStatusTempStatus
+    metricKey: rPDU2SensorTempHumidityStatusTempStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDU2SensorTempHumidityStatusIndex]
+    enumMap: {"1": notPresent, "2": belowMin, "3": belowLow, "4": normal, "5": aboveHigh, "6": aboveMax}
+    datadog: {as: [column-tag], tags: [powernet_r_pdu2_sensor_temp_humidity_status_temp_status], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.26.10.2.2.1.11
+    name: rPDU2SensorTempHumidityStatusHumidityStatus
+    metricKey: rPDU2SensorTempHumidityStatusHumidityStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rPDU2SensorTempHumidityStatusIndex]
+    enumMap: {"1": notPresent, "2": belowMin, "3": belowLow, "4": normal, "5": aboveHigh, "6": aboveMax}
+    datadog: {as: [column-tag], tags: [powernet_r_pdu2_sensor_temp_humidity_status_humidity_status], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.1.1.0
+    name: rPDUIdentName
+    metricKey: rPDUIdentName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [powernet_r_pdu_ident_name], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.1.2.0
+    name: rPDUIdentHardwareRev
+    metricKey: rPDUIdentHardwareRev
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [powernet_r_pdu_ident_hardware_rev], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.1.3.0
+    name: rPDUIdentFirmwareRev
+    metricKey: rPDUIdentFirmwareRev
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [powernet_r_pdu_ident_firmware_rev], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.1.5.0
+    name: rPDUIdentModelNumber
+    metricKey: rPDUIdentModelNumber
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [powernet_r_pdu_ident_model_number], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.318.1.1.12.1.6.0
+    name: rPDUIdentSerialNumber
+    metricKey: rPDUIdentSerialNumber
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [powernet_r_pdu_ident_serial_number], from: [apc-pdu.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description, device.serial_number, device.model, device.os_name, device.os_version], features: ["match_pattern=\\bSN:\\s+(\\w+)", "match_pattern=\\bMN:(\\w+)", "match_pattern=\\bPN:apc_hw(\\d+)_aos_", "match_pattern=\\bPF:(\\S+)"], from: [_base.yaml, _apc-metadata.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/apc-pdu.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, _apc.yaml, _apc-metadata.yaml, _generic-tcp.yaml, _generic-udp.yaml, apc.yaml]

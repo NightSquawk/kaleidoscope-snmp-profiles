@@ -1,0 +1,532 @@
+formatVersion: 1
+slug: cyberpower-pdu
+name: Cyberpower PDU
+description: "Converted from Datadog's cyberpower-pdu.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: CyberPower
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.3808.1.1}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.2.3.1.1.2
+    name: ePDULoadStatusLoad
+    metricKey: ePDULoadStatusLoad
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDULoadStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDULoadStatusLoad], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.2.3.1.1.6
+    name: ePDULoadStatusVoltage
+    metricKey: ePDULoadStatusVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDULoadStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDULoadStatusVoltage], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.2.3.1.1.7
+    name: ePDULoadStatusActivePower
+    metricKey: ePDULoadStatusActivePower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDULoadStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDULoadStatusActivePower], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.2.3.1.1.8
+    name: ePDULoadStatusApparentPower
+    metricKey: ePDULoadStatusApparentPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDULoadStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDULoadStatusApparentPower], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.2.3.1.1.9
+    name: ePDULoadStatusPowerFactor
+    metricKey: ePDULoadStatusPowerFactor
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDULoadStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDULoadStatusPowerFactor], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.2.3.1.1.1
+    name: ePDULoadStatusIndex
+    metricKey: ePDULoadStatusIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDULoadStatusIndex]
+    datadog: {as: [column-tag], tags: [e_pdu_load_status_index], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.2.3.1.1.3
+    name: ePDULoadStatusLoadState
+    metricKey: ePDULoadStatusLoadState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDULoadStatusIndex]
+    enumMap: {"1": loadNormal, "2": loadLow, "3": loadNearOverload, "4": loadOverload}
+    datadog: {as: [column-tag], tags: [e_pdu_load_status_load_state], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.2.4.1.1.1
+    name: ePDULoadBankConfigIndex
+    metricKey: ePDULoadBankConfigIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDULoadBankConfigIndex]
+    datadog: {as: [column-tag], tags: [e_pdu_load_bank_config_index], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.2.4.1.1.5
+    name: ePDULoadBankConfigAlarm
+    metricKey: ePDULoadBankConfigAlarm
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDULoadBankConfigIndex]
+    enumMap: {"1": noLoadAlarm, "2": underCurrentAlarm, "3": nearOverCurrentAlarm, "4": overCurrentAlarm}
+    datadog: {as: [column-tag], tags: [e_pdu_load_bank_config_alarm], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.3.5.1.1.7
+    name: ePDUOutletStatusLoad
+    metricKey: ePDUOutletStatusLoad
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDUOutletStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDUOutletStatusLoad], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.3.5.1.1.8
+    name: ePDUOutletStatusActivePower
+    metricKey: ePDUOutletStatusActivePower
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDUOutletStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDUOutletStatusActivePower], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.3.5.1.1.1
+    name: ePDUOutletStatusIndex
+    metricKey: ePDUOutletStatusIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDUOutletStatusIndex]
+    datadog: {as: [column-tag], tags: [e_pdu_outlet_status_index], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.3.5.1.1.2
+    name: ePDUOutletStatusOutletName
+    metricKey: ePDUOutletStatusOutletName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDUOutletStatusIndex]
+    datadog: {as: [column-tag], tags: [e_pdu_outlet_status_outlet_name], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.3.5.1.1.4
+    name: ePDUOutletStatusOutletState
+    metricKey: ePDUOutletStatusOutletState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDUOutletStatusIndex]
+    enumMap: {"1": outletStatusOn, "2": outletStatusOff}
+    datadog: {as: [column-tag], tags: [e_pdu_outlet_status_outlet_state], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.3.5.1.1.9
+    name: ePDUOutletStatusAlarm
+    metricKey: ePDUOutletStatusAlarm
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDUOutletStatusIndex]
+    enumMap: {"1": noLoadAlarm, "2": underCurrentAlarm, "3": nearOverCurrentAlarm, "4": overCurrentAlarm}
+    datadog: {as: [column-tag], tags: [e_pdu_outlet_status_alarm], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.5.2.1.1
+    name: ePDUStatusBankIndex
+    metricKey: ePDUStatusBankIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDUStatusBankIndex]
+    datadog: {as: [column-tag], tags: [e_pdu_status_bank_index], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.5.2.1.2
+    name: ePDUStatusBankNumber
+    metricKey: ePDUStatusBankNumber
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDUStatusBankIndex]
+    datadog: {as: [column-tag], tags: [e_pdu_status_bank_number], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.5.2.1.3
+    name: ePDUStatusBankState
+    metricKey: ePDUStatusBankState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDUStatusBankIndex]
+    enumMap: {"1": bankLoadNormal, "2": bankLoadLow, "3": bankLoadNearOverload, "4": bankLoadOverload}
+    datadog: {as: [column-tag], tags: [e_pdu_status_bank_state], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.5.4.1.1
+    name: ePDUStatusPhaseIndex
+    metricKey: ePDUStatusPhaseIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDUStatusPhaseIndex]
+    datadog: {as: [column-tag], tags: [e_pdu_status_phase_index], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.5.4.1.2
+    name: ePDUStatusPhaseNumber
+    metricKey: ePDUStatusPhaseNumber
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDUStatusPhaseIndex]
+    datadog: {as: [column-tag], tags: [e_pdu_status_phase_number], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.5.4.1.3
+    name: ePDUStatusPhaseState
+    metricKey: ePDUStatusPhaseState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDUStatusPhaseIndex]
+    enumMap: {"1": phaseLoadNormal, "2": phaseLoadLow, "3": phaseLoadNearOverload, "4": phaseLoadOverload}
+    datadog: {as: [column-tag], tags: [e_pdu_status_phase_state], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.5.6.1.1
+    name: ePDUStatusOutletIndex
+    metricKey: ePDUStatusOutletIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDUStatusOutletIndex]
+    datadog: {as: [column-tag], tags: [e_pdu_status_outlet_index], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.5.6.1.2
+    name: ePDUStatusOutletNumber
+    metricKey: ePDUStatusOutletNumber
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDUStatusOutletIndex]
+    datadog: {as: [column-tag], tags: [e_pdu_status_outlet_number], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.5.6.1.3
+    name: ePDUStatusOutletState
+    metricKey: ePDUStatusOutletState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDUStatusOutletIndex]
+    enumMap: {"1": outletLoadNormal, "2": outletLoadLow, "3": outletLoadNearOverload, "4": outletLoadOverload}
+    datadog: {as: [column-tag], tags: [e_pdu_status_outlet_state], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.5.7.0
+    name: ePDUStatusInputVoltage
+    metricKey: ePDUStatusInputVoltage
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [cyberpower.ePDUStatusInputVoltage], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.5.8.0
+    name: ePDUStatusInputFrequency
+    metricKey: ePDUStatusInputFrequency
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [cyberpower.ePDUStatusInputFrequency], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.3.4.1.5
+    name: ePDU2DeviceStatusCurrentLoad
+    metricKey: ePDU2DeviceStatusCurrentLoad
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2DeviceStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDU2DeviceStatusCurrentLoad], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.3.4.1.6
+    name: ePDU2DeviceStatusCurrentPeakLoad
+    metricKey: ePDU2DeviceStatusCurrentPeakLoad
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2DeviceStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDU2DeviceStatusCurrentPeakLoad], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.3.4.1.15
+    name: ePDU2DeviceStatusApparentPower
+    metricKey: ePDU2DeviceStatusApparentPower
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2DeviceStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDU2DeviceStatusApparentPower], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.3.4.1.16
+    name: ePDU2DeviceStatusPowerFactor
+    metricKey: ePDU2DeviceStatusPowerFactor
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2DeviceStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDU2DeviceStatusPowerFactor], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.3.4.1.1
+    name: ePDU2DeviceStatusIndex
+    metricKey: ePDU2DeviceStatusIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2DeviceStatusIndex]
+    datadog: {as: [column-tag], tags: [e_pdu2_device_status_index], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.3.4.1.3
+    name: ePDU2DeviceStatusName
+    metricKey: ePDU2DeviceStatusName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2DeviceStatusIndex]
+    datadog: {as: [column-tag], tags: [e_pdu2_device_status_name], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.3.4.1.17
+    name: ePDU2DeviceStatusRoleType
+    metricKey: ePDU2DeviceStatusRoleType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2DeviceStatusIndex]
+    enumMap: {"1": standalone, "2": host, "3": slave}
+    datadog: {as: [column-tag], tags: [e_pdu2_device_status_role_type], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.3.4.1.4
+    name: ePDU2DeviceStatusLoadState
+    metricKey: ePDU2DeviceStatusLoadState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2DeviceStatusIndex]
+    enumMap: {"1": noLoadAlarm, "2": underCurrentAlarm, "3": nearOverCurrentAlarm, "4": overCurrentAlarm}
+    datadog: {as: [column-tag], tags: [e_pdu2_device_status_load_state], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.3.4.1.12
+    name: ePDU2DeviceStatusPowerSupplyAlarm
+    metricKey: ePDU2DeviceStatusPowerSupplyAlarm
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2DeviceStatusIndex]
+    enumMap: {"1": normal, "2": alarm}
+    datadog: {as: [column-tag], tags: [e_pdu2_device_status_power_supply_alarm], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.3.4.1.13
+    name: ePDU2DeviceStatusPowerSupply1Status
+    metricKey: ePDU2DeviceStatusPowerSupply1Status
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2DeviceStatusIndex]
+    enumMap: {"1": normal, "2": alarm}
+    datadog: {as: [column-tag], tags: [e_pdu2_device_status_power_supply1_status], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.3.4.1.14
+    name: ePDU2DeviceStatusPowerSupply2Status
+    metricKey: ePDU2DeviceStatusPowerSupply2Status
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2DeviceStatusIndex]
+    enumMap: {"1": normal, "2": alarm}
+    datadog: {as: [column-tag], tags: [e_pdu2_device_status_power_supply2_status], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.4.4.1.5
+    name: ePDU2PhaseStatusLoad
+    metricKey: ePDU2PhaseStatusLoad
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2PhaseStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDU2PhaseStatusLoad], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.4.4.1.6
+    name: ePDU2PhaseStatusVoltage
+    metricKey: ePDU2PhaseStatusVoltage
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2PhaseStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDU2PhaseStatusVoltage], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.4.4.1.7
+    name: ePDU2PhaseStatusPower
+    metricKey: ePDU2PhaseStatusPower
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2PhaseStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDU2PhaseStatusPower], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.4.4.1.8
+    name: ePDU2PhaseStatusApparentPower
+    metricKey: ePDU2PhaseStatusApparentPower
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2PhaseStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDU2PhaseStatusApparentPower], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.4.4.1.9
+    name: ePDU2PhaseStatusPowerFactor
+    metricKey: ePDU2PhaseStatusPowerFactor
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2PhaseStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDU2PhaseStatusPowerFactor], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.4.4.1.10
+    name: ePDU2PhaseStatusPeakLoad
+    metricKey: ePDU2PhaseStatusPeakLoad
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2PhaseStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDU2PhaseStatusPeakLoad], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.4.4.1.1
+    name: ePDU2PhaseStatusIndex
+    metricKey: ePDU2PhaseStatusIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2PhaseStatusIndex]
+    datadog: {as: [column-tag], tags: [e_pdu2_phase_status_index], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.4.4.1.4
+    name: ePDU2PhaseStatusLoadState
+    metricKey: ePDU2PhaseStatusLoadState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2PhaseStatusIndex]
+    enumMap: {"1": normal, "2": lowLoad, "3": nearOverload, "4": overload}
+    datadog: {as: [column-tag], tags: [e_pdu2_phase_status_load_state], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.5.4.1.5
+    name: ePDU2BankStatusLoad
+    metricKey: ePDU2BankStatusLoad
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2BankStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDU2BankStatusLoad], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.5.4.1.6
+    name: ePDU2BankStatusPeakLoad
+    metricKey: ePDU2BankStatusPeakLoad
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2BankStatusIndex]
+    datadog: {as: [metric], metric: [cyberpower.ePDU2BankStatusPeakLoad], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.5.4.1.1
+    name: ePDU2BankStatusIndex
+    metricKey: ePDU2BankStatusIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2BankStatusIndex]
+    datadog: {as: [column-tag], tags: [e_pdu2_bank_status_index], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.5.4.1.4
+    name: ePDU2BankStatusLoadState
+    metricKey: ePDU2BankStatusLoadState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2BankStatusIndex]
+    enumMap: {"1": normal, "2": lowLoad, "3": nearOverload, "4": overload}
+    datadog: {as: [column-tag], tags: [e_pdu2_bank_status_load_state], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.6.1.4.1.1
+    name: ePDU2OutletSwitchedStatusIndex
+    metricKey: ePDU2OutletSwitchedStatusIndex
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2OutletSwitchedStatusIndex]
+    datadog: {as: [column-tag], tags: [e_pdu2_outlet_switched_status_index], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.6.1.4.1.4
+    name: ePDU2OutletSwitchedStatusName
+    metricKey: ePDU2OutletSwitchedStatusName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2OutletSwitchedStatusIndex]
+    datadog: {as: [column-tag], tags: [e_pdu2_outlet_switched_status_name], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.6.6.1.4.1.5
+    name: ePDU2OutletSwitchedStatusState
+    metricKey: ePDU2OutletSwitchedStatusState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ePDU2OutletSwitchedStatusIndex]
+    enumMap: {"1": outletStatusOn, "2": outletStatusOff}
+    datadog: {as: [column-tag], tags: [e_pdu2_outlet_switched_status_state], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.4.2.1.0
+    name: envirTemperature
+    metricKey: envirTemperature
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [cyberpower.envirTemperature], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.4.2.6.0
+    name: envirTemperatureCelsius
+    metricKey: envirTemperatureCelsius
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [cyberpower.envirTemperatureCelsius], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.4.3.1.0
+    name: envirHumidity
+    metricKey: envirHumidity
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [cyberpower.envirHumidity], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.1.1.0
+    name: ePDUIdentName
+    metricKey: ePDUIdentName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [e_pdu_ident_name], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.1.5.0
+    name: ePDUIdentModelNumber
+    metricKey: ePDUIdentModelNumber
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [e_pdu_ident_model_number], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.3.1.6.0
+    name: ePDUIdentSerialNumber
+    metricKey: ePDUIdentSerialNumber
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [e_pdu_ident_serial_number], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.4.1.1.0
+    name: envirIdentName
+    metricKey: envirIdentName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [envir_ident_name], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.4.1.3808.1.1.4.1.2.0
+    name: envirIdentLocation
+    metricKey: envirIdentLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [envir_ident_location], from: [cyberpower-pdu.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/cyberpower-pdu.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml]

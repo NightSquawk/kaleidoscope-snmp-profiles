@@ -1,0 +1,209 @@
+formatVersion: 1
+slug: sinetica-eagle-i
+name: Sinetica Eagle-I
+description: "Converted from Datadog's sinetica-eagle-i.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: Sinetica
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.3711.24}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.1.2.2.1.7
+    name: ipTHAValue
+    metricKey: ipTHAValue
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipTHAChan]
+    datadog: {as: [metric], metric: [hawk.i2.ipTHAValue], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.1.2.2.1.3
+    name: ipTHAName
+    metricKey: ipTHAName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipTHAChan]
+    datadog: {as: [column-tag], tags: [hawk_i2_ip_tha_name], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.1.2.2.1.4
+    name: ipTHALocn
+    metricKey: ipTHALocn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipTHAChan]
+    datadog: {as: [column-tag], tags: [hawk_i2_ip_tha_locn], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.1.3.1.1.3
+    name: ipContName
+    metricKey: ipContName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipContChan]
+    datadog: {as: [column-tag], tags: [hawk_i2_ip_cont_name], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.1.3.1.1.4
+    name: ipContLocn
+    metricKey: ipContLocn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipContChan]
+    datadog: {as: [column-tag], tags: [hawk_i2_ip_cont_locn], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.1.3.1.1.6
+    name: ipContNormState
+    metricKey: ipContNormState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipContChan]
+    enumMap: {"1": open, "2": closed}
+    datadog: {as: [column-tag], tags: [hawk_i2_ip_cont_norm_state], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.1.3.1.1.7
+    name: ipContCurrState
+    metricKey: ipContCurrState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipContChan]
+    enumMap: {"1": open, "2": closed, "3": armed, "4": triggered, "255": unknown}
+    datadog: {as: [column-tag], tags: [hawk_i2_ip_cont_curr_state], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.2.2.1.3
+    name: opName
+    metricKey: opName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [opChan]
+    datadog: {as: [column-tag], tags: [hawk_i2_op_name], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.2.2.1.4
+    name: opLocn
+    metricKey: opLocn
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [opChan]
+    datadog: {as: [column-tag], tags: [hawk_i2_op_locn], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.2.2.1.5
+    name: opNormState
+    metricKey: opNormState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [opChan]
+    enumMap: {"1": "on", "2": "off"}
+    datadog: {as: [column-tag], tags: [hawk_i2_op_norm_state], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.2.2.1.6
+    name: opCurrState
+    metricKey: opCurrState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [opChan]
+    enumMap: {"1": "on", "2": "off"}
+    datadog: {as: [column-tag], tags: [hawk_i2_op_curr_state], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.2.2.1.12
+    name: opControlState
+    metricKey: opControlState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [opChan]
+    enumMap: {"1": activate, "2": deactivate, "3": logic}
+    datadog: {as: [column-tag], tags: [hawk_i2_op_control_state], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.7.3.1.1.3
+    name: pduRMSVoltsValue
+    metricKey: pduRMSVoltsValue
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [pduMonPduNumber]
+    datadog: {as: [metric], metric: [hawk.i2.pduRMSVoltsValue], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.7.3.1.1.4
+    name: pduRMSAmpsValue
+    metricKey: pduRMSAmpsValue
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [pduMonPduNumber]
+    datadog: {as: [metric], metric: [hawk.i2.pduRMSAmpsValue], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.7.3.1.1.5
+    name: pduTotalEnergyValue
+    metricKey: pduTotalEnergyValue
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [pduMonPduNumber]
+    datadog: {as: [metric], metric: [hawk.i2.pduTotalEnergyValue], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.7.1.2.1.3
+    name: pduName
+    metricKey: pduName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [pduNumber]
+    datadog: {as: [column-tag], tags: [hawk_i2_pdu_name], features: [cross-table tag from another table], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.99.9.0
+    name: invHwRevision
+    metricKey: invHwRevision
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [hawk_i2_inv_hw_revision], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.99.10.0
+    name: invFwRevision
+    metricKey: invFwRevision
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [hawk_i2_inv_fw_revision], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.99.11.0
+    name: invSerialNum
+    metricKey: invSerialNum
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [hawk_i2_inv_serial_num], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.4.1.3711.24.1.1.1.2.1.0
+    name: ipTempScaleFlag
+    metricKey: ipTempScaleFlag
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    enumMap: {"1": celsius, "2": fahrenheit, "3": kelvin}
+    datadog: {as: [global-tag], tags: [hawk_i2_ip_temp_scale_flag], from: [sinetica-eagle-i.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/sinetica-eagle-i.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml]

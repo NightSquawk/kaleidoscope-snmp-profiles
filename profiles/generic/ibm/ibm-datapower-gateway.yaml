@@ -1,0 +1,443 @@
+formatVersion: 1
+slug: ibm-datapower-gateway
+name: Ibm DataPower Gateway
+description: "Converted from Datadog's ibm-datapower-gateway.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: IBM
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.14685.1.8}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.14.2.0
+    name: dpStatusCPUUsageoneMinute
+    metricKey: dpStatusCPUUsageoneMinute
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [cpu.usage], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.5.1.0
+    name: dpStatusMemoryStatusUsage
+    metricKey: dpStatusMemoryStatusUsage
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [memory.usage], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.52.2.0
+    name: dpStatusSystemUsageLoad
+    metricKey: dpStatusSystemUsageLoad
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusSystemUsageLoad], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.12.1.0
+    name: dpStatusTCPSummaryestablished
+    metricKey: dpStatusTCPSummaryestablished
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusTCPSummaryestablished], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.12.2.0
+    name: dpStatusTCPSummarysynsent
+    metricKey: dpStatusTCPSummarysynsent
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusTCPSummarysynsent], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.12.3.0
+    name: dpStatusTCPSummarysynreceived
+    metricKey: dpStatusTCPSummarysynreceived
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusTCPSummarysynreceived], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.12.4.0
+    name: dpStatusTCPSummaryfinwait1
+    metricKey: dpStatusTCPSummaryfinwait1
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusTCPSummaryfinwait1], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.12.5.0
+    name: dpStatusTCPSummaryfinwait2
+    metricKey: dpStatusTCPSummaryfinwait2
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusTCPSummaryfinwait2], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.12.6.0
+    name: dpStatusTCPSummarytimewait
+    metricKey: dpStatusTCPSummarytimewait
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusTCPSummarytimewait], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.12.7.0
+    name: dpStatusTCPSummaryclosed
+    metricKey: dpStatusTCPSummaryclosed
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusTCPSummaryclosed], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.12.8.0
+    name: dpStatusTCPSummaryclosewait
+    metricKey: dpStatusTCPSummaryclosewait
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusTCPSummaryclosewait], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.12.9.0
+    name: dpStatusTCPSummarylastack
+    metricKey: dpStatusTCPSummarylastack
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusTCPSummarylastack], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.12.10.0
+    name: dpStatusTCPSummarylisten
+    metricKey: dpStatusTCPSummarylisten
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusTCPSummarylisten], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.12.11.0
+    name: dpStatusTCPSummaryclosing
+    metricKey: dpStatusTCPSummaryclosing
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusTCPSummaryclosing], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.13.1.0
+    name: dpStatusConnectionsAcceptedtenSeconds
+    metricKey: dpStatusConnectionsAcceptedtenSeconds
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusConnectionsAcceptedtenSeconds], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.13.2.0
+    name: dpStatusConnectionsAcceptedoneMinute
+    metricKey: dpStatusConnectionsAcceptedoneMinute
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusConnectionsAcceptedoneMinute], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.13.3.0
+    name: dpStatusConnectionsAcceptedtenMinutes
+    metricKey: dpStatusConnectionsAcceptedtenMinutes
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusConnectionsAcceptedtenMinutes], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.13.4.0
+    name: dpStatusConnectionsAcceptedoneHour
+    metricKey: dpStatusConnectionsAcceptedoneHour
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusConnectionsAcceptedoneHour], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.13.5.0
+    name: dpStatusConnectionsAcceptedoneDay
+    metricKey: dpStatusConnectionsAcceptedoneDay
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusConnectionsAcceptedoneDay], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.29.1.0
+    name: dpStatusFilesystemStatusFreeEncrypted
+    metricKey: dpStatusFilesystemStatusFreeEncrypted
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusFilesystemStatusFreeEncrypted], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.29.2.0
+    name: dpStatusFilesystemStatusTotalEncrypted
+    metricKey: dpStatusFilesystemStatusTotalEncrypted
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusFilesystemStatusTotalEncrypted], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.29.5.0
+    name: dpStatusFilesystemStatusFreeTemporary
+    metricKey: dpStatusFilesystemStatusFreeTemporary
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusFilesystemStatusFreeTemporary], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.29.6.0
+    name: dpStatusFilesystemStatusTotalTemporary
+    metricKey: dpStatusFilesystemStatusTotalTemporary
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusFilesystemStatusTotalTemporary], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.29.7.0
+    name: dpStatusFilesystemStatusFreeInternal
+    metricKey: dpStatusFilesystemStatusFreeInternal
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusFilesystemStatusFreeInternal], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.29.8.0
+    name: dpStatusFilesystemStatusTotalInternal
+    metricKey: dpStatusFilesystemStatusTotalInternal
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusFilesystemStatusTotalInternal], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.55.1.0
+    name: dpStatusEnvironmentalSensorssystemTemp
+    metricKey: dpStatusEnvironmentalSensorssystemTemp
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusEnvironmentalSensorssystemTemp], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.55.2.0
+    name: dpStatusEnvironmentalSensorscpu1Temp
+    metricKey: dpStatusEnvironmentalSensorscpu1Temp
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusEnvironmentalSensorscpu1Temp], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.55.3.0
+    name: dpStatusEnvironmentalSensorscpu2Temp
+    metricKey: dpStatusEnvironmentalSensorscpu2Temp
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusEnvironmentalSensorscpu2Temp], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.55.4.0
+    name: dpStatusEnvironmentalSensorscpu1rpm
+    metricKey: dpStatusEnvironmentalSensorscpu1rpm
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusEnvironmentalSensorscpu1rpm], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.55.5.0
+    name: dpStatusEnvironmentalSensorscpu2rpm
+    metricKey: dpStatusEnvironmentalSensorscpu2rpm
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusEnvironmentalSensorscpu2rpm], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.55.6.0
+    name: dpStatusEnvironmentalSensorschassis1rpm
+    metricKey: dpStatusEnvironmentalSensorschassis1rpm
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusEnvironmentalSensorschassis1rpm], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.55.7.0
+    name: dpStatusEnvironmentalSensorschassis2rpm
+    metricKey: dpStatusEnvironmentalSensorschassis2rpm
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusEnvironmentalSensorschassis2rpm], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.55.8.0
+    name: dpStatusEnvironmentalSensorschassis3rpm
+    metricKey: dpStatusEnvironmentalSensorschassis3rpm
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ibm.dpStatusEnvironmentalSensorschassis3rpm], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.28.1.3
+    name: dpStatusLogTargetStatusEventsProcessed
+    metricKey: dpStatusLogTargetStatusEventsProcessed
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpConfigLogTargetIndex]
+    datadog: {as: [metric], metric: [ibm.dpStatusLogTargetStatusEventsProcessed], metricType: [monotonic_count], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.28.1.4
+    name: dpStatusLogTargetStatusEventsDropped
+    metricKey: dpStatusLogTargetStatusEventsDropped
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpConfigLogTargetIndex]
+    datadog: {as: [metric], metric: [ibm.dpStatusLogTargetStatusEventsDropped], metricType: [monotonic_count], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.28.1.5
+    name: dpStatusLogTargetStatusEventsPending
+    metricKey: dpStatusLogTargetStatusEventsPending
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpConfigLogTargetIndex]
+    datadog: {as: [metric], metric: [ibm.dpStatusLogTargetStatusEventsPending], metricType: [monotonic_count], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.28.1.1
+    name: dpStatusLogTargetStatusLogTarget
+    metricKey: dpStatusLogTargetStatusLogTarget
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpConfigLogTargetIndex]
+    datadog: {as: [column-tag], tags: [ibm_dp_status_log_target_status_log_target], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.28.1.2
+    name: dpStatusLogTargetStatusStatus
+    metricKey: dpStatusLogTargetStatusStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpConfigLogTargetIndex]
+    enumMap: {"1": active, "2": warning, "3": failure, "4": suspended}
+    datadog: {as: [column-tag], tags: [ibm_dp_status_log_target_status_status], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.124.1.19
+    name: dpStatusNetworkInterfaceStatusRxHCBytes
+    metricKey: dpStatusNetworkInterfaceStatusRxHCBytes
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpStatusNetworkInterfaceStatusInterfaceIndex, dpStatusNetworkInterfaceStatusIP, dpStatusNetworkInterfaceStatusPrefixLength]
+    datadog: {as: [metric], metric: [ibm.dpStatusNetworkInterfaceStatusRxHCBytes], metricType: [monotonic_count], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.124.1.20
+    name: dpStatusNetworkInterfaceStatusRxHCPackets
+    metricKey: dpStatusNetworkInterfaceStatusRxHCPackets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpStatusNetworkInterfaceStatusInterfaceIndex, dpStatusNetworkInterfaceStatusIP, dpStatusNetworkInterfaceStatusPrefixLength]
+    datadog: {as: [metric], metric: [ibm.dpStatusNetworkInterfaceStatusRxHCPackets], metricType: [monotonic_count], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.124.1.21
+    name: dpStatusNetworkInterfaceStatusRxErrors2
+    metricKey: dpStatusNetworkInterfaceStatusRxErrors2
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpStatusNetworkInterfaceStatusInterfaceIndex, dpStatusNetworkInterfaceStatusIP, dpStatusNetworkInterfaceStatusPrefixLength]
+    datadog: {as: [metric], metric: [ibm.dpStatusNetworkInterfaceStatusRxErrors2], metricType: [monotonic_count], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.124.1.22
+    name: dpStatusNetworkInterfaceStatusRxDrops2
+    metricKey: dpStatusNetworkInterfaceStatusRxDrops2
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpStatusNetworkInterfaceStatusInterfaceIndex, dpStatusNetworkInterfaceStatusIP, dpStatusNetworkInterfaceStatusPrefixLength]
+    datadog: {as: [metric], metric: [ibm.dpStatusNetworkInterfaceStatusRxDrops2], metricType: [monotonic_count], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.124.1.23
+    name: dpStatusNetworkInterfaceStatusTxHCBytes
+    metricKey: dpStatusNetworkInterfaceStatusTxHCBytes
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpStatusNetworkInterfaceStatusInterfaceIndex, dpStatusNetworkInterfaceStatusIP, dpStatusNetworkInterfaceStatusPrefixLength]
+    datadog: {as: [metric], metric: [ibm.dpStatusNetworkInterfaceStatusTxHCBytes], metricType: [monotonic_count], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.124.1.24
+    name: dpStatusNetworkInterfaceStatusTxHCPackets
+    metricKey: dpStatusNetworkInterfaceStatusTxHCPackets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpStatusNetworkInterfaceStatusInterfaceIndex, dpStatusNetworkInterfaceStatusIP, dpStatusNetworkInterfaceStatusPrefixLength]
+    datadog: {as: [metric], metric: [ibm.dpStatusNetworkInterfaceStatusTxHCPackets], metricType: [monotonic_count], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.124.1.25
+    name: dpStatusNetworkInterfaceStatusTxErrors2
+    metricKey: dpStatusNetworkInterfaceStatusTxErrors2
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpStatusNetworkInterfaceStatusInterfaceIndex, dpStatusNetworkInterfaceStatusIP, dpStatusNetworkInterfaceStatusPrefixLength]
+    datadog: {as: [metric], metric: [ibm.dpStatusNetworkInterfaceStatusTxErrors2], metricType: [monotonic_count], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.124.1.26
+    name: dpStatusNetworkInterfaceStatusTxDrops2
+    metricKey: dpStatusNetworkInterfaceStatusTxDrops2
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpStatusNetworkInterfaceStatusInterfaceIndex, dpStatusNetworkInterfaceStatusIP, dpStatusNetworkInterfaceStatusPrefixLength]
+    datadog: {as: [metric], metric: [ibm.dpStatusNetworkInterfaceStatusTxDrops2], metricType: [monotonic_count], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.124.1.2
+    name: dpStatusNetworkInterfaceStatusInterfaceType
+    metricKey: dpStatusNetworkInterfaceStatusInterfaceType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpStatusNetworkInterfaceStatusInterfaceIndex, dpStatusNetworkInterfaceStatusIP, dpStatusNetworkInterfaceStatusPrefixLength]
+    enumMap: {"1": other, "6": ethernet, "131": tunnel, "135": vLAN, "161": aggregate}
+    datadog: {as: [column-tag], tags: [ibm_dp_status_network_interface_status_interface_type], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.124.1.3
+    name: dpStatusNetworkInterfaceStatusName
+    metricKey: dpStatusNetworkInterfaceStatusName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpStatusNetworkInterfaceStatusInterfaceIndex, dpStatusNetworkInterfaceStatusIP, dpStatusNetworkInterfaceStatusPrefixLength]
+    datadog: {as: [column-tag], tags: [ibm_dp_status_network_interface_status_name], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.124.1.6
+    name: dpStatusNetworkInterfaceStatusIPType
+    metricKey: dpStatusNetworkInterfaceStatusIPType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpStatusNetworkInterfaceStatusInterfaceIndex, dpStatusNetworkInterfaceStatusIP, dpStatusNetworkInterfaceStatusPrefixLength]
+    enumMap: {"0": unknown, "1": ipv4, "2": ipv6, "3": ipv4z, "4": ipv6z, "16": dns, "25": l2vpn}
+    datadog: {as: [column-tag], tags: [ibm_dp_status_network_interface_status_ip_type], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.124.1.7
+    name: dpStatusNetworkInterfaceStatusIP
+    metricKey: dpStatusNetworkInterfaceStatusIP
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpStatusNetworkInterfaceStatusInterfaceIndex, dpStatusNetworkInterfaceStatusIP, dpStatusNetworkInterfaceStatusPrefixLength]
+    datadog: {as: [column-tag], tags: [ibm_dp_status_network_interface_status_ip], features: ["format=ip_address"], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.124.1.9
+    name: dpStatusNetworkInterfaceStatusMACAddress
+    metricKey: dpStatusNetworkInterfaceStatusMACAddress
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpStatusNetworkInterfaceStatusInterfaceIndex, dpStatusNetworkInterfaceStatusIP, dpStatusNetworkInterfaceStatusPrefixLength]
+    datadog: {as: [column-tag], tags: [ibm_dp_status_network_interface_status_mac_address], features: ["format=mac_address"], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.124.1.4
+    name: dpStatusNetworkInterfaceStatusAdminStatus
+    metricKey: dpStatusNetworkInterfaceStatusAdminStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpStatusNetworkInterfaceStatusInterfaceIndex, dpStatusNetworkInterfaceStatusIP, dpStatusNetworkInterfaceStatusPrefixLength]
+    enumMap: {"1": up, "2": down}
+    datadog: {as: [column-tag], tags: [ibm_dp_status_network_interface_status_admin_status], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.4.1.14685.3.1.124.1.5
+    name: dpStatusNetworkInterfaceStatusOperStatus
+    metricKey: dpStatusNetworkInterfaceStatusOperStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dpStatusNetworkInterfaceStatusInterfaceIndex, dpStatusNetworkInterfaceStatusIP, dpStatusNetworkInterfaceStatusPrefixLength]
+    enumMap: {"1": up, "2": down, "3": testing, "4": unknown, "5": dormant, "6": notPresent, "7": lowerLayerDown}
+    datadog: {as: [column-tag], tags: [ibm_dp_status_network_interface_status_oper_status], from: [ibm-datapower-gateway.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/ibm-datapower-gateway.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, ibm.yaml]

@@ -1,0 +1,514 @@
+formatVersion: 1
+slug: apc-netbotz
+name: APC NetBotz
+description: "Converted from Datadog's apc-netbotz.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: NetBotz
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.5528.100.20}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.2.1.1.7
+    name: enclosureIndex
+    metricKey: enclosureIndex
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [enclosureIndex]
+    datadog: {as: [column-tag], tags: [netbotz_enclosure_index], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.2.1.1.1
+    name: enclosureId
+    metricKey: enclosureId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [enclosureIndex]
+    datadog: {as: [column-tag], tags: [netbotz_enclosure_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.2.1.1.4
+    name: enclosureLabel
+    metricKey: enclosureLabel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [enclosureIndex]
+    datadog: {as: [column-tag], tags: [netbotz_enclosure_label], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.2.1.1.2
+    name: enclosureStatus
+    metricKey: enclosureStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [enclosureIndex]
+    enumMap: {"0": disconnected, "1": error, "2": normal}
+    datadog: {as: [column-tag], tags: [netbotz_enclosure_status], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.2.1.1.3
+    name: enclosureErrorStatus
+    metricKey: enclosureErrorStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [enclosureIndex]
+    enumMap: {"0": normal, "1": info, "2": warning, "3": error, "4": critical, "5": failure}
+    datadog: {as: [column-tag], tags: [netbotz_enclosure_error_status], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.3.1.1.9
+    name: dinPortIndex
+    metricKey: dinPortIndex
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dinPortIndex]
+    datadog: {as: [column-tag], tags: [netbotz_din_port_index], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.3.1.1.1
+    name: dinPortId
+    metricKey: dinPortId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dinPortIndex]
+    datadog: {as: [column-tag], tags: [netbotz_din_port_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.3.1.1.2
+    name: dinPortStatus
+    metricKey: dinPortStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dinPortIndex]
+    enumMap: {"0": disconnected, "1": error, "2": normal}
+    datadog: {as: [column-tag], tags: [netbotz_din_port_status], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.3.10.1.5
+    name: otherPortIndex
+    metricKey: otherPortIndex
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherPortIndex]
+    datadog: {as: [column-tag], tags: [netbotz_other_port_index], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.3.10.1.1
+    name: otherPortId
+    metricKey: otherPortId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherPortIndex]
+    datadog: {as: [column-tag], tags: [netbotz_other_port_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.3.10.1.3
+    name: otherPortLabel
+    metricKey: otherPortLabel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherPortIndex]
+    datadog: {as: [column-tag], tags: [netbotz_other_port_label], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.3.10.1.4
+    name: otherPortEncId
+    metricKey: otherPortEncId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherPortIndex]
+    datadog: {as: [column-tag], tags: [netbotz_other_port_enc_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.3.10.1.2
+    name: otherPortStatus
+    metricKey: otherPortStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherPortIndex]
+    enumMap: {"0": disconnected, "1": error, "2": normal}
+    datadog: {as: [column-tag], tags: [netbotz_other_port_status], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.1.1.8
+    name: tempSensorValueInt
+    metricKey: tempSensorValueInt
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tempSensorIndex]
+    datadog: {as: [metric], metric: [netbotz.tempSensorValueInt], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.1.1.9
+    name: tempSensorValueIntF
+    metricKey: tempSensorValueIntF
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tempSensorIndex]
+    datadog: {as: [metric], metric: [netbotz.tempSensorValueIntF], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.1.1.10
+    name: tempSensorIndex
+    metricKey: tempSensorIndex
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tempSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_temp_sensor_index], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.1.1.1
+    name: tempSensorId
+    metricKey: tempSensorId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tempSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_temp_sensor_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.1.1.4
+    name: tempSensorLabel
+    metricKey: tempSensorLabel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tempSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_temp_sensor_label], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.1.1.5
+    name: tempSensorEncId
+    metricKey: tempSensorEncId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tempSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_temp_sensor_enc_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.1.1.3
+    name: tempSensorErrorStatus
+    metricKey: tempSensorErrorStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tempSensorIndex]
+    enumMap: {"0": normal, "1": info, "2": warning, "3": error, "4": critical, "5": failure}
+    datadog: {as: [column-tag], tags: [netbotz_temp_sensor_error_status], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.2.1.8
+    name: humiSensorValueInt
+    metricKey: humiSensorValueInt
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [humiSensorIndex]
+    datadog: {as: [metric], metric: [netbotz.humiSensorValueInt], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.2.1.9
+    name: humiSensorIndex
+    metricKey: humiSensorIndex
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [humiSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_humi_sensor_index], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.2.1.1
+    name: humiSensorId
+    metricKey: humiSensorId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [humiSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_humi_sensor_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.2.1.4
+    name: humiSensorLabel
+    metricKey: humiSensorLabel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [humiSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_humi_sensor_label], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.2.1.5
+    name: humiSensorEncId
+    metricKey: humiSensorEncId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [humiSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_humi_sensor_enc_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.2.1.3
+    name: humiSensorErrorStatus
+    metricKey: humiSensorErrorStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [humiSensorIndex]
+    enumMap: {"0": normal, "1": info, "2": warning, "3": error, "4": critical, "5": failure}
+    datadog: {as: [column-tag], tags: [netbotz_humi_sensor_error_status], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.3.1.8
+    name: dewPointSensorValueInt
+    metricKey: dewPointSensorValueInt
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dewPointSensorIndex]
+    datadog: {as: [metric], metric: [netbotz.dewPointSensorValueInt], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.3.1.9
+    name: dewPointSensorValueIntF
+    metricKey: dewPointSensorValueIntF
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dewPointSensorIndex]
+    datadog: {as: [metric], metric: [netbotz.dewPointSensorValueIntF], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.3.1.10
+    name: dewPointSensorIndex
+    metricKey: dewPointSensorIndex
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dewPointSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_dew_point_sensor_index], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.3.1.1
+    name: dewPointSensorId
+    metricKey: dewPointSensorId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dewPointSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_dew_point_sensor_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.3.1.4
+    name: dewPointSensorLabel
+    metricKey: dewPointSensorLabel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dewPointSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_dew_point_sensor_label], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.3.1.5
+    name: dewPointSensorEncId
+    metricKey: dewPointSensorEncId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dewPointSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_dew_point_sensor_enc_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.10.1.8
+    name: otherNumericSensorValueInt
+    metricKey: otherNumericSensorValueInt
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherNumericSensorIndex]
+    datadog: {as: [metric], metric: [netbotz.otherNumericSensorValueInt], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.10.1.12
+    name: otherNumericSensorIndex
+    metricKey: otherNumericSensorIndex
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherNumericSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_other_numeric_sensor_index], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.10.1.1
+    name: otherNumericSensorId
+    metricKey: otherNumericSensorId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherNumericSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_other_numeric_sensor_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.10.1.4
+    name: otherNumericSensorLabel
+    metricKey: otherNumericSensorLabel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherNumericSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_other_numeric_sensor_label], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.10.1.5
+    name: otherNumericSensorEncId
+    metricKey: otherNumericSensorEncId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherNumericSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_other_numeric_sensor_enc_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.10.1.9
+    name: otherNumericSensorUnits
+    metricKey: otherNumericSensorUnits
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherNumericSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_other_numeric_sensor_units], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.1.10.1.3
+    name: otherNumericSensorErrorStatus
+    metricKey: otherNumericSensorErrorStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherNumericSensorIndex]
+    enumMap: {"0": normal, "1": info, "2": warning, "3": error, "4": critical, "5": failure}
+    datadog: {as: [column-tag], tags: [netbotz_other_numeric_sensor_error_status], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.2.2.1.8
+    name: doorSwitchSensorIndex
+    metricKey: doorSwitchSensorIndex
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [doorSwitchSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_door_switch_sensor_index], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.2.2.1.1
+    name: doorSwitchSensorId
+    metricKey: doorSwitchSensorId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [doorSwitchSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_door_switch_sensor_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.2.2.1.4
+    name: doorSwitchSensorLabel
+    metricKey: doorSwitchSensorLabel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [doorSwitchSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_door_switch_sensor_label], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.2.2.1.5
+    name: doorSwitchSensorEncId
+    metricKey: doorSwitchSensorEncId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [doorSwitchSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_door_switch_sensor_enc_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.2.2.1.7
+    name: doorSwitchSensorValueStr
+    metricKey: doorSwitchSensorValueStr
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [doorSwitchSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_door_switch_sensor_value_str], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.2.2.1.2
+    name: doorSwitchSensorValue
+    metricKey: doorSwitchSensorValue
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [doorSwitchSensorIndex]
+    enumMap: {"0": open, "1": closed, "-1": "null"}
+    datadog: {as: [column-tag], tags: [netbotz_door_switch_sensor_value], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.2.10.1.4
+    name: otherStateSensorLabel
+    metricKey: otherStateSensorLabel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherStateSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_other_state_sensor_label], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.2.10.1.5
+    name: otherStateSensorEncId
+    metricKey: otherStateSensorEncId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherStateSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_other_state_sensor_enc_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.2.10.1.7
+    name: otherStateSensorValueStr
+    metricKey: otherStateSensorValueStr
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherStateSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_other_state_sensor_value_str], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.2.10.1.1
+    name: otherStateSensorId
+    metricKey: otherStateSensorId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherStateSensorIndex]
+    datadog: {as: [column-tag], tags: [netbotz_other_state_sensor_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.4.2.10.1.3
+    name: otherStateSensorErrorStatus
+    metricKey: otherStateSensorErrorStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [otherStateSensorIndex]
+    enumMap: {"0": normal, "1": info, "2": warning, "3": error, "4": critical, "5": failure}
+    datadog: {as: [column-tag], tags: [netbotz_other_state_sensor_error_status], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.5.1.1.12
+    name: errorCondIndex
+    metricKey: errorCondIndex
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [errorCondIndex]
+    datadog: {as: [column-tag], tags: [netbotz_error_cond_index], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.5.1.1.1
+    name: errorCondId
+    metricKey: errorCondId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [errorCondIndex]
+    datadog: {as: [column-tag], tags: [netbotz_error_cond_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.5.1.1.3
+    name: errorCondTypeId
+    metricKey: errorCondTypeId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [errorCondIndex]
+    datadog: {as: [column-tag], tags: [netbotz_error_cond_type_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.5.1.1.9
+    name: errorCondEncId
+    metricKey: errorCondEncId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [errorCondIndex]
+    datadog: {as: [column-tag], tags: [netbotz_error_cond_enc_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.5.1.1.11
+    name: errorCondSensorId
+    metricKey: errorCondSensorId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [errorCondIndex]
+    datadog: {as: [column-tag], tags: [netbotz_error_cond_sensor_id], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.5.1.1.2
+    name: errorCondSeverity
+    metricKey: errorCondSeverity
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [errorCondIndex]
+    enumMap: {"0": normal, "1": info, "2": warning, "3": error, "4": critical, "5": failure}
+    datadog: {as: [column-tag], tags: [netbotz_error_cond_severity], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.4.1.5528.100.5.1.1.6
+    name: errorCondResolved
+    metricKey: errorCondResolved
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [errorCondIndex]
+    enumMap: {"0": "no", "1": "yes", "2": "null"}
+    datadog: {as: [column-tag], tags: [netbotz_error_cond_resolved], from: [apc-netbotz.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/apc-netbotz.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, _apc.yaml]

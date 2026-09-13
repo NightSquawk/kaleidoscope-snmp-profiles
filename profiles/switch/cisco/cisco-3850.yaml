@@ -1,0 +1,1416 @@
+formatVersion: 1
+slug: cisco-3850
+name: Cisco 3850
+description: "Converted from Datadog's cisco-3850.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: switch
+vendor: Cisco
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.9.1.1745}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.2.1.0
+    name: ifNumber
+    metricKey: ifNumber
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.14
+    name: ifInErrors
+    metricKey: ifInErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.13
+    name: ifInDiscards
+    metricKey: ifInDiscards
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.20
+    name: ifOutErrors
+    metricKey: ifOutErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.19
+    name: ifOutDiscards
+    metricKey: ifOutDiscards
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.1
+    name: ifName
+    metricKey: ifName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [column-tag, metadata], tags: [interface], fields: [interface.name], features: [cross-table tag from ifXTable], from: [_generic-if.yaml, _cisco-generic.yaml, _cisco-catalyst.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.18
+    name: ifAlias
+    metricKey: ifAlias
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [column-tag, metadata], tags: [interface_alias], fields: [interface.alias], features: [cross-table tag from ifXTable], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.7
+    name: ifAdminStatus
+    metricKey: ifAdminStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    enumMap: {"1": up, "2": down, "3": testing}
+    datadog: {as: [metric, metadata], fields: [interface.admin_status], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.8
+    name: ifOperStatus
+    metricKey: ifOperStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    enumMap: {"1": up, "2": down, "3": testing, "4": unknown, "5": dormant, "6": notPresent, "7": lowerLayerDown}
+    datadog: {as: [metric, metadata], fields: [interface.oper_status], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.5
+    name: ifSpeed
+    metricKey: ifSpeed
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.7
+    name: ifHCInUcastPkts
+    metricKey: ifHCInUcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.8
+    name: ifHCInMulticastPkts
+    metricKey: ifHCInMulticastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.9
+    name: ifHCInBroadcastPkts
+    metricKey: ifHCInBroadcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.11
+    name: ifHCOutUcastPkts
+    metricKey: ifHCOutUcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.12
+    name: ifHCOutMulticastPkts
+    metricKey: ifHCOutMulticastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.13
+    name: ifHCOutBroadcastPkts
+    metricKey: ifHCOutBroadcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.6
+    name: ifHCInOctets
+    metricKey: ifHCInOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.10
+    name: ifHCOutOctets
+    metricKey: ifHCOutOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count_and_rate], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.31.1.1.1.15
+    name: ifHighSpeed
+    metricKey: ifHighSpeed
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.6.5.0
+    name: tcpActiveOpens
+    metricKey: tcpActiveOpens
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.6.0
+    name: tcpPassiveOpens
+    metricKey: tcpPassiveOpens
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.7.0
+    name: tcpAttemptFails
+    metricKey: tcpAttemptFails
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.8.0
+    name: tcpEstabResets
+    metricKey: tcpEstabResets
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.9.0
+    name: tcpCurrEstab
+    metricKey: tcpCurrEstab
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.17.0
+    name: tcpHCInSegs
+    metricKey: tcpHCInSegs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.18.0
+    name: tcpHCOutSegs
+    metricKey: tcpHCOutSegs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.12.0
+    name: tcpRetransSegs
+    metricKey: tcpRetransSegs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.14.0
+    name: tcpInErrs
+    metricKey: tcpInErrs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.15.0
+    name: tcpOutRsts
+    metricKey: tcpOutRsts
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.7.8.0
+    name: udpHCInDatagrams
+    metricKey: udpHCInDatagrams
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-udp.yaml]}
+  - oid: 1.3.6.1.2.1.7.2.0
+    name: udpNoPorts
+    metricKey: udpNoPorts
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-udp.yaml]}
+  - oid: 1.3.6.1.2.1.7.3.0
+    name: udpInErrors
+    metricKey: udpInErrors
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-udp.yaml]}
+  - oid: 1.3.6.1.2.1.7.9.0
+    name: udpHCOutDatagrams
+    metricKey: udpHCOutDatagrams
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-udp.yaml]}
+  - oid: 1.3.6.1.2.1.14.10.1.6
+    name: ospfNbrState
+    metricKey: ospfNbrState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfNbrIpAddr, ospfNbrAddressLessIndex]
+    enumMap: {"1": down, "2": attempt, "3": init, "4": twoWay, "5": exchangeStart, "6": exchange, "7": loading, "8": full}
+    datadog: {as: [metric, column-tag], tags: [neighbor_state], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.14.10.1.7
+    name: ospfNbrEvents
+    metricKey: ospfNbrEvents
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfNbrIpAddr, ospfNbrAddressLessIndex]
+    datadog: {as: [metric], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.14.10.1.8
+    name: ospfNbrLsRetransQLen
+    metricKey: ospfNbrLsRetransQLen
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfNbrIpAddr, ospfNbrAddressLessIndex]
+    datadog: {as: [metric], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.14.10.1.3
+    name: ospfNbrRtrId
+    metricKey: ospfNbrRtrId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfNbrIpAddr, ospfNbrAddressLessIndex]
+    datadog: {as: [column-tag], tags: [neighbor_id], features: [cross-table tag from ospfNbrTable], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.14.10.1.1
+    name: ospfNbrIpAddr
+    metricKey: ospfNbrIpAddr
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfNbrIpAddr, ospfNbrAddressLessIndex]
+    datadog: {as: [column-tag], tags: [neighbor_ip], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.14.11.1.5
+    name: ospfVirtNbrState
+    metricKey: ospfVirtNbrState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfVirtNbrArea, ospfVirtNbrRtrId]
+    enumMap: {"1": down, "2": attempt, "3": init, "4": twoWay, "5": exchangeStart, "6": exchange, "7": loading, "8": full}
+    datadog: {as: [metric, column-tag], tags: [neighbor_state], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.14.11.1.6
+    name: ospfVirtNbrEvents
+    metricKey: ospfVirtNbrEvents
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfVirtNbrArea, ospfVirtNbrRtrId]
+    datadog: {as: [metric], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.14.11.1.7
+    name: ospfVirtNbrLsRetransQLen
+    metricKey: ospfVirtNbrLsRetransQLen
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfVirtNbrArea, ospfVirtNbrRtrId]
+    datadog: {as: [metric], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.14.11.1.3
+    name: ospfVirtNbrIpAddr
+    metricKey: ospfVirtNbrIpAddr
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfVirtNbrArea, ospfVirtNbrRtrId]
+    datadog: {as: [column-tag], tags: [neighbor_ip], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.14.11.1.2
+    name: ospfVirtNbrRtrId
+    metricKey: ospfVirtNbrRtrId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfVirtNbrArea, ospfVirtNbrRtrId]
+    datadog: {as: [column-tag], tags: [neighbor_id], features: [cross-table tag from ospfVirtNbrTable], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.14.7.1.8
+    name: ospfIfRetransInterval
+    metricKey: ospfIfRetransInterval
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfIfIpAddress, ospfAddressLessIf]
+    datadog: {as: [metric], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.14.7.1.12
+    name: ospfIfState
+    metricKey: ospfIfState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfIfIpAddress, ospfAddressLessIf]
+    enumMap: {"1": down, "2": loopback, "3": waiting, "4": pointToPoint, "5": designatedRouter, "6": backupDesignatedRouter, "7": otherDesignatedRouter}
+    datadog: {as: [metric, column-tag], tags: [if_state], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.14.7.1.21
+    name: ospfIfLsaCount
+    metricKey: ospfIfLsaCount
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfIfIpAddress, ospfAddressLessIf]
+    datadog: {as: [metric], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.14.7.1.1
+    name: ospfIfIpAddress
+    metricKey: ospfIfIpAddress
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfIfIpAddress, ospfAddressLessIf]
+    datadog: {as: [column-tag], tags: [ospf_ip_addr], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.14.9.1.4
+    name: ospfVirtIfRetransInterval
+    metricKey: ospfVirtIfRetransInterval
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfVirtIfAreaId, ospfVirtIfNeighbor]
+    datadog: {as: [metric], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.14.9.1.7
+    name: ospfVirtIfState
+    metricKey: ospfVirtIfState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfVirtIfAreaId, ospfVirtIfNeighbor]
+    enumMap: {"1": down, "4": pointToPoint}
+    datadog: {as: [metric, column-tag], tags: [if_state], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.14.9.1.12
+    name: ospfVirtIfLsaCount
+    metricKey: ospfVirtIfLsaCount
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ospfVirtIfAreaId, ospfVirtIfNeighbor]
+    datadog: {as: [metric], from: [_generic-ospf.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.3
+    name: bgpPeerAdminStatus
+    metricKey: bgpPeerAdminStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    enumMap: {"1": stop, "2": start}
+    datadog: {as: [metric, column-tag], tags: [admin_status], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.4
+    name: bgpPeerNegotiatedVersion
+    metricKey: bgpPeerNegotiatedVersion
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    datadog: {as: [metric], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.9
+    name: bgpPeerRemoteAs
+    metricKey: bgpPeerRemoteAs
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    datadog: {as: [metric, column-tag], tags: [remote_as], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.2
+    name: bgpPeerState
+    metricKey: bgpPeerState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    enumMap: {"1": idle, "2": connect, "3": active, "4": opensent, "5": openconfirm, "6": established}
+    datadog: {as: [metric, column-tag], tags: [peer_state], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.10
+    name: bgpPeerInUpdates
+    metricKey: bgpPeerInUpdates
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    datadog: {as: [metric], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.11
+    name: bgpPeerOutUpdates
+    metricKey: bgpPeerOutUpdates
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    datadog: {as: [metric], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.12
+    name: bgpPeerInTotalMessages
+    metricKey: bgpPeerInTotalMessages
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    datadog: {as: [metric], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.13
+    name: bgpPeerOutTotalMessages
+    metricKey: bgpPeerOutTotalMessages
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    datadog: {as: [metric], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.15
+    name: bgpPeerFsmEstablishedTransitions
+    metricKey: bgpPeerFsmEstablishedTransitions
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    datadog: {as: [metric], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.16
+    name: bgpPeerFsmEstablishedTime
+    metricKey: bgpPeerFsmEstablishedTime
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    datadog: {as: [metric], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.17
+    name: bgpPeerConnectRetryInterval
+    metricKey: bgpPeerConnectRetryInterval
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    datadog: {as: [metric], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.18
+    name: bgpPeerHoldTime
+    metricKey: bgpPeerHoldTime
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    datadog: {as: [metric], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.19
+    name: bgpPeerKeepAlive
+    metricKey: bgpPeerKeepAlive
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    datadog: {as: [metric], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.20
+    name: bgpPeerHoldTimeConfigured
+    metricKey: bgpPeerHoldTimeConfigured
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    datadog: {as: [metric], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.21
+    name: bgpPeerKeepAliveConfigured
+    metricKey: bgpPeerKeepAliveConfigured
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    datadog: {as: [metric], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.22
+    name: bgpPeerMinASOriginationInterval
+    metricKey: bgpPeerMinASOriginationInterval
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    datadog: {as: [metric], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.15.3.1.7
+    name: bgpPeerRemoteAddr
+    metricKey: bgpPeerRemoteAddr
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [bgpPeerRemoteAddr]
+    datadog: {as: [column-tag], tags: [neighbor], from: [_generic-bgp4.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.4
+    name: ipSystemStatsHCInReceives
+    metricKey: ipSystemStatsHCInReceives
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.6
+    name: ipSystemStatsHCInOctets
+    metricKey: ipSystemStatsHCInOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.7
+    name: ipSystemStatsInHdrErrors
+    metricKey: ipSystemStatsInHdrErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.8
+    name: ipSystemStatsInNoRoutes
+    metricKey: ipSystemStatsInNoRoutes
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.9
+    name: ipSystemStatsInAddrErrors
+    metricKey: ipSystemStatsInAddrErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.10
+    name: ipSystemStatsInUnknownProtos
+    metricKey: ipSystemStatsInUnknownProtos
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.11
+    name: ipSystemStatsInTruncatedPkts
+    metricKey: ipSystemStatsInTruncatedPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.13
+    name: ipSystemStatsHCInForwDatagrams
+    metricKey: ipSystemStatsHCInForwDatagrams
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.14
+    name: ipSystemStatsReasmReqds
+    metricKey: ipSystemStatsReasmReqds
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.15
+    name: ipSystemStatsReasmOKs
+    metricKey: ipSystemStatsReasmOKs
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.16
+    name: ipSystemStatsReasmFails
+    metricKey: ipSystemStatsReasmFails
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.17
+    name: ipSystemStatsInDiscards
+    metricKey: ipSystemStatsInDiscards
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.19
+    name: ipSystemStatsHCInDelivers
+    metricKey: ipSystemStatsHCInDelivers
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.21
+    name: ipSystemStatsHCOutRequests
+    metricKey: ipSystemStatsHCOutRequests
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.22
+    name: ipSystemStatsOutNoRoutes
+    metricKey: ipSystemStatsOutNoRoutes
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.24
+    name: ipSystemStatsHCOutForwDatagrams
+    metricKey: ipSystemStatsHCOutForwDatagrams
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.25
+    name: ipSystemStatsOutDiscards
+    metricKey: ipSystemStatsOutDiscards
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.26
+    name: ipSystemStatsOutFragReqds
+    metricKey: ipSystemStatsOutFragReqds
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.27
+    name: ipSystemStatsOutFragOKs
+    metricKey: ipSystemStatsOutFragOKs
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.28
+    name: ipSystemStatsOutFragFails
+    metricKey: ipSystemStatsOutFragFails
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.29
+    name: ipSystemStatsOutFragCreates
+    metricKey: ipSystemStatsOutFragCreates
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.31
+    name: ipSystemStatsHCOutTransmits
+    metricKey: ipSystemStatsHCOutTransmits
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.33
+    name: ipSystemStatsHCOutOctets
+    metricKey: ipSystemStatsHCOutOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.35
+    name: ipSystemStatsHCInMcastPkts
+    metricKey: ipSystemStatsHCInMcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.37
+    name: ipSystemStatsHCInMcastOctets
+    metricKey: ipSystemStatsHCInMcastOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.39
+    name: ipSystemStatsHCOutMcastPkts
+    metricKey: ipSystemStatsHCOutMcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.41
+    name: ipSystemStatsHCOutMcastOctets
+    metricKey: ipSystemStatsHCOutMcastOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.43
+    name: ipSystemStatsHCInBcastPkts
+    metricKey: ipSystemStatsHCInBcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.1.1.45
+    name: ipSystemStatsHCOutBcastPkts
+    metricKey: ipSystemStatsHCOutBcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipSystemStatsIPVersion]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.6
+    name: ipIfStatsHCInOctets
+    metricKey: ipIfStatsHCInOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.7
+    name: ipIfStatsInHdrErrors
+    metricKey: ipIfStatsInHdrErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.8
+    name: ipIfStatsInNoRoutes
+    metricKey: ipIfStatsInNoRoutes
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.9
+    name: ipIfStatsInAddrErrors
+    metricKey: ipIfStatsInAddrErrors
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.10
+    name: ipIfStatsInUnknownProtos
+    metricKey: ipIfStatsInUnknownProtos
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.11
+    name: ipIfStatsInTruncatedPkts
+    metricKey: ipIfStatsInTruncatedPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.13
+    name: ipIfStatsHCInForwDatagrams
+    metricKey: ipIfStatsHCInForwDatagrams
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.14
+    name: ipIfStatsReasmReqds
+    metricKey: ipIfStatsReasmReqds
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.15
+    name: ipIfStatsReasmOKs
+    metricKey: ipIfStatsReasmOKs
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.16
+    name: ipIfStatsReasmFails
+    metricKey: ipIfStatsReasmFails
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.17
+    name: ipIfStatsInDiscards
+    metricKey: ipIfStatsInDiscards
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.19
+    name: ipIfStatsHCInDelivers
+    metricKey: ipIfStatsHCInDelivers
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.21
+    name: ipIfStatsHCOutRequests
+    metricKey: ipIfStatsHCOutRequests
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.24
+    name: ipIfStatsHCOutForwDatagrams
+    metricKey: ipIfStatsHCOutForwDatagrams
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.25
+    name: ipIfStatsOutDiscards
+    metricKey: ipIfStatsOutDiscards
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.26
+    name: ipIfStatsOutFragReqds
+    metricKey: ipIfStatsOutFragReqds
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.27
+    name: ipIfStatsOutFragOKs
+    metricKey: ipIfStatsOutFragOKs
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.28
+    name: ipIfStatsOutFragFails
+    metricKey: ipIfStatsOutFragFails
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.29
+    name: ipIfStatsOutFragCreates
+    metricKey: ipIfStatsOutFragCreates
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.31
+    name: ipIfStatsHCOutTransmits
+    metricKey: ipIfStatsHCOutTransmits
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.33
+    name: ipIfStatsHCOutOctets
+    metricKey: ipIfStatsHCOutOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.35
+    name: ipIfStatsHCInMcastPkts
+    metricKey: ipIfStatsHCInMcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.37
+    name: ipIfStatsHCInMcastOctets
+    metricKey: ipIfStatsHCInMcastOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.39
+    name: ipIfStatsHCOutMcastPkts
+    metricKey: ipIfStatsHCOutMcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.41
+    name: ipIfStatsHCOutMcastOctets
+    metricKey: ipIfStatsHCOutMcastOctets
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.43
+    name: ipIfStatsHCInBcastPkts
+    metricKey: ipIfStatsHCInBcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.2.1.4.31.3.1.45
+    name: ipIfStatsHCOutBcastPkts
+    metricKey: ipIfStatsHCOutBcastPkts
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ipIfStatsIPVersion, ipIfStatsIfIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ip.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.7
+    name: cpmCPUTotal1minRev
+    metricKey: cpmCPUTotal1minRev
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpmCPUTotalIndex]
+    datadog: {as: [metric], metric: [cpu.usage], from: [_cisco-cpu-memory.yaml, _cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.48.1.1.1.5
+    name: ciscoMemoryPoolUsed
+    metricKey: ciscoMemoryPoolUsed
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ciscoMemoryPoolType]
+    datadog: {as: [metric], metric: [memory.used], from: [_cisco-cpu-memory.yaml, _cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.48.1.1.1.6
+    name: ciscoMemoryPoolFree
+    metricKey: ciscoMemoryPoolFree
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ciscoMemoryPoolType]
+    datadog: {as: [metric], metric: [memory.free], from: [_cisco-cpu-memory.yaml, _cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.117.1.1.2.1.1
+    name: cefcFRUPowerAdminStatus
+    metricKey: cefcFRUPowerAdminStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    enumMap: {"1": "on", "2": "off", "3": inlineAuto, "4": inlineOn, "5": powerCycle}
+    datadog: {as: [metric, column-tag], tags: [power_admin_status], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.117.1.1.2.1.2
+    name: cefcFRUPowerOperStatus
+    metricKey: cefcFRUPowerOperStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    enumMap: {"1": offEnvOther, "2": "on", "3": offAdmin, "4": offDenied, "5": offEnvPower, "6": offEnvTemp, "7": offEnvFan, "8": failed, "9": onButFanFail, "10": offCooling, "11": offConnectorRating, "12": onButInlinePowerFail}
+    datadog: {as: [metric, column-tag], tags: [power_oper_status], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.117.1.1.2.1.3
+    name: cefcFRUCurrent
+    metricKey: cefcFRUCurrent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    datadog: {as: [metric], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.10
+    name: cpmCPUTotalMonIntervalValue
+    metricKey: cpmCPUTotalMonIntervalValue
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpmCPUTotalIndex]
+    datadog: {as: [metric], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.12
+    name: cpmCPUMemoryUsed
+    metricKey: cpmCPUMemoryUsed
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpmCPUTotalIndex]
+    datadog: {as: [metric], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.13
+    name: cpmCPUMemoryFree
+    metricKey: cpmCPUMemoryFree
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpmCPUTotalIndex]
+    datadog: {as: [metric], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.276.1.1.2.1.1
+    name: cieIfResetCount
+    metricKey: cieIfResetCount
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.13.1.3.1.3
+    name: ciscoEnvMonTemperatureStatusValue
+    metricKey: ciscoEnvMonTemperatureStatusValue
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ciscoEnvMonTemperatureStatusIndex]
+    datadog: {as: [metric], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.13.1.3.1.6
+    name: ciscoEnvMonTemperatureState
+    metricKey: ciscoEnvMonTemperatureState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ciscoEnvMonTemperatureStatusIndex]
+    enumMap: {"1": normal, "2": warning, "3": critical, "4": shutdown, "5": notPresent, "6": notFunctioning}
+    datadog: {as: [column-tag], tags: [temp_state], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.13.1.5.1.3
+    name: ciscoEnvMonSupplyState
+    metricKey: ciscoEnvMonSupplyState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ciscoEnvMonSupplyStatusIndex]
+    enumMap: {"1": normal, "2": warning, "3": critical, "4": shutdown, "5": notPresent, "6": notFunctioning}
+    datadog: {as: [metric, column-tag], tags: [cisco_env_mon_supply_state], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.13.1.5.1.4
+    name: ciscoEnvMonSupplySource
+    metricKey: ciscoEnvMonSupplySource
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ciscoEnvMonSupplyStatusIndex]
+    enumMap: {"1": unknown, "2": ac, "3": dc, "4": externalPowerSupply, "5": internalRedundant}
+    datadog: {as: [column-tag], tags: [power_source], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.13.1.5.1.2
+    name: ciscoEnvMonSupplyStatusDescr
+    metricKey: ciscoEnvMonSupplyStatusDescr
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ciscoEnvMonSupplyStatusIndex]
+    datadog: {as: [column-tag], tags: [power_status_descr], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.13.1.4.1.3
+    name: ciscoEnvMonFanState
+    metricKey: ciscoEnvMonFanState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ciscoEnvMonFanStatusIndex]
+    enumMap: {"1": normal, "2": warning, "3": critical, "4": shutdown, "5": notPresent, "6": notFunctioning}
+    datadog: {as: [metric, column-tag], tags: [fan_state], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.13.1.4.1.2
+    name: ciscoEnvMonFanStatusDescr
+    metricKey: ciscoEnvMonFanStatusDescr
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ciscoEnvMonFanStatusIndex]
+    datadog: {as: [column-tag], tags: [fan_status_descr], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.500.1.2.2.1.1
+    name: cswStackPortOperStatus
+    metricKey: cswStackPortOperStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    enumMap: {"1": up, "2": down, "3": forcedDown}
+    datadog: {as: [metric], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.500.1.2.1.1.6
+    name: cswSwitchState
+    metricKey: cswSwitchState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    enumMap: {"1": waiting, "2": progressing, "3": added, "4": ready, "5": sdmMismatch, "6": verMismatch, "7": featureMismatch, "8": newMasterInit, "9": provisioned, "10": invalid, "11": removed}
+    datadog: {as: [metric, column-tag], tags: [switch_state], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.500.1.2.1.1.7
+    name: cswSwitchMacAddress
+    metricKey: cswSwitchMacAddress
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    datadog: {as: [column-tag], tags: [mac_addr], features: ["format=mac_address"], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.2.1.47.1.1.1.1.7
+    name: entPhysicalName
+    metricKey: entPhysicalName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    datadog: {as: [column-tag], tags: [entity_name, entity_physical_name], features: [cross-table tag from entPhysicalTable], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.117.1.4.1.1.1
+    name: cefcFanTrayOperStatus
+    metricKey: cefcFanTrayOperStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    enumMap: {"1": unknown, "2": up, "3": down, "4": warning}
+    datadog: {as: [metric, column-tag], tags: [cefc_fan_tray_oper_status], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.117.1.4.1.1.2
+    name: cefcFanTrayDirection
+    metricKey: cefcFanTrayDirection
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    enumMap: {"1": unknown, "2": frontToBack, "3": backToFront}
+    datadog: {as: [column-tag], tags: [cefc_fan_tray_direction], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.48.1.1.1.7
+    name: ciscoMemoryPoolLargestFree
+    metricKey: ciscoMemoryPoolLargestFree
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ciscoMemoryPoolType]
+    datadog: {as: [metric], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.48.1.1.1.2
+    name: ciscoMemoryPoolName
+    metricKey: ciscoMemoryPoolName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ciscoMemoryPoolType]
+    datadog: {as: [column-tag], tags: [mem_pool_name], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.147.1.2.2.2.1.4
+    name: cfwConnectionStatCount
+    metricKey: cfwConnectionStatCount
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cfwConnectionStatService, cfwConnectionStatType]
+    datadog: {as: [metric], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.147.1.2.1.1.1.3
+    name: cfwHardwareStatusValue
+    metricKey: cfwHardwareStatusValue
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cfwHardwareType]
+    enumMap: {"1": other, "2": up, "3": down, "4": error, "5": overTemp, "6": busy, "7": noMedia, "8": backup, "9": active, "10": standby}
+    datadog: {as: [metric], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.147.1.2.1.1.1.2
+    name: cfwHardwareInformation
+    metricKey: cfwHardwareInformation
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cfwHardwareType]
+    datadog: {as: [column-tag], tags: [hardware_desc], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.388.1.2.2.1.3
+    name: cvsChassisUpTime
+    metricKey: cvsChassisUpTime
+    type: timeticks
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    datadog: {as: [metric], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.388.1.2.2.1.1
+    name: cvsChassisSwitchID
+    metricKey: cvsChassisSwitchID
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    datadog: {as: [column-tag], tags: [chassis_switch_id], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.42.1.2.10.1.1
+    name: rttMonLatestRttOperCompletionTime
+    metricKey: rttMonLatestRttOperCompletionTime
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rttMonCtrlAdminIndex]
+    datadog: {as: [metric], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.42.1.2.10.1.2
+    name: rttMonLatestRttOperSense
+    metricKey: rttMonLatestRttOperSense
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rttMonCtrlAdminIndex]
+    enumMap: {"0": other, "1": ok, "2": disconnected, "3": overThreshold, "4": timeout, "5": busy, "6": notConnected, "7": dropped, "8": sequenceError, "9": verifyError, "10": applicationSpecific, "11": dnsServerTimeout, "12": tcpConnectTimeout, "13": httpTransactionTimeout, "14": dnsQueryError, "15": httpError, "16": error, "17": mplsLspEchoTxError, "18": mplsLspUnreachable, "19": mplsLspMalformedReq, "20": mplsLspReachButNotFEC, "21": enableOk, "22": enableNoConnect, "23": enableVersionFail, "24": enableInternalError, "25": enableAbort, "26": enableFail, "27": enableAuthFail, "28": enableFormatError, "29": enablePortInUse, "30": statsRetrieveOk, "31": statsRetrieveNoConnect, "32": statsRetrieveVersionFail, "33": statsRetrieveInternalError, "34": statsRetrieveAbort, "35": statsRetrieveFail, "36": statsRetrieveAuthFail, "37": statsRetrieveFormatError, "38": statsRetrievePortInUse}
+    datadog: {as: [metric, column-tag], tags: [rtt_sense], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.42.1.2.9.1.10
+    name: rttMonCtrlOperState
+    metricKey: rttMonCtrlOperState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rttMonCtrlAdminIndex]
+    enumMap: {"1": reset, "2": orderlyStop, "3": immediateStop, "4": pending, "5": inactive, "6": active, "7": restart}
+    datadog: {as: [column-tag], tags: [rtt_state], features: [cross-table tag from rttMonCtrlOperTable], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.42.1.2.1.1.4
+    name: rttMonCtrlAdminRttType
+    metricKey: rttMonCtrlAdminRttType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rttMonCtrlAdminIndex]
+    enumMap: {"1": echo, "2": pathEcho, "3": fileIO, "4": script, "5": udpEcho, "6": tcpConnect, "7": http, "8": dns, "9": jitter, "10": dlsw, "11": dhcp, "12": ftp, "13": voip, "14": rtp, "15": lspGroup, "16": icmpjitter, "17": lspPing, "18": lspTrace, "19": ethernetPing, "20": ethernetJitter, "21": lspPingPseudowire, "22": video, "23": y1731Delay, "24": y1731Loss, "25": mcastJitter, "26": fabricPathEcho, "27": pathJitter}
+    datadog: {as: [column-tag], tags: [rtt_type], features: [cross-table tag from rttMonCtrlAdminTable], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.42.1.2.2.1.6
+    name: rttMonEchoAdminSourceAddress
+    metricKey: rttMonEchoAdminSourceAddress
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rttMonCtrlAdminIndex]
+    datadog: {as: [column-tag], tags: [rtt_source_address], features: ["format=ip_address", cross-table tag from rttMonEchoAdminTable], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.42.1.2.2.1.2
+    name: rttMonEchoAdminTargetAddress
+    metricKey: rttMonEchoAdminTargetAddress
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rttMonCtrlAdminIndex]
+    datadog: {as: [column-tag], tags: [rtt_target_address], features: ["format=ip_address", cross-table tag from rttMonEchoAdminTable], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.42.1.2.9.1.6
+    name: rttMonCtrlOperTimeoutOccurred
+    metricKey: rttMonCtrlOperTimeoutOccurred
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [rttMonCtrlAdminIndex]
+    enumMap: {"1": "true", "2": "false"}
+    datadog: {as: [metric, column-tag], tags: [rtt_timeout], from: [_cisco-generic.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.91.1.1.1.1.4
+    name: entSensorValue
+    metricKey: entSensorValue
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    datadog: {as: [metric], from: [_cisco-catalyst.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.91.1.1.1.1.1
+    name: entSensorType
+    metricKey: entSensorType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [entPhysicalIndex]
+    enumMap: {"1": other, "2": unknown, "3": voltsAC, "4": voltsDC, "5": amperes, "6": watts, "7": hertz, "8": celsius, "9": percentRH, "10": rpm, "11": cmm, "12": truthvalue, "13": specialEnum, "14": dBm, "15": dB}
+    datadog: {as: [column-tag], tags: [sensor_type], from: [_cisco-catalyst.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.276.1.1.1.1.1
+    name: cieIfLastInTime
+    metricKey: cieIfLastInTime
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [gauge], from: [_cisco-catalyst.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.276.1.1.1.1.2
+    name: cieIfLastOutTime
+    metricKey: cieIfLastOutTime
+    type: gauge
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [gauge], from: [_cisco-catalyst.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.276.1.1.1.1.10
+    name: cieIfInputQueueDrops
+    metricKey: cieIfInputQueueDrops
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [gauge], from: [_cisco-catalyst.yaml]}
+  - oid: 1.3.6.1.4.1.9.9.276.1.1.1.1.11
+    name: cieIfOutputQueueDrops
+    metricKey: cieIfOutputQueueDrops
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [ifIndex]
+    datadog: {as: [metric], metricType: [gauge], from: [_cisco-catalyst.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description, device.version, device.model, device.os_name], features: ["extract_value=\\sVersion\\s+([a-zA-Z0-9.()]+)", "extract_value=\\sSoftware\\s+\\(([-a-zA-Z0-9_ ]+)\\)", "match_pattern=Cisco Internetwork Operating System Software", "match_pattern=Cisco IOS Software", "match_pattern=Cisco NX-OS", "match_pattern=Cisco IOS XR"], from: [_base.yaml, _cisco-metadata.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.2
+    name: ifDescr
+    metricKey: ifDescr
+    type: string
+    walk: true
+    cadenceTier: discovery
+    coalesceKey: [ifIndex]
+    datadog: {as: [metadata], fields: [interface.description], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.6
+    name: ifPhysAddress
+    metricKey: ifPhysAddress
+    type: string
+    walk: true
+    cadenceTier: discovery
+    coalesceKey: [ifIndex]
+    datadog: {as: [metadata], fields: [interface.mac_address], features: ["format=mac_address"], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.2.1.2.2.1.3
+    name: ifType
+    metricKey: ifType
+    type: integer
+    walk: true
+    cadenceTier: discovery
+    coalesceKey: [ifIndex]
+    enumMap: {"1": other, "2": regular1822, "3": hdh1822, "4": ddnX25, "5": rfc877x25, "6": ethernetCsmacd, "7": iso88023Csmacd, "8": iso88024TokenBus, "9": iso88025TokenRing, "10": iso88026Man, "11": starLan, "12": proteon10Mbit, "13": proteon80Mbit, "14": hyperchannel, "15": fddi, "16": lapb, "17": sdlc, "18": ds1, "19": e1, "20": basicISDN, "21": primaryISDN, "22": propPointToPointSerial, "23": ppp, "24": softwareLoopback, "25": eon, "26": ethernet3Mbit, "27": nsip, "28": slip, "29": ultra, "30": ds3, "31": sip, "32": frameRelay, "33": rs232, "34": para, "35": arcnet, "36": arcnetPlus, "37": atm, "38": miox25, "39": sonet, "40": x25ple, "41": iso88022llc, "42": localTalk, "43": smdsDxi, "44": frameRelayService, "45": v35, "46": hssi, "47": hippi, "48": modem, "49": aal5, "50": sonetPath, "51": sonetVT, "52": smdsIcip, "53": propVirtual, "54": propMultiplexor, "55": ieee80212, "56": fibreChannel, "57": hippiInterface, "58": frameRelayInterconnect, "59": aflane8023, "60": aflane8025, "61": cctEmul, "62": fastEther, "63": isdn, "64": v11, "65": v36, "66": g703at64k, "67": g703at2mb, "68": qllc, "69": fastEtherFX, "70": channel, "71": ieee80211, "72": ibm370parChan, "73": escon, "74": dlsw, "75": isdns, "76": isdnu, "77": lapd, "78": ipSwitch, "79": rsrb, "80": atmLogical, "81": ds0, "82": ds0Bundle, "83": bsc, "84": async, "85": cnr, "86": iso88025Dtr, "87": eplrs, "88": arap, "89": propCnls, "90": hostPad, "91": termPad, "92": frameRelayMPI, "93": x213, "94": adsl, "95": radsl, "96": sdsl, "97": vdsl, "98": iso88025CRFPInt, "99": myrinet, "100": voiceEM, "101": voiceFXO, "102": voiceFXS, "103": voiceEncap, "104": voiceOverIp, "105": atmDxi, "106": atmFuni, "107": atmIma, "108": pppMultilinkBundle, "109": ipOverCdlc, "110": ipOverClaw, "111": stackToStack, "112": virtualIpAddress, "113": mpc, "114": ipOverAtm, "115": iso88025Fiber, "116": tdlc, "117": gigabitEthernet, "118": hdlc, "119": lapf, "120": v37, "121": x25mlp, "122": x25huntGroup, "123": transpHdlc, "124": interleave, "125": fast, "126": ip, "127": docsCableMaclayer, "128": docsCableDownstream, "129": docsCableUpstream, "130": a12MppSwitch, "131": tunnel, "132": coffee, "133": ces, "134": atmSubInterface, "135": l2vlan, "136": l3ipvlan, "137": l3ipxvlan, "138": digitalPowerline, "139": mediaMailOverIp, "140": dtm, "141": dcn, "142": ipForward, "143": msdsl, "144": ieee1394, "145": if-gsn, "146": dvbRccMacLayer, "147": dvbRccDownstream, "148": dvbRccUpstream, "149": atmVirtual, "150": mplsTunnel, "151": srp, "152": voiceOverAtm, "153": voiceOverFrameRelay, "154": idsl, "155": compositeLink, "156": ss7SigLink, "157": propWirelessP2P, "158": frForward, "159": rfc1483, "160": usb, "161": ieee8023adLag, "162": bgppolicyaccounting, "163": frf16MfrBundle, "164": h323Gatekeeper, "165": h323Proxy, "166": mpls, "167": mfSigLink, "168": hdsl2, "169": shdsl, "170": ds1FDL, "171": pos, "172": dvbAsiIn, "173": dvbAsiOut, "174": plc, "175": nfas, "176": tr008, "177": gr303RDT, "178": gr303IDT, "179": isup, "180": propDocsWirelessMaclayer, "181": propDocsWirelessDownstream, "182": propDocsWirelessUpstream, "183": hiperlan2, "184": propBWAp2Mp, "185": sonetOverheadChannel, "186": digitalWrapperOverheadChannel, "187": aal2, "188": radioMAC, "189": atmRadio, "190": imt, "191": mvl, "192": reachDSL, "193": frDlciEndPt, "194": atmVciEndPt, "195": opticalChannel, "196": opticalTransport, "197": propAtm, "198": voiceOverCable, "199": infiniband, "200": teLink, "201": q2931, "202": virtualTg, "203": sipTg, "204": sipSig, "205": docsCableUpstreamChannel, "206": econet, "207": pon155, "208": pon622, "209": bridge, "210": linegroup, "211": voiceEMFGD, "212": voiceFGDEANA, "213": voiceDID, "214": mpegTransport, "215": sixToFour, "216": gtp, "217": pdnEtherLoop1, "218": pdnEtherLoop2, "219": opticalChannelGroup, "220": homepna, "221": gfp, "222": ciscoISLvlan, "223": actelisMetaLOOP, "224": fcipLink, "225": rpr, "226": qam, "227": lmp, "228": cblVectaStar, "229": docsCableMCmtsDownstream, "230": adsl2, "231": macSecControlledIF, "232": macSecUncontrolledIF, "233": aviciOpticalEther, "234": atmbond, "235": voiceFGDOS, "236": mocaVersion1, "237": ieee80216WMAN, "238": adsl2plus, "239": dvbRcsMacLayer, "240": dvbTdm, "241": dvbRcsTdma, "242": x86Laps, "243": wwanPP, "244": wwanPP2, "245": voiceEBS, "246": ifPwType, "247": ilan, "248": pip, "249": aluELP, "250": gpon, "251": vdsl2, "252": capwapDot11Profile, "253": capwapDot11Bss, "254": capwapWtpVirtualRadio, "255": bits, "256": docsCableUpstreamRfPort, "257": cableDownstreamRfPort, "258": vmwareVirtualNic, "259": ieee802154, "260": otnOdu, "261": otnOtu, "262": ifVfiType, "263": g9981, "264": g9982, "265": g9983, "266": aluEpon, "267": aluEponOnu, "268": aluEponPhysicalUni, "269": aluEponLogicalLink, "270": aluGponOnu, "271": aluGponPhysicalUni, "272": vmwareNicTeam, "277": docsOfdmDownstream, "278": docsOfdmaUpstream, "279": gfast, "280": sdci, "281": xboxWireless, "282": fastdsl, "283": docsCableScte55d1FwdOob, "284": docsCableScte55d1RetOob, "285": docsCableScte55d2DsOob, "286": docsCableScte55d2UsOob, "287": docsCableNdf, "288": docsCableNdr, "289": ptm, "290": ghn, "291": otnOtsi, "292": otnOtuc, "293": otnOduc, "294": otnOtsig, "295": microwaveCarrierTermination, "296": microwaveRadioLinkTerminal, "297": ieee8021axDrni, "298": ax25, "299": ieee19061nanocom, "300": cpri, "301": omni, "302": roe, "303": p2pOverLan}
+    datadog: {as: [metadata], fields: [interface.type], from: [_generic-if.yaml]}
+  - oid: 1.3.6.1.4.1.9.3.6.3.0
+    name: chassisId
+    metricKey: chassisId
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.serial_number], from: [cisco-3850.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/cisco-3850.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, _generic-if.yaml, _generic-tcp.yaml, _generic-udp.yaml, _generic-ospf.yaml, _generic-bgp4.yaml, _generic-ip.yaml, _cisco-cpu-memory.yaml, _cisco-metadata.yaml, _cisco-generic.yaml, _cisco-catalyst.yaml]

@@ -1,0 +1,101 @@
+formatVersion: 1
+slug: zebra-printer
+name: Zebra Printer
+description: "Converted from Datadog's zebra-printer.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: printer
+vendor: Zebra
+extends: none
+priority: 5
+enabled: false
+pollIntervalSeconds: 900
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.10642.1.1}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.10642.10.31.1.2
+    name: zbrTrackedAlertsSeverity
+    metricKey: zbrTrackedAlertsSeverity
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    enumMap: {"1": other, "3": critical, "4": warning}
+    datadog: {as: [column-tag], tags: [zbr_tracked_alerts_severity], from: [zebra-printer.yaml]}
+  - oid: 1.3.6.1.4.1.10642.10.31.1.3
+    name: zbrTrackedAlertsTrainingLevel
+    metricKey: zbrTrackedAlertsTrainingLevel
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    enumMap: {"1": other, "2": unknown, "3": untrained, "4": trained, "5": field_service, "6": management}
+    datadog: {as: [column-tag], tags: [zbr_tracked_alerts_training_level], from: [zebra-printer.yaml]}
+  - oid: 1.3.6.1.4.1.10642.10.31.1.4
+    name: zbrTrackedAlertsGroup
+    metricKey: zbrTrackedAlertsGroup
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    enumMap: {"1": system, "2": media, "3": ribbon, "4": printhead, "5": rewinder, "6": cutter, "7": zbi, "8": battery, "9": rfid}
+    datadog: {as: [column-tag], tags: [zbr_tracked_alerts_group], from: [zebra-printer.yaml]}
+  - oid: 1.3.6.1.4.1.10642.10.31.1.5
+    name: zbrTrackedAlertsCode
+    metricKey: zbrTrackedAlertsCode
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    enumMap: {"1": paper-out, "2": ribbon-out, "3": head-too-hot, "4": head-under-temp, "5": head-open, "6": power-supply-over-temp, "7": motor-over-temp, "8": ribbon-in, "9": rewind-fault, "10": cutter-jammed, "11": printer-paused, "12": head-element-bad, "13": basic-runtime, "14": basic-forced, "15": power-on, "16": battery-low, "17": rfid-error, "18": cold-start, "19": ribbon-auth-error}
+    datadog: {as: [column-tag], tags: [zbr_tracked_alerts_code], from: [zebra-printer.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.10642.1.2.0
+    name: zbrGeneralFirmwareVersion
+    metricKey: zbrGeneralFirmwareVersion
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.version], from: [zebra-printer.yaml]}
+  - oid: 1.3.6.1.4.1.10642.1.1.0
+    name: zbrGeneralModel
+    metricKey: zbrGeneralModel
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.model], from: [zebra-printer.yaml]}
+  - oid: 1.3.6.1.4.1.10642.1.18.0
+    name: zbrGeneralLINKOSVersion
+    metricKey: zbrGeneralLINKOSVersion
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.os_version], from: [zebra-printer.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/zebra-printer.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml]

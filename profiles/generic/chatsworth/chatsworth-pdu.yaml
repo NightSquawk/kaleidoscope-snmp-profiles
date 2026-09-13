@@ -1,0 +1,998 @@
+formatVersion: 1
+slug: chatsworth-pdu
+name: Chatsworth PDU
+description: "Converted from Datadog's chatsworth_pdu.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: Chatsworth
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.30932}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.2.58.2.0
+    name: pduRole
+    metricKey: pduRole
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.2.58.12.0
+    name: outOfService
+    metricKey: outOfService
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.8.1.0
+    name: temperatureProbe1
+    metricKey: temperatureProbe1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.8.2.0
+    name: temperatureProbe2
+    metricKey: temperatureProbe2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.9.1.0
+    name: humidityProbe1
+    metricKey: humidityProbe1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.9.2.0
+    name: humidityProbe2
+    metricKey: humidityProbe2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.13.1.0
+    name: line1curr
+    metricKey: line1curr
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.13.2.0
+    name: line2curr
+    metricKey: line2curr
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.13.3.0
+    name: line3curr
+    metricKey: line3curr
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.1.1.0
+    name: currentxy1
+    metricKey: currentxy1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.1.2.0
+    name: currentyz1
+    metricKey: currentyz1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.1.3.0
+    name: currentzx1
+    metricKey: currentzx1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.1.4.0
+    name: currentxy2
+    metricKey: currentxy2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.1.5.0
+    name: currentyz2
+    metricKey: currentyz2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.1.6.0
+    name: currentzx2
+    metricKey: currentzx2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.2.1.0
+    name: voltagexy1
+    metricKey: voltagexy1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.2.2.0
+    name: voltageyz1
+    metricKey: voltageyz1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.2.3.0
+    name: voltagezx1
+    metricKey: voltagezx1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.2.4.0
+    name: voltagexy2
+    metricKey: voltagexy2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.2.5.0
+    name: voltageyz2
+    metricKey: voltageyz2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.2.6.0
+    name: voltagezx2
+    metricKey: voltagezx2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.3.1.0
+    name: powerxy1
+    metricKey: powerxy1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.3.2.0
+    name: poweryz1
+    metricKey: poweryz1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.3.3.0
+    name: powerzx1
+    metricKey: powerzx1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.3.4.0
+    name: powerxy2
+    metricKey: powerxy2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.3.5.0
+    name: poweryz2
+    metricKey: poweryz2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.3.6.0
+    name: powerzx2
+    metricKey: powerzx2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.4.1.0
+    name: powerFactxy1
+    metricKey: powerFactxy1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.4.2.0
+    name: powerFactyz1
+    metricKey: powerFactyz1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.4.3.0
+    name: powerFactzx1
+    metricKey: powerFactzx1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.4.4.0
+    name: powerFactxy2
+    metricKey: powerFactxy2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.4.5.0
+    name: powerFactyz2
+    metricKey: powerFactyz2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.4.6.0
+    name: powerFactzx2
+    metricKey: powerFactzx2
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.11.1.0
+    name: energyxy1s
+    metricKey: energyxy1s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.11.2.0
+    name: energyyz1s
+    metricKey: energyyz1s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.11.3.0
+    name: energyzx1s
+    metricKey: energyzx1s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.11.4.0
+    name: energyxy2s
+    metricKey: energyxy2s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.11.5.0
+    name: energyyz2s
+    metricKey: energyyz2s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.11.6.0
+    name: energyzx2s
+    metricKey: energyzx2s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.1.0
+    name: outlet1Current
+    metricKey: outlet1Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.2.0
+    name: outlet2Current
+    metricKey: outlet2Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.3.0
+    name: outlet3Current
+    metricKey: outlet3Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.4.0
+    name: outlet4Current
+    metricKey: outlet4Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.5.0
+    name: outlet5Current
+    metricKey: outlet5Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.6.0
+    name: outlet6Current
+    metricKey: outlet6Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.7.0
+    name: outlet7Current
+    metricKey: outlet7Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.8.0
+    name: outlet8Current
+    metricKey: outlet8Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.9.0
+    name: outlet9Current
+    metricKey: outlet9Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.10.0
+    name: outlet10Current
+    metricKey: outlet10Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.11.0
+    name: outlet11Current
+    metricKey: outlet11Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.12.0
+    name: outlet12Current
+    metricKey: outlet12Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.13.0
+    name: outlet13Current
+    metricKey: outlet13Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.14.0
+    name: outlet14Current
+    metricKey: outlet14Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.15.0
+    name: outlet15Current
+    metricKey: outlet15Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.16.0
+    name: outlet16Current
+    metricKey: outlet16Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.17.0
+    name: outlet17Current
+    metricKey: outlet17Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.18.0
+    name: outlet18Current
+    metricKey: outlet18Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.19.0
+    name: outlet19Current
+    metricKey: outlet19Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.20.0
+    name: outlet20Current
+    metricKey: outlet20Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.21.0
+    name: outlet21Current
+    metricKey: outlet21Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.22.0
+    name: outlet22Current
+    metricKey: outlet22Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.23.0
+    name: outlet23Current
+    metricKey: outlet23Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.5.24.0
+    name: outlet24Current
+    metricKey: outlet24Current
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.1.0
+    name: receptacleEnergyoutlet1s
+    metricKey: receptacleEnergyoutlet1s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.2.0
+    name: receptacleEnergyoutlet2s
+    metricKey: receptacleEnergyoutlet2s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.3.0
+    name: receptacleEnergyoutlet3s
+    metricKey: receptacleEnergyoutlet3s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.4.0
+    name: receptacleEnergyoutlet4s
+    metricKey: receptacleEnergyoutlet4s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.5.0
+    name: receptacleEnergyoutlet5s
+    metricKey: receptacleEnergyoutlet5s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.6.0
+    name: receptacleEnergyoutlet6s
+    metricKey: receptacleEnergyoutlet6s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.7.0
+    name: receptacleEnergyoutlet7s
+    metricKey: receptacleEnergyoutlet7s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.8.0
+    name: receptacleEnergyoutlet8s
+    metricKey: receptacleEnergyoutlet8s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.9.0
+    name: receptacleEnergyoutlet9s
+    metricKey: receptacleEnergyoutlet9s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.10.0
+    name: receptacleEnergyoutlet10s
+    metricKey: receptacleEnergyoutlet10s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.11.0
+    name: receptacleEnergyoutlet11s
+    metricKey: receptacleEnergyoutlet11s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.12.0
+    name: receptacleEnergyoutlet12s
+    metricKey: receptacleEnergyoutlet12s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.13.0
+    name: receptacleEnergyoutlet13s
+    metricKey: receptacleEnergyoutlet13s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.14.0
+    name: receptacleEnergyoutlet14s
+    metricKey: receptacleEnergyoutlet14s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.15.0
+    name: receptacleEnergyoutlet15s
+    metricKey: receptacleEnergyoutlet15s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.16.0
+    name: receptacleEnergyoutlet16s
+    metricKey: receptacleEnergyoutlet16s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.17.0
+    name: receptacleEnergyoutlet17s
+    metricKey: receptacleEnergyoutlet17s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.18.0
+    name: receptacleEnergyoutlet18s
+    metricKey: receptacleEnergyoutlet18s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.19.0
+    name: receptacleEnergyoutlet19s
+    metricKey: receptacleEnergyoutlet19s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.20.0
+    name: receptacleEnergyoutlet20s
+    metricKey: receptacleEnergyoutlet20s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.21.0
+    name: receptacleEnergyoutlet21s
+    metricKey: receptacleEnergyoutlet21s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.22.0
+    name: receptacleEnergyoutlet22s
+    metricKey: receptacleEnergyoutlet22s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.23.0
+    name: receptacleEnergyoutlet23s
+    metricKey: receptacleEnergyoutlet23s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.3.12.24.0
+    name: receptacleEnergyoutlet24s
+    metricKey: receptacleEnergyoutlet24s
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.2.10.1.8
+    name: cpiPduNumberBranches
+    metricKey: cpiPduNumberBranches
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduMac]
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.2.10.1.9
+    name: cpiPduNumberOutlets
+    metricKey: cpiPduNumberOutlets
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduMac]
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.2.10.1.10
+    name: cpiPduOutOfService
+    metricKey: cpiPduOutOfService
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduMac]
+    enumMap: {"0": inservice, "1": outofservice}
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.2.10.1.12
+    name: cpiPduUpgrade
+    metricKey: cpiPduUpgrade
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduMac]
+    enumMap: {"0": "no", "1": "yes"}
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.2.10.1.13
+    name: cpiPduChainRole
+    metricKey: cpiPduChainRole
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduMac]
+    enumMap: {"0": secondary, "1": primary, "2": alternate}
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.2.10.1.16
+    name: cpiPduTotalPower
+    metricKey: cpiPduTotalPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduMac]
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.2.10.1.1
+    name: cpiPduMac
+    metricKey: cpiPduMac
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduMac]
+    datadog: {as: [column-tag], tags: [pdu_macaddress], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.2.10.1.2
+    name: cpiPduModel
+    metricKey: cpiPduModel
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduMac]
+    datadog: {as: [column-tag], tags: [pdu_model], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.2.10.1.3
+    name: cpiPduName
+    metricKey: cpiPduName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduMac]
+    datadog: {as: [column-tag], tags: [pdu_name], features: ["index_transform=[{\"start\":1,\"end\":13}]", cross-table tag from cpiPduTable, "index_transform=[{\"start\":1,\"end\":7}]"], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.2.10.1.11
+    name: cpiPduVersion
+    metricKey: cpiPduVersion
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduMac]
+    datadog: {as: [column-tag], tags: [pdu_version], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.2.10.1.14
+    name: cpiPduIp
+    metricKey: cpiPduIp
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduMac]
+    datadog: {as: [column-tag], tags: [pdu_ipaddress], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.2.10.1.17
+    name: cpiPduCabinetId
+    metricKey: cpiPduCabinetId
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduMac]
+    datadog: {as: [column-tag], tags: [pdu_cabinetid], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.7.100.1.3
+    name: cpiPduEasStatus
+    metricKey: cpiPduEasStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduLockId, cpiPduLockMac]
+    enumMap: {"0": inactive, "1": ready, "2": error}
+    datadog: {as: [metric, column-tag], tags: [eas_status], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.7.100.1.4
+    name: cpiPduDoorStatus
+    metricKey: cpiPduDoorStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduLockId, cpiPduLockMac]
+    enumMap: {"0": closed, "1": open}
+    datadog: {as: [metric, column-tag], tags: [door_status], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.7.100.1.5
+    name: cpiPduLockStatus
+    metricKey: cpiPduLockStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduLockId, cpiPduLockMac]
+    enumMap: {"0": closed, "1": open}
+    datadog: {as: [metric, column-tag], tags: [lock_status], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.7.100.1.2
+    name: cpiPduLockId
+    metricKey: cpiPduLockId
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduLockId, cpiPduLockMac]
+    enumMap: {"1": front, "2": rear}
+    datadog: {as: [column-tag], tags: [lock_id], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.5.10.1.5
+    name: cpiPduSensorValue
+    metricKey: cpiPduSensorValue
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduSensorId, cpiPduSensorMac]
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.5.10.1.2
+    name: cpiPduSensorId
+    metricKey: cpiPduSensorId
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduSensorId, cpiPduSensorMac]
+    datadog: {as: [column-tag], tags: [sensor_index], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.5.10.1.3
+    name: cpiPduSensorName
+    metricKey: cpiPduSensorName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduSensorId, cpiPduSensorMac]
+    datadog: {as: [column-tag], tags: [sensor_name], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.5.10.1.4
+    name: cpiPduSensorType
+    metricKey: cpiPduSensorType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduSensorId, cpiPduSensorMac]
+    enumMap: {"1": temperature, "2": humidity}
+    datadog: {as: [column-tag], tags: [sensor_type], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.3.10.1.3
+    name: cpiPduLineCurrent
+    metricKey: cpiPduLineCurrent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduLineId, cpiPduLineMac]
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.3.10.1.2
+    name: cpiPduLineId
+    metricKey: cpiPduLineId
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduLineId, cpiPduLineMac]
+    datadog: {as: [column-tag], tags: [line_id], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.3.110.1.3
+    name: cpiPduBranchCurrent
+    metricKey: cpiPduBranchCurrent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduBranchId, cpiPduBranchMac]
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.3.110.1.4
+    name: cpiPduBranchMaxCurrent
+    metricKey: cpiPduBranchMaxCurrent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduBranchId, cpiPduBranchMac]
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.3.110.1.5
+    name: cpiPduBranchVoltage
+    metricKey: cpiPduBranchVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduBranchId, cpiPduBranchMac]
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.3.110.1.6
+    name: cpiPduBranchPower
+    metricKey: cpiPduBranchPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduBranchId, cpiPduBranchMac]
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.3.110.1.7
+    name: cpiPduBranchPowerFactor
+    metricKey: cpiPduBranchPowerFactor
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduBranchId, cpiPduBranchMac]
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.3.110.1.8
+    name: cpiPduBranchStatus
+    metricKey: cpiPduBranchStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduBranchId, cpiPduBranchMac]
+    enumMap: {"0": noalarm, "1": warning, "2": alarm}
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.3.110.1.2
+    name: cpiPduBranchId
+    metricKey: cpiPduBranchId
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduBranchId, cpiPduBranchMac]
+    datadog: {as: [column-tag], tags: [branch_id], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.3.110.1.9
+    name: cpiPduBranchEnergy
+    metricKey: cpiPduBranchEnergy
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduBranchId, cpiPduBranchMac]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.4.10.1.6
+    name: cpiPduOutletCurrent
+    metricKey: cpiPduOutletCurrent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduOutletId, cpiPduOutletMac]
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.4.10.1.7
+    name: cpiPduOutletVoltage
+    metricKey: cpiPduOutletVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduOutletId, cpiPduOutletMac]
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.4.10.1.8
+    name: cpiPduOutletPower
+    metricKey: cpiPduOutletPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduOutletId, cpiPduOutletMac]
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.4.10.1.9
+    name: cpiPduOutletStatus
+    metricKey: cpiPduOutletStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduOutletId, cpiPduOutletMac]
+    enumMap: {"0": noalarm, "1": warning, "2": alarm}
+    datadog: {as: [metric], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.4.10.1.2
+    name: cpiPduOutletId
+    metricKey: cpiPduOutletId
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduOutletId, cpiPduOutletMac]
+    datadog: {as: [column-tag], tags: [outlet_id], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.4.10.1.4
+    name: cpiPduOutletName
+    metricKey: cpiPduOutletName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduOutletId, cpiPduOutletMac]
+    datadog: {as: [column-tag], tags: [outlet_name], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.4.10.1.3
+    name: cpiPduOutletBranchId
+    metricKey: cpiPduOutletBranchId
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduOutletId, cpiPduOutletMac]
+    datadog: {as: [column-tag], tags: [outlet_branchid], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.10.1.4.10.1.10
+    name: cpiPduOutletEnergy
+    metricKey: cpiPduOutletEnergy
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [cpiPduOutletId, cpiPduOutletMac]
+    datadog: {as: [metric], metricType: [monotonic_count], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.2.40.0
+    name: pduName
+    metricKey: pduName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [legacy_pdu_name], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.1.1.0
+    name: version
+    metricKey: version
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [legacy_pdu_version], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.1.2.0
+    name: modelCode
+    metricKey: modelCode
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [legacy_pdu_model], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.4.1.30932.1.1.1.3.0
+    name: hwAddress
+    metricKey: hwAddress
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [legacy_pdu_macaddress], from: [chatsworth_pdu.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/chatsworth_pdu.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml]

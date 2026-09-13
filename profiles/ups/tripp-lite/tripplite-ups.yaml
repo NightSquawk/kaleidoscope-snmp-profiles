@@ -1,0 +1,456 @@
+formatVersion: 1
+slug: tripplite-ups
+name: Tripp Lite UPS
+description: "Converted from Datadog's tripplite-ups.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: ups
+vendor: Tripp Lite
+extends: none
+priority: 5
+enabled: false
+pollIntervalSeconds: 300
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.850.1.1.3.1}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.33.1.2.2.0
+    name: upsSecondsOnBattery
+    metricKey: upsSecondsOnBattery
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.2.3.0
+    name: upsEstimatedMinutesRemaining
+    metricKey: upsEstimatedMinutesRemaining
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.2.4.0
+    name: upsEstimatedChargeRemaining
+    metricKey: upsEstimatedChargeRemaining
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.2.5.0
+    name: upsBatteryVoltage
+    metricKey: upsBatteryVoltage
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.2.6.0
+    name: upsBatteryCurrent
+    metricKey: upsBatteryCurrent
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.2.7.0
+    name: upsBatteryTemperature
+    metricKey: upsBatteryTemperature
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.3.1.0
+    name: upsInputLineBads
+    metricKey: upsInputLineBads
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.3.2.0
+    name: upsInputNumLines
+    metricKey: upsInputNumLines
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.4.2.0
+    name: upsOutputFrequency
+    metricKey: upsOutputFrequency
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.4.3.0
+    name: upsOutputNumLines
+    metricKey: upsOutputNumLines
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.5.1.0
+    name: upsBypassFrequency
+    metricKey: upsBypassFrequency
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.5.2.0
+    name: upsBypassNumLines
+    metricKey: upsBypassNumLines
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.6.1.0
+    name: upsAlarmsPresent
+    metricKey: upsAlarmsPresent
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.7.5.0
+    name: upsTestStartTime
+    metricKey: upsTestStartTime
+    type: timeticks
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.4.4.1.2
+    name: upsOutputVoltage
+    metricKey: upsOutputVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [upsOutputLineIndex]
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.4.4.1.3
+    name: upsOutputCurrent
+    metricKey: upsOutputCurrent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [upsOutputLineIndex]
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.4.4.1.4
+    name: upsOutputPower
+    metricKey: upsOutputPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [upsOutputLineIndex]
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.4.4.1.5
+    name: upsOutputPercentLoad
+    metricKey: upsOutputPercentLoad
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [upsOutputLineIndex]
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.3.3.1.2
+    name: upsInputFrequency
+    metricKey: upsInputFrequency
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [upsInputLineIndex]
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.3.3.1.3
+    name: upsInputVoltage
+    metricKey: upsInputVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [upsInputLineIndex]
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.3.3.1.4
+    name: upsInputCurrent
+    metricKey: upsInputCurrent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [upsInputLineIndex]
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.3.3.1.5
+    name: upsInputTruePower
+    metricKey: upsInputTruePower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [upsInputLineIndex]
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.5.3.1.2
+    name: upsBypassVoltage
+    metricKey: upsBypassVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [upsBypassLineIndex]
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.5.3.1.3
+    name: upsBypassCurrent
+    metricKey: upsBypassCurrent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [upsBypassLineIndex]
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.5.3.1.4
+    name: upsBypassPower
+    metricKey: upsBypassPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [upsBypassLineIndex]
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.6.2.1.3
+    name: upsAlarmTime
+    metricKey: upsAlarmTime
+    type: timeticks
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [upsAlarmId]
+    datadog: {as: [metric], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.6.2.1.2
+    name: upsAlarmDescr
+    metricKey: upsAlarmDescr
+    type: oid
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [upsAlarmId]
+    datadog: {as: [column-tag], tags: [ups_alarm_descr], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.1.1.0
+    name: upsIdentManufacturer
+    metricKey: upsIdentManufacturer
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [ups_ident_manufacturer], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.1.2.0
+    name: upsIdentModel
+    metricKey: upsIdentModel
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [ups_ident_model], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.33.1.1.5.0
+    name: upsIdentName
+    metricKey: upsIdentName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [ups_ident_name], from: [_generic-ups.yaml]}
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.13.1.0
+    name: tlUpsTemperature
+    metricKey: tlUpsTemperature
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.2.1.0
+    name: tlUpsBatteryAge
+    metricKey: tlUpsBatteryAge
+    type: string
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.2.2.0
+    name: tlUpsTemperatureF
+    metricKey: tlUpsTemperatureF
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.2.3.0
+    name: tlUpsExternalBatteryAge
+    metricKey: tlUpsExternalBatteryAge
+    type: string
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.6.1.0
+    name: tlUpsAlarmsPresent
+    metricKey: tlUpsAlarmsPresent
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.101.1.1.1.0
+    name: tlEnvTemperatureC
+    metricKey: tlEnvTemperatureC
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.101.1.1.2.0
+    name: tlEnvTemperatureF
+    metricKey: tlEnvTemperatureF
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.101.1.2.1.0
+    name: tlEnvHumidity
+    metricKey: tlEnvHumidity
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.3.2.1.3
+    name: tlUpsInputVoltage
+    metricKey: tlUpsInputVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlUpsInputVoltageIndex]
+    datadog: {as: [metric], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.3.2.1.2
+    name: tlUpsInputVoltageType
+    metricKey: tlUpsInputVoltageType
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlUpsInputVoltageIndex]
+    enumMap: {"0": phaseToNeutral, "1": phaseToPhase}
+    datadog: {as: [column-tag], tags: [tl_ups_input_voltage_type], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.4.7.1.3
+    name: tlUpsOutputCircuitLoadCurrent
+    metricKey: tlUpsOutputCircuitLoadCurrent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlUpsOutputCircuitIndex]
+    datadog: {as: [metric], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.4.7.1.4
+    name: tlUpsOutputCircuitVoltage
+    metricKey: tlUpsOutputCircuitVoltage
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlUpsOutputCircuitIndex]
+    datadog: {as: [metric], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.4.7.1.5
+    name: tlUpsOutputCircuitPower
+    metricKey: tlUpsOutputCircuitPower
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlUpsOutputCircuitIndex]
+    datadog: {as: [metric], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.4.7.1.2
+    name: tlUpsOutputCircuitStatus
+    metricKey: tlUpsOutputCircuitStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlUpsOutputCircuitIndex]
+    enumMap: {"0": open, "1": closed}
+    datadog: {as: [column-tag], tags: [tl_ups_output_circuit_status], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.101.2.1.1.2
+    name: tlEnvContactName
+    metricKey: tlEnvContactName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlEnvContactIndex]
+    datadog: {as: [column-tag], tags: [tl_env_contact_name], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.101.2.1.1.4
+    name: tlEnvContactConfig
+    metricKey: tlEnvContactConfig
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlEnvContactIndex]
+    enumMap: {"0": normallyOpen, "1": normallyClosed}
+    datadog: {as: [column-tag], tags: [tl_env_contact_config], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.101.2.1.1.3
+    name: tlEnvContactStatus
+    metricKey: tlEnvContactStatus
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlEnvContactIndex]
+    enumMap: {"0": normal, "1": alarm}
+    datadog: {as: [column-tag], tags: [tl_env_contact_status], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.11.2.1.3
+    name: tlUpsOutletGroupName
+    metricKey: tlUpsOutletGroupName
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlUpsOutletGroupIndex]
+    datadog: {as: [column-tag], tags: [tl_ups_outlet_group_name], features: [cross-table tag from another table], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.11.2.1.4
+    name: tlUpsOutletGroupDesc
+    metricKey: tlUpsOutletGroupDesc
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlUpsOutletGroupIndex]
+    datadog: {as: [column-tag], tags: [tl_ups_outlet_group_desc], features: [cross-table tag from another table], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.11.2.1.5
+    name: tlUpsOutletGroupState
+    metricKey: tlUpsOutletGroupState
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [tlUpsOutletGroupIndex]
+    enumMap: {"0": unknown, "1": "off", "2": "on", "3": mixed}
+    datadog: {as: [column-tag], tags: [tl_ups_outlet_group_state], features: [cross-table tag from another table], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.1.2.0
+    name: tlUpsIdentSerialNum
+    metricKey: tlUpsIdentSerialNum
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [tl_ups_ident_serial_num], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.1.3.0
+    name: tlUpsIdentID
+    metricKey: tlUpsIdentID
+    type: integer
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [tl_ups_ident_id], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.1.4.0
+    name: tlUpsSnmpCardSerialNum
+    metricKey: tlUpsSnmpCardSerialNum
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [tl_ups_snmp_card_serial_num], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.4.1.850.100.1.1.6.0
+    name: tlUpsLocation
+    metricKey: tlUpsLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag], tags: [tl_ups_location], from: [tripplite-ups.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/tripplite-ups.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_generic-ups.yaml, _base.yaml, tripplite.yaml]

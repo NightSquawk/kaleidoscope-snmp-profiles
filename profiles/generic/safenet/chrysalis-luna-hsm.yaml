@@ -1,0 +1,442 @@
+formatVersion: 1
+slug: chrysalis-luna-hsm
+name: Chrysalis Luna HSM
+description: "Converted from Datadog's chrysalis-luna-hsm.yaml SNMP profile. Untested in Kaleidoscope."
+deviceCategory: generic
+vendor: SafeNet
+extends: none
+priority: 5
+enabled: false
+matchPatterns:
+  - {field: sysObjectId, pattern: 1.3.6.1.4.1.12383.3.1.1}
+metricsTemplate: {}
+oids:
+  - oid: 1.3.6.1.2.1.1.5.0
+    name: sysName
+    metricKey: sysName
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [global-tag, metadata], tags: [snmp_host, device_hostname], fields: [device.name], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.6.5.0
+    name: tcpActiveOpens
+    metricKey: tcpActiveOpens
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.6.0
+    name: tcpPassiveOpens
+    metricKey: tcpPassiveOpens
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.7.0
+    name: tcpAttemptFails
+    metricKey: tcpAttemptFails
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.8.0
+    name: tcpEstabResets
+    metricKey: tcpEstabResets
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.9.0
+    name: tcpCurrEstab
+    metricKey: tcpCurrEstab
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.17.0
+    name: tcpHCInSegs
+    metricKey: tcpHCInSegs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.18.0
+    name: tcpHCOutSegs
+    metricKey: tcpHCOutSegs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.12.0
+    name: tcpRetransSegs
+    metricKey: tcpRetransSegs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.14.0
+    name: tcpInErrs
+    metricKey: tcpInErrs
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.2.1.6.15.0
+    name: tcpOutRsts
+    metricKey: tcpOutRsts
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metricType: [monotonic_count], from: [_generic-tcp.yaml]}
+  - oid: 1.3.6.1.4.1.2021.10.1.5.1
+    name: laLoadInt
+    metricKey: laLoadInt_1
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [cpu.usage], from: [_generic-ucd-cpu-mem.yaml]}
+  - oid: 1.3.6.1.4.1.2021.4.5.0
+    name: memTotalReal
+    metricKey: memTotalReal
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [memory.total], features: ["scale_factor=1024"], from: [_generic-ucd-cpu-mem.yaml]}
+  - oid: 1.3.6.1.4.1.2021.4.6.0
+    name: memAvailReal
+    metricKey: memAvailReal
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [memory.free], features: ["scale_factor=1024"], from: [_generic-ucd-cpu-mem.yaml]}
+  - oid: 1.3.6.1.4.1.2021.4.3.0
+    name: memTotalSwap
+    metricKey: memTotalSwap
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.memTotalSwap], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.4.4.0
+    name: memAvailSwap
+    metricKey: memAvailSwap
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.memAvailSwap], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.4.11.0
+    name: memTotalFree
+    metricKey: memTotalFree
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.memTotalFree], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.4.12.0
+    name: memMinimumSwap
+    metricKey: memMinimumSwap
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.memMinimumSwap], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.4.13.0
+    name: memShared
+    metricKey: memShared
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.memShared], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.4.14.0
+    name: memBuffer
+    metricKey: memBuffer
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.memBuffer], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.4.15.0
+    name: memCached
+    metricKey: memCached
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.memCached], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.9.1.6
+    name: dskTotal
+    metricKey: dskTotal
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dskIndex]
+    datadog: {as: [metric], metric: [ucd.dskTotal], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.9.1.7
+    name: dskAvail
+    metricKey: dskAvail
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dskIndex]
+    datadog: {as: [metric], metric: [ucd.dskAvail], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.9.1.8
+    name: dskUsed
+    metricKey: dskUsed
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dskIndex]
+    datadog: {as: [metric], metric: [ucd.dskUsed], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.9.1.9
+    name: dskPercent
+    metricKey: dskPercent
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dskIndex]
+    datadog: {as: [metric], metric: [ucd.dskPercent], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.9.1.10
+    name: dskPercentNode
+    metricKey: dskPercentNode
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dskIndex]
+    datadog: {as: [metric], metric: [ucd.dskPercentNode], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.9.1.2
+    name: dskPath
+    metricKey: dskPath
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dskIndex]
+    datadog: {as: [column-tag], tags: [ucd_dsk_path], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.9.1.3
+    name: dskDevice
+    metricKey: dskDevice
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dskIndex]
+    datadog: {as: [column-tag], tags: [ucd_dsk_device], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.9.1.100
+    name: dskErrorFlag
+    metricKey: dskErrorFlag
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [dskIndex]
+    enumMap: {"0": noError, "1": error}
+    datadog: {as: [column-tag], tags: [ucd_dsk_error_flag], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.13.15.1.1.5
+    name: diskIOReads
+    metricKey: diskIOReads
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [diskIOIndex]
+    datadog: {as: [metric], metric: [ucd.diskIOReads], metricType: [monotonic_count], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.13.15.1.1.6
+    name: diskIOWrites
+    metricKey: diskIOWrites
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [diskIOIndex]
+    datadog: {as: [metric], metric: [ucd.diskIOWrites], metricType: [monotonic_count], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.13.15.1.1.9
+    name: diskIOLA1
+    metricKey: diskIOLA1
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [diskIOIndex]
+    datadog: {as: [metric], metric: [ucd.diskIOLA1], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.13.15.1.1.10
+    name: diskIOLA5
+    metricKey: diskIOLA5
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [diskIOIndex]
+    datadog: {as: [metric], metric: [ucd.diskIOLA5], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.13.15.1.1.11
+    name: diskIOLA15
+    metricKey: diskIOLA15
+    type: integer
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [diskIOIndex]
+    datadog: {as: [metric], metric: [ucd.diskIOLA15], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.13.15.1.1.12
+    name: diskIONReadX
+    metricKey: diskIONReadX
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [diskIOIndex]
+    datadog: {as: [metric], metric: [ucd.diskIONReadX], metricType: [monotonic_count], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.13.15.1.1.13
+    name: diskIONWrittenX
+    metricKey: diskIONWrittenX
+    type: counter
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [diskIOIndex]
+    datadog: {as: [metric], metric: [ucd.diskIONWrittenX], metricType: [monotonic_count], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.13.15.1.1.2
+    name: diskIODevice
+    metricKey: diskIODevice
+    type: string
+    walk: true
+    cadenceTier: every-poll
+    coalesceKey: [diskIOIndex]
+    datadog: {as: [column-tag], tags: [ucd_disk_io_device], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.11.9.0
+    name: ssCpuUser
+    metricKey: ssCpuUser
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.ssCpuUser], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.11.10.0
+    name: ssCpuSystem
+    metricKey: ssCpuSystem
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.ssCpuSystem], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.11.11.0
+    name: ssCpuIdle
+    metricKey: ssCpuIdle
+    type: integer
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.ssCpuIdle], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.11.50.0
+    name: ssCpuRawUser
+    metricKey: ssCpuRawUser
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.ssCpuRawUser], metricType: [monotonic_count], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.11.51.0
+    name: ssCpuRawNice
+    metricKey: ssCpuRawNice
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.ssCpuRawNice], metricType: [monotonic_count], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.11.52.0
+    name: ssCpuRawSystem
+    metricKey: ssCpuRawSystem
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.ssCpuRawSystem], metricType: [monotonic_count], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.11.53.0
+    name: ssCpuRawIdle
+    metricKey: ssCpuRawIdle
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.ssCpuRawIdle], metricType: [monotonic_count], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.11.54.0
+    name: ssCpuRawWait
+    metricKey: ssCpuRawWait
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.ssCpuRawWait], metricType: [monotonic_count], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.11.55.0
+    name: ssCpuRawKernel
+    metricKey: ssCpuRawKernel
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.ssCpuRawKernel], metricType: [monotonic_count], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.2021.11.56.0
+    name: ssCpuRawInterrupt
+    metricKey: ssCpuRawInterrupt
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], metric: [ucd.ssCpuRawInterrupt], metricType: [monotonic_count], from: [_generic-ucd-base.yaml]}
+  - oid: 1.3.6.1.4.1.12383.3.1.1.1.0
+    name: hsmOperationRequests
+    metricKey: hsmOperationRequests
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chrysalis-luna-hsm.yaml]}
+  - oid: 1.3.6.1.4.1.12383.3.1.1.2.0
+    name: hsmOperationErrors
+    metricKey: hsmOperationErrors
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chrysalis-luna-hsm.yaml]}
+  - oid: 1.3.6.1.4.1.12383.3.1.1.3.0
+    name: hsmCriticalEvents
+    metricKey: hsmCriticalEvents
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chrysalis-luna-hsm.yaml]}
+  - oid: 1.3.6.1.4.1.12383.3.1.1.4.0
+    name: hsmNonCriticalEvents
+    metricKey: hsmNonCriticalEvents
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chrysalis-luna-hsm.yaml]}
+  - oid: 1.3.6.1.4.1.12383.3.1.2.2.0
+    name: ntlsConnectedClients
+    metricKey: ntlsConnectedClients
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chrysalis-luna-hsm.yaml]}
+  - oid: 1.3.6.1.4.1.12383.3.1.2.3.0
+    name: ntlsLinks
+    metricKey: ntlsLinks
+    type: gauge
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chrysalis-luna-hsm.yaml]}
+  - oid: 1.3.6.1.4.1.12383.3.1.2.4.0
+    name: ntlsSuccessfulClientConnections
+    metricKey: ntlsSuccessfulClientConnections
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chrysalis-luna-hsm.yaml]}
+  - oid: 1.3.6.1.4.1.12383.3.1.2.5.0
+    name: ntlsFailedClientConnections
+    metricKey: ntlsFailedClientConnections
+    type: counter
+    walk: false
+    cadenceTier: every-poll
+    datadog: {as: [metric], from: [chrysalis-luna-hsm.yaml]}
+  - oid: 1.3.6.1.2.1.1.1.0
+    name: sysDescr
+    metricKey: sysDescr
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.description], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.2.0
+    name: sysObjectID
+    metricKey: sysObjectID
+    type: oid
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.sys_object_id], from: [_base.yaml]}
+  - oid: 1.3.6.1.2.1.1.6.0
+    name: sysLocation
+    metricKey: sysLocation
+    type: string
+    walk: false
+    cadenceTier: discovery
+    datadog: {as: [metadata], fields: [device.location], from: [_base.yaml]}
+origin:
+  source: datadog/integrations-core
+  file: snmp/datadog_checks/snmp/data/default_profiles/chrysalis-luna-hsm.yaml
+  commit: 47ac6e1950cd92ae63561b9e395556f2d65b38ef
+  license: BSD-3-Clause
+  extends: [_base.yaml, chrysalis.yaml, _generic-tcp.yaml, _generic-ucd-cpu-mem.yaml, _generic-ucd-base.yaml, _generic-ucd.yaml]
