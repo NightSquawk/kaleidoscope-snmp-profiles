@@ -83,7 +83,7 @@ The platform-side work that closes those gaps is tracked in the Kaleidoscope mon
 
 ## Contributing
 
-See `CONTRIBUTING.md`. In short: one vendor per pull request, one profile per file, `pnpm validate` clean, and a note on which real device you tested against.
+See [CONTRIBUTING.md](CONTRIBUTING.md) and the [development workflow](docs/DEVELOPMENT.md). Agent guidance lives in [AGENTS.md](AGENTS.md) and [CLAUDE.md](CLAUDE.md). In short: one vendor per pull request, one profile per file, `pnpm validate` clean, and a note on which real device you tested against.
 
 ## License
 

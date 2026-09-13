@@ -1,0 +1,20 @@
+---
+description: "Profile, registry, schema, and importer compatibility rules"
+alwaysApply: true
+---
+
+# SNMP data contract
+
+- One YAML profile per `profiles/<category>/<vendor>/<slug>.yaml`; filename equals slug, slugs are unique across profiles and dictionaries and at most 60 characters.
+- Use only the categories in `schema/profile.schema.json`. Do not invent categories for PDUs, sensors, or cameras; use the documented `generic` fallback until a coordinated contract change exists.
+- Profiles curate useful OIDs. Reference platform generic parents through `extends` and `manifest.yaml` rather than duplicating their seed data. Use `extends: none` deliberately; verify `includes` and parent references.
+- Numeric OIDs have no leading dot. Use `oidHasPrefix` from `tools/src/repo.ts` for prefix checks: equality or `prefix + '.'`, never plain string-prefix matching.
+- Profile match patterns are ANDed; more specific sysObjectID patterns win per the format contract. Compiler grouping is different: the shortest matching compile-enabled registry prefix wins. Preserve this distinction.
+- Registry prefixes must be unique. Supply `profileSlug` for non-assign actions as required by the validator. Use `compile: false` for identity-only rows when appropriate. Multiple compile-enabled roots for one vendor/category need distinct vendor labels because each dictionary has one `vendorOidPrefix`.
+- Scalar OIDs include `.0` and `walk: false`; table columns use `walk: true`. Profile `metricKey` values must be unique. Repeated dictionary metric keys across MIB modules are allowed and reported as warnings.
+- Set cadence intentionally: changing counters/status use `every-poll`, inventory uses `discovery`, and fallback OIDs use `fallback-only`. Explicitly tag live string-valued state. Do not set operator-only `cadenceOverride` in community data.
+- Device validation records model, firmware, date, and responding OIDs. Untested profiles must have `enabled: false`; the validator currently only warns about missing testing evidence, so review must enforce this contributor rule.
+- Dictionaries are generated JSON with `role: dictionary` and no `matchPatterns`. The format requires consumers to import them disabled; the compiler does not currently emit `enabled`, and local generation does not prove consumer enforcement. Never hand-edit dictionary JSON or generated report contents to fix source/compiler defects.
+- Change schemas, TypeScript representations, validation/compiler behavior, format documentation, and examples together when their contract changes. Do not infer importer support from schema acceptance or an ignored key.
+- Importer compatibility notes in `README.md` and `docs/FORMAT.md` are dated snapshots. Verify platform implementation before updating claims: YAML-only import, inheritance persistence, dictionary support, and cadence support have separate implementation requirements.
+- Evaluate a monotonic `manifest.yaml` revision bump when published profile/dictionary changes require tenants to re-sync. `formatVersion` describes the contract, not a release counter. Documentation-only changes need neither bump.

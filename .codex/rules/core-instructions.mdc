@@ -1,0 +1,16 @@
+---
+description: "Core behavior and repository boundaries"
+alwaysApply: true
+---
+
+# Core instructions
+
+- Read `README.md`, `CONTRIBUTING.md`, and the relevant source before editing. Make focused changes and reuse existing helpers.
+- This repository publishes optional SNMP data and its compiler. Curated offline seed profiles, polling, tenant imports, and UI behavior belong to the Kaleidoscope platform.
+- Keep hand-authored profiles, generated dictionaries, identity registry entries, and raw MIB sources distinct. A dictionary must never become an automatically assigned polling profile.
+- Treat schemas and validation code as the implemented local contract; reconcile changes with `docs/FORMAT.md` and examples. Report disagreements rather than assuming documentation proves implementation.
+- Use Node 22+ and pnpm 9, matching CI. Run package commands from `tools/`; there is no root workspace, build, lint, database, or deployment command.
+- Search `tools/`, `schema/`, and the relevant vendor directory first. Avoid reading the entire MIB or generated JSON corpus into context.
+- Do not invent device testing, successful commands, imported behavior, or library capabilities. Separate observed results from assumptions.
+- If delegating work, pass the task boundaries and applicable rules to the agent; do not assume it inherited them. Coordinate ownership of shared files.
+- Keep credentials, SNMP community strings, customer identifiers, private walks, and machine-specific connector settings out of this public repository. Preserve vendor copyright and license notices.

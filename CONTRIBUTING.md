@@ -1,5 +1,7 @@
 # Contributing
 
+For compiler changes, validation procedures, and shared-worktree practices, see [Development workflow](docs/DEVELOPMENT.md). Agent instructions are in [AGENTS.md](AGENTS.md) and [CLAUDE.md](CLAUDE.md).
+
 ## Adding a vendor profile
 
 1. Copy `examples/_template.yaml` to `profiles/<category>/<vendor>/<slug>.yaml`. Category is one of `ups`, `switch`, `access_point`, `server`, `printer`, `firewall`, `nas`, `generic`.

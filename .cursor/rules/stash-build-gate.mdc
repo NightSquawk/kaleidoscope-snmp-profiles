@@ -1,0 +1,12 @@
+---
+description: "Preserve shared work and validate before an explicitly requested stash"
+alwaysApply: true
+---
+
+# Stash and validation gate
+
+- Never use `git stash` (including wrappers, `--keep-index`, or untracked-file variants) to isolate changes for validation or commits. It removes other contributors' work from the shared tree.
+- Validate with existing work present, or use an isolated checkout when needed. Do not reset or clean the shared tree to obtain a passing result.
+- A stash requires explicit user authorization for that stash. Before an authorized stash, run `pnpm check-types` and `pnpm validate` from `tools/`; this repository has no `pnpm build` script.
+- If either check fails, report the failure. Stashing that failing state additionally requires authorization covering the failure; label it so the failed check remains discoverable.
+- Do not silently apply, pop, or drop someone else's existing stash. Preserve it and describe the recovery options.

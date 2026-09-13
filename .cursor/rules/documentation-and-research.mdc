@@ -1,0 +1,14 @@
+---
+description: "Source-backed technical decisions and audience-specific change notes"
+alwaysApply: true
+---
+
+# Documentation and research
+
+- Use local source, schemas, fixtures, lockfile, and CI as evidence of repository behavior. For unfamiliar or changed library APIs, consult version-appropriate primary documentation; use Context7 if available, otherwise official documentation. Never assume a project MCP server is installed.
+- Keep `README.md` for purpose/setup/compatibility, `CONTRIBUTING.md` for submissions, `docs/FORMAT.md` for the format, and `docs/DEVELOPMENT.md` for engineering processes. Update the document that owns the fact.
+- Describe data coverage and consumer-visible behavior precisely. Separate proposed format features from shipped importer support and local data validation from tested device compatibility.
+- A PR should explain the concrete problem, resulting behavior, affected vendor/category, provenance or device evidence where relevant, validation, and compatibility/re-sync implications. Avoid vague "improvements" and invented release history.
+- This repository has no dashboard changelog or semver release-branch process. Use PR descriptions and relevant existing docs; add release artifacts only when establishing an actual release process. Never hand-edit `COMPILE-REPORT.md` as a changelog.
+- Keep the rule mirrors synchronized and record deliberate departures from upstream in `docs/DEVELOPMENT.md`. Upstream rules are reference material, not a reason to reintroduce platform-only commands or policies.
+- Do not copy private MCP settings, global hooks, machine paths, or client billing attribution from the platform. If an established user/global activity-log policy applies, follow it outside this public repository; do not assume this work is Curacao-billable.

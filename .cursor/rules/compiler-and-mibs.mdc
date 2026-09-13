@@ -1,0 +1,17 @@
+---
+description: "MIB provenance, generation, and bounded parser processes"
+alwaysApply: true
+---
+
+# Compiler and MIB workflow
+
+- Put openly published vendor MIBs under `mibs/<vendor>/`, retaining original contents and vendor terms. File extensions are optional. Record the source and relevant version in the PR; never import an entire unrelated mirror for a single-vendor task.
+- Add the appropriate registry row before expecting dictionary output. Standard IETF subtrees can also have rows; `mibs/rfc/` supplies imports and is compiled for registered standard subtrees.
+- Use libsmi `smidump` through `tools/src/smidump.ts` (native, `SMIDUMP`, or the existing Docker wrapper). Do not replace it with the platform's legacy regex parser.
+- Preserve argument-array process spawning, bounded concurrency, deadlines, output caps, timer/process cleanup, and bisection of failing batches. A malformed MIB must not hang the whole compilation or silently discard healthy siblings.
+- Preserve textual-convention resolution, readable-object filtering, numeric OID ordering, deterministic deduplication, and registry-based vendor attribution. Do not classify objects by directory name alone.
+- Compile diagnostics and experiments into a NEW temporary output directory using both `--out` and `--report`. A full compile deletes subdirectories of its output directory before writing replacements. Never point fixture output at tracked `dictionaries/`.
+- `--vendor` filters source groups, not simply the emitted vendor label. A vendor-only run leaves other dictionaries in place and writes a partial report; it does not prove a clean full rebuild or removal of stale outputs. Prefer temporary output for previews.
+- Review dropped/unregistered objects, unresolved textual conventions, parser crashes, hangs, and runaway output in the compile report. A zero exit status alone does not establish complete coverage.
+- Full generation is appropriate when intentionally publishing regenerated data or evaluating broad compiler changes. Otherwise use focused temporary previews and let the existing main-branch recompile workflow publish output.
+- Generated dates and report wall time can change without semantic changes. Avoid committing report-only churn; the current recompile workflow already skips it when dictionary JSON is unchanged.

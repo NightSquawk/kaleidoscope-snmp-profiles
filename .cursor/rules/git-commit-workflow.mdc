@@ -1,0 +1,21 @@
+---
+description: "Branching and scoped commits for the public data repository"
+alwaysApply: true
+---
+
+# Git workflow
+
+- Inspect `git status --short`, the current branch, and staged changes before editing or committing. Preserve unrelated work.
+- Contributor changes use a focused branch and a pull request targeting `main`, the branch consumed by tenants and the recompile workflow. Do not introduce the platform's `develop` / release-branch scheme here.
+- Keep vendor contributions to one vendor per PR. Shared compiler, schema, or process changes may span vendors when required; explain their scope.
+- Validate before committing. Use one logical change per commit with Conventional Commit subjects: `<type>(<scope>): <description>`. Types include `feat`, `fix`, `refactor`, `perf`, `chore`, and `docs`; scopes include `profiles`, `registry`, `mibs`, `dictionaries`, `tools`, `schema`, `ci`, and `rules`.
+- Stage only when ready to commit. Write the commit message to a temporary file outside imported data paths, then scope BOTH commands to your explicit file paths:
+
+  ```bash
+  git add -- <your-paths>
+  git commit -F <message-file> -- <your-paths>
+  ```
+
+- Do not use broad `git add .`, `git add -A`, or a bare `git commit` in a shared working tree. Leave unrelated staged files alone. Coordinate overlapping file edits before committing a whole file; do not sweep in someone else's work or split their changes without coordination.
+- Do not force-remove an index lock, amend published commits, force-push shared branches, or discard unrelated changes.
+- `.github/workflows/recompile.yml` is the existing automation exception: its isolated runner stages only `dictionaries/` and commits regenerated output to `main`. Do not imitate that direct-push flow for contributor work.

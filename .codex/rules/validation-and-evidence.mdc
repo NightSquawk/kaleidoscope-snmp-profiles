@@ -1,0 +1,15 @@
+---
+description: "Checks and debugging evidence proportionate to the change"
+alwaysApply: true
+---
+
+# Validation and evidence
+
+- Baseline commands from `tools/`: `pnpm install --frozen-lockfile`, `pnpm check-types`, and `pnpm validate`. CI runs on Node 22 with pnpm 9; report local runtime differences when material.
+- Profile/registry changes require full validation and review of new warnings. Validation does not verify a device answered, prove importer support, or check every inheritance semantic.
+- Compiler/parser changes also require the fixture smoke procedure in `docs/DEVELOPMENT.md` and a targeted real-MIB comparison when relevant. Check exact emitted OIDs/types and skipped-file diagnostics, not only output existence.
+- Add regression coverage for changed behavior or reproduced defects. Do not add tests that merely repeat static documentation or regenerate the whole corpus for a prose-only change.
+- For documentation/rule changes, check referenced paths, command names, formatting, and mirror equality. Keep entry documents identical and rule filenames/content identical across all three surfaces.
+- Diagnose the smallest failing source first: registry match, MIB availability/import path, parser diagnostics, type resolution, emitted data, validator, then platform importer. Keep candidate explanations separate from observed evidence.
+- Record the command, outcome, relevant counts, new versus existing warnings, and checks not run with the reason. Never claim compilation or device testing from a schema/type check alone.
+- Finish by reviewing the diff and worktree for unrelated changes, generated churn, private data, and unsupported claims. Report remaining limitations explicitly.
