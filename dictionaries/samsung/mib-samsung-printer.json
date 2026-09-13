@@ -9,7 +9,7 @@
   "description": "Auto-compiled with libsmi from 4 MIB module(s). 213 readable OIDs under 1.3.6.1.4.1.236.",
   "generated": {
     "source": "mibs/samsung",
-    "date": "2026-09-12",
+    "date": "2026-09-13",
     "oidCount": 213,
     "compiler": "smidump 0.4.8",
     "modules": [

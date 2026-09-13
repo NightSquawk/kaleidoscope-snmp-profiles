@@ -9,7 +9,7 @@
   "description": "Auto-compiled with libsmi from 9 MIB module(s). 242 readable OIDs under 1.3.6.1.4.1.33333.",
   "generated": {
     "source": "mibs/morningstar",
-    "date": "2026-09-12",
+    "date": "2026-09-13",
     "oidCount": 242,
     "compiler": "smidump 0.4.8",
     "modules": [

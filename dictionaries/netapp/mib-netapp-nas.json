@@ -9,7 +9,7 @@
   "description": "Auto-compiled with libsmi from 30 MIB module(s). 3960 readable OIDs under 1.3.6.1.4.1.789.",
   "generated": {
     "source": "mibs/netapp",
-    "date": "2026-09-12",
+    "date": "2026-09-13",
     "oidCount": 3960,
     "compiler": "smidump 0.4.8",
     "modules": [

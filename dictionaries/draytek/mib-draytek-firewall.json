@@ -9,7 +9,7 @@
   "description": "Auto-compiled with libsmi from 1 MIB module(s). 49 readable OIDs under 1.3.6.1.4.1.7367.",
   "generated": {
     "source": "mibs/draytek",
-    "date": "2026-09-12",
+    "date": "2026-09-13",
     "oidCount": 49,
     "compiler": "smidump 0.4.8",
     "modules": [

@@ -9,7 +9,7 @@
   "description": "Auto-compiled with libsmi from 86 MIB module(s). 2490 readable OIDs under 1.3.6.1.4.1.5624.",
   "generated": {
     "source": "mibs/enterasys",
-    "date": "2026-09-12",
+    "date": "2026-09-13",
     "oidCount": 2490,
     "compiler": "smidump 0.4.8",
     "modules": [

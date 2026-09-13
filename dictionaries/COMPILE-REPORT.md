@@ -1,6 +1,6 @@
 # Compile report
 
-Generated 2026-09-12 by `pnpm compile` with smidump 0.4.8. Do not edit; rerun the compiler.
+Generated 2026-09-13 by `pnpm compile` with smidump 0.4.8. Do not edit; rerun the compiler.
 
 ## Summary
 
@@ -17,11 +17,11 @@ Generated 2026-09-12 by `pnpm compile` with smidump 0.4.8. Do not edit; rerun th
 | Dropped: enterprise has no registry row | 114926 across 96 roots |
 | Written | 237 dictionaries, 579862 OIDs |
 | Textual-convention modules fetched on demand | 2 (0 not found) |
-| Objects whose type fell back to string | 570 |
+| Objects whose type fell back to string | 589 |
 | Files that crashed libsmi | 2 |
 | Files on which libsmi hung | 0 |
 | Files with runaway output | 1 |
-| Wall time | 164s (4 jobs) |
+| Wall time | 142s (4 jobs) |
 
 ## Dictionaries
 
@@ -441,59 +441,58 @@ libsmi's XML writer looped on these inputs (output ran past the size cap); they 
 
 ## libsmi diagnostics
 
-54 distinct message(s); first 100.
+53 distinct message(s); first 100.
 
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/asentria/s412-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/brocade/FOUNDRY-SN-STACKING-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/cambium/CAMBIUM-NETWORKS-AUTO-ATTACH-MIB'
-- timeout: the monitored command dumped core
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-08P_AX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-08P_BX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-10_AXME'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-28P_Ax'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-28P_BX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-28_AX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-28_AXME'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-28_BX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-28_CX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-52_AX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-52_BX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DES-1228P-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DES-1252-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DES-2108-B1-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1100-10ME_A1'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-10ME_AX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-10P_Ax'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-10P_BX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-10P_CX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-16_AX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-20ME_AX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-20_BX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-20_CX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-24_AX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-28ME_AX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-28PME_AX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-28P_BX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-28P_CX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-28_BX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-28_CX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-48_AX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-52ME_AX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-52_BX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-52_CX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1216T-DX-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1224T-DX-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1248T-B1-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1248T-BX-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1500-28P_AX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1500-52_AX'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/d-link/DHCP-Server-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/dell/powerConnect4-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/ibm/IBMTCPIPMVS-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/papouch/ad4eth_v03-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/papouch/papago_1th_2di_1do_V01-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/papouch/papago_dio_V01-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/papouch/papago_temp_V02-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/papouch/the_v01-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/papouch/windeth_v01-MIB'
-- smidump: cannot locate module '/mnt/data/work/GitHub/NightSquawk/kaleidoscope-snmp-profiles/mibs/powershield/voltronicMIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/asentria/s412-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/brocade/FOUNDRY-SN-STACKING-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/cambium/CAMBIUM-NETWORKS-AUTO-ATTACH-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-08P_AX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-08P_BX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-10_AXME'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-28P_Ax'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-28P_BX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-28_AX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-28_AXME'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-28_BX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-28_CX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-52_AX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DES-1210-52_BX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DES-1228P-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DES-1252-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DES-2108-B1-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1100-10ME_A1'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-10ME_AX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-10P_Ax'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-10P_BX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-10P_CX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-16_AX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-20ME_AX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-20_BX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-20_CX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-24_AX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-28ME_AX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-28PME_AX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-28P_BX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-28P_CX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-28_BX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-28_CX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-48_AX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-52ME_AX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-52_BX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1210-52_CX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1216T-DX-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1224T-DX-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1248T-B1-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1248T-BX-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1500-28P_AX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DGS-1500-52_AX'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/d-link/DHCP-Server-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/dell/powerConnect4-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/ibm/IBMTCPIPMVS-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/papouch/ad4eth_v03-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/papouch/papago_1th_2di_1do_V01-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/papouch/papago_dio_V01-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/papouch/papago_temp_V02-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/papouch/the_v01-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/papouch/windeth_v01-MIB'
+- smidump: cannot locate module '/home/runner/work/kaleidoscope-snmp-profiles/kaleidoscope-snmp-profiles/mibs/powershield/voltronicMIB'

@@ -9,7 +9,7 @@
   "description": "Auto-compiled with libsmi from 20 MIB module(s). 629 readable OIDs under 1.3.6.1.4.1.27662.",
   "generated": {
     "source": "mibs/peplink",
-    "date": "2026-09-12",
+    "date": "2026-09-13",
     "oidCount": 629,
     "compiler": "smidump 0.4.8",
     "modules": [
