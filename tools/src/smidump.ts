@@ -214,6 +214,16 @@ export interface SmiObject {
   typedef: SmiTypedef | null;
   units: string | null;
   description: string | null;
+  /** columns only: the conceptual row that holds them */
+  row?: SmiRow;
+}
+
+/** A table row's linkage: INDEX objects, or the row it AUGMENTS / EXTENDS. */
+export interface SmiRow {
+  name: string;
+  oid: string;
+  index: SmiTypeRef[];
+  augments: SmiTypeRef | null;
 }
 
 export interface SmiModule {
@@ -296,14 +306,26 @@ function readObject(el: El, module: string, kind: 'scalar' | 'column'): SmiObjec
   };
 }
 
+function readRow(el: El): SmiRow {
+  const linkage = child(el, 'linkage');
+  const ref = (e: El): SmiTypeRef => ({ module: e.attrs.module ?? '', name: e.attrs.name ?? '' });
+  const base = linkage?.children.find(c => c.tag === 'augments' || c.tag === 'extends');
+  return {
+    name: el.attrs.name ?? '',
+    oid: el.attrs.oid ?? '',
+    index: (linkage?.children ?? []).filter(c => c.tag === 'index').map(ref),
+    augments: base ? ref(base) : null,
+  };
+}
+
 /** Collect scalar/column objects at any depth (tables nest row nests column). */
-function collectObjects(el: El, module: string, into: SmiObject[]): void {
+function collectObjects(el: El, module: string, into: SmiObject[], row?: SmiRow): void {
   for (const c of el.children) {
     if (c.tag === 'scalar' || c.tag === 'column') {
       const o = readObject(c, module, c.tag);
-      if (o) into.push(o);
+      if (o) into.push(c.tag === 'column' && row ? { ...o, row } : o);
     }
-    if (c.children.length) collectObjects(c, module, into);
+    if (c.children.length) collectObjects(c, module, into, c.tag === 'row' ? readRow(c) : row);
   }
 }
 

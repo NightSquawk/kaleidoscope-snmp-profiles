@@ -10,7 +10,9 @@
   "scripts": {
     "validate": "tsx src/validate.ts",
     "compile": "node --max-old-space-size=8192 --import tsx src/compile-dictionaries.ts",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "import:datadog": "node --max-old-space-size=8192 --import tsx src/import-datadog.ts",
+    "test": "node --import tsx --test src/**/*.test.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
