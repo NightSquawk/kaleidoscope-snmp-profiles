@@ -9,7 +9,7 @@
   "description": "Auto-compiled with libsmi from 8 MIB module(s). 180 readable OIDs under 1.3.6.1.4.1.25728.",
   "generated": {
     "source": "mibs/netping",
-    "date": "2026-09-13",
+    "date": "2026-09-18",
     "oidCount": 180,
     "compiler": "smidump 0.4.8",
     "modules": [

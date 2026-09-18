@@ -9,7 +9,7 @@
   "description": "Auto-compiled with libsmi from 17 MIB module(s). 254 readable OIDs under 1.3.6.1.4.1.6574.",
   "generated": {
     "source": "mibs/synology",
-    "date": "2026-09-13",
+    "date": "2026-09-18",
     "oidCount": 254,
     "compiler": "smidump 0.4.8",
     "modules": [

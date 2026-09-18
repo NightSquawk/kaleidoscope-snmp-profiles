@@ -9,7 +9,7 @@
   "description": "Auto-compiled with libsmi from 203 MIB module(s). 12632 readable OIDs under 1.3.6.1.4.1.6486.",
   "generated": {
     "source": "mibs/alcatel, mibs/alcatel-ent1",
-    "date": "2026-09-13",
+    "date": "2026-09-18",
     "oidCount": 12632,
     "compiler": "smidump 0.4.8",
     "modules": [

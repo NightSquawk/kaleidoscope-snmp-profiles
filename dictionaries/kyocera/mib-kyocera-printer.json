@@ -9,7 +9,7 @@
   "description": "Auto-compiled with libsmi from 2 MIB module(s). 297 readable OIDs under 1.3.6.1.4.1.1347.",
   "generated": {
     "source": "mibs/kyocera",
-    "date": "2026-09-13",
+    "date": "2026-09-18",
     "oidCount": 297,
     "compiler": "smidump 0.4.8",
     "modules": [

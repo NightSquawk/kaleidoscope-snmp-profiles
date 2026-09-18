@@ -9,7 +9,7 @@
   "description": "Auto-compiled with libsmi from 1 MIB module(s). 61 readable OIDs under 1.3.6.1.4.1.29640.",
   "generated": {
     "source": "mibs/apnl",
-    "date": "2026-09-13",
+    "date": "2026-09-18",
     "oidCount": 61,
     "compiler": "smidump 0.4.8",
     "modules": [

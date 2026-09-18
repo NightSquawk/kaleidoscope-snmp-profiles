@@ -9,7 +9,7 @@
   "description": "Auto-compiled with libsmi from 2 MIB module(s). 176 readable OIDs under 1.3.6.1.4.1.4779.",
   "generated": {
     "source": "mibs/baytech",
-    "date": "2026-09-13",
+    "date": "2026-09-18",
     "oidCount": 176,
     "compiler": "smidump 0.4.8",
     "modules": [

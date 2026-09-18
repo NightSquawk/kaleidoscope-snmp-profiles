@@ -9,7 +9,7 @@
   "description": "Auto-compiled with libsmi from 10 MIB module(s). 694 readable OIDs under 1.3.6.1.4.1.476.",
   "generated": {
     "source": "mibs/liebert",
-    "date": "2026-09-13",
+    "date": "2026-09-18",
     "oidCount": 694,
     "compiler": "smidump 0.4.8",
     "modules": [

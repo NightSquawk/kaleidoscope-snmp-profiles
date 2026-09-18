@@ -9,7 +9,7 @@
   "description": "Auto-compiled with libsmi from 91 MIB module(s). 8322 readable OIDs under 1.3.6.1.4.1.674.",
   "generated": {
     "source": "mibs/dell",
-    "date": "2026-09-13",
+    "date": "2026-09-18",
     "oidCount": 8322,
     "compiler": "smidump 0.4.8",
     "modules": [

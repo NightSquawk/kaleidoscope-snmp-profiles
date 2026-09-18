@@ -9,7 +9,7 @@
   "description": "Auto-compiled with libsmi from 11 MIB module(s). 6460 readable OIDs under 1.3.6.1.4.1.3052.",
   "generated": {
     "source": "mibs/asentria",
-    "date": "2026-09-13",
+    "date": "2026-09-18",
     "oidCount": 6460,
     "compiler": "smidump 0.4.8",
     "modules": [

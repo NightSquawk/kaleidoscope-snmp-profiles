@@ -1,6 +1,6 @@
 # Compile report
 
-Generated 2026-09-13 by `pnpm compile` with smidump 0.4.8. Do not edit; rerun the compiler.
+Generated 2026-09-18 by `pnpm compile` with smidump 0.4.8. Do not edit; rerun the compiler.
 
 ## Summary
 
@@ -21,7 +21,7 @@ Generated 2026-09-13 by `pnpm compile` with smidump 0.4.8. Do not edit; rerun th
 | Files that crashed libsmi | 2 |
 | Files on which libsmi hung | 0 |
 | Files with runaway output | 1 |
-| Wall time | 142s (4 jobs) |
+| Wall time | 167s (4 jobs) |
 
 ## Dictionaries
 

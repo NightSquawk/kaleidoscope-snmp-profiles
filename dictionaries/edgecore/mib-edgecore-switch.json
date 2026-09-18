@@ -9,7 +9,7 @@
   "description": "Auto-compiled with libsmi from 95 MIB module(s). 33446 readable OIDs under 1.3.6.1.4.1.259.",
   "generated": {
     "source": "mibs/edgecore",
-    "date": "2026-09-13",
+    "date": "2026-09-18",
     "oidCount": 33446,
     "compiler": "smidump 0.4.8",
     "modules": [
