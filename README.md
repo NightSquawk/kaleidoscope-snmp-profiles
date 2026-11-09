@@ -43,7 +43,7 @@ pnpm compile             # rebuild dictionaries/ from mibs/ using registry/sysob
 pnpm compile --mibs /path/to/mib/collection   # compile from a directory outside the repo
 ```
 
-`pnpm validate` runs in CI on every pull request, and CI also compiles a fixture MIB to prove the toolchain works. When a push to `main` touches `mibs/`, `registry/`, or the compiler, the `recompile` workflow rebuilds `dictionaries/` on a GitHub runner and commits the result, so contributors do not need libsmi locally.
+`pnpm validate` runs in CI on every pull request, and CI also compiles a fixture MIB to prove the toolchain works. When a push to `main` touches `mibs/`, `registry/`, or the compiler, the `recompile` workflow rebuilds `dictionaries/` on a GitHub runner and opens a regeneration pull request, so contributors do not need libsmi locally.
 
 ### The compiler needs libsmi
 

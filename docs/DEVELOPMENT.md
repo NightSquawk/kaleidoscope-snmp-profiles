@@ -6,7 +6,7 @@ This project separates four concerns: raw MIB sources, registry knowledge, gener
 
 Read [the project overview](../README.md), [contribution requirements](../CONTRIBUTING.md), [the format](FORMAT.md), and [agent guidance](../AGENTS.md). Inspect the branch and working tree. Locate the relevant schema, registry row, vendor source, and tool implementation before editing generated output or assuming a platform behavior exists.
 
-Use a focused contributor branch and PR against `main`. The existing `recompile` workflow publishes generated dictionaries on `main`; the platform's release-branch model does not apply here.
+Use a focused contributor branch and PR against `main`. The `recompile` workflow opens a generated-dictionary PR against `main` and explicitly dispatches validation on that branch; maintainers merge it after checks pass. Its isolated job has contents, pull-request and Actions write permissions only for this regeneration flow; the platform's release-branch model does not apply here.
 
 ## Checks by change
 
