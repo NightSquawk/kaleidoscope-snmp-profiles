@@ -18,4 +18,4 @@ alwaysApply: true
 
 - Do not use broad `git add .`, `git add -A`, or a bare `git commit` in a shared working tree. Leave unrelated staged files alone. Coordinate overlapping file edits before committing a whole file; do not sweep in someone else's work or split their changes without coordination.
 - Do not force-remove an index lock, amend published commits, force-push shared branches, or discard unrelated changes.
-- `.github/workflows/recompile.yml` stages only `dictionaries/` in its isolated runner, opens a regeneration PR, and dispatches validation on that branch. Generated changes follow the same protected-branch merge path as contributor work.
+- `.github/workflows/recompile.yml` stages only `dictionaries/` in its isolated runner, stages a dedicated generated branch, reports a maintainer PR compare link, and dispatches validation on that branch. Protected main is never pushed to. Generated changes follow the same protected-branch merge path as contributor work.

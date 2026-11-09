@@ -1,7 +1,7 @@
 name: recompile
 
 # Rebuild dictionaries/ whenever the inputs change on main, and commit the
-# result through a pull request. Contributors only need MIB files and a registry
+# result for a maintainer to review through a pull request. Contributors add a registry
 # row; libsmi runs here, not on their machine.
 on:
   push:
@@ -27,7 +27,6 @@ jobs:
   recompile:
     permissions:
       contents: write
-      pull-requests: write
       actions: write
     # Generated PRs touch dictionaries only, outside the triggering input paths.
     if: github.actor != 'github-actions[bot]'
@@ -62,22 +61,24 @@ jobs:
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
-      - name: Propose regenerated dictionaries
+      - name: Stage regenerated dictionaries for maintainer review
         if: steps.changes.outputs.changed == 'true'
-        id: proposal
-        uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7
-        with:
-          branch: automation/regenerate-dictionaries
-          base: main
-          add-paths: dictionaries/
-          commit-message: 'chore(dictionaries): regenerate from current inputs'
-          title: 'Regenerate SNMP reference dictionaries'
-          body: 'Regenerated on a GitHub runner from the current main-branch inputs. Review dictionary changes and compiler diagnostics before merging.'
-      - name: Validate the generated PR branch
-        if: steps.proposal.outputs.pull-request-number != ''
         env:
           GH_TOKEN: ${{ github.token }}
           REGEN_BRANCH: automation/regenerate-dictionaries
-        # GITHUB_TOKEN-created PRs do not trigger pull_request workflows.
-        # Dispatch validation explicitly; it runs against the proposed branch SHA.
-        run: gh workflow run validate.yml --ref "$REGEN_BRANCH"
+        run: |
+          git add -- dictionaries
+          git -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m "chore(dictionaries): regenerate from current inputs" -- dictionaries
+          # This dedicated generated branch is replaced on each run. Protected
+          # main is never pushed to; lease protection rejects concurrent updates.
+          if git ls-remote --exit-code --heads origin "$REGEN_BRANCH" > /dev/null; then
+            git fetch origin "$REGEN_BRANCH"
+            previous=$(git rev-parse FETCH_HEAD)
+            git push --force-with-lease="refs/heads/$REGEN_BRANCH:$previous" origin "HEAD:refs/heads/$REGEN_BRANCH"
+          else
+            git push origin "HEAD:refs/heads/$REGEN_BRANCH"
+          fi
+          gh workflow run validate.yml --ref "$REGEN_BRANCH"
+          printf 'Open the dictionary review PR: https://github.com/%s/compare/main...%s?expand=1\n' "$GITHUB_REPOSITORY" "$REGEN_BRANCH" >> "$GITHUB_STEP_SUMMARY"
