@@ -53,10 +53,19 @@ jobs:
         working-directory: tools
       - name: Detect dictionary changes
         id: changes
+        env:
+          REGEN_BRANCH: automation/regenerate-dictionaries
         run: |
           # Ignore report-only timestamps when dictionary JSON is unchanged.
-          if git diff --quiet -- 'dictionaries/*/*.json'; then
+          git add -- dictionaries
+          if git diff --cached --quiet -- 'dictionaries/*/*.json'; then
+            git reset -- dictionaries
             git restore -- dictionaries
+            # Remove an obsolete proposal after inputs are reverted or no longer
+            # change output. The protected default branch is never deleted.
+            if git ls-remote --exit-code --heads origin "$REGEN_BRANCH" > /dev/null; then
+              git push origin --delete "$REGEN_BRANCH"
+            fi
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
