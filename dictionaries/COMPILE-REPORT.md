@@ -1,6 +1,6 @@
 # Compile report
 
-Generated 2026-09-18 by `pnpm compile` with smidump 0.4.8. Do not edit; rerun the compiler.
+Generated 2026-11-09 by `pnpm compile` with smidump 0.4.8. Do not edit; rerun the compiler.
 
 ## Summary
 
@@ -9,19 +9,19 @@ Generated 2026-09-18 by `pnpm compile` with smidump 0.4.8. Do not edit; rerun th
 | MIB source | `mibs` |
 | Vendor directories | 217 |
 | Files given to libsmi | 8672 |
-| smidump invocations | 314 |
-| Modules parsed | 8483 (133 repeated module names, kept) |
-| Objects seen | 891669 |
+| smidump invocations | 338 |
+| Modules parsed | 8478 (133 repeated module names, kept) |
+| Objects seen | 889264 |
 | Dropped: standard tree, no registry row | 66431 |
-| Dropped: not readable (not-accessible, accessible-for-notify) | 61117 |
-| Dropped: enterprise has no registry row | 114926 across 96 roots |
-| Written | 237 dictionaries, 579862 OIDs |
+| Dropped: not readable (not-accessible, accessible-for-notify) | 61116 |
+| Dropped: enterprise has no registry row | 115773 across 97 roots |
+| Written | 237 dictionaries, 576611 OIDs |
 | Textual-convention modules fetched on demand | 2 (0 not found) |
 | Objects whose type fell back to string | 589 |
-| Files that crashed libsmi | 2 |
+| Files that crashed libsmi | 7 |
 | Files on which libsmi hung | 0 |
 | Files with runaway output | 1 |
-| Wall time | 167s (4 jobs) |
+| Wall time | 80s (4 jobs) |
 
 ## Dictionaries
 
@@ -67,7 +67,7 @@ Generated 2026-09-18 by `pnpm compile` with smidump 0.4.8. Do not edit; rerun th
 | mib-ce-t-power-ups | 686 | 1 | cet-power |
 | mib-chatsworth-generic | 1064 | 1 | chatsworth |
 | mib-check-point-firewall | 2154 | 3 | checkpoint |
-| mib-cisco-switch | 89049 | 1171 | cisco, ciscosb |
+| mib-cisco-switch | 89045 | 1170 | cisco, ciscosb |
 | mib-cisco-meraki-generic | 52 | 1 | cisco |
 | mib-citrix-generic | 3129 | 2 | citrix |
 | mib-clavister-firewall | 1228 | 2 | clavister |
@@ -263,7 +263,7 @@ Generated 2026-09-18 by `pnpm compile` with smidump 0.4.8. Do not edit; rerun th
 | mib-xerox-printer | 755 | 11 | xerox |
 | mib-xirrus-access-point | 1724 | 1 | xirrus |
 | mib-zebra-printer | 277 | 1 | zebra |
-| mib-zyxel-generic | 28894 | 171 | zyxel |
+| mib-zyxel-generic | 25647 | 166 | zyxel |
 
 ## Enterprises with MIBs but no registry row
 
@@ -287,6 +287,7 @@ Add a row to `registry/sysobjectid.yaml` to compile any of these, then import th
 | 1.3.6.1.4.1.11068 | 897 | 1 | DDOSSECURE4-MIB | juniper |
 | 1.3.6.1.4.1.353 | 876 | 8 | ATM-FORUM-ADDR-REG | cisco, huawei |
 | 1.3.6.1.4.1.7146 | 864 | 2 | ZXTM-MIB | riverbed |
+| 1.3.6.1.4.1.1411 | 847 | 1 | EX2500-BASE-MIB | juniper |
 | 1.3.6.1.4.1.3076 | 794 | 30 | ADMIN-AUTH-STATS-MIB | cisco |
 | 1.3.6.1.4.1.9804 | 790 | 18 | LEFTHAND-NETWORKS-NSM-CLUSTERING-MIB | hp |
 | 1.3.6.1.4.1.11898 | 756 | 1 | ORiNOCO-MIB | proxim |
@@ -372,8 +373,13 @@ Add a row to `registry/sysobjectid.yaml` to compile any of these, then import th
 
 smidump exited abnormally on these inputs; they were skipped. Each was isolated by bisection so the rest of the directory still compiled. They are malformed by other parsers too.
 
-- `juniper/EX2500-BASE-MIB`
+- `cisco/CISCO-SLB-DFP-MIB`
 - `meru/MERU-WLAN-MIB`
+- `zyxel/ZYXEL-ES3500-24HP-MIB`
+- `zyxel/ZYXEL-ES3500-8PD-MIB`
+- `zyxel/ZYXEL-MES3500-10-MIB`
+- `zyxel/ZYXEL-MES3500-24-MIB`
+- `zyxel/ZYXEL-MES3500-24F-MIB`
 
 ## Files libsmi rejected
 
