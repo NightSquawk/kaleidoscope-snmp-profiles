@@ -1,7 +1,7 @@
 name: recompile
 
 # Rebuild dictionaries/ whenever the inputs change on main, and commit the
-# result. Contributors therefore only need to add MIB files and a registry
+# result for a maintainer to review through a pull request. Contributors add a registry
 # row; libsmi runs here, not on their machine.
 on:
   push:
@@ -21,24 +21,26 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   recompile:
-    # The commit this job pushes never matches the paths above except through
-    # dictionaries/, so it will not retrigger; the guard is belt and braces.
+    permissions:
+      contents: write
+      actions: write
+    # Generated PRs touch dictionaries only, outside the triggering input paths.
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: main
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq smitools
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1
         with:
           version: 9
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 22
           cache: pnpm
@@ -49,18 +51,43 @@ jobs:
         working-directory: tools
       - run: pnpm validate
         working-directory: tools
-      - name: commit regenerated dictionaries
+      - name: Detect dictionary changes
+        id: changes
+        env:
+          REGEN_BRANCH: automation/regenerate-dictionaries
         run: |
-          git add -A dictionaries
-          # Commit only when a dictionary changed; the report alone always
-          # differs (wall time), and that is not worth a commit.
+          # Ignore report-only timestamps when dictionary JSON is unchanged.
+          git add -- dictionaries
           if git diff --cached --quiet -- 'dictionaries/*/*.json'; then
-            echo "dictionaries unchanged (report-only differences ignored)"
-            exit 0
+            git reset -- dictionaries
+            git restore -- dictionaries
+            # Remove an obsolete proposal after inputs are reverted or no longer
+            # change output. The protected default branch is never deleted.
+            if git ls-remote --exit-code --heads origin "$REGEN_BRANCH" > /dev/null; then
+              git push origin --delete "$REGEN_BRANCH"
+            fi
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+      - name: Stage regenerated dictionaries for maintainer review
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REGEN_BRANCH: automation/regenerate-dictionaries
+        run: |
+          git add -- dictionaries
           git -c user.name='github-actions[bot]' \
               -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
-              commit -m "chore(dictionaries): recompile from ${GITHUB_SHA::12}" \
-                     -m "Triggered by ${{ github.event.head_commit.message && 'push' || 'workflow_dispatch' }} on main. See dictionaries/COMPILE-REPORT.md." \
-                     -- dictionaries
-          git push origin HEAD:main
+              commit -m "chore(dictionaries): regenerate from current inputs" -- dictionaries
+          # This dedicated generated branch is replaced on each run. Protected
+          # main is never pushed to; lease protection rejects concurrent updates.
+          if git ls-remote --exit-code --heads origin "$REGEN_BRANCH" > /dev/null; then
+            git fetch origin "$REGEN_BRANCH"
+            previous=$(git rev-parse FETCH_HEAD)
+            git push --force-with-lease="refs/heads/$REGEN_BRANCH:$previous" origin "HEAD:refs/heads/$REGEN_BRANCH"
+          else
+            git push origin "HEAD:refs/heads/$REGEN_BRANCH"
+          fi
+          gh workflow run validate.yml --ref "$REGEN_BRANCH"
+          printf 'Open the dictionary review PR: https://github.com/%s/compare/main...%s?expand=1\n' "$GITHUB_REPOSITORY" "$REGEN_BRANCH" >> "$GITHUB_STEP_SUMMARY"
