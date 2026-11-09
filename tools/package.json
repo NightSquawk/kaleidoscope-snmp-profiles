@@ -15,7 +15,7 @@
     "test": "node --import tsx --test src/**/*.test.ts"
   },
   "devDependencies": {
-    "@types/node": "^22.20.3",
+    "@types/node": "^26.6.6",
     "ajv": "^8.20.0",
     "fast-xml-parser": "^5.11.1",
     "tsx": "^4.23.13",
